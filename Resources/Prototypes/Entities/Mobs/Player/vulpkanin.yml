@@ -3,3 +3,6 @@
   name: Urist McBark
   parent: BaseMobVulpkanin
   id: MobVulpkanin
+  components:
+  - type: Scent # Lust-Edit — индивидуальный запах для игроков-вульпканинов
+    personalScentProfile: Vulpkanin

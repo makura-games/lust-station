@@ -1,0 +1,21 @@
+﻿- type: personalScentProfile
+  id: Vulpkanin
+  notePools:
+  - notes:
+    - scent-vulp-base-dry-fur
+    - scent-vulp-base-warm-fur
+    - scent-vulp-base-groomed-fur
+    - scent-vulp-base-rain-fur
+
+  - notes:
+    - scent-vulp-nature-pine
+    - scent-vulp-nature-herbs
+    - scent-vulp-nature-honey
+    - scent-vulp-nature-earth
+
+  - notes:
+    - scent-vulp-accent-ozone
+    - scent-vulp-accent-wood
+    - scent-vulp-accent-frost
+    - scent-vulp-accent-smoke
+

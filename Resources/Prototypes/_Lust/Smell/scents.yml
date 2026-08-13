@@ -1,0 +1,11 @@
+﻿- type: scent
+  id: Whiskey
+  description: scent-static-whiskey
+
+- type: scent
+  id: FriedMeat
+  description: scent-static-fried-meat
+
+- type: scent
+  id: NpcVulpkanin
+  description: scent-static-npc-vulpkanin
