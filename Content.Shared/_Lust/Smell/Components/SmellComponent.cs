@@ -11,6 +11,7 @@ public sealed partial class SmellComponent : Component
     public List<ProtoId<ScentPrototype>> BaseScents = new();
 
     [DataField]
-    public ProtoId<PersonalScentProfilePrototype>? PersonalScentProfile;
+    public bool SmellBlocked = false;
+
 
 }

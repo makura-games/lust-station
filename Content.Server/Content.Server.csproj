@@ -27,9 +27,6 @@
   <ItemGroup Condition="Exists('..\SunrisePrivate\Content.Server')">
     <Compile Include="..\SunrisePrivate\Content.Server\**\*.cs" Link="%(RecursiveDir)%(Filename)%(Extension)" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="_Lust\Smell\" />
-  </ItemGroup>
   <PropertyGroup Condition="Exists('..\SunrisePrivate\Content.Server')">
     <DefineConstants>$(DefineConstants);SUNRISE_PRIVATE</DefineConstants>
   </PropertyGroup>

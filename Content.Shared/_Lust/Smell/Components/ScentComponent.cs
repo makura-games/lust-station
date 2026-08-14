@@ -10,4 +10,7 @@ public sealed partial class ScentComponent : Component
     [DataField, AutoNetworkedField]
     public List<ProtoId<ScentPrototype>> BaseScents = new();
 
+    [DataField]
+    public ProtoId<PersonalScentProfilePrototype>? PersonalScentProfile;
+
 }

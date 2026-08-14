@@ -4,6 +4,12 @@ scent-static-npc-vulpkanin = мягкая шерсть и лёгкий муск�
 
 
 
+smell-verb = Понюхать
+smell-result-static = Вы улавливаете: {$notes}.
+smell-result-personal = [color={$color}]Индивидуальный запах: {$notes}.[/color]
+smell-result-none = Вы не улавливаете выраженного запаха.
+
+
 
 
 scent-vulp-base-dry-fur = сухой мех
