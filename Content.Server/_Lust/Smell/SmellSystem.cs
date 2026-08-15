@@ -71,14 +71,11 @@ public sealed class SmellSystem : EntitySystem
 
     public override void Initialize()
     {
-        // Собираем индекс всех событие->запах из прототипов (гибко: новые источники в YAML,
-        // а не в коде). Последний прототип с одинаковым trigger побеждает.
-        foreach (var proto in _prototypes.EnumeratePrototypes<ScentEventPrototype>())
-        {
-            _eventProtoIndex[proto.Trigger] = proto;
-        }
+        RebuildProtoCache();
 
-        _statusScentProtos = _prototypes.EnumeratePrototypes<StatusScentPrototype>().ToList();
+        // Чтобы изменения статус-запахов/событий подхватывались на живом сервере (reloadprototypes),
+        // а не только при перезапуске, пересобираем кэш и при перезагрузке прототипов.
+        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
         SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
 
@@ -101,6 +98,34 @@ public sealed class SmellSystem : EntitySystem
         // MobDamageable), а не на общие пары вроде (MobStateComponent, AttackedEvent), чтобы
         // не занимать пару, которую может захотеть апстрим-контент. Владелец — args.User.
         SubscribeLocalEvent<ScentOnAttackedComponent, AttackedEvent>(OnAttacked);
+    }
+
+    /// <summary>
+    /// Пересобирает кэш прототипов — индекс событие->запах и список статус-запахов.
+    /// Вызывается и при старте системы, и при хот-релоаде прототипов.
+    /// </summary>
+    private void RebuildProtoCache()
+    {
+        // Собираем индекс всех событие->запах из прототипов (гибко: новые источники в YAML,
+        // а не в коде). Последний прототип с одинаковым trigger побеждает.
+        _eventProtoIndex.Clear();
+        foreach (var proto in _prototypes.EnumeratePrototypes<ScentEventPrototype>())
+        {
+            _eventProtoIndex[proto.Trigger] = proto;
+        }
+
+        _statusScentProtos = _prototypes.EnumeratePrototypes<StatusScentPrototype>().ToList();
+    }
+
+    private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
+    {
+        if (!args.ByType.ContainsKey(typeof(ScentEventPrototype))
+            && !args.ByType.ContainsKey(typeof(StatusScentPrototype)))
+        {
+            return;
+        }
+
+        RebuildProtoCache();
     }
 
     private void OnErpInteractionPerformed(ErpInteractionPerformedEvent args)
