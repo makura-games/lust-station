@@ -491,11 +491,10 @@ public partial class InteractionsPanel
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
             SpawnSemen("Semen", Transform(uid).Coordinates);
 
-        RaiseLocalEvent(new ErpInteractionPerformedEvent
+        RaiseLocalEvent(new OrgasmPerformedEvent
         {
             User = uid,
             Target = comp.CurrentTarget ?? uid,
-            Trigger = "orgasm",
         }); // Lust-Edit
 
         SetCooldown(uid, "orgasm", TimeSpan.FromSeconds(OrgasmCooldownSeconds));
@@ -532,11 +531,9 @@ public partial class InteractionsPanel
             Dirty(uid, newComp);
 
             // Запах возбуждения на самом себе: тело нюхает собственное возбуждение.
-            RaiseLocalEvent(new ErpInteractionPerformedEvent
+            RaiseLocalEvent(new ArousalStartedEvent
             {
-                User = uid,
-                Target = uid,
-                Trigger = "arousal",
+                Uid = uid,
             }); // Lust-Edit
         }
         else if (ratio < 0.33f && TryComp<LoveVisionComponent>(uid, out var loveVision) && loveVision.FromLoveSystem)
