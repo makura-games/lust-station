@@ -3,27 +3,24 @@ using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.ActionBlocker;
-using Content.Shared.Damage;
-using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
-using Content.Shared.Hands;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Verbs;
-using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Enums;
-using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
 namespace Content.Server._Lust.Smell;
 
+/// <summary>
+/// Система «нюханья»: верб «понюхать», проверки доступа, ленивый пересчёт временных
+/// запахов и вывод читаемого описания. Наделение запахами (источники) живёт в
+/// ScentAcquisitionSystem, общий кэш прототипов — в SmellPrototypeCacheSystem.
+/// </summary>
 public sealed class SmellSystem : EntitySystem
 {
     [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
@@ -32,217 +29,16 @@ public sealed class SmellSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private readonly SmellPrototypeCacheSystem _cache = default!;
 
     /// <summary>
     /// Прототип запаха возбуждения — для него текст зависит от притяжения пары.
     /// </summary>
     private const string ArousalScent = "Arousal";
 
-    /// <summary>
-    /// Минимальный накопленный урон конкретного типа, чтобы существо источало запах
-    /// своих ран (меньше — микро-царапины, раной не пахнет).
-    /// </summary>
-    private const int WoundScentThreshold = 10;
-
-    /// <summary>
-    /// Порог накопленного яда (Poison), при котором становится заметен запах токсинов.
-    /// </summary>
-    private const int PoisonScentThreshold = 50;
-
-    /// <summary>
-    /// Параметры временного запаха от ран.
-    /// </summary>
-    private static readonly TimeSpan WoundScentDuration = TimeSpan.FromSeconds(300);
-
-    /// <summary>
-    /// Запах чужой крови: выдаётся наносящему melee-удар по цели в критическом состоянии.
-    /// </summary>
-    private const string OtherBloodScent = "OtherBlood";
-
-    /// <summary>
-    /// Сопоставление trigger -> ScentEventPrototype, собранное один раз из YAML.
-    /// </summary>
-    private readonly Dictionary<string, ScentEventPrototype> _eventProtoIndex = new();
-
-    /// <summary>
-    /// Все маппинги статус-эффект->запах из YAML (statusScent).
-    /// </summary>
-    private List<StatusScentPrototype> _statusScentProtos = new();
-
     public override void Initialize()
     {
-        RebuildProtoCache();
-
-        // Чтобы изменения статус-запахов/событий подхватывались на живом сервере (reloadprototypes),
-        // а не только при перезапуске, пересобираем кэш и при перезагрузке прототипов.
-        SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
-
         SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
-
-        // Слушаем интимные взаимодействия, поднятые ERP-панелью, и применяем временные запахи.
-        SubscribeLocalEvent<ErpInteractionPerformedEvent>(OnErpInteractionPerformed);
-
-        // Эмиторы запаха: предмет попал в нужный слот -> носитель получает запах.
-        SubscribeLocalEvent<ScentEmitterComponent, GotEquippedEvent>(OnScentEmitterEquipped);
-
-        // Взятие в руки тоже активирует эмитор (закрывает карманы/рюкзак: положить
-        // куда-либо предмет можно только взяв его в руки).
-        SubscribeLocalEvent<ScentEmitterComponent, GotEquippedHandEvent>(OnScentEmitterPickedUp);
-
-        // Урон: существо пахнет кровью/ушибами собственных ран.
-        SubscribeLocalEvent<ScentComponent, DamageChangedEvent>(OnDamageChanged);
-
-        // Получение атаки ближнего боя по жертве в критическом состоянии: атакующему — запах
-        // чужой крови. AttackedEvent рейзится направленно на жертве (broadcast=false), поэтому
-        // подписка идёт на наш маркер ScentOnAttacked (наследуется от базового предка живых
-        // MobDamageable), а не на общие пары вроде (MobStateComponent, AttackedEvent), чтобы
-        // не занимать пару, которую может захотеть апстрим-контент. Владелец — args.User.
-        SubscribeLocalEvent<ScentOnAttackedComponent, AttackedEvent>(OnAttacked);
-    }
-
-    /// <summary>
-    /// Пересобирает кэш прототипов — индекс событие->запах и список статус-запахов.
-    /// Вызывается и при старте системы, и при хот-релоаде прототипов.
-    /// </summary>
-    private void RebuildProtoCache()
-    {
-        // Собираем индекс всех событие->запах из прототипов (гибко: новые источники в YAML,
-        // а не в коде). Последний прототип с одинаковым trigger побеждает.
-        _eventProtoIndex.Clear();
-        foreach (var proto in _prototypes.EnumeratePrototypes<ScentEventPrototype>())
-        {
-            _eventProtoIndex[proto.Trigger] = proto;
-        }
-
-        _statusScentProtos = _prototypes.EnumeratePrototypes<StatusScentPrototype>().ToList();
-    }
-
-    private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
-    {
-        if (!args.ByType.ContainsKey(typeof(ScentEventPrototype))
-            && !args.ByType.ContainsKey(typeof(StatusScentPrototype)))
-        {
-            return;
-        }
-
-        RebuildProtoCache();
-    }
-
-    private void OnErpInteractionPerformed(ErpInteractionPerformedEvent args)
-    {
-        if (string.IsNullOrEmpty(args.Trigger))
-            return;
-
-        // Ищем прототип-сопоставление по ключу события.
-        if (!_eventProtoIndex.TryGetValue(args.Trigger, out var eventProto))
-            return;
-
-        switch (eventProto.ApplyTo)
-        {
-            case ScentApplyTarget.Self:
-                TryApplyErpScent(args.User, eventProto);
-                break;
-            case ScentApplyTarget.User:
-                TryApplyErpScent(args.User, eventProto);
-                break;
-            case ScentApplyTarget.Target:
-                TryApplyErpScent(args.Target, eventProto);
-                break;
-            case ScentApplyTarget.Both:
-                TryApplyErpScent(args.User, eventProto);
-                TryApplyErpScent(args.Target, eventProto);
-                break;
-        }
-    }
-
-    private void TryApplyErpScent(EntityUid uid, ScentEventPrototype proto)
-    {
-        AddTemporaryScent(uid, proto.Scent, proto.Duration);
-    }
-
-    /// <summary>
-    /// Предмет-эмитор надет в слот одежды. Реагирует на режимы
-    /// SpecificSlot (проверяет нужный слот) и AnySlot. Для Hands — пропускает.
-    /// </summary>
-    private void OnScentEmitterEquipped(Entity<ScentEmitterComponent> ent, ref GotEquippedEvent args)
-    {
-        switch (ent.Comp.Spot)
-        {
-            case ScentEmitSpot.Hands:
-                return; // руки обрабатывает отдельное событие.
-            case ScentEmitSpot.SpecificSlot:
-                if (args.Slot != ent.Comp.Slot)
-                    return;
-                break;
-            case ScentEmitSpot.AnySlot:
-                break; // любой слот -> даём запах.
-        }
-
-        AddTemporaryScent(args.Equipee, ent.Comp.Scent, ent.Comp.Duration);
-    }
-
-    /// <summary>
-    /// Поднятие в руку: срабатывает для режимов Hands и AnySlot.
-    /// AnySlot нужен, чтобы предмет пах, лежа и просто в руке/кармане (не только в слотах одежды).
-    /// </summary>
-    private void OnScentEmitterPickedUp(EntityUid uid, ScentEmitterComponent comp, GotEquippedHandEvent args)
-    {
-        if (comp.Spot != ScentEmitSpot.Hands && comp.Spot != ScentEmitSpot.AnySlot)
-            return;
-
-        AddTemporaryScent(args.User, comp.Scent, comp.Duration);
-    }
-
-
-    /// <summary>
-    /// Существо получило урон: собственные раны пахнут кровью, а ушибы — «синяками».
-    /// Кровь — от порезов (Slash) и уколов (Piercing), синяк — от тупых ударов (Blunt).
-    /// Реагируем только на значимый накопленный урон (порог), чтобы игнорировать мелочь.
-    /// </summary>
-    private void OnDamageChanged(Entity<ScentComponent> ent, ref DamageChangedEvent args)
-    {
-        if (!args.DamageIncreased)
-            return;
-
-        var dict = args.Damageable.Damage.DamageDict;
-
-        // Порезы и уколы оставляют открытые раны, пахнущие кровью.
-        if ((dict.TryGetValue("Slash", out var slash) && slash > WoundScentThreshold)
-            || (dict.TryGetValue("Piercing", out var piercing) && piercing > WoundScentThreshold))
-        {
-            AddTemporaryScent(ent, "Blood", WoundScentDuration);
-        }
-
-        // Тупые удары оставляют синяки.
-        if (dict.TryGetValue("Blunt", out var blunt) && blunt > WoundScentThreshold)
-            AddTemporaryScent(ent, "Bruise", WoundScentDuration);
-
-        // Отравление: заметный накопленный яд даёт запах токсинов.
-        if (dict.TryGetValue("Poison", out var poison) && poison > PoisonScentThreshold)
-            AddTemporaryScent(ent, "Poison", WoundScentDuration);
-    }
-
-    /// <summary>
-    /// Жертва получила атаку ближнего боя (AttackedEvent рейзится на ней). Если она уже
-    /// в критическом состоянии — её добивают — атакующий получает запах чужой крови.
-    /// Работает с любым melee-оружием (лом, нож и т.п.); владелец — User события.
-    /// Повторные удары просто обновляют таймер одного запаха (AddTemporaryScent
-    /// перезаписывает, не дублирует).
-    /// </summary>
-    private void OnAttacked(EntityUid uid, ScentOnAttackedComponent component, AttackedEvent args)
-    {
-        // Жертва должна быть в критическом состоянии (её бьют на грани смерти).
-        if (TryComp<MobStateComponent>(uid, out var mobState)
-            && mobState.CurrentState != MobState.Critical)
-        {
-            return;
-        }
-
-        // Запах получает только носитель запахов (вульпканины и пр.).
-        if (!HasComp<ScentComponent>(args.User))
-            return;
-
-        AddTemporaryScent(args.User, OtherBloodScent, WoundScentDuration);
     }
 
     private void OnGetInteractionVerbs(
@@ -280,39 +76,6 @@ public sealed class SmellSystem : EntitySystem
 
         DoSmell(user, target);
         return true;
-    }
-
-    /// <summary>
-    /// Публичное API для источников (химия, курение, ERP): добавить временный запах.
-    /// Ленивая загрузка: только кладём запись, протухание вычисляем при запросе.
-    /// </summary>
-    public void AddTemporaryScent(EntityUid uid, ProtoId<ScentPrototype> scent, TimeSpan duration)
-    {
-        if (!TryComp<ScentComponent>(uid, out var scentComponent))
-            return;
-
-        // Перезапись: обновляем свежим появлением вместо дублирования одинаковых запахов.
-        // Интенсивность единая для всех источников — берётся из прототипа самого запаха.
-        for (int i = 0; i < scentComponent.TemporaryScents.Count; i++)
-        {
-            if (scentComponent.TemporaryScents[i].Scent == scent)
-            {
-                scentComponent.TemporaryScents[i] = new ActiveTemporaryScent
-                {
-                    Scent = scent,
-                    StartTime = _timing.CurTime,
-                    Duration = duration,
-                };
-                return;
-            }
-        }
-
-        scentComponent.TemporaryScents.Add(new ActiveTemporaryScent
-        {
-            Scent = scent,
-            StartTime = _timing.CurTime,
-            Duration = duration,
-        });
     }
 
     public bool CanSmell(EntityUid user, Entity<ScentComponent> target)
@@ -500,7 +263,7 @@ public sealed class SmellSystem : EntitySystem
         if (!HasComp<StatusEffectContainerComponent>(target))
             return;
 
-        foreach (var proto in _statusScentProtos)
+        foreach (var proto in _cache.StatusScentProtos)
         {
             if (!_statusEffects.TryGetTime(target, proto.StatusEffect, out var time))
                 continue;
