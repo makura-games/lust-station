@@ -334,6 +334,12 @@
     - SubdermalImplant
     - HideContextMenu
     - MicroBomb
+  # Lust-Edit — вживлённая микро-бомба пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: Gunpowder
+    duration: 300
+    intensity: 0.8
 
 
 - type: entity
@@ -377,6 +383,12 @@
       tags:
       - SubdermalImplant
       - HideContextMenu
+    # Lust-Edit — вживлённая макро-бомба пахнет порохом при носке.
+    - type: ScentEmitter
+      spot: AnySlot
+      scent: Gunpowder
+      duration: 300
+      intensity: 0.8
 
 - type: entity
   parent: BaseSubdermalImplant

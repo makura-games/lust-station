@@ -55,7 +55,7 @@
   - type: Construction
     graph: FireBomb
     node: firebomb
-  # Sunrise-Start
+  # Sunshine-Start
   - type: CartridgeAmmo
     proto: BulletFireBomb
     deleteOnSpawn: true
@@ -65,6 +65,12 @@
     - HandGrenadeAmmo
     - FireBomb
   # Sunrise-End
+  # Lust-Edit — самодельная бомба пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: Gunpowder
+    duration: 300
+    intensity: 0.8
 
 # has igniter but no fuel or wires
 - type: entity

@@ -60,6 +60,12 @@
     maxIntensity: 0.01
     intensitySlope: 1
     totalIntensity: 0.01
+  # Lust-Edit — петарда пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: Gunpowder
+    duration: 300
+    intensity: 0.8
 
 - type: entity
   parent: BaseStorageItem

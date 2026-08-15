@@ -34,6 +34,12 @@
         base:
           Primed: { state: primed }
           Unprimed: { state: icon }
+  # Lust-Edit — взрывчатые заряды пахнут порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: Gunpowder
+    duration: 300
+    intensity: 0.8
 
 - type: entity
   name: composition C-4

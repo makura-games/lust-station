@@ -4,6 +4,7 @@ using Content.Shared._Lust.Smell.Components;
 using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Examine;
+using Content.Shared.Hands;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
@@ -50,6 +51,10 @@ public sealed class SmellSystem : EntitySystem
 
         // Эмиторы запаха: предмет попал в нужный слот -> носитель получает запах.
         SubscribeLocalEvent<ScentEmitterComponent, GotEquippedEvent>(OnScentEmitterEquipped);
+
+        // Взятие в руки тоже активирует эмитор (закрывает карманы/рюкзак: положить
+        // куда-либо предмет можно только взяв его в руки).
+        SubscribeLocalEvent<ScentEmitterComponent, GotEquippedHandEvent>(OnScentEmitterPickedUp);
     }
 
     private void OnErpInteractionPerformed(ErpInteractionPerformedEvent args)
@@ -85,15 +90,36 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Предмет-эмитор (например горящая сигарета) оказался в нужном слоте.
-    /// Даём носителю временный запах из настроек компонента.
+    /// Предмет-эмитор надет в слот одежды. Реагирует на режимы
+    /// SpecificSlot (проверяет нужный слот) и AnySlot. Для Hands — пропускает.
     /// </summary>
     private void OnScentEmitterEquipped(Entity<ScentEmitterComponent> ent, ref GotEquippedEvent args)
     {
-        if (args.Slot != ent.Comp.Slot)
-            return;
+        switch (ent.Comp.Spot)
+        {
+            case ScentEmitSpot.Hands:
+                return; // руки обрабатывает отдельное событие.
+            case ScentEmitSpot.SpecificSlot:
+                if (args.Slot != ent.Comp.Slot)
+                    return;
+                break;
+            case ScentEmitSpot.AnySlot:
+                break; // любой слот -> даём запах.
+        }
 
         AddTemporaryScent(args.Equipee, ent.Comp.Scent, ent.Comp.Duration, ent.Comp.Intensity);
+    }
+
+    /// <summary>
+    /// Поднятие в руку: срабатывает для режимов Hands и AnySlot.
+    /// AnySlot нужен, чтобы предмет пах, лежа и просто в руке/кармане (не только в слотах одежды).
+    /// </summary>
+    private void OnScentEmitterPickedUp(EntityUid uid, ScentEmitterComponent comp, GotEquippedHandEvent args)
+    {
+        if (comp.Spot != ScentEmitSpot.Hands && comp.Spot != ScentEmitSpot.AnySlot)
+            return;
+
+        AddTemporaryScent(args.User, comp.Scent, comp.Duration, comp.Intensity);
     }
 
 

@@ -24,6 +24,11 @@
   color: "#696969"
 
 - type: scent
+  id: Gunpowder
+  description: scent-temp-gunpowder
+  color: "#3E3A35"
+
+- type: scent
   id: Arousal
   description: scent-temp-arousal
   color: "#FF69B4"

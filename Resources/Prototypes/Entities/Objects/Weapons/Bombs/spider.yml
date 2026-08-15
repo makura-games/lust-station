@@ -48,3 +48,9 @@
         base:
           Primed: { state: primed }
           Unprimed: { state: icon }
+  # Lust-Edit — заряд пауков пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: Gunpowder
+    duration: 300
+    intensity: 0.8

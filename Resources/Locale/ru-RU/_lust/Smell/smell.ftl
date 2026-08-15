@@ -5,6 +5,7 @@ scent-static-tobacco = сухой табак и смолистый дым
 
 scent-temp-alcohol = перегар и стойкий запах спиртного
 scent-temp-smoke = дым и горелая ткань
+scent-temp-gunpowder = порох и сера от взрывчатки
 scent-temp-arousal = возбуждение и тепло разгорячённого тела
 scent-temp-arousal-attractive = привлекательные феромоны и пьянящий запах возбуждения
 scent-temp-arousal-plain = запах феромонов возбуждения
