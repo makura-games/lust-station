@@ -13,4 +13,11 @@ public sealed partial class ScentComponent : Component
     [DataField]
     public ProtoId<PersonalScentProfilePrototype>? PersonalScentProfile;
 
+    /// <summary>
+    /// Временные запахи: события добавили запись, а протухание и силу
+    /// вычисляем лениво при запросе. Не сетевой — считается на сервере.
+    /// </summary>
+    [DataField]
+    public List<ActiveTemporaryScent> TemporaryScents = new();
+
 }

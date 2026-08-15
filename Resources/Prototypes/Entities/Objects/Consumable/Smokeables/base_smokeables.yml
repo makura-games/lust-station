@@ -20,6 +20,12 @@
     price: 5
   - type: InjectableSolution
     solution: smokable
+  # Lust-Edit — попадание в рот (mask) даёт носителю запах дыма.
+  - type: ScentEmitter
+    slot: mask
+    scent: Smoke
+    duration: 300
+    intensity: 0.8
 
 # Base for all cigars and cigarettes.
 - type: entity

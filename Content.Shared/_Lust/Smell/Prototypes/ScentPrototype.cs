@@ -10,4 +10,7 @@ public sealed partial class ScentPrototype : IPrototype
 
     [DataField(required: true)]
     public LocId Description { get; private set; } = default!;
+
+    [DataField]
+    public Color? Color { get; private set; }
 }

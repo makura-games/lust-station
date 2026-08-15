@@ -6,6 +6,7 @@ using Content.Shared._Sunrise.Aphrodisiac;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Components;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Prototypes;
 using Content.Shared._Sunrise.InteractionsPanel.Data.UI;
+using Content.Shared._Lust.Smell;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Clothing;
@@ -490,6 +491,13 @@ public partial class InteractionsPanel
         if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
             SpawnSemen("Semen", Transform(uid).Coordinates);
 
+        RaiseLocalEvent(new ErpInteractionPerformedEvent
+        {
+            User = uid,
+            Target = comp.CurrentTarget ?? uid,
+            Trigger = "orgasm",
+        }); // Lust-Edit
+
         SetCooldown(uid, "orgasm", TimeSpan.FromSeconds(OrgasmCooldownSeconds));
         Dirty(uid, comp);
     }
@@ -522,6 +530,14 @@ public partial class InteractionsPanel
             var newComp = AddComp<LoveVisionComponent>(uid);
             newComp.FromLoveSystem = true;
             Dirty(uid, newComp);
+
+            // Запах возбуждения на самом себе: тело нюхает собственное возбуждение.
+            RaiseLocalEvent(new ErpInteractionPerformedEvent
+            {
+                User = uid,
+                Target = uid,
+                Trigger = "arousal",
+            }); // Lust-Edit
         }
         else if (ratio < 0.33f && TryComp<LoveVisionComponent>(uid, out var loveVision) && loveVision.FromLoveSystem)
         {

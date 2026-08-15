@@ -1,11 +1,44 @@
 ﻿- type: scent
   id: Whiskey
   description: scent-static-whiskey
+  color: "#8B5A2B"
 
 - type: scent
   id: FriedMeat
   description: scent-static-fried-meat
+  color: "#8B4513"
 
 - type: scent
   id: NpcVulpkanin
   description: scent-static-npc-vulpkanin
+  color: "#D2B48C"
+
+- type: scent
+  id: Alcohol
+  description: scent-temp-alcohol
+  color: "#F5DEB3"
+
+- type: scent
+  id: Smoke
+  description: scent-temp-smoke
+  color: "#696969"
+
+- type: scent
+  id: Arousal
+  description: scent-temp-arousal
+  color: "#FF69B4"
+
+- type: scent
+  id: Orgasm
+  description: scent-temp-orgasm
+  color: "#FF1493"
+
+- type: scent
+  id: Blood
+  description: scent-temp-blood
+  color: "#8B0000"
+
+- type: scent
+  id: Tobacco
+  description: scent-static-tobacco
+  color: "#556B2F"

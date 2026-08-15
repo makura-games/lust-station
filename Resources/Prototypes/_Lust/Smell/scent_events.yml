@@ -1,0 +1,15 @@
+- type: scentEvent
+  id: ErpOrgasm
+  trigger: orgasm
+  scent: Orgasm
+  duration: 300
+  intensity: 1.0
+  applyTo: both
+
+- type: scentEvent
+  id: ErpArousal
+  trigger: arousal
+  scent: Arousal
+  duration: 120
+  intensity: 0.7
+  applyTo: self
