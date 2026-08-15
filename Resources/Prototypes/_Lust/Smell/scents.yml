@@ -49,6 +49,21 @@
   color: "#6A5ACD"
 
 - type: scent
+  id: Poison
+  description: scent-temp-poison
+  color: "#556B2F"
+
+- type: scent
+  id: Drug
+  description: scent-temp-drug
+  color: "#7B68EE"
+
+- type: scent
+  id: Stimulant
+  description: scent-temp-stimulant
+  color: "#00CED1"
+
+- type: scent
   id: Tobacco
   description: scent-static-tobacco
   color: "#556B2F"

@@ -10,6 +10,7 @@ using Content.Shared.Hands;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
+using Content.Shared.StatusEffectNew;
 using Content.Shared.Verbs;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
@@ -26,6 +27,7 @@ public sealed class SmellSystem : EntitySystem
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
 
     /// <summary>
     /// Прототип запаха возбуждения — для него текст зависит от притяжения пары.
@@ -39,6 +41,11 @@ public sealed class SmellSystem : EntitySystem
     private const int WoundScentThreshold = 10;
 
     /// <summary>
+    /// Порог накопленного яда (Poison), при котором становится заметен запах токсинов.
+    /// </summary>
+    private const int PoisonScentThreshold = 50;
+
+    /// <summary>
     /// Параметры временного запаха от ран.
     /// </summary>
     private static readonly TimeSpan WoundScentDuration = TimeSpan.FromSeconds(300);
@@ -49,6 +56,11 @@ public sealed class SmellSystem : EntitySystem
     /// </summary>
     private readonly Dictionary<string, ScentEventPrototype> _eventProtoIndex = new();
 
+    /// <summary>
+    /// Все маппинги статус-эффект->запах из YAML (statusScent).
+    /// </summary>
+    private List<StatusScentPrototype> _statusScentProtos = new();
+
     public override void Initialize()
     {
         // Собираем индекс всех событие->запах из прототипов (гибко: новые источники в YAML,
@@ -57,6 +69,8 @@ public sealed class SmellSystem : EntitySystem
         {
             _eventProtoIndex[proto.Trigger] = proto;
         }
+
+        _statusScentProtos = _prototypes.EnumeratePrototypes<StatusScentPrototype>().ToList();
 
         SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
 
@@ -162,6 +176,10 @@ public sealed class SmellSystem : EntitySystem
         // Тупые удары оставляют синяки.
         if (dict.TryGetValue("Blunt", out var blunt) && blunt > WoundScentThreshold)
             AddTemporaryScent(ent, "Bruise", WoundScentDuration, WoundScentIntensity);
+
+        // Отравление: заметный накопленный яд даёт запах токсинов.
+        if (dict.TryGetValue("Poison", out var poison) && poison > PoisonScentThreshold)
+            AddTemporaryScent(ent, "Poison", WoundScentDuration, WoundScentIntensity);
     }
 
 
@@ -391,6 +409,10 @@ public sealed class SmellSystem : EntitySystem
             result.Add((GetScentStrength(ratio), entry.Intensity, GetTemporaryScentText(user, target, entry)));
         }
 
+        // Запахи состояний (пьянство, наркотрип): проверяются лениво по активным
+        // статус-эффектам носителя. Сила — по положению внутри времени эффекта.
+        AddStatusScents(target, result);
+
         // Свежие (сильные) группы раньше, внутри группы — по убыванию интенсивности.
         result.Sort((a, b) =>
         {
@@ -399,6 +421,61 @@ public sealed class SmellSystem : EntitySystem
         });
 
         return result;
+    }
+
+    /// <summary>
+    /// Для каждого статус-запаха из YAML проверяет, активен ли соответствующий
+    /// статус-эффект у носителя, и добавляет запах. Сила (Strong/Medium/Faint) —
+    /// по положению внутри длительности эффекта: чем дальше до конца, тем сильнее.
+    /// Нормируем по реальной длительности эффекта, а не по фиксированному порогу.
+    /// </summary>
+    private void AddStatusScents(Entity<ScentComponent> target, List<(ScentStrength group, float intensity, string text)> result)
+    {
+        var now = _timing.CurTime;
+
+        foreach (var proto in _statusScentProtos)
+        {
+            if (!_statusEffects.TryGetTime(target, proto.StatusEffect, out var time))
+                continue;
+
+            // Эффект без конечного времени считается длящимся бесконечно -> полная сила.
+            if (time.EndEffectTime is not { } endTime)
+            {
+                var scentEndless = _prototypes.Index<ScentPrototype>(proto.Scent);
+                result.Add((ScentStrength.Strong, 1f, Loc.GetString(scentEndless.Description)));
+                continue;
+            }
+
+            var remaining = endTime - now;
+            if (remaining <= TimeSpan.Zero)
+                continue; // эффект уже фактически истёк.
+
+            // Длительность эффекта; если она неизвестна (0), считаем эффект сильным.
+            var total = endTime - time.StartEffectTime!.Value;
+            if (total <= TimeSpan.Zero)
+            {
+                var scentFullyStrong = _prototypes.Index<ScentPrototype>(proto.Scent);
+                result.Add((ScentStrength.Strong, 1f, Loc.GetString(scentFullyStrong.Description)));
+                continue;
+            }
+
+            // Чем больше осталось до конца, тем выше ratio (0 = конец, 1 = начало).
+            var ratio = (float) Math.Clamp(remaining.TotalSeconds / total.TotalSeconds, 0.0, 1.0);
+            var scent = _prototypes.Index<ScentPrototype>(proto.Scent);
+            var strength = GetScentStrength(1f - ratio);
+
+            // Короткий эффект не должен вонять сильно: его максимум — Medium, и чем короче,
+            // тем слабее даже на пике (плавное затухание от Strong к Medium по длительности).
+            if (proto.MinDurationForStrong > TimeSpan.Zero)
+            {
+                var durationScale = (float) Math.Clamp(
+                    total.TotalSeconds / proto.MinDurationForStrong.TotalSeconds, 0.0, 1.0);
+                if (strength == ScentStrength.Strong && durationScale < 1f)
+                    strength = durationScale >= 0.5f ? ScentStrength.Medium : ScentStrength.Faint;
+            }
+
+            result.Add((strength, 1f, Loc.GetString(scent.Description)));
+        }
     }
 
     /// <summary>
