@@ -22,16 +22,19 @@
   id: Smoke
   description: scent-temp-smoke
   color: "#696969"
+  intensity: 0.8
 
 - type: scent
   id: Gunpowder
   description: scent-temp-gunpowder
   color: "#3E3A35"
+  intensity: 0.8
 
 - type: scent
   id: Arousal
   description: scent-temp-arousal
   color: "#FF69B4"
+  intensity: 0.7
 
 - type: scent
   id: Orgasm
@@ -42,6 +45,7 @@
   id: Blood
   description: scent-temp-blood
   color: "#8B0000"
+  intensity: 0.8
 
 - type: scent
   id: OtherBlood
@@ -52,11 +56,13 @@
   id: Bruise
   description: scent-temp-bruise
   color: "#6A5ACD"
+  intensity: 0.8
 
 - type: scent
   id: Poison
   description: scent-temp-poison
   color: "#556B2F"
+  intensity: 0.8
 
 - type: scent
   id: Drug

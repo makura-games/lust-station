@@ -25,7 +25,6 @@
     slot: mask
     scent: Smoke
     duration: 300
-    intensity: 0.8
 
 # Base for all cigars and cigarettes.
 - type: entity

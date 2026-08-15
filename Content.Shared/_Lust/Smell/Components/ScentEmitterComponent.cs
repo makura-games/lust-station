@@ -34,12 +34,6 @@ public sealed partial class ScentEmitterComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan Duration = TimeSpan.FromSeconds(300);
-
-    /// <summary>
-    /// Начальная сила запаха 0..1.
-    /// </summary>
-    [DataField]
-    public float Intensity = 0.8f;
 }
 
 /// <summary>

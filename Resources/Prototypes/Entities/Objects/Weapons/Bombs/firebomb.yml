@@ -70,7 +70,6 @@
     spot: AnySlot
     scent: Gunpowder
     duration: 300
-    intensity: 0.8
 
 # has igniter but no fuel or wires
 - type: entity

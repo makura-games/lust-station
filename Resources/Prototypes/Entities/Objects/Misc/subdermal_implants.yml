@@ -339,7 +339,6 @@
     spot: AnySlot
     scent: Gunpowder
     duration: 300
-    intensity: 0.8
 
 
 - type: entity
@@ -388,7 +387,6 @@
       spot: AnySlot
       scent: Gunpowder
       duration: 300
-      intensity: 0.8
 
 - type: entity
   parent: BaseSubdermalImplant

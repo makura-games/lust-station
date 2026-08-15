@@ -13,6 +13,7 @@ using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.StatusEffectNew;
+using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Enums;
@@ -52,13 +53,11 @@ public sealed class SmellSystem : EntitySystem
     /// Параметры временного запаха от ран.
     /// </summary>
     private static readonly TimeSpan WoundScentDuration = TimeSpan.FromSeconds(300);
-    private const float WoundScentIntensity = 0.8f;
 
     /// <summary>
     /// Запах чужой крови: выдаётся наносящему melee-удар по цели в критическом состоянии.
     /// </summary>
     private const string OtherBloodScent = "OtherBlood";
-    private const float OtherBloodScentIntensity = 1f;
 
     /// <summary>
     /// Сопоставление trigger -> ScentEventPrototype, собранное один раз из YAML.
@@ -133,7 +132,7 @@ public sealed class SmellSystem : EntitySystem
 
     private void TryApplyErpScent(EntityUid uid, ScentEventPrototype proto)
     {
-        AddTemporaryScent(uid, proto.Scent, proto.Duration, proto.Intensity);
+        AddTemporaryScent(uid, proto.Scent, proto.Duration);
     }
 
     /// <summary>
@@ -154,7 +153,7 @@ public sealed class SmellSystem : EntitySystem
                 break; // любой слот -> даём запах.
         }
 
-        AddTemporaryScent(args.Equipee, ent.Comp.Scent, ent.Comp.Duration, ent.Comp.Intensity);
+        AddTemporaryScent(args.Equipee, ent.Comp.Scent, ent.Comp.Duration);
     }
 
     /// <summary>
@@ -166,7 +165,7 @@ public sealed class SmellSystem : EntitySystem
         if (comp.Spot != ScentEmitSpot.Hands && comp.Spot != ScentEmitSpot.AnySlot)
             return;
 
-        AddTemporaryScent(args.User, comp.Scent, comp.Duration, comp.Intensity);
+        AddTemporaryScent(args.User, comp.Scent, comp.Duration);
     }
 
 
@@ -186,16 +185,16 @@ public sealed class SmellSystem : EntitySystem
         if ((dict.TryGetValue("Slash", out var slash) && slash > WoundScentThreshold)
             || (dict.TryGetValue("Piercing", out var piercing) && piercing > WoundScentThreshold))
         {
-            AddTemporaryScent(ent, "Blood", WoundScentDuration, WoundScentIntensity);
+            AddTemporaryScent(ent, "Blood", WoundScentDuration);
         }
 
         // Тупые удары оставляют синяки.
         if (dict.TryGetValue("Blunt", out var blunt) && blunt > WoundScentThreshold)
-            AddTemporaryScent(ent, "Bruise", WoundScentDuration, WoundScentIntensity);
+            AddTemporaryScent(ent, "Bruise", WoundScentDuration);
 
         // Отравление: заметный накопленный яд даёт запах токсинов.
         if (dict.TryGetValue("Poison", out var poison) && poison > PoisonScentThreshold)
-            AddTemporaryScent(ent, "Poison", WoundScentDuration, WoundScentIntensity);
+            AddTemporaryScent(ent, "Poison", WoundScentDuration);
     }
 
     /// <summary>
@@ -218,7 +217,7 @@ public sealed class SmellSystem : EntitySystem
         if (!HasComp<ScentComponent>(args.User))
             return;
 
-        AddTemporaryScent(args.User, OtherBloodScent, WoundScentDuration, OtherBloodScentIntensity);
+        AddTemporaryScent(args.User, OtherBloodScent, WoundScentDuration);
     }
 
     private void OnGetInteractionVerbs(
@@ -262,12 +261,13 @@ public sealed class SmellSystem : EntitySystem
     /// Публичное API для источников (химия, курение, ERP): добавить временный запах.
     /// Ленивая загрузка: только кладём запись, протухание вычисляем при запросе.
     /// </summary>
-    public void AddTemporaryScent(EntityUid uid, ProtoId<ScentPrototype> scent, TimeSpan duration, float intensity = 1f)
+    public void AddTemporaryScent(EntityUid uid, ProtoId<ScentPrototype> scent, TimeSpan duration)
     {
         if (!TryComp<ScentComponent>(uid, out var scentComponent))
             return;
 
         // Перезапись: обновляем свежим появлением вместо дублирования одинаковых запахов.
+        // Интенсивность единая для всех источников — берётся из прототипа самого запаха.
         for (int i = 0; i < scentComponent.TemporaryScents.Count; i++)
         {
             if (scentComponent.TemporaryScents[i].Scent == scent)
@@ -277,7 +277,6 @@ public sealed class SmellSystem : EntitySystem
                     Scent = scent,
                     StartTime = _timing.CurTime,
                     Duration = duration,
-                    Intensity = intensity,
                 };
                 return;
             }
@@ -288,7 +287,6 @@ public sealed class SmellSystem : EntitySystem
             Scent = scent,
             StartTime = _timing.CurTime,
             Duration = duration,
-            Intensity = intensity,
         });
     }
 
@@ -314,7 +312,7 @@ public sealed class SmellSystem : EntitySystem
         foreach (ProtoId<ScentPrototype> scentId in target.Comp.BaseScents)
         {
             ScentPrototype scent = _prototypes.Index<ScentPrototype>(scentId);
-            staticNotes.Add(Loc.GetString(scent.Description));
+            staticNotes.Add(GetScentDescription(scent));
         }
 
         ScentSignature? signature = GetPersonalSignature(target);
@@ -444,7 +442,8 @@ public sealed class SmellSystem : EntitySystem
 
             var age = now - entry.StartTime;
             var ratio = (float) (age / entry.Duration);
-            result.Add((GetScentStrength(ratio), entry.Intensity, GetTemporaryScentText(user, target, entry)));
+            var scentProto = _prototypes.Index<ScentPrototype>(entry.Scent);
+            result.Add((GetScentStrength(ratio), scentProto.Intensity, GetTemporaryScentText(user, target, entry)));
         }
 
         // Запахи состояний (пьянство, наркотрип): проверяются лениво по активным
@@ -471,6 +470,11 @@ public sealed class SmellSystem : EntitySystem
     {
         var now = _timing.CurTime;
 
+        // У цели нет контейнера статус-эффектов -> ничего не проверяем (иначе TryGetTime
+        // логирует ошибку Resolve на каждую итерацию для сущностей без StatusEffectContainer).
+        if (!HasComp<StatusEffectContainerComponent>(target))
+            return;
+
         foreach (var proto in _statusScentProtos)
         {
             if (!_statusEffects.TryGetTime(target, proto.StatusEffect, out var time))
@@ -480,7 +484,7 @@ public sealed class SmellSystem : EntitySystem
             if (time.EndEffectTime is not { } endTime)
             {
                 var scentEndless = _prototypes.Index<ScentPrototype>(proto.Scent);
-                result.Add((ScentStrength.Strong, 1f, Loc.GetString(scentEndless.Description)));
+                result.Add((ScentStrength.Strong, scentEndless.Intensity, GetScentDescription(scentEndless)));
                 continue;
             }
 
@@ -493,7 +497,7 @@ public sealed class SmellSystem : EntitySystem
             if (total <= TimeSpan.Zero)
             {
                 var scentFullyStrong = _prototypes.Index<ScentPrototype>(proto.Scent);
-                result.Add((ScentStrength.Strong, 1f, Loc.GetString(scentFullyStrong.Description)));
+                result.Add((ScentStrength.Strong, scentFullyStrong.Intensity, GetScentDescription(scentFullyStrong)));
                 continue;
             }
 
@@ -512,7 +516,7 @@ public sealed class SmellSystem : EntitySystem
                     strength = durationScale >= 0.5f ? ScentStrength.Medium : ScentStrength.Faint;
             }
 
-            result.Add((strength, 1f, Loc.GetString(scent.Description)));
+            result.Add((strength, scent.Intensity, GetScentDescription(scent)));
         }
     }
 
@@ -528,12 +532,22 @@ public sealed class SmellSystem : EntitySystem
         if (entry.Scent == ArousalScent)
         {
             bool attractive = IsAttractive(user, target.Owner);
-            return Loc.GetString(attractive
+            return GetScentDescription(scent, attractive
                 ? "scent-temp-arousal-attractive"
                 : "scent-temp-arousal-plain");
         }
 
-        return Loc.GetString(scent.Description);
+        return GetScentDescription(scent);
+    }
+
+    /// <summary>
+    /// Возвращает локализованное описание запаха, обёрнутое в жирный шрифт,
+    /// если у прототипа запаха стоит настройка Fat (акцентный/резкий запах).
+    /// </summary>
+    private string GetScentDescription(ScentPrototype scent, LocId? descriptionOverride = null)
+    {
+        var text = Loc.GetString(descriptionOverride ?? scent.Description);
+        return scent.Fat ? $"[bold]{text}[/bold]" : text;
     }
 
     /// <summary>

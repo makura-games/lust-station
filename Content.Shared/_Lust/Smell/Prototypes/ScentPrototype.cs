@@ -13,4 +13,17 @@ public sealed partial class ScentPrototype : IPrototype
 
     [DataField]
     public Color? Color { get; private set; }
+
+    /// <summary>
+    /// Интенсивность запаха 0..1 — единая для всех источников этого запаха
+    /// (раньше задавалась в каждом источнике, теперь живёт в самом прототипе).
+    /// </summary>
+    [DataField]
+    public float Intensity { get; private set; } = 1f;
+
+    /// <summary>
+    /// Выводить описание этого запаха жирным шрифтом (акцентный/резкий запах).
+    /// </summary>
+    [DataField]
+    public bool Fat { get; private set; }
 }

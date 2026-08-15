@@ -32,12 +32,6 @@ public sealed partial class ScentEventPrototype : IPrototype
     public TimeSpan Duration { get; private set; }
 
     /// <summary>
-    /// Начальная сила запаха 0..1.
-    /// </summary>
-    [DataField]
-    public float Intensity { get; private set; } = 1f;
-
-    /// <summary>
     /// К кому применяется запах: user / target / both.
     /// У trigger-ивентов, где двух участников нет, это "self".
     /// </summary>

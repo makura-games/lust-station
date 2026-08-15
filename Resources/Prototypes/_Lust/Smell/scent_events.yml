@@ -3,7 +3,6 @@
   trigger: orgasm
   scent: Orgasm
   duration: 300
-  intensity: 1.0
   applyTo: both
 
 - type: scentEvent
@@ -11,5 +10,4 @@
   trigger: arousal
   scent: Arousal
   duration: 120
-  intensity: 0.7
   applyTo: self

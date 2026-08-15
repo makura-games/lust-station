@@ -20,14 +20,9 @@ public sealed partial class ActiveTemporaryScent
     public TimeSpan StartTime;
 
     /// <summary>
-    /// Сколько всего времени запах живёт.
+    /// Длительность действия временного запаха: у каждого источника своя.
+    /// Интенсивность берётся из прототипа самого запаха (единая для всех источников).
     /// </summary>
     [DataField]
     public TimeSpan Duration;
-
-    /// <summary>
-    /// Исходная сила запаха 0..1. Определяет порядок внутри группы силы.
-    /// </summary>
-    [DataField]
-    public float Intensity = 1f;
 }
