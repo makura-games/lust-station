@@ -1,6 +1,4 @@
-﻿using Content.Shared._Lust.Smell.Prototypes;
-using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
+﻿using Robust.Shared.GameStates;
 
 namespace Content.Shared._Lust.Smell.Components;
 
@@ -8,10 +6,5 @@ namespace Content.Shared._Lust.Smell.Components;
 public sealed partial class SmellComponent : Component
 {
     [DataField, AutoNetworkedField]
-    public List<ProtoId<ScentPrototype>> BaseScents = new();
-
-    [DataField]
     public bool SmellBlocked = false;
-
-
 }
