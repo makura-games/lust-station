@@ -117,6 +117,10 @@
   id: MobDamageable
   abstract: true
   components:
+  # Lust-Start: маркер-ключ для локальной системы запахов (см. SmellSystem).
+  # Позволяет детектить melee-атаки по живому без занятия общих пар подписки.
+  - type: ScentOnAttacked
+  # Lust-End
   - type: Damageable
     damageContainer: Biological
   - type: Destructible

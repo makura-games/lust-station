@@ -10,8 +10,11 @@ using Content.Shared.Hands;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Components;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Enums;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -52,6 +55,12 @@ public sealed class SmellSystem : EntitySystem
     private const float WoundScentIntensity = 0.8f;
 
     /// <summary>
+    /// Запах чужой крови: выдаётся наносящему melee-удар по цели в критическом состоянии.
+    /// </summary>
+    private const string OtherBloodScent = "OtherBlood";
+    private const float OtherBloodScentIntensity = 1f;
+
+    /// <summary>
     /// Сопоставление trigger -> ScentEventPrototype, собранное один раз из YAML.
     /// </summary>
     private readonly Dictionary<string, ScentEventPrototype> _eventProtoIndex = new();
@@ -86,6 +95,13 @@ public sealed class SmellSystem : EntitySystem
 
         // Урон: существо пахнет кровью/ушибами собственных ран.
         SubscribeLocalEvent<ScentComponent, DamageChangedEvent>(OnDamageChanged);
+
+        // Получение атаки ближнего боя по жертве в критическом состоянии: атакующему — запах
+        // чужой крови. AttackedEvent рейзится направленно на жертве (broadcast=false), поэтому
+        // подписка идёт на наш маркер ScentOnAttacked (наследуется от базового предка живых
+        // MobDamageable), а не на общие пары вроде (MobStateComponent, AttackedEvent), чтобы
+        // не занимать пару, которую может захотеть апстрим-контент. Владелец — args.User.
+        SubscribeLocalEvent<ScentOnAttackedComponent, AttackedEvent>(OnAttacked);
     }
 
     private void OnErpInteractionPerformed(ErpInteractionPerformedEvent args)
@@ -182,6 +198,28 @@ public sealed class SmellSystem : EntitySystem
             AddTemporaryScent(ent, "Poison", WoundScentDuration, WoundScentIntensity);
     }
 
+    /// <summary>
+    /// Жертва получила атаку ближнего боя (AttackedEvent рейзится на ней). Если она уже
+    /// в критическом состоянии — её добивают — атакующий получает запах чужой крови.
+    /// Работает с любым melee-оружием (лом, нож и т.п.); владелец — User события.
+    /// Повторные удары просто обновляют таймер одного запаха (AddTemporaryScent
+    /// перезаписывает, не дублирует).
+    /// </summary>
+    private void OnAttacked(EntityUid uid, ScentOnAttackedComponent component, AttackedEvent args)
+    {
+        // Жертва должна быть в критическом состоянии (её бьют на грани смерти).
+        if (TryComp<MobStateComponent>(uid, out var mobState)
+            && mobState.CurrentState != MobState.Critical)
+        {
+            return;
+        }
+
+        // Запах получает только носитель запахов (вульпканины и пр.).
+        if (!HasComp<ScentComponent>(args.User))
+            return;
+
+        AddTemporaryScent(args.User, OtherBloodScent, WoundScentDuration, OtherBloodScentIntensity);
+    }
 
     private void OnGetInteractionVerbs(
         Entity<ScentComponent> target,

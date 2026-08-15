@@ -44,6 +44,11 @@
   color: "#8B0000"
 
 - type: scent
+  id: OtherBlood
+  description: scent-temp-other-blood
+  color: "#A52A2A"
+
+- type: scent
   id: Bruise
   description: scent-temp-bruise
   color: "#6A5ACD"

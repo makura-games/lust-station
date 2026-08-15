@@ -11,6 +11,7 @@ scent-temp-arousal-attractive = привлекательные феромоны 
 scent-temp-arousal-plain = запах феромонов возбуждения
 scent-temp-orgasm = смесь запахов феромонов и телестных жидкостей
 scent-temp-blood = железный привкус крови
+scent-temp-other-blood = чужая кровь и брызги от ударов по раненому
 scent-temp-bruise = сырой запах ушибов и заживающих тканей
 scent-temp-poison = горький металлический запах яда и токсинов
 scent-temp-drug = приторный химический запах наркотиков и психоделиков
