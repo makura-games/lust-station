@@ -44,6 +44,11 @@
   color: "#8B0000"
 
 - type: scent
+  id: Bruise
+  description: scent-temp-bruise
+  color: "#6A5ACD"
+
+- type: scent
   id: Tobacco
   description: scent-static-tobacco
   color: "#556B2F"

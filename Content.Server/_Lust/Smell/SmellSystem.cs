@@ -3,6 +3,8 @@ using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Humanoid;
@@ -31,6 +33,18 @@ public sealed class SmellSystem : EntitySystem
     private const string ArousalScent = "Arousal";
 
     /// <summary>
+    /// Минимальный накопленный урон конкретного типа, чтобы существо источало запах
+    /// своих ран (меньше — микро-царапины, раной не пахнет).
+    /// </summary>
+    private const int WoundScentThreshold = 10;
+
+    /// <summary>
+    /// Параметры временного запаха от ран.
+    /// </summary>
+    private static readonly TimeSpan WoundScentDuration = TimeSpan.FromSeconds(300);
+    private const float WoundScentIntensity = 0.8f;
+
+    /// <summary>
     /// Сопоставление trigger -> ScentEventPrototype, собранное один раз из YAML.
     /// </summary>
     private readonly Dictionary<string, ScentEventPrototype> _eventProtoIndex = new();
@@ -55,6 +69,9 @@ public sealed class SmellSystem : EntitySystem
         // Взятие в руки тоже активирует эмитор (закрывает карманы/рюкзак: положить
         // куда-либо предмет можно только взяв его в руки).
         SubscribeLocalEvent<ScentEmitterComponent, GotEquippedHandEvent>(OnScentEmitterPickedUp);
+
+        // Урон: существо пахнет кровью/ушибами собственных ран.
+        SubscribeLocalEvent<ScentComponent, DamageChangedEvent>(OnDamageChanged);
     }
 
     private void OnErpInteractionPerformed(ErpInteractionPerformedEvent args)
@@ -120,6 +137,31 @@ public sealed class SmellSystem : EntitySystem
             return;
 
         AddTemporaryScent(args.User, comp.Scent, comp.Duration, comp.Intensity);
+    }
+
+
+    /// <summary>
+    /// Существо получило урон: собственные раны пахнут кровью, а ушибы — «синяками».
+    /// Кровь — от порезов (Slash) и уколов (Piercing), синяк — от тупых ударов (Blunt).
+    /// Реагируем только на значимый накопленный урон (порог), чтобы игнорировать мелочь.
+    /// </summary>
+    private void OnDamageChanged(Entity<ScentComponent> ent, ref DamageChangedEvent args)
+    {
+        if (!args.DamageIncreased)
+            return;
+
+        var dict = args.Damageable.Damage.DamageDict;
+
+        // Порезы и уколы оставляют открытые раны, пахнущие кровью.
+        if ((dict.TryGetValue("Slash", out var slash) && slash > WoundScentThreshold)
+            || (dict.TryGetValue("Piercing", out var piercing) && piercing > WoundScentThreshold))
+        {
+            AddTemporaryScent(ent, "Blood", WoundScentDuration, WoundScentIntensity);
+        }
+
+        // Тупые удары оставляют синяки.
+        if (dict.TryGetValue("Blunt", out var blunt) && blunt > WoundScentThreshold)
+            AddTemporaryScent(ent, "Bruise", WoundScentDuration, WoundScentIntensity);
     }
 
 
