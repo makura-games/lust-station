@@ -1,11 +1,14 @@
 ﻿using System.Linq;
+using Content.Server.Popups;
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Clothing.Components;
 using Content.Shared.Examine;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
+using Content.Shared.Inventory;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared.Verbs;
@@ -30,6 +33,8 @@ public sealed class SmellSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SmellPrototypeCacheSystem _cache = default!;
+    [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly PopupSystem _popupSystem = default!;
 
     /// <summary>
     /// Прототип запаха возбуждения — для него текст зависит от притяжения пары.
@@ -72,7 +77,19 @@ public sealed class SmellSystem : EntitySystem
     public bool TrySmell(EntityUid user, Entity<ScentComponent> target)
     {
         if (!CanSmell(user, target))
+        {
+            // Показать причину, если запах не уловить из-за экипировки.
+            if (IsMaskEquipped(user) || IsHardsuitSealed(user))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-gear"), user, user);
+            }
+            else if (IsHardsuitSealed(target))
+            {
+                _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-target-gear"), user, user);
+            }
+
             return false;
+        }
 
         DoSmell(user, target);
         return true;
@@ -86,10 +103,52 @@ public sealed class SmellSystem : EntitySystem
             return false;
         }
 
+        // Нюхающий в маске (не опущенной) или с закрытым шлемом — нюхать не может.
+        if (IsMaskEquipped(user) || IsHardsuitSealed(user))
+            return false;
+
+        // Цель в герметичном скафандре с закрытым шлемом — её запах не почувствовать.
+        if (IsHardsuitSealed(target))
+            return false;
+
         if (!_actionBlocker.CanInteract(user, target))
             return false;
 
         return _interaction.InRangeUnobstructed(user, target.Owner);
+    }
+
+    /// <summary>
+    /// Есть ли надетый и не опущенный предмет в слоте маски. Опущенная маска
+    /// (MaskComponent.IsToggled) не закрывает нос и нюхать не мешает.
+    /// </summary>
+    private bool IsMaskEquipped(EntityUid uid)
+    {
+        if (!_inventory.TryGetSlotEntity(uid, "mask", out var maskEntity))
+            return false;
+
+        return TryComp<MaskComponent>(maskEntity, out var mask)
+            && !mask.IsToggled;
+    }
+
+    /// <summary>
+    /// Носит ли сущность герметичный скафандр с закрытым шлемом. Проверяем, что
+    /// на слоте outerClothing есть скафандр (ToggleableClothing), а в слоте head
+    /// надет его шлем (AttachedClothing, ссылающийся на этот скафандр).
+    /// </summary>
+    private bool IsHardsuitSealed(EntityUid uid)
+    {
+        if (!_inventory.TryGetSlotEntity(uid, "outerClothing", out var suitEntity))
+            return false;
+
+        // Без скафандра шлем-партнёр бессмысленен: он лишь отключает шлем.
+        if (!HasComp<ToggleableClothingComponent>(suitEntity))
+            return false;
+
+        if (!_inventory.TryGetSlotEntity(uid, "head", out var helmetEntity))
+            return false;
+
+        return TryComp<AttachedClothingComponent>(helmetEntity, out var attached)
+            && attached.AttachedUid == suitEntity;
     }
 
     private void DoSmell(EntityUid user, Entity<ScentComponent> target)

@@ -32,6 +32,8 @@ smell-strength-faint = Едва уловимы: {$notes}.
 smell-result-personal = [color={$color}]Индивидуальный запах: {$notes}.[/color]
 smell-result-none = Вы не улавливаете выраженного запаха.
 smell-result-masked = Вы чувствуете сильный запах чего-то, но не можете разобрать деталей.
+smell-blocked-by-gear = У вас не получилось уловить запахи — ваша маска или шлем мешают.
+smell-blocked-by-target-gear = У вас не получилось уловить запахи — герметичный скафандр цели скрывает её запах.
 
 
 
