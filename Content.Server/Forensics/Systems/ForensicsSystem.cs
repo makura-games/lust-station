@@ -22,6 +22,7 @@ using Robust.Shared.Random;
 using Content.Shared.Verbs;
 using Robust.Shared.Utility;
 using Content.Shared.Hands.Components;
+using Content.Shared._Lust.Smell.Components; // Lust edit
 
 namespace Content.Server.Forensics
 {
@@ -215,16 +216,23 @@ namespace Content.Server.Forensics
         /// <returns>True if the target can be cleaned and has some sort of DNA or fingerprints / fibers and false otherwise.</returns>
         public bool TryStartCleaning(Entity<CleansForensicsComponent> cleanForensicsEntity, EntityUid user, EntityUid target)
         {
-            if (!TryComp<ForensicsComponent>(target, out var forensicsComp))
+            // Lust edit start - носитель запахов (вульпканины и пр.) можно «мыть» мылом даже без
+            // ForensicsComponent: так смываются временные запахи и обновляется маска.
+            var hasScents = TryComp<ScentComponent>(target, out _);
+
+            if (!TryComp<ForensicsComponent>(target, out var forensicsComp) && !hasScents)
             {
                 _popupSystem.PopupEntity(Loc.GetString("forensics-cleaning-cannot-clean", ("target", target)), user, user, PopupType.MediumCaution);
                 return false;
             }
 
-            var totalPrintsAndFibers = forensicsComp.Fingerprints.Count + forensicsComp.Fibers.Count;
-            var hasRemovableDNA = forensicsComp.DNAs.Count > 0 && forensicsComp.CanDnaBeCleaned;
+            var hasCleanableScents = hasScents;
 
-            if (hasRemovableDNA || totalPrintsAndFibers > 0)
+            var totalPrintsAndFibers = forensicsComp?.Fingerprints.Count + forensicsComp?.Fibers.Count ?? 0;
+            var hasRemovableDNA = forensicsComp is { DNAs.Count: > 0 } && forensicsComp.CanDnaBeCleaned;
+
+            if (hasRemovableDNA || totalPrintsAndFibers > 0 || hasCleanableScents)
+            // Lust edit end
             {
                 var cleanDelay = cleanForensicsEntity.Comp.CleanDelay;
                 var doAfterArgs = new DoAfterArgs(EntityManager, user, cleanDelay, new CleanForensicsDoAfterEvent(), cleanForensicsEntity, target: target, used: cleanForensicsEntity)
@@ -233,7 +241,7 @@ namespace Content.Server.Forensics
                     BreakOnDamage = true,
                     BreakOnMove = true,
                     MovementThreshold = 0.01f,
-                    DistanceThreshold = forensicsComp.CleanDistance,
+                    DistanceThreshold = forensicsComp?.CleanDistance ?? 1.5f,
                 };
 
                 _doAfterSystem.TryStartDoAfter(doAfterArgs);

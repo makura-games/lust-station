@@ -23,8 +23,8 @@ forensic-scanner-verb-message = Perform a forensic scan
 
 forensics-dna-unknown = unknown DNA
 
-forensics-verb-text = Remove evidence
-forensics-verb-message = Remove fingerprints and DNA residues from the object!
-forensics-cleaning = You begin cleaning the evidence off of {THE($target)}...
+forensics-verb-text = Remove evidence and scents
+forensics-verb-message = Remove fingerprints, DNA residues and scents from the object!
+forensics-cleaning = You begin cleaning the evidence and scents off of {THE($target)}...
 
 forensics-cleaning-cannot-clean = There is nothing cleanable on {THE($target)}!

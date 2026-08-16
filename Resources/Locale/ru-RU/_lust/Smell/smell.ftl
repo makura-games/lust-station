@@ -27,6 +27,7 @@ smell-strength-medium = Ощутимы: {$notes}.
 smell-strength-faint = Едва уловимы: {$notes}.
 smell-result-personal = [color={$color}]Индивидуальный запах: {$notes}.[/color]
 smell-result-none = Вы не улавливаете выраженного запаха.
+smell-result-masked = Вы чувствуете сильный запах чего-то, но не можете разобрать деталей.
 
 
 

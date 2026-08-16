@@ -1,9 +1,11 @@
 ﻿using System.Linq;
+using Content.Server.Forensics;
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Examine;
+using Content.Shared.Forensics;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.StatusEffectNew;
@@ -39,6 +41,25 @@ public sealed class SmellSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
+        SubscribeLocalEvent<CleansForensicsComponent, CleanForensicsDoAfterEvent>(OnCleanForensicsDoAfter);
+    }
+
+    /// <summary>
+    /// Мыло закончило мыть цель: если это носитель запахов — смываем все временные
+    /// запахи и ставим временную маску основного запаха (снимается по времени).
+    /// Событие направляется на мыло (EventTarget), поэтому цель берём из args.Args.Target.
+    /// </summary>
+    private void OnCleanForensicsDoAfter(EntityUid uid, CleansForensicsComponent component, CleanForensicsDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled || args.Args.Target == null)
+            return;
+
+        if (!TryComp<ScentComponent>(args.Args.Target, out var scentComp))
+            return;
+
+        scentComp.TemporaryScents.Clear();
+        scentComp.Masked = true;
+        scentComp.MaskUntil = _timing.CurTime + ScentComponent.MaskDuration;
     }
 
     private void OnGetInteractionVerbs(
@@ -95,45 +116,54 @@ public sealed class SmellSystem : EntitySystem
     private void DoSmell(EntityUid user, Entity<ScentComponent> target)
     {
         FormattedMessage message = new();
-        List<string> staticNotes = [];
 
-        foreach (ProtoId<ScentPrototype> scentId in target.Comp.BaseScents)
+        // Ленивое снятие маскировки: если время истекло — маска пропадает сама.
+        if (IsMasked(target))
         {
-            ScentPrototype scent = _prototypes.Index<ScentPrototype>(scentId);
-            staticNotes.Add(GetScentDescription(scent));
+            message.AddMarkupOrThrow(Loc.GetString("smell-result-masked"));
         }
-
-        ScentSignature? signature = GetPersonalSignature(target);
-
-        // --- ОСНОВНОЙ запах (статичный + личный) всегда в начале ---
-        if (staticNotes.Count > 0)
+        else
         {
-            message.AddMarkupOrThrow(Loc.GetString(
-                "smell-result-static",
-                ("notes", string.Join(", ", staticNotes))));
-        }
+            List<string> staticNotes = [];
 
-        if (signature != null)
-        {
-            if (staticNotes.Count > 0)
-                message.AddMarkupOrThrow("\n");
-
-            List<string> personalNotes = [];
-
-            foreach (LocId note in signature.Notes)
+            foreach (ProtoId<ScentPrototype> scentId in target.Comp.BaseScents)
             {
-                personalNotes.Add(Loc.GetString(note));
+                ScentPrototype scent = _prototypes.Index<ScentPrototype>(scentId);
+                staticNotes.Add(GetScentDescription(scent));
             }
 
-            message.AddMarkupOrThrow(Loc.GetString(
-                "smell-result-personal",
-                ("color", signature.Color.ToHex()),
-                ("notes", string.Join(", ", personalNotes))));
-        }
+            ScentSignature? signature = GetPersonalSignature(target);
 
-        if (staticNotes.Count == 0 && signature == null)
-        {
-            message.AddMarkupOrThrow(Loc.GetString("smell-result-none"));
+            // --- ОСНОВНОЙ запах (статичный + личный) всегда в начале ---
+            if (staticNotes.Count > 0)
+            {
+                message.AddMarkupOrThrow(Loc.GetString(
+                    "smell-result-static",
+                    ("notes", string.Join(", ", staticNotes))));
+            }
+
+            if (signature != null)
+            {
+                if (staticNotes.Count > 0)
+                    message.AddMarkupOrThrow("\n");
+
+                List<string> personalNotes = [];
+
+                foreach (LocId note in signature.Notes)
+                {
+                    personalNotes.Add(Loc.GetString(note));
+                }
+
+                message.AddMarkupOrThrow(Loc.GetString(
+                    "smell-result-personal",
+                    ("color", signature.Color.ToHex()),
+                    ("notes", string.Join(", ", personalNotes))));
+            }
+
+            if (staticNotes.Count == 0 && signature == null)
+            {
+                message.AddMarkupOrThrow(Loc.GetString("smell-result-none"));
+            }
         }
 
         // --- Временные запахи: ленивый пересчёт по возрасту, выводятся ниже основного ---
@@ -163,6 +193,24 @@ public sealed class SmellSystem : EntitySystem
         }
 
         _examine.SendExamineTooltip(user, target, message, false, false);
+    }
+
+    /// <summary>
+    /// Активна ли временная маска. Если время истекло — маска снимается лениво
+    /// (при очередном нюхании) и считается неактивной.
+    /// </summary>
+    private bool IsMasked(Entity<ScentComponent> target)
+    {
+        if (!target.Comp.Masked)
+            return false;
+
+        if (_timing.CurTime >= target.Comp.MaskUntil)
+        {
+            target.Comp.Masked = false;
+            return false;
+        }
+
+        return true;
     }
 
     private ScentSignature? GetPersonalSignature(Entity<ScentComponent> target)
