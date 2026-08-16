@@ -232,7 +232,6 @@ namespace Content.Server.Forensics
             var hasRemovableDNA = forensicsComp is { DNAs.Count: > 0 } && forensicsComp.CanDnaBeCleaned;
 
             if (hasRemovableDNA || totalPrintsAndFibers > 0 || hasCleanableScents)
-            // Lust edit end
             {
                 var cleanDelay = cleanForensicsEntity.Comp.CleanDelay;
                 var doAfterArgs = new DoAfterArgs(EntityManager, user, cleanDelay, new CleanForensicsDoAfterEvent(), cleanForensicsEntity, target: target, used: cleanForensicsEntity)
@@ -243,6 +242,7 @@ namespace Content.Server.Forensics
                     MovementThreshold = 0.01f,
                     DistanceThreshold = forensicsComp?.CleanDistance ?? 1.5f,
                 };
+                // Lust edit end
 
                 _doAfterSystem.TryStartDoAfter(doAfterArgs);
 
