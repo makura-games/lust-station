@@ -1,11 +1,9 @@
 ﻿using System.Linq;
-using Content.Server.Forensics;
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Examine;
-using Content.Shared.Forensics;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.StatusEffectNew;
@@ -41,25 +39,6 @@ public sealed class SmellSystem : EntitySystem
     public override void Initialize()
     {
         SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
-        SubscribeLocalEvent<CleansForensicsComponent, CleanForensicsDoAfterEvent>(OnCleanForensicsDoAfter);
-    }
-
-    /// <summary>
-    /// Мыло закончило мыть цель: если это носитель запахов — смываем все временные
-    /// запахи и ставим временную маску основного запаха (снимается по времени).
-    /// Событие направляется на мыло (EventTarget), поэтому цель берём из args.Args.Target.
-    /// </summary>
-    private void OnCleanForensicsDoAfter(EntityUid uid, CleansForensicsComponent component, CleanForensicsDoAfterEvent args)
-    {
-        if (args.Handled || args.Cancelled || args.Args.Target == null)
-            return;
-
-        if (!TryComp<ScentComponent>(args.Args.Target, out var scentComp))
-            return;
-
-        scentComp.TemporaryScents.Clear();
-        scentComp.Masked = true;
-        scentComp.MaskUntil = _timing.CurTime + ScentComponent.MaskDuration;
     }
 
     private void OnGetInteractionVerbs(

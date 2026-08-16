@@ -20,6 +20,10 @@ scent-temp-stimulant = резкий холодный запах стимулят
 
 
 smell-verb = Понюхать
+scent-cleaning-verb-text = Смыть запах
+scent-cleaning-verb-message = Смыть временные запахи и временно скрыть собственный запах.
+scent-cleaning-start = Вы начинаете смывать запах с { $target }...
+scent-cleaning-cannot-clean = На { $target } нет запахов, которые можно смыть.
 smell-result-static = Вы улавливаете: {$notes}.
 smell-result-temporary-header = Кроме этого вы чувствуете:
 smell-strength-strong = Отчётливо пахнут: {$notes}.

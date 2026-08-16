@@ -67,6 +67,7 @@
     solution: soap
   - type: BadFood
   - type: CleansForensics
+  - type: ScentCleaning # Lust edit - смыв запахов и маска, логика в _Lust
   - type: Residue
     residueAdjective: residue-slippery
 
