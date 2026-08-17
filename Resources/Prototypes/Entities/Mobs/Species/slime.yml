@@ -140,6 +140,9 @@
     rightBareFootState:
       - "footprint-right-bare-slime"
   # Sunrise edit end.
+  # Lust-Edit — индивидуальный запах для игроков-слаймов
+  - type: Scent
+    personalScentProfile: Slime
 
 - type: entity
   parent: MobHumanDummy

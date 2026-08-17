@@ -135,6 +135,9 @@
   # Sunrise edit ;3
   - type: FootprintEmitter
   # Sunrise edit end 0_0
+  # Lust-Edit — индивидуальный запах для игроков-скелетов
+  - type: Scent
+    personalScentProfile: Skeleton
 
 - type: entity
   parent: BaseSpeciesDummy

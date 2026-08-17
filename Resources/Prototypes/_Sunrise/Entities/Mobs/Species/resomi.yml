@@ -270,6 +270,9 @@
     - DoorBumpOpener
     - AnomalyHost
     - Resomi
+  # Lust-Edit — индивидуальный запах для игроков-ресоми
+  - type: Scent
+    personalScentProfile: Resomi
 
 - type: entity
   parent: BaseSpeciesDummy

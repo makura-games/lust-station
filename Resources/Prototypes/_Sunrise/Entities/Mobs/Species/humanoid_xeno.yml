@@ -246,6 +246,9 @@
   - type: FootprintEmitter
     leftBareFootState: [ footprint-left-bare-lizard ]
     rightBareFootState: [ footprint-right-bare-lizard ]
+  # Lust-Edit — индивидуальный запах для игроков-гуманоидных ксеносов
+  - type: Scent
+    personalScentProfile: HumanoidXeno
 
 - type: entity
   parent: BaseSpeciesDummy

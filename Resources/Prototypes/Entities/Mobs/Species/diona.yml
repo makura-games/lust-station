@@ -139,6 +139,9 @@
     rightBareFootState:
       - "footprint-right-bare-diona"
   # Sunrise-End
+  # Lust-Edit — индивидуальный запах для игроков-дионы
+  - type: Scent
+    personalScentProfile: Diona
 
 - type: entity
   parent: BaseSpeciesDummy

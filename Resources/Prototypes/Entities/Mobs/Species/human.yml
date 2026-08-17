@@ -550,6 +550,9 @@
   # Sunrise-Start
   - type: FootprintEmitter
   # Sunrise-End
+  # Lust-Edit — индивидуальный запах для игроков-людей
+  - type: Scent
+    personalScentProfile: Human
 
 
 - type: entity

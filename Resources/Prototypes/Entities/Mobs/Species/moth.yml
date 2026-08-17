@@ -208,6 +208,9 @@
             state: shoes
   - type: FootprintEmitter
   # Sunrise edit end 0_0
+  # Lust-Edit — индивидуальный запах для игроков-молей
+  - type: Scent
+    personalScentProfile: Moth
 
 - type: entity
   parent: BaseSpeciesDummy

@@ -67,6 +67,9 @@
   - type: FootprintEmitter
     leftBareFootState: [ footprint-left-bare-spider ]
     rightBareFootState: [ footprint-right-bare-spider ]
+  # Lust-Edit — индивидуальный запах для игроков-свиней
+  - type: Scent
+    personalScentProfile: Swine
 
 - type: entity
   save: false

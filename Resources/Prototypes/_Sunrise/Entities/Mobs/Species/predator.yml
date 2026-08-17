@@ -59,6 +59,9 @@
   - type: Body
     prototype: Predator
   - type: FootprintEmitter
+  # Lust-Edit — индивидуальный запах для игроков-хищников
+  - type: Scent
+    personalScentProfile: Predator
 
 - type: entity
   parent: BaseSpeciesDummy

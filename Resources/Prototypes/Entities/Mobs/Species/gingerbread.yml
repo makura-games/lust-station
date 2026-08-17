@@ -56,6 +56,9 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  # Lust-Edit — индивидуальный запах для игроков-пряничников
+  - type: Scent
+    personalScentProfile: Gingerbread
 
 
 - type: entity

@@ -231,6 +231,9 @@
     rightBareFootState:
     - "footprint-right-bare-lizard"
   # Sunrise edit end.
+  # Lust-Edit — индивидуальный запах для игроков-воксов
+  - type: Scent
+    personalScentProfile: Vox
 
 - type: entity
   parent: BaseSpeciesDummy

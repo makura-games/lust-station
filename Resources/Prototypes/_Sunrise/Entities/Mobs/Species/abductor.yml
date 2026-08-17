@@ -52,6 +52,9 @@
   - type: CollectiveMind
     minds:
     - Abductor
+  # Lust-Edit — индивидуальный запах для игроков-абдукторов
+  - type: Scent
+    personalScentProfile: Abductor
 
 - type: entity
   parent: BaseSpeciesDummy

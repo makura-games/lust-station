@@ -349,6 +349,11 @@
             sprite: _Sunrise/Mobs/Species/Reptilian/displacement.rsi
             state: outer
 # SUNRISE EDIT
+  # Lust-Edit — даёт вульпканинам возможность обнюхивать entity
+  - type: Smell
+  # Lust-Edit — индивидуальный запах для игроков-вульпканинов
+  - type: Scent
+    personalScentProfile: Vulpkanin
 
 - type: entity
   parent: [BaseSpeciesDummy]
