@@ -54,8 +54,7 @@ public sealed class SmellSystem : EntitySystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        if (!TryComp<SmellComponent>(args.User, out SmellComponent? smell)
-            || smell.SmellBlocked)
+        if (!HasComp<SmellComponent>(args.User))
         {
             return;
         }
@@ -98,8 +97,7 @@ public sealed class SmellSystem : EntitySystem
 
     public bool CanSmell(EntityUid user, Entity<ScentComponent> target)
     {
-        if (!TryComp<SmellComponent>(user, out SmellComponent? smell)
-            || smell.SmellBlocked)
+        if (!HasComp<SmellComponent>(user))
         {
             return false;
         }
