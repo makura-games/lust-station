@@ -1,80 +1,69 @@
 ﻿- type: scent
-  id: Whiskey
-  description: scent-static-whiskey
-  color: "#8B5A2B"
-
-- type: scent
-  id: FriedMeat
-  description: scent-static-fried-meat
-  color: "#8B4513"
-
-- type: scent
-  id: NpcVulpkanin
-  description: scent-static-npc-vulpkanin
-  color: "#D2B48C"
-
-- type: scent
   id: Alcohol
   description: scent-temp-alcohol
-  color: "#F5DEB3"
+  color: "#819b4b"
+  intensity: 0.85
 
 - type: scent
   id: Smoke
   description: scent-temp-smoke
-  color: "#696969"
-  intensity: 0.8
+  color: "#e5c706"
+  intensity: 0.55
 
 - type: scent
   id: Gunpowder
   description: scent-temp-gunpowder
   color: "#3E3A35"
-  intensity: 0.8
+  intensity: 0.95
 
 - type: scent
   id: Arousal
   description: scent-temp-arousal
   color: "#FF69B4"
   intensity: 0.7
+  fat: true
 
 - type: scent
   id: Orgasm
   description: scent-temp-orgasm
   color: "#FF1493"
+  intensity: 0.8
+  fat: true
 
 - type: scent
   id: Blood
   description: scent-temp-blood
   color: "#8B0000"
-  intensity: 0.8
+  intensity: 0.95
+  fat: true
 
 - type: scent
   id: OtherBlood
   description: scent-temp-other-blood
-  color: "#A52A2A"
+  color: "#fe0101"
+  intensity: 1.0
+  fat: true
 
 - type: scent
   id: Bruise
   description: scent-temp-bruise
   color: "#6A5ACD"
-  intensity: 0.8
+  intensity: 0.75
 
 - type: scent
   id: Poison
   description: scent-temp-poison
   color: "#556B2F"
-  intensity: 0.8
+  intensity: 0.85
 
 - type: scent
   id: Drug
   description: scent-temp-drug
   color: "#7B68EE"
+  intensity: 0.65
 
 - type: scent
   id: Stimulant
   description: scent-temp-stimulant
   color: "#00CED1"
-
-- type: scent
-  id: Tobacco
-  description: scent-static-tobacco
-  color: "#556B2F"
+  intensity: 0.6

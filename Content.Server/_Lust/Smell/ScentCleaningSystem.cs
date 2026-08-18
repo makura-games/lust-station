@@ -53,8 +53,6 @@ public sealed class ScentCleaningSystem : EntitySystem
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/bubbles.svg.192dpi.png")),
             Text = Loc.GetString("scent-cleaning-verb-text"),
             Message = Loc.GetString("scent-cleaning-verb-message"),
-            // Важно: применение очистителя не должно считаться касанием цели
-            // (иначе сразу распространятся отпечатки/запахи).
             DoContactInteraction = false,
         });
     }

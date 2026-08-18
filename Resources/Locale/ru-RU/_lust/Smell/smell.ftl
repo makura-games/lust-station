@@ -1,22 +1,16 @@
-﻿scent-static-whiskey = терпкий алкоголь и дубовая бочка
-scent-static-fried-meat = жареное мясо и горячий жир
-scent-static-npc-vulpkanin = мягкая шерсть и лёгкий мускус
-scent-static-tobacco = сухой табак и смолистый дым
-
-scent-temp-alcohol = перегар и стойкий запах спиртного
-scent-temp-smoke = дым и горелая ткань
-scent-temp-gunpowder = порох и сера от взрывчатки
-scent-temp-arousal = возбуждение и тепло разгорячённого тела
-scent-temp-arousal-attractive = привлекательные феромоны и пьянящий запах возбуждения
-scent-temp-arousal-plain = запах феромонов возбуждения
-scent-temp-orgasm = смесь запахов феромонов и телестных жидкостей
-scent-temp-blood = железный привкус крови
-scent-temp-other-blood = чужая кровь и брызги от ударов по раненому
-scent-temp-bruise = сырой запах ушибов и заживающих тканей
-scent-temp-poison = горький металлический запах яда и токсинов
-scent-temp-drug = приторный химический запах наркотиков и психоделиков
-scent-temp-stimulant = резкий холодный запах стимуляторов и амфетамина
-
+﻿scent-temp-alcohol = неприятного перегара и алкоголя
+scent-temp-smoke = обжигающего ноздри горького табачного дыма
+scent-temp-gunpowder = едкого пороха и серы
+scent-temp-arousal = феромонов возбуждения
+scent-temp-arousal-attractive = пьянящих феромонов возбуждения
+scent-temp-arousal-plain = феромонов возбуждения
+scent-temp-orgasm = мускуса половых выделений и пота
+scent-temp-blood = металлической крови
+scent-temp-other-blood = пугающего аромата СМЕРТИ
+scent-temp-bruise = кислого пота и адреналина
+scent-temp-poison = горькой желчи и ядовитого пота
+scent-temp-drug = приторного дурмана и едкой химии
+scent-temp-stimulant = едкой медицинской химии
 
 
 smell-verb = Понюхать
@@ -28,10 +22,10 @@ scent-cleaning-cannot-clean = На { $target } нет запахов, котор
 
 smell-result-static = Вы улавливаете: {$notes}.
 smell-result-personal = [color={$color}]Вы чувствуете аромат: {$notes}.[/color]
-smell-result-temporary-header = Кроме этого вы чувствуете:
-smell-strength-strong = Отчётливо пахнет: {$notes}.
-smell-strength-medium = Заметно ощущается: {$notes}.
-smell-strength-faint = Едва уловимы: {$notes}.
+smell-result-temporary-header = Кроме этого
+smell-strength-strong = Отчётливо ощущается запах: {$notes}.
+smell-strength-medium = Заметно ощущается запах: {$notes}.
+smell-strength-faint = Едва уловимый запах: {$notes}.
 
 smell-result-none = Вы не чувствуете выраженного запаха.
 smell-result-masked = Вы ощущаете сильный запах, но не можете разобрать его составляющие.

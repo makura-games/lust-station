@@ -421,6 +421,8 @@ public sealed class SmellSystem : EntitySystem
     private string GetScentDescription(ScentPrototype scent, LocId? descriptionOverride = null)
     {
         var text = Loc.GetString(descriptionOverride ?? scent.Description);
+        if (scent.Color is { } color)
+            text = $"[color={color.ToHex()}]{text}[/color]";
         return scent.Fat ? $"[bold]{text}[/bold]" : text;
     }
 
