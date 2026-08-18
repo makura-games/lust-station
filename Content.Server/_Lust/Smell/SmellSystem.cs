@@ -42,6 +42,11 @@ public sealed class SmellSystem : EntitySystem
     /// </summary>
     private const string ArousalScent = "Arousal";
 
+    /// <summary>
+    /// Цвет текста, когда основной запах цели скрыт маскировкой (после мытья мылом).
+    /// </summary>
+    private const string MaskedScentColor = "#a6d8ff";
+
     public override void Initialize()
     {
         SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
@@ -157,7 +162,7 @@ public sealed class SmellSystem : EntitySystem
         // Ленивое снятие маскировки: если время истекло — маска пропадает сама.
         if (IsMasked(target))
         {
-            message.AddMarkupOrThrow(Loc.GetString("smell-result-masked"));
+            message.AddMarkupOrThrow($"[color={MaskedScentColor}]{Loc.GetString("smell-result-masked")}[/color]");
         }
         else
         {
