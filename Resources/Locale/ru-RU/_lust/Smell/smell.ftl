@@ -12,7 +12,6 @@ scent-temp-poison = горькой желчи и ядовитого пота
 scent-temp-drug = приторного дурмана и едкой химии
 scent-temp-stimulant = едкой медицинской химии
 
-
 smell-verb = Понюхать
 
 scent-cleaning-verb-text = Смыть запахи
@@ -32,7 +31,6 @@ smell-result-masked = Вы ощущаете сильный запах, но не
 
 smell-blocked-by-gear = Ваша маска или шлем мешают вам уловить запахи.
 smell-blocked-by-target-gear = Герметичный скафандр цели полностью скрывает её запах.
-
 
 # Вульпы
 scent-vulp-base-musky-fur = мускусного меха
@@ -72,7 +70,7 @@ scent-tajaran-accent-incense = ладана
 scent-tajaran-accent-metal-shavings = металлической стружки
 scent-tajaran-accent-bitter-smoke = горького дыма
 
-#Арканы
+# Арканы
 scent-demon-base-musky-skin = мускусной кожи
 scent-demon-base-warm-skin = тёплой кожи
 scent-demon-base-sweet-skin = сладковатой кожи
@@ -91,7 +89,7 @@ scent-demon-accent-fresh-fabric = свежей ткани
 scent-demon-accent-ink = чернил
 scent-demon-accent-incense = ладана
 
-#Арахнид
+# Арахниды
 scent-arachnid-base-mineral-chitin = минерального хитина
 scent-arachnid-base-earthy-chitin = землистого хитина
 scent-arachnid-base-salty-chitin = солоноватого хитина
@@ -110,7 +108,7 @@ scent-arachnid-accent-incense = ладана
 scent-arachnid-accent-hot-steel = раскалённой стали
 scent-arachnid-accent-bitter-venom = горького яда
 
-#Дионы
+# Дионы
 scent-diona-base-wood-sap = древесного сока
 scent-diona-base-young-leaves = молодой листвы
 scent-diona-base-resinous-bark = смолистой коры
@@ -129,7 +127,7 @@ scent-diona-accent-dry-brushwood = сухого хвороста
 scent-diona-accent-smoldering-coals = тлеющих углей
 scent-diona-accent-forest-stream = лесного ручья
 
-#Дворфы
+# Дворфы
 scent-dwarf-base-heavy-sweat = тяжёлого пота
 scent-dwarf-base-iron-sweat = железного пота
 scent-dwarf-base-stone-dust = каменной пыли
@@ -148,7 +146,7 @@ scent-dwarf-accent-hot-steel = горячей стали
 scent-dwarf-accent-dry-brushwood = сухого хвороста
 scent-dwarf-accent-ink = чернил
 
-#Печенька человек
+# Пряничные люди
 scent-gingerbread-base-sweet-dough = сладкого теста
 scent-gingerbread-base-spicy-dough = пряного теста
 scent-gingerbread-base-ginger-dough = имбирного теста
@@ -167,7 +165,7 @@ scent-gingerbread-accent-marzipan = марципана
 scent-gingerbread-accent-lemon-zest = лимонной цедры
 scent-gingerbread-accent-candy-sprinkles = конфетных посыпок
 
-#Люди
+# Люди
 scent-human-base-warm-body = тёплого тела
 scent-human-base-salty-sweat = солоноватого пота
 scent-human-base-fresh-hair = свежих волос
@@ -186,7 +184,7 @@ scent-human-accent-plastic = пластика
 scent-human-accent-leather-belt = кожаного ремня
 scent-human-accent-gasoline = бензина
 
-#Нианы
+# Нианы
 scent-moth-base-sweet-down = сладковатого пуха
 scent-moth-base-nectar-down = нектарного пуха
 scent-moth-base-waxy-down = воскового пуха
@@ -205,7 +203,7 @@ scent-moth-accent-tart-akol = терпкого аколя
 scent-moth-accent-cooled-slag = остывающего шлака
 scent-moth-accent-wood-resin = древесной смолы
 
-#Унатхи
+# Унатхи
 scent-reptilian-base-brackish-scales = солоноватой чешуи
 scent-reptilian-base-damp-scales = влажной чешуи
 scent-reptilian-base-heated-scales = нагретой чешуи
@@ -224,7 +222,7 @@ scent-reptilian-accent-warm-bronze = тёплой бронзы
 scent-reptilian-accent-fresh-rain = свежего дождя
 scent-reptilian-accent-tropical-wood = тропической древесины
 
-#Скелеты
+# Скелеты
 scent-skeleton-base-dry-bones = сухих костей
 scent-skeleton-base-bone-dust = костяной пыли
 scent-skeleton-base-old-shroud = старого савана
@@ -243,7 +241,7 @@ scent-skeleton-accent-milk = молока
 scent-skeleton-accent-rusty-hinges = ржавых петель
 scent-skeleton-accent-old-wax = старого воска
 
-#Слаймы
+# Слаймы
 scent-slime-base-sweet-slime = сладковатой слизи
 scent-slime-base-ammonia-slime = аммиачной слизи
 scent-slime-base-mineral-slime = минерализованной слизи
@@ -262,7 +260,7 @@ scent-slime-accent-fermented-mass = перебродившей массы
 scent-slime-accent-bubbling-gas = пузырящегося газа
 scent-slime-accent-chemical-reagents = химических реагентов
 
-#Терминатор
+# Терминатор
 scent-terminator-base-titanium-alloy = титанового сплава
 scent-terminator-base-synthetic-skin = синтетической кожи
 scent-terminator-base-latex-muscles = латексных мышц
@@ -281,8 +279,7 @@ scent-terminator-accent-electric-spark = электрической искры
 scent-terminator-accent-diesel-fuel = солярки
 scent-terminator-accent-spent-shells = стреляных гильз
 
-#Вокс
-
+# Вокс
 scent-vox-base-silky-plumage = шелковистого оперения
 scent-vox-base-downy-plumage = пухового оперения
 scent-vox-base-dry-plumage = сухого оперения
@@ -301,7 +298,7 @@ scent-vox-accent-acrid-chemistry = едкой химии
 scent-vox-accent-sharp-ammonia = резкого аммиака
 scent-vox-accent-acrid-fumes = терпкого дыма
 
-#Абдукторы
+# Абдукторы
 scent-abductor-base-cold-ichor = холодного ихора
 scent-abductor-base-tangy-biogel = терпкого биогеля
 scent-abductor-base-sweet-pheromone = сладковатого феромона
@@ -320,7 +317,7 @@ scent-abductor-accent-sweet-elixir = сладкого эликсира
 scent-abductor-accent-tangy-solvent = терпкого растворителя
 scent-abductor-accent-metallic-sediment = металлического осадка
 
-#Фелениды
+# Фелениды
 scent-felinid-base-sweet-sweat = сладковатого пота
 scent-felinid-base-milky-breath = молочного дыхания
 scent-felinid-base-powdery-scent = пудрового запаха
@@ -339,7 +336,7 @@ scent-felinid-accent-healing-ointment = заживляющей мази
 scent-felinid-accent-warm-plastic = тёплого пластика
 scent-felinid-accent-keratin-claws = кератиновых когтей
 
-#Ксеноморфы
+# Ксеноморфы
 scent-xeno-base-caustic-acid = разъедающей кислоты
 scent-xeno-base-burning-venom = жгучего яда
 scent-xeno-base-sweet-toxin = сладковатого токсина
@@ -358,7 +355,7 @@ scent-xeno-accent-burnt-rubber = жжёной резины
 scent-xeno-accent-fresh-meat = свежего мяса
 scent-xeno-accent-black-slime = чёрной слизи
 
-#Милиры
+# Милиры
 scent-milir-base-frosted-plumage = заиндевелого оперения
 scent-milir-base-icy-down = ледяного пуха
 scent-milir-base-cold-sweat = холодного пота
@@ -377,7 +374,7 @@ scent-milir-accent-frozen-wood = мёрзлой древесины
 scent-milir-accent-glacial-freshness = ледниковой свежести
 scent-milir-accent-frosty-metal = морозного металла
 
-#Хишник
+# Хищник
 scent-predator-base-feral-musk = дикого мускуса
 scent-predator-base-caked-sweat = запёкшегося пота
 scent-predator-base-oily-dreads = маслянистых дредов
@@ -396,7 +393,7 @@ scent-predator-accent-burnt-metal = обожжённого металла
 scent-predator-accent-trophy-dust = трофейной пыли
 scent-predator-accent-dried-blood = высохшей крови
 
-#Резоми
+# Резоми
 scent-resomi-base-downy-covering = пухового покрова
 scent-resomi-base-feather-down = перьевого пуха
 scent-resomi-base-jungle-down = джунглевого пуха
@@ -415,8 +412,7 @@ scent-resomi-accent-stirred-leaves = потревоженной листвы
 scent-resomi-accent-berry-juice = ягодного сока
 scent-resomi-accent-sticky-resin = липкой смолы
 
-#Тротины
-
+# Тротины
 scent-swine-base-salty-sweat = сального пота
 scent-swine-base-fatty-skin = жирной кожи
 scent-swine-base-ammonia-odor = аммиачного запаха
