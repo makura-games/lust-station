@@ -1,5 +1,5 @@
 guide-entry-ls-rules = Правила сервера: Lust Station
-guide-entry-ls-rule-0 = Универсальное правило
+guide-entry-lust-rule-0 = Универсальное правило
 guide-entry-lust-rule-1 = Основные правила RP
 guide-entry-lust-rule-1-1 = Пренебрежение последствиями для персонажа
 guide-entry-lust-rule-1-2 = NRP поведение

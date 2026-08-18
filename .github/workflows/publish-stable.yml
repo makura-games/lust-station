@@ -37,16 +37,18 @@ jobs:
     - name: Checkout SunrisePrivate
       uses: actions/checkout@v4.2.2
       with:
-        repository: ${{ secrets.SUNRISE_PRIVATE_REPO }}
+        repository: ${{ secrets.MAKURA_PRIVATE_REPO }}
         path: SunrisePrivate
-        ssh-key: ${{ secrets.SUNRISE_PRIVATE_REPO_SSH_KEY }}
+        ssh-key: ${{ secrets.MAKURA_PRIVATE_REPO_SSH_KEY }}
         ref: ${{ inputs.private_commit_hash }}
 
     - name: Move Sunrise Private files
       run: python3 Tools/_sunrise/move_private.py --clone-dir "SunrisePrivate" --target-dirs "Resources"
 
+    # Lust edit start - обработка названий в локализации
     - name: Process localization
       run: python3 Tools/_lust/replace_nt.py --path Resources/Locale
+    # Lust edit end
 
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v4.1.0
@@ -71,7 +73,7 @@ jobs:
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
     - name: Publish version
-      run: Tools/publish_multi_request.py --fork-id lust_station_stable
+      run: Tools/publish_multi_request.py --fork-id lust_station_stable # Lust edit
       env:
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
@@ -83,18 +85,3 @@ jobs:
         DISCORD_WEBHOOK_URL: ${{ secrets.ANNOUNCE_UPDATE_DISCORD_WEBHOOK }}
         DISCORD_ROLE_ID: ${{ secrets.ANNOUNCE_UPDATE_DISCORD_ROLE_ID }}
         BUILD_PATH: ./release/SS14.Client.zip
-
-    - name: Publish discord changelog
-      continue-on-error: true
-      run: Tools/_sunrise/actions_changelogs_since_last_run.py
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK_LUST }}
-        CHANGELOG_FILE: 'Resources/Changelog/ChangelogLust.yml'
-
-    - name: Publish discord changelog (Sunrise)
-      run: Tools/_sunrise/actions_changelogs_since_last_run.py
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        DISCORD_WEBHOOK_URL: ${{ secrets.CHANGELOG_DISCORD_WEBHOOK_SUNRISE }}
-        CHANGELOG_FILE: 'Resources/Changelog/ChangelogSunrise.yml'

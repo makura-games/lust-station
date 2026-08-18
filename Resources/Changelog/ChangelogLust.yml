@@ -7,1365 +7,946 @@
   time: '2024-03-05T22:16:24.059464+00:00'
 - author: 3arek
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u043E\u0432\
-      \u044B\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0432 ERP \u043F\
-      \u0430\u043D\u0435\u043B\u044C."
+  - message: Добавлены новые действия в ERP панель.
     type: Add
   id: 151
   time: '2024-07-27T06:21:36.033456+00:00'
 - author: Ligyb
   changes:
-  - message: "\u0423\u043B\u0443\u0447\u0448\u0435\u043D\u0430 \u0415\u0420\u041F\
-      -\u043F\u0430\u043D\u0435\u043B\u044C."
+  - message: Улучшена ЕРП-панель.
     type: Add
   id: 152
   time: '2024-08-28T18:16:05.142964+00:00'
 - author: SplikZerys
   changes:
-  - message: "\u0424\u0440\u0443\u043A\u0442\u044B, \u043E\u0432\u043E\u0449\u0438\
-      , \u0434\u0438\u043B\u0434\u043E \u0438 \u0433\u0440\u0430\u043D\u0430\u0442\
-      \u044B \u043C\u043E\u0436\u043D\u043E \u0437\u0430\u0441\u043E\u0432\u044B\u0432\
-      \u0430\u0442\u044C \u0432 \u043E\u0434\u043D\u043E \u043C\u0435\u0441\u0442\u043E\
-      ."
+  - message: Фрукты, овощи, дилдо и гранаты можно засовывать в одно место.
     type: Add
-  - message: "\u0424\u0438\u043A\u0441 \u0432\u0435\u0440\u0451\u0432\u043A\u0438\
-      \ \u0448\u0438\u0431\u0430\u0440\u0438."
+  - message: Фикс верёвки шибари.
     type: Fix
   id: 152
   time: '2024-08-28T18:22:24.781030+00:00'
-- author: "\u0410\u043D\u043E\u043D\u0438\u043C69"
+- author: Аноним69
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0441\u043F\u0440\
-      \u0430\u0439\u0442\u044B \u0434\u043B\u044F \u0434\u0435\u0439\u0441\u0442\u0432\
-      \u0438\u0439 \u0415\u0420\u041F-\u043F\u0430\u043D\u0435\u043B\u0438."
+  - message: Добавлены спрайты для действий ЕРП-панели.
     type: Add
   id: 153
   time: '2024-08-28T18:16:35.843076+00:00'
 - author: VigersRay
   changes:
-  - message: "\u041E\u043F\u0442\u0438\u043C\u0438\u0437\u0430\u0446\u0438\u044F \u043F\
-      \u0430\u043D\u0435\u043B\u0438 \u0432\u0437\u0430\u0438\u043C\u043E\u0434\u0435\
-      \u0439\u0441\u0442\u0432\u0438\u0439 (\u0424\u0438\u043A\u0441 \u0432\u044B\u043B\
-      \u0435\u0442\u043E\u0432)."
+  - message: Оптимизация панели взаимодействий (Фикс вылетов).
     type: Fix
-  - message: "\u041F\u043E\u0432\u044B\u0448\u0435\u043D \u043F\u0440\u0438\u043E\u0440\
-      \u0438\u0442\u0435\u0442 \u043E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\
-      \u0438\u044F \u043F\u0430\u043D\u0435\u043B\u0438 \u0432\u0437\u0430\u0438\u043C\
-      \u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0432 \u043A\u043E\u043D\
-      \u0442\u0435\u043A\u0441\u0442\u043D\u043E\u043C \u043C\u0435\u043D\u044E."
+  - message: Повышен приоритет отображения панели взаимодействия в контекстном меню.
     type: Tweak
   id: 153
   time: '2024-08-29T12:50:29.711763+00:00'
 - author: Ligyb
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0441\u043B\u043E\u0442\
-      \ \u0430\u043D\u0430\u043B\u0430."
+  - message: Добавлен слот анала.
     type: Add
   id: 154
   time: '2024-08-28T18:18:15.287616+00:00'
 - author: SplikZerys
   changes:
-  - message: "\u0423\u0434\u0430\u043B\u0438\u043B \u0430\u0432\u0442\u043E\u0437\u0430\
-      \u043C\u0435\u043D\u0443 \u043C\u043D\u043E\u0433\u0438\u0445 \u0441\u043B\u043E\
-      \u0432."
+  - message: Удалил автозамену многих слов.
     type: Remove
   id: 154
   time: '2024-09-02T11:53:54.376996+00:00'
 - author: 3arek & SplikZerys
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u043E\u0432\
-      \u044B\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0432 \u0415\u0420\
-      \u041F-\u043F\u0430\u043D\u0435\u043B\u044C."
+  - message: Добавлены новые действия в ЕРП-панель.
     type: Add
   id: 155
   time: '2024-08-28T18:19:11.326318+00:00'
 - author: Ligyb
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u0441\u0438\u0441\
-      \u0442\u0435\u043C\u0430 \u043D\u0435\u0432\u0438\u043D\u043D\u043E\u0441\u0442\
-      \u0438."
+  - message: Добавлена система невинности.
     type: Add
   id: 156
   time: '2024-08-28T18:20:56.054427+00:00'
 - author: VigersRay
   changes:
-  - message: "\u0410\u043F\u0441\u0442\u0440\u0438\u043C."
+  - message: Апстрим.
     type: Add
   id: 157
   time: '2024-11-15T14:30:20.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/70
 - author: Nrd
   changes:
-  - message: "\u0438\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B \u043B\u043E\
-      \u0433\u043E\u0442\u0438\u043F\u044B \u043D\u043E\u0432\u044B\u0445 \u0446\u0435\
-      \u043B\u0435\u0439"
+  - message: исправлены логотипы новых целей
     type: Fix
   id: 158
   time: '2024-11-20T16:50:41.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/75
 - author: pacable
   changes:
-  - message: "\u0423\u0432\u0435\u043B\u0438\u0447\u0435\u043D\u0430 \u0437\u0430\u0434\
-      \u0435\u0440\u0436\u043A\u0430 \u043D\u0430 \u0438\u0441\u043F\u043E\u043B\u044C\
-      \u0437\u043E\u0432\u0430\u043D\u0438\u0435 \u043F\u043B\u044E\u0448\u043A\u0438\
-      \ \u0410\u043D\u043D\u044B \u041B\u0438\u0441\u0438\u0447\u0430\u043D\u0441\u043A\
-      \u043E\u0439 \u0434\u043E 10 \u0441\u0435\u043A\u0443\u043D\u0434."
+  - message: Увеличена задержка на использование плюшки Анны Лисичанской до 10 секунд.
     type: Tweak
   id: 159
   time: '2024-11-20T16:50:17.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/73
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u044B\u0435 \u0428\u0438\u0440\u043E \u0438 \u0418\u0432."
+  - message: Добавлены плюшевые Широ и Ив.
     type: Add
   id: 160
   time: '2024-11-21T17:15:18.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/76
 - author: pacable
   changes:
-  - message: "\u041A\u043E\u0440\u043E\u043B\u044C \u043A\u0440\u044B\u0441 \u0431\
-      \u044B\u043B \u0438\u0437\u043C\u0435\u043D\u0435\u043D \u043D\u0430 \u043A\u043E\
-      \u0440\u043E\u043B\u0435\u0432\u0443 \u043A\u0440\u044B\u0441."
+  - message: Король крыс был изменен на королеву крыс.
     type: Tweak
   id: 161
   time: '2024-11-21T17:17:01.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/77
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0422\u0430\u0439\u043B\u0435\u0440 \u041C\u0443\u0440\
-      \u043B\u044B\u043A\u0438\u043D."
+  - message: Добавлен плюшевый Тайлер Мурлыкин.
     type: Add
   id: 162
   time: '2024-11-21T17:16:25.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/84
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u044B\u0435 \u041C\u0438\u0440\u0430 \u041C\u0430\u0439\u043D\
-      \u0434 \u0438 \u041D\u0438\u043A\u043E \u041C\u0438\u043D\u043A."
+  - message: Добавлены плюшевые Мира Майнд и Нико Минк.
     type: Add
   id: 163
   time: '2024-11-26T16:34:30.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/90
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043A\u043E\u043C\u043F\
-      \u043B\u0435\u043A\u0442 \u043E\u0434\u0435\u0436\u0434\u044B \u0437\u0430\u0439\
-      \u0447\u0438\u043A\u0430."
+  - message: Добавлен комплект одежды зайчика.
     type: Add
   id: 164
   time: '2024-11-26T16:34:40.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/91
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u0440\u0438\
-      \u0441\u043E\u0441\u043A\u0430 \u0432\u0441\u0435\u043C \u0432\u0438\u0434\u0430\
-      \u043C \u0434\u0438\u043B\u0434\u043E."
+  - message: Добавлена присоска всем видам дилдо.
     type: Add
   id: 165
   time: '2024-11-26T16:34:15.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/89
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u041D\u0435\u0438'\u0440\u0438\u044F \u0420\u0438\
-      \u0438'\u0410\u0439."
+  - message: Добавлена плюшевая Неи'рия Рии'Ай.
     type: Add
   id: 166
   time: '2024-11-26T22:38:52.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/92
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D TTS \u043A\u043E\u0440\
-      \u043E\u043B\u0435\u0432\u0435 \u043A\u0440\u044B\u0441."
+  - message: Добавлен TTS королеве крыс.
     type: Add
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E \u0441\u043A\
-      \u043B\u043E\u043D\u0435\u043D\u0438\u0435 \u043A\u043E\u0440\u043E\u043B\u0435\
-      \u0432\u044B \u043A\u0440\u044B\u0441."
+  - message: Исправлено склонение королевы крыс.
     type: Fix
   id: 167
   time: '2024-11-27T22:29:30.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/93
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u0433\u043E\u0440\
-      \u043D\u0438\u0447\u043D\u0430\u044F \u043A\u043E\u043C\u0430\u043D\u0434\u043E\
-      \u0432\u0430\u043D\u0438\u044F."
+  - message: Добавлена горничная командования.
     type: Add
   id: 168
   time: '2024-12-02T04:44:58.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/96
 - author: kanopus7
   changes:
-  - message: "\u0414\u043E\u043D\u0430\u0442\u043D\u044B\u0435 \u0440\u0430\u0441\u044B\
-      \ \u0441\u0442\u0430\u043B\u0438 \u043E\u0431\u0449\u0435\u0434\u043E\u0441\u0442\
-      \u0443\u043F\u043D\u044B\u043C\u0438."
+  - message: Донатные расы стали общедоступными.
     type: Tweak
   id: 169
   time: '2024-12-02T04:49:13.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/98
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B 4 \u043D\u043E\
-      \u0432\u044B\u0435 \u043F\u043B\u044E\u0448\u0435\u0432\u044B\u0435 \u0438\u0433\
-      \u0440\u0443\u0448\u043A\u0438."
+  - message: Добавлены 4 новые плюшевые игрушки.
     type: Add
   id: 170
   time: '2024-12-02T04:49:04.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/97
 - author: JunterFox
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043A\u043E\u043C\u043F\
-      \u043B\u0435\u043A\u0442 \u0444\u043E\u0440\u043C\u044B \u0421\u043F\u0435\u0446\
-      \u0438\u0430\u043B\u0438\u0441\u0442\u0430."
+  - message: Добавлен комплект формы Специалиста.
     type: Add
   id: 171
   time: '2024-12-04T05:28:27.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/101
 - author: pacable
   changes:
-  - message: "\u041F\u043B\u044E\u0448\u0435\u0432\u043E\u0439 \u0410\u043D\u043D\u0435\
-      \ \u041B\u0438\u0441\u0435\u0447\u0430\u043D\u0441\u043A\u043E\u0439 \u0434\u043E\
-      \u0431\u0430\u0432\u043B\u0435\u043D \u0444\u0443\u043D\u043A\u0446\u0438\u043E\
-      \u043D\u0430\u043B \u043A\u0430\u0440\u043C\u0430\u043D\u043D\u043E\u0439 \u043A\
-      \u0438\u0441\u043A\u0438."
+  - message: Плюшевой Анне Лисечанской добавлен функционал карманной киски.
     type: Add
   id: 172
   time: '2024-12-04T05:28:44.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/104
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u044B\u0435: \u041B\u043E\u043B\u0430, \u041C\u0430\u0439\
-      \ \u0438 \u041C\u044D\u0434\u0438."
+  - message: 'Добавлены плюшевые: Лола, Май и Мэди.'
     type: Add
   id: 173
   time: '2024-12-04T05:28:08.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/103
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u044B\u0435: \u0410\u043B\u0438\u0441\u0430 \u0421\u0438\u043C\
-      \u043E\u043D\u043E\u0432\u0430, RX1984."
+  - message: 'Добавлены плюшевые: Алиса Симонова, RX1984.'
     type: Add
   id: 174
   time: '2024-12-07T05:30:45.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/108
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043D\u0430\u0431\u043E\
-      \u0440 \u043F\u043E\u043F\u043E\u043B\u043D\u0435\u043D\u0438\u044F \u041A\u0438\
-      \u043D\u043A\u043E\u041C\u0430\u0442."
+  - message: Добавлен набор пополнения КинкоМат.
     type: Add
   id: 175
   time: '2024-12-07T05:30:35.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/109
 - author: kanopus7
   changes:
-  - message: "\u0411\u043E\u0440\u0433\u0430\u043C \u0432\u043E\u0437\u0432\u0440\u0430\
-      \u0449\u0435\u043D\u044B \u0441\u043F\u0440\u0430\u0439\u0442\u044B."
+  - message: Боргам возвращены спрайты.
     type: Fix
-  - message: "\u0411\u043E\u0435\u0432\u043E\u0439 \u043A\u0438\u0431\u043E\u0440\u0433\
-      \ \u0421\u0411, \u043C\u0438\u0440\u043E\u0442\u0432\u043E\u0440\u0435\u0446\
-      , \u043A\u043B\u043E\u0443\u043D \u0431\u043E\u0440\u0433 \u0438 \u043E\u0445\
-      \u0440\u0430\u043D\u043D\u044B\u0439 \u0431\u043E\u0440\u0433 \u043F\u043E\u043B\
-      \u0443\u0447\u0438\u043B\u0438 \u043D\u043E\u0432\u044B\u0435 \u0441\u043F\u0440\
-      \u0430\u0439\u0442\u044B."
+  - message: Боевой киборг СБ, миротворец, клоун борг и охранный борг получили новые спрайты.
     type: Tweak
   id: 176
   time: '2024-12-07T06:58:24.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/107
 - author: Euphoriya
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0430\u043A\u0441\u0435\
-      \u0441\u0441\u0443\u0430\u0440 - \u0434\u0435\u043C\u043E\u043D\u0438\u0447\u0435\
-      \u0441\u043A\u0438\u0435 \u0440\u043E\u0436\u043A\u0438. \u0414\u043E\u0441\u0442\
-      \u0443\u043F\u0435\u043D \u0432 \u043C\u0430\u0433\u0430\u0437\u0438\u043D\u0435\
-      \ \u0441\u043F\u043E\u043D\u0441\u043E\u0440\u043E\u0432."
+  - message: Добавлен аксессуар - демонические рожки. Доступен в магазине спонсоров.
     type: Add
   id: 177
   time: '2024-12-10T00:04:00.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/111
 - author: kanopus7
   changes:
-  - message: "\u041F\u043E\u0447\u0438\u043D\u0438\u043B \u0431\u043E\u043B\u044C\u0448\
-      \u0438\u043D\u0441\u0442\u0432\u043E \u0431\u0430\u0433\u043E\u0432 \u0441\u0432\
-      \u044F\u0437\u0430\u043D\u043D\u044B\u0445 \u0441 \u0431\u043E\u0440\u0433\u0430\
-      \u043C\u0438."
+  - message: Починил большинство багов связанных с боргами.
     type: Fix
   id: 178
   time: '2024-12-10T00:07:14.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/115
 - author: JunterFox
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043C\u0430\u043D\
-      \u0442\u0438\u044F \u0428\u0430\u0445\u0442\u0451\u0440\u0430"
+  - message: Добавлена мантия Шахтёра
     type: Add
   id: 179
   time: '2024-12-11T23:39:25.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/118
 - author: Nrd & Boy Boyevich
   changes:
-  - message: "\u0438\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430 \u0438\u043A\
-      \u043E\u043D\u043A\u0430 \u0441\u0442\u043E\u043D\u0430"
+  - message: исправлена иконка стона
     type: Fix
   id: 180
   time: '2024-12-11T23:39:37.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/117
 - author: kanopus7
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043E \u043C\u043D\u043E\
-      \u0433\u043E \u043D\u043E\u0432\u044B\u0445 \u0415\u0420\u041F \u0434\u0435\u0439\
-      \u0441\u0442\u0432\u0438\u0439 \u0432 \u043F\u0430\u043D\u0435\u043B\u044C \u0430\
-      \ \u0442\u0430\u043A-\u0436\u0435 \u043C\u043D\u043E\u0433\u0438\u043C \u0434\
-      \u0435\u0439\u0441\u0442\u0432\u0438\u044F\u043C \u0431\u044B\u043B\u0438 \u0434\
-      \u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0437\u0432\u0443\u043A\u0438\
-      ."
+  - message: Добавлено много новых ЕРП действий в панель а так-же многим действиям были добавлены звуки.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043B\u0443\u043D\
-      \u043D\u0430\u044F \u043E\u0434\u0435\u0436\u0434\u0430 \u0432 \u043A\u0438\u043D\
-      \u043A\u043E\u043C\u0430\u0442."
+  - message: Добавлена лунная одежда в кинкомат.
     type: Add
   id: 181
   time: '2024-12-15T14:36:39.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/120
 - author: kanopus7
   changes:
-  - message: "\u041F\u043E\u043F\u043E\u043B\u043D\u0435\u043D\u043E \u043D\u0430\u043F\
-      \u043E\u043B\u043D\u0435\u043D\u0438\u0435 \u043A\u0438\u043D\u043A\u043E\u043C\
-      \u0430\u0442\u0430."
+  - message: Пополнено наполнение кинкомата.
     type: Add
   id: 182
   time: '2024-12-21T23:33:35.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/125
 - author: Alexpan
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u041A\u0443\u0440\u043E'\u043C\u0438 \u041E\u043B\
-      \u0438\u043D\u043A \u0432 LustShop."
+  - message: Добавлена плюшевая Куро'ми Олинк в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u0410\u043B\u0438\u0441\u0430 \u0421\u0430\u0439\
-      \u0433\u0430\u043A \u0432 LustShop."
+  - message: Добавлена плюшевая Алиса Сайгак в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0418\u0433\u043E\u0440\u044C \u0412\u043E\u043B\u043A\
-      \u043E\u0432 \u0432 LustShop."
+  - message: Добавлен плюшевый Игорь Волков в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 I-102 \"\u0414\u0440\u0430\u0433\u043E\u043D\u0430\u0432\
-      \u0442\" \u0432 LustShop."
+  - message: Добавлен плюшевый I-102 "Драгонавт" в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u0411\u043B\u043E\u0431\u0430 \u0411\u043B\u0430\
-      \u0431\u043E \u0432 LustShop."
+  - message: Добавлена плюшевая Блоба Блабо в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0411\u043E\u0440\u043C\u0430\u043D \u0421\u0435\u043A\
-      \u0438\u0440\u043E\u0431\u043E\u0439 \u0432 LustShop."
+  - message: Добавлен плюшевый Борман Секиробой в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u041C\u0430\u0439\u043A \u0428\u043C\u0438\u0434\u0442\
-      \ \u0432 LustShop."
+  - message: Добавлен плюшевый Майк Шмидт в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0420\u0430\u0442\u043C\u0438\u0440 \u0421\u0430\u043F\
-      \u0444\u0438\u0440\u043E\u0432 \u0432 LustShop."
+  - message: Добавлен плюшевый Ратмир Сапфиров в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u041A\u043E\u0441\u043C\u0438\u0447\u0435\u0441\
-      \u043A\u0430\u044F \u041F\u044B\u043B\u044C \u0417\u0432\u0435\u0437\u0434 \u0432\
-      \ LustShop."
+  - message: Добавлена плюшевая Космическая Пыль Звезд в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u0421\u0430\u0439 \u0425\u0430\u043A\u0441 \u0432\
-      \ LustShop."
+  - message: Добавлена плюшевая Сай Хакс в LustShop.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u041A\u043B\u0430\u0440\u0430 \u0418\u0441\u0430\
-      \u0435\u0432\u0430 \u0432 LustShop."
+  - message: Добавлена плюшевая Клара Исаева в LustShop.
     type: Add
   id: 183
   time: '2024-12-30T05:24:51.223542+00:00'
 - author: VigersRay
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E \u043E\u0442\
-      \u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u0415\u0420\u041F \u0441\
-      \u0442\u0430\u0442\u0443\u0441\u0430."
+  - message: Исправлено отображение ЕРП статуса.
     type: Fix
   id: 184
   time: '2025-01-04T04:24:25.469555+00:00'
 - author: Euphoriya
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u041F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0410\u043B\u0435\u043A\u0441\u0430\u043D\u0434\u0440\
-      \ \u041B\u0438\u043C\u0435\u043D\u0441\u043A\u0438"
+  - message: Добавлен Плюшевый Александр Лименски
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u041F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0420\u044D\u043D\u0434\u0438"
+  - message: Добавлен Плюшевый Рэнди
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u041F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0428\u043E\u043D \u0420\u043E\u0437"
+  - message: Добавлен Плюшевый Шон Роз
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u041F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u0425\u0438\u043C\u0430 \u0410\u0439\u0441\u0435\
-      \u0442\u043E\u0432\u0430"
+  - message: Добавлена Плюшевая Хима Айсетова
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u041F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u042D\u0439\u0444\u0430 \u0424\u043E\u043D \u042D\
-      \u0432\u0435\u0440\u0435\u043A"
+  - message: Добавлена Плюшевая Эйфа Фон Эверек
     type: Add
-  - message: "\u041D\u043E\u0432\u044B\u0435 \u043F\u043B\u044E\u0448\u043A\u0438\
-      \ \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0441 LustShop"
+  - message: Новые плюшки добавлены с LustShop
     type: Tweak
   id: 185
   time: '2025-01-07T02:39:12.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/141
 - author: kanopus7 & Melatonin
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043D\u043E\u0432\
-      \u0430\u044F \u043F\u0440\u0438\u0447\u0435\u0441\u043A\u0430 \u0438 \u043D\u0435\
-      \u043C\u043D\u043E\u0433\u043E \u043A\u0430\u0441\u0442\u043E\u043C\u0438\u0437\
-      \u0430\u0446\u0438\u0438 \u0434\u043B\u044F \u0432\u0443\u043B\u044C\u043F."
+  - message: Добавлена новая прическа и немного кастомизации для вульп.
     type: Add
   id: 186
   time: '2025-01-07T02:39:30.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/140
 - author: VigersRay
   changes:
-  - message: "\u0410\u0440\u0430\u0445\u043D\u0438\u0434\u044B, \u0442\u0440\u043E\
-      \u0442\u0442\u0438\u043D\u044B, \u0445\u0438\u0449\u043D\u0438\u043A\u0438 \u0438\
-      \ \u043A\u0441\u0435\u043D\u043E\u043C\u043E\u0440\u0444\u044B \u0442\u0435\u043F\
-      \u0435\u0440\u044C \u0443\u043C\u0435\u044E\u0442 \u0432 \u0435\u0440\u043F."
+  - message: Арахниды, троттины, хищники и ксеноморфы теперь умеют в ерп.
     type: Tweak
   id: 187
   time: '2025-01-11T06:26:15.190145+00:00'
 - author: VigersRay
   changes:
-  - message: "\u0413\u043E\u0440\u043D\u0438\u0447\u043D\u0430\u044F \u043A\u043E\u043C\
-      \u0430\u043D\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u0431\u043E\u043B\u044C\
-      \u0448\u0435 \u043D\u0435 \u0438\u043C\u0435\u0435\u0442 \u043E\u0433\u0440\u0430\
-      \u043D\u0438\u0447\u0435\u043D\u0438\u044F \u043F\u043E \u043F\u043E\u043B\u0443\
-      ."
+  - message: Горничная командования больше не имеет ограничения по полу.
     type: Tweak
   id: 188
   time: '2025-01-18T00:46:02.531597+00:00'
 - author: Disssr
   changes:
-  - message: "\u0412 \u043A\u0438\u043D\u043A\u043E\u043C\u0430\u0442 \u0434\u043E\
-      \u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u043E\u0432\u044B\u0435 \u043F\
-      \u0440\u0435\u0434\u043C\u0435\u0442\u044B"
+  - message: В кинкомат добавлены новые предметы
     type: Add
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u044B \u043D\u0430\u0437\u0432\
-      \u0430\u043D\u0438\u044F \u043A\u0430\u0440\u043C\u0430\u043D\u043D\u044B\u0445\
-      \ \u043A\u0438\u0441\u043E\u043A"
+  - message: Изменены названия карманных кисок
     type: Tweak
-  - message: "\u0422\u0435\u043F\u0435\u0440\u044C \u043C\u043E\u0436\u043D\u043E\
-      \ \u0438\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C \u0432\
-      \u0441\u0435 \u043A\u0430\u0440\u043C\u0430\u043D\u043D\u044B\u0435 \u043A\u0438\
-      \u0441\u043A\u0438"
+  - message: Теперь можно использовать все карманные киски
     type: Fix
   id: 189
   time: '2025-01-20T03:55:45.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/150
 - author: Euphoriya
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043A\u0430\u0441\
-      \u0442\u043E\u043C\u043D\u044B\u0435 ERP \u0434\u0435\u0439\u0441\u0442\u0432\
-      \u0438\u044F \u0432 \u043F\u0430\u043D\u0435\u043B\u044C \u0434\u043B\u044F\
-      \ \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u0435\
-      \u0439 \u0440\u0430\u0437\u043D\u044B\u0445 \u0440\u0430\u0441"
+  - message: Добавлены кастомные ERP действия в панель для представителей разных рас
     type: Add
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u044B \u0437\u0432\u0443\u043A\
-      \u0438 \u0436\u0435\u043D\u0441\u043A\u0438\u0445 \u0441\u0442\u043E\u043D\u043E\
-      \u0432"
+  - message: Изменены звуки женских стонов
     type: Tweak
   id: 190
   time: '2025-01-20T03:55:34.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/148
 - author: kanopus7
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0431\u0430\u0433\
-      \ \u0441 \u043E\u0442\u043A\u0440\u044B\u0442\u0438\u0435\u043C \u043D\u0435\
-      \u0441\u043A\u043E\u043B\u044C\u043A\u0438\u0445 \u043F\u0430\u043D\u0435\u043B\
-      \u0435\u0439 \u0432\u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0439\u0441\u0442\
-      \u0432\u0438\u044F \u0441\u0440\u0430\u0437\u0443 \u0438 \u0432\u043E\u0437\u043C\
-      \u043E\u0436\u043D\u043E\u0441\u0442\u044C\u044E \u0434\u0435\u0440\u0436\u0430\
-      \u0442\u044C \u0438\u0445 \u043E\u0442\u043A\u0440\u044B\u0442\u044B\u043C\u0438\
-      \ \u0432 \u0433\u043E\u0441\u0442\u0430\u0445 \u0438\u043B\u0438 \u043B\u043E\
-      \u0431\u0431\u0438."
+  - message: Исправлен баг с открытием нескольких панелей взаимодействия сразу и возможностью держать их открытыми в гостах или лобби.
     type: Fix
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430 \u0441\u0438\
-      \u0441\u0442\u0435\u043C\u0430 \u0432\u0430\u0439\u0442\u043B\u0438\u0441\u0442\
-      \u0430 \u0438 \u0431\u043B\u044D\u043A\u043B\u0438\u0441\u0442\u0430 \u043F\u0430\
-      \u043D\u0435\u043B\u0438 \u0432\u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0439\
-      \u0441\u0442\u0432\u0438\u044F."
+  - message: Исправлена система вайтлиста и блэклиста панели взаимодействия.
     type: Fix
   id: 191
   time: '2025-01-17T13:16:59.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/145
 - author: Shiranuy
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043E \u043D\u043E\u0432\
-      \u043E\u0435 \u0432\u0435\u0449\u0435\u0441\u0442\u0432\u043E \u0441\u0442\u043E\
-      \u043D\u0438\u0443\u043C \u0438 \u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\
-      \u0441\u0442\u044C \u0435\u0433\u043E \u0432\u0430\u0440\u043A\u0438."
+  - message: Добавлено новое вещество стониум и возможность его варки.
     type: Add
   id: 192
   time: '2025-02-04T02:45:10.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/161
 - author: kanopus7
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B 2 \u043D\u043E\
-      \u0432\u044B\u0435 \u0430\u043D\u0430\u043B\u044C\u043D\u044B\u0435 \u043F\u0440\
-      \u043E\u0431\u043A\u0438 \u0432 \u043A\u0438\u043D\u043A\u043E\u043C\u0430\u0442\
-      : \u043E\u0434\u043D\u0430 \u0441 \u043A\u043E\u0448\u0430\u0447\u044C\u0438\
-      \u043C \u0445\u0432\u043E\u0441\u0442\u0438\u043A\u043E\u043C, \u0432\u0442\u043E\
-      \u0440\u0430\u044F \u0441 \u043B\u0438\u0441\u0438\u043C."
+  - message: 'Добавлены 2 новые анальные пробки в кинкомат: одна с кошачьим хвостиком, вторая с лисим.'
     type: Add
   id: 193
   time: '2025-02-14T00:31:46.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/171
 - author: kanopus7
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043D\u043E\u0432\u044B\
-      \u0439 \u043F\u043E\u043B: \u0444\u0443\u0442\u0430\u043D\u0430\u0440\u0438."
+  - message: 'Добавлен новый пол: футанари.'
     type: Add
   id: 194
   time: '2025-02-14T00:31:37.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/170
 - author: AlexL1ne
   changes:
-  - message: "\u0423 \u0441\u0435\u043A\u0441-\u0438\u0433\u0440\u0443\u0448\u0435\
-      \u043A \u0443\u0434\u0430\u043B\u0435\u043D\u0430 \u043F\u0440\u0438\u0441\u043E\
-      \u0441\u043A\u0430."
+  - message: У секс-игрушек удалена присоска.
     type: Tweak
   id: 195
   time: '2025-02-10T03:08:45.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/163
 - author: Ne0shka
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430 \u0442\u0435\
-      \u043A\u0441\u0442\u0443\u0440\u0430 \u041A\u041F\u041A \u0433\u043E\u0440\u043D\
-      \u0438\u0447\u043D\u043E\u0439 \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0432\
-      \u0430\u043D\u0438\u044F."
+  - message: Исправлена текстура КПК горничной командования.
     type: Fix
   id: 196
   time: '2025-02-14T00:31:07.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/169
 - author: Ne0shka
   changes:
-  - message: "\u0421\u0435\u0440\u0432\u0438\u0441\u043D\u044B\u0439 \u0431\u043E\u0440\
-      \u0433 \u0442\u0435\u043F\u0435\u0440\u044C \u0438\u043C\u0435\u0435\u0442 \u0432\
-      \u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0441\u0442\u044C \u043F\u0440\u043E\
-      \u0441\u043C\u0430\u0442\u0440\u0438\u0432\u0430\u0442\u044C \u0437\u0430\u043A\
-      \u043E\u043D\u044B \u0438 \u0441\u0430\u0434\u0438\u0442\u044C\u0441\u044F."
+  - message: Сервисный борг теперь имеет возможность просматривать законы и садиться.
     type: Fix
   id: 197
   time: '2025-02-14T00:30:59.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/168
 - author: JunterFox
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u041F\u043B\u044E\
-      \u0448\u0435\u0432\u044B\u0435 \u041C\u0430\u043A\u0441\u0438\u043C \u0414\u0435\
-      \u0434\u043E\u0432 \u0438 \u0418\u0432\u0430\u043D \u0411\u044B\u043A\u043E\u0432"
+  - message: Добавлены Плюшевые Максим Дедов и Иван Быков
     type: Add
-  - message: "\u0423\u0434\u0430\u043B\u0435\u043D\u0430 21 \u043F\u043B\u044E\u0448\
-      \u043A\u0430 \u043D\u0435\u0430\u043A\u0442\u0438\u0432\u043D\u044B\u0445/\u0437\
-      \u0430\u0431\u043B\u043E\u043A\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\
-      \u0445 \u0437\u0430 \u0433\u0440\u0443\u0431\u044B\u0435 \u043D\u0430\u0440\u0443\
-      \u0448\u0435\u043D\u0438\u044F \u0431\u044B\u0432\u0448\u0438\u0445 \u0447\u043B\
-      \u0435\u043D\u043E\u0432 \u0441\u043E\u043E\u0431\u0449\u0435\u0441\u0442\u0432\
-      \u0430 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043D\u044B\u0445 \u0432\
-      \ \u0445\u043E\u0434\u0435 \u043A\u043E\u043D\u0432\u0435\u0435\u0440\u043D\u043E\
-      \u0439 \u0440\u0430\u0431\u043E\u0442\u044B."
+  - message: Удалена 21 плюшка неактивных/заблокированных за грубые нарушения бывших членов сообщества добавленных в ходе конвеерной работы.
     type: Remove
   id: 198
   time: '2025-02-14T01:30:06.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/174
 - author: kanopus7
   changes:
-  - message: "\u0424\u0443\u0442\u0430\u043D\u0430\u0440\u0438 \u0442\u0435\u043F\u0435\
-      \u0440\u044C \u043E\u0431\u043B\u0430\u0434\u0430\u044E\u0442 \u0432\u0430\u0433\
-      \u0438\u043D\u043E\u0439."
+  - message: Футанари теперь обладают вагиной.
     type: Tweak
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E \u0431\u043E\
-      \u043B\u044C\u0448\u0438\u043D\u0441\u0442\u0432\u043E \u043E\u0448\u0438\u0431\
-      \u043E\u043A \u0441\u0432\u044F\u0437\u0430\u043D\u043D\u044B\u0445 \u0441 \u0444\
-      \u0443\u0442\u0430\u043D\u0430\u0440\u0438."
+  - message: Исправлено большинство ошибок связанных с футанари.
     type: Fix
   id: 199
   time: '2025-02-15T04:05:02.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/176
 - author: kanopus7
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B \u0437\u0432\
-      \u0443\u043A\u0438 \u0432 \u044D\u043C\u043E\u0443\u0442\u0430\u0445 \u0443\
-      \ \u0432\u0441\u0435\u0445 \u0440\u0430\u0441 \u0434\u043B\u044F \u0444\u0443\
-      \u0442\u0430\u043D\u0430\u0440\u0438. \u0422\u0435\u043F\u0435\u0440\u044C \u0442\
-      \u0430\u043C \u0432\u0441\u0435 \u0442\u043E\u0447\u043D\u043E \u0436\u0435\u043D\
-      \u0441\u043A\u043E\u0435."
+  - message: Исправлены звуки в эмоутах у всех рас для футанари. Теперь там все точно женское.
     type: Fix
   id: 200
   time: '2025-02-15T21:22:47.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/178
 - author: LEWDXD
   changes:
-  - message: "\u041D\u043E\u0432\u044B\u0439 \u0434\u0438\u0437\u0430\u0439\u043D\
-      \ \u041A\u041F\u041A \u0433\u043E\u0440\u043D\u0438\u0447\u043D\u043E\u0439\
-      \ \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0432\u0430\u043D\u0438\u044F"
+  - message: Новый дизайн КПК горничной командования
     type: Tweak
   id: 201
   time: '2025-03-29T11:49:06.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/184
 - author: SqerDust
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u0438\u043B \u0444\u0443\u0442\u0431\u043E\
-      \u043B\u043A\u0443 \"\u041F\u0438\u0432\u043E\u0437\u0430\u0432\u0440\" \u0438\
-      \ \u043F\u0438\u0432\u043D\u043E\u0439 \u043A\u043E\u0441\u0442\u044E\u043C\
-      . \u041D\u0430\u0439\u0442\u0438 \u0438\u0445 \u043C\u043E\u0436\u043D\u043E\
-      \ \u0432 \u0422\u0435\u0430\u0442\u0440\u043E\u041C\u0430\u0442\u0435."
+  - message: Добавил футболку "Пивозавр" и пивной костюм. Найти их можно в ТеатроМате.
     type: Add
   id: 202
   time: '2025-03-29T11:53:04.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/198
 - author: kanopus7
   changes:
-  - message: "\u041F\u0430\u043D\u0435\u043B\u044C \u0432\u0437\u0430\u0438\u043C\u043E\
-      \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u043E\u043A\u043E\u043D\u0447\
-      \u0430\u0442\u0435\u043B\u044C\u043D\u043E \u043F\u043E\u0444\u0438\u043A\u0448\
-      \u0435\u043D\u0430 (\u0438\u043B\u0438 \u043D\u0435\u0442?)."
+  - message: Панель взаимодействия окончательно пофикшена (или нет?).
     type: Fix
   id: 203
   time: '2025-03-29T11:48:55.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/172
 - author: Gardsnake
   changes:
-  - message: "\u041B\u043E\u0433\u043E\u0442\u0438\u043F NT \u043D\u0430 \u043F\u043E\
-      \u0441\u044B\u043B\u043A\u0430\u0445 \u0437\u0430\u043C\u0435\u043D\u0451\u043D\
-      \ \u043D\u0430 \u043B\u043E\u0433\u043E\u0442\u0438\u043F Qillu."
+  - message: Логотип NT на посылках заменён на логотип Qillu.
     type: Tweak
-  - message: "\u041B\u043E\u0433\u043E\u0442\u0438\u043F NT \u043D\u0430 \u043F\u0438\
-      \u0441\u044C\u043C\u0430\u0445 \u0437\u0430\u043C\u0435\u043D\u0451\u043D \u043D\
-      \u0430 \u043B\u043E\u0433\u043E\u0442\u0438\u043F Qillu."
+  - message: Логотип NT на письмах заменён на логотип Qillu.
     type: Tweak
   id: 204
   time: '2025-04-06T00:24:48.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/203
 - author: SqerDust
   changes:
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0451\u043D \u043B\u043E\u0433\u043E\u0442\
-      \u0438\u043F \"Nanotrasen\" \u043D\u0430 \"Qillu\"."
+  - message: Изменён логотип "Nanotrasen" на "Qillu".
     type: Tweak
   id: 205
   time: '2025-04-06T00:24:36.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/202
 - author: Gardsnake
   changes:
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u0430 \u0438\u043A\u043E\u043D\
-      \u043A\u0430 \u043A\u043B\u044E\u0447\u0430 \u0448\u0438\u0444\u0440\u043E\u0432\
-      \u0430\u043D\u0438\u044F \u0426\u0435\u043D\u0442\u041A\u043E\u043C\u0430."
+  - message: Изменена иконка ключа шифрования ЦентКома.
     type: Tweak
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u0430 \u0438\u043A\u043E\u043D\
-      \u043A\u0430 \u0434\u043E\u043B\u0436\u043D\u043E\u0441\u0442\u0438 \u0426\u0435\
-      \u043D\u0442\u041A\u043E\u043C\u0430."
+  - message: Изменена иконка должности ЦентКома.
     type: Tweak
   id: 206
   time: '2025-04-03T01:25:25.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/200
 - author: VigersRay
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0441\u043F\u0430\
-      \u0432\u043D \u043A\u043E\u0441\u043C\u043E\u043F\u043E\u0440\u0442\u0430. (\u041A\
-      \u0430\u043A \u0438\u0442\u043E\u0433 \u0441\u043F\u0430\u0432\u043D \u0438\
-      \ \u0440\u0430\u0431\u043E\u0442\u0430 \u044D\u0432\u0430\u043A\u0430)"
+  - message: Исправлен спавн космопорта. (Как итог спавн и работа эвака)
     type: Fix
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0441\u043F\u0430\
-      \u0432\u043D \u0431\u043E\u043A\u0441\u0430 \u0438 \u043D\u0435\u043A\u043E\u0442\
-      \u043E\u0440\u044B\u0445 \u0434\u0440\u0443\u0433\u0438\u0445 \u0441\u0442\u0430\
-      \u043D\u0446\u0438\u0439."
+  - message: Исправлен спавн бокса и некоторых других станций.
     type: Fix
   id: 207
   time: '2025-04-11T17:35:23.468231+00:00'
 - author: VigersRay
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u0435\
-      \u0440\u0435\u043F\u0443\u0442\u0430\u043D\u044B\u0435 \u0448\u0430\u043D\u0441\
-      \u044B \u0440\u0435\u0436\u0438\u043C\u043E\u0432 \u043D\u0430 \u0441\u043F\u0435\
-      \u043A\u0442\u0440\u0443\u043C\u0435 \u0438 \u0432\u0435\u043D\u0435\u0440\u0435\
-      ."
+  - message: Исправлены перепутаные шансы режимов на спектруме и венере.
     type: Fix
   id: 208
   time: '2025-04-20T00:21:42.470337+00:00'
 - author: darneya
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043A\u0430\u0442\
-      \u0435\u0433\u043E\u0440\u0438\u044F \"\u042D\u0440\u043E\u0442\u0438\u0447\u0435\
-      \u0441\u043A\u043E\u0435\" \u0432 Lust Shop"
+  - message: Добавлена категория "Эротическое" в Lust Shop
     type: Add
   id: 209
   time: '2025-05-05T13:59:47.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/230
 - author: Vacuum898
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u0431\u0434\u0441\
-      \u043C \u0441\u0442\u043E\u0439\u043A\u0430 + \u0443\u043F\u0430\u043A\u043E\
-      \u0432\u0430\u043D\u043D\u044B\u0439 \u0432\u0430\u0440\u0438\u0430\u043D\u0442\
-      \ \u0434\u043B\u044F \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0438\
-      \ \u043C\u0443\u043B\u044C\u0442\u0438\u0442\u0443\u043B\u043E\u043C."
+  - message: Добавлена бдсм стойка + упакованный вариант для установки мультитулом.
     type: Add
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0451\u043D \u043A\u0430\u0442\u0430\u043B\
-      \u043E\u0433 \u043A\u0438\u043D\u043A\u043E\u043C\u0430\u0442\u0430, \u043A\u0443\
-      \u0434\u0430 \u0441\u043E\u0431\u0441\u0442\u0432\u0435\u043D\u043D\u043E \u0438\
-      \ \u0431\u044B\u043B\u0430 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430\
-      \ \u0443\u043F\u0430\u043A\u043E\u0432\u0430\u043D\u043D\u0430\u044F \u0441\u0442\
-      \u043E\u0439\u043A\u0430."
+  - message: Изменён каталог кинкомата, куда собственно и была добавлена упакованная стойка.
     type: Tweak
   id: 210
   time: '2025-05-05T13:59:30.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/229
 - author: ASLEEP
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u0438\u043B \u0410\u043B\u043A\u043E\u0433\
-      \u043E\u043B\u0438\u0447\u043A\u0443"
+  - message: Добавил Алкоголичку
     type: Add
   id: 211
   time: '2025-04-27T20:56:40.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/227
 - author: ProfCopperGear
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u044D\u0440\u043E\
-      \u0442\u0438\u0447\u0435\u0441\u043A\u0430\u044F \u0434\u0435\u043B\u043E\u0432\
-      \u0430\u044F \u0444\u043E\u0440\u043C\u0430 \u0432 \u043A\u0438\u043D\u043A\u043E\
-      \u043C\u0430\u0442."
+  - message: Добавлена эротическая деловая форма в кинкомат.
     type: Add
   id: 212
   time: '2025-04-27T20:56:08.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/221
 - author: darneya
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0431\u0430\u0433\
-      \ \u0441 \u0415\u0420\u041F \u0432\u0437\u0430\u0438\u043C\u043E\u0434\u0435\
-      \u0439\u0441\u0442\u0432\u0438\u044F\u043C\u0438, \u0437\u0430\u0434\u0435\u0439\
-      \u0441\u0442\u0432\u0443\u044E\u0449\u0438\u0435 \u0440\u043E\u0433\u0430."
+  - message: Исправлен баг с ЕРП взаимодействиями, задействующие рога.
     type: Fix
   id: 213
   time: '2025-05-31T20:06:11.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/245
 - author: Dezzzix, Lugzag
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u043E 4 \u0432\u0438\
-      \u0434\u0430 \u043B\u0430\u043F\u043E\u043A-\u043F\u0435\u0440\u0447\u0430\u0442\
-      \u043E\u043A."
+  - message: Добавлено 4 вида лапок-перчаток.
     type: Add
-  - message: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u0435 \u043F\
-      \u0435\u0440\u0447\u0430\u0442\u043A\u0438 \u0433\u043E\u0440\u043D\u0438\u0447\
-      \u043D\u043E\u0439 \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0432\u0430\u043D\
-      \u0438\u044F \u0437\u0430\u043C\u0435\u043D\u0435\u043D\u044B \u043D\u0430 \u043B\
-      \u0430\u043F\u043A\u0438-\u043F\u0435\u0440\u0447\u0430\u0442\u043A\u0438."
+  - message: Стандартные перчатки горничной командования заменены на лапки-перчатки.
     type: Tweak
   id: 214
   time: '2025-05-31T19:56:19.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/249
 - author: ASLEEP
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0438\u0433\u0440\
-      \u0443\u0448\u0435\u0447\u043D\u044B\u0435 \u043D\u0430\u0440\u0443\u0447\u043D\
-      \u0438\u043A\u0438"
+  - message: Добавлены игрушечные наручники
     type: Add
   id: 215
   time: '2025-05-31T20:07:58.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/244
 - author: Noychik
   changes:
-  - message: "\u0417\u0430\u043C\u0435\u043D\u0435\u043D\u0430 \u0442\u0435\u043A\u0441\
-      \u0442\u0443\u0440\u0430 \u043F\u043B\u044E\u0448\u043A\u0438 \u041C\u0430\u043A\
-      \u0441\u0438\u043C\u0430 \u0414\u0435\u0434\u043E\u0432\u0430"
+  - message: Заменена текстура плюшки Максима Дедова
     type: Tweak
   id: 216
   time: '2025-06-01T17:31:09.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/260
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u043A\u0430 \u0421\u0432\u044F\u0449\u0435\u043D-\u041B\u044E\u043D\u0430\
-      ."
+  - message: Добавлена плюшка Священ-Люна.
     type: Add
   id: 217
   time: '2025-06-01T17:29:48.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/258
 - author: ProfCopperGear, pacable
   changes:
-  - message: "\u0412 \u043A\u0438\u043D\u043A\u043E\u043C\u0430\u0442 \u0434\u043E\
-      \u0431\u0430\u0432\u043B\u0435\u043D\u043E \u043E\u0434\u0435\u044F\u043D\u0438\
-      \u0435 \u0441\u0443\u043A\u043A\u0443\u0431\u0430."
+  - message: В кинкомат добавлено одеяние суккуба.
     type: Add
   id: 218
   time: '2025-06-01T17:29:07.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/256
 - author: Hart_ty
   changes:
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D \u0441\u043F\u0440\u0430\u0439\
-      \u0442 \u043A\u0430\u0441\u0442\u0435\u0442\u0430 \u041A\u0432\u0430\u0440\u0442\
-      \u0438\u0440\u043C\u0435\u0439\u0441\u0442\u0435\u0440\u0430. \u0422\u0435\u043F\
-      \u0435\u0440\u044C \u043D\u0430 \u043D\u0451\u043C \u044D\u043C\u0431\u043B\u0435\
-      \u043C\u0430 Qillu."
+  - message: Изменен спрайт кастета Квартирмейстера. Теперь на нём эмблема Qillu.
     type: Tweak
   id: 219
   time: '2025-06-02T15:08:30.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/261
 - author: pacable
   changes:
-  - message: "\u041B\u0443\u0436\u0438 \u0441\u0435\u043C\u0435\u043D\u0438 \u0442\
-      \u0435\u043F\u0435\u0440\u044C \u043E\u0431\u044A\u0435\u0434\u0438\u043D\u044F\
-      \u044E\u0442\u0441\u044F, \u0430 \u043D\u0435 \u043D\u0430\u043A\u043B\u0430\
-      \u0434\u044B\u0432\u0430\u044E\u0442\u0441\u044F."
+  - message: Лужи семени теперь объединяются, а не накладываются.
     type: Fix
   id: 220
   time: '2025-06-02T16:43:39.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/265
 - author: pacable, seraphimttt
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043E\u0448\u0435\
-      \u0439\u043D\u0438\u043A\u0438 \u0441 \u043A\u043E\u043B\u043E\u043A\u043E\u043B\
-      \u044C\u0447\u0438\u043A\u043E\u043C."
+  - message: Добавлены ошейники с колокольчиком.
     type: Add
   id: 221
   time: '2025-06-04T14:29:33.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/264
 - author: Kendrick
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u0438\u043D\u0434\
-      \u0438\u0432\u0438\u0434\u0443\u0430\u043B\u044C\u043D\u0430\u044F \u0434\u043B\
-      \u044F Lust Station \u043A\u0430\u0441\u0442\u043E\u043C\u0438\u0437\u0430\u0446\
-      \u0438\u044F \u0434\u043B\u044F \u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\
-      \u0445 \u0440\u043E\u043B\u0435\u0439: \u0410\u0412\u0414, \u041F\u041A, \u0412\
-      \u0441\u0435 \u0433\u043B\u0430\u0432\u044B (\u041A\u0440\u043E\u043C\u0435\
-      \ \u0413\u041F), \u041A\u0430\u043F\u0438\u0442\u0430\u043D, \u0441\u043C\u043E\
-      \u0442\u0440\u0438\u0442\u0435\u043B\u044C, \u0430\u0434\u044A\u044E\u0442\u0430\
-      \u043D\u0442."
+  - message: 'Добавлена индивидуальная для Lust Station кастомизация для следующих ролей: АВД, ПК, Все главы (Кроме ГП), Капитан, смотритель, адъютант.'
     type: Add
   id: 222
   time: '2025-06-04T14:31:59.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/263
 - author: Gardsnake
   changes:
-  - message: "\u042D\u0445\u043E \u0412\u0438\u0441\u043A\u0438 \u0432\u044B\u0432\
-      \u0435\u0441\u043A\u0430 \u0432 \u0431\u0430\u0440\u0435 \u0442\u0435\u043F\u0435\
-      \u0440\u044C \u0438\u043C\u0435\u0435\u0442 \u043B\u043E\u0433\u043E\u0442\u0438\
-      \u043F Qillu!"
+  - message: Эхо Виски вывеска в баре теперь имеет логотип Qillu!
     type: Add
   id: 223
   time: '2025-06-07T21:09:31.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/268
 - author: seraphimttt, pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0447\u043E\u043A\
-      \u0435\u0440 \u0441 \u043A\u0440\u0435\u0441\u0442\u0438\u043A\u043E\u043C \u0438\
-      \ \u0447\u043E\u043A\u0435\u0440 \u0441\u043E \u0437\u0432\u0435\u0437\u0434\
-      \u043E\u0439."
+  - message: Добавлены чокер с крестиком и чокер со звездой.
     type: Add
   id: 224
   time: '2025-06-07T21:19:07.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/271
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F \u0438\u0433\u0440\u0443\u0448\u043A\u0430 \u0410\
-      \u0440\u0435\u043B\u0438\u0442\u0442 \u0412\u0435\u0440\u043C\u043E\u043B\u044C\
-      \u043D\u0434."
+  - message: Добавлена плюшевая игрушка Арелитт Вермольнд.
     type: Add
   id: 225
   time: '2025-06-10T15:39:58.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/274
 - author: pacable
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0439 \u0424\u0440\u0430\u043D\u0446 \u042D\u0432\u0430\u043D\
-      \u0441."
+  - message: Добавлен плюшевый Франц Эванс.
     type: Add
   id: 226
   time: '2025-06-10T15:20:03.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/273
 - author: darneya, Vitalitaalalita
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u0427\u0412\u041A\
-      \ \"Arrows\"."
+  - message: Добавлена ЧВК "Arrows".
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0448\u0430\u0442\u0442\
-      \u043B \u0427\u0412\u041A \"Arrows\"."
+  - message: Добавлен шаттл ЧВК "Arrows".
     type: Add
   id: 227
   time: '2025-07-05T13:06:02.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/291
 - author: Kendrick
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u043E\u0432\
-      \u044B\u0435 \u0440\u043E\u0433\u0430 \u0430\u0440\u043A\u0430\u043D\u0430\u043C\
-      ."
+  - message: Добавлены новые рога арканам.
     type: Add
   id: 228
   time: '2025-07-06T13:31:39.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/286
 - author: Kendrick
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0441\u0435\u043A\u0441\
-      \ \u043D\u0430 \u043F\u043B\u044F\u0436\u0435"
+  - message: Добавлен секс на пляже
     type: Add
   id: 229
   time: '2025-07-11T15:48:29.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/301
 - author: ReWAFFlution
   changes:
-  - message: "\u0423\u0434\u0430\u043B\u0435\u043D\u043E 3 \u0445\u0432\u043E\u0441\
-      \u0442\u0430 \u0434\u043B\u044F \u043B\u044E\u0434\u0435\u0439 \u0432 \u043C\
-      \u0435\u043D\u044E \u043A\u0430\u0441\u0442\u043E\u043C\u0438\u0437\u0430\u0446\
-      \u0438\u0438."
+  - message: Удалено 3 хвоста для людей в меню кастомизации.
     type: Remove
   id: 230
   time: '2025-07-13T08:37:01.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/306
 - author: daniil7383
   changes:
-  - message: "\u0426\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0435 \u043A\
-      \u043E\u043C\u0430\u043D\u0434\u043E\u0432\u0430\u043D\u0438\u0435 \u043D\u0430\
-      \u043A\u043E\u043D\u0435\u0446 \u043D\u0430\u0447\u0430\u043B\u043E \u043F\u043E\
-      \u0441\u0442\u0430\u0432\u043B\u044F\u0442\u044C \u043D\u043E\u0440\u043C\u0430\
-      \u043B\u044C\u043D\u0443\u044E \u043F\u0435\u0447\u0430\u0442\u044C \u043F\u0440\
-      \u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\u044E Qillu."
+  - message: Центральное командование наконец начало поставлять нормальную печать представителю Qillu.
     type: Tweak
   id: 231
   time: '2025-07-19T10:13:41.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/295
 - author: Kendrick
   changes:
-  - message: "\u041D\u0430 \u043F\u0430\u0440\u0430\u0434\u043D\u043E\u0439 \u0444\
-      \u043E\u0440\u043C\u0435 \u043A\u0430\u043F\u0438\u0442\u0430\u043D\u0430, \u0413\
-      \u0421\u0411 \u0438 \u0441\u043C\u043E\u0442\u0440\u0438\u0442\u0435\u043B\u044F\
-      \ \u043F\u043E\u044F\u0432\u0438\u043B\u0441\u044F \u0441\u043B\u043E\u0442\
-      \ \u043F\u043E\u0434 \u043E\u0440\u0443\u0436\u0438\u0435 \u0438 \u0431\u0430\
-      \u043B\u043B\u043E\u043D."
+  - message: На парадной форме капитана, ГСБ и смотрителя появился слот под оружие и баллон.
     type: Fix
   id: 232
   time: '2025-07-18T14:42:39.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/307
 - author: VigersRay
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0441\u043F\u0430\
-      \u0432\u043D \u0426\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u0433\
-      \u043E \u041A\u043E\u043C\u0430\u043D\u0434\u043E\u0432\u0430\u043D\u0438\u044F\
-      ."
+  - message: Исправлен спавн Центрального Командования.
     type: Fix
   id: 233
   time: '2025-07-19T10:27:09.120872+00:00'
 - author: kanopus7
   changes:
-  - message: "\u0410\u0431\u0434\u0443\u043A\u0442\u043E\u0440\u044B \u043F\u043E\u043B\
-      \u0443\u0447\u0438\u043B\u0438 \u0415\u0420\u041F \u043F\u0430\u043D\u0435\u043B\
-      \u044C."
+  - message: Абдукторы получили ЕРП панель.
     type: Add
   id: 234
   time: '2025-07-22T15:50:45.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/316
 - author: ReWAFFlution
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u0438\u043B 6 \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u044B\u0445 \u0438\u0433\u0440\u0443\u0448\u0435\u043A."
+  - message: Добавил 6 плюшевых игрушек.
     type: Add
   id: 235
   time: '2025-07-22T15:49:52.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/317
 - author: Ne0shka
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u043A\u0430 \u0414\u0440\u0430\u0441\u0443\u0441\u0430 \u041B\u0435\u0432\
-      \u0435\u0440\u0438\u0430\u043D\u0430."
+  - message: Добавлена плюшка Драсуса Левериана.
     type: Add
   id: 236
   time: '2025-07-25T08:59:02.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/320
 - author: kanopus7
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0441\u043E\u043E\
-      \u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0443\u044E\u0449\u0438\u0435 \u0432\
-      \u043E\u043A\u0430\u043B\u044C\u043D\u044B\u0435 \u044D\u0444\u0444\u0435\u043A\
-      \u0442\u044B \u0434\u043B\u044F \u043F\u043E\u043B\u0430 \"\u0424\u0443\u0442\
-      \u0430\u043D\u0430\u0440\u0438\"."
+  - message: Добавлены соответствующие вокальные эффекты для пола "Футанари".
     type: Fix
   id: 237
   time: '2025-08-07T07:35:17.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/326
 - author: Kinar_7
   changes:
-  - message: "\u041A\u0432\u0438\u043B\u043B\u0443 \u0443\u0441\u0438\u043B\u0438\u043B\
-      \u043E \u043F\u043E\u0434\u0430\u0447\u0443 \u044D\u043D\u0435\u0440\u0433\u0438\
-      \u0438 \u0421\u0442\u0430\u043D\u043C\u0435\u0447\u0430. \u0422\u0435\u043F\u0435\
-      \u0440\u044C \u043E\u043D \u043C\u043E\u0436\u0435\u0442 \u043F\u043E\u043B\u043E\
-      \u0436\u0438\u0442\u044C \u0447\u0435\u043B\u043E\u0432\u0435\u043A\u0430 \u0441\
-      \ 3 \u0443\u0434\u0430\u0440\u043E\u0432."
+  - message: Квиллу усилило подачу энергии Станмеча. Теперь он может положить человека с 3 ударов.
     type: Tweak
   id: 238
   time: '2025-08-07T07:34:03.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/325
 - author: Gpxgji
   changes:
-  - message: "\u0411\u043E\u043B\u044C\u0448\u0430\u044F \u0447\u0430\u0441\u0442\u044C\
-      \ \u0430\u043A\u0441\u0435\u0441\u0441\u0443\u0430\u0440\u043E\u0432 \u0438\
-      \ \u043E\u0434\u0435\u0436\u0434\u044B \u043F\u0435\u0440\u0435\u0432\u0435\u0434\
-      \u0435\u043D\u044B \u043D\u0430 \u0420\u0443\u0441\u0441\u043A\u0438\u0439 \u044F\
-      \u0437\u044B\u043A. \u041A\u0430\u0436\u0434\u044B\u0439 \u043F\u0440\u0435\u0434\
-      \u043C\u0435\u0442 \u0438\u043C\u0435\u0435\u0442 \u0443\u043D\u0438\u043A\u0430\
-      \u043B\u044C\u043D\u043E\u0435 \u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435\
-      \ \u0438 \u043E\u043F\u0438\u0441\u0430\u043D\u0438\u0435."
+  - message: Большая часть аксессуаров и одежды переведены на Русский язык. Каждый предмет имеет уникальное название и описание.
     type: Tweak
   id: 239
   time: '2025-08-07T07:33:49.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/324
 - author: InoweD, land1001
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u0443\u043A\u0430\
-      \u0437\u043A\u0430 \u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0430\
-      \u0440\u044F."
+  - message: Добавлена указка библиотекаря.
     type: Add
   id: 240
   time: '2025-08-07T07:45:51.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/334
 - author: Gpxgji
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0441\u043F\u0440\
-      \u0430\u0439\u0442 \u043F\u043B\u0430\u0449\u0430 \u041E\u0421\u041E."
+  - message: Исправлен спрайт плаща ОСО.
     type: Fix
-  - message: "\u0412 \u043B\u043E\u0430\u0434\u0430\u0443\u0442\u0435 \u0410\u0412\
-      \u0414 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F \u0435\u0433\u043E\
-      \ \u0441\u043F\u0435\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\
-      \u0430\u043D\u043D\u0430\u044F \u0441\u0443\u043C\u043A\u0430."
+  - message: В лоадауте АВД находится его специализированная сумка.
     type: Fix
   id: 241
   time: '2025-08-07T07:50:43.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/330
 - author: Kendrick
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043B\u0430\
-      \u0449 \u0438 \u043C\u0430\u043D\u0442\u0438\u044F \u0448\u0430\u0445\u0442\u0451\
-      \u0440\u043E\u0432 \u0432 \u043B\u043E\u0430\u0434\u0430\u0443\u0442 \u0443\u0442\
-      \u0438\u043B\u0438\u0437\u0430\u0442\u043E\u0440\u043E\u0432."
+  - message: Добавлены плащ и мантия шахтёров в лоадаут утилизаторов.
     type: Add
   id: 242
   time: '2025-08-14T15:51:57.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/328
 - author: Hero_010
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043B\u043E\u0434\
-      \u0430\u0443\u0442\u044B \u0434\u043B\u044F \u0433\u043E\u0440\u043D\u0438\u0447\
-      \u043D\u043E\u0439."
+  - message: Добавлены лодауты для горничной.
     type: Add
   id: 243
   time: '2025-08-14T15:38:43.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/344
 - author: Noychik & kamenshik975
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u044D\u043B\u0435\u0433\
-      \u0430\u043D\u0442\u043D\u044B\u0439 \u0442\u0440\u0435\u043D\u0447 \u0413\u0421\
-      \u0411"
+  - message: Добавлен элегантный тренч ГСБ
     type: Add
   id: 244
   time: '2025-08-14T16:08:29.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/340
 - author: daniil7383
   changes:
-  - message: "\u0437\u0430\u043C\u0435\u043D\u0435\u043D\u044B \u0443\u043F\u043E\u043C\
-      \u0438\u043D\u0430\u043D\u0438\u044F \u0432 \u043E\u043F\u0438\u0441\u0430\u043D\
-      \u0438\u044F\u0445 \u0438\u043B\u0438 \u0432 \u0438\u043C\u0435\u043D\u0430\u0445\
-      \ NT \u043D\u0430 Qillu \u0434\u043B\u044F \u0441\u043E\u043E\u0442\u0432\u0435\
-      \u0442\u0441\u0442\u0432\u0438\u044F \u0441\u0435\u0440\u0432\u0435\u0440\u0443\
-      ."
+  - message: заменены упоминания в описаниях или в именах NT на Qillu для соответствия серверу.
     type: Tweak
   id: 245
   time: '2025-08-14T19:43:49.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/296
 - author: daniil7383, gardsnake
   changes:
-  - message: "\u041A\u043E\u043F\u0438\u0440\u043E\u0432\u0430\u0442\u0435\u043B\u044C\
-      \u043D\u044B\u0439 \u0430\u043F\u043F\u0430\u0440\u0430\u0442 \u043F\u0435\u0447\
-      \u0430\u0442\u0430\u0435\u0442 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\
-      \u044B \u0441 \u043B\u043E\u0433\u043E\u0442\u0438\u043F\u043E\u043C Q."
+  - message: Копировательный аппарат печатает документы с логотипом Q.
     type: Add
   id: 246
   time: '2025-08-25T10:35:24.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/364
 - author: Gpxgji
   changes:
-  - message: "\u0422\u0435\u043F\u0435\u0440\u044C \u043F\u043B\u044E\u0448\u043A\u0438\
-      \ \u043B\u0430\u0441\u0442\u0430 \u0442\u0430\u043A\u0436\u0435 \u0432 \u0441\
-      \u0432\u043E\u0435\u0439 \u043A\u043E\u0440\u043E\u0431\u043A\u0435."
+  - message: Теперь плюшки ласта также в своей коробке.
     type: Tweak
   id: 247
   time: '2025-08-28T12:59:03.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/370
 - author: daniil7383
   changes:
-  - message: "\u0448\u0430\u0431\u043B\u043E\u043D\u044B Qillu \u0434\u043B\u044F\
-      \ \u043F\u0440\u0438\u043D\u0442\u0435\u0440\u0430"
+  - message: шаблоны Qillu для принтера
     type: Add
   id: 248
   time: '2025-08-15T15:17:48.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/351
 - author: daniil7383
   changes:
-  - message: "\u0414\u043E\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043B\u043E\u043A\
-      \u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438 \u041D\u0422 \u043D\u0430 Qillu"
+  - message: Доработка локализации НТ на Qillu
     type: Fix
   id: 249
   time: '2025-08-28T13:02:20.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/367
 - author: Orvex07, seraphimttt
   changes:
-  - message: "\u0418\u0437\u043C\u0435\u043D\u0435\u043D\u0430 \u0442\u0435\u043A\u0441\
-      \u0442\u0443\u0440\u0430 \u0431\u0430\u043D\u043D\u0435\u0440\u0430 Qillu"
+  - message: Изменена текстура баннера Qillu
     type: Tweak
   id: 250
   time: '2025-11-14T18:41:58.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/411
 - author: darneya
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043A\u0430\u0442\
-      \u0435\u0433\u043E\u0440\u0438\u044F \"\u041E\u0447\u043A\u0438\" \u0434\u043B\
-      \u044F \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u043E\u0432 \u043E\
-      \u0442\u0434\u0435\u043B\u0430 \u0421\u043B\u0443\u0436\u0431\u044B \u0411\u0435\
-      \u0437\u043E\u043F\u0430\u0441\u043D\u043E\u0441\u0442\u0438."
+  - message: Добавлена категория "Очки" для сотрудников отдела Службы Безопасности.
     type: Add
-  - message: "\u0414\u043B\u044F \u0441\u043F\u043E\u043D\u0441\u043E\u0440\u043E\u0432\
-      \ \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D \"\u0432\u0438\u0437\u043E\
-      \u0440 \u0421\u0411\", \u043F\u0440\u044F\u043C\u043E\u0439 \u0430\u043D\u0430\
-      \u043B\u043E\u0433 \u043E\u0431\u044B\u0447\u043D\u044B\u0445 \u043E\u0447\u043A\
-      \u043E\u0432 \u043E\u0445\u0440\u0430\u043D\u044B, \u043D\u043E \u0441 \u0438\
-      \u043D\u044B\u043C \u0441\u043F\u0440\u0430\u0439\u0442\u043E\u043C."
+  - message: Для спонсоров добавлен "визор СБ", прямой аналог обычных очков охраны, но с иным спрайтом.
     type: Add
   id: 251
   time: '2025-11-16T11:54:55.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/384
 - author: darneya, Vitalitaalalita
   changes:
-  - message: "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u0427\
-      \u0412\u041A \"Arrows\"."
+  - message: Возвращение ЧВК "Arrows".
     type: Add
   id: 252
   time: '2025-11-16T20:38:22.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/407
 - author: Noychik
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u043A\u0430 \u0410\u0448\u0438\u0442\u043E \u041B\u0435\u0432\u0440\u0438\
-      \u043D\u0430"
+  - message: Добавлена плюшка Ашито Леврина
     type: Add
   id: 253
   time: '2025-11-20T11:45:57.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/410
 - author: Noychik
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u043A\u0430 \u041A\u0438\u0440\u044B \u041A\u0438\u043B\u043B\u0438\u0433\
-      \u0440\u044E"
+  - message: Добавлена плюшка Киры Киллигрю
     type: Add
   id: 254
   time: '2025-11-23T20:18:20.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/401
 - author: Kinar_7
   changes:
-  - message: "\u0423\u0431\u0440\u0430\u043B \u043F\u043B\u044E\u0448\u043A\u0443\
-      \ \u041C\u0430\u043B\u0435\u0440\u043E\u043D\u0430"
+  - message: Убрал плюшку Малерона
     type: Remove
   id: 255
   time: '2025-12-01T18:33:36.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/414
 - author: Kinar_7
   changes:
-  - message: "\u0422\u0435\u043F\u0435\u0440\u044C \u0441 \u043F\u043E\u043C\u043E\
-      \u0449\u044C\u044E \u044D\u043B\u0435\u0433\u0430\u0442\u043D\u043E\u0433\u043E\
-      \ \u0442\u0440\u0435\u043D\u0447\u0430 \u0413\u0421\u0411 \u0432\u044B \u043C\
-      \u043E\u0436\u0435\u0442\u0435 \u043D\u043E\u0441\u0438\u0442\u044C \u043E\u0440\
-      \u0443\u0436\u0438\u0435 \u043D\u0430 \u0441\u043F\u0438\u043D\u0435"
+  - message: Теперь с помощью элегатного тренча ГСБ вы можете носить оружие на спине
     type: Fix
   id: 256
   time: '2025-12-01T18:38:03.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/413
 - author: Hero_010
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E \u043D\u0430\
-      \u0437\u0432\u0430\u043D\u0438\u0435 \u044D\u043C\u043E\u0446\u0438\u0438 \u0421\
-      \u0442\u043E\u043D\u0430\u0442\u044C."
+  - message: Исправлено название эмоции Стонать.
     type: Fix
   id: 257
   time: '2025-12-01T18:37:23.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/402
 - author: Orvex07
   changes:
-  - message: "\u041B\u043E\u043A\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u044F \u0434\
-      \u043E\u043A\u0443\u043C\u0435\u043D\u0442\u043E\u0432 \u0441 NT \u043D\u0430\
-      \ Qillu"
+  - message: Локализация документов с NT на Qillu
     type: Fix
   id: 258
   time: '2025-12-05T18:44:41.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/422
 - author: kinar_7
   changes:
-  - message: "\u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u0441\u043F\u0440\
-      \u0430\u0439\u0442\u044B \u0432\u0440\u0435\u043C\u0435\u043D\u043D\u043E \u0443\
-      \u0431\u0440\u0430\u043D\u044B"
+  - message: Некоторые спрайты временно убраны
     type: Remove
   id: 259
   time: '2025-12-13T16:39:54.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/424
 - author: JunterFox
   changes:
-  - message: "\u041F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0435\u043B\
-      \u044C Qillu \u043F\u0435\u0440\u0435\u0432\u0435\u0434\u0451\u043D \u043F\u043E\
-      \u0434 Whitelist."
+  - message: Представитель Qillu переведён под Whitelist.
     type: Tweak
   id: 260
   time: '2025-12-26T11:30:49.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/427
 - author: KaiserMaus
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E \u0432\u0435\
-      \u0441\u0435\u043B\u044C\u0435 VigersRay."
+  - message: Исправлено веселье VigersRay.
     type: Fix
   id: 261
   time: '2025-12-26T12:25:31.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/436
 - author: Orvex07
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043E\u0434\u0435\
-      \u0436\u0434\u0430 \u0410\u0412\u0414"
+  - message: Добавлена одежда АВД
     type: Add
   id: 262
   time: '2025-12-26T12:25:08.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/437
 - author: kanopus7
   changes:
-  - message: "\u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u043B\u044E\
-      \u0448\u0438 \u0431\u044B\u043B\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u044B\
-      ."
+  - message: Некоторые плюши были удалены.
     type: Remove
-  - message: "\u0423\u0434\u0430\u043B\u0435\u043D \u043B\u0430\u043A\u0438 \u0431\
-      \u043E\u043A\u0441 \u0441\u0430\u043D\u0440\u0430\u0439\u0437 \u043F\u043B\u044E\
-      \u0448\u0435\u043A \u0441 LUST \u0430\u043F\u043B\u0438\u043D\u043A\u0430."
+  - message: Удален лаки бокс санрайз плюшек с LUST аплинка.
     type: Remove
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u043A\u0430 \u0421\u0438\u043B\u044C\u0442\u043E\u043D\u0430 \u0413\u0440\
-      \u0435\u0439\u0441\u0430."
+  - message: Добавлена плюшка Сильтона Грейса.
     type: Add
-  - message: "\u041F\u043B\u044E\u0448\u043A\u0438 \u043A\u043E\u0442\u043E\u0440\u044B\
-      \u0435 \u0434\u043E\u043B\u0436\u043D\u044B \u0431\u044B\u043B\u0438 \u0433\u043E\
-      \u0432\u043E\u0440\u0438\u0442\u044C - \u0442\u0435\u043F\u0435\u0440\u044C\
-      \ \u0433\u043E\u0432\u043E\u0440\u044F\u0442."
+  - message: Плюшки которые должны были говорить - теперь говорят.
     type: Fix
   id: 263
   time: '2025-12-26T16:01:03.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/421
 - author: iDesmond
   changes:
-  - message: "\u041F\u043B\u044E\u0448\u043A\u0430 \u0421\u043E\u0444\u044C\u044F\
-      \ \u041A\u043E\u043C\u0438\u0441\u0441\u0430\u0440\u043E\u0432\u0430 \u043F\u043E\
-      \u043B\u0443\u0447\u0438\u043B\u0430 inhand \u0441\u043F\u0440\u0430\u0439\u0442\
-      \u044B"
+  - message: Плюшка Софья Комиссарова получила inhand спрайты
     type: Add
   id: 264
   time: '2025-12-29T09:27:55.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/439
 - author: Orvex07
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u043E\u0432\
-      \u044B\u0435 \u0448\u0430\u0431\u043B\u043E\u043D\u044B \u0434\u043E\u043A\u0443\
-      \u043C\u0435\u043D\u0442\u043E\u0432 \u0432 \u043A\u043E\u043F\u0438\u0440\u043E\
-      \u0432\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0430\u043F\u043F\u0430\
-      \u0440\u0430\u0442"
+  - message: Добавлены новые шаблоны документов в копировательный аппарат
     type: Add
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0437\u0430\u0433\
-      \u043E\u043B\u043E\u0432\u043E\u043A \u0432 \u0446\u0435\u043B\u0438 \u0441\u0442\
-      \u0430\u043D\u0446\u0438\u0438"
+  - message: Исправлен заголовок в цели станции
     type: Fix
   id: 265
   time: '2026-01-04T11:13:02.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/445
 - author: Orvex07
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0432\u0435\u0449\
-      \u0438 Qillu \u0446\u0435\u043D\u0442\u0440\u0430\u043B\u044C\u043D\u043E\u043C\
-      \u0443 \u043A\u043E\u043C\u0430\u043D\u0434\u043E\u0432\u0430\u043D\u0438\u044E\
-      ."
+  - message: Добавлены вещи Qillu центральному командованию.
     type: Add
   id: 266
   time: '2026-01-04T20:28:44.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/446
 - author: kanopus7
   changes:
-  - message: "\u0412 \u0430\u043F\u043B\u0438\u043D\u043A \u043B\u0430\u0441\u0442\
-      \u0430 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0440\u0430\u0437\u0434\
-      \u0435\u043B \u0441 \u043A\u0440\u0430\u0441\u043A\u043E\u0439."
+  - message: В аплинк ласта добавлен раздел с краской.
     type: Add
-  - message: "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D \u0430\u0444\u0440\
-      \u043E\u0434\u0435\u0437\u0438\u0430\u043A."
+  - message: Возвращен афродезиак.
     type: Add
-  - message: "\u041F\u043E\u0444\u0438\u043A\u0448\u0435\u043D \u0433\u043E\u043B\u043E\
-      \u0441 \u0432\u043E\u043A\u0441\u043E\u0432."
+  - message: Пофикшен голос воксов.
     type: Fix
   id: 267
   time: '2026-01-08T15:15:54.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/454
 - author: Fooksy2304, bulbo44kkey
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u0438\u043B \u0423\u043B\u0430\u0432\u0435\
-      \ \u0441\u043F\u0440\u0430\u0439\u0442\u044B \u0432 \u0440\u0443\u043A\u0430\
-      \u0445, \u0441\u0438\u0434\u0435\u043D\u0438\u044F \u043D\u0430 \u0448\u0435\
-      \u0435"
+  - message: Добавил Улаве спрайты в руках, сидения на шее
     type: Add
   id: 268
   time: '2026-01-08T18:24:32.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/455
 - author: Orvex07
   changes:
-  - message: "\u0428\u043E\u043A\u043E\u0432\u044B\u0439 \u043E\u0448\u0435\u0439\u043D\
-      \u0438\u043A \u0441\u043D\u043E\u0432\u0430 \u0440\u0430\u0431\u043E\u0442\u0430\
-      \u0435\u0442."
+  - message: Шоковый ошейник снова работает.
     type: Fix
   id: 269
   time: '2026-01-09T22:14:45.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/458
 - author: iDesmond & bulbo44kkey
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\
-      \u0448\u0435\u0432\u0430\u044F L.I.L.I.T.H"
+  - message: Добавлена плюшевая L.I.L.I.T.H
     type: Add
   id: 270
   time: '2026-01-20T19:59:34.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/461
 - author: Orvex07
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u0438\u043B \u0441\u0438\u043B\u043E\u0432\
-      \u0443\u044E \u0434\u0432\u0435\u0440\u044C \u0434\u043B\u044F \u0438\u0432\u0435\
-      \u043D\u0442\u043E\u0432 HL2"
+  - message: Добавил силовую дверь для ивентов HL2
     type: Add
   id: 271
   time: '2026-01-20T19:59:47.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/460
 - author: Fooksy2304
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0414\u0438\u0435\u0433\
-      \u043E \u0424\u043E\u043D \u044D\u044D\u044D \u0437\u0430\u0431\u044B\u043B\
-      , \u043A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E \u043D\u0435\
-      \ \u0432\u0443\u043B\u044C\u043F\u0430"
+  - message: Добавлен Диего Фон эээ забыл, к сожалению не вульпа
     type: Add
   id: 272
   time: '2026-01-27T20:20:17.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/465
 - author: Orvex07
   changes:
-  - message: "\u041F\u0430\u0440\u0430\u0434\u043E\u043A\u0441\u0430\u043B\u044C\u043D\
-      \u044B\u0439 \u043A\u043B\u043E\u043D \u043F\u043E\u043B\u0443\u0447\u0438\u043B\
-      \ \u0441\u0442\u0430\u0442\u0443\u0441 \u0415\u0420\u041F"
+  - message: Парадоксальный клон получил статус ЕРП
     type: Add
   id: 273
   time: '2026-01-31T20:59:17.0000000+00:00'
@@ -1379,348 +960,264 @@
   url: https://github.com/space-sunrise/lust-station/pull/469
 - author: APA64IK, proximitymines
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u043E\u0432\
-      \u044B\u0435 \u0446\u0432\u0435\u0442\u0430 \u0432\u0435\u0440\u0451\u0432\u043A\
-      \u0438 \u0434\u043B\u044F \u0448\u0438\u0431\u0430\u0440\u0438."
+  - message: Добавлены новые цвета верёвки для шибари.
     type: Add
   id: 275
   time: '2026-02-14T16:48:03.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/471
 - author: BDSM_
   changes:
-  - message: "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D \u0441\u043F\u043E\
-      \u043D\u0441\u043E\u0440\u0441\u043A\u0438\u0439 \u043F\u043B\u0430\u0449 \u043A\
-      \u0430\u043F\u0438\u0442\u0430\u043D\u0430 \u0432 \u043B\u043E\u0434\u0430\u0443\
-      \u0442"
+  - message: Возвращен спонсорский плащ капитана в лодаут
     type: Fix
   id: 276
   time: '2026-02-16T22:03:12.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/479
 - author: BDSM_
   changes:
-  - message: "\u0412 \u043A\u0438\u043D\u043A\u043E\u043C\u0430\u0442 \u0434\u043E\
-      \u0431\u0430\u0432\u043B\u0435\u043D\u044B \u0441\u0442\u0440\u0435\u043B\u044B\
-      \ \u043A\u0443\u043F\u0438\u0434\u043E\u043D\u0430"
+  - message: В кинкомат добавлены стрелы купидона
     type: Add
-  - message: "\u0412 Lust shop \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B\
-      \ \u0441\u0442\u0440\u0435\u043B\u044B \u043A\u0443\u043F\u0438\u0434\u043E\u043D\
-      \u0430 \u0437\u0430 25 \u0441\u0430\u043D\u0442\u0438\u043A\u043E\u0432"
+  - message: В Lust shop добавлены стрелы купидона за 25 сантиков
     type: Add
   id: 277
   time: '2026-02-16T22:07:48.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/474
 - author: Fooksy2304
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u0442\u0430\
-      \ \u0441\u0430\u043C\u0430\u044F \u043B\u0435\u0433\u0435\u043D\u0434\u0430\u0440\
-      \u043D\u0430\u044F \u0434\u0443\u0431\u0438\u043D\u043A\u0430 \u0438\u0437 \
-      \ \u0441\u0430\u043D-\u0430\u043D\u0434\u0440\u0435\u0441\u0430."
+  - message: Добавлена та самая легендарная дубинка из  сан-андреса.
     type: Add
   id: 278
   time: '2026-02-23T20:41:43.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/482
 - author: seemah
   changes:
-  - message: "\u0423\u0434\u0430\u043B\u0435\u043D\u0430 \u043F\u043B\u044E\u0448\u043A\
-      \u0430 \u0410\u0441\u0438 \u0424\u0430\u0440\u0442\u0443\u043D\u044B."
+  - message: Удалена плюшка Аси Фартуны.
     type: Remove
   id: 279
   time: '2026-02-24T07:03:11.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/476
 - author: Soragy
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0430 \u043F\u0440\
-      \u043E\u0431\u043B\u0435\u043C\u0430 \u043E\u0442\u0441\u0443\u0442\u0441\u0442\
-      \u0432\u0438\u044F \u043E\u0437\u0432\u0443\u0447\u043A\u0438 \u0441\u0442\u043E\
-      \u043D\u043E\u0432 \u0443 \u0432\u0441\u0435\u0445 \u0438\u0433\u0440\u043E\u0432\
-      \u044B\u0445 \u0440\u0430\u0441."
+  - message: Исправлена проблема отсутствия озвучки стонов у всех игровых рас.
     type: Fix
   id: 280
   time: '2026-03-11T21:01:15.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/486
 - author: Orvex07, seraphimttt
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D \u0441\u043F\u0440\
-      \u0430\u0439\u0442 \u043C\u0430\u043D\u0442\u0438\u0438 \u0410\u0412\u0414"
+  - message: Исправлен спрайт мантии АВД
     type: Fix
   id: 281
   time: '2026-03-18T19:48:32.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/503
 - author: Soragy
   changes:
-  - message: "\u041F\u0440\u0438\u0432\u0435\u0434\u0435\u043D\u044B \u043C\u0430\u0440\
-      \u043A\u0435\u0440\u044B \u043A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\
-      \u0438\u0435\u0432 Lust \u043A \u0435\u0434\u0438\u043D\u043E\u043C\u0443 \u0444\
-      \u043E\u0440\u043C\u0430\u0442\u0443."
+  - message: Приведены маркеры комментариев Lust к единому формату.
     type: Fix
   id: 282
   time: '2026-03-21T21:40:32.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/502
 - author: matavsn
   changes:
-  - message: "\u041E\u0442\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u0448\
-      \u0430\u043F\u043E\u043A \u043D\u0430 \u0431\u043E\u0440\u0433\u0430\u0445."
+  - message: Отображение шапок на боргах.
     type: Fix
   id: 283
   time: '2026-03-29T18:44:10.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/509
 - author: Orvex07
   changes:
-  - message: "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0435\u043D\u0430 \u0432\u043A\
-      \u043B\u0430\u0434\u043A\u0430 \u0421\u043F\u043E\u043D\u0441\u043E\u0440 \u0432\
-      \ \u043B\u043E\u0434\u0430\u0443\u0442\u0430\u0445."
+  - message: Возвращена вкладка Спонсор в лодаутах.
     type: Add
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043B\u043E\u0434\u0430\
-      \u0443\u0442 Qillu \u0444\u043E\u0440\u043C\u0430\u0442\u0430 \u0434\u043B\u044F\
-      \ \u043E\u043F\u0435\u0440\u0430\u0442\u043E\u0440\u0430 \u0426\u041A."
+  - message: Добавлен лодаут Qillu формата для оператора ЦК.
     type: Add
-  - message: "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0451\u043D \u0432\u0438\u0437\
-      \u043E\u0440 \u0421\u0411 \u0432 \u043B\u043E\u0434\u0430\u0443\u0442."
+  - message: Возвращён визор СБ в лодаут.
     type: Fix
-  - message: "\u0421\u043F\u043E\u043D\u0441\u043E\u0440\u0441\u043A\u0438\u0435 \u043F\
-      \u0440\u0435\u0434\u043C\u0435\u0442\u044B \u0434\u043E\u0431\u0430\u0432\u043B\
-      \u0435\u043D\u044B \u0432 \u043B\u043E\u0434\u0430\u0443\u0442\u044B \u0432\u0441\
-      \u0435\u043C \u0440\u043E\u043B\u044F\u043C, \u0443 \u043A\u043E\u0442\u043E\
-      \u0440\u044B\u0445 \u0438\u0445 \u0440\u0430\u043D\u044C\u0448\u0435 \u043D\u0435\
-      \ \u0431\u044B\u043B\u043E."
+  - message: Спонсорские предметы добавлены в лодауты всем ролям, у которых их раньше не было.
     type: Fix
-  - message: "\u0410\u0412\u0414 \u0438 \u043F\u0440\u0435\u0434\u0441\u0442\u0430\
-      \u0432\u0438\u0442\u0435\u043B\u044C Qillu \u043F\u043E\u043B\u0443\u0447\u0438\
-      \u043B\u0438 \u0440\u0443\u0447\u043A\u0443 \u0426\u041A Qillu \u043F\u043E\
-      \ \u0443\u043C\u043E\u043B\u0447\u0430\u043D\u0438\u044E."
+  - message: АВД и представитель Qillu получили ручку ЦК Qillu по умолчанию.
     type: Fix
   id: 284
   time: '2026-03-31T15:58:52.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/510
 - author: seemah
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u043E \u043E\u0442\
-      \u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043F\u043B\u044E\u0448\
-      \u0435\u0432\u043E\u0439 Blizzard \u043D\u0430 \u0433\u043E\u043B\u043E\u0432\
-      \u0435."
+  - message: Исправлено отображение плюшевой Blizzard на голове.
     type: Fix
   id: 285
   time: '2026-04-01T13:53:50.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/511
 - author: Orvex07
   changes:
-  - message: "\u041E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u044B \u043D\u0430\u0437\
-      \u0432\u0430\u043D\u0438\u044F \u0448\u0430\u0442\u0442\u043B\u043E\u0432 Qillu."
+  - message: Обновлены названия шаттлов Qillu.
     type: Tweak
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B \u044D\u043C\
-      \u043E-\u0437\u0432\u0443\u043A\u0438 \u0443 ... \u0442\u0440\u0435\u0442\u044C\
-      \u0435\u0433\u043E \u043F\u043E\u043B\u0430."
+  - message: Исправлены эмо-звуки у ... третьего пола.
     type: Fix
   id: 286
   time: '2026-04-01T13:53:10.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/513
 - author: Noychik
   changes:
-  - message: "\u0416\u0438\u0432\u0430\u044F \u043C\u0430\u043D\u0442\u0438\u044F\
-      \ \u0441\u043D\u043E\u0432\u0430 \u0432 \u043B\u043E\u0434\u0430\u0443\u0442\
-      \u0435 \u0443\u0442\u0438\u043B\u0438\u0437\u0430\u0442\u043E\u0440\u043E\u0432\
-      ."
+  - message: Живая мантия снова в лодауте утилизаторов.
     type: Fix
   id: 287
   time: '2026-04-14T18:47:16.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/519
 - author: Orvex07
   changes:
-  - message: "\u0414\u043E\u0436\u0434\u0430\u043B\u0438\u0441\u044C... \u0421\u043C\
-      \u043E\u0442\u0440\u0438\u0442\u0435\u043B\u044E \u043D\u0430\u043A\u043E\u043D\
-      \u0435\u0446-\u0442\u043E \u0432\u044B\u0434\u0430\u043B\u0438 \u0442\u0430\u0431\
-      \u0435\u043B\u044C\u043D\u043E\u0435 \u043E\u0440\u0443\u0436\u0438\u0435"
+  - message: Дождались... Смотрителю наконец-то выдали табельное оружие
     type: Fix
   id: 288
   time: '2026-04-13T04:29:50.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/518
 - author: Fooksy2304
   changes:
-  - message: "\u0441\u0435\u043A\u0440\u0435\u0442 \u0432\u0435\u043D\u0435\u0440\u044B\
-      \ \u0441\u0442\u0430\u043B \u043A\u0443\u0434\u0430 \u0431\u043E\u043B\u0435\
-      \u0435 \u0438\u043D\u0442\u0435\u0440\u0435\u0441\u043D\u044B\u043C."
+  - message: секрет венеры стал куда более интересным.
     type: Fix
   id: 289
   time: '2026-04-19T15:01:33.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/522
 - author: Orvex07
   changes:
-  - message: "\u041F\u0440\u0430\u0432\u0438\u043B\u0430 \u043D\u0430 \u0441\u0435\
-      \u0440\u0432\u0435\u0440\u0430\u0445 \u0431\u044B\u043B\u0438 \u0430\u043A\u0442\
-      \u0443\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u044B."
+  - message: Правила на серверах были актуализированы.
     type: Tweak
   id: 290
   time: '2026-04-20T20:24:27.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/524
 - author: Orvex07
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043D\u0435\u0434\
-      \u043E\u0441\u0442\u0430\u044E\u0449\u0438\u0435 \u0444\u043E\u0440\u043C\u044B\
-      \ \u0434\u043E\u043A\u0443\u043C\u0435\u043D\u0442\u043E\u0432 \u0432 \u043F\
-      \u0440\u0438\u043D\u0442\u0435\u0440 \u0434\u043E\u043A\u0443\u043C\u0435\u043D\
-      \u0442\u043E\u0432 Qillu."
+  - message: Добавлены недостающие формы документов в принтер документов Qillu.
     type: Add
   id: 291
   time: '2026-04-27T20:11:59.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/528
 - author: MataVsn
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B \u043F\u043E\u044F\
-      \u0441\u0430 \u0432\u0435\u0440\u043D\u043E\u0441\u0442\u0438 \u0438 ERP - \u0432\
-      \u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F\
-      \ \u0441 \u043D\u0438\u043C\u0438"
+  - message: Добавлены пояса верности и ERP - взаимодействия с ними
     type: Add
   id: 292
   time: '2026-05-18T07:26:23.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/521
 - author: Orvex07
   changes:
-  - message: "\u041D\u0435\u043A\u043E\u0442\u043E\u0440\u044B\u0435 \u043F\u043B\u044E\
-      \u0448\u043A\u0438 \u0437\u0430\u043C\u0435\u043D\u0435\u043D\u044B \u043D\u0430\
-      \ \u043F\u043B\u044E\u0448\u043A\u0443 \u0443\u043D\u0430\u0442\u0445\u0430."
+  - message: Некоторые плюшки заменены на плюшку унатха.
     type: Tweak
   id: 293
   time: '2026-06-04T12:57:06.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/544
 - author: MataVsn
   changes:
-  - message: "\u041A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u043E \u043E\u0442\u043E\
-      \u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0435 \u043A\u043B\u0435\u0442\u043E\
-      \u043A \u043D\u0430 \u0440\u0430\u0441\u0430\u0445."
+  - message: Корректно отображение клеток на расах.
     type: Fix
   id: 294
   time: '2026-06-05T18:50:53.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/546
 - author: Kinar_7
   changes:
-  - message: "\u041A\u043E\u0440\u043E\u043B\u044E \u043A\u0440\u044B\u0441 \u0432\
-      \u0435\u0440\u043D\u0443\u043B\u0438 \u0441\u0442\u0430\u043D\u0434\u0430\u0440\
-      \u0442\u043D\u044B\u0439 \u043C\u0443\u0436\u0441\u043A\u043E\u0439 \u0441\u043F\
-      \u0440\u0430\u0439\u0442"
+  - message: Королю крыс вернули стандартный мужской спрайт
     type: Tweak
   id: 295
   time: '2026-06-23T17:37:36.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/553
 - author: ThereDrD
   changes:
-  - message: "\u0410\u043F\u0441\u0442\u0440\u0438\u043C \u0441 \u0441\u0430\u043D\
-      \u0440\u0430\u0439\u0437\u0430"
+  - message: Апстрим с санрайза
     type: Add
   id: 296
   time: '2026-07-20T14:15:07.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/559
 - author: fuckrules
   changes:
-  - message: "\u0412 \u043B\u043E\u0434\u0430\u0443\u0442 \u0431\u0440\u0438\u0433\
-      \u043C\u0435\u0434\u0438\u043A\u0430 \u0431\u044B\u043B \u0434\u043E\u0431\u0430\
-      \u0432\u043B\u0435\u043D \u043D\u043E\u0432\u044B\u0439 \u043F\u0440\u0435\u0434\
-      \u043C\u0435\u0442"
+  - message: В лодаут бригмедика был добавлен новый предмет
     type: Add
   id: 297
   time: '2026-07-25T08:40:31.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/551
 - author: Nordstream17
   changes:
-  - message: "\u0421\u0442\u0435\u043D\u044B \u0434\u043B\u044F \u0438\u0432\u0435\
-      \u043D\u0442\u0430"
+  - message: Стены для ивента
     type: Add
   id: 298
   time: '2026-07-26T05:00:53.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/561
 - author: Fooksy2304
   changes:
-  - message: "\u041A\u0441\u0435\u043D\u043E\u043C\u043E\u0440\u0444\u044B \u043F\u043E\
-      \u043B\u0443\u0447\u0438\u043B\u0438 \u043F\u043E\u043B \"\u0444\u0443\u0442\
-      \u0430\""
+  - message: Ксеноморфы получили пол "фута"
     type: Fix
   id: 299
   time: '2026-07-26T05:35:04.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/563
 - author: Nordstream17
   changes:
-  - message: "\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043D \u0430\u0441\u0441\u043E\
-      \u0440\u0442\u0438\u043C\u0435\u043D\u0442 \u043B\u0430\u0441\u0442\u0448\u043E\
-      \u043F\u0430, \u0430 \u0438\u043C\u0435\u043D\u043D\u043E \u043A\u0430\u0442\
-      \u0435\u0433\u043E\u0440\u0438\u0439 \"\u042D\u0440\u043E\u0442\u0438\u0447\u0435\
-      \u0441\u043A\u043E\u0435\" \u0438 \"\u0420\u043E\u043C\u0430\u043D\u0442\u0438\
-      \u043A\u0430."
+  - message: Расширен ассортимент ластшопа, а именно категорий "Эротическое" и "Романтика.
     type: Add
-  - message: "\u041A\u0430\u0442\u0435\u0433\u043E\u0440\u0438\u044F \u043B\u0430\u0441\
-      \u0442\u0448\u043E\u043F\u0430 \"\u042D\u0440\u043E\u0442\u0438\u0447\u0435\u0441\
-      \u043A\u043E\u0435\" \u0440\u0430\u0437\u0434\u0435\u043B\u0435\u043D\u0430\
-      \ \u043D\u0430 \"\u042D\u0440\u043E\u0442\u0438\u0447\u0435\u0441\u043A\u043E\
-      \u0435\" \u0438 \"\u0420\u043E\u043C\u0430\u043D\u0442\u0438\u043A\u0430\"."
+  - message: Категория ластшопа "Эротическое" разделена на "Эротическое" и "Романтика".
     type: Tweak
   id: 300
   time: '2026-07-26T06:15:34.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/555
 - author: Fooksy2304
   changes:
-  - message: "\u043F\u043B\u044E\u0448\u0435\u0432\u0430\u044F \u041C\u0430\u043A\u0441\
-      \u0430 \u0441\u0442\u0430\u043B\u0430 \u043C\u0443\u0436\u0438\u043A\u043E\u043C"
+  - message: плюшевая Макса стала мужиком
     type: Add
   id: 301
   time: '2026-07-27T02:07:50.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/554
 - author: Orvex07, Gardsnake
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u043B\u043E\u0433\u043E\
-      \u0442\u0438\u043F Qillu \u043D\u0430 \u0431\u043E\u043B\u044C\u0448\u0438\u043D\
-      \u0441\u0442\u0432\u043E \u0432\u0435\u0449\u0435\u0439"
+  - message: Добавлен логотип Qillu на большинство вещей
     type: Add
   id: 302
   time: '2026-07-27T02:10:27.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/525
 - author: LemonFY
   changes:
-  - message: "\u041E\u0434\u0435\u0436\u0434\u0430 \u0434\u043B\u044F \u0441\u0442\
-      \u0440\u0438\u043F\u0442\u0438\u0437\u0430"
+  - message: Одежда для стриптиза
     type: Add
   id: 303
   time: '2026-08-02T10:16:33.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/562
 - author: Soragy
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u0430 \u043B\u043E\u043A\
-      \u0430\u043B\u0438\u0437\u0430\u0446\u0438\u044F \u0432\u0430\u043B\u044E\u0442\
-      \u044B Lust Shop."
+  - message: Добавлена локализация валюты Lust Shop.
     type: Add
   id: 304
   time: '2026-08-02T12:35:57.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/500
 - author: Soragy
   changes:
-  - message: "\u0421\u0442\u0440\u0430\u043F\u043E\u043D \u043D\u0430 \u043F\u043E\
-      \u044F\u0441\u0435 \u043E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442 \u0432\
-      \u0437\u0430\u0438\u043C\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F\
-      \ \u0441 \u0434\u0438\u043B\u0434\u043E."
+  - message: Страпон на поясе открывает взаимодействия с дилдо.
     type: Add
   id: 305
   time: '2026-08-02T13:15:44.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/499
 - author: Soragy
   changes:
-  - message: "\u0414\u043E\u0431\u0430\u0432\u043B\u0435\u043D\u044B ERP \u0432\u0437\
-      \u0430\u0438\u043C\u043E\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0434\
-      \u043B\u044F \u043A\u0440\u044B\u043B\u044C\u0435\u0432."
+  - message: Добавлены ERP взаимодействия для крыльев.
     type: Add
-  - message: "\u0423\u0431\u0440\u0430\u043D\u044B \u0432\u0437\u0430\u0438\u043C\u043E\
-      \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044F \u0441 \u0445\u0432\u043E\u0441\
-      \u0442\u043E\u043C \u0443 \u041C\u0438\u0440\u0438\u043B \u0438 \u041C\u043E\
-      \u043B\u0438."
+  - message: Убраны взаимодействия с хвостом у Мирил и Моли.
     type: Fix
   id: 306
   time: '2026-08-02T17:07:55.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/495
 - author: Soragy
   changes:
-  - message: "\u0418\u0441\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u044B \u0441\u0442\
-      \u043E\u043D\u044B \u0443 \u0422\u0440\u043E\u0442\u0442\u0438\u043D \u0438\
-      \ \u0420\u0435\u0437\u043E\u043C\u0438, \u0430 \u0442\u0430\u043A \u0436\u0435\
-      \ \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D \u0437\u0432\u0443\u043A\
-      \ \u0434\u043B\u044F \u041A\u0441\u0435\u043D\u043E\u043C\u043E\u0440\u0444\u043E\
-      \u0432."
+  - message: Исправлены стоны у Троттин и Резоми, а так же добавлен звук для Ксеноморфов.
     type: Fix
   id: 307
   time: '2026-08-02T17:26:25.0000000+00:00'
   url: https://github.com/space-sunrise/lust-station/pull/496
+- author: kanopus7
+  time: '2026-08-17T08:06:58.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Тест чейнджлога
+  - type: Add
+    message: Апстрим от визден, будут баги.
+  id: 308
+  url: https://github.com/space-sunrise/lust-station/pull/571
+  media:
+  - url: https://github.com/user-attachments/assets/40a542d0-f26d-4758-9e20-589a5efbbfe9
+    description: Картинка
+    change: 0
+  - url: https://github.com/user-attachments/assets/ef838915-2146-4b59-b412-a8e37e2eaf26
+    description: Апстрим
+    change: 1

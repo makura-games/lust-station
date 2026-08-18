@@ -2,7 +2,7 @@
   id: LustJobMedicalDoctor
   groups:
   - SunriseMedicalDoctorHead
-  - MedicalEyewear
+  - SunriseGlasses
   - SunriseMedicalMask
   - SunriseMedicalDoctorNeck
   - MedicalDoctorJumpsuit
@@ -18,7 +18,6 @@
   - Pants
   - Socks
   - SunriseTrinkets
-  - MedicalDoctorJobTrinkets
   - MedicalTrinkets
   - LustSpecialLoadout
   - Contributors
@@ -27,7 +26,7 @@
   id: LustJobMedicalIntern
   groups:
   - SunriseMedicalDoctorHead
-  - MedicalEyewear
+  - SunriseGlasses
   - SunriseMedicalMask
   - SunriseMedicalDoctorNeck
   - MedicalInternJumpsuit
@@ -42,7 +41,6 @@
   - Pants
   - Socks
   - SunriseTrinkets
-  - MedicalInternJobTrinkets
   - MedicalTrinkets
   - LustSpecialLoadout
   - Contributors
@@ -66,7 +64,6 @@
   - Pants
   - Socks
   - SunriseTrinkets
-  - ChemistJobTrinkets
   - MedicalTrinkets
   - LustSpecialLoadout
   - Contributors
@@ -75,7 +72,7 @@
   id: LustJobParamedic
   groups:
   - SunriseParamedicHead
-  - MedicalEyewear
+  - SunriseGlasses
   - SunriseParamedicMask
   - SunriseParamedicNeck
   - ParamedicJumpsuit
@@ -90,7 +87,6 @@
   - Pants
   - Socks
   - SunriseTrinkets
-  - ParamedicJobTrinkets
   - MedicalTrinkets
   - LustSpecialLoadout
   - Contributors

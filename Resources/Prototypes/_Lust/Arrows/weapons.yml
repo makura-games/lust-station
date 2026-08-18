@@ -58,7 +58,7 @@
     sprite: _Lust/Objects/Weapons/Melee/chainsword.rsi
   - type: UseDelay
     delay: 1.0
-  - type: ToggleableLightVisuals
+  - type: ToggleableVisuals
     spriteLayer: blade
     inhandVisuals:
       left:

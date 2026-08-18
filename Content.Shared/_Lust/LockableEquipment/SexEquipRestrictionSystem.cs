@@ -22,7 +22,7 @@ public sealed class SexEquipRestrictionSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        if (!TryComp<HumanoidAppearanceComponent>(args.Target, out var humanoid))
+        if (!TryComp<HumanoidProfileComponent>(args.Target, out var humanoid))
             return;
 
         if (ent.Comp.AllowedSexes.Contains(humanoid.Sex))
@@ -37,7 +37,7 @@ public sealed class SexEquipRestrictionSystem : EntitySystem
         if (args.Cancelled)
             return;
 
-        if (!TryComp<HumanoidAppearanceComponent>(args.EquipTarget, out var humanoid))
+        if (!TryComp<HumanoidProfileComponent>(args.EquipTarget, out var humanoid))
             return;
 
         if (ent.Comp.AllowedSexes.Contains(humanoid.Sex))

@@ -34,7 +34,7 @@ public sealed partial class GenitalCondition : IAppearCondition
 
     private bool HasRequiredGenital(EntityUid entity, EntityManager entityManager)
     {
-        if (!entityManager.TryGetComponent<HumanoidAppearanceComponent>(entity, out var appearance))
+        if (!entityManager.TryGetComponent<HumanoidProfileComponent>(entity, out var appearance))
             return false;
 
         var genitals = GenitalsHelper.GetGenitals(appearance.Sex);

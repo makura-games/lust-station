@@ -33,7 +33,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly CustomInteractionService _customInteractionService = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] protected readonly ILocalizationManager Loc = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!;
 
     private readonly SpriteSystem _spriteSystem;
 
@@ -230,7 +230,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
             if (!isCustom)
             {
                 if (_prototypeManager.TryIndex<InteractionPrototype>(interactionId, out var prototype))
-                    interactionName = Loc.GetString(prototype.Name);
+                    interactionName = _loc.GetString(prototype.Name);
                 else
                     continue;
             }
@@ -301,7 +301,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         }
 
 
-        if (_entityManager.TryGetComponent<HumanoidAppearanceComponent>(_entityManager.GetEntity(userEntity), out var userHumanoid))
+        if (_entityManager.TryGetComponent<HumanoidProfileComponent>(_entityManager.GetEntity(userEntity), out var userHumanoid))
         {
             var userGenitals = GenitalsHelper.GetGenitals(userHumanoid.Sex)
                 .OrderBy(slot => GenitalDisplayOrder.GetValueOrDefault(slot, 99))
@@ -316,7 +316,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         }
 
         if (!selfTargeting &&
-            _entityManager.TryGetComponent<HumanoidAppearanceComponent>(_entityManager.GetEntity(targetEntity), out var targetHumanoid))
+            _entityManager.TryGetComponent<HumanoidProfileComponent>(_entityManager.GetEntity(targetEntity), out var targetHumanoid))
         {
             var targetGenitals = GenitalsHelper.GetGenitals(targetHumanoid.Sex)
                 .OrderBy(slot => GenitalDisplayOrder.GetValueOrDefault(slot, 99))
@@ -397,7 +397,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
             if (!categorizedInteractions.TryGetValue(categoryId, out _))
             {
-                var categoryName = Loc.GetString(category.Name);
+                var categoryName = _loc.GetString(category.Name);
                 categorizedInteractions[categoryId] = (categoryName, new List<object>());
             }
 
@@ -422,7 +422,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
             if (!categorizedInteractions.TryGetValue(categoryId, out _))
             {
                 var category = _prototypeManager.Index<InteractionCategoryPrototype>(categoryId);
-                categorizedInteractions[categoryId] = (Loc.GetString(category.Name), new List<object>());
+                categorizedInteractions[categoryId] = (_loc.GetString(category.Name), new List<object>());
             }
 
             if (!_favoriteInteractions.Contains(customInteraction.Id))
@@ -1146,7 +1146,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
             return "Не указана";
 
         if (_prototypeManager.TryIndex<InteractionCategoryPrototype>(categoryId, out var category))
-            return Loc.GetString(category.Name);
+            return _loc.GetString(category.Name);
 
         return categoryId;
     }

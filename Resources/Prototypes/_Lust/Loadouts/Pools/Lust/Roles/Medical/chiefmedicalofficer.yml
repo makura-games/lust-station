@@ -2,7 +2,7 @@
   id: LustJobChiefMedicalOfficer
   groups:
   - SunriseChiefMedicalOfficerHead
-  - MedicalEyewear
+  - SunriseGlasses
   - SunriseChiefMedicalOfficerMask
   - LustChiefMedicalOfficerNeck
   - ChiefMedicalOfficerJumpsuit
@@ -17,7 +17,6 @@
   - SunriseChiefMedicalOfficerPants
   - Socks
   - SunriseTrinkets
-  - ChiefMedicalOfficerJobTrinkets
   - MedicalTrinkets
   - LustSpecialLoadout
   - Contributors
