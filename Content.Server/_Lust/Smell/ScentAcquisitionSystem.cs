@@ -1,8 +1,8 @@
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared._Lust.Smell.Prototypes;
-using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.FixedPoint;
 using Content.Shared.Hands;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs;
@@ -14,10 +14,10 @@ using Robust.Shared.Timing;
 namespace Content.Server._Lust.Smell;
 
 /// <summary>
-/// Система «наделения» временными запахами: собирает источники запахов (события жизненной
-/// системы ERP, эмиторы на предметах, собственные раны, кровь при добивании) и записывает
-/// их в носитель (ScentComponent). Сюда же позже ляжет периодическая/ленивая очистка мусора
-/// (устаревшие временные запахи). Логика чтения и вывода запахов — в SmellSystem.
+/// Источник временных запахов: реагирует на события (ERP, урон, эмиторы на предметах,
+/// добивание) и записывает полученный запах в ScentComponent носителя через
+/// AddTemporaryScent. Протухание временных запахов вычисляется лениво при чтении
+/// в SmellSystem, поэтому здесь мусор не чистится. Чтение и вывод запахов — в SmellSystem.
 /// </summary>
 public sealed class ScentAcquisitionSystem : EntitySystem
 {
@@ -32,10 +32,10 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// <summary>
     /// Порог накопленного яда (Poison), с которого тело пахнет токсинами.
     /// </summary>
-    private const int PoisonScentThreshold = 50;
+    private const int PoisonScentThreshold = 25;
 
     /// <summary>
-    /// Длительность запаха от раны.
+    /// Длительность запаха от раны или ушиба.
     /// </summary>
     private static readonly TimeSpan WoundScentDuration = TimeSpan.FromSeconds(300);
 
@@ -44,12 +44,15 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// </summary>
     private static readonly TimeSpan PoisonScentDuration = TimeSpan.FromSeconds(200);
 
-    private static readonly TimeSpan OtherBloodScentDuration = TimeSpan.FromSeconds(600);
-
     /// <summary>
     /// Запах «чужой крови», появляющийся у атакующего при добивании жертвы.
     /// </summary>
     private const string OtherBloodScent = "OtherBlood";
+
+    /// <summary>
+    /// Длительность запаха чужой крови.
+    /// </summary>
+    private static readonly TimeSpan OtherBloodScentDuration = TimeSpan.FromSeconds(600);
 
     /// <summary>
     /// Запах возбуждения на самом себе.
@@ -132,7 +135,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// Поднятие в руку: срабатывает для режимов Hands и AnySlot.
     /// AnySlot нужен, чтобы предмет пах, лежа и просто в руке/кармане (не только в слотах одежды).
     /// </summary>
-    private void OnScentEmitterPickedUp(EntityUid uid, ScentEmitterComponent comp, GotEquippedHandEvent args)
+    private void OnScentEmitterPickedUp(EntityUid _, ScentEmitterComponent comp, GotEquippedHandEvent args)
     {
         if (comp.Spot != ScentEmitSpot.Hands && comp.Spot != ScentEmitSpot.AnySlot)
             return;
@@ -153,17 +156,20 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         var dict = _damageable.GetAllDamage((ent.Owner, args.Damageable)).DamageDict;
 
         // Порезы и уколы оставляют открытые раны, пахнущие кровью.
-        if ((dict.TryGetValue("Slash", out var slash) && slash > WoundScentThreshold)
-            || (dict.TryGetValue("Piercing", out var piercing) && piercing > WoundScentThreshold))
-        {
-            AddTemporaryScent(ent, "Blood", WoundScentDuration);
-        }
+        // Порог считаем по сумме Slash и Piercing: смесь мелких порезов
+        // и проколов — тоже значимая открытая рана.
+        FixedPoint2 cuts = FixedPoint2.Zero;
+        if (dict.TryGetValue("Slash", out var slash))
+            cuts += slash;
+        if (dict.TryGetValue("Piercing", out var piercing))
+            cuts += piercing;
 
-        // Тупые удары оставляют синяки.
+        if (cuts > WoundScentThreshold)
+            AddTemporaryScent(ent, "Blood", WoundScentDuration);
+
         if (dict.TryGetValue("Blunt", out var blunt) && blunt > WoundScentThreshold)
             AddTemporaryScent(ent, "Bruise", WoundScentDuration);
 
-        // Отравление: заметный накопленный яд даёт запах токсинов.
         if (dict.TryGetValue("Poison", out var poison) && poison > PoisonScentThreshold)
             AddTemporaryScent(ent, "Poison", PoisonScentDuration);
     }
@@ -177,14 +183,12 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// </summary>
     private void OnAttacked(EntityUid uid, ScentOnAttackedComponent component, AttackedEvent args)
     {
-        // Жертва должна быть в критическом состоянии (её бьют на грани смерти).
         if (TryComp<MobStateComponent>(uid, out var mobState)
             && mobState.CurrentState != MobState.Critical)
         {
             return;
         }
 
-        // Запах получает только носитель запахов (вульпканины и пр.).
         if (!HasComp<ScentComponent>(args.User))
             return;
 
@@ -193,15 +197,13 @@ public sealed class ScentAcquisitionSystem : EntitySystem
 
     /// <summary>
     /// Публичное API для источников (химия, курение, ERP): добавить временный запах.
-    /// Ленивая загрузка: только кладём запись, протухание вычисляем при запросе.
+    /// Ленивая загрузка: только кладём запись, удаление вычисляем при запросе.
     /// </summary>
     public void AddTemporaryScent(EntityUid uid, ProtoId<ScentPrototype> scent, TimeSpan duration)
     {
         if (!TryComp<ScentComponent>(uid, out var scentComponent))
             return;
 
-        // Перезапись: обновляем свежим появлением вместо дублирования одинаковых запахов.
-        // Интенсивность единая для всех источников — берётся из прототипа самого запаха.
         for (int i = 0; i < scentComponent.TemporaryScents.Count; i++)
         {
             if (scentComponent.TemporaryScents[i].Scent == scent)

@@ -21,8 +21,6 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
 
     public override void Initialize()
     {
-        // Чтобы изменения статус-запахов подхватывались на живом сервере
-        // (reloadprototypes), а не только при перезапуске, пересобираем кэш и при релоаде.
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
         RebuildProtoCache();
@@ -38,6 +36,12 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
         _statusScentProtos = _prototypes.EnumeratePrototypes<StatusScentPrototype>().ToList();
     }
 
+    /// <summary>
+    /// Обработчик горячей перезагрузки прототипов (reloadprototypes).
+    /// Пересобирает кэш статус-запахов только если менялись именно
+    /// StatusScentPrototype — правки status_scents.yml подхватываются без
+    /// перезапуска сервера.
+    /// </summary>
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
     {
         if (!args.ByType.ContainsKey(typeof(StatusScentPrototype)))

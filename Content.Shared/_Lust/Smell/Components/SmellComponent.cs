@@ -1,6 +1,4 @@
-﻿using Robust.Shared.GameStates;
-
-namespace Content.Shared._Lust.Smell.Components;
+﻿namespace Content.Shared._Lust.Smell.Components;
 
 /// <summary>
 /// Маркер носителя, способного нюхать entity (вульпканины, таяраны).
