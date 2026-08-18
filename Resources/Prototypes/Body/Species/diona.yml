@@ -180,6 +180,7 @@
     rightBareFootState:
       - "footprint-right-bare-diona"
   # Sunrise end
+  # Lust-Edit — индивидуальный запах для игроков-дионы
   - type: Scent
     personalScentProfile: Diona
 

@@ -237,6 +237,7 @@
     rightBareFootState:
     - "footprint-right-bare-lizard"
   # Sunrise end
+  # Lust-Edit — индивидуальный запах для игроков-ящеров
   - type: Scent
     personalScentProfile: Reptilian
 

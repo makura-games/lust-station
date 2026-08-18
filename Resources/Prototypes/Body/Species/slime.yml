@@ -193,6 +193,7 @@
       - "footprint-right-bare-slime"
   - type: Interactions
   # Sunrise end
+  # Lust-Edit — индивидуальный запах для игроков-слаймов
   - type: Scent
     personalScentProfile: Slime
 

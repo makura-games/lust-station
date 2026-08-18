@@ -186,6 +186,7 @@
     effect: EffectNightVisionPirate
   - type: FootprintEmitter
   # Sunrise-End
+  # Lust-Edit — индивидуальный запах для игроков-скелетов
   - type: Scent
     personalScentProfile: Skeleton
 

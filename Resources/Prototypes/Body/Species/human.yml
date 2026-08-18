@@ -98,6 +98,7 @@
   - type: Interactions
   - type: FootprintEmitter
   # Sunrise end
+  # Lust-Edit — индивидуальный запах для игроков-людей
   - type: Scent
     personalScentProfile: Human
 

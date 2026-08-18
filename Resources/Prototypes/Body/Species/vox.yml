@@ -260,6 +260,7 @@
   # Sunrise start
   - type: Interactions
   # Sunrise end
+  # Lust-Edit — индивидуальный запах для игроков-воксов
   - type: Scent
     personalScentProfile: Vox
 

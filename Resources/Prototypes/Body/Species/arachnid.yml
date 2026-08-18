@@ -156,6 +156,7 @@
   - type: ToggleableNightVision
     effect: EffectNightVisioSpecies
   # Sunrise-end
+  # Lust-Edit — индивидуальный запах для игроков-арахнидов
   - type: Scent
     personalScentProfile: Arachnid
 

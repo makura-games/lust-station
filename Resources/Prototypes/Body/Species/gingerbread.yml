@@ -76,6 +76,7 @@
           - MobLayer
   - type: TypingIndicator
     proto: gingerbread
+  # Lust-Edit — индивидуальный запах для игроков-пряничников
   - type: Scent
     personalScentProfile: Gingerbread
 
