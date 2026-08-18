@@ -24,7 +24,7 @@
   - type: ScentEmitter
     slot: mask
     scent: Smoke
-    duration: 300
+    duration: 900
 
 # Base for all cigars and cigarettes.
 - type: entity

@@ -40,6 +40,13 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     private static readonly TimeSpan WoundScentDuration = TimeSpan.FromSeconds(300);
 
     /// <summary>
+    /// Длительность запаха от отравления.
+    /// </summary>
+    private static readonly TimeSpan PoisonScentDuration = TimeSpan.FromSeconds(200);
+
+    private static readonly TimeSpan OtherBloodScentDuration = TimeSpan.FromSeconds(600);
+
+    /// <summary>
     /// Запах «чужой крови», появляющийся у атакующего при добивании жертвы.
     /// </summary>
     private const string OtherBloodScent = "OtherBlood";
@@ -52,7 +59,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// <summary>
     /// Длительность запаха возбуждения.
     /// </summary>
-    private static readonly TimeSpan ArousalScentDuration = TimeSpan.FromSeconds(120);
+    private static readonly TimeSpan ArousalScentDuration = TimeSpan.FromSeconds(300);
 
     /// <summary>
     /// Запах оргазма.
@@ -62,7 +69,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// <summary>
     /// Длительность запаха оргазма (на себе и на партнёре).
     /// </summary>
-    private static readonly TimeSpan OrgasmScentDuration = TimeSpan.FromSeconds(300);
+    private static readonly TimeSpan OrgasmScentDuration = TimeSpan.FromSeconds(500);
 
     public override void Initialize()
     {
@@ -158,7 +165,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
 
         // Отравление: заметный накопленный яд даёт запах токсинов.
         if (dict.TryGetValue("Poison", out var poison) && poison > PoisonScentThreshold)
-            AddTemporaryScent(ent, "Poison", WoundScentDuration);
+            AddTemporaryScent(ent, "Poison", PoisonScentDuration);
     }
 
     /// <summary>
@@ -181,7 +188,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         if (!HasComp<ScentComponent>(args.User))
             return;
 
-        AddTemporaryScent(args.User, OtherBloodScent, WoundScentDuration);
+        AddTemporaryScent(args.User, OtherBloodScent, OtherBloodScentDuration);
     }
 
     /// <summary>

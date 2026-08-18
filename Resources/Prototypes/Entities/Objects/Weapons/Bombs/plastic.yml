@@ -39,7 +39,7 @@
   - type: ScentEmitter
     spot: AnySlot
     scent: Gunpowder
-    duration: 300
+    duration: 400
 
 - type: entity
   name: composition C-4
