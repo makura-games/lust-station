@@ -159,6 +159,8 @@
   # Lust-Edit — индивидуальный запах для игроков-арахнидов
   - type: Scent
     personalScentProfile: Arachnid
+  # Lust-Edit — даёт арахнидам возможность обнюхивать entity
+  - type: Smell
 
 - type: entity
   parent: OrganBase
