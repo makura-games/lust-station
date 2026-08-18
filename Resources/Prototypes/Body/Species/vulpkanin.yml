@@ -375,6 +375,7 @@
   # Lust-Edit — индивидуальный запах и возможность нюхать для игроков-вульпканинов
   - type: Scent
     personalScentProfile: Vulpkanin
+  # Lust-Edit — даёт вульпканинам возможность обнюхивать entity
   - type: Smell
 
 - type: entity
