@@ -10,7 +10,8 @@ namespace Content.Shared._Lust.Smell.Components;
 public sealed partial class ScentCleaningComponent : Component
 {
     /// <summary>
-    /// Сколько времени занимает «мытьё» (DoAfter). Ломается от движения/урона.
+    /// Длительность «мытья» в секундах (DoAfter). Действие прерывается
+    /// движением или получением урона.
     /// </summary>
     [DataField]
     public float CleanDelay = 2.0f;

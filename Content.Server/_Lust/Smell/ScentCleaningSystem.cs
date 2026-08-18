@@ -3,10 +3,8 @@ using Content.Server.Popups;
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
-using Robust.Shared.GameStates;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
@@ -14,9 +12,8 @@ namespace Content.Server._Lust.Smell;
 
 /// <summary>
 /// Механика «мытья запахов» предметом с ScentCleaningComponent (мыло):
-/// верб «Смыть запах» по ПКМ на носителе запахов, DoAfter и по его завершению —
+/// верб «Смыть запах» по ПКМ на носителе запахов, DoAfter и по его завершении —
 /// смыв временных запахов и временная маскировка основного запаха цели.
-/// Вся логика в _Lust, оффовский ForensicsSystem не затрагивается.
 /// </summary>
 public sealed class ScentCleaningSystem : EntitySystem
 {
