@@ -22,6 +22,7 @@ namespace Content.Server._Lust.Smell;
 public sealed class ScentAcquisitionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
 
     /// <summary>
     /// Порог накопленного урона, с которого существо начинает пахнуть (порезы/ушибы).
@@ -142,7 +143,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         if (!args.DamageIncreased)
             return;
 
-        var dict = args.Damageable.Damage.DamageDict;
+        var dict = _damageable.GetAllDamage((ent.Owner, args.Damageable)).DamageDict;
 
         // Порезы и уколы оставляют открытые раны, пахнущие кровью.
         if ((dict.TryGetValue("Slash", out var slash) && slash > WoundScentThreshold)

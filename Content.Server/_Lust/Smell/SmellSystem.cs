@@ -11,6 +11,7 @@ using Content.Shared.Interaction;
 using Content.Shared.Inventory;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
+using Content.Shared._Sunrise.TTS;
 using Content.Shared.Verbs;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
@@ -72,7 +73,7 @@ public sealed class SmellSystem : EntitySystem
     {
         public int Age { get; init; }
         public Gender Gender { get; init; }
-        public string? Voice { get; init; }
+        public string Voice { get; init; } = string.Empty;
     }
     public bool TrySmell(EntityUid user, Entity<ScentComponent> target)
     {
@@ -264,13 +265,17 @@ public sealed class SmellSystem : EntitySystem
 
         PersonalCharacteristics? characteristics = null;
 
-        if (TryComp<HumanoidAppearanceComponent>(target.Owner, out HumanoidAppearanceComponent? appearanceComponent))
+        if (TryComp<HumanoidProfileComponent>(target.Owner, out HumanoidProfileComponent? appearanceComponent))
         {
+            string voice = string.Empty;
+            if (TryComp<TTSComponent>(target.Owner, out var tts))
+                voice = tts.VoicePrototypeId?.ToString() ?? string.Empty;
+
             characteristics = new PersonalCharacteristics
             {
                 Age = appearanceComponent.Age,
                 Gender = appearanceComponent.Gender,
-                Voice = appearanceComponent.Voice,
+                Voice = voice,
             };
         }
 
@@ -432,8 +437,8 @@ public sealed class SmellSystem : EntitySystem
     /// </summary>
     private bool IsAttractive(EntityUid smeller, EntityUid bearer)
     {
-        if (!TryComp<HumanoidAppearanceComponent>(smeller, out var smellerHumanoid) ||
-            !TryComp<HumanoidAppearanceComponent>(bearer, out var bearerHumanoid))
+        if (!TryComp<HumanoidProfileComponent>(smeller, out var smellerHumanoid) ||
+            !TryComp<HumanoidProfileComponent>(bearer, out var bearerHumanoid))
             return false;
 
         return smellerHumanoid.Gender switch
