@@ -19,6 +19,14 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
     /// </summary>
     private List<StatusScentPrototype> _statusScentProtos = new();
 
+    /// <summary>
+    /// Единый конфиг длительностей/порогов временных запахов (smellSystemConfig).
+    /// </summary>
+    private SmellSystemConfigPrototype _config = default!;
+
+    [ValidatePrototypeId<SmellSystemConfigPrototype>]
+    private const string ConfigId = "Default";
+
     public override void Initialize()
     {
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
@@ -29,22 +37,29 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
     public IReadOnlyList<StatusScentPrototype> StatusScentProtos => _statusScentProtos;
 
     /// <summary>
-    /// Пересобирает кэш прототипов статус-запахов.
+    /// Текущий конфиг системы запахов.
+    /// </summary>
+    public SmellSystemConfigPrototype Config => _config;
+
+    /// <summary>
+    /// Пересобирает кэш прототипов статус-запахов и конфиг системы.
     /// </summary>
     private void RebuildProtoCache()
     {
         _statusScentProtos = _prototypes.EnumeratePrototypes<StatusScentPrototype>().ToList();
+        _config = _prototypes.Index<SmellSystemConfigPrototype>(ConfigId);
     }
 
     /// <summary>
     /// Обработчик горячей перезагрузки прототипов (reloadprototypes).
-    /// Пересобирает кэш статус-запахов только если менялись именно
-    /// StatusScentPrototype — правки status_scents.yml подхватываются без
-    /// перезапуска сервера.
+    /// Пересобирает кэш статус-запахов и конфиг только если менялись именно
+    /// StatusScentPrototype или SmellSystemConfigPrototype — правки статус-запахов и
+    /// баланса подхватываются без перезапуска сервера.
     /// </summary>
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
     {
-        if (!args.ByType.ContainsKey(typeof(StatusScentPrototype)))
+        if (!args.ByType.ContainsKey(typeof(StatusScentPrototype))
+            && !args.ByType.ContainsKey(typeof(SmellSystemConfigPrototype)))
             return;
 
         RebuildProtoCache();

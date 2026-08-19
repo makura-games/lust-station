@@ -23,26 +23,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-
-    /// <summary>
-    /// Порог накопленного урона, с которого существо начинает пахнуть (порезы/ушибы).
-    /// </summary>
-    private const int WoundScentThreshold = 10;
-
-    /// <summary>
-    /// Порог накопленного яда (Poison), с которого тело пахнет токсинами.
-    /// </summary>
-    private const int PoisonScentThreshold = 25;
-
-    /// <summary>
-    /// Длительность запаха от раны или ушиба.
-    /// </summary>
-    private static readonly TimeSpan WoundScentDuration = TimeSpan.FromSeconds(300);
-
-    /// <summary>
-    /// Длительность запаха от отравления.
-    /// </summary>
-    private static readonly TimeSpan PoisonScentDuration = TimeSpan.FromSeconds(200);
+    [Dependency] private readonly SmellPrototypeCacheSystem _smellCache = default!;
 
     /// <summary>
     /// Запах «чужой крови», появляющийся у атакующего при добивании жертвы.
@@ -50,29 +31,14 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     private const string OtherBloodScent = "OtherBlood";
 
     /// <summary>
-    /// Длительность запаха чужой крови.
-    /// </summary>
-    private static readonly TimeSpan OtherBloodScentDuration = TimeSpan.FromSeconds(600);
-
-    /// <summary>
     /// Запах возбуждения на самом себе.
     /// </summary>
     private const string ArousalScent = "Arousal";
 
     /// <summary>
-    /// Длительность запаха возбуждения.
-    /// </summary>
-    private static readonly TimeSpan ArousalScentDuration = TimeSpan.FromSeconds(300);
-
-    /// <summary>
     /// Запах оргазма.
     /// </summary>
     private const string OrgasmScent = "Orgasm";
-
-    /// <summary>
-    /// Длительность запаха оргазма (на себе и на партнёре).
-    /// </summary>
-    private static readonly TimeSpan OrgasmScentDuration = TimeSpan.FromSeconds(500);
 
     public override void Initialize()
     {
@@ -100,14 +66,14 @@ public sealed class ScentAcquisitionSystem : EntitySystem
 
     private void OnArousalStarted(ArousalStartedEvent args)
     {
-        AddTemporaryScent(args.Uid, ArousalScent, ArousalScentDuration);
+        AddTemporaryScent(args.Uid, ArousalScent, _smellCache.Config.ArousalScentDuration);
     }
 
     private void OnOrgasmPerformed(OrgasmPerformedEvent args)
     {
-        AddTemporaryScent(args.User, OrgasmScent, OrgasmScentDuration);
+        AddTemporaryScent(args.User, OrgasmScent, _smellCache.Config.OrgasmScentDuration);
         if (args.Target != args.User)
-            AddTemporaryScent(args.Target, OrgasmScent, OrgasmScentDuration);
+            AddTemporaryScent(args.Target, OrgasmScent, _smellCache.Config.OrgasmScentDuration);
     }
 
     /// <summary>
@@ -164,14 +130,14 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         if (dict.TryGetValue("Piercing", out var piercing))
             cuts += piercing;
 
-        if (cuts > WoundScentThreshold)
-            AddTemporaryScent(ent, "Blood", WoundScentDuration);
+        if (cuts > _smellCache.Config.WoundScentThreshold)
+            AddTemporaryScent(ent, "Blood", _smellCache.Config.WoundScentDuration);
 
-        if (dict.TryGetValue("Blunt", out var blunt) && blunt > WoundScentThreshold)
-            AddTemporaryScent(ent, "Bruise", WoundScentDuration);
+        if (dict.TryGetValue("Blunt", out var blunt) && blunt > _smellCache.Config.WoundScentThreshold)
+            AddTemporaryScent(ent, "Bruise", _smellCache.Config.WoundScentDuration);
 
-        if (dict.TryGetValue("Poison", out var poison) && poison > PoisonScentThreshold)
-            AddTemporaryScent(ent, "Poison", PoisonScentDuration);
+        if (dict.TryGetValue("Poison", out var poison) && poison > _smellCache.Config.PoisonScentThreshold)
+            AddTemporaryScent(ent, "Poison", _smellCache.Config.PoisonScentDuration);
     }
 
     /// <summary>
@@ -192,7 +158,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         if (!HasComp<ScentComponent>(args.User))
             return;
 
-        AddTemporaryScent(args.User, OtherBloodScent, OtherBloodScentDuration);
+        AddTemporaryScent(args.User, OtherBloodScent, _smellCache.Config.OtherBloodScentDuration);
     }
 
     /// <summary>

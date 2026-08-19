@@ -35,9 +35,4 @@ public sealed partial class ScentComponent : Component
     [DataField, AutoNetworkedField]
     public TimeSpan MaskUntil;
 
-    /// <summary>
-    /// Фиксированная длительность маскировки (например, после мытья).
-    /// </summary>
-    public static readonly TimeSpan MaskDuration = TimeSpan.FromMinutes(5);
-
 }

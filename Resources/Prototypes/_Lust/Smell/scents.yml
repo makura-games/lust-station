@@ -13,7 +13,7 @@
 - type: scent
   id: Gunpowder
   description: scent-temp-gunpowder
-  color: "#3E3A35"
+  color: "#b83700"
   intensity: 0.95
 
 - type: scent
