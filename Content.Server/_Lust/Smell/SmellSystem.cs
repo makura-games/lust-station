@@ -38,11 +38,6 @@ public sealed class SmellSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
 
     /// <summary>
-    /// Прототип запаха возбуждения — для него текст зависит от притяжения пары.
-    /// </summary>
-    private const string ArousalScent = "Arousal";
-
-    /// <summary>
     /// Цвет текста, когда основной запах цели скрыт маскировкой (после мытья мылом).
     /// </summary>
     private const string MaskedScentColor = "#a6d8ff";
@@ -411,7 +406,7 @@ public sealed class SmellSystem : EntitySystem
         var scent = _prototypes.Index<ScentPrototype>(entry.Scent);
 
         // У Arousal одно и то же тело пахнет по-разному в зависимости от пары.
-        if (entry.Scent == ArousalScent)
+        if (entry.Scent == ScentIds.Arousal)
         {
             bool attractive = IsAttractive(user, target.Owner);
             return GetScentDescription(scent, attractive

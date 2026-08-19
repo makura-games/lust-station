@@ -25,21 +25,6 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SmellPrototypeCacheSystem _smellCache = default!;
 
-    /// <summary>
-    /// Запах «чужой крови», появляющийся у атакующего при добивании жертвы.
-    /// </summary>
-    private const string OtherBloodScent = "OtherBlood";
-
-    /// <summary>
-    /// Запах возбуждения на самом себе.
-    /// </summary>
-    private const string ArousalScent = "Arousal";
-
-    /// <summary>
-    /// Запах оргазма.
-    /// </summary>
-    private const string OrgasmScent = "Orgasm";
-
     public override void Initialize()
     {
         // События жизненной системы: возбуждение началось, оргазм.
@@ -66,14 +51,14 @@ public sealed class ScentAcquisitionSystem : EntitySystem
 
     private void OnArousalStarted(ArousalStartedEvent args)
     {
-        AddTemporaryScent(args.Uid, ArousalScent, _smellCache.Config.ArousalScentDuration);
+        AddTemporaryScent(args.Uid, ScentIds.Arousal, _smellCache.Config.ArousalScentDuration);
     }
 
     private void OnOrgasmPerformed(OrgasmPerformedEvent args)
     {
-        AddTemporaryScent(args.User, OrgasmScent, _smellCache.Config.OrgasmScentDuration);
+        AddTemporaryScent(args.User, ScentIds.Orgasm, _smellCache.Config.OrgasmScentDuration);
         if (args.Target != args.User)
-            AddTemporaryScent(args.Target, OrgasmScent, _smellCache.Config.OrgasmScentDuration);
+            AddTemporaryScent(args.Target, ScentIds.Orgasm, _smellCache.Config.OrgasmScentDuration);
     }
 
     /// <summary>
@@ -131,13 +116,13 @@ public sealed class ScentAcquisitionSystem : EntitySystem
             cuts += piercing;
 
         if (cuts > _smellCache.Config.WoundScentThreshold)
-            AddTemporaryScent(ent, "Blood", _smellCache.Config.WoundScentDuration);
+            AddTemporaryScent(ent, ScentIds.Blood, _smellCache.Config.WoundScentDuration);
 
         if (dict.TryGetValue("Blunt", out var blunt) && blunt > _smellCache.Config.WoundScentThreshold)
-            AddTemporaryScent(ent, "Bruise", _smellCache.Config.WoundScentDuration);
+            AddTemporaryScent(ent, ScentIds.Bruise, _smellCache.Config.WoundScentDuration);
 
         if (dict.TryGetValue("Poison", out var poison) && poison > _smellCache.Config.PoisonScentThreshold)
-            AddTemporaryScent(ent, "Poison", _smellCache.Config.PoisonScentDuration);
+            AddTemporaryScent(ent, ScentIds.Poison, _smellCache.Config.PoisonScentDuration);
     }
 
     /// <summary>
@@ -158,7 +143,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         if (!HasComp<ScentComponent>(args.User))
             return;
 
-        AddTemporaryScent(args.User, OtherBloodScent, _smellCache.Config.OtherBloodScentDuration);
+        AddTemporaryScent(args.User, ScentIds.OtherBlood, _smellCache.Config.OtherBloodScentDuration);
     }
 
     /// <summary>
