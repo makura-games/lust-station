@@ -11,3 +11,5 @@
   otherBloodScentDuration: 600
   arousalScentDuration: 300
   orgasmScentDuration: 500
+  scentCleaningRange: 1.5
+  maskedScentColor: '#a6d8ff'

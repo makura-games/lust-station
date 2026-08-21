@@ -55,4 +55,16 @@ public sealed partial class SmellSystemConfigPrototype : IPrototype
     /// </summary>
     [DataField]
     public TimeSpan OrgasmScentDuration { get; private set; } = TimeSpan.FromSeconds(500);
+
+    /// <summary>
+    /// Дальность (в метрах), в пределах которой можно смыть запах с цели.
+    /// </summary>
+    [DataField]
+    public float ScentCleaningRange { get; private set; } = 1.5f;
+
+    /// <summary>
+    /// Цвет текста, когда основной запах цели скрыт маскировкой (после мытья мылом).
+    /// </summary>
+    [DataField]
+    public Color MaskedScentColor { get; private set; } = Color.FromHex("#a6d8ff");
 }

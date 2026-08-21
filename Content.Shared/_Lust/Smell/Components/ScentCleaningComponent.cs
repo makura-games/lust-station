@@ -14,7 +14,7 @@ public sealed partial class ScentCleaningComponent : Component
     /// движением или получением урона.
     /// </summary>
     [DataField]
-    public float CleanDelay = 2.0f;
+    public float CleanDelay = 10.0f;
 
     /// <summary>
     /// Длительность временной маски основного запаха после мытья.

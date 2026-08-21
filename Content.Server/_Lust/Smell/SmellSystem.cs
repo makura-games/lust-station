@@ -37,16 +37,16 @@ public sealed class SmellSystem : EntitySystem
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
 
-    /// <summary>
-    /// Цвет текста, когда основной запах цели скрыт маскировкой (после мытья мылом).
-    /// </summary>
-    private const string MaskedScentColor = "#a6d8ff";
 
     public override void Initialize()
     {
         SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
     }
 
+    /// <summary>
+    /// Добавляет верб «понюхать» цели с ScentComponent, если нюхающий сам способен нюхать
+    /// (есть SmellComponent) и проходит проверки доступа/взаимодействия.
+    /// </summary>
     private void OnGetInteractionVerbs(
         Entity<ScentComponent> target,
         ref GetVerbsEvent<InteractionVerb> args)
@@ -68,12 +68,19 @@ public sealed class SmellSystem : EntitySystem
         });
     }
 
-    public sealed record PersonalCharacteristics
+    /// <summary>
+    /// Внутренний record для сбора данных носителя запаха.
+    /// </summary>
+    private sealed record PersonalCharacteristics
     {
         public int Age { get; init; }
         public Gender Gender { get; init; }
         public string Voice { get; init; } = string.Empty;
     }
+
+    /// <summary>
+    /// Точка входа: проверка возможности нюхать и вывод описания запахов.
+    /// </summary>
     public bool TrySmell(EntityUid user, Entity<ScentComponent> target)
     {
         if (!CanSmell(user, target))
@@ -94,7 +101,9 @@ public sealed class SmellSystem : EntitySystem
         DoSmell(user, target);
         return true;
     }
-
+    /// <summary>
+    /// Проверка возможности нюхать цель.
+    /// </summary>
     public bool CanSmell(EntityUid user, Entity<ScentComponent> target)
     {
         if (!HasComp<SmellComponent>(user))
@@ -102,11 +111,11 @@ public sealed class SmellSystem : EntitySystem
             return false;
         }
 
-        // Нюхающий в маске (не опущенной) или с закрытым шлемом — нюхать не может.
+        // Нюхающий в маске (не опущенной) или с закрытым шлемом.
         if (IsMaskEquipped(user) || IsHardsuitSealed(user))
             return false;
 
-        // Цель в герметичном скафандре с закрытым шлемом — её запах не почувствовать.
+        // Цель в герметичном скафандре с закрытым шлемом
         if (IsHardsuitSealed(target))
             return false;
 
@@ -139,7 +148,6 @@ public sealed class SmellSystem : EntitySystem
         if (!_inventory.TryGetSlotEntity(uid, "outerClothing", out var suitEntity))
             return false;
 
-        // Без скафандра шлем-партнёр бессмысленен: он лишь отключает шлем.
         if (!HasComp<ToggleableClothingComponent>(suitEntity))
             return false;
 
@@ -150,86 +158,104 @@ public sealed class SmellSystem : EntitySystem
             && attached.AttachedUid == suitEntity;
     }
 
+    /// <summary>
+    /// Выполняет нюх: ленивое снятие маскировки при истечении, сборка описания
+    /// запахов (основной + временные) и отправка тултипа нюхающему.
+    /// </summary>
     private void DoSmell(EntityUid user, Entity<ScentComponent> target)
     {
         FormattedMessage message = new();
 
         // Ленивое снятие маскировки: если время истекло — маска пропадает сама.
+        // При активной маске основной запах скрыт, но временные запахи всё ещё показываются.
         if (IsMasked(target))
-        {
-            message.AddMarkupOrThrow($"[color={MaskedScentColor}]{Loc.GetString("smell-result-masked")}[/color]");
-        }
+            message.AddMarkupOrThrow($"[color={_cache.Config.MaskedScentColor.ToHex()}]{Loc.GetString("smell-result-masked")}[/color]");
         else
-        {
-            List<string> staticNotes = [];
+            AppendBaseAndPersonalScents(message, target);
 
-            foreach (ProtoId<ScentPrototype> scentId in target.Comp.BaseScents)
-            {
-                ScentPrototype scent = _prototypes.Index<ScentPrototype>(scentId);
-                staticNotes.Add(GetScentDescription(scent));
-            }
-
-            ScentSignature? signature = GetPersonalSignature(target);
-
-            // --- ОСНОВНОЙ запах (статичный + личный) всегда в начале ---
-            if (staticNotes.Count > 0)
-            {
-                message.AddMarkupOrThrow(Loc.GetString(
-                    "smell-result-static",
-                    ("notes", string.Join(", ", staticNotes))));
-            }
-
-            if (signature != null)
-            {
-                if (staticNotes.Count > 0)
-                    message.AddMarkupOrThrow("\n");
-
-                List<string> personalNotes = [];
-
-                foreach (LocId note in signature.Notes)
-                {
-                    personalNotes.Add(Loc.GetString(note));
-                }
-
-                message.AddMarkupOrThrow(Loc.GetString(
-                    "smell-result-personal",
-                    ("color", signature.Color.ToHex()),
-                    ("notes", string.Join(", ", personalNotes))));
-            }
-
-            if (staticNotes.Count == 0 && signature == null)
-            {
-                message.AddMarkupOrThrow(Loc.GetString("smell-result-none"));
-            }
-        }
-
-        // --- Временные запахи: ленивый пересчёт по возрасту, выводятся ниже основного ---
-        List<(ScentStrength group, float intensity, string text)> tempNotes = GetTemporaryScentNotes(user, target);
-
-        if (tempNotes.Count > 0)
-        {
-            message.AddMarkupOrThrow("\n");
-            message.AddMarkupOrThrow(Loc.GetString("smell-result-temporary-header"));
-
-            // Отдельная строка на каждую непустую группу, в порядке Strong -> Medium -> Faint.
-            foreach (ScentStrength group in Enum.GetValues<ScentStrength>())
-            {
-                var groupLines = tempNotes
-                    .Where(n => n.group == group)
-                    .Select(n => n.text)
-                    .ToList();
-
-                if (groupLines.Count == 0)
-                    continue;
-
-                message.AddMarkupOrThrow("\n");
-                message.AddMarkupOrThrow(Loc.GetString(
-                    $"smell-strength-{group.ToString().ToLowerInvariant()}",
-                    ("notes", string.Join(", ", groupLines))));
-            }
-        }
+        AppendTemporaryScents(message, GetTemporaryScentNotes(user, target));
 
         _examine.SendExamineTooltip(user, target, message, false, false);
+    }
+
+    /// <summary>
+    /// Добавляет в сообщение основной запах цели: статичные (BaseScents) и личный
+    /// (сгенерированный из профиля). Если обоих нет — строку «запаха нет».
+    /// </summary>
+    private void AppendBaseAndPersonalScents(FormattedMessage message, Entity<ScentComponent> target)
+    {
+        List<string> staticNotes = [];
+
+        foreach (ProtoId<ScentPrototype> scentId in target.Comp.BaseScents)
+        {
+            ScentPrototype scent = _prototypes.Index<ScentPrototype>(scentId);
+            staticNotes.Add(GetScentDescription(scent));
+        }
+
+        ScentSignature? signature = GetPersonalSignature(target);
+
+        // --- ОСНОВНОЙ запах (статичный + личный) всегда в начале ---
+        if (staticNotes.Count > 0)
+        {
+            message.AddMarkupOrThrow(Loc.GetString(
+                "smell-result-static",
+                ("notes", string.Join(", ", staticNotes))));
+        }
+
+        if (signature != null)
+        {
+            if (staticNotes.Count > 0)
+                message.AddMarkupOrThrow("\n");
+
+            List<string> personalNotes = [];
+
+            foreach (LocId note in signature.Notes)
+            {
+                personalNotes.Add(Loc.GetString(note));
+            }
+
+            message.AddMarkupOrThrow(Loc.GetString(
+                "smell-result-personal",
+                ("color", signature.Color.ToHex()),
+                ("notes", string.Join(", ", personalNotes))));
+        }
+
+        if (staticNotes.Count == 0 && signature == null)
+        {
+            message.AddMarkupOrThrow(Loc.GetString("smell-result-none"));
+        }
+    }
+
+    /// <summary>
+    /// Добавляет в сообщение временные запахи, сгруппированные по силе
+    /// (Strong -> Medium -> Faint), с заголовком над блоком.
+    /// </summary>
+    private void AppendTemporaryScents(
+        FormattedMessage message,
+        List<(ScentStrength group, float intensity, string text)> tempNotes)
+    {
+        if (tempNotes.Count == 0)
+            return;
+
+        message.AddMarkupOrThrow("\n");
+        message.AddMarkupOrThrow(Loc.GetString("smell-result-temporary-header"));
+
+        // Отдельная строка на каждую непустую группу, в порядке Strong -> Medium -> Faint.
+        foreach (ScentStrength group in Enum.GetValues<ScentStrength>())
+        {
+            var groupLines = tempNotes
+                .Where(n => n.group == group)
+                .Select(n => n.text)
+                .ToList();
+
+            if (groupLines.Count == 0)
+                continue;
+
+            message.AddMarkupOrThrow("\n");
+            message.AddMarkupOrThrow(Loc.GetString(
+                $"smell-strength-{group.ToString().ToLowerInvariant()}",
+                ("notes", string.Join(", ", groupLines))));
+        }
     }
 
     /// <summary>
@@ -250,16 +276,20 @@ public sealed class SmellSystem : EntitySystem
         return true;
     }
 
+    /// <summary>
+    /// Строит личную сигнатуру запаха цели: цвет и набор нот, детерминированно
+    /// сгенерированные из профиля (PersonalScentProfile) и характеристик персонажа
+    /// (имя, возраст, пол, голос). Один и тот же seed даёт один и тот же запах.
+    /// </summary>
     private ScentSignature? GetPersonalSignature(Entity<ScentComponent> target)
     {
         if (target.Comp.PersonalScentProfile is not { } profileId)
             return null;
 
-
         PersonalScentProfilePrototype profile =
             _prototypes.Index<PersonalScentProfilePrototype>(profileId);
 
-        string name = Name(target.Owner) ?? "unknown";
+        var name = Name(target.Owner) ?? "unknown";
 
         PersonalCharacteristics? characteristics = null;
 
@@ -277,8 +307,7 @@ public sealed class SmellSystem : EntitySystem
             };
         }
 
-
-        string seed = $"{name}";
+        var seed = $"{name}";
         if (characteristics != null)
         {
             seed += $":{characteristics.Age}:{characteristics.Gender}:{characteristics.Voice}";
@@ -330,7 +359,7 @@ public sealed class SmellSystem : EntitySystem
         // Свежие (сильные) группы раньше, внутри группы — по убыванию интенсивности.
         result.Sort((a, b) =>
         {
-            int cmp = b.group.CompareTo(a.group);
+            var cmp = b.group.CompareTo(a.group);
             return cmp != 0 ? cmp : b.intensity.CompareTo(a.intensity);
         });
 
@@ -369,8 +398,9 @@ public sealed class SmellSystem : EntitySystem
             if (remaining <= TimeSpan.Zero)
                 continue; // эффект уже фактически истёк.
 
-            // Длительность эффекта; если она неизвестна (0), считаем эффект сильным.
-            var total = endTime - time.StartEffectTime!.Value;
+            // Длительность эффекта; если время старта неизвестно, total = 0
+            // и эффект считается сильным (см. блок ниже).
+            var total = endTime - (time.StartEffectTime ?? endTime);
             if (total <= TimeSpan.Zero)
             {
                 var scentFullyStrong = _prototypes.Index<ScentPrototype>(proto.Scent);
@@ -408,7 +438,7 @@ public sealed class SmellSystem : EntitySystem
         // У Arousal одно и то же тело пахнет по-разному в зависимости от пары.
         if (entry.Scent == ScentIds.Arousal)
         {
-            bool attractive = IsAttractive(user, target.Owner);
+            var attractive = IsAttractive(user, target.Owner);
             return GetScentDescription(scent, attractive
                 ? "scent-temp-arousal-attractive"
                 : "scent-temp-arousal-plain");

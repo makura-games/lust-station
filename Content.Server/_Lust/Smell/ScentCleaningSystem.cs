@@ -12,7 +12,7 @@ namespace Content.Server._Lust.Smell;
 
 /// <summary>
 /// Механика «мытья запахов» предметом с ScentCleaningComponent (мыло):
-/// верб «Смыть запах» по ПКМ на носителе запахов, DoAfter и по его завершении —
+/// работает как верб «Смыть запах» по ПКМ на носителе запахов, DoAfter и по его завершении —
 /// смыв временных запахов и временная маскировка основного запаха цели.
 /// </summary>
 public sealed class ScentCleaningSystem : EntitySystem
@@ -20,6 +20,7 @@ public sealed class ScentCleaningSystem : EntitySystem
     [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SmellPrototypeCacheSystem _smellCache = default!;
 
     public override void Initialize()
     {
@@ -36,11 +37,9 @@ public sealed class ScentCleaningSystem : EntitySystem
         if (!args.CanInteract || !args.CanAccess)
             return;
 
-        // Верб доступен только для носителей запахов — иначе нечего смывать.
         if (!HasComp<ScentComponent>(args.Target))
             return;
 
-        // Локальные значения для анонимного метода.
         var user = args.User;
         var target = args.Target;
 
@@ -78,7 +77,7 @@ public sealed class ScentCleaningSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             MovementThreshold = 0.01f,
-            DistanceThreshold = 1.5f,
+            DistanceThreshold = _smellCache.Config.ScentCleaningRange,
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
@@ -87,8 +86,7 @@ public sealed class ScentCleaningSystem : EntitySystem
 
     /// <summary>
     /// DoAfter завершён: смываем временные запахи цели и ставим временную маску
-    /// основного запаха. Событие направляется на очиститель (EventTarget), поэтому
-    /// цель берём из args.Args.Target.
+    /// основного запаха. Событие направляется на очиститель (EventTarget).
     /// </summary>
     private void OnScentCleaningDoAfter(EntityUid uid, ScentCleaningComponent component, ScentCleaningDoAfterEvent args)
     {
