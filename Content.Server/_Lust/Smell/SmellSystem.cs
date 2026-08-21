@@ -81,48 +81,36 @@ public sealed class SmellSystem : EntitySystem
     /// <summary>
     /// Точка входа: проверка возможности нюхать и вывод описания запахов.
     /// </summary>
+    /// <summary>
+    /// Точка входа: проверка возможности нюхать и вывод описания запахов.
+    /// Каждая неудачная проверка — отдельный гвард; попап показывается сразу,
+    /// где нужно (блок из-за экипировки нюхающего или цели).
+    /// </summary>
     public bool TrySmell(EntityUid user, Entity<ScentComponent> target)
     {
-        if (!CanSmell(user, target))
-        {
-            // Показать причину, если запах не уловить из-за экипировки.
-            if (IsMaskEquipped(user) || IsHardsuitSealed(user))
-            {
-                _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-gear"), user, user);
-            }
-            else if (IsHardsuitSealed(target))
-            {
-                _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-target-gear"), user, user);
-            }
-
-            return false;
-        }
-
-        DoSmell(user, target);
-        return true;
-    }
-    /// <summary>
-    /// Проверка возможности нюхать цель.
-    /// </summary>
-    public bool CanSmell(EntityUid user, Entity<ScentComponent> target)
-    {
         if (!HasComp<SmellComponent>(user))
+            return false;
+
+        if (IsMaskEquipped(user) || IsHardsuitSealed(user))
         {
+            _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-gear"), user, user);
             return false;
         }
 
-        // Нюхающий в маске (не опущенной) или с закрытым шлемом.
-        if (IsMaskEquipped(user) || IsHardsuitSealed(user))
-            return false;
-
-        // Цель в герметичном скафандре с закрытым шлемом
         if (IsHardsuitSealed(target))
+        {
+            _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-target-gear"), user, user);
             return false;
+        }
 
         if (!_actionBlocker.CanInteract(user, target))
             return false;
 
-        return _interaction.InRangeUnobstructed(user, target.Owner);
+        if (!_interaction.InRangeUnobstructed(user, target.Owner))
+            return false;
+
+        DoSmell(user, target);
+        return true;
     }
 
     /// <summary>
