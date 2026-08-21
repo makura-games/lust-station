@@ -2,19 +2,28 @@
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lust.Smell.Components;
-
+/// <summary>
+/// Компонент запаха
+/// </summary>
 [RegisterComponent]
 public sealed partial class ScentComponent : Component
 {
+    /// <summary>
+    /// Статичные (базовые) запахи носителя, всегда присутствующие при осмотре:
+    /// видовые/расовые и прочие постоянные ноты.
+    /// </summary>
     [DataField]
     public List<ProtoId<ScentPrototype>> BaseScents = new();
 
+    /// <summary>
+    /// Профиль для генерации личного запаха (цвет + ноты) из характеристик
+    /// персонажа (имя, возраст, пол, голос). Если не задан — личного запаха нет.
+    /// </summary>
     [DataField]
     public ProtoId<PersonalScentProfilePrototype>? PersonalScentProfile;
 
     /// <summary>
-    /// Временные запахи: события добавили запись, а протухание и силу
-    /// вычисляем лениво при запросе. Хранится и обрабатывается на сервере.
+    /// Список временных запахов
     /// </summary>
     [DataField]
     public List<ActiveTemporaryScent> TemporaryScents = new();
