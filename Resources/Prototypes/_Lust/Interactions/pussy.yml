@@ -234,7 +234,7 @@
   - !type:BodyAreaTagCondition
     checkInitiator: true
     checkTarget: false
-    categories: [ "гладкие перчатки, вагина" ]
+    categories: [ "гладкие перчатки", "вагина" ]
     requireExposed: true
   interactionMessages:
   - "%user нежно ласкает пальчиками свою вагину"
