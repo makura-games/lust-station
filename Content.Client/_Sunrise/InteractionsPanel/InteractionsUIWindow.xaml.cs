@@ -19,6 +19,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.IdentityManagement; // Lust edit - нужно для получения имени, каким его видят другие игроки
 
 namespace Content.Client._Sunrise.InteractionsPanel;
 
@@ -283,19 +284,25 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         NetEntity targetEntity)
     {
         var selfTargeting = userEntity == targetEntity;
-        var nameUser = _entityManager.GetComponentOrNull<MetaDataComponent>(_entityManager.GetEntity(userEntity));
 
-        UserSpriteView.SetEntity(_entityManager.GetEntity(userEntity));
-        NameUser.Text = $"{nameUser?.EntityName}";
+        // Lust edit start - берём имя через систему идентичности, чтобы не палить настоящее имя в чате ERP-взаимодействий
+        var user = _entityManager.GetEntity(userEntity);
+        var target = _entityManager.GetEntity(targetEntity);
+
+        UserSpriteView.SetEntity(user);
+        NameUser.Text = Identity.Name(user, _entityManager);
+        // Lust edit end
+
         TargetContainer.Visible = !selfTargeting;
 
         UserBoxShit.HorizontalAlignment = selfTargeting ? HAlignment.Center : HAlignment.Left;
 
         if (!selfTargeting)
         {
-            TargetSpriteView.SetEntity(_entityManager.GetEntity(targetEntity));
-            var nameTarget = _entityManager.GetComponentOrNull<MetaDataComponent>(_entityManager.GetEntity(targetEntity));
-            NameTarget.Text = $"{nameTarget?.EntityName}";
+            // Lust edit start - берём имя через систему идентичности, чтобы не палить настоящее имя в чате ERP-взаимодействий
+            TargetSpriteView.SetEntity(target);
+            NameTarget.Text = Identity.Name(target, _entityManager);
+            // Lust edit end
             TargetSpriteView.InvalidateArrange();
             TargetSpriteView.InvalidateMeasure();
         }

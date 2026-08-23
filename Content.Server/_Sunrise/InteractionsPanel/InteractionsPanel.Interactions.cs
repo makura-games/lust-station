@@ -21,6 +21,7 @@ using Robust.Shared.Map;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Shared.IdentityManagement; // Lust edit - нужно для получения имени, каким его видят другие игроки
 
 namespace Content.Server._Sunrise.InteractionsPanel;
 
@@ -603,8 +604,10 @@ public partial class InteractionsPanel
 
     private string FormatInteractionMessage(string template, EntityUid user, EntityUid target)
     {
-        var userName = MetaData(user).EntityName;
-        var targetName = MetaData(target).EntityName;
+        // Lust edit start - берём имя через систему идентичности, чтобы не палить настоящее имя в чате ERP-взаимодействий
+        var userName = Identity.Name(user, EntityManager);
+        var targetName = Identity.Name(target, EntityManager);
+        // Lust edit end
 
         var result = template
             .Replace("%user", userName)
