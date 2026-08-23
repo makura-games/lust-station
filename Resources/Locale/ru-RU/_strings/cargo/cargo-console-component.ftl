@@ -1,6 +1,8 @@
 ## UI
 
 cargo-console-menu-title = Консоль заказа грузов
+cargo-console-menu-flavor-left = Закажите еще больше коробок для пиццы, чем обычно!
+cargo-console-menu-flavor-right = версия 2.1
 cargo-console-menu-account-name-label = Имя аккаунта:{ " " }
 cargo-console-menu-account-name-none-text = Нет
 cargo-console-menu-shuttle-name-label = Название шаттла:{ " " }
@@ -18,9 +20,6 @@ cargo-console-menu-requests-label = Запросы
 cargo-console-menu-orders-label = Заказы
 cargo-console-menu-order-reason-description = Причина: { $reason }
 cargo-console-menu-populate-categories-all-text = Все
-cargo-console-menu-populate-orders-cargo-order-row-product-name-text = { $productName } (x{ $orderAmount }) от { $orderRequester }
-cargo-console-menu-cargo-order-row-approve-button = Одобрить
-cargo-console-menu-cargo-order-row-cancel-button = Отменить
 # Orders
 cargo-console-order-not-allowed = Доступ запрещён
 cargo-console-station-not-found = Нет доступной станции
