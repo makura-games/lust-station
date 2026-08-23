@@ -35,7 +35,7 @@
                                       HorizontalAlignment="Center"
                                       Margin="12 10">
 
-                            <PanelContainer Margin="0 0 0 6">
+                            <PanelContainer Margin="0 0 0 6" MinSize="185 0">
                                 <PanelContainer.PanelOverride>
                                     <gfx:StyleBoxFlat BackgroundColor="#442c44"/>
                                 </PanelContainer.PanelOverride>
@@ -49,7 +49,8 @@
 
                             <Label Name="NameUser"
                                    FontColorOverride="#ff69b4"
-                                   HorizontalAlignment="Center"
+                                   HorizontalExpand="True"
+                                   Align="Center"
                                    StyleClasses="LabelSubText"
                                    Margin="0 4 0 0"
                                    MaxWidth="140"
@@ -68,7 +69,8 @@
                                        MaxWidth="140"
                                        MaxHeight="40"
                                        VerticalAlignment="Top"
-                                       HorizontalAlignment="Center"
+                                       HorizontalExpand="True"
+                                       Align="Center"
                                        StyleClasses="LabelSubText">
                                 </Label>
                             </BoxContainer>
@@ -91,7 +93,7 @@
                                       HorizontalAlignment="Center"
                                       Margin="12 10">
 
-                            <PanelContainer Margin="0 0 0 6">
+                            <PanelContainer Margin="0 0 0 6" MinSize="185 0">
                                 <PanelContainer.PanelOverride>
                                     <gfx:StyleBoxFlat BackgroundColor="#442c44"/>
                                 </PanelContainer.PanelOverride>
@@ -105,7 +107,8 @@
 
                             <Label Name="NameTarget"
                                    FontColorOverride="#ff69b4"
-                                   HorizontalAlignment="Center"
+                                   HorizontalExpand="True"
+                                   Align="Center"
                                    StyleClasses="LabelSubText"
                                    Margin="0 4 0 0"
                                    MaxWidth="140"
@@ -124,7 +127,8 @@
                                        MaxWidth="140"
                                        MaxHeight="40"
                                        VerticalAlignment="Top"
-                                       HorizontalAlignment="Center"
+                                       HorizontalExpand="True"
+                                       Align="Center"
                                        StyleClasses="LabelSubText">
                                 </Label>
                             </BoxContainer>
