@@ -12,6 +12,7 @@ using Content.Shared.Inventory;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared._Sunrise.TTS;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
@@ -131,14 +132,11 @@ public sealed class SmellSystem : EntitySystem
         if (!_inventory.TryGetSlotEntity(uid, "outerClothing", out var suitEntity))
             return false;
 
-        if (!HasComp<ToggleableClothingComponent>(suitEntity))
-            return false;
-
         if (!_inventory.TryGetSlotEntity(uid, "head", out var helmetEntity))
             return false;
 
         return TryComp<AttachedClothingComponent>(helmetEntity, out var attached)
-            && attached.AttachedUid == suitEntity;
+            && attached.AttachedUid == suitEntity || HasComp<BreathToolComponent>(helmetEntity) ;
     }
 
     /// <summary>
