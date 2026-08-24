@@ -80,7 +80,7 @@ public sealed class ScentCleaningSystem : EntitySystem
     /// DoAfter завершён: смываем временные запахи цели и ставим временную маску
     /// основного запаха. Событие направляется на очиститель (EventTarget).
     /// </summary>
-    private void OnScentCleaningDoAfter(EntityUid uid, ScentCleaningComponent component, ScentCleaningDoAfterEvent args)
+    private void OnScentCleaningDoAfter(Entity<ScentCleaningComponent> ent, ref ScentCleaningDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled || args.Args.Target == null)
             return;
@@ -90,6 +90,6 @@ public sealed class ScentCleaningSystem : EntitySystem
 
         scentComp.TemporaryScents.Clear();
         scentComp.Masked = true;
-        scentComp.MaskUntil = _timing.CurTime + component.MaskDuration;
+        scentComp.MaskUntil = _timing.CurTime + ent.Comp.MaskDuration;
     }
 }

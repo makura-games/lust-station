@@ -14,7 +14,7 @@ namespace Content.Server._Lust.Smell;
 
 /// <summary>
 /// Система обработки событий-источников запаха: реагирует на события (ERP, урон,
-/// ScentEmitter, добивание критической цели) и записывает полученный запах
+/// ScentEmitter, добивание цели в крите) и записывает полученный запах
 /// в ScentComponent носителя через AddTemporaryScent.
 /// </summary>
 public sealed class ScentAcquisitionSystem : EntitySystem
@@ -140,31 +140,29 @@ public sealed class ScentAcquisitionSystem : EntitySystem
 
     /// <summary>
     /// Публичное API для источников (химия, курение, ERP): добавить временный запах.
+    /// Повторное применение того же запаха перезаписывает запись, а не дублирует её.
     /// </summary>
     public void AddTemporaryScent(EntityUid uid, ProtoId<ScentPrototype> scent, TimeSpan duration)
     {
         if (!TryComp<ScentComponent>(uid, out var scentComponent))
             return;
 
-        for (int i = 0; i < scentComponent.TemporaryScents.Count; i++)
-        {
-            if (scentComponent.TemporaryScents[i].Scent == scent)
-            {
-                scentComponent.TemporaryScents[i] = new ActiveTemporaryScent
-                {
-                    Scent = scent,
-                    StartTime = _timing.CurTime,
-                    Duration = duration,
-                };
-                return;
-            }
-        }
-
-        scentComponent.TemporaryScents.Add(new ActiveTemporaryScent
+        var entry = new ActiveTemporaryScent
         {
             Scent = scent,
             StartTime = _timing.CurTime,
             Duration = duration,
-        });
+        };
+
+        for (int i = 0; i < scentComponent.TemporaryScents.Count; i++)
+        {
+            if (scentComponent.TemporaryScents[i].Scent == scent)
+            {
+                scentComponent.TemporaryScents[i] = entry;
+                return;
+            }
+        }
+
+        scentComponent.TemporaryScents.Add(entry);
     }
 }

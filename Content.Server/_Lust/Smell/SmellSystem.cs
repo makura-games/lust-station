@@ -55,9 +55,8 @@ public sealed class SmellSystem : EntitySystem
             return;
 
         if (!HasComp<SmellComponent>(args.User))
-        {
             return;
-        }
+
         EntityUid user = args.User;
 
         args.Verbs.Add(new InteractionVerb
@@ -277,7 +276,7 @@ public sealed class SmellSystem : EntitySystem
 
         PersonalCharacteristics? characteristics = null;
 
-        if (TryComp<HumanoidProfileComponent>(target.Owner, out HumanoidProfileComponent? appearanceComponent))
+        if (TryComp<HumanoidProfileComponent>(target.Owner, out HumanoidProfileComponent? humanoidProfile))
         {
             string voice = string.Empty;
             if (TryComp<TTSComponent>(target.Owner, out var tts))
@@ -285,13 +284,13 @@ public sealed class SmellSystem : EntitySystem
 
             characteristics = new PersonalCharacteristics
             {
-                Age = appearanceComponent.Age,
-                Gender = appearanceComponent.Gender,
+                Age = humanoidProfile.Age,
+                Gender = humanoidProfile.Gender,
                 Voice = voice,
             };
         }
 
-        var seed = $"{name}";
+        var seed = name;
         if (characteristics != null)
         {
             seed += $":{characteristics.Age}:{characteristics.Gender}:{characteristics.Voice}";
