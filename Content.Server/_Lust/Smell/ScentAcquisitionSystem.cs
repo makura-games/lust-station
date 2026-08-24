@@ -5,8 +5,7 @@ using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -23,6 +22,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SmellPrototypeCacheSystem _smellCache = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
     {
@@ -84,12 +84,12 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// <summary>
     /// Поднятие предмета эмитора запахов в руку: срабатывает для режимов Hands и AnySlot.
     /// </summary>
-    private void OnScentEmitterPickedUp(EntityUid _, ScentEmitterComponent comp, GotEquippedHandEvent args)
+    private void OnScentEmitterPickedUp(Entity<ScentEmitterComponent> ent, ref GotEquippedHandEvent args)
     {
-        if (comp.Spot != ScentEmitSpot.Hands && comp.Spot != ScentEmitSpot.AnySlot)
+        if (ent.Comp.Spot != ScentEmitSpot.Hands && ent.Comp.Spot != ScentEmitSpot.AnySlot)
             return;
 
-        AddTemporaryScent(args.User, comp.Scent, comp.Duration);
+        AddTemporaryScent(args.User, ent.Comp.Scent, ent.Comp.Duration);
     }
 
     /// <summary>
@@ -125,10 +125,9 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// Повторные удары просто обновляют таймер одного запаха (AddTemporaryScent
     /// перезаписывает, не дублирует).
     /// </summary>
-    private void OnAttacked(EntityUid uid, ScentOnAttackedComponent component, AttackedEvent args)
+    private void OnAttacked(Entity<ScentOnAttackedComponent> ent, ref AttackedEvent args)
     {
-        if (TryComp<MobStateComponent>(uid, out var mobState)
-            && mobState.CurrentState != MobState.Critical)
+        if (!_mobState.IsCritical(ent.Owner))
         {
             return;
         }

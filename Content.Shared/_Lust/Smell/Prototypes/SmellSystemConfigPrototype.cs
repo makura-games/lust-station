@@ -7,7 +7,7 @@ namespace Content.Shared._Lust.Smell.Prototypes;
 /// Хранит пороги урона и длительности запахов ран, яда, чужой крови,
 /// возбуждения и оргазма — чтобы балансировать без пересборки.
 /// </summary>
-[Prototype("smellSystemConfig")]
+[Prototype]
 public sealed partial class SmellSystemConfigPrototype : IPrototype
 {
     [IdDataField]

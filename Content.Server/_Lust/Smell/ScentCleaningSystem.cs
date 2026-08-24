@@ -58,14 +58,6 @@ public sealed class ScentCleaningSystem : EntitySystem
     /// </summary>
     private bool TryCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
     {
-        if (!HasComp<ScentComponent>(target))
-        {
-            _popupSystem.PopupEntity(
-                Loc.GetString("scent-cleaning-cannot-clean", ("target", target)),
-                user, user, PopupType.MediumCaution);
-            return false;
-        }
-
         _popupSystem.PopupEntity(
             Loc.GetString("scent-cleaning-start", ("target", target)),
             user, user);

@@ -2,7 +2,7 @@
 
 namespace Content.Shared._Lust.Smell.Prototypes;
 
-[Prototype("personalScentProfile")]
+[Prototype]
 public sealed partial class PersonalScentProfilePrototype : IPrototype
 {
     [IdDataField]

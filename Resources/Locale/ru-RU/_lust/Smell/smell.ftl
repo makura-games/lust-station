@@ -17,7 +17,6 @@ smell-verb = Понюхать
 scent-cleaning-verb-text = Смыть запахи
 scent-cleaning-verb-message = Смыть временные запахи и временно скрыть собственный запах.
 scent-cleaning-start = Вы начинаете смывать запах с { $target }...
-scent-cleaning-cannot-clean = На { $target } нет запахов, которые можно смыть.
 
 smell-result-static = Вы улавливаете: {$notes}.
 smell-result-personal = [color={$color}]Вы чувствуете аромат: {$notes}.[/color]

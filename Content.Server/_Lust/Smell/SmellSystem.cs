@@ -80,11 +80,7 @@ public sealed class SmellSystem : EntitySystem
 
     /// <summary>
     /// Точка входа: проверка возможности нюхать и вывод описания запахов.
-    /// </summary>
-    /// <summary>
-    /// Точка входа: проверка возможности нюхать и вывод описания запахов.
-    /// Каждая неудачная проверка — отдельный гвард; попап показывается сразу,
-    /// где нужно (блок из-за экипировки нюхающего или цели).
+    /// Каждая неудачная проверка — отдельный гвард; попап показывается сразу причину.
     /// </summary>
     public bool TrySmell(EntityUid user, Entity<ScentComponent> target)
     {
@@ -147,7 +143,7 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Выполняет нюх: ленивое снятие маскировки при истечении, сборка описания
+    /// Выполняет нюх: ленивое снятие маскировки при истечении времени, сборка описания
     /// запахов (основной + временные) и отправка тултипа нюхающему.
     /// </summary>
     private void DoSmell(EntityUid user, Entity<ScentComponent> target)
@@ -449,7 +445,7 @@ public sealed class SmellSystem : EntitySystem
 
     /// <summary>
     /// Определяет притяжение по формуле: Gender(нюхающий) x Sex(носитель).
-    /// Футари трактуется как самец по запаху тела (см. вариант B).
+    /// Футари трактуется как гермафродит.
     /// </summary>
     private bool IsAttractive(EntityUid smeller, EntityUid bearer)
     {
@@ -461,8 +457,8 @@ public sealed class SmellSystem : EntitySystem
         {
             // Женский нюх -> мужское тело притягивает (вкл. футари).
             Gender.Female => bearerHumanoid.Sex is Sex.Male or Sex.Futanari,
-            // Мужской нюх -> женское тело притягивает.
-            Gender.Male   => bearerHumanoid.Sex is Sex.Female,
+            // Мужской нюх -> женское тело притягивает (вкл. футари).
+            Gender.Male   => bearerHumanoid.Sex is Sex.Female or Sex.Futanari,
             // Epicene/Neuter -> нейтрально.
             _             => false,
         };

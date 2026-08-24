@@ -8,7 +8,7 @@ namespace Content.Shared._Lust.Smell.Prototypes;
 /// Сила запаха (Strong/Medium/Faint) определяется положением внутри времени эффекта:
 /// чем дальше до конца эффекта, тем сильнее. Нормируется по собственной длительности эффекта.
 /// </summary>
-[Prototype("statusScent")]
+[Prototype]
 public sealed partial class StatusScentPrototype : IPrototype
 {
     [IdDataField]
