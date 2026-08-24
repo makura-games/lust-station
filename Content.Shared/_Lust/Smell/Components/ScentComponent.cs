@@ -3,7 +3,8 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lust.Smell.Components;
 /// <summary>
-/// Компонент запаха
+/// Носитель запахов: статичные базовые и личный аромат, временные запахи
+/// от источников и состояние маскировки основного запаха.
 /// </summary>
 [RegisterComponent]
 public sealed partial class ScentComponent : Component

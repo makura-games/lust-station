@@ -3,8 +3,16 @@ using Content.Shared._Lust.Smell.Prototypes;
 
 namespace Content.Shared._Lust.Smell;
 
+/// <summary>
+/// Генератор личного аромата: превращает seed персонажа (имя, возраст, пол, голос)
+/// в стабильные цвет и ноты по пулам профиля. Хеш FNV-1a детерминирован между запусками.
+/// </summary>
 public static class ScentSignatureGenerator
 {
+    /// <summary>
+    /// Строит сигнатуру: цвет из хеша seed (HSV с фиксированными диапазонами насыщенности
+    /// и яркости), из каждого пула профиля выбирается одна нота.
+    /// </summary>
     public static ScentSignature Generate(
         string seed,
         PersonalScentProfilePrototype profile)
@@ -34,6 +42,10 @@ public static class ScentSignatureGenerator
         return new ScentSignature(color, notes);
     }
 
+    /// <summary>
+    /// Стабильный FNV-1a-хеш строки с солью: разные соли дают независимые выборки
+    /// для цвета и каждой ноты.
+    /// </summary>
     private static ulong GetStableHash(string value, ulong salt)
     {
         ulong hash = 14695981039346656037UL ^ salt;

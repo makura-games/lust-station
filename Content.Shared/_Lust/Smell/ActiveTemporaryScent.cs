@@ -3,6 +3,10 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lust.Smell;
 
+/// <summary>
+/// Запись об активном временном запахе носителя: что пахнет, с какого момента
+/// и как долго. Хранится в ScentComponent.TemporaryScents.
+/// </summary>
 [DataDefinition, Serializable]
 public sealed partial class ActiveTemporaryScent
 {
