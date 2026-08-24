@@ -55,7 +55,7 @@
   - type: Construction
     graph: FireBomb
     node: firebomb
-  # Sunshine-Start
+  # Sunrise-Start
   - type: CartridgeAmmo
     proto: BulletFireBomb
     deleteOnSpawn: true
