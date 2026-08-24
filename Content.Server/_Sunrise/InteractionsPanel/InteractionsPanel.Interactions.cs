@@ -524,18 +524,22 @@ public partial class InteractionsPanel
 
         var ratio = (float)(comp.LoveAmount / comp.MaxLoveAmount).Float();
 
-        if (ratio >= 0.33f && !HasComp<LoveVisionComponent>(uid))
+        // Lust edit start - запах возбуждения обновляется каждым действием выше порога
+        if (ratio >= 0.33f)
         {
-            var newComp = AddComp<LoveVisionComponent>(uid);
-            newComp.FromLoveSystem = true;
-            Dirty(uid, newComp);
+            if (!HasComp<LoveVisionComponent>(uid))
+            {
+                var newComp = AddComp<LoveVisionComponent>(uid);
+                newComp.FromLoveSystem = true;
+                Dirty(uid, newComp);
+            }
 
-            // Запах возбуждения на самом себе: тело нюхает собственное возбуждение.
             RaiseLocalEvent(new ArousalStartedEvent
             {
                 Uid = uid,
-            }); // Lust-Edit
+            });
         }
+        // Lust edit end
         else if (ratio < 0.33f && TryComp<LoveVisionComponent>(uid, out var loveVision) && loveVision.FromLoveSystem)
         {
             RemComp<LoveVisionComponent>(uid);
