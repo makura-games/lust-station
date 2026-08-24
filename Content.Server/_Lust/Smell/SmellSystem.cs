@@ -272,7 +272,7 @@ public sealed class SmellSystem : EntitySystem
         PersonalScentProfilePrototype profile =
             _prototypes.Index<PersonalScentProfilePrototype>(profileId);
 
-        var name = Name(target.Owner) ?? "unknown";
+        var name = Name(target.Owner);
 
         PersonalCharacteristics? characteristics = null;
 
