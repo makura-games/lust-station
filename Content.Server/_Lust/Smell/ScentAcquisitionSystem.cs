@@ -157,7 +157,8 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// </summary>
     public void AddTemporaryScent(Entity<ScentComponent?> ent, ProtoId<ScentPrototype> scent, TimeSpan duration)
     {
-        if (!Resolve(ent, ref ent.Comp))
+
+        if (!Resolve(ent, ref ent.Comp, false))
             return;
 
         var entry = new ActiveTemporaryScent
