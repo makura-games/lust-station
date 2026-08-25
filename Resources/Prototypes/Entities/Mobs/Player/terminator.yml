@@ -5,9 +5,10 @@
   components:
   - type: ZombieImmune # yeah no
   - type: FlashImmunity # no brain to brainwash, eyes are robotic
-  # Lust-Edit — индивидуальный запах для игроков-терминаторов
+  # Lust added start - индивидуальный запах для игроков-терминаторов
   - type: Scent
     personalScentProfile: LustTerminator
+  # Lust added end
 
 - type: entity
   parent: [MobHuman, MobTerminatorBase]

@@ -212,9 +212,10 @@
   - type: FootprintEmitter
   - type: Interactions
   # Sunrise-end
-  # Lust-Edit — индивидуальный запах для игроков-молей
+  # Lust added start - индивидуальный запах для игроков-молей
   - type: Scent
     personalScentProfile: LustMoth
+  # Lust added end
 
 - type: entity
   parent: OrganBase

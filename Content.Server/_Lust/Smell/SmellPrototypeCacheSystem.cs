@@ -5,21 +5,21 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._Lust.Smell;
 
 /// <summary>
-/// Общий кэш прототипов системы запахов статус-эффектов, созданный, чтобы один раз собрать список и перебирать
-/// его при создании запахов, основанных на статус-эффектах цели (наркотики, стимуляторы, алкоголь).
-/// Также ссылка на конфиг, в котором хранятся основные константы.
+/// Shared cache of status-scent prototypes (statusScent), built once and iterated
+/// when applying condition-based scents (drugs, stimulants, alcohol).
+/// Also holds the reference to the shared smellSystemConfig tuning prototype.
 /// </summary>
 public sealed class SmellPrototypeCacheSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
 
     /// <summary>
-    /// Список статус-эффект->запах из YAML (statusScent).
+    /// Status-effect-to-scent mapping list from YAML (statusScent).
     /// </summary>
     private List<StatusScentPrototype> _statusScentProtos = new();
 
     /// <summary>
-    /// Единый конфиг длительностей/порогов временных запахов (smellSystemConfig).
+    /// Shared config of temporary scent thresholds and durations (smellSystemConfig).
     /// </summary>
     private SmellSystemConfigPrototype _config = default!;
 
@@ -33,15 +33,20 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
         RebuildProtoCache();
     }
 
+    /// <summary>
+    /// Up-to-date list of all status-effect-to-scent mappings (every statusScent prototype).
+    /// Rebuilt on system initialization and on hot reload of the related prototypes,
+    /// so consumers can rely on it without manual refresh.
+    /// </summary>
     public IReadOnlyList<StatusScentPrototype> StatusScentProtos => _statusScentProtos;
 
     /// <summary>
-    /// Текущий конфиг системы запахов.
+    /// Current scent system config.
     /// </summary>
     public SmellSystemConfigPrototype Config => _config;
 
     /// <summary>
-    /// Пересобирает кэш прототипов статус-запахов и конфиг системы.
+    /// Rebuilds the status-scent prototype cache and the system config.
     /// </summary>
     private void RebuildProtoCache()
     {
@@ -50,10 +55,9 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
     }
 
     /// <summary>
-    /// Обработчик горячей перезагрузки прототипов (reloadprototypes).
-    /// Пересобирает кэш статус-запахов и конфиг только если менялись именно
-    /// StatusScentPrototype или SmellSystemConfigPrototype — правки статус-запахов и
-    /// баланса подхватываются без перезапуска сервера.
+    /// Hot reload handler (reloadprototypes). Rebuilds the cache only when
+    /// StatusScentPrototype or SmellSystemConfigPrototype types were touched,
+    /// so balance edits apply without a server restart.
     /// </summary>
     private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
     {

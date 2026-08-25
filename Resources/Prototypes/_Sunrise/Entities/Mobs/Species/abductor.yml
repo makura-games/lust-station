@@ -77,9 +77,10 @@
   - type: CollectiveMind
     minds:
     - Abductor
-  # Lust-Edit — индивидуальный запах для игроков-абдукторов
+  # Lust added start - индивидуальный запах для игроков-абдукторов
   - type: Scent
     personalScentProfile: LustAbductor
+  # Lust added end
 
 - type: entity
   parent: AppearanceAbductor

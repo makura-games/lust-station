@@ -121,6 +121,12 @@
   - type: Tag
     tags:
     - HandGrenadeAmmo #Sunrise-End
+  # Lust added start - зажигательная граната пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end
 
 - type: entity
   parent: [FragileGrenadeBase, ProjectileGrenadeBase, BaseSyndicateContraband]
@@ -160,3 +166,9 @@
   - type: Tag
     tags:
     - HandGrenadeAmmo #Sunrise-End
+  # Lust added start - осколочная граната пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end

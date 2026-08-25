@@ -370,11 +370,11 @@
       reagents:
       - ReagentId: SulfurBlood
         Quantity: 300
-  # Lust-Edit — индивидуальный запах и возможность нюхать для игроков-вульпканинов
+  # Lust added start - индивидуальный запах и возможность нюхать для игроков-вульпканинов
   - type: Scent
     personalScentProfile: LustVulpkanin
-  # Lust-Edit — даёт вульпканинам возможность обнюхивать entity
   - type: Smell
+  # Lust added end
 
 - type: entity
   parent: OrganBase

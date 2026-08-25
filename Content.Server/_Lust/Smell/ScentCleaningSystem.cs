@@ -11,16 +11,16 @@ using Robust.Shared.Utility;
 namespace Content.Server._Lust.Smell;
 
 /// <summary>
-/// Механика «мытья запахов» предметом с ScentCleaningComponent (мыло):
-/// работает как верб «Смыть запах» по ПКМ на носителе запахов, DoAfter и по его завершении —
-/// смыв временных запахов и временная маскировка основного запаха цели.
+/// Scent washing mechanic for items with ScentCleaningComponent (soap):
+/// a right-click "Wash scents" verb on a scent bearer, a DoAfter, and on completion —
+/// clearing the target's temporary scents and temporarily masking their base scent.
 /// </summary>
 public sealed class ScentCleaningSystem : EntitySystem
 {
-    [Dependency] private readonly DoAfterSystem _doAfterSystem = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly DoAfterSystem _doAfter = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SmellPrototypeCacheSystem _smellCache = default!;
+    [Dependency] private readonly SmellPrototypeCacheSystem _cache = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
 
     public override void Initialize()
@@ -30,8 +30,8 @@ public sealed class ScentCleaningSystem : EntitySystem
     }
 
     /// <summary>
-    /// ПКМ по цели с мылом в руках: показываем верб «Смыть запах», но только
-    /// если цель является носителем запахов (есть ScentComponent).
+    /// Right-click with soap in hand: show the "Wash scents" verb, but only
+    /// if the target is a scent bearer (has ScentComponent).
     /// </summary>
     private void OnUtilityVerb(Entity<ScentCleaningComponent> cleaner, ref GetVerbsEvent<UtilityVerb> args)
     {
@@ -55,7 +55,7 @@ public sealed class ScentCleaningSystem : EntitySystem
     }
 
     /// <summary>
-    /// Публичная точка входа смыва: проверка через CanCleanScents и запуск действия.
+    /// Public entry point for washing: validation via CanCleanScents, then execution.
     /// </summary>
     public bool TryCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
     {
@@ -67,7 +67,8 @@ public sealed class ScentCleaningSystem : EntitySystem
     }
 
     /// <summary>
-    /// Проверка на возможность смыва запахов с цели.
+    /// Checks whether scents can be washed off the target:
+    /// the target must carry scents and be within range from the config.
     /// </summary>
     public bool CanCleanScents(EntityUid user, EntityUid target)
     {
@@ -75,18 +76,18 @@ public sealed class ScentCleaningSystem : EntitySystem
             return false;
 
         if (!_interaction.InRangeUnobstructed(user, target,
-                range: _smellCache.Config.ScentCleaningRange))
+                range: _cache.Config.ScentCleaningRange))
             return false;
 
         return true;
     }
 
     /// <summary>
-    /// Выполняет смыв: стартовый попап и запуск DoAfter мытья.
+    /// Performs the wash: start popup and DoAfter launch.
     /// </summary>
     private void DoCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
     {
-        _popupSystem.PopupEntity(
+        _popup.PopupEntity(
             Loc.GetString("scent-cleaning-start", ("target", target)),
             user, user);
 
@@ -97,15 +98,15 @@ public sealed class ScentCleaningSystem : EntitySystem
             BreakOnDamage = true,
             BreakOnMove = true,
             MovementThreshold = 0.01f,
-            DistanceThreshold = _smellCache.Config.ScentCleaningRange,
+            DistanceThreshold = _cache.Config.ScentCleaningRange,
         };
 
-        _doAfterSystem.TryStartDoAfter(doAfterArgs);
+        _doAfter.TryStartDoAfter(doAfterArgs);
     }
 
     /// <summary>
-    /// DoAfter завершён: смываем временные запахи цели и ставим временную маску
-    /// основного запаха. Событие направляется на очиститель (EventTarget).
+    /// DoAfter finished: clear the target's temporary scents and apply temporary
+    /// masking of the base scent. The event is directed at the cleaner (event target).
     /// </summary>
     private void OnScentCleaningDoAfter(Entity<ScentCleaningComponent> ent, ref ScentCleaningDoAfterEvent args)
     {

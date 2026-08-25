@@ -335,11 +335,12 @@
     - SubdermalImplant
     - HideContextMenu
     - MicroBomb
-  # Lust-Edit — вживлённая микро-бомба пахнет порохом при носке.
+  # Lust added start - имплант пахнет порохом в руках, при вкалывании даёт цели временную дозу запаха.
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
     duration: 400
+  # Lust added end
 
 
 - type: entity
@@ -383,11 +384,12 @@
       tags:
       - SubdermalImplant
       - HideContextMenu
-    # Lust-Edit — вживлённая макро-бомба пахнет порохом при носке.
+    # Lust added start - имплант пахнет порохом в руках, при вкалывании даёт цели временную дозу запаха.
     - type: ScentEmitter
       spot: AnySlot
       scent: LustGunpowder
       duration: 400
+    # Lust added end
 
 - type: entity
   parent: BaseSubdermalImplant

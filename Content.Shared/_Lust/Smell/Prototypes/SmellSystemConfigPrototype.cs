@@ -3,9 +3,8 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Lust.Smell.Prototypes;
 
 /// <summary>
-/// Единый конфиг появления и длительности временных запахов от источников.
-/// Хранит пороги урона и длительности запахов ран, яда, чужой крови,
-/// возбуждения и оргазма — чтобы балансировать без пересборки.
+/// Single tuning config for temporary scent triggers: damage thresholds and durations
+/// of wound, poison, other-blood, arousal and orgasm scents — balanceable without recompiling.
 /// </summary>
 [Prototype]
 public sealed partial class SmellSystemConfigPrototype : IPrototype
@@ -14,56 +13,56 @@ public sealed partial class SmellSystemConfigPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// Порог накопленного урона (порезов/ушибов), с которого существо
-    /// начинает пахнуть собственной кровью или синяками.
+    /// Accumulated slash/pierce damage above which the entity starts
+    /// smelling of its own blood or bruises.
     /// </summary>
     [DataField]
     public int WoundScentThreshold { get; private set; } = 10;
 
     /// <summary>
-    /// Порог накопленного яда (Poison), с которого тело пахнет токсинами.
+    /// Accumulated poison damage above which the body smells of toxins.
     /// </summary>
     [DataField]
     public int PoisonScentThreshold { get; private set; } = 25;
 
     /// <summary>
-    /// Длительность запаха от раны или ушиба.
+    /// Duration of the scent left by wounds and bruises.
     /// </summary>
     [DataField]
     public TimeSpan WoundScentDuration { get; private set; } = TimeSpan.FromSeconds(300);
 
     /// <summary>
-    /// Длительность запаха от отравления.
+    /// Duration of the poisoning scent.
     /// </summary>
     [DataField]
     public TimeSpan PoisonScentDuration { get; private set; } = TimeSpan.FromSeconds(200);
 
     /// <summary>
-    /// Длительность запаха чужой крови при добивании жертвы.
+    /// Duration of the victim-blood scent applied to an attacker finishing off a critical target.
     /// </summary>
     [DataField]
     public TimeSpan OtherBloodScentDuration { get; private set; } = TimeSpan.FromSeconds(600);
 
     /// <summary>
-    /// Длительность запаха возбуждения (на себе).
+    /// Duration of the arousal scent (on oneself).
     /// </summary>
     [DataField]
     public TimeSpan ArousalScentDuration { get; private set; } = TimeSpan.FromSeconds(300);
 
     /// <summary>
-    /// Длительность запаха оргазма (на себе и на партнёре).
+    /// Duration of the orgasm scent (on both participants).
     /// </summary>
     [DataField]
     public TimeSpan OrgasmScentDuration { get; private set; } = TimeSpan.FromSeconds(500);
 
     /// <summary>
-    /// Дальность (в метрах), в пределах которой можно смыть запах с цели.
+    /// Range (in meters) within which scents can be washed off a target.
     /// </summary>
     [DataField]
     public float ScentCleaningRange { get; private set; } = 1.5f;
 
     /// <summary>
-    /// Цвет текста, когда основной запах цели скрыт маскировкой (после мытья мылом).
+    /// Tooltip color shown while the target's base scent is masked by soap.
     /// </summary>
     [DataField]
     public Color MaskedScentColor { get; private set; } = Color.FromHex("#a6d8ff");

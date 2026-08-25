@@ -4,55 +4,55 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Lust.Smell.Components;
 
 /// <summary>
-/// Маркер-эмитор: предмет, взятый в руки или надетый в слот инвентаря, даёт
-/// носителю временный запах. Настройки (куда/как реагировать, запах, длительность)
-/// задаются прямо на предмете в YAML через поля этого компонента.
+/// Emitter marker: an item that grants its bearer a temporary scent when held
+/// or worn in an inventory slot. Settings (which contact triggers it, the scent,
+/// the duration) are configured directly on the item via this component's fields.
 /// </summary>
 [RegisterComponent]
 public sealed partial class ScentEmitterComponent : Component
 {
     /// <summary>
-    /// Куда должен попасть предмет, чтобы испустить запах.
+    /// Where the item must end up to emit its scent.
     /// </summary>
     [DataField]
     public ScentEmitSpot Spot = ScentEmitSpot.SpecificSlot;
 
     /// <summary>
-    /// Конкретный слот, если Spot = SpecificSlot (например "mask").
+    /// The specific slot if Spot is SpecificSlot (e.g. "mask").
     /// </summary>
     [DataField]
     public string Slot = "mask";
 
     /// <summary>
-    /// Какой запах даём (id из scents.yml).
+    /// Which scent is applied (an id from scents.yml).
     /// </summary>
     [DataField]
     public ProtoId<ScentPrototype> Scent = default!;
 
     /// <summary>
-    /// Сколько времени запах держится на носителе.
+    /// How long the scent stays on the bearer.
     /// </summary>
     [DataField]
     public TimeSpan Duration = TimeSpan.FromSeconds(300);
 }
 
 /// <summary>
-/// Определяет, при каком контакте с игроком предмет-эмитор испускает запах.
+/// Determines at which contact with a player a scent-emitting item emits its smell.
 /// </summary>
 public enum ScentEmitSpot
 {
     /// <summary>
-    /// Только в конкретном слоте одежды (поле Slot). Например сигарета во рту.
+    /// Only in the specific clothing slot (the Slot field). E.g. a cigarette in the mouth.
     /// </summary>
     SpecificSlot,
 
     /// <summary>
-    /// В любом слоте одежды. Например взрывчатка, запах которой везде заметен.
+    /// In any clothing slot. E.g. an explosive whose smell is noticeable everywhere.
     /// </summary>
     AnySlot,
 
     /// <summary>
-    /// Только в руках.
+    /// In hands only.
     /// </summary>
     Hands,
 }

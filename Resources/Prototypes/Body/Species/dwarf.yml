@@ -68,9 +68,10 @@
     leftBareFootState: [ footprint-left-bare-dwarf ]
     rightBareFootState: [ footprint-right-bare-dwarf ]
   # Sunrise edit end
-  # Lust-Edit — индивидуальный запах для игроков-дварфов
+  # Lust added start - индивидуальный запах для игроков-дварфов
   - type: Scent
     personalScentProfile: LustDwarf
+  # Lust added end
 
 - type: entity
   parent: OrganBase

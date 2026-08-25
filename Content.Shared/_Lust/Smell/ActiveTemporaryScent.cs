@@ -4,29 +4,26 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Lust.Smell;
 
 /// <summary>
-/// Запись об активном временном запахе носителя: что пахнет, с какого момента
-/// и как долго. Хранится в ScentComponent.TemporaryScents.
+/// A temporary scent currently applied to a bearer: what smells, since when
+/// and for how long. Stored in ScentComponent.TemporaryScents. Runtime-only data,
+/// not serialized.
 /// </summary>
-[DataDefinition, Serializable]
 public sealed partial class ActiveTemporaryScent
 {
     /// <summary>
-    /// Какой запах был применён.
+    /// The scent that was applied.
     /// </summary>
-    [DataField(required: true)]
     public ProtoId<ScentPrototype> Scent;
 
     /// <summary>
-    /// Игровой момент, когда запах появился.
+    /// The game time when the scent appeared.
     /// </summary>
 
-    [DataField]
     public TimeSpan StartTime;
 
     /// <summary>
-    /// Длительность действия временного запаха: у каждого источника своя.
-    /// Интенсивность берётся из прототипа самого запаха (единая для всех источников).
+    /// How long the temporary scent lasts: each source has its own duration.
+    /// Intensity comes from the scent prototype itself (shared by all sources).
     /// </summary>
-    [DataField]
     public TimeSpan Duration;
 }

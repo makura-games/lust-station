@@ -156,11 +156,11 @@
   - type: ToggleableNightVision
     effect: EffectNightVisioSpecies
   # Sunrise-end
-  # Lust-Edit — индивидуальный запах для игроков-арахнидов
+  # Lust added start - индивидуальный запах и возможность нюхать для игроков-арахнидов
   - type: Scent
     personalScentProfile: LustArachnid
-  # Lust-Edit — даёт арахнидам возможность обнюхивать entity
   - type: Smell
+  # Lust added end
 
 - type: entity
   parent: OrganBase

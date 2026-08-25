@@ -99,9 +99,10 @@
             state: jumpsuit-female
   - type: Perishable
   - type: FootprintEmitter
-  # Lust-Edit — индивидуальный запах для игроков-арканов
+  # Lust added start - индивидуальный запах для игроков-арканов
   - type: Scent
     personalScentProfile: LustDemon
+  # Lust added end
 
 - type: entity
   save: false

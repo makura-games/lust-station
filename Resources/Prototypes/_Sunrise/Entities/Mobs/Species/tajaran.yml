@@ -181,11 +181,11 @@
   - type: FootprintEmitter
     leftBareFootState: [ footprint-left-bare-cat ]
     rightBareFootState: [ footprint-right-bare-cat ]
-  # Lust-Edit — даёт таяранам возможность обнюхивать entity
+  # Lust added start - нюх и индивидуальный запах для игроков-таяранов
   - type: Smell
-  # Lust-Edit — индивидуальный запах для игроков-таяранов
   - type: Scent
     personalScentProfile: LustTajaran
+  # Lust added end
 
 - type: entity
   save: false

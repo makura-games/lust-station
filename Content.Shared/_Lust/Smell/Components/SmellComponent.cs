@@ -1,9 +1,9 @@
 ﻿namespace Content.Shared._Lust.Smell.Components;
 
 /// <summary>
-/// Маркер носителя, способного нюхать entity.
-/// Только entity с этим компонентом получают верб «понюхать» и могут
-/// улавливать запахи других существ.
+/// Marks a bearer capable of smelling entities.
+/// Only entities with this component get the "smell" verb and can catch
+/// the scents of other creatures.
 /// </summary>
 [RegisterComponent]
 public sealed partial class SmellComponent : Component

@@ -22,9 +22,9 @@ using Robust.Shared.Utility;
 namespace Content.Server._Lust.Smell;
 
 /// <summary>
-/// Система «нюханья»: верб «понюхать», проверки доступа, ленивый пересчёт временных
-/// запахов и вывод читаемого описания. Наделение запахами (источники) живёт в
-/// ScentAcquisitionSystem, общий кэш прототипов — в SmellPrototypeCacheSystem.
+/// The "smelling" system: the smell verb, access checks, lazy recalculation of
+/// temporary scents and readable description output. Scent granting (sources) lives in
+/// ScentAcquisitionSystem; the shared prototype cache is SmellPrototypeCacheSystem.
 /// </summary>
 public sealed class SmellSystem : EntitySystem
 {
@@ -36,7 +36,7 @@ public sealed class SmellSystem : EntitySystem
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
     [Dependency] private readonly SmellPrototypeCacheSystem _cache = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
 
 
     public override void Initialize()
@@ -45,8 +45,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Добавляет верб «понюхать» цели с ScentComponent, если нюхающий сам способен нюхать
-    /// (есть SmellComponent) и проходит проверки доступа/взаимодействия.
+    /// Adds the "smell" verb to a target with ScentComponent if the smeller is
+    /// itself capable of smelling (has SmellComponent) and passes access/interaction checks.
     /// </summary>
     private void OnGetInteractionVerbs(
         Entity<ScentComponent> target,
@@ -69,7 +69,7 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Внутренний record для сбора данных носителя запаха.
+    /// Internal record collecting the scent bearer's traits.
     /// </summary>
     private sealed record PersonalCharacteristics
     {
@@ -79,15 +79,15 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Точка входа: проверка возможности нюхать и вывод описания запахов.
-    /// Некоторые неудачные проверки CanSmell показывают попап.
+    /// Entry point: smell capability check and scent description output.
+    /// Some failed CanSmell checks show a popup.
     /// </summary>
     public bool TrySmell(EntityUid user, Entity<ScentComponent> target)
     {
         if (!CanSmell(user, target, out var reason))
         {
             if (reason != null)
-                _popupSystem.PopupEntity(Loc.GetString(reason), user, user);
+                _popup.PopupEntity(Loc.GetString(reason), user, user);
             return false;
         }
 
@@ -96,8 +96,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Есть ли надетый и не опущенный предмет в слоте маски. Опущенная маска
-    /// (MaskComponent.IsToggled) не закрывает нос и нюхать не мешает.
+    /// Whether an equipped, non-toggled item occupies the mask slot. A toggled-down mask
+    /// (MaskComponent.IsToggled) does not cover the nose and does not block smelling.
     /// </summary>
     private bool IsMaskEquipped(EntityUid uid)
     {
@@ -109,7 +109,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Носит ли человек гермитичный скафандр
+    /// Whether the person wears a sealed suit: both the outer clothing and the helmet
+    /// must be pressure-protected (hardsuits and separate EVA kits).
     /// </summary>
     private bool IsHardsuitSealed(EntityUid uid)
     {
@@ -123,8 +124,8 @@ public sealed class SmellSystem : EntitySystem
                && HasComp<PressureProtectionComponent>(helmetEntity);
     }
     /// <summary>
-    /// Проверка на возможность понюхать; возвращает false и причину отказа.
-    /// Причина отказа — null при молчаливом отказе (нет уместного сообщения).
+    /// Smell capability check; returns false and a failure reason.
+    /// The reason is null for a silent rejection (no suitable message).
     /// </summary>
     public bool CanSmell(EntityUid user, Entity<ScentComponent> target, out LocId? reason)
     {
@@ -153,8 +154,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Выполняет нюх: ленивое снятие маскировки при истечении времени, сборка описания
-    /// запахов (основной + временные) и отправка тултипа нюхающему.
+    /// Performs smelling: lazy mask removal on expiry, assembling the scent
+    /// description (base + temporary) and sending the tooltip to the smeller.
     /// </summary>
     private void DoSmell(EntityUid user, Entity<ScentComponent> target)
     {
@@ -173,8 +174,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Добавляет в сообщение основной запах цели: статичные (BaseScents) и личный
-    /// (сгенерированный из профиля). Если обоих нет — строку «запаха нет».
+    /// Appends the target's base scent to the message: static (BaseScents) and personal
+    /// (generated from the profile). If both are missing — the "no scent" line.
     /// </summary>
     private void AppendBaseAndPersonalScents(FormattedMessage message, Entity<ScentComponent> target)
     {
@@ -221,8 +222,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Добавляет в сообщение временные запахи, сгруппированные по силе
-    /// (Strong -> Medium -> Faint), с заголовком над блоком.
+    /// Appends temporary scents to the message, grouped by strength
+    /// (Strong -> Medium -> Faint), with a header above the block.
     /// </summary>
     private void AppendTemporaryScents(
         FormattedMessage message,
@@ -253,8 +254,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Активна ли временная маска. Если время истекло — маска снимается лениво
-    /// (при очередном нюхании) и считается неактивной.
+    /// Whether the temporary mask is active. If expired — the mask is removed lazily
+    /// (on the next smelling) and counts as inactive.
     /// </summary>
     private bool IsMasked(Entity<ScentComponent> target)
     {
@@ -271,9 +272,9 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Строит личную сигнатуру запаха цели: цвет и набор нот, детерминированно
-    /// сгенерированные из профиля (PersonalScentProfile) и характеристик персонажа
-    /// (имя, возраст, пол, голос). Один и тот же seed даёт один и тот же запах.
+    /// Builds the target's personal scent signature: color and notes deterministically
+    /// generated from the profile (PersonalScentProfile) and character traits
+    /// (name, age, gender, voice). The same seed always yields the same scent.
     /// </summary>
     private ScentSignature? GetPersonalSignature(Entity<ScentComponent> target)
     {
@@ -311,8 +312,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Лениво пересчитывает временные запахи: отбрасывает протухшие,
-    /// определяет группу силы по возрасту и сортирует по интенсивности.
+    /// Lazily recalculates temporary scents: drops expired ones, determines the
+    /// strength group by age and sorts by intensity.
     /// </summary>
     private List<(ScentStrength group, float intensity, string text)> GetTemporaryScentNotes(
         EntityUid user, Entity<ScentComponent> target)
@@ -361,10 +362,11 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Для каждого статус-запаха из YAML проверяет, активен ли соответствующий
-    /// статус-эффект у носителя, и добавляет запах. Сила (Strong/Medium/Faint) —
-    /// по положению внутри длительности эффекта: чем дальше до конца, тем сильнее.
-    /// Нормируем по реальной длительности эффекта, а не по фиксированному порогу.
+    /// For each status scent from YAML, checks whether the corresponding status
+    /// effect is active on the bearer and adds the scent. Strength (Strong/Medium/Faint)
+    /// follows the position within the effect duration: the fresher the effect,
+    /// the stronger the smell; it fades towards the end.
+    /// Normalized by the effect's full duration rather than a fixed threshold.
     /// </summary>
     private void AddStatusScents(Entity<ScentComponent> target, List<(ScentStrength group, float intensity, string text)> result)
     {
@@ -422,8 +424,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Возвращает текст временного запаха. Для запаха возбуждения выбирает
-    /// вариант в зависимости от притяжения нюхающего (user) к носителю (target).
+    /// Returns the temporary scent text. For the arousal scent picks
+    /// the variant depending on the smeller's attraction to the bearer.
     /// </summary>
     private string GetTemporaryScentText(EntityUid user, Entity<ScentComponent> target, ActiveTemporaryScent entry)
     {
@@ -442,8 +444,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Возвращает локализованное описание запаха, обёрнутое в жирный шрифт,
-    /// если у прототипа запаха стоит настройка Fat (акцентный/резкий запах).
+    /// Returns the localized scent description, wrapped in bold if the scent prototype
+    /// has the Fat flag set (an accenting/pungent smell).
     /// </summary>
     private string GetScentDescription(ScentPrototype scent, LocId? descriptionOverride = null)
     {
@@ -454,8 +456,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Определяет притяжение по формуле: Gender(нюхающий) x Sex(носитель).
-    /// Футари трактуется как гермафродит.
+    /// Determines attraction by the formula: Gender(smeller) x Sex(bearer).
+    /// Futanari is treated as hermaphrodite.
     /// </summary>
     private bool IsAttractive(EntityUid smeller, EntityUid bearer)
     {
@@ -475,7 +477,8 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Определяет группу силы по доле прожитого времени (0 = только появился, 1 = почти истёк).
+    /// Determines the strength group by the lived fraction of the duration
+    /// (0 = just appeared, 1 = almost expired).
     /// </summary>
     private static ScentStrength GetScentStrength(float ratio)
     {
@@ -486,7 +489,7 @@ public sealed class SmellSystem : EntitySystem
 }
 
 /// <summary>
-/// Три группы силы запаха, используемые для сортировки при описании.
+/// The three scent strength groups used for ordering in descriptions.
 /// </summary>
 public enum ScentStrength
 {

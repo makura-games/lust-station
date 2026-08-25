@@ -1,21 +1,20 @@
 namespace Content.Shared._Lust.Smell.Components;
 
 /// <summary>
-/// Маркер-«очиститель запахов»: предмет (мыло, спрей и т.п.), с помощью которого
-/// игрок может смыть временные запахи и поставить временную маскировку основного
-/// запаха цели.
+/// Scent-cleaner marker: an item (soap, spray, etc.) with which a player can wash
+/// temporary scents off a target and temporarily mask the target's base scent.
 /// </summary>
 [RegisterComponent]
 public sealed partial class ScentCleaningComponent : Component
 {
     /// <summary>
-    /// Длительность «мытья» в секундах (DoAfter).
+    /// Duration of the washing DoAfter, in seconds.
     /// </summary>
     [DataField]
     public float CleanDelay = 10.0f;
 
     /// <summary>
-    /// Длительность временной маски основного запаха после мытья.
+    /// How long the temporary masking of the base scent lasts after washing.
     /// </summary>
     [DataField]
     public TimeSpan MaskDuration = TimeSpan.FromMinutes(5);

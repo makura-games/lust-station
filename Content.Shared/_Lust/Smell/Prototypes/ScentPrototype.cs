@@ -3,8 +3,8 @@
 namespace Content.Shared._Lust.Smell.Prototypes;
 
 /// <summary>
-/// Прототип запаха: локализованное описание, цвет в тултипе нюха,
-/// интенсивность для сортировки внутри групп силы и флаг жирного вывода.
+/// Scent prototype: localized description, tooltip color, intensity used for sorting
+/// within strength groups, and a bold-output flag.
 /// </summary>
 [Prototype]
 public sealed partial class ScentPrototype : IPrototype
@@ -13,25 +13,25 @@ public sealed partial class ScentPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// LocId описания запаха.
+    /// LocId of the scent description shown when smelling.
     /// </summary>
     [DataField(required: true)]
     public LocId Description { get; private set; } = default!;
 
     /// <summary>
-    /// Цвет текста запаха; null — без выделения.
+    /// Text color of the scent in the tooltip; null — no highlighting.
     /// </summary>
     [DataField]
     public Color? Color { get; private set; }
 
     /// <summary>
-    /// Интенсивность запаха 0..1 — единая для всех источников этого запаха
+    /// Scent intensity 0..1 — shared by all sources of this scent.
     /// </summary>
     [DataField]
     public float Intensity { get; private set; } = 1f;
 
     /// <summary>
-    /// Выводить описание этого запаха жирным шрифтом (акцентный/резкий запах).
+    /// Render the scent description in bold (an accenting/pungent smell).
     /// </summary>
     [DataField]
     public bool Fat { get; private set; }

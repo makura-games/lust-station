@@ -3,10 +3,9 @@ using Robust.Shared.GameObjects;
 namespace Content.Shared._Lust.Smell;
 
 /// <summary>
-/// Broadcast-ивент жизненной системы панели взаимодействий: сущность находится
-/// в состоянии возбуждения (любовь ≥ 33%). Рейзится ERP-системой при каждом
-/// действии, поддерживающем возбуждение; подписчики освежают временный запах
-/// возбуждения носителя.
+/// Broadcast event from the interactions panel life system: the entity has crossed
+/// the arousal threshold and is now "emitting" it. Raised by the ERP system;
+/// subscribers refresh the corresponding temporary scent on the bearer.
 /// </summary>
 public sealed class ArousalStartedEvent : EntityEventArgs
 {
@@ -14,8 +13,8 @@ public sealed class ArousalStartedEvent : EntityEventArgs
 }
 
 /// <summary>
-/// Broadcast-ивент жизненной системы: существо испытало оргазм. User — кто кончил,
-/// Target — получатель эффекта (партнёр либо сам User). Рейзится ERP-системой.
+/// Broadcast event of the life system: the entity had an orgasm. User — who finished,
+/// Target — the receiver of the effect (the partner or the user themselves). Raised by the ERP system.
 /// </summary>
 public sealed class OrgasmPerformedEvent : EntityEventArgs
 {

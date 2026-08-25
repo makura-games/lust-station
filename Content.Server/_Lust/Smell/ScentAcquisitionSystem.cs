@@ -4,6 +4,7 @@ using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands;
+using Content.Shared.Implants;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Weapons.Melee.Events;
@@ -13,15 +14,15 @@ using Robust.Shared.Timing;
 namespace Content.Server._Lust.Smell;
 
 /// <summary>
-/// Система обработки событий-источников запаха: реагирует на события (ERP, урон,
-/// ScentEmitter, добивание цели в крите) и записывает полученный запах
-/// в ScentComponent носителя через AddTemporaryScent.
+/// Scent source event handler system: reacts to events (ERP, damage,
+/// ScentEmitter, finishing off a critical target) and records the acquired scent
+/// into the bearer's ScentComponent via AddTemporaryScent.
 /// </summary>
 public sealed class ScentAcquisitionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SmellPrototypeCacheSystem _smellCache = default!;
+    [Dependency] private readonly SmellPrototypeCacheSystem _cache = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
 
     public override void Initialize()
@@ -36,33 +37,35 @@ public sealed class ScentAcquisitionSystem : EntitySystem
 
         SubscribeLocalEvent<ScentEmitterComponent, GotEquippedHandEvent>(OnScentEmitterPickedUp);
 
+        SubscribeLocalEvent<ScentEmitterComponent, ImplantImplantedEvent>(OnScentEmitterImplanted);
+
         SubscribeLocalEvent<ScentComponent, DamageChangedEvent>(OnDamageChanged);
 
         SubscribeLocalEvent<ScentOnAttackedComponent, AttackedEvent>(OnAttacked);
     }
     /// <summary>
-    /// Добавляет временный запах возбуждения.
+    /// Adds a temporary arousal scent.
     /// </summary>
     private void OnArousalStarted(ArousalStartedEvent args)
     {
-        AddTemporaryScent(args.Uid, ScentIds.Arousal, _smellCache.Config.ArousalScentDuration);
+        AddTemporaryScent(args.Uid, ScentIds.Arousal, _cache.Config.ArousalScentDuration);
     }
 
     /// <summary>
-    /// Добавляет временный запах оргазма.
+    /// Adds a temporary orgasm scent.
     /// </summary>
     private void OnOrgasmPerformed(OrgasmPerformedEvent args)
     {
-        AddTemporaryScent(args.User, ScentIds.Orgasm, _smellCache.Config.OrgasmScentDuration);
+        AddTemporaryScent(args.User, ScentIds.Orgasm, _cache.Config.OrgasmScentDuration);
         // проверка нужна, так как эвент наделяет запахом обоих участников ерп, а не только того,
         // у кого произошёл оргазм; поэтому проверка не даёт задвоить запах, если ерп занимался лишь игрок сам с собой
         if (args.Target != args.User)
-            AddTemporaryScent(args.Target, ScentIds.Orgasm, _smellCache.Config.OrgasmScentDuration);
+            AddTemporaryScent(args.Target, ScentIds.Orgasm, _cache.Config.OrgasmScentDuration);
     }
 
     /// <summary>
-    /// Функция для предмета-эмитора запаха. Проверяет, надет ли он в слот одежды. Реагирует на режимы
-    /// SpecificSlot (проверяет нужный слот) и AnySlot. Для Hands — пропускает.
+    /// Scent-emitting item equipped into a clothing slot. Reacts to SpecificSlot
+    /// (checks the required slot) and AnySlot modes. Hands mode is skipped here.
     /// </summary>
     private void OnScentEmitterEquipped(Entity<ScentEmitterComponent> ent, ref GotEquippedEvent args)
     {
@@ -82,7 +85,7 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     }
 
     /// <summary>
-    /// Поднятие предмета эмитора запахов в руку: срабатывает для режимов Hands и AnySlot.
+    /// Picking up a scent-emitting item into a hand: fires for Hands and AnySlot modes.
     /// </summary>
     private void OnScentEmitterPickedUp(Entity<ScentEmitterComponent> ent, ref GotEquippedHandEvent args)
     {
@@ -93,8 +96,18 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     }
 
     /// <summary>
-    /// Функция для проверки полученного урона и добавления трёх запахов: от кровотечения
-    /// (порезы и уколы), от ядов и от ушибов.
+    /// Injecting an implant that carries a scent grants the recipient
+    /// a temporary scent dose. The implanted device itself no longer emits:
+    /// skin and the implant shell hide it.
+    /// </summary>
+    private void OnScentEmitterImplanted(Entity<ScentEmitterComponent> ent, ref ImplantImplantedEvent args)
+    {
+        AddTemporaryScent(args.Implanted, ent.Comp.Scent, ent.Comp.Duration);
+    }
+
+    /// <summary>
+    /// Checks incoming damage and adds three scents: blood (slashes and piercings),
+    /// poison and bruises.
     /// </summary>
     private void OnDamageChanged(Entity<ScentComponent> ent, ref DamageChangedEvent args)
     {
@@ -109,21 +122,21 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         if (dict.TryGetValue("Piercing", out var piercing))
             cuts += piercing;
 
-        if (cuts > _smellCache.Config.WoundScentThreshold)
-            AddTemporaryScent(ent, ScentIds.Blood, _smellCache.Config.WoundScentDuration);
+        if (cuts > _cache.Config.WoundScentThreshold)
+            AddTemporaryScent((ent.Owner, ent.Comp), ScentIds.Blood, _cache.Config.WoundScentDuration);
 
-        if (dict.TryGetValue("Blunt", out var blunt) && blunt > _smellCache.Config.WoundScentThreshold)
-            AddTemporaryScent(ent, ScentIds.Bruise, _smellCache.Config.WoundScentDuration);
+        if (dict.TryGetValue("Blunt", out var blunt) && blunt > _cache.Config.WoundScentThreshold)
+            AddTemporaryScent((ent.Owner, ent.Comp), ScentIds.Bruise, _cache.Config.WoundScentDuration);
 
-        if (dict.TryGetValue("Poison", out var poison) && poison > _smellCache.Config.PoisonScentThreshold)
-            AddTemporaryScent(ent, ScentIds.Poison, _smellCache.Config.PoisonScentDuration);
+        if (dict.TryGetValue("Poison", out var poison) && poison > _cache.Config.PoisonScentThreshold)
+            AddTemporaryScent((ent.Owner, ent.Comp), ScentIds.Poison, _cache.Config.PoisonScentDuration);
     }
 
     /// <summary>
-    /// Функция добавляющая запах убийцы при нанесении урона по критической цели.
-    /// Работает с любым melee-оружием (лом, нож и т.п.); владелец — User события.
-    /// Повторные удары просто обновляют таймер одного запаха (AddTemporaryScent
-    /// перезаписывает, не дублирует).
+    /// Adds the killer's scent when damaging a critical-state target.
+    /// Works with any melee weapon (crowbar, knife, etc.); the owner is the event User.
+    /// Repeated hits simply refresh the single scent's timer (AddTemporaryScent
+    /// replaces instead of duplicating).
     /// </summary>
     private void OnAttacked(Entity<ScentOnAttackedComponent> ent, ref AttackedEvent args)
     {
@@ -135,16 +148,16 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         if (!HasComp<ScentComponent>(args.User))
             return;
 
-        AddTemporaryScent(args.User, ScentIds.OtherBlood, _smellCache.Config.OtherBloodScentDuration);
+        AddTemporaryScent(args.User, ScentIds.OtherBlood, _cache.Config.OtherBloodScentDuration);
     }
 
     /// <summary>
-    /// Публичное API для источников (химия, курение, ERP): добавить временный запах.
-    /// Повторное применение того же запаха перезаписывает запись, а не дублирует её.
+    /// Public API for scent sources (chemistry, smoking, ERP): add a temporary scent.
+    /// Re-applying the same scent replaces the entry instead of duplicating it.
     /// </summary>
-    public void AddTemporaryScent(EntityUid uid, ProtoId<ScentPrototype> scent, TimeSpan duration)
+    public void AddTemporaryScent(Entity<ScentComponent?> ent, ProtoId<ScentPrototype> scent, TimeSpan duration)
     {
-        if (!TryComp<ScentComponent>(uid, out var scentComponent))
+        if (!Resolve(ent, ref ent.Comp))
             return;
 
         var entry = new ActiveTemporaryScent
@@ -154,15 +167,15 @@ public sealed class ScentAcquisitionSystem : EntitySystem
             Duration = duration,
         };
 
-        for (int i = 0; i < scentComponent.TemporaryScents.Count; i++)
+        for (int i = 0; i < ent.Comp.TemporaryScents.Count; i++)
         {
-            if (scentComponent.TemporaryScents[i].Scent == scent)
+            if (ent.Comp.TemporaryScents[i].Scent == scent)
             {
-                scentComponent.TemporaryScents[i] = entry;
+                ent.Comp.TemporaryScents[i] = entry;
                 return;
             }
         }
 
-        scentComponent.TemporaryScents.Add(entry);
+        ent.Comp.TemporaryScents.Add(entry);
     }
 }

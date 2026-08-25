@@ -4,14 +4,15 @@ using Content.Shared._Lust.Smell.Prototypes;
 namespace Content.Shared._Lust.Smell;
 
 /// <summary>
-/// Генератор личного аромата: превращает seed персонажа (имя, возраст, пол, голос)
-/// в стабильные цвет и ноты по пулам профиля. Хеш FNV-1a детерминирован между запусками.
+/// Personal scent generator: turns a character seed (name, age, gender, voice)
+/// into stable color and notes from the profile pools. The FNV-1a hash is
+/// deterministic across runs.
 /// </summary>
 public static class ScentSignatureGenerator
 {
     /// <summary>
-    /// Строит сигнатуру: цвет из хеша seed (HSV с фиксированными диапазонами насыщенности
-    /// и яркости), из каждого пула профиля выбирается одна нота.
+    /// Builds the signature: the color comes from the seeded hash (HSV with fixed
+    /// saturation and value ranges), one note is picked from each profile pool.
     /// </summary>
     public static ScentSignature Generate(
         string seed,
@@ -43,8 +44,8 @@ public static class ScentSignatureGenerator
     }
 
     /// <summary>
-    /// Стабильный FNV-1a-хеш строки с солью: разные соли дают независимые выборки
-    /// для цвета и каждой ноты.
+    /// Stable FNV-1a hash of a string with a salt: different salts yield independent
+    /// samples for the color and each note.
     /// </summary>
     private static ulong GetStableHash(string value, ulong salt)
     {

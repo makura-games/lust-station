@@ -1,7 +1,9 @@
-﻿namespace Content.Shared._Lust.Smell;
+﻿using Robust.Shared.Prototypes;
+
+namespace Content.Shared._Lust.Smell;
 
 /// <summary>
-/// Личный аромат персонажа: детерминированно сгенерированные цвет и ноты
-/// из профиля расы и seed'а персонажа. Одинаковый seed — одинаковая сигнатура.
+/// A character's personal scent: color and notes deterministically generated
+/// from the species profile and the character's seed. Same seed — same signature.
 /// </summary>
 public sealed record ScentSignature(Color Color, IReadOnlyList<LocId> Notes);

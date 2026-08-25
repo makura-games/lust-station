@@ -55,11 +55,12 @@
           base:
             Primed: { state: activated }
             Unprimed: { state: icon }
-    # Lust-Edit — взрывчатая игрушка пахнет порохом при носке.
+    # Lust added start - взрывчатая игрушка пахнет порохом при носке.
     - type: ScentEmitter
       spot: AnySlot
       scent: LustGunpowder
       duration: 400
+    # Lust added end
 
 - type: entity
   id: HotPotatoEffect
@@ -116,11 +117,12 @@
     - Recyclable
     - Trash
     - BananaPeel
-  # Lust-Edit — взрывная кожура банана пахнет порохом при носке.
+  # Lust added start - взрывная кожура банана пахнет порохом при носке.
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
     duration: 400
+  # Lust added end
 
 - type: entity
   parent: BaseItem
@@ -155,8 +157,9 @@
   - type: Construction
     graph: SnapPopExplosiveGraph
     node: snapPopExplosive
-  # Lust-Edit — взрывная хлопушка пахнет порохом при носке.
+  # Lust added start - взрывная хлопушка пахнет порохом при носке.
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
     duration: 400
+  # Lust added end

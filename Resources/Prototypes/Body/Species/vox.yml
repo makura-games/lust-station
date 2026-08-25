@@ -260,9 +260,10 @@
   # Sunrise start
   - type: Interactions
   # Sunrise end
-  # Lust-Edit — индивидуальный запах для игроков-воксов
+  # Lust added start - индивидуальный запах для игроков-воксов
   - type: Scent
     personalScentProfile: LustVox
+  # Lust added end
 
 - type: entity
   parent: OrganBase

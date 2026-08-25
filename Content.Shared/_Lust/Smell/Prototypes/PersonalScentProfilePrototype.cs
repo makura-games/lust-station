@@ -3,8 +3,8 @@
 namespace Content.Shared._Lust.Smell.Prototypes;
 
 /// <summary>
-/// Профиль личного аромата расы/существа: пулы нот, из которых генератор
-/// по seed персонажа выбирает по одной ноте на пул.
+/// Personal scent profile of a species/creature: note pools from which the generator
+/// picks one note per pool, seeded by the character's traits.
 /// </summary>
 [Prototype]
 public sealed partial class PersonalScentProfilePrototype : IPrototype
@@ -13,20 +13,20 @@ public sealed partial class PersonalScentProfilePrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// Пулы нот: из каждого берётся ровно одна нота.
+    /// Note pools: exactly one note is taken from each.
     /// </summary>
     [DataField(required: true)]
     public List<ScentNotePool> NotePools { get; private set; } = [];
 }
 
 /// <summary>
-/// Пул взаимозаменяемых нот одного слоя аромата (база/природа/акцент).
+/// Pool of interchangeable notes of a single scent layer (base/nature/accent).
 /// </summary>
 [DataDefinition]
 public sealed partial class ScentNotePool
 {
     /// <summary>
-    /// Варианты нот слоя.
+    /// The layer's note variants.
     /// </summary>
     [DataField(required: true)]
     public List<LocId> Notes { get; private set; } = [];

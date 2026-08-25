@@ -1,10 +1,9 @@
 namespace Content.Shared._Lust.Smell.Components;
 
 /// <summary>
-/// Маркер «может быть жертвой»: ставится на базового предка всех живых
-/// существ (MobDamageable). Позволяет локальной системе запахов среагировать
-/// на AttackedEvent по жертве, не занимая эксклюзивную пару событий.
-/// Служит лишь ключом подписки — своих данных не несёт.
+/// "Can be a victim" marker: placed on the base ancestor of all living creatures.
+/// Lets the smell system react to an AttackedEvent against the victim without
+/// occupying an exclusive event pair. Serves only as a subscription key — carries no data.
 /// </summary>
 [RegisterComponent]
 public sealed partial class ScentOnAttackedComponent : Component

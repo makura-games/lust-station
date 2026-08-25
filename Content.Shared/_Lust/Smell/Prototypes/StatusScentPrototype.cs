@@ -3,10 +3,9 @@ using Robust.Shared.Prototypes;
 namespace Content.Shared._Lust.Smell.Prototypes;
 
 /// <summary>
-/// Сопоставляет статус-эффект (пьянство, наркотрип и т.п.) с запахом состояния.
-/// Пока эффект активен, носитель пахнет соответствующим запахом.
-/// Сила запаха (Strong/Medium/Faint) определяется положением внутри времени эффекта:
-/// чем дальше до конца эффекта, тем сильнее. Нормируется по собственной длительности эффекта.
+/// Maps a status effect (drunkenness, narcotics, etc.) to a condition scent.
+/// While the effect is active the bearer emits the scent. Scent strength depends
+/// on the effect stage: a fresh effect smells strongest and fades towards its end.
 /// </summary>
 [Prototype]
 public sealed partial class StatusScentPrototype : IPrototype
@@ -15,21 +14,22 @@ public sealed partial class StatusScentPrototype : IPrototype
     public string ID { get; private set; } = default!;
 
     /// <summary>
-    /// Прототип статус-эффекта, наличие которого включает этот запах.
-    /// Например "StatusEffectDrunk".
+    /// Status effect entity whose presence enables this scent,
+    /// e.g. "StatusEffectDrunk".
     /// </summary>
     [DataField(required: true)]
     public EntProtoId StatusEffect { get; private set; }
 
     /// <summary>
-    /// Какой запах источает носитель (групповой: алкоголь, стимуляторы, наркотики).
+    /// Group scent emitted by the bearer (alcohol, stimulants, drugs).
     /// </summary>
     [DataField(required: true)]
     public ProtoId<ScentPrototype> Scent { get; private set; }
 
     /// <summary>
-    /// Минимальная длительность эффекта, при которой запах способен достичь Strong.
-    /// Короткие эффекты (глоток выпивки) не должны сильно пахнуть: их максимум — Medium.
+    /// Minimum effect duration for the scent to reach Strong.
+    /// Short effects (a sip of booze) must not smell strongly:
+    /// their maximum is Medium, fading further for shorter durations.
     /// </summary>
     [DataField]
     public TimeSpan MinDurationForStrong { get; private set; } = TimeSpan.FromSeconds(60);

@@ -2,46 +2,44 @@
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lust.Smell.Components;
+
 /// <summary>
-/// Носитель запахов: статичные базовые и личный аромат, временные запахи
-/// от источников и состояние маскировки основного запаха.
+/// Scent bearer: static base and personal scent, temporary scents from sources,
+/// and the masking state of the base scent.
 /// </summary>
 [RegisterComponent]
 public sealed partial class ScentComponent : Component
 {
     /// <summary>
-    /// Статичные (базовые) запахи носителя, всегда присутствующие при осмотре:
-    /// видовые/расовые и прочие постоянные ноты.
+    /// Static (base) scents of the bearer, always present when smelled:
+    /// species notes and other permanent aromas.
     /// </summary>
     [DataField]
     public List<ProtoId<ScentPrototype>> BaseScents = new();
 
     /// <summary>
-    /// Профиль для генерации личного запаха (цвет + ноты) из характеристик
-    /// персонажа (имя, возраст, пол, голос). Если не задан — личного запаха нет.
+    /// Profile used to generate the personal scent (color + notes) from character
+    /// traits (name, age, gender, voice). If unset — no personal scent.
     /// </summary>
     [DataField]
     public ProtoId<PersonalScentProfilePrototype>? PersonalScentProfile;
 
     /// <summary>
-    /// Список временных запахов
+    /// Temporary scents list. Runtime data: filled only by code during the round,
+    /// not serialized into YAML or map saves.
     /// </summary>
-    [DataField]
     public List<ActiveTemporaryScent> TemporaryScents = new();
 
     /// <summary>
-    /// Активна ли временная маскировка основного запаха (например, после мытья мылом).
-    /// Пока активна — основной (статичный + личный) запах скрыт от нюхающих,
-    /// временные запахи при этом продолжают показываться.
+    /// Whether temporary masking of the base scent is active (e.g. after washing with soap).
+    /// While active the base (static + personal) scent is hidden from smellers,
+    /// temporary scents are still shown. Runtime data.
     /// </summary>
-    [DataField]
     public bool Masked;
 
     /// <summary>
-    /// Игровой момент, до которого действует маскировка. После истечения
-    /// маскировка снимается лениво при очередном нюхании.
+    /// Game time until which the masking lasts. After expiry the mask is removed
+    /// lazily on the next smelling. Runtime data.
     /// </summary>
-    [DataField]
     public TimeSpan MaskUntil;
-
 }
