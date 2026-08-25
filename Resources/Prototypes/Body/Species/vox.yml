@@ -262,7 +262,7 @@
   # Sunrise end
   # Lust-Edit — индивидуальный запах для игроков-воксов
   - type: Scent
-    personalScentProfile: Vox
+    personalScentProfile: LustVox
 
 - type: entity
   parent: OrganBase

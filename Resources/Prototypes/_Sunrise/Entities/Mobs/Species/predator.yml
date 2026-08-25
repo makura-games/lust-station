@@ -88,7 +88,7 @@
   - type: FootprintEmitter
   # Lust-Edit — индивидуальный запах для игроков-хищников
   - type: Scent
-    personalScentProfile: Predator
+    personalScentProfile: LustPredator
 
 - type: entity
   parent: AppearancePredator

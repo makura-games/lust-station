@@ -214,7 +214,7 @@
   # Sunrise-end
   # Lust-Edit — индивидуальный запах для игроков-молей
   - type: Scent
-    personalScentProfile: Moth
+    personalScentProfile: LustMoth
 
 - type: entity
   parent: OrganBase

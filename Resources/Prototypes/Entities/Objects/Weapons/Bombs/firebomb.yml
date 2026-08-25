@@ -68,7 +68,7 @@
   # Lust-Edit — самодельная бомба пахнет порохом при носке.
   - type: ScentEmitter
     spot: AnySlot
-    scent: Gunpowder
+    scent: LustGunpowder
     duration: 400
 
 # has igniter but no fuel or wires

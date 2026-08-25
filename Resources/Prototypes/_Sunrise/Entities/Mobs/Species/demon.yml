@@ -101,7 +101,7 @@
   - type: FootprintEmitter
   # Lust-Edit — индивидуальный запах для игроков-арканов
   - type: Scent
-    personalScentProfile: Demon
+    personalScentProfile: LustDemon
 
 - type: entity
   save: false

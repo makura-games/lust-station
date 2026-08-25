@@ -3,7 +3,7 @@ using Content.Server.Popups;
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
 using Content.Shared.DoAfter;
-using Content.Shared.Popups;
+using Content.Shared.Interaction;
 using Content.Shared.Verbs;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -21,6 +21,7 @@ public sealed class ScentCleaningSystem : EntitySystem
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SmellPrototypeCacheSystem _smellCache = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
 
     public override void Initialize()
     {
@@ -54,9 +55,36 @@ public sealed class ScentCleaningSystem : EntitySystem
     }
 
     /// <summary>
-    /// Запускает действие по смыву запахов: проверка, попап, старт DoAfter.
+    /// Публичная точка входа смыва: проверка через CanCleanScents и запуск действия.
     /// </summary>
-    private bool TryCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
+    public bool TryCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
+    {
+        if (!CanCleanScents(user, target))
+            return false;
+
+        DoCleanScents(cleaner, user, target);
+        return true;
+    }
+
+    /// <summary>
+    /// Проверка на возможность смыва запахов с цели.
+    /// </summary>
+    public bool CanCleanScents(EntityUid user, EntityUid target)
+    {
+        if (!HasComp<ScentComponent>(target))
+            return false;
+
+        if (!_interaction.InRangeUnobstructed(user, target,
+                range: _smellCache.Config.ScentCleaningRange))
+            return false;
+
+        return true;
+    }
+
+    /// <summary>
+    /// Выполняет смыв: стартовый попап и запуск DoAfter мытья.
+    /// </summary>
+    private void DoCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
     {
         _popupSystem.PopupEntity(
             Loc.GetString("scent-cleaning-start", ("target", target)),
@@ -73,7 +101,6 @@ public sealed class ScentCleaningSystem : EntitySystem
         };
 
         _doAfterSystem.TryStartDoAfter(doAfterArgs);
-        return true;
     }
 
     /// <summary>

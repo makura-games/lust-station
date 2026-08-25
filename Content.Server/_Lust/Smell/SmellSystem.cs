@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Content.Server.Atmos.Components;
 using Content.Server.Popups;
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
@@ -12,7 +13,6 @@ using Content.Shared.Inventory;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared._Sunrise.TTS;
-using Content.Shared.Atmos.Components;
 using Content.Shared.Verbs;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
@@ -80,30 +80,16 @@ public sealed class SmellSystem : EntitySystem
 
     /// <summary>
     /// Точка входа: проверка возможности нюхать и вывод описания запахов.
-    /// Каждая неудачная проверка — отдельный гвард; попап показывается сразу причину.
+    /// Некоторые неудачные проверки CanSmell показывают попап.
     /// </summary>
     public bool TrySmell(EntityUid user, Entity<ScentComponent> target)
     {
-        if (!HasComp<SmellComponent>(user))
-            return false;
-
-        if (IsMaskEquipped(user) || IsHardsuitSealed(user))
+        if (!CanSmell(user, target, out var reason))
         {
-            _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-gear"), user, user);
+            if (reason != null)
+                _popupSystem.PopupEntity(Loc.GetString(reason), user, user);
             return false;
         }
-
-        if (IsHardsuitSealed(target))
-        {
-            _popupSystem.PopupEntity(Loc.GetString("smell-blocked-by-target-gear"), user, user);
-            return false;
-        }
-
-        if (!_actionBlocker.CanInteract(user, target))
-            return false;
-
-        if (!_interaction.InRangeUnobstructed(user, target.Owner))
-            return false;
 
         DoSmell(user, target);
         return true;
@@ -123,9 +109,7 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
-    /// Носит ли сущность герметичный скафандр с закрытым шлемом. Проверяем, что
-    /// на слоте outerClothing есть скафандр (ToggleableClothing), а в слоте head
-    /// надет его шлем (AttachedClothing, ссылающийся на этот скафандр).
+    /// Носит ли человек гермитичный скафандр
     /// </summary>
     private bool IsHardsuitSealed(EntityUid uid)
     {
@@ -135,8 +119,37 @@ public sealed class SmellSystem : EntitySystem
         if (!_inventory.TryGetSlotEntity(uid, "head", out var helmetEntity))
             return false;
 
-        return TryComp<AttachedClothingComponent>(helmetEntity, out var attached)
-            && attached.AttachedUid == suitEntity || HasComp<BreathToolComponent>(helmetEntity) ;
+        return HasComp<PressureProtectionComponent>(suitEntity)
+               && HasComp<PressureProtectionComponent>(helmetEntity);
+    }
+    /// <summary>
+    /// Проверка на возможность понюхать; возвращает false и причину отказа.
+    /// Причина отказа — null при молчаливом отказе (нет уместного сообщения).
+    /// </summary>
+    public bool CanSmell(EntityUid user, Entity<ScentComponent> target, out LocId? reason)
+    {
+        reason = null;
+
+        if (!HasComp<SmellComponent>(user))
+            return false;
+
+        if (IsMaskEquipped(user) || IsHardsuitSealed(user))
+        {
+            reason = "smell-blocked-by-gear";
+            return false;
+        }
+
+        if (IsHardsuitSealed(target))
+        {
+            reason = "smell-blocked-by-target-gear";
+            return false;
+        }
+
+        if (!_actionBlocker.CanInteract(user, target) ||
+            !_interaction.InRangeUnobstructed(user, target.Owner))
+            return false;
+
+        return true;
     }
 
     /// <summary>

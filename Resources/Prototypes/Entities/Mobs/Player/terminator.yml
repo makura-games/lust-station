@@ -7,7 +7,7 @@
   - type: FlashImmunity # no brain to brainwash, eyes are robotic
   # Lust-Edit — индивидуальный запах для игроков-терминаторов
   - type: Scent
-    personalScentProfile: Terminator
+    personalScentProfile: LustTerminator
 
 - type: entity
   parent: [MobHuman, MobTerminatorBase]

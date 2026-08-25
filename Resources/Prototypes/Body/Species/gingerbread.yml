@@ -78,7 +78,7 @@
     proto: gingerbread
   # Lust-Edit — индивидуальный запах для игроков-пряничников
   - type: Scent
-    personalScentProfile: Gingerbread
+    personalScentProfile: LustGingerbread
 
 - type: entity
   parent: OrganBase

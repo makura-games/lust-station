@@ -70,7 +70,7 @@
   # Sunrise edit end
   # Lust-Edit — индивидуальный запах для игроков-дварфов
   - type: Scent
-    personalScentProfile: Dwarf
+    personalScentProfile: LustDwarf
 
 - type: entity
   parent: OrganBase

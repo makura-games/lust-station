@@ -24,7 +24,7 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
     private SmellSystemConfigPrototype _config = default!;
 
     [ValidatePrototypeId<SmellSystemConfigPrototype>]
-    private const string ConfigId = "Default";
+    private const string ConfigId = "LustDefault";
 
     public override void Initialize()
     {

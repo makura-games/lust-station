@@ -10,20 +10,20 @@ namespace Content.Shared._Lust.Smell.Prototypes;
 public static class ScentIds
 {
     [ValidatePrototypeId<ScentPrototype>]
-    public const string Arousal = "Arousal";
+    public const string Arousal = "LustArousal";
 
     [ValidatePrototypeId<ScentPrototype>]
-    public const string Orgasm = "Orgasm";
+    public const string Orgasm = "LustOrgasm";
 
     [ValidatePrototypeId<ScentPrototype>]
-    public const string Blood = "Blood";
+    public const string Blood = "LustBlood";
 
     [ValidatePrototypeId<ScentPrototype>]
-    public const string OtherBlood = "OtherBlood";
+    public const string OtherBlood = "LustOtherBlood";
 
     [ValidatePrototypeId<ScentPrototype>]
-    public const string Bruise = "Bruise";
+    public const string Bruise = "LustBruise";
 
     [ValidatePrototypeId<ScentPrototype>]
-    public const string Poison = "Poison";
+    public const string Poison = "LustPoison";
 }

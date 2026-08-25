@@ -1,69 +1,69 @@
 ﻿- type: scent
-  id: Alcohol
+  id: LustAlcohol
   description: scent-temp-alcohol
   color: "#819b4b"
   intensity: 0.85
 
 - type: scent
-  id: Smoke
+  id: LustSmoke
   description: scent-temp-smoke
   color: "#e5c706"
   intensity: 0.55
 
 - type: scent
-  id: Gunpowder
+  id: LustGunpowder
   description: scent-temp-gunpowder
   color: "#b83700"
   intensity: 0.95
 
 - type: scent
-  id: Arousal
+  id: LustArousal
   description: scent-temp-arousal
   color: "#FF69B4"
   intensity: 0.7
   fat: true
 
 - type: scent
-  id: Orgasm
+  id: LustOrgasm
   description: scent-temp-orgasm
   color: "#FF1493"
   intensity: 0.8
   fat: true
 
 - type: scent
-  id: Blood
+  id: LustBlood
   description: scent-temp-blood
   color: "#8B0000"
   intensity: 0.95
   fat: true
 
 - type: scent
-  id: OtherBlood
+  id: LustOtherBlood
   description: scent-temp-other-blood
   color: "#fe0101"
   intensity: 1.0
   fat: true
 
 - type: scent
-  id: Bruise
+  id: LustBruise
   description: scent-temp-bruise
   color: "#6A5ACD"
   intensity: 0.75
 
 - type: scent
-  id: Poison
+  id: LustPoison
   description: scent-temp-poison
   color: "#556B2F"
   intensity: 0.85
 
 - type: scent
-  id: Drug
+  id: LustDrug
   description: scent-temp-drug
   color: "#7B68EE"
   intensity: 0.65
 
 - type: scent
-  id: Stimulant
+  id: LustStimulant
   description: scent-temp-stimulant
   color: "#00CED1"
   intensity: 0.6

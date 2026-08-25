@@ -58,7 +58,7 @@
     # Lust-Edit — взрывчатая игрушка пахнет порохом при носке.
     - type: ScentEmitter
       spot: AnySlot
-      scent: Gunpowder
+      scent: LustGunpowder
       duration: 400
 
 - type: entity
@@ -119,7 +119,7 @@
   # Lust-Edit — взрывная кожура банана пахнет порохом при носке.
   - type: ScentEmitter
     spot: AnySlot
-    scent: Gunpowder
+    scent: LustGunpowder
     duration: 400
 
 - type: entity
@@ -158,5 +158,5 @@
   # Lust-Edit — взрывная хлопушка пахнет порохом при носке.
   - type: ScentEmitter
     spot: AnySlot
-    scent: Gunpowder
+    scent: LustGunpowder
     duration: 400

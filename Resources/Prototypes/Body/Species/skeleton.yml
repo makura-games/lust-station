@@ -188,7 +188,7 @@
   # Sunrise-End
   # Lust-Edit — индивидуальный запах для игроков-скелетов
   - type: Scent
-    personalScentProfile: Skeleton
+    personalScentProfile: LustSkeleton
 
 - type: entity
   parent: OrganBase

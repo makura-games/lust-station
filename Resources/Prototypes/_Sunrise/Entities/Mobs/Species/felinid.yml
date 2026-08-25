@@ -194,7 +194,7 @@
         variation: 0.125
   # Lust-Edit — индивидуальный запах для игроков-фелинидов
   - type: Scent
-    personalScentProfile: Felinid
+    personalScentProfile: LustFelinid
 
 - type: entity
   save: false

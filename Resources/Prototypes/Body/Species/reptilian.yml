@@ -239,7 +239,7 @@
   # Sunrise end
   # Lust-Edit — индивидуальный запах для игроков-ящеров
   - type: Scent
-    personalScentProfile: Reptilian
+    personalScentProfile: LustReptilian
 
 - type: entity
   parent: OrganBase

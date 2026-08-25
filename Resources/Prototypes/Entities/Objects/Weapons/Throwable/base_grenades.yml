@@ -56,7 +56,7 @@
   # Lust-Edit — взрывные гранаты пахнут порохом при носке.
   - type: ScentEmitter
     spot: AnySlot
-    scent: Gunpowder
+    scent: LustGunpowder
     duration: 400
 
 - type: entity # Starts fuse after taking 10 damage.

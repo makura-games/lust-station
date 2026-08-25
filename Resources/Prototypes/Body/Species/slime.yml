@@ -197,7 +197,7 @@
   # Sunrise end
   # Lust-Edit — индивидуальный запах для игроков-слаймов
   - type: Scent
-    personalScentProfile: Slime
+    personalScentProfile: LustSlime
 
 - type: entity
   parent: OrganBase

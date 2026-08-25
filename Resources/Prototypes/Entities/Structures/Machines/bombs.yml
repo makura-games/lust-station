@@ -53,11 +53,6 @@
       openOnActivation: true
       guides:
       - Defusal
-  # Lust-Edit — обезвреживаемая бомба пахнет порохом при переноске.
-    - type: ScentEmitter
-      spot: AnySlot
-      scent: Gunpowder
-      duration: 400
 
 - type: entity
   parent: BaseHardBomb

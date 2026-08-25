@@ -185,7 +185,7 @@
   - type: Smell
   # Lust-Edit — индивидуальный запах для игроков-таяранов
   - type: Scent
-    personalScentProfile: Tajaran
+    personalScentProfile: LustTajaran
 
 - type: entity
   save: false

@@ -3,21 +3,21 @@
 # чем дальше до конца эффекта, тем сильнее. Нормируется по реальной длительности эффекта.
 
 - type: statusScent
-  id: DrunkScent
+  id: LustDrunkScent
   statusEffect: StatusEffectDrunk
-  scent: Alcohol
+  scent: LustAlcohol
 
 - type: statusScent
-  id: StimulantsScent
+  id: LustStimulantsScent
   statusEffect: StatusEffectStimulantsStamina
-  scent: Stimulant
+  scent: LustStimulant
 
 - type: statusScent
-  id: DrugsScent
+  id: LustDrugsScent
   statusEffect: StatusEffectSeeingRainbow
-  scent: Drug
+  scent: LustDrug
 
 - type: statusScent
-  id: PainNumbnessScent
+  id: LustPainNumbnessScent
   statusEffect: StatusEffectPainNumbness
-  scent: Drug
+  scent: LustDrug

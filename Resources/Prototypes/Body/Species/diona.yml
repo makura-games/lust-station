@@ -182,7 +182,7 @@
   # Sunrise end
   # Lust-Edit — индивидуальный запах для игроков-дионы
   - type: Scent
-    personalScentProfile: Diona
+    personalScentProfile: LustDiona
 
 - type: entity
   parent: OrganBase

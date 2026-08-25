@@ -3,7 +3,7 @@
 # возбуждения и оргазма. Правки подхватываются reloadprototypes.
 
 - type: smellSystemConfig
-  id: Default
+  id: LustDefault
   woundScentThreshold: 10
   poisonScentThreshold: 25
   woundScentDuration: 300

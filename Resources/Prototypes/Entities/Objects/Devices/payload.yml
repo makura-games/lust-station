@@ -45,7 +45,7 @@
   # Lust-Edit — взрывной пейлоад пахнет порохом при носке.
   - type: ScentEmitter
     spot: AnySlot
-    scent: Gunpowder
+    scent: LustGunpowder
     duration: 400
 
 - type: entity

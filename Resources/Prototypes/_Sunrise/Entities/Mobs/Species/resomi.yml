@@ -297,7 +297,7 @@
     - Resomi
   # Lust-Edit — индивидуальный запах для игроков-ресоми
   - type: Scent
-    personalScentProfile: Resomi
+    personalScentProfile: LustResomi
 
 - type: entity
   parent: AppearanceResomi

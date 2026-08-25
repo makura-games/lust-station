@@ -79,7 +79,7 @@
     - Abductor
   # Lust-Edit — индивидуальный запах для игроков-абдукторов
   - type: Scent
-    personalScentProfile: Abductor
+    personalScentProfile: LustAbductor
 
 - type: entity
   parent: AppearanceAbductor

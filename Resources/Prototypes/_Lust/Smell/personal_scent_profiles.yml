@@ -1,5 +1,5 @@
 ﻿- type: personalScentProfile
-  id: Vulpkanin
+  id: LustVulpkanin
   notePools:
   - notes:
     - scent-vulp-base-musky-fur
@@ -21,7 +21,7 @@
     - scent-vulp-accent-riverwater
 
 - type: personalScentProfile
-  id: Tajaran
+  id: LustTajaran
   notePools:
   - notes:
     - scent-tajaran-base-musky-fur
@@ -46,7 +46,7 @@
 
 
 - type: personalScentProfile
-  id: Demon
+  id: LustDemon
   notePools:
   - notes:
     - scent-demon-base-musky-skin
@@ -68,7 +68,7 @@
     - scent-demon-accent-incense
 
 - type: personalScentProfile
-  id: Arachnid
+  id: LustArachnid
   notePools:
   - notes:
     - scent-arachnid-base-mineral-chitin
@@ -90,7 +90,7 @@
     - scent-arachnid-accent-bitter-venom
 
 - type: personalScentProfile
-  id: Diona
+  id: LustDiona
   notePools:
   - notes:
     - scent-diona-base-wood-sap
@@ -112,7 +112,7 @@
     - scent-diona-accent-forest-stream
 
 - type: personalScentProfile
-  id: Dwarf
+  id: LustDwarf
   notePools:
   - notes:
     - scent-dwarf-base-heavy-sweat
@@ -134,7 +134,7 @@
     - scent-dwarf-accent-ink
 
 - type: personalScentProfile
-  id: Gingerbread
+  id: LustGingerbread
   notePools:
   - notes:
     - scent-gingerbread-base-sweet-dough
@@ -157,7 +157,7 @@
 
 
 - type: personalScentProfile
-  id: Human
+  id: LustHuman
   notePools:
   - notes:
     - scent-human-base-warm-body
@@ -179,7 +179,7 @@
     - scent-human-accent-gasoline
 
 - type: personalScentProfile
-  id: Moth
+  id: LustMoth
   notePools:
   - notes:
     - scent-moth-base-sweet-down
@@ -201,7 +201,7 @@
     - scent-moth-accent-wood-resin
 
 - type: personalScentProfile
-  id: Reptilian
+  id: LustReptilian
   notePools:
   - notes:
     - scent-reptilian-base-brackish-scales
@@ -223,7 +223,7 @@
     - scent-reptilian-accent-tropical-wood
 
 - type: personalScentProfile
-  id: Skeleton
+  id: LustSkeleton
   notePools:
   - notes:
     - scent-skeleton-base-dry-bones
@@ -245,7 +245,7 @@
     - scent-skeleton-accent-old-wax
 
 - type: personalScentProfile
-  id: Slime
+  id: LustSlime
   notePools:
   - notes:
     - scent-slime-base-sweet-slime
@@ -267,7 +267,7 @@
     - scent-slime-accent-chemical-reagents
 
 - type: personalScentProfile
-  id: Terminator
+  id: LustTerminator
   notePools:
   - notes:
     - scent-terminator-base-titanium-alloy
@@ -291,7 +291,7 @@
     - scent-terminator-accent-spent-shells
 
 - type: personalScentProfile
-  id: Vox
+  id: LustVox
   notePools:
   - notes:
     - scent-vox-base-silky-plumage
@@ -313,7 +313,7 @@
     - scent-vox-accent-acrid-fumes
 
 - type: personalScentProfile
-  id: Abductor
+  id: LustAbductor
   notePools:
   - notes:
     - scent-abductor-base-cold-ichor
@@ -334,7 +334,7 @@
     - scent-abductor-accent-tangy-solvent
     - scent-abductor-accent-metallic-sediment
 - type: personalScentProfile
-  id: Felinid
+  id: LustFelinid
   notePools:
   - notes:
     - scent-felinid-base-sweet-sweat
@@ -356,7 +356,7 @@
     - scent-felinid-accent-keratin-claws
 
 - type: personalScentProfile
-  id: HumanoidXeno
+  id: LustHumanoidXeno
   notePools:
   - notes:
     - scent-xeno-base-caustic-acid
@@ -378,7 +378,7 @@
     - scent-xeno-accent-black-slime
 
 - type: personalScentProfile
-  id: Milira
+  id: LustMilira
   notePools:
   - notes:
     - scent-milir-base-frosted-plumage
@@ -400,7 +400,7 @@
     - scent-milir-accent-frosty-metal
 
 - type: personalScentProfile
-  id: Predator
+  id: LustPredator
   notePools:
   - notes:
     - scent-predator-base-feral-musk
@@ -422,7 +422,7 @@
     - scent-predator-accent-dried-blood
 
 - type: personalScentProfile
-  id: Resomi
+  id: LustResomi
   notePools:
   - notes:
     - scent-resomi-base-downy-covering
@@ -444,7 +444,7 @@
     - scent-resomi-accent-sticky-resin
 
 - type: personalScentProfile
-  id: Swine
+  id: LustSwine
   notePools:
   - notes:
     - scent-swine-base-salty-sweat

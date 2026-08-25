@@ -61,7 +61,7 @@
   # Lust-Edit — мина пахнет порохом при переноске.
   - type: ScentEmitter
     spot: AnySlot
-    scent: Gunpowder
+    scent: LustGunpowder
     duration: 400
 
 - type: entity
