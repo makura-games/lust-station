@@ -2,6 +2,7 @@ using Content.Server.DoAfter;
 using Content.Server.Popups;
 using Content.Shared._Lust.Smell;
 using Content.Shared._Lust.Smell.Components;
+using Content.Shared.ActionBlocker;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Verbs;
@@ -22,6 +23,8 @@ public sealed class ScentCleaningSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly SmellPrototypeCacheSystem _cache = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!;
 
     public override void Initialize()
     {
@@ -48,60 +51,10 @@ public sealed class ScentCleaningSystem : EntitySystem
         {
             Act = () => TryCleanScents(cleaner, user, target),
             Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/bubbles.svg.192dpi.png")),
-            Text = Loc.GetString("scent-cleaning-verb-text"),
-            Message = Loc.GetString("scent-cleaning-verb-message"),
+            Text = _loc.GetString("scent-cleaning-verb-text"),
+            Message = _loc.GetString("scent-cleaning-verb-message"),
             DoContactInteraction = false,
         });
-    }
-
-    /// <summary>
-    /// Public entry point for washing: validation via CanCleanScents, then execution.
-    /// </summary>
-    public bool TryCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
-    {
-        if (!CanCleanScents(user, target))
-            return false;
-
-        DoCleanScents(cleaner, user, target);
-        return true;
-    }
-
-    /// <summary>
-    /// Checks whether scents can be washed off the target:
-    /// the target must carry scents and be within range from the config.
-    /// </summary>
-    public bool CanCleanScents(EntityUid user, EntityUid target)
-    {
-        if (!HasComp<ScentComponent>(target))
-            return false;
-
-        if (!_interaction.InRangeUnobstructed(user, target,
-                range: _cache.Config.ScentCleaningRange))
-            return false;
-
-        return true;
-    }
-
-    /// <summary>
-    /// Performs the wash: start popup and DoAfter launch.
-    /// </summary>
-    private void DoCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
-    {
-        _popup.PopupEntity(
-            Loc.GetString("scent-cleaning-start", ("target", target)),
-            user, user);
-
-        var delay = cleaner.Comp.CleanDelay;
-        var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, new ScentCleaningDoAfterEvent(), cleaner, target: target, used: cleaner)
-        {
-            NeedHand = true,
-            BreakOnDamage = true,
-            BreakOnMove = true,
-            MovementThreshold = 0.01f,
-            DistanceThreshold = _cache.Config.ScentCleaningRange,
-        };
-
-        _doAfter.TryStartDoAfter(doAfterArgs);
     }
 
     /// <summary>
@@ -119,5 +72,58 @@ public sealed class ScentCleaningSystem : EntitySystem
         scentComp.TemporaryScents.Clear();
         scentComp.Masked = true;
         scentComp.MaskUntil = _timing.CurTime + ent.Comp.MaskDuration;
+    }
+
+    /// <summary>
+    /// Public entry point for washing: validation via CanCleanScents, then execution.
+    /// </summary>
+    public bool TryCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
+    {
+        if (!CanCleanScents(user, target))
+            return false;
+
+        DoCleanScents(cleaner, user, target);
+        return true;
+    }
+
+    /// <summary>
+    /// Checks whether scents can be washed off the target: the user must be
+    /// able to interact, the target must carry scents and be within range.
+    /// </summary>
+    public bool CanCleanScents(EntityUid user, EntityUid target)
+    {
+        if (!_actionBlocker.CanInteract(user, target))
+            return false;
+
+        if (!HasComp<ScentComponent>(target))
+            return false;
+
+        if (!_interaction.InRangeUnobstructed(user, target,
+                range: _cache.Config.ScentCleaningRange))
+            return false;
+
+        return true;
+    }
+
+    /// <summary>
+    /// Performs the wash: start popup and DoAfter launch.
+    /// </summary>
+    private void DoCleanScents(Entity<ScentCleaningComponent> cleaner, EntityUid user, EntityUid target)
+    {
+        _popup.PopupEntity(
+            _loc.GetString("scent-cleaning-start", ("target", target)),
+            user, user);
+
+        var delay = cleaner.Comp.CleanDelay;
+        var doAfterArgs = new DoAfterArgs(EntityManager, user, delay, new ScentCleaningDoAfterEvent(), cleaner, target: target, used: cleaner)
+        {
+            NeedHand = true,
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            MovementThreshold = 0.01f,
+            DistanceThreshold = _cache.Config.ScentCleaningRange,
+        };
+
+        _doAfter.TryStartDoAfter(doAfterArgs);
     }
 }

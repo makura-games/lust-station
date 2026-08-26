@@ -37,6 +37,7 @@ public sealed class SmellSystem : EntitySystem
     [Dependency] private readonly SmellPrototypeCacheSystem _cache = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly ILocalizationManager _loc = default!;
 
 
     public override void Initialize()
@@ -62,20 +63,10 @@ public sealed class SmellSystem : EntitySystem
 
         args.Verbs.Add(new InteractionVerb
         {
-            Text = Loc.GetString("smell-verb"),
+            Text = _loc.GetString("smell-verb"),
             TextStyleClass = "Default",
             Act = () => TrySmell(user, target)
         });
-    }
-
-    /// <summary>
-    /// Internal record collecting the scent bearer's traits.
-    /// </summary>
-    private sealed record PersonalCharacteristics
-    {
-        public int Age { get; init; }
-        public Gender Gender { get; init; }
-        public string Voice { get; init; } = string.Empty;
     }
 
     /// <summary>
@@ -87,7 +78,7 @@ public sealed class SmellSystem : EntitySystem
         if (!CanSmell(user, target, out var reason))
         {
             if (reason != null)
-                _popup.PopupEntity(Loc.GetString(reason), user, user);
+                _popup.PopupEntity(_loc.GetString(reason), user, user);
             return false;
         }
 
@@ -95,34 +86,6 @@ public sealed class SmellSystem : EntitySystem
         return true;
     }
 
-    /// <summary>
-    /// Whether an equipped, non-toggled item occupies the mask slot. A toggled-down mask
-    /// (MaskComponent.IsToggled) does not cover the nose and does not block smelling.
-    /// </summary>
-    private bool IsMaskEquipped(EntityUid uid)
-    {
-        if (!_inventory.TryGetSlotEntity(uid, "mask", out var maskEntity))
-            return false;
-
-        return TryComp<MaskComponent>(maskEntity, out var mask)
-            && !mask.IsToggled;
-    }
-
-    /// <summary>
-    /// Whether the person wears a sealed suit: both the outer clothing and the helmet
-    /// must be pressure-protected (hardsuits and separate EVA kits).
-    /// </summary>
-    private bool IsHardsuitSealed(EntityUid uid)
-    {
-        if (!_inventory.TryGetSlotEntity(uid, "outerClothing", out var suitEntity))
-            return false;
-
-        if (!_inventory.TryGetSlotEntity(uid, "head", out var helmetEntity))
-            return false;
-
-        return HasComp<PressureProtectionComponent>(suitEntity)
-               && HasComp<PressureProtectionComponent>(helmetEntity);
-    }
     /// <summary>
     /// Smell capability check; returns false and a failure reason.
     /// The reason is null for a silent rejection (no suitable message).
@@ -134,7 +97,7 @@ public sealed class SmellSystem : EntitySystem
         if (!HasComp<SmellComponent>(user))
             return false;
 
-        if (IsMaskEquipped(user) || IsHardsuitSealed(user))
+        if (IsMaskEquipped(user) || IsHeadSealed(user))
         {
             reason = "smell-blocked-by-gear";
             return false;
@@ -154,6 +117,47 @@ public sealed class SmellSystem : EntitySystem
     }
 
     /// <summary>
+    /// Whether an equipped, non-toggled item occupies the mask slot. A toggled-down mask
+    /// (MaskComponent.IsToggled) does not cover the nose and does not block smelling.
+    /// </summary>
+    private bool IsMaskEquipped(EntityUid uid)
+    {
+        if (!_inventory.TryGetSlotEntity(uid, "mask", out var maskEntity))
+            return false;
+
+        return TryComp<MaskComponent>(maskEntity, out var mask)
+            && !mask.IsToggled;
+    }
+
+    /// <summary>
+    /// Whether the person wears a closed pressure-proof helmet.
+    /// A closed helmet alone blocks smelling — the nose is covered.
+    /// </summary>
+    private bool IsHeadSealed(EntityUid uid)
+    {
+        return _inventory.TryGetSlotEntity(uid, "head", out var helmet)
+               && HasComp<PressureProtectionComponent>(helmet);
+    }
+
+    /// <summary>
+    /// Whether the person wears a fully sealed kit: both the outer clothing and the
+    /// helmet must be pressure-protected (hardsuits and separate EVA kits).
+    /// Used for the TARGET — to hide their scent the whole body must be enclosed;
+    /// the smeller only needs their own head covered (see IsHeadSealed).
+    /// </summary>
+    private bool IsHardsuitSealed(EntityUid uid)
+    {
+        if (!_inventory.TryGetSlotEntity(uid, "outerClothing", out var suitEntity))
+            return false;
+
+        if (!_inventory.TryGetSlotEntity(uid, "head", out var helmetEntity))
+            return false;
+
+        return HasComp<PressureProtectionComponent>(suitEntity)
+               && HasComp<PressureProtectionComponent>(helmetEntity);
+    }
+
+    /// <summary>
     /// Performs smelling: lazy mask removal on expiry, assembling the scent
     /// description (base + temporary) and sending the tooltip to the smeller.
     /// </summary>
@@ -164,7 +168,7 @@ public sealed class SmellSystem : EntitySystem
         // Ленивое снятие маскировки: если время истекло — маска пропадает сама.
         // При активной маске основной запах скрыт, но временные запахи всё ещё показываются.
         if (IsMasked(target))
-            message.AddMarkupOrThrow($"[color={_cache.Config.MaskedScentColor.ToHex()}]{Loc.GetString("smell-result-masked")}[/color]");
+            message.AddMarkupOrThrow($"[color={_cache.Config.MaskedScentColor.ToHex()}]{_loc.GetString("smell-result-masked")}[/color]");
         else
             AppendBaseAndPersonalScents(message, target);
 
@@ -192,7 +196,7 @@ public sealed class SmellSystem : EntitySystem
         // --- ОСНОВНОЙ запах (статичный + личный) всегда в начале ---
         if (staticNotes.Count > 0)
         {
-            message.AddMarkupOrThrow(Loc.GetString(
+            message.AddMarkupOrThrow(_loc.GetString(
                 "smell-result-static",
                 ("notes", string.Join(", ", staticNotes))));
         }
@@ -206,10 +210,10 @@ public sealed class SmellSystem : EntitySystem
 
             foreach (LocId note in signature.Notes)
             {
-                personalNotes.Add(Loc.GetString(note));
+                personalNotes.Add(_loc.GetString(note));
             }
 
-            message.AddMarkupOrThrow(Loc.GetString(
+            message.AddMarkupOrThrow(_loc.GetString(
                 "smell-result-personal",
                 ("color", signature.Color.ToHex()),
                 ("notes", string.Join(", ", personalNotes))));
@@ -217,7 +221,7 @@ public sealed class SmellSystem : EntitySystem
 
         if (staticNotes.Count == 0 && signature == null)
         {
-            message.AddMarkupOrThrow(Loc.GetString("smell-result-none"));
+            message.AddMarkupOrThrow(_loc.GetString("smell-result-none"));
         }
     }
 
@@ -233,7 +237,7 @@ public sealed class SmellSystem : EntitySystem
             return;
 
         message.AddMarkupOrThrow("\n");
-        message.AddMarkupOrThrow(Loc.GetString("smell-result-temporary-header"));
+        message.AddMarkupOrThrow(_loc.GetString("smell-result-temporary-header"));
 
         // Отдельная строка на каждую непустую группу, в порядке Strong -> Medium -> Faint.
         foreach (ScentStrength group in Enum.GetValues<ScentStrength>())
@@ -247,7 +251,7 @@ public sealed class SmellSystem : EntitySystem
                 continue;
 
             message.AddMarkupOrThrow("\n");
-            message.AddMarkupOrThrow(Loc.GetString(
+            message.AddMarkupOrThrow(_loc.GetString(
                 $"smell-strength-{group.ToString().ToLowerInvariant()}",
                 ("notes", string.Join(", ", groupLines))));
         }
@@ -449,7 +453,7 @@ public sealed class SmellSystem : EntitySystem
     /// </summary>
     private string GetScentDescription(ScentPrototype scent, LocId? descriptionOverride = null)
     {
-        var text = Loc.GetString(descriptionOverride ?? scent.Description);
+        var text = _loc.GetString(descriptionOverride ?? scent.Description);
         if (scent.Color is { } color)
             text = $"[color={color.ToHex()}]{text}[/color]";
         return scent.Fat ? $"[bold]{text}[/bold]" : text;
@@ -485,6 +489,16 @@ public sealed class SmellSystem : EntitySystem
         if (ratio < 0.33f) return ScentStrength.Strong;
         if (ratio < 0.66f) return ScentStrength.Medium;
         return ScentStrength.Faint;
+    }
+
+    /// <summary>
+    /// Internal record collecting the scent bearer's traits.
+    /// </summary>
+    private sealed record PersonalCharacteristics
+    {
+        public int Age { get; init; }
+        public Gender Gender { get; init; }
+        public string Voice { get; init; } = string.Empty;
     }
 }
 

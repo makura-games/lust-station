@@ -32,4 +32,8 @@ public static class ScentIds
     /// <summary>Toxic odor smelled once poison damage crosses the threshold.</summary>
     [ValidatePrototypeId<ScentPrototype>]
     public const string Poison = "LustPoison";
+
+    /// <summary>Smoke smell from burning tobacco products.</summary>
+    [ValidatePrototypeId<ScentPrototype>]
+    public const string Smoke = "LustSmoke";
 }

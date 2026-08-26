@@ -13,6 +13,9 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
 {
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
 
+    [ValidatePrototypeId<SmellSystemConfigPrototype>]
+    private const string ConfigId = "LustDefault";
+
     /// <summary>
     /// Status-effect-to-scent mapping list from YAML (statusScent).
     /// </summary>
@@ -23,12 +26,23 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
     /// </summary>
     private SmellSystemConfigPrototype _config = default!;
 
-    [ValidatePrototypeId<SmellSystemConfigPrototype>]
-    private const string ConfigId = "LustDefault";
-
     public override void Initialize()
     {
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
+
+        RebuildProtoCache();
+    }
+
+    /// <summary>
+    /// Hot reload handler (reloadprototypes). Rebuilds the cache only when
+    /// StatusScentPrototype or SmellSystemConfigPrototype types were touched,
+    /// so balance edits apply without a server restart.
+    /// </summary>
+    private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
+    {
+        if (!args.ByType.ContainsKey(typeof(StatusScentPrototype))
+            && !args.ByType.ContainsKey(typeof(SmellSystemConfigPrototype)))
+            return;
 
         RebuildProtoCache();
     }
@@ -52,19 +66,5 @@ public sealed class SmellPrototypeCacheSystem : EntitySystem
     {
         _statusScentProtos = _prototypes.EnumeratePrototypes<StatusScentPrototype>().ToList();
         _config = _prototypes.Index<SmellSystemConfigPrototype>(ConfigId);
-    }
-
-    /// <summary>
-    /// Hot reload handler (reloadprototypes). Rebuilds the cache only when
-    /// StatusScentPrototype or SmellSystemConfigPrototype types were touched,
-    /// so balance edits apply without a server restart.
-    /// </summary>
-    private void OnPrototypesReloaded(PrototypesReloadedEventArgs args)
-    {
-        if (!args.ByType.ContainsKey(typeof(StatusScentPrototype))
-            && !args.ByType.ContainsKey(typeof(SmellSystemConfigPrototype)))
-            return;
-
-        RebuildProtoCache();
     }
 }
