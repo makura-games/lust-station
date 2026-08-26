@@ -28,6 +28,7 @@ public sealed partial class ScentComponent : Component
     /// Temporary scents list. Runtime data: filled only by code during the round,
     /// not serialized into YAML or map saves.
     /// </summary>
+    [NonSerialized]
     public List<ActiveTemporaryScent> TemporaryScents = new();
 
     /// <summary>
@@ -35,11 +36,13 @@ public sealed partial class ScentComponent : Component
     /// While active the base (static + personal) scent is hidden from smellers,
     /// temporary scents are still shown. Runtime data.
     /// </summary>
+    [NonSerialized]
     public bool Masked;
 
     /// <summary>
     /// Game time until which the masking lasts. After expiry the mask is removed
     /// lazily on the next smelling. Runtime data.
     /// </summary>
+    [NonSerialized]
     public TimeSpan MaskUntil;
 }

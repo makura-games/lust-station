@@ -4,6 +4,7 @@ using Content.Shared._Lust.Smell.Prototypes;
 using Content.Shared.Atmos;
 using Content.Shared.Chemistry.Components.SolutionManager;
 using Content.Shared.Chemistry.EntitySystems;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Hands;
@@ -32,26 +33,24 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
 
+    /// <summary>
+    /// Marker reagent of tobacco products; its presence in the smoking solution
+    /// distinguishes tobacco from other fillings (drugs etc.).
+    /// </summary>
+    private static readonly ReagentId NicotineReagent = new("Nicotine", null);
+
     public override void Initialize()
     {
-
         SubscribeLocalEvent<ArousalStartedEvent>(OnArousalStarted);
-
         SubscribeLocalEvent<OrgasmPerformedEvent>(OnOrgasmPerformed);
-
-
         SubscribeLocalEvent<ScentEmitterComponent, GotEquippedEvent>(OnScentEmitterEquipped);
-
         SubscribeLocalEvent<ScentEmitterComponent, GotEquippedHandEvent>(OnScentEmitterPickedUp);
-
         SubscribeLocalEvent<ScentEmitterComponent, ImplantImplantedEvent>(OnScentEmitterImplanted);
-
         SubscribeLocalEvent<ScentEmitterComponent, IgnitedEvent>(OnScentEmitterIgnited);
-
         SubscribeLocalEvent<ScentComponent, DamageChangedEvent>(OnDamageChanged);
-
         SubscribeLocalEvent<ScentOnAttackedComponent, AttackedEvent>(OnAttacked);
     }
+
     /// <summary>
     /// Adds a temporary arousal scent.
     /// </summary>
@@ -142,44 +141,6 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     }
 
     /// <summary>
-    /// Whether the burning filling of this smokable is tobacco
-    /// (the smoking solution contains nicotine). Drug fillings are excluded:
-    /// their smell comes from status effects when inhaled.
-    /// </summary>
-    private bool ContainsNicotine(Entity<ScentEmitterComponent> ent, SmokableComponent smokable)
-    {
-        return TryComp<SolutionContainerManagerComponent>(ent, out var solutions)
-            && _solution.TryGetSolution((ent.Owner, solutions), smokable.Solution,
-                out _, out var solution)
-            && solution.ContainsReagent("Nicotine", null);
-    }
-
-    /// <summary>
-    /// A check to ensure that the smoking item is ignited and contains nicotine.
-    /// </summary>
-    private bool ShouldEmitOnCarry(Entity<ScentEmitterComponent> ent)
-    {
-        if (!TryComp<SmokableComponent>(ent, out var smokable))
-            return true;
-
-        if (smokable.State != SmokableState.Lit)
-            return false;
-
-        return ContainsNicotine(ent, smokable);
-    }
-
-    /// <summary>
-    /// Finds the NPC currently holding this item: worn and held items
-    /// </summary>
-    private EntityUid? FindSmoker(EntityUid item)
-    {
-        var parent = Transform(item).ParentUid;
-
-        return parent.IsValid() && HasComp<MobStateComponent>(parent)
-            ? parent : null;
-    }
-
-    /// <summary>
     /// Checks incoming damage and adds three scents: blood (slashes and piercings),
     /// poison and bruises.
     /// </summary>
@@ -231,7 +192,6 @@ public sealed class ScentAcquisitionSystem : EntitySystem
     /// </summary>
     public void AddTemporaryScent(Entity<ScentComponent?> ent, ProtoId<ScentPrototype> scent, TimeSpan duration)
     {
-
         if (!Resolve(ent, ref ent.Comp, false))
             return;
 
@@ -252,5 +212,47 @@ public sealed class ScentAcquisitionSystem : EntitySystem
         }
 
         ent.Comp.TemporaryScents.Add(entry);
+    }
+
+    /// <summary>
+    /// Whether the burning filling of this smokable is tobacco
+    /// (the smoking solution contains nicotine). Drug fillings are excluded:
+    /// their smell comes from status effects when inhaled.
+    /// </summary>
+    private bool ContainsNicotine(Entity<ScentEmitterComponent> ent, SmokableComponent smokable)
+    {
+        return TryComp<SolutionContainerManagerComponent>(ent, out var solutions)
+            && _solution.TryGetSolution((ent.Owner, solutions), smokable.Solution,
+                out _, out var solution)
+            && solution.ContainsReagent(NicotineReagent);
+    }
+
+    /// <summary>
+    /// Whether carrying this emitter right now should produce a scent:
+    /// non-smoking items (grenades etc.) always do; tobacco products only
+    /// while lit and containing nicotine.
+    /// </summary>
+    private bool ShouldEmitOnCarry(Entity<ScentEmitterComponent> ent)
+    {
+        if (!TryComp<SmokableComponent>(ent, out var smokable))
+            return true;
+
+        if (smokable.State != SmokableState.Lit)
+            return false;
+
+        return ContainsNicotine(ent, smokable);
+    }
+
+    /// <summary>
+    /// Finds the mob currently holding this item: worn and held items are parented
+    /// directly to the mob (mask slot, hands). Items lying on tables or stored
+    /// in containers are ignored.
+    /// </summary>
+    private EntityUid? FindSmoker(EntityUid item)
+    {
+        var parent = Transform(item).ParentUid;
+
+        return parent.IsValid() && HasComp<MobStateComponent>(parent)
+            ? parent : null;
     }
 }
