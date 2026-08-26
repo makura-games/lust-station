@@ -33,7 +33,7 @@ public static class GenitalsHelper
             case Sex.Futanari:
                 genitals.Add(GenitalSlot.Boobs);
                 genitals.Add(GenitalSlot.Penis);
-                genitals.Add(GenitalSlot.Vagina);  // Lust edit
+                //genitals.Add(GenitalSlot.Vagina);  // Lust edit // :: Сомнения
                 break;
             case Sex.Unsexed:
                 break;
