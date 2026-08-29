@@ -1,9 +1,9 @@
 
 - type: entity
   name: MG-100 Vindicator Minigun
-  parent: BaseItem
+  parent: [ BaseItem, BaseCentcommContraband ] # Lust edit :: BaseCentcommContraband
   id: WeaponMinigunMG100
-  categories: [ HideSpawnMenu, BaseCentcommContraband ] # Lust edit :: BaseCentcommContraband
+  categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Weapons/Guns/HMGs/minigun/big.rsi
