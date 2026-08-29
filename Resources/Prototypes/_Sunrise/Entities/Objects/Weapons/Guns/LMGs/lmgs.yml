@@ -169,7 +169,7 @@
 
 - type: entity
   name: MG-342
-  parent: BaseWeaponLightMachineGun
+  parent: [ BaseWeaponLightMachineGun, BaseSecurityCentcommContraband ] # Lust edit :: BaseSecurityCentcommContraband
   id: WeaponMachineGunMG42
   components:
   - type: Sprite

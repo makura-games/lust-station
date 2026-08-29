@@ -560,7 +560,7 @@
 
 - type: entity
   name: S-13 «Black mamba»
-  parent: BaseWeaponBattery
+  parent: [ BaseWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   id: WeaponSyndieLaserGun
   description: A modernised Lecter, converted to a plasma energy module.
   components:
@@ -612,7 +612,7 @@
 
 - type: entity
   name: SAM-300
-  parent: BaseWeaponBattery
+  parent: [ ]BaseWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   id: WeaponSyndieLaserPistol
   description: The Syndicate's laser pistol, developed from the NT Captain's pistol.
   components:
@@ -655,7 +655,7 @@
 
 - type: entity
   name: UVL-21 «Vivern»
-  parent: [BaseWeaponBattery, BaseGunPulseSound]
+  parent: [BaseWeaponBattery, BaseGunPulseSound, BaseSyndicateContraband] # Lust edit :: BaseSyndicateContraband
   id: WeaponLaserMinigun
   description: A heavy weapon of mass destruction based on the minigun.
   components:

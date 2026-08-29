@@ -3,7 +3,7 @@
   name: MG-100 Vindicator Minigun
   parent: BaseItem
   id: WeaponMinigunMG100
-  categories: [ HideSpawnMenu ]
+  categories: [ HideSpawnMenu, BaseCentcommContraband ] # Lust edit :: BaseCentcommContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Weapons/Guns/HMGs/minigun/big.rsi
@@ -36,7 +36,7 @@
 
 - type: entity
   id: PowerpackMinigunMG100
-  parent: [ BasePowerpackMG100, ClothingBackpack ]
+  parent: [ BasePowerpackMG100, ClothingBackpack, BaseCentcommContraband ] # Lust edit :: BaseCentcommContraband
   components:
   - type: Item
     size: Ginormous
@@ -115,7 +115,7 @@
 
 - type: entity
   name: DL6902 machine gun
-  parent: BaseItem
+  parent: [ BaseItem, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   id: WeaponDL6902PowerPack
   categories: [ HideSpawnMenu ]
   components:
@@ -162,7 +162,7 @@
 - type: entity
   name: DL6902 Powerpack
   id: PowerpackDL6902
-  parent: [ BasePowerpackMG100, ClothingBackpack ]
+  parent: [ BasePowerpackMG100, ClothingBackpack, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Item
     size: Ginormous

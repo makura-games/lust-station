@@ -157,7 +157,7 @@
 # Sidearm HOS and Nukies.
 - type: entity
   name: Desert Eagle
-  parent: BaseWeaponPistolSunrise
+  parent: [ BaseWeaponPistolSunrise, BaseSecurityContraband ] # Lust edit :: BaseSecurityContraband
   id: WeaponPistolDeagle
   components:
   - type: Sprite
@@ -213,7 +213,7 @@
 
 # Sidearm for detectives.
 - type: entity
-  parent: BaseWeaponRevolver
+  parent: [ BaseWeaponRevolver, BaseSecurityCentcommContraband ] # Lust edit :: BaseSecurityCentcommContraband
   id: WeaponRevolverSpearhead
   name: Spearhead autorevolver
   description: A bulky revolver, occasionally carried by assault troops and officers in SWAT, as well as civilian law enforcement. Fires .45 Magnum rounds. #Fires .357 Magnum rounds.
