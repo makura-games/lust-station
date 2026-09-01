@@ -46,7 +46,7 @@
 
 - type: entity
   name: GL-70
-  parent: [BaseWeaponLauncher, BaseCentCommContraband] # Lust edit :: BaseCentCommContraband
+  parent: [BaseWeaponLauncher, BaseCentcommContraband] # Lust edit :: BaseCentcommContraband
   id: WeaponGrenadeLauncherGL70
   components:
   - type: Sprite
