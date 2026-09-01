@@ -1,6 +1,6 @@
 # region LMGs
 - type: entity
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   id: WeaponLightMachineGunPirateCannon
   description: Kaboom!
   components:
@@ -84,7 +84,7 @@
 - type: entity
   id: WeaponMachineGunLCG
   name: light chain gun
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun,BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   description: Light machine gun with a high rate of fire and low recoil. Effective for firing on the move and suppressing advancing squads. The high rate of fire and heat reduce accuracy, and prolonged firing increases the chance of jamming.
   components:
   - type: Sprite

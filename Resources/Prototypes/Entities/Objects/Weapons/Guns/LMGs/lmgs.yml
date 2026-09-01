@@ -112,7 +112,7 @@
 
 - type: entity
   name: L6C ROW
-  id: WeaponLightMachineGunL6C
+  id: [WeaponLightMachineGunL6C, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   parent: BaseItem
   description: A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
   components:

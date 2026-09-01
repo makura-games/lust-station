@@ -1,6 +1,6 @@
 ﻿- type: entity
   name: RL-5
-  parent: BaseWeaponLauncher
+  parent: [BaseWeaponLauncher, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   id: WeaponLauncherRL5
   components:
   - type: Sprite
@@ -46,7 +46,7 @@
 
 - type: entity
   name: GL-70
-  parent: BaseWeaponLauncher
+  parent: [BaseWeaponLauncher, BaseCentCommContraband] # Lust edit :: BaseCentCommContraband
   id: WeaponGrenadeLauncherGL70
   components:
   - type: Sprite

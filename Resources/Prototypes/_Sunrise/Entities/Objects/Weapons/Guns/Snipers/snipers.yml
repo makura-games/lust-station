@@ -160,7 +160,7 @@
 
 - type: entity
   name: M1 Garand
-  parent: BaseItem
+  parent: [ BaseItem, BaseSecuritySalvageContraband ] # Lust edit :: BaseSecuritySalvageContraband
   id: WeaponSniperGarand
   components:
   - type: Sprite

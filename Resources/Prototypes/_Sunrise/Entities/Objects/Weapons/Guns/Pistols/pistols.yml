@@ -53,7 +53,7 @@
 
 - type: entity
   name: combat pistol VP-70
-  parent: BaseWeaponPistolSunrise
+  parent: [ BaseWeaponPistolSunrise, BaseSecurityContraband ] # Lust edit :: BaseSecurityContraband
   id: WeaponPistolVP78
   components:
   - type: Sprite
@@ -99,7 +99,7 @@
 - type: entity
   name: Glock-22 Prison
   description: Manufactured by special order for prison complex security. Semi-automatic firearm chambered in .35 Auto.
-  parent: BaseWeaponPistol
+  parent: [ BaseWeaponPistol, BaseSecurityContraband ] # Lust Edit :: BaseSecurityContraband
   id: WeaponPistolG22Prison
   suffix: Sunrise
   components:
@@ -265,7 +265,7 @@
     stealGroup: OfficerHandgun
 
 - type: entity
-  parent: BaseWeaponPistolSunrise
+  parent: [ BaseWeaponPistolSunrise, BaseSecurityContraband ] # Lust edit :: BaseSecurityContraband
   id: WeaponPistolM1984
   name: D1984
   description: A compact sidearm developed under Nanotrasen’s internal order directive “N1984.” A personal weapon of control, discipline, and precise response. Issued to distinguished detectives for reliability during field investigations. Fires .40 Auto.

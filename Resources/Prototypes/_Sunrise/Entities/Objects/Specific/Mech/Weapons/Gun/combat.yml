@@ -2,7 +2,7 @@
   id: WeaponMechCombatVindictor
   name: Mounted MG-100 Vindicator Minigun
   suffix: Mech Weapon, Gun, Combat, Minigun
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseHighlyIllegalContraband ] # Lust edit :: BaseHighlyIllegalContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_vindictor.rsi
@@ -29,7 +29,7 @@
   name: Mounted Kardashev-Maxim
   description: An ancient heavy machine gun given new life as a mech-mounted gun
   suffix: Mech Weapon, Combat, USSP
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_maxim.rsi
@@ -56,7 +56,7 @@
   name: Mounted MG
   description: An ancient heavy machine gun given new life as a mech-mounted gun
   suffix: Mech Weapon, Combat
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_mg.rsi
@@ -89,7 +89,7 @@
   name: UVM-31 "Drake"
   description: A heavy weapon of mass destruction developed by Cybersun based on the minigun. now on a sturdy tripod that allows you to fire directly from the MECH!
   suffix: Mech Weapon, Gun, Combat, Laser , Minigun
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_uvm31.rsi
@@ -120,7 +120,7 @@
   name: Mounted EXP-220 Duster
   description: An  heavy Auto Cannon as a mech-mounted gun with Frag ammo
   suffix: Mech Weapon, Gun, Combat
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
@@ -157,7 +157,7 @@
   name: mounted "Kord"
   description: Rapid-fire machine gun chambered for 12.7 x 108 mm
   suffix: Mech Weapon, Combat, Kord
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseHighlyIllegalContraband ] # Lust edit :: BaseHighlyIllegalContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_kord.rsi
@@ -192,7 +192,7 @@
   name: LBX AC 20 "Minotaur"
   description: A mounted Auto-Shotgun.
   suffix: Mech Weapon, Gun, Combat, Shotgun
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     scale: 1.1,1.2
