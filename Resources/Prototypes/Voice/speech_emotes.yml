@@ -579,11 +579,11 @@
   # Lust-Start
   # chatTriggers:
   # - deathgasp
-  # Lust-End
   # Sunrise-start
-  - предсмертный хрип
-  - смертельный хрип
+  # - предсмертный хрип
+  # - смертельный хрип
   # Sunrise-end
+  # Lust-End
 
 - type: emote
   id: MonkeyDeathgasp
