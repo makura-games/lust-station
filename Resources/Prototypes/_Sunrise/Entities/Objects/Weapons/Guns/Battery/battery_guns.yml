@@ -1,6 +1,6 @@
 - type: entity
-  id: [BaseWeaponAutoPowerCell, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
-  parent: BaseItem
+  id: BaseWeaponAutoPowerCell
+  parent: [BaseItem, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   abstract: true
   components:
   - type: Clothing
