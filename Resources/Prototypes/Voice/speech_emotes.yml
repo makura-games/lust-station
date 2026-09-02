@@ -487,8 +487,10 @@
     components:
     - MobState
   chatMessages: ["chat-emote-msg-deathgasp"]
-  chatTriggers:
-  - deathgasp
+  # Lust-Start
+  # chatTriggers:
+  # - deathgasp
+  # Lust-End
 
 - type: emote
   id: MonkeyDeathgasp
