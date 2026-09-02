@@ -310,6 +310,8 @@
     - RubberStampNtrep
     - RubberStampCentcom
     - RubberStampSyndicate
+    - Crematorium
+    - AgentIDCard
     # Lust edit : end
     prototypeIdBlacklistSubstrings:
     - Debug
@@ -328,9 +330,13 @@
     - CentralCommand
     - CentComm ERT
     - ERT
+    - CBURN
     - Uplink
     - Arrows
     - Event
+    - Unremoveable
+    - Filled
+    - Hardsuit
     # Lust Edit : End
     componentBlacklist:
     - MapGrid
