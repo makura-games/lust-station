@@ -1214,7 +1214,7 @@
   parent: IDCardStandard
   id: CentcomIDCard
   name: command officer ID card
-  suffix: ERT # Lust add
+  suffix: Central Command # Lust add
   components:
   # Sunrise-Start
   - type: Sprite

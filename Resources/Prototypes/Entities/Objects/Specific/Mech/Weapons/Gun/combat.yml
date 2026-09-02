@@ -262,7 +262,7 @@
   name: Ultra AC-2
   description: Mounted carbine, firing LightRifle cartridges.
   suffix: Mech Weapon, Gun, Combat, Rifle
-  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSecurityScienceContraband ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSecurityScienceContraband ] # Lust edit :: BaseSecurityScienceContraband
   components:
   - type: Sprite
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
