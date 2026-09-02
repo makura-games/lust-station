@@ -7,6 +7,12 @@
     quickEquip: true
     slots:
       - SOCKS
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
   - type: Sprite
     state: icon
 
@@ -20,3 +26,10 @@
     spawned:
     - id: MaterialCloth1
       amount: 1
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 50
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable

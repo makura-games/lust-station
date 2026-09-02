@@ -7,10 +7,10 @@
   description: Incredibly attractive and beautiful coins that open the door to the world of a cute little shop.
   components:
   - type: Sprite
-    sprite: _Lust/lustcoin.rsi # Lust-Station-Edit
+    sprite: _Lust/lust_coin.rsi # Lust-Edit
     state: telecrystal
   - type: Item
-    sprite: _Lust/lustcoin.rsi # Lust-Station-Edit
+    sprite: _Lust/lust_coin.rsi # Lust-Edit
     size: Tiny
   - type: Stack
     count: 20

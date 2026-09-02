@@ -337,3 +337,23 @@
   id: CockTongueFap
   name: lust-interaction-icon-CockTongueFap
   icon: /Textures/_Lust/Interactions/cock_tongue_fap.png
+
+- type: interactionIcon
+  id: WingKiss
+  name: lust-interaction-icon-WingKiss
+  icon: /Textures/_Lust/Interactions/wing_kiss.png
+
+- type: interactionIcon
+  id: WingLick
+  name: lust-interaction-icon-WingLick
+  icon: /Textures/_Lust/Interactions/wing_lick.png
+
+- type: interactionIcon
+  id: WingStrokeCrotch
+  name: lust-interaction-icon-WingStrokeCrotch
+  icon: /Textures/_Lust/Interactions/wing_stroke_crotch.png
+
+- type: interactionIcon
+  id: WingsCockFap
+  name: lust-interaction-icon-WingsCockFap
+  icon: /Textures/_Lust/Interactions/wings_cock_fap.png

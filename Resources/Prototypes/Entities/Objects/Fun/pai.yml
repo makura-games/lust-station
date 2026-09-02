@@ -106,8 +106,11 @@
     - HandheldStationMapUnpowered
     - HandheldEmergencyCrewMonitorBorg
     entityTargetActions:
-    - HandheldHealthAnalyzerUnpowered
+    - HandheldHealthAnalyzer
   - type: BorgBrain
+  - type: ContainerContainer
+    containers:
+      innate_items: !type:Container
   # Sunrise-End
   - type: ChangeVoiceInContainer
     whitelist:
@@ -165,7 +168,7 @@
   - type: InnateItem
     entityTargetActions:
     - AccessBreaker
-    - HandheldHealthAnalyzerUnpowered
+    - HandheldHealthAnalyzer
   - type: Biocode
     factions:
     - Syndicate
@@ -219,6 +222,8 @@
     node: potatoai
   - type: StationAiVision # Sunrise-edit
     enabled: false
+
+# PAI Actions
 
 - type: entity
   parent: ActionIntrinsicStore

@@ -64,12 +64,14 @@
   parent: WizardsGrimoire
   id: WizardsGrimoireDebug
   suffix: Wizard, DEBUG
+  categories: [ Debug ] # Sunrise added
   description: A heavy tome containing complicated arcane formulae for preparing magic spells and conjuring supernatural equipment. Someone wrote "FOR EXPERIMENTAL USE ONLY" on the inside cover.
   components:
     - type: Store
       ownerOnly: false # For ease of debugging.
       balance:
         WizCoin: 99999
+      expectedFaction: #nulls out the expected faction
 
 - type: entity
   parent: BaseSpellbook

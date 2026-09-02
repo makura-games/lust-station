@@ -5,58 +5,215 @@ on:
     branches: [ master ]
   merge_group:
   pull_request:
-    types: [ opened, reopened, synchronize, ready_for_review ]
+    types: [ opened, reopened, synchronize ]
     branches: [ master ]
+
+# Sunrise added start - отменяем устаревший запуск этой проверки для того же PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+# Sunrise added end
 
 jobs:
   build:
-    if: github.actor != 'Sunrise-Bot' && github.event.pull_request.draft == false
-    strategy:
-      matrix:
-        os: [ubuntu-latest]
-
-    runs-on: ${{ matrix.os }}
-
+    if: github.actor != 'Sunrise-Bot'
+    runs-on: ubuntu-latest
     steps:
     - name: Checkout Master
       uses: actions/checkout@v4.2.2
 
+    # Sunrise edit start - команды CI хранятся в скриптах форка
     - name: Setup Submodule
-      run: |
-        git submodule update --init --recursive
+      run: bash Tools/_sunrise/ci/test_workflow.sh setup-root-submodules
 
     - name: Pull engine updates
       uses: space-wizards/submodule-dependency@v0.1.5
 
     - name: Update Engine Submodules
-      run: |
-        cd RobustToolbox/
-        git submodule update --init --recursive
+      run: bash Tools/_sunrise/ci/test_workflow.sh setup-engine-submodules
+    # Sunrise edit end
 
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v4.1.0
       with:
         dotnet-version: 10.0.x
 
+    # Sunrise edit start - собираем только тестовый граф и обнаруживаем тесты по полным именам
     - name: Install dependencies
-      run: dotnet restore
+      run: bash Tools/_sunrise/ci/test_workflow.sh restore-integration
 
     - name: Build Project
-      run: dotnet build --configuration DebugOpt --no-restore /m
+      run: bash Tools/_sunrise/ci/test_workflow.sh build-integration
+
+    - name: Discover Integration Tests
+      run: bash Tools/_sunrise/ci/test_workflow.sh discover-shards 8
+    # Sunrise edit end
+
+    # Sunrise added start - передаём тестовым раннерам только нужные результаты сборки
+    - name: Prune build artifact
+      run: bash Tools/_sunrise/ci/test_workflow.sh prune-build test
+    # Sunrise added end
+
+    # Sunrise edit start - разделяем минимальные артефакты интеграционных и модульных тестов
+    - name: Archive build output
+      run: bash Tools/_sunrise/ci/test_workflow.sh archive-build test
+
+    - name: Upload integration build artifact
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # actions/upload-artifact@v4
+      with:
+        name: integration-build-output
+        path: /tmp/integration-build-output
+        retention-days: 1
+        compression-level: 0
+
+    - name: Upload content tests build artifact
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # actions/upload-artifact@v4
+      with:
+        name: content-tests-build-output
+        path: /tmp/content-tests-build-output
+        retention-days: 1
+        compression-level: 0
+    # Sunrise edit end
+
+  content-tests:
+    needs: build
+    name: Content Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4.1.0
+      with:
+        dotnet-version: 10.0.x
+
+    # Sunrise edit start - запускаем Content.Tests из отдельного готового артефакта без restore
+    - name: Download build artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: content-tests-build-output
+
+    - name: Extract build
+      run: bash Tools/_sunrise/ci/test_workflow.sh extract-build content-tests-build.tar.zst
 
     - name: Run Content.Tests
-      run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0
+      timeout-minutes: 15
+      run: bash Tools/_sunrise/ci/test_workflow.sh run-content-tests
+    # Sunrise edit end
+
+    # Sunrise-Edit - команда вынесена в скрипт форка
+    - name: Test results
+      continue-on-error: true
+      if: always()
+      run: bash Tools/_sunrise/ci/test_workflow.sh show-test-results
+
+  integration-tests:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [0, 1, 2, 3, 4, 5, 6, 7]
+    name: "Integration Tests (shard ${{ matrix.shard }})"
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v4.1.0
+      with:
+        dotnet-version: 10.0.x
+
+    # Sunrise edit start - запускаем интеграционный шард из готового артефакта и runsettings
+    - name: Download build artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: integration-build-output
+
+    - name: Extract build
+      run: bash Tools/_sunrise/ci/test_workflow.sh extract-build integration-build.tar.zst
 
     - name: Run Content.IntegrationTests
-      shell: pwsh
-      run: |
-        $env:DOTNET_gcServer=1
-        dotnet test --no-build --configuration DebugOpt Content.IntegrationTests/Content.IntegrationTests.csproj -- NUnit.ConsoleOut=0 NUnit.MapWarningTo=Failed
+      id: integration-tests
+      timeout-minutes: 17
+      env:
+        DOTNET_gcServer: "1"
+        SHARD: ${{ matrix.shard }}
+      run: bash Tools/_sunrise/ci/test_workflow.sh run-integration-shard
+    # Sunrise edit end
+
+    # Sunrise-Edit - команда вынесена в скрипт форка
+    - name: Test results
+      continue-on-error: true
+      if: always()
+      run: bash Tools/_sunrise/ci/test_workflow.sh show-test-results
+
+    # Sunrise added start - сохраняем последовательность таймаута для диагностики
+    - name: Upload timeout sequences
+      id: upload-sequences
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # actions/upload-artifact@v4
+      if: always()
+      with:
+        name: test-timeout-sequence-shard-${{ matrix.shard }}
+        path: /tmp/test-results/*/Sequence*.xml
+        retention-days: 3
+        if-no-files-found: ignore
+    # Sunrise added end
+
+    # Sunrise edit start - загружаем дамп только после падения интеграционных тестов
+    - name: Upload timeout dumps
+      id: upload-dumps
+      uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # actions/upload-artifact@v4
+      if: always() && steps.integration-tests.outcome == 'failure'
+      with:
+        name: test-timeout-dump-shard-${{ matrix.shard }}
+        path: /tmp/test-results/*/*.dmp
+        retention-days: 3
+        if-no-files-found: ignore
+    # Sunrise edit end
+
+    # Sunrise-Edit - формирование сводки вынесено в скрипт форка
+    - name: Report test timeout
+      continue-on-error: true
+      if: always()
+      env:
+        SHARD: ${{ matrix.shard }}
+        SEQUENCE_URL: ${{ steps.upload-sequences.outputs.artifact-url }}
+        DUMP_URL: ${{ steps.upload-dumps.outputs.artifact-url }}
+      run: bash Tools/_sunrise/ci/test_workflow.sh report-timeout
   ci-success:
     name: Build & Test Debug
     needs:
       - build
+      - content-tests
+      - integration-tests
+    # Sunrise edit start - итоговый статус явно отражает падение, отмену или пропуск обязательной зависимости
+    if: ${{ always() && github.actor != 'Sunrise-Bot' }}
     runs-on: ubuntu-latest
     steps:
-      - name: CI succeeded
-        run: exit 0
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+
+      - name: Verify required jobs
+        env:
+          BUILD_RESULT: ${{ needs.build.result }}
+          CONTENT_TESTS_RESULT: ${{ needs.content-tests.result }}
+          INTEGRATION_TESTS_RESULT: ${{ needs.integration-tests.result }}
+        run: bash Tools/_sunrise/ci/test_workflow.sh verify-required-jobs
+    # Sunrise edit end
+
+  cleanup:
+    name: Cleanup Artifacts
+    needs:
+      - content-tests
+      - integration-tests
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      # Sunrise edit start - удаляем оба раздельных тестовых артефакта
+      - name: Delete integration build artifact
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: integration-build-output
+
+      - name: Delete content tests build artifact
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: content-tests-build-output
+      # Sunrise edit end

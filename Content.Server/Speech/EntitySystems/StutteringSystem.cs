@@ -44,7 +44,7 @@ namespace Content.Server.Speech.EntitySystems
 
         private void OnAccent(Entity<StutteringAccentComponent> entity, ref AccentGetEvent args)
         {
-            // Lust-start
+            // Lust-Start
             if (TryComp<VibratingComponent>(entity, out var pu))
             {
                 entity.Comp.MatchRandomProb = 0.3f;
@@ -52,7 +52,7 @@ namespace Content.Server.Speech.EntitySystems
                 entity.Comp.ThreeRandomProb = 0;
                 entity.Comp.CutRandomProb = 0;
             }
-            // Lust-end
+            // Lust-End
             args.Message = Accentuate(args.Message, entity.Comp);
         }
 

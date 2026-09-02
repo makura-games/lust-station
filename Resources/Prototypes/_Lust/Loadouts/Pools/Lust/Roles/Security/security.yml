@@ -1,0 +1,199 @@
+- type: roleLoadout
+  id: LustJobHeadOfSecurity
+  groups:
+  - SunriseHeadofSecurityHead
+  - LustSecurityGlasses
+  - LustHeadofSecurityNeck
+  - SunriseHeadofSecurityJumpsuit
+  - SunriseHeadofSecurityOuterClothing
+  - SecurityBackpack
+  - SecurityBelt
+  - SunriseSecurityGunHos
+  - SecurityShoes
+  - SunriseSurvivalSecurity
+  - SunriseGroupSpeciesBreathToolSecurity
+  - SunriseHeadofSecurityBra
+  - SunriseHeadofSecurityPants
+  - Socks
+  - SunriseTrinkets
+  - HeadofSecurityJobTrinkets
+  - SecurityTrinkets
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobWarden
+  groups:
+  - SunriseWardenHead
+  - LustSecurityGlasses
+  - WardenJumpsuit
+  - SunriseWardenOuterClothing
+  - SecurityBackpack
+  - SecurityBelt
+  - SunriseWardenGun
+  - SecurityShoes
+  - SunriseSurvivalSecurity
+  - SunriseGroupSpeciesBreathToolSecurity
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - WardenJobTrinkets
+  - SecurityTrinkets
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobSecurityOfficer
+  groups:
+  - SecurityHead
+  - LustSecurityGlasses
+  - LustSecurityOfficerNeck
+  - SecurityJumpsuit
+  - SecurityOuterClothing
+  - SecurityBelt
+  - SecurityShoes
+  - SecurityBackpack
+  - SecurityPDA
+  - SunriseSurvivalSecurity
+  - SunriseGroupSpeciesBreathToolSecurity
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - SecurityJobTrinkets
+  - SecurityTrinkets
+  - SunriseSecurityGun
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobDetective
+  groups:
+  - DetectiveHead
+  - LustSecurityGlasses
+  - SunriseDetectiveNeck
+  - DetectiveJumpsuit
+  - SecurityBackpack
+  - SunriseDetectiveOuterClothing
+  - SecurityShoes
+  - SunriseSurvivalSecurity
+  - SunriseTrinkets
+  - DetectiveJobTrinkets
+  - SunriseGroupSpeciesBreathToolSecurity
+  - SecurityTrinkets
+  - SunriseWeaponDetective
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobSecurityCadet
+  groups:
+  - LustSecurityGlasses
+  - SecurityCadetJumpsuit
+  - SecurityBackpack
+  - SunriseSurvivalSecurity
+  - SunriseTrinkets
+  - SunriseGroupSpeciesBreathToolSecurity
+  - SecurityTrinkets
+  - SunriseWeaponCadet
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobBrigmedic
+  groups:
+  - SecurityNeck
+  - BrigmedicJumpsuit
+  - BrigmedicOuterClothing
+  - BrigmedicBackpack
+  - BrigmedicInjectors
+  - SurvivalSecurity
+  - SunriseTrinkets
+  - SecurityTrinkets
+  - GroupSpeciesBreathTool
+  - SunriseSecurityGun
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobBlueShieldOfficer
+  groups:
+  - BlueShieldNeck
+  - BlueShieldJumpsuit
+  - BlueShieldBackpack
+  - BlueShieldBelt
+  - BlueshieldGun
+  - BlueShieldBra
+  - BlueShieldPants
+  - SunriseTrinkets
+  - SurvivalSecurity
+  - GroupSpeciesBreathTool
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobBlueShieldEnsign
+  groups:
+  - BlueShieldNeck
+  - BlueShieldJumpsuit
+  - BlueShieldBackpack
+  - BlueShieldBelt
+  - BlueShieldBra
+  - BlueShieldPants
+  - SunriseTrinkets
+  - SurvivalSecurity
+  - GroupSpeciesBreathTool
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobSeniorOfficer
+  groups:
+  - LustSecurityGlasses
+  - SecurityNeck
+  - SeniorOfficerJumpsuit
+  - SecurityOuterClothing
+  - SecurityBackpack
+  - SecurityBelt
+  - SecurityShoes
+  - SurvivalSecurity
+  - SunriseTrinkets
+  - SecurityTrinkets
+  - GroupSpeciesBreathTool
+  - SunriseSecurityGun
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobSecurityPilot
+  groups:
+  - SecurityNeck
+  - SecurityPilotJumpsuit
+  - SecurityBackpack
+  - SecurityBelt
+  - SecurityShoes
+  - SurvivalSecurity
+  - SunriseTrinkets
+  - SecurityTrinkets
+  - GroupSpeciesBreathTool
+  - SunriseSecurityGun
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors

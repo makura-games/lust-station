@@ -1,0 +1,17 @@
+- type: loadoutGroup
+  id: LustChiefMedicalOfficerNeck
+  name: loadout-group-chief-medical-officer-neck
+  minLimit: 0
+  loadouts:
+  - ChiefMedicalOfficerCloak
+  - ChiefMedicalOfficerMantle
+  - ChiefMedicalOfficerScarf
+  - SunriseScarfRed
+  - SunriseScarfOrange
+  - SunriseScarfGreen
+  - SunriseScarfLightBlue
+  - SunriseScarfCyan
+  - SunriseScarfBlue
+  - SunriseStethoscope
+  - CmoSpecialCloak
+

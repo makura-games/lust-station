@@ -32,3 +32,9 @@ ent-ClothingBackpackDuffelWhite = white duffel
     .desc = This duffel bag looks great.
 ent-ClothingBackpackDuffelYellow = yellow duffel
     .desc = This duffel bag looks great.
+ent-ClothingBackpackDuffelRandomColorSpawner = duffel bag (random color)
+    .desc = A duffel bag of a random color.
+
+ent-ClothingBackpackDuffelGreytideMaterials = greytide material duffel bag
+    .desc = A duffel bag packed with smuggled materials parcels.
+    .suffix = DEBUG

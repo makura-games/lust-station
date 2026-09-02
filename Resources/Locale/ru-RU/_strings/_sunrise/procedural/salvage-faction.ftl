@@ -1,3 +1,4 @@
 salvage-faction-scrappers = Мусорщики
 salvage-faction-pirates = Пираты
-salvage-faction-freelancers = Фрилансеры
+salvage-faction-soviets = Комунизм
+salvage-faction-silicons = Железяки

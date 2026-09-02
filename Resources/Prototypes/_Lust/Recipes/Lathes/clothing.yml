@@ -1,0 +1,9 @@
+- type: latheRecipe
+  parent: BaseCommandJumpsuitRecipe
+  id: ClothingUniformJumpsuitCentcomFormalQillu
+  result: ClothingUniformJumpsuitCentcomFormalQillu
+
+- type: latheRecipe
+  parent: BaseCommandJumpsuitRecipe
+  id: ClothingUniformJumpskirtCentcomFormalDressQillu
+  result: ClothingUniformJumpskirtCentcomFormalDressQillu

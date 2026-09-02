@@ -42,13 +42,14 @@
   - type: Appearance
   - type: Extractable
     grindableSolutionName: food
-  # LUST STATION START
+  # Lust-Start
   - type: Clothing
+    quickEquip: false
     slots:
     - PLUG
     equipDelay: 4
     unequipDelay: 4
-  # LUST STATION END
+  # Lust-End
 
 # Subclasses
 

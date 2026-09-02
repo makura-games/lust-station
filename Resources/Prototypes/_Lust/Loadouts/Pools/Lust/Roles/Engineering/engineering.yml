@@ -1,0 +1,110 @@
+- type: roleLoadout
+  id: LustJobChiefEngineer
+  groups:
+  - ChiefEngineerHead
+  - SunriseCEMask
+  - SunriseChiefEngineerNeck
+  - ChiefEngineerJumpsuit
+  - SunriseChiefEngineerOuterClothing
+  - SunriseCEGloves
+  - SunriseChiefEngineerShoes
+  - GroupTankHarness
+  - ChiefEngineerBackpack
+  - SunriseSurvivalExtended
+  - GroupSpeciesBreathTool
+  - SunriseChiefEngineerBra
+  - SunriseChiefEngineerPants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsEngineering
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobStationEngineer
+  groups:
+  - SunriseStationEngineerHead
+  - StationSunriseEngineerMask
+  - LustStationEngineerNeck
+  - StationEngineerJumpsuit
+  - SunriseStationEngineerOuterClothing
+  - StationSunriseEngineerGloves
+  - SunriseStationEngineerShoes
+  - GroupTankHarness
+  - StationEngineerBackpack
+  - SunriseStationEngineerID
+  - SunriseSurvivalExtended
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsEngineering
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobTechnicalAssistant
+  groups:
+  - SunriseStationEngineerHead
+  - StationSunriseEngineerMask
+  - LustStationEngineerNeck
+  - TechnicalAssistantJumpsuit
+  - SunriseStationEngineerOuterClothing
+  - StationSunriseEngineerGloves
+  - SunriseStationEngineerShoes
+  - GroupTankHarness
+  - StationEngineerBackpack
+  - SunriseSurvivalExtended
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsEngineering
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobAtmosphericTechnician
+  groups:
+  - SunriseAtmosHead
+  - SunriseAtmosMask
+  - LustAtmosNeck
+  - AtmosphericTechnicianJumpsuit
+  - SunriseAtmosphericTechnicianOuterClothing
+  - SunriseAtmosGloves
+  - SunriseAtmosphericTechnicianShoes
+  - GroupTankHarness
+  - AtmosphericTechnicianBackpack
+  - SunriseSurvivalExtended
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsEngineering
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobSeniorEngineer
+  groups:
+  - SeniorEngineerHead
+  - SeniorEngineerMask
+  - LustSeniorEngineerNeck
+  - SeniorEngineerJumpsuit
+  - SeniorEngineerOuterClothing
+  - SeniorEngineerGloves
+  - SeniorEngineerShoes
+  - StationSeniorEngineerBackpack
+  - SunriseSurvivalExtended
+  - SunriseTrinkets
+  - TrinketsEngineering
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+

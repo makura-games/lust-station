@@ -18,9 +18,15 @@
   - type: Utensil
     types:
       - Knife
+  # sunrise-start
   - type: Tool
     qualities:
-    - Slicing
+      - Cutting
+      - Slicing
+    speedModifier: 0.6
+    useSound:
+      path: /Audio/Items/wirecutter.ogg
+  # sunrise-end
 
 #Shortswords
 - type: entity
@@ -185,6 +191,14 @@
     spread: 90
     slotFlags:
     - NONE
+  # Sunrise start
+  - type: Tool
+    qualities:
+    - Slicing
+    - Prying
+  - type: ToolTileCompatible
+  - type: Prying
+  # Sunrise end
 
 #Greatswords
 - type: entity

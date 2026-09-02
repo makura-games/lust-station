@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitLoona
   name: moon top with black shorts
@@ -45,9 +45,9 @@
   description: A suit for special occasions.
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcomformal.rsi
+    sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcom_formal.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcomformal.rsi
+    sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcom_formal.rsi
 
 # IAA
 
@@ -77,8 +77,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitQilluDirector
-  name: ent-ClothingUniformJumpsuitQilluDirector
-  description: ent-ClothingUniformJumpsuitQilluDirector-desc
+  name: Qillu Corporation Director Suit
+  description: A formal suit reserved for the Director of Qillu Corporation. A symbol of supreme authority and highest rank.
   components:
   - type: Sprite
     sprite: _Lust/Clothing/Uniforms/Jumpsuit/director_qillu.rsi
@@ -108,3 +108,21 @@
     sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcom_uniform_qillu.rsi
   - type: Clothing
     sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcom_uniform_qillu.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: LustClothingUniformJumpsuitStripperSlim
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Uniforms/stripper_slimsuit.rsi
+  - type: Clothing
+    sprite: _Lust/Clothing/Uniforms/stripper_slimsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: LustClothingUniformJumpsuitStripperStarPasties
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Uniforms/stripper_starpastiessuit.rsi
+  - type: Clothing
+    sprite: _Lust/Clothing/Uniforms/stripper_starpastiessuit.rsi

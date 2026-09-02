@@ -1,0 +1,40 @@
+- type: loadoutGroup
+  id: LustStationEngineerNeck
+  name: loadout-group-station-engineer-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SunriseScarfRed
+  - SunriseScarfOrange
+  - SunriseScarfYellow
+  - SunriseTieRed
+  - EngineerCloak
+
+- type: loadoutGroup
+  id: LustAtmosNeck
+  name: loadout-group-atmospheric-technician-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SunriseScarfRed
+  - SunriseScarfOrange
+  - SunriseScarfYellow
+  - SunriseScarfCyan
+  - SunriseScarfLightBlue
+  - SunriseTieRed
+  - EngineerCloak
+
+- type: loadoutGroup
+  id: LustSeniorEngineerNeck
+  name: loadout-group-senior-engineering-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SunriseScarfRed
+  - SunriseScarfOrange
+  - SunriseScarfYellow
+  - SunriseScarfCyan
+  - SunriseScarfLightBlue
+  - SunriseTieRed
+  - EngineerCloak
+

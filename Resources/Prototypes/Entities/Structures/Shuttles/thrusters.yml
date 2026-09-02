@@ -27,7 +27,7 @@
     - type: Physics
       bodyType: Static
     - type: Rotatable
-      rotateWhileAnchored: true
+      rotateWhileAnchored: false # Sunrise-Edit
     - type: Thruster
       damage:
         types:
@@ -35,7 +35,6 @@
     - type: InteractionOutline
     - type: Sprite
     - type: Appearance
-    - type: ThrusterVisuals
     - type: ApcPowerReceiver
       powerLoad: 1500
     - type: ExtensionCableReceiver
@@ -58,6 +57,8 @@
     - type: GuideHelp
       guides:
       - ShuttleCraft
+    - type: Anchorable  # Sunrise-Edit
+      delay: 10
   placement:
     mode: SnapgridCenter
 
@@ -106,6 +107,14 @@
   parent: Thruster
   id: ThrusterXenoborg
   components:
+  # temporary solution until thruster rework
+  - type: Thruster
+    canToggle: false # no turning it off by just clicking it
+  - type: Anchorable
+    flags:
+    - Anchorable # no unwrenching it
+  - type: Rotatable
+    rotateWhileAnchored: false # no rotating it backwards so it doesn't face space
   - type: Sprite
     sprite: Structures/Shuttles/xenoborg_thruster.rsi
 
@@ -186,7 +195,6 @@
   id: DebugThruster
   parent: BaseThruster
   suffix: DEBUG
-  categories: [ Debug ] # Sunrise added
   components:
   - type: Thruster
     requireSpace: false
@@ -286,7 +294,6 @@
   id: DebugGyroscope
   parent: BaseThruster
   suffix: DEBUG
-  categories: [ Debug ] # Sunrise added
   components:
   - type: Thruster
     thrusterType: Angular

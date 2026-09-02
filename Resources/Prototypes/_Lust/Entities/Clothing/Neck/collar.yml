@@ -16,7 +16,6 @@
     targetContainer: true
     damage: 1
     duration: 3
-    cooldown: 4
   - type: TriggerOnSignal
   - type: DeviceLinkSink
     ports:

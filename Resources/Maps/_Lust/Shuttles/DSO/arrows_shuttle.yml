@@ -4150,7 +4150,7 @@ entities:
         gun_chamber: !type:ContainerSlot
           showEnts: False
           occludes: True
-          ent: 585
+          ent: null
     - type: EmitSoundOnCollide
       nextSound: -339.0302528
     - type: Physics
@@ -6817,18 +6817,6 @@ entities:
     - type: Transform
       pos: -4.5,-3.5
       parent: 1
-- proto: GrenadeFlashTimer
-  entities:
-  - uid: 585
-    mapInit: true
-    paused: true
-    components:
-    - type: Transform
-      parent: 584
-    - type: EmitSoundOnCollide
-      nextSound: -339.0302528
-    - type: Physics
-      canCollide: False
 - proto: GrenadeIncendiary
   entities:
   - uid: 921
@@ -8672,10 +8660,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -4.5,-1.5
       parent: 1
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
     - type: Storage
       storedItems:
         136:
@@ -8716,7 +8700,6 @@ entities:
           - 139
           - 132
           - 133
-    - type: ActiveUserInterface
     - type: Fixtures
       fixtures: {}
   - uid: 515

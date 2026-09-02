@@ -7,13 +7,13 @@
   flavor: sexonthebeach
   color: "#b47500"
   metamorphicSprite:
-    sprite: _Lust/Objects/Consumable/Drinks/sexonthebeach.rsi
+    sprite: _Lust/Objects/Consumable/Drinks/sex_on_the_beach.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 3
   metamorphicFillBaseName: fill-
   metamorphicChangeColor: false
   metabolisms:
-    Drink:
+    Digestion:
       effects:
       - !type:SatiateThirst
         factor: 2

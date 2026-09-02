@@ -17,7 +17,6 @@ namespace Content.Client.CartridgeLoader.Cartridges;
 public sealed partial class NewsReaderUiFragment : BoxContainer
 {
     [Dependency] private readonly NetTexturesManager _netTexturesManager = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
 
     public event Action? OnNextButtonPressed;
     public event Action? OnPrevButtonPressed;
@@ -109,18 +108,16 @@ public sealed partial class NewsReaderUiFragment : BoxContainer
 
                 if (_netTexturesManager.EnsureResource(path))
                 {
-                    var uploaded = _netTexturesManager.GetUploadedPath(path);
-                    if (_resourceCache.TryGetResource<TextureResource>(uploaded, out var tex))
-                        textureRect.Texture = tex.Texture;
+                    if (_netTexturesManager.TryGetTexture(path, out var texture))
+                        textureRect.Texture = texture;
                 }
                 else
                 {
                     void OnLoaded(string loadedPath)
                     {
                         if (loadedPath != path) return;
-                        var uploaded = _netTexturesManager.GetUploadedPath(path);
-                        if (_resourceCache.TryGetResource<TextureResource>(uploaded, out var tex))
-                            textureRect.Texture = tex.Texture;
+                        if (_netTexturesManager.TryGetTexture(path, out var texture))
+                            textureRect.Texture = texture;
                         _netTexturesManager.ResourceLoaded -= OnLoaded;
                     }
                     _netTexturesManager.ResourceLoaded += OnLoaded;

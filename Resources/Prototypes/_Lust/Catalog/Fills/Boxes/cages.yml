@@ -1,0 +1,56 @@
+
+- type: entity
+  name: normal chastity cage box
+  description: A cardboard box containing a chastity cage and a key.
+  parent: BoxCardboard
+  id: BoxCageMaleNormal
+  components:
+  - type: StorageFill
+    contents:
+    - id: CageMaleNormal
+    - id: CageLustKey
+
+- type: entity
+  name: iron chastity cage box
+  description: A cardboard box containing an iron chastity cage and a key.
+  parent: BoxCardboard
+  id: BoxCageMaleIron
+  components:
+  - type: StorageFill
+    contents:
+    - id: CageMaleIron
+    - id: CageLustKey
+
+- type: entity
+  name: flat chastity cage box
+  description: A cardboard box containing a flat chastity cage and a key.
+  parent: BoxCardboard
+  id: BoxCageMaleFlat
+  components:
+  - type: StorageFill
+    contents:
+    - id: CageMaleFlat
+    - id: CageLustKey
+
+- type: entity
+  name: female chastity belt box
+  description: A cardboard box containing a chastity belt and a key.
+  parent: BoxCardboard
+  id: BoxCageFemaleBelt
+  components:
+  - type: StorageFill
+    contents:
+    - id: CageFemaleBelt
+    - id: CageLustKey
+
+- type: entity
+  name: electric chastity cage box
+  description: A cardboard box containing an electric chastity cage, a key, and a remote.
+  parent: BoxCardboard
+  id: BoxCageMaleElectric
+  components:
+  - type: StorageFill
+    contents:
+    - id: CageMaleElectric
+    - id: CageLustKey
+    - id: CageRemoteSignaller

@@ -1,4 +1,4 @@
-﻿- type: interaction
+- type: interaction
   id: BoobsCuddle
   name: lust-interaction-BoobsCuddle
   icon: FaceInBoobsIcon
@@ -337,6 +337,11 @@
     checkTarget: false
     checkInitiator: true
     layer: Tail
+  - !type:InteractionNotCondition
+    condition: !type:SpeciesCondition
+      checkInitiator: true
+      checkTarget: false
+      allowedSpecies: [ Moth, Milira ]
   interactionMessages:
   - "%user нежно гладит хвостиком грудь %target"
   - "%user ласково проводит хвостиком по груди %target"

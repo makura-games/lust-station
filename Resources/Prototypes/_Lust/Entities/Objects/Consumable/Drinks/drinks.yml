@@ -12,5 +12,5 @@
         - ReagentId: SexOnTheBeach
           Quantity: 30
   - type: Icon
-    sprite: _Lust/Objects/Consumable/Drinks/sexonthebeach.rsi
+    sprite: _Lust/Objects/Consumable/Drinks/sex_on_the_beach.rsi
     state: icon

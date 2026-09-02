@@ -139,6 +139,13 @@
     state: qillu_form_header_just
 
 - type: docTemplate
+  id: InternalAffairsAgentCentcomReport_QL
+  parent: InternalAffairsAgentCentcomReport
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_just
+
+- type: docTemplate
   id: Judgment_QL
   parent: Judgment
   header:
@@ -272,6 +279,34 @@
     state: qillu_form_header
 
 - type: docTemplate
+  id: ProductManufacturingOrderScience_QL
+  parent: ProductManufacturingOrderScience
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_rnd
+
+- type: docTemplate
+  id: ProductManufacturingOrderService_QL
+  parent: ProductManufacturingOrderService
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_serv
+
+- type: docTemplate
+  id: ProductManufacturingOrderMedical_QL
+  parent: ProductManufacturingOrderMedical
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_med
+
+- type: docTemplate
+  id: ProductManufacturingOrderEngineering_QL
+  parent: ProductManufacturingOrderEngineering
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_eng
+
+- type: docTemplate
   id: ReportDepartment_QL
   parent: ReportDepartment
   header:
@@ -307,11 +342,46 @@
     state: qillu_form_header_cmd
 
 - type: docTemplate
+  id: ResponseProvideCCReport_QL
+  parent: ResponseProvideCCReport
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_cmd
+
+- type: docTemplate
+  id: ReportDecreeHeadsPresence_QL
+  parent: ReportDecreeHeadsPresence
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_cmd
+
+- type: docTemplate
   id: ReportStudyObject_QL
   parent: ReportStudyObject
   header:
     sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
     state: qillu_form_header_rnd
+
+- type: docTemplate
+  id: ReportStudyObjectEngineering_QL
+  parent: ReportStudyObjectEngineering
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_eng
+
+- type: docTemplate
+  id: ReportStudyObjectMedical_QL
+  parent: ReportStudyObjectMedical
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_med
+
+- type: docTemplate
+  id: ReportStudyObjectService_QL
+  parent: ReportStudyObjectService
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_serv
 
 - type: docTemplate
   id: RequestCallMembersCentralCommitteeDSO_QL
@@ -379,6 +449,13 @@
 - type: docTemplate
   id: SearchPermission_QL
   parent: SearchPermission
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_sec_investig
+
+- type: docTemplate
+  id: SearchPermissionDepartment_QL
+  parent: SearchPermissionDepartment
   header:
     sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
     state: qillu_form_header_sec_investig
@@ -473,6 +550,27 @@
   header:
     sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
     state: qillu_form_header_centcom
+
+- type: docTemplate
+  id: TrustedStaffDeathNotice_QL
+  parent: TrustedStaffDeathNotice
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_cmd
+
+- type: docTemplate
+  id: OrderingSpecialEquipmentCentcomStandard_QL
+  parent: OrderingSpecialEquipmentCentcomStandard
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_cmd
+
+- type: docTemplate
+  id: StationGoal_QL
+  parent: StationGoal
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_cmd
 
 - type: docTemplate
   id: ExplanatoryNote_QL
@@ -848,6 +946,20 @@
 - type: docTemplate
   id: DecreeHeadsPresence_QL
   parent: DecreeHeadsPresence
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_centcom
+
+- type: docTemplate
+  id: DecreeEnhancedControl_QL
+  parent: DecreeEnhancedControl
+  header:
+    sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
+    state: qillu_form_header_centcom
+
+- type: docTemplate
+  id: CentcomResponse_QL
+  parent: CentcomResponse
   header:
     sprite: /Textures/_Lust/CopyMachine/paper_headers.rsi
     state: qillu_form_header_centcom

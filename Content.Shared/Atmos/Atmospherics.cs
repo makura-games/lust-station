@@ -6,7 +6,7 @@ namespace Content.Shared.Atmos
     /// <summary>
     ///     Class to store atmos constants.
     /// </summary>
-    public static class Atmospherics
+    public static partial class Atmospherics // Sunrise-edit
     {
         #region ATMOS
         /// <summary>
@@ -18,6 +18,11 @@ namespace Content.Shared.Atmos
         ///     1 ATM in kPA.
         /// </summary>
         public const float OneAtmosphere = 101.325f;
+
+        /// <summary>
+        /// Global Atmospherics epsilon. Used for all general floating-point comparisons.
+        /// </summary>
+        public const float Epsilon = 0.5f;
 
         /// <summary>
         ///     Maximum external pressure (in kPA) a gas miner will, by default, output to.
@@ -159,7 +164,9 @@ namespace Content.Shared.Atmos
         public const float MinimumHeatCapacity = 0.0003f;
 
         /// <summary>
-        ///     For the purposes of making space "colder"
+        /// Allows Atmospherics to cool down rooms during spacing
+        /// by assigning a fake heat capacity to space,
+        /// making space "actually cold" for gameplay reasons.
         /// </summary>
         public const float SpaceHeatCapacity = 7000f;
 
@@ -177,9 +184,21 @@ namespace Content.Shared.Atmos
             [Gas.Plasma] = Loc.GetString("gas-plasma-abbreviation"),
             [Gas.Tritium] = Loc.GetString("gas-tritium-abbreviation"),
             [Gas.WaterVapor] = Loc.GetString("gas-water-vapor-abbreviation"),
-            [Gas.BZ] = Loc.GetString("gas-bz-abbreviation"), //SunRise edit
-            [Gas.Healium] = Loc.GetString("gas-healium-abbreviation"), //SunRise edit
-            [Gas.Nitrium] = Loc.GetString("gas-nitrium-abbreviation"), //SunRise edit
+            //Sunrise - Start
+            [Gas.BZ] = Loc.GetString("gas-bz-abbreviation"),
+            [Gas.Healium] = Loc.GetString("gas-healium-abbreviation"),
+            [Gas.Nitrium] = Loc.GetString("gas-nitrium-abbreviation"),                                                        
+            [Gas.Pluoxium] = Loc.GetString("gas-pluoxium-abbreviation"),
+            [Gas.Hydrogen] = Loc.GetString("gas-hydrogen-abbreviation"),
+            [Gas.HyperNoblium] = Loc.GetString("gas-hyper-noblium-abbreviation"),
+            [Gas.ProtoNitrate] = Loc.GetString("gas-proto-nitrate-abbreviation"),
+            [Gas.Zauker] = Loc.GetString("gas-zauker-abbreviation"),
+            [Gas.Halon]= Loc.GetString("gas-halon-abbreviation"),
+            [Gas.Helium] = Loc.GetString("gas-helium-abbreviation"),
+            [Gas.AntiNoblium] = Loc.GetString("gas-anti-noblium-abbreviation"),
+            [Gas.ChargedElectrovae] = Loc.GetString("gas-charged-electrovae-abbreviation"),
+            [Gas.Electrovae] = Loc.GetString("gas-electrovae-abbreviation"),
+            //Sunrise - End
         };
 
         #region Excited Groups
@@ -209,7 +228,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Total number of gases. Increase this if you want to add more!
         /// </summary>
-        public const int TotalNumberOfGases = 12; //SunRise edit
+        public const int TotalNumberOfGases = 22; //SunRise edit
 
         /// <summary>
         ///     This is the actual length of the gases arrays in mixtures.
@@ -220,7 +239,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     Amount of heat released per mole of burnt hydrogen or tritium (hydrogen isotope)
         /// </summary>
-        public const float FireHydrogenEnergyReleased = 284e3f; // hydrogen is 284 kJ/mol
+        public const float FireHydrogenEnergyReleased = 284e4f;
         public const float FireMinimumTemperatureToExist = T0C + 100f;
         public const float FireMinimumTemperatureToSpread = T0C + 150f;
         public const float FireSpreadRadiosityScale = 0.85f;
@@ -243,6 +262,7 @@ namespace Content.Shared.Atmos
 
         public const float TritiumBurnOxyFactor = 100f;
         public const float TritiumBurnTritFactor = 10f;
+        public const float TritiumBurnFuelRatio = 2f;
 
         public const float FrezonCoolLowerTemperature = 23.15f;
 
@@ -270,7 +290,7 @@ namespace Content.Shared.Atmos
         /// <summary>
         ///     1 mol of Tritium is required per X mol of oxygen.
         /// </summary>
-        public const float FrezonProductionTritRatio = 8.0f;
+        public const float FrezonProductionTritRatio = 50.0f;
 
         /// <summary>
         ///     1 / X of the tritium is converted into Frezon each tick
@@ -392,8 +412,20 @@ namespace Content.Shared.Atmos
         Ammonia = 6,
         NitrousOxide = 7,
         Frezon = 8,
-        BZ = 9, //SunRise edit
-        Healium = 10, //SunRise edit
-        Nitrium = 11 //SunRise edit
+        //Sunrise - Start
+        BZ = 9,
+        Pluoxium = 10,
+        Hydrogen = 11,
+        Nitrium = 12,
+        Healium = 13,
+        HyperNoblium = 14,
+        ProtoNitrate = 15,
+        Zauker = 16,
+        Halon = 17,
+        Helium = 18,
+        AntiNoblium = 19,
+        Electrovae = 20,
+        ChargedElectrovae = 21
+        //Sunrise - End
     }
 }

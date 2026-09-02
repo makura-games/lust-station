@@ -11,9 +11,11 @@
     - Zombie
     - Revolutionary
     - PetsNT
-    - Vampire
     - Thief
     - BloodCult
+    - Pirate
+    - Soviet
+    - SpiderClan
 
 - type: npcFaction
   id: FleshHuman

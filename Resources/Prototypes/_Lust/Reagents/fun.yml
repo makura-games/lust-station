@@ -7,7 +7,7 @@
   flavor: funny
   color: "#db4dff"
   metabolisms:
-    Narcotic:
+    Bloodstream:
       effects:
       - !type:Emote
         emote: Moan
@@ -27,7 +27,7 @@
   flavor: funny
   color: "#FF00E8"
   metabolisms:
-    Narcotic:
+    Bloodstream:
       effects:
       - !type:PopupMessage
         type: Local

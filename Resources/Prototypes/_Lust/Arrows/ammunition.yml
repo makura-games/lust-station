@@ -17,12 +17,6 @@
         Piercing: 18
         Heat: 3
         Structural: 14
-  - type: HitscanPierce
-    chance: 0.45
-    deviation: 0.05
-    pierceLevel: HardenedMetal
-  - type: HitscanRicochet
-    chance: 0.55
   - type: HitscanBasicVisuals
     bullet:
       sprite:
@@ -137,7 +131,7 @@
 - type: entity
   id: BaseMagazineShotgunCarnage
   name: shell (.60 AP)
-  parent: [ BaseItem, BaseRestrictedContraband ]
+  parent: [ BaseItem, BaseSecurityContraband ]
   abstract: true
   components:
   - type: Tag
@@ -179,7 +173,7 @@
     proto: ShellShotgunCarnage
   - type: Sprite
     layers:
-    - state: uranium
+    - state: base
       map: ["enum.GunVisualLayers.Base"]
     - state: mag-1
       map: ["enum.GunVisualLayers.Mag"]

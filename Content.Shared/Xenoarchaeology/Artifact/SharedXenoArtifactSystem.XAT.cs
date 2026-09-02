@@ -1,3 +1,4 @@
+using Content.Shared._Sunrise.Research.Artifact;
 using System.Linq;
 using Content.Shared.Chemistry;
 using Content.Shared.Damage;
@@ -17,6 +18,9 @@ public abstract partial class SharedXenoArtifactSystem
     private void InitializeXAT()
     {
         XATRelayLocalEvent<DamageChangedEvent>();
+        // Sunrise added start - передаем сканы health analyzer в artifact trigger nodes
+        XATRelayLocalEvent<EntityAnalyzedEvent>();
+        // Sunrise added end
         XATRelayLocalEvent<InteractUsingEvent>();
         XATRelayLocalEvent<PullStartedMessage>();
         XATRelayLocalEvent<AttackedEvent>();

@@ -1,0 +1,35 @@
+- type: entity
+  id: TowelColorQillu
+  name: Qillu brand towel
+  parent: BaseTowel
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Multiple/towel.rsi
+    layers:
+    - state: icon
+      color: "#c2007e"
+    - state: iconstripe
+      color: "#EAE8E8"
+    - state: Qillumono
+      color: "#EAE8E8"
+  - type: Item
+    inhandVisuals:
+      left:
+      - state: inhand-left
+        color: "#c2007e"
+      right:
+      - state: inhand-right
+        color: "#c2007e"
+  - type: Clothing
+    clothingVisuals:
+      head:
+      - state: equipped-HELMET
+        color: "#c2007e"
+      jumpsuit:
+      - state: equipped-INNERCLOTHING
+        color: "#c2007e"
+      belt:
+      - state: equipped-BELT
+        color: "#c2007e"
+  - type: Fiber
+    fiberColor: fibers-regal-blue

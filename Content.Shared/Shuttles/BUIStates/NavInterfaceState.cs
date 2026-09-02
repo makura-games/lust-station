@@ -4,7 +4,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Shuttles.BUIStates;
 
 [Serializable, NetSerializable]
-public sealed class NavInterfaceState
+public sealed partial class NavInterfaceState // Sunrise-Edit - разделено с Sunrise partial для blip / laser state payloads.
 {
     public float MaxRange;
 

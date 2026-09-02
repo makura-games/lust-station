@@ -1,0 +1,19 @@
+- type: entity
+  id: WeaponArcInvisibleNPC
+  parent: WeaponArcStatic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: WeaponArcVisuals
+    animation: None
+  - type: Sprite
+    color: "#00000000"
+
+- type: entity
+  id: WeaponArcMechDisabled
+  parent: WeaponArcStatic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.1
+  - type: Sprite
+    visible: false

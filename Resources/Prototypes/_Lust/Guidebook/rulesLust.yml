@@ -47,6 +47,12 @@
   text: "/ServerInfo/Guidebook/ServerRules/RulesLust/Subrules/RuleLust15.xml"
 
 - type: guideEntry
+  id: RuleLust16
+  name: guide-entry-lust-rule-1-6
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RulesLust/Subrules/RuleLust16.xml"
+
+- type: guideEntry
   id: RuleLust2
   name: guide-entry-lust-rule-2
   ruleEntry: true
@@ -105,6 +111,24 @@
   name: guide-entry-lust-rule-3-3
   ruleEntry: true
   text: "/ServerInfo/Guidebook/ServerRules/RulesLust/Subrules/RuleLust33.xml"
+
+- type: guideEntry
+  id: RuleLust34
+  name: guide-entry-lust-rule-3-4
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RulesLust/Subrules/RuleLust34.xml"
+
+- type: guideEntry
+  id: RuleLust35
+  name: guide-entry-lust-rule-3-5
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RulesLust/Subrules/RuleLust35.xml"
+
+- type: guideEntry
+  id: RuleLust36
+  name: guide-entry-lust-rule-3-6
+  ruleEntry: true
+  text: "/ServerInfo/Guidebook/ServerRules/RulesLust/Subrules/RuleLust36.xml"
 
 - type: guideEntry
   id: RuleLust4

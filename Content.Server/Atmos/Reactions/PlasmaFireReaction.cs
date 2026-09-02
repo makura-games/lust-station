@@ -11,6 +11,8 @@ namespace Content.Server.Atmos.Reactions
     {
         public ReactionResult React(GasMixture mixture, IGasMixtureHolder? holder, AtmosphereSystem atmosphereSystem, float heatScale)
         {
+            if (atmosphereSystem.IsSunriseReactionSuppressed(mixture)) // Sunrise-Edit — общая проверка HyperNoblium вынесена в partial.
+                return ReactionResult.NoReaction;
             var energyReleased = 0f;
             var oldHeatCapacity = atmosphereSystem.GetHeatCapacity(mixture, true);
             var temperature = mixture.Temperature;

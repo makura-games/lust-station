@@ -299,7 +299,7 @@ public sealed partial class MessengerServerSystem
             return;
         }
 
-        var pdaUid = EntityManager.GetEntity(netPdaUid);
+        var pdaUid = GetEntity(netPdaUid);
 
         if (!TryComp<PdaComponent>(pdaUid, out var pda))
         {
@@ -539,10 +539,7 @@ public sealed partial class MessengerServerSystem
 
                 if (component.MessageHistory.TryGetValue(autoGroupProto.GroupId, out var groupHistory) && groupHistory.Count > 0)
                 {
-                    var sortedMessages = groupHistory.OrderBy(m => m.Timestamp)
-                        .ThenBy(m => m.MessageId)
-                        .ThenBy(m => m.SenderId)
-                        .ToList();
+                    var sortedMessages = groupHistory.OrderBy(m => m.MessageId).ToList();
 
                     var messagesData = new List<Dictionary<string, object>>();
                     foreach (var msg in sortedMessages)

@@ -5,13 +5,13 @@
   suffix: CE
   components:
   - type: Sprite
-    sprite: _Sunrise/Objects/Tools/advanced-rcd.rsi
+    sprite: _Sunrise/Objects/Tools/advanced_rcd.rsi
     layers:
     - state: icon
     - state: icon-ANM-Full
       shader: unshaded
   - type: Clothing
-    sprite: _Sunrise/Objects/Tools/advanced-rcd.rsi
+    sprite: _Sunrise/Objects/Tools/advanced_rcd.rsi
   - type: AutoRecharge
     rechargeDuration: 15
 
@@ -151,6 +151,8 @@
   - type: Tool
     qualities:
       - Anchoring
+    useSound:
+      path: /Audio/Items/ratchet.ogg
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:
@@ -175,3 +177,16 @@
     tags:
       - Crowbar
       - Wrench
+
+- type: entity
+  parent: [ HandHeldMassScannerBorg, BaseHighlyIllegalContraband ]
+  id: HandHeldMassScannerPirate
+  name: holographic pirate map
+  description: A hand-held mass scanner.
+  components:
+  - type: Item
+    sprite: _Sunrise/Objects/Tools/holo_pirate_map.rsi
+  - type: Sprite
+    sprite: _Sunrise/Objects/Tools/holo_pirate_map.rsi
+    layers:
+    - state: icon

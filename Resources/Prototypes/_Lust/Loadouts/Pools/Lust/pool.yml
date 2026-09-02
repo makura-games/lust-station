@@ -1,0 +1,18 @@
+- type: loadoutPool
+  id: BaseLoadoutPoolLust
+  abstract: true
+  roleLoadouts: {}
+
+- type: loadoutPool
+  id: LustLoadout
+  parent:
+  - BaseLoadoutPoolLust
+  - BaseLoadoutPoolLustCommand
+  - BaseLoadoutPoolLustCargo
+  - BaseLoadoutPoolLustCivilian
+  - BaseLoadoutPoolLustEngineering
+  - BaseLoadoutPoolLustMedical
+  - BaseLoadoutPoolLustScience
+  - BaseLoadoutPoolLustSecurity
+  - BaseLoadoutPoolLustWildcards
+  - SunriseLoadout  # Всегда должен быть последним!

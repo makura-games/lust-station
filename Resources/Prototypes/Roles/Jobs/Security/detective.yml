@@ -12,6 +12,12 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   displayWeight: 20  # Sunrise
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-investigator
+  - job-alt-title-incident-analyst
+  - job-alt-title-station-detective
+  # Sunrise-End
   access:
   - Security
   - Brig
@@ -29,7 +35,7 @@
 - type: startingGear
   id: DetectiveGear
   equipment:
-#    eyes: ClothingEyesGlassesSecurity #Lust-Edit
+    # eyes: ClothingEyesGlassesSecurity # Lust-Edit
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
     belt: ClothingBeltHolsterFilled

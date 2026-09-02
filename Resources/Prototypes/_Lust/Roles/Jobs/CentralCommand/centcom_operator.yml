@@ -1,0 +1,13 @@
+- type: startingGear
+  id: CentCommOperatorGearQillu
+  equipment:
+    eyes: ClothingEyesGlassesCommand
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesCentcomQillu
+    outerClothing: ClothingOuterArmorCentcomChestplateQillu
+    id: CentcomOperatorPDAQillu
+    ears: ClothingHeadsetAltCentCom
+    belt: WeaponPistolN1984
+  storage:
+    back:
+    - RubberStampCentcom

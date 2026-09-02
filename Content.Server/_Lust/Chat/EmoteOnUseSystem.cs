@@ -10,7 +10,6 @@ public sealed class EmoteOnUseSystem : EntitySystem
 {
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly ChatSystem _chat = default!;
 
     /// <inheritdoc/>

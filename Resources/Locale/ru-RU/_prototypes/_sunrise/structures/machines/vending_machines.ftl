@@ -10,3 +10,7 @@ ent-VendingMachineAbductorDispenser = инопланетный диспенсе�
     .desc = Раздает что-то странное.
 ent-VendingMachineWeaponDev = станция освобождения
     .desc = Вас охватывает непреодолимое чувство древнего патриотизма, стоит лишь взглянуть на эту машину.
+ent-VendingMachineDressCloset = платьешкаф
+    .desc = Выглядеть идеально.
+ent-InstrumentsMate = МузоМат
+    .desc = Добавьте немного музыки в свою жизнь.

@@ -136,6 +136,10 @@ public sealed class AccessReaderSystem : EntitySystem
         component.AccessLog = new(state.AccessLog);
         component.Group = state.Group != null ? new (state.Group) : null; // Sunrise added - автодоступы по коду
         component.AccessLogLimit = state.AccessLogLimit;
+
+        // Sunrise added start - уведомляем client-side UI/overlays после изменения replicated access settings
+        RaiseLocalEvent(uid, new AccessReaderConfigurationChangedEvent());
+        // Sunrise added end
     }
 
     private void OnLinkAttempt(EntityUid uid, AccessReaderComponent component, LinkAttemptEvent args)

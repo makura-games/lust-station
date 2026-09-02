@@ -1,0 +1,22 @@
+- type: loadoutPool
+  id: BaseLoadoutPoolLustSecurity
+  abstract: true
+  roleLoadouts:
+    JobHeadOfSecurity: LustJobHeadOfSecurity
+    JobWarden: LustJobWarden
+    JobSecurityOfficer: LustJobSecurityOfficer
+    JobDetective: LustJobDetective
+    JobSecurityCadet: LustJobSecurityCadet
+    JobBrigmedic: LustJobBrigmedic
+    JobBlueShieldOfficer: LustJobBlueShieldOfficer
+    JobBlueShieldEnsign: LustJobBlueShieldEnsign
+    JobSeniorOfficer: LustJobSeniorOfficer
+    JobSecurityPilot: LustJobSecurityPilot
+    JobHeadOfPrison: LustJobHeadOfPrison
+    JobPrisonInspector: LustJobPrisonInspector
+    JobPrisonWorker: LustJobPrisonWorker
+    JobPrisonEngineer: LustJobPrisonEngineer
+    JobPrisonScientist: LustJobPrisonScientist
+    JobPrisonDoctor: LustJobPrisonDoctor
+    JobPrisonTrainee: LustJobPrisonTrainee
+    JobPrisonChef: LustJobPrisonChef

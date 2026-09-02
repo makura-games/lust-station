@@ -1,0 +1,9 @@
+- type: entity
+  id: CageRemoteSignaller
+  parent: RemoteSignaller
+  name: cage remote
+  description: A compact remote used to send a signal to linked electric toys and cages.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Cages/cage_remote.rsi
+    state: icon

@@ -20,11 +20,6 @@
     grid:
     - 0,0,6,3
     maxItemSize: Huge
-  - type: ContainerContainer
-    containers:
-      storagebase: !type:Container
-        ents: []
-      toggleable-clothing: !type:ContainerSlot
   - type: UserInterface
     interfaces:
       enum.StorageUiKey.Key:
@@ -47,6 +42,11 @@
         whitelist:
           tags:
             - ModsuitCore
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+      toggleable-clothing: !type:ContainerSlot
+      modsuit_core: !type:ContainerSlot
   - type: Modsuit
     roundStartBiocode: true
 
@@ -155,10 +155,16 @@
   description: Superior.
   suffix: Modsuit
   components:
+    - type: Clothing
+      unequipDelay: 10
     - type: ToggleableClothing
       clothingPrototype: ClothingOuterHardsuitERTJanitor
       requiredSlot: back
       slot: outerClothing
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+        toggleable-clothing: !type:ContainerSlot
 
 #ОБР охрана
 - type: entity
@@ -168,10 +174,16 @@
   description: Superior.
   suffix: Modsuit
   components:
+    - type: Clothing
+      unequipDelay: 10
     - type: ToggleableClothing
       clothingPrototype: ClothingOuterHardsuitERTSecurity
       requiredSlot: back
       slot: outerClothing
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+        toggleable-clothing: !type:ContainerSlot
 
 #ОБР медик
 - type: entity
@@ -181,10 +193,16 @@
   description: Superior.
   suffix: Modsuit
   components:
+    - type: Clothing
+      unequipDelay: 10
     - type: ToggleableClothing
       clothingPrototype: ClothingOuterHardsuitERTMedical
       requiredSlot: back
       slot: outerClothing
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+        toggleable-clothing: !type:ContainerSlot
 
 #ОБР лидер
 - type: entity
@@ -194,10 +212,16 @@
   description: Superior.
   suffix: Modsuit
   components:
+    - type: Clothing
+      unequipDelay: 10
     - type: ToggleableClothing
       clothingPrototype: ClothingOuterHardsuitERTLeader
       requiredSlot: back
       slot: outerClothing
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+        toggleable-clothing: !type:ContainerSlot
 
 #ОБР инженер
 - type: entity
@@ -207,10 +231,16 @@
   description: Superior.
   suffix: Modsuit
   components:
+    - type: Clothing
+      unequipDelay: 10
     - type: ToggleableClothing
       clothingPrototype: ClothingOuterHardsuitERTEngineer
       requiredSlot: back
       slot: outerClothing
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+        toggleable-clothing: !type:ContainerSlot
 
 #ОБР священник
 - type: entity
@@ -220,7 +250,13 @@
   description: Superior.
   suffix: Modsuit
   components:
+    - type: Clothing
+      unequipDelay: 10
     - type: ToggleableClothing
       clothingPrototype: ClothingOuterHardsuitERTChaplain
       requiredSlot: back
       slot: outerClothing
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+        toggleable-clothing: !type:ContainerSlot

@@ -4,6 +4,7 @@
   id: MobAbductor
   components:
   - type: Abductor
+  - type: Interactions
   - type: Tag
     tags:
       - Abductor
@@ -11,6 +12,12 @@
       - CanPilot
       - DoorBumpOpener
       - FootstepSound
+
+- type: entity
+  save: false
+  name: Urist McAbductor
+  parent: MobAbductor
+  id: MobAbductorNonAntag
 
 - type: entity
   name: abductor scientist
@@ -67,7 +74,7 @@
     ears: ClothingHeadsetAltAbductor
     jumpsuit: ClothingUniformJumpsuitAbductor
     gloves: ClothingHandsGlovesCombat
-    shoes: ClothingShoesBootsCombat
+    shoes: ClothingShoesBootsAbductor
     pocket1: AbductorGizmo
     id: AbductorIDCard
 
@@ -78,7 +85,7 @@
     ears: ClothingHeadsetAltAbductor
     jumpsuit: ClothingUniformJumpsuitAbductor
     gloves: ClothingHandsGlovesCombat
-    shoes: ClothingShoesBootsCombat
+    shoes: ClothingShoesBootsAbductor
     pocket1: Silencer
     pocket2: WeaponAlien
     belt: ClothingAbductorBeltFilled

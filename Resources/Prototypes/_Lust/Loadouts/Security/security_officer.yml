@@ -1,7 +1,0 @@
-﻿# Neck
-- type: loadout # Lust Station
-  id: SecurityCloak
-  sponsorOnly: true
-  equipment:
-    neck: ClothingNeckSecCloak
-

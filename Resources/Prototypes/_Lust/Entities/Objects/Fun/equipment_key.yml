@@ -1,0 +1,19 @@
+- type: entity
+  id: BaseKey
+  abstract: true
+  parent: BaseItem
+  name: key
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: _Lust/Clothing/Locked/key.rsi
+    state: icon
+
+  - type: Key
+
+- type: entity
+  id: KeyBasic
+  parent: BaseKey
+  abstract: true
+  name: basic key

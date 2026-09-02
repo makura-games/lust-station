@@ -16,6 +16,6 @@
   description: For real skufs.
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/Uniforms/pivozavrtshirt.rsi
+    sprite: _Lust/Clothing/Uniforms/pivozavr_tshirt.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/Uniforms/pivozavrtshirt.rsi
+    sprite: _Lust/Clothing/Uniforms/pivozavr_tshirt.rsi

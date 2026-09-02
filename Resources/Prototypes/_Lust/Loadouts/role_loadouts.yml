@@ -15,3 +15,12 @@
       !type:RoleTimeRequirement
       role: JobSalvageSpecialist
       time: 180000 #50 hrs
+
+- type: loadoutEffectGroup
+  id: MasterSalvage666h
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobSalvageSpecialist
+      time: 2397600 #666 hrs

@@ -85,12 +85,12 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      650: Critical # Sunrise-Edit
-      700: Dead # Sunrise-Edit
+      600: Critical # Sunrise-Edit
+      650: Dead # Sunrise-Edit
   - type: SlowOnDamage
     speedModifierThresholds:
-      360: 0.7 # Sunrise-Edit
-      580: 0.5 # Sunrise-Edit
+      350: 0.7 # Sunrise-Edit
+      500: 0.5 # Sunrise-Edit
   # disable taking damage from fire, since its a fire breathing dragon
   - type: Flammable
     damage:
@@ -109,9 +109,7 @@
     solutionOnBody: false
     updateInterval: 0.25
     metabolizerTypes: [ Dragon ]
-    groups:
-    - id: Medicine
-    - id: Poison
+    stages: [ Digestion, Bloodstream ]
   - type: Butcherable
     spawned:
     - id: FoodMeatDragon
@@ -131,16 +129,15 @@
       types:
         Piercing: 15
         Slash: 15
-        Structural: 40
   - type: Devourer
     foodPreferenceWhitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     stomachStorageWhitelist:
       components:
       - MobState
     chemical: Ichor
-    healRate: 25.0 #  Sunrise-edit
+    healRate: 10.0 #  Sunrise-edit
     whitelist:
       components:
       - MobState
@@ -167,10 +164,6 @@
     useSound:
       path: /Audio/Items/crowbar.ogg
   # Sunrise-Start
-  - type: ExplosionResistance
-    damageCoefficient: 0.3
-  - type: StaminaResistance # Sunrise-TODO: По дракон должен получать урон по стамине, но в крит не падать а только замедлятся.
-    damageCoefficient: 0.3
   - type: CollectiveMind
     minds:
     - Carp
@@ -292,8 +285,8 @@
       amount: 1
   - type: MeleeWeapon
     damage:
-      groups:
-        Brute: 12
+      types:
+        Piercing: 12
 
 - type: entity
   parent: BaseAction

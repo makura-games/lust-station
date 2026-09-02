@@ -1,0 +1,8 @@
+- type: loadoutPool
+  id: BaseLoadoutPoolLustWildcards
+  abstract: true
+  roleLoadouts:
+    JobReporter: LustJobReporter
+    JobPsychologist: LustJobPsychologist
+    JobCentCommOfficial: LustJobCentCommOfficial
+    JobCentCommOperator: LustJobCentCommOperator

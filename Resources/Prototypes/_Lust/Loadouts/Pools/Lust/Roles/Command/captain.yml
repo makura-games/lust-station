@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: LustJobCaptain
+  groups:
+  - SunriseCaptainHead
+  - LustCaptainNeck
+  - SunriseCaptainJumpsuit
+  - SunriseCaptainOuterClothing
+  - SunriseCaptainGloves
+  - SunriseCaptainBackpack
+  - SunriseSurvival
+  - SunriseGroupSpeciesBreathTool
+  - SunriseCaptainBra
+  - SunriseCaptainPants
+  - Socks
+  - SunriseTrinkets
+  - SunriseCaptainJobTrinkets
+  - LustSpecialLoadout
+  - Contributors
+

@@ -1,5 +1,4 @@
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using System.Numerics;
 using Content.Shared.Alert;
 using Content.Shared.Buckle.Components;
@@ -150,24 +149,9 @@ public abstract partial class SharedBuckleSystem
             return;
         }
 
-        // Sunrise-Start
-        if (strapComp.BuckleOffsets.Count == 0)
-            return;
-
-        var isValid = false;
-        foreach (var offset in strapComp.BuckleOffsets)
-        {
-            var delta = (xform.LocalPosition - offset).LengthSquared();
-            if (delta <= 1e-5)
-            {
-                isValid = true;
-                break;
-            }
-        }
-
-        if (!isValid)
+        // Sunrise-Edit
+        if (!IsBuckleOffsetValid(strapComp, xform.LocalPosition))
             Unbuckle(buckle, (strapUid, strapComp), null);
-        // Sunrise-End
     }
 
     #endregion
@@ -218,9 +202,7 @@ public abstract partial class SharedBuckleSystem
         if (TryComp(buckle.Comp.BuckledTo, out StrapComponent? old))
         {
             old.BuckledEntities.Remove(buckle);
-            // Sunrise-Start: Clean up CurrentOffsets when removing buckled entity
-            old.CurrentOffsets.Remove(buckle.Owner);
-            // Sunrise-End
+            RemoveAssignedBuckleOffset(buckle, old); // Sunrise-Edit
             Dirty(buckle.Comp.BuckledTo.Value, old);
         }
 
@@ -399,22 +381,8 @@ public abstract partial class SharedBuckleSystem
         _rotationVisuals.SetHorizontalAngle(buckle.Owner, strap.Comp.Rotation);
 
         var xform = Transform(buckle);
-        // Sunrise-Start
-        var offset = Vector2.Zero;
-
-        for (var i = 0; i < strap.Comp.BuckleOffsets.Count; i++)
-        {
-            if (!strap.Comp.CurrentOffsets.Values.Contains(strap.Comp.BuckleOffsets[i]))
-            {
-                offset = strap.Comp.BuckleOffsets[i];
-                break;
-            }
-        }
-
-        strap.Comp.CurrentOffsets[buckle.Owner] = offset;
-
+        var offset = AssignBuckleOffset(buckle, strap.Comp); // Sunrise-Edit
         var coords = new EntityCoordinates(strap, offset);
-        // Sunrise-End
         _transform.SetCoordinates(buckle, xform, coords, rotation: Angle.Zero);
 
         _joints.SetRelay(buckle, strap);
@@ -498,6 +466,7 @@ public abstract partial class SharedBuckleSystem
 
         _audio.PlayPredicted(strap.Comp.UnbuckleSound, strap, user);
 
+        var buckleOffset = GetAssignedBuckleOffset(buckle, strap.Comp); // Sunrise-Edit
         SetBuckledTo(buckle, null);
 
         var buckleXform = Transform(buckle);
@@ -505,33 +474,14 @@ public abstract partial class SharedBuckleSystem
 
         if (buckleXform.ParentUid == strap.Owner && !Terminating(oldBuckledXform.ParentUid))
         {
-            // Sunrise-start
-            // Combine position + rotation in a single transform update.
-            var targetWorldPos = _transform.GetWorldPosition(strap);
-            var targetWorldRot = _transform.GetWorldRotation(strap);
-
-            // Apply strap offset if any
-            if (strap.Comp.CurrentOffsets.TryGetValue(buckle.Owner, out var offset) && offset != Vector2.Zero)
-                targetWorldPos += offset;
-
-            // Remove offset now that we're done
-            strap.Comp.CurrentOffsets.Remove(buckle.Owner);
-
-            // Set both position & rotation at once (one move event)
-            _transform.SetWorldPositionRotation(buckle, targetWorldPos, targetWorldRot);
-
+            _transform.PlaceNextTo((buckle, buckleXform), (strap.Owner, oldBuckledXform));
             buckleXform.ActivelyLerping = false;
 
-            // Sunrise-Start
-            //var oldBuckledToWorldRot = _transform.GetWorldRotation(strap);
-            //_transform.SetWorldRotationNoLerp((buckle, buckleXform), oldBuckledToWorldRot);
-
-            // TODO: This is doing 4 moveevents this is why I left the warning in, if you're going to remove it make it only do 1 moveevent.
-            //if (strap.Comp.BuckleOffset != Vector2.Zero)
-            //{
-            //    _transform.SetCoordinates(buckle, buckleXform, oldBuckledXform.Coordinates.Offset(strap.Comp.BuckleOffset));
-            //}
-            // Sunrise-End
+            var oldBuckledToWorldRot = _transform.GetWorldRotation(strap);
+            _transform.SetWorldRotationNoLerp((buckle, buckleXform), oldBuckledToWorldRot);
+            // Sunrise-Edit
+            if (buckleOffset != Vector2.Zero)
+                _transform.SetCoordinates(buckle, buckleXform, oldBuckledXform.Coordinates.Offset(buckleOffset));
         }
 
         _rotationVisuals.ResetHorizontalAngle(buckle.Owner);

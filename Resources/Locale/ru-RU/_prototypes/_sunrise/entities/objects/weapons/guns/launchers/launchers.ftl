@@ -1,5 +1,5 @@
 ent-WeaponLauncherRL5 = RL-5
-    .desc = { ent-BaseWeaponLauncher.desc }
+    .desc = Древний ручной реактивный гранатомёт.
 ent-WeaponGrenadeLauncherGL70 = GL-70
     .desc = GL-70 - это стандартный гранатомёт, используемый армией Земли для зачистки территорий и проведения крупных взрывов.
 ent-WeaponGrenadeLauncherGL70Flash = GL-70
@@ -11,3 +11,22 @@ ent-WeaponLauncherM79 = гранатомёт m79
     .desc = Однозарядный гранатомет. Это мощное оружие, способное стрелять самыми разнообразными как гранатами, так и ручными гранатами.
 ent-WeaponGrenadeLauncherImprovised = Бомбага
     .desc = Новая эра грейтайда.
+
+ent-SunriseWeaponDisposableRocketLauncherTraining = одноразовый учебный гранатомёт
+    .desc = Лёгкий одноразовый гранатомёт с белой учебной полосой и запаянной внутри практической ракетой.
+    .suffix = Учебный
+
+ent-SunriseWeaponDisposableRocketLauncherEmp = одноразовый ЭМИ-гранатомёт
+    .desc = Одноразовый гранатомёт с синей полосой и компактным электромагнитным зарядом внутри.
+    .suffix = ЭМИ
+
+ent-SunriseWeaponDisposableRocketLauncher = одноразовый гранатомёт
+    .desc = Одноразовый гранатомёт с зелёной полосой и боевой ракетой внутри.
+
+ent-SunriseWeaponDisposableRocketLauncherSmoke = одноразовый дымовой гранатомёт
+    .desc = Одноразовый гранатомёт с тёмной полосой и дымовой ракетой внутри.
+    .suffix = Дымовой
+
+ent-SunriseWeaponDisposableRocketLauncherIncendiary = одноразовый термобарический гранатомёт
+    .desc = Одноразовый гранатомёт с красной полосой и нестабильной термобарической ракетой внутри.
+    .suffix = Термобарический

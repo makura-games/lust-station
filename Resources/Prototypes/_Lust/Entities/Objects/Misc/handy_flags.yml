@@ -1,0 +1,11 @@
+- type: entity
+  parent: BaseItem
+  id: QilluHandyFlag
+  name: Qillu handheld flag
+  description: Glory to Qillu! Wait, they really made a handheld flag for a corporation?
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/Handy_Flags/qillu_handy_flag.rsi
+    state: icon
+  - type: Item
+    sprite: _Lust/Objects/Misc/Handy_Flags/qillu_handy_flag.rsi

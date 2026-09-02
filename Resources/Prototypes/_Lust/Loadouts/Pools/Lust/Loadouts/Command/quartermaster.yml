@@ -1,0 +1,5 @@
+﻿- type: loadout
+  id: QuartermasterSpecialCloak
+  sponsorOnly: true
+  equipment:
+    neck: ClothingNeckQmSpecialCloak

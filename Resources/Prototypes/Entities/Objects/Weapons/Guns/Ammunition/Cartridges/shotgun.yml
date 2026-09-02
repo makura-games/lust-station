@@ -8,6 +8,7 @@
     tags:
     - ShellShotgun
   - type: Sprite
+    scale: 0.9,0.9 # Sunrise-Add
     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:
       - state: base
@@ -34,9 +35,6 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#149A1E"
-      - state: spent
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
@@ -54,9 +52,6 @@
       - state: tip-long
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#252525"
-      - state: spent-long
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
@@ -86,9 +81,6 @@
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#FFFF0B"
       - state: flare
-      - state: spent
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     proto: PelletShotgunFlare
     soundEject:
@@ -106,9 +98,6 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#F4001F"
-      - state: spent
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
@@ -127,9 +116,6 @@
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#FFFF0B"
       - state: incendiary
-      - state: spent
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     proto: PelletShotgunIncendiarySpread
 
@@ -145,9 +131,6 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
       - state: practice
-      - state: spent
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject
@@ -169,9 +152,6 @@
       - state: tip
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#49CECE"
-      - state: spent
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     proto: PelletShotgunTranquilizer
   - type: ChemicalAmmo
@@ -202,9 +182,6 @@
 #       - state: tip
 #         map: [ "enum.AmmoVisualLayers.Tip" ]
 #         color: "#555555"
-#       - state: spent
-#         map: [ "enum.AmmoVisualLayers.Spent" ]
-#         visible: false
 #   - type: Construction
 #     graph: ImprovisedShotgunShellGraph
 #     node: shell
@@ -226,9 +203,6 @@
         map: [ "enum.AmmoVisualLayers.Tip" ]
         color: "#252525"
       - state: depleted-uranium
-      - state: spent-long
-        map: [ "enum.AmmoVisualLayers.Spent" ]
-        visible: false
   - type: CartridgeAmmo
     soundEject:
       collection: ShellEject

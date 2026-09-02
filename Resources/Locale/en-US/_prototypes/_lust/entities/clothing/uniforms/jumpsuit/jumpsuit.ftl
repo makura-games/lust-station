@@ -16,3 +16,8 @@ ent-ClothingUniformJumpsuitCentcomSuitQillu = Central Command suit
 ent-ClothingUniformJumpsuitCentcomUniformQillu = Central Command uniform
     .suffix = Qillu
     .desc = A Central Command uniform produced under Qillu contract. Formal, durable, and unmistakably official.
+
+ent-LustClothingUniformJumpsuitStripperSlim = slim stripper suit
+    .desc = Stripper suit. Leaves nothing to the imagination.
+ent-LustClothingUniformJumpsuitStripperStarPasties = star pasties suit
+    .desc = Stripper suit. Nanofibers ensure these won't fall off.

@@ -48,12 +48,20 @@ public sealed class MappingManager : IPostInjectInit
         if (_saveStream != null)
             await _saveStream.DisposeAsync();
 
-        var request = new MappingSaveMapMessage();
-        _net.ClientSendMessage(request);
+        // Sunrise added start - запрашиваем серверную обработку сохранения карты только после подтверждения пути
+        _mapData = null;
+        // Sunrise added end
 
         var path = await _file.SaveFile();
         if (path is not { fileStream: var stream })
             return;
+
+        // Sunrise added start - не меняем карту на сервере, если диалог сохранения отменен
+        _saveStream = stream;
+
+        var request = new MappingSaveMapMessage();
+        _net.ClientSendMessage(request);
+        // Sunrise added end
 
         if (_mapData != null)
         {
@@ -63,7 +71,5 @@ public sealed class MappingManager : IPostInjectInit
             await stream.DisposeAsync();
             return;
         }
-
-        _saveStream = stream;
     }
 }

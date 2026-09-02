@@ -14716,7 +14716,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -103.5,-73.5
       parent: 2
-- proto: AirlockExternalGlassShuttleArrivalsLocked
+- proto: AirlockExternalGlassShuttleArrivalsLockedCentComm
   entities:
   - uid: 297
     components:
@@ -14734,7 +14734,7 @@ entities:
       parent: 2
     - type: DeviceLinkSink
       invokeCounter: 1
-- proto: AirlockExternalGlassShuttleEmergencyLocked
+- proto: AirlockExternalGlassShuttleEmergencyLockedCentComm
   entities:
   - uid: 299
     components:
@@ -68944,8 +68944,6 @@ entities:
     - type: Clothing
       inSlotFlag: MASK
       inSlot: mask
-    - type: DiseaseImmuneClothing
-      isActive: True
     - type: Physics
       canCollide: False
 - proto: ClothingMaskGasSwat
@@ -68957,8 +68955,6 @@ entities:
     - type: Clothing
       inSlotFlag: MASK
       inSlot: mask
-    - type: DiseaseImmuneClothing
-      isActive: True
     - type: Physics
       canCollide: False
 - proto: ClothingNeckGoldAutismPin
@@ -72252,7 +72248,7 @@ entities:
       pos: -120.5,-39.5
       parent: 2
     - type: WarpPoint
-      location: Стойка РНД
+      location: Стойка НИО
 - proto: DefaultStationBeaconRobotics
   entities:
   - uid: 11031
@@ -72284,7 +72280,7 @@ entities:
       pos: -117.5,-45.5
       parent: 2
     - type: WarpPoint
-      location: РНД
+      location: НИО
 - proto: DefaultStationBeaconSecurity
   entities:
   - uid: 11035
@@ -82689,7 +82685,7 @@ entities:
   - uid: 12806
     components:
     - type: MetaData
-      name: факс дальнего действия (РНД)
+      name: факс дальнего действия (НИО)
     - type: Transform
       pos: -118.5,-40.5
       parent: 2
@@ -135577,8 +135573,6 @@ entities:
           showEnts: False
           occludes: False
           ent: 10501
-    - type: DiseaseTempImmune
-      prob: 0.35
   - uid: 10516
     components:
     - type: Transform
@@ -135618,8 +135612,6 @@ entities:
           showEnts: False
           occludes: False
           ent: null
-    - type: DiseaseTempImmune
-      prob: 0.35
     - type: ReplacementAccent
       accent: cowboy
 - proto: Matchbox
@@ -137091,7 +137083,7 @@ entities:
 
         - Подключить солнечные батареи
 
-        - Подключить РНД к электросети [italic](Другие ребята забыли об этом?)[/italic]
+        - Подключить НИО к электросети [italic](Другие ребята забыли об этом?)[/italic]
 
 
 
@@ -179199,8 +179191,7 @@ entities:
       pos: -74.5,-0.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
+      configurators: []
       deviceLists:
       - 2378
 - proto: WeaponFlareGunSecurity

@@ -13,9 +13,9 @@
     - state: department-side
       color: "#4B1D7A"
     - state: department-side-extra-gold
-    - sprite: Interface/Misc/job_icons.rsi
+    - sprite: /Textures/_Lust/Interface/Misc/job_icons.rsi
       offset: -0.19, 0
-      state: Nanotrasen
+      state: Qillu
   - type: Clothing
     slots:
     - idcard
@@ -40,9 +40,9 @@
     - state: department-side
       color: "#4B1D7A"
     - state: department-side-extra-gold
-    - sprite: Interface/Misc/job_icons.rsi
+    - sprite: /Textures/_Lust/Interface/Misc/job_icons.rsi
       offset: -0.19, 0
-      state: Nanotrasen
+      state: Qillu
   - type: Clothing
     slots:
     - idcard
@@ -74,9 +74,9 @@
     - state: department-side
       color: "#4B1D7A"
     - state: department-side-extra-gold
-    - sprite: Interface/Misc/job_icons.rsi
+    - sprite: /Textures/_Lust/Interface/Misc/job_icons.rsi
       offset: -0.19, 0
-      state: Nanotrasen
+      state: Qillu
   - type: Clothing
     slots:
     - idcard

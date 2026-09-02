@@ -1,0 +1,9 @@
+- type: entity
+  id: BannerQillu
+  parent: BannerBase
+  name: Qillu banner
+  description: A banner displaying the qillu logo. It looks really great.
+  components:
+  - type: Sprite
+    sprite: Structures/Decoration/banner.rsi
+    state: banner

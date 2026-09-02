@@ -28,8 +28,10 @@
       collection: BikeHorn
     Sigh:
       collection: MaleSigh
+    # Lust-Start
     Moan:
       collection: MaleMoan
+    # Lust-End
     Crying:
       collection: MaleCry
     Whistle:
@@ -78,8 +80,10 @@
       collection: CluwneHorn
     Sigh:
       collection: FemaleSigh
+    # Lust-Start
     Moan:
       collection: FemaleMoan
+    # Lust-End
     Crying:
       collection: FemaleCry
     Whistle:
@@ -99,6 +103,9 @@
 
 - type: emoteSounds
   id: MaleReptilian
+  # Sunrise-start
+  parent: MaleHuman
+  # Sunrise-end
   params:
     variation: 0.125
   sounds:
@@ -124,9 +131,16 @@
     SevereCough:
       collection: MaleSevereCough
     # Sunrise end
+    # Lust-Start
+    Moan:
+      collection: MaleMoan
+    # Lust-End
 
 - type: emoteSounds
   id: FemaleReptilian
+  # Sunrise-start
+  parent: FemaleHuman
+  # Sunrise-end
   params:
     variation: 0.125
   sounds:
@@ -152,6 +166,10 @@
     SevereCough:
       collection: FemaleSevereCough
     # Sunrise end
+    # Lust-Start
+    Moan:
+      collection: FemaleMoan
+    # Lust-End
 
 - type: emoteSounds
   id: MaleSlime
@@ -182,8 +200,10 @@
       collection: BikeHorn
     Sigh:
       collection: MaleSigh
+    # Lust-Start
     Moan:
       collection: MaleMoan
+    # Lust-End
     Crying:
       collection: MaleCry
     Whistle:
@@ -232,8 +252,10 @@
       collection: CluwneHorn
     Sigh:
       collection: FemaleSigh
+    # Lust-Start
     Moan:
       collection: FemaleMoan
+    # Lust-End
     Crying:
       collection: FemaleCry
     Whistle:
@@ -260,6 +282,8 @@
       path: /Audio/Voice/Vox/shriek1.ogg
     Laugh:
       path: /Audio/Voice/Vox/vox_laugh.ogg
+    Sneeze:
+      path: /Audio/Voice/Vox/vox_sneeze.ogg
     Cough:
       path: /Audio/Voice/Vox/vox_cough.ogg
     Sigh:
@@ -280,6 +304,10 @@
       path: /Audio/Effects/Gasp/vox_gasp.ogg
     DefaultDeathgasp:
       path: /Audio/Effects/Gasp/vox_DeathGasp.ogg
+    # Lust-Start
+    Moan:
+      path: /Audio/Voice/Vox/vox_sigh.ogg
+    # Lust-End
   params:
     variation: 0.125
     # TODO: We need vox sounds for the other emotes
@@ -291,6 +319,8 @@
       path: /Audio/Voice/Diona/diona_scream.ogg
     Laugh:
       collection: DionaLaugh
+    Sneeze:
+      collection: DionaSneeze
     Chirp:
       path: /Audio/Animals/nymph_chirp.ogg
     Honk:
@@ -303,6 +333,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+    # Lust-Start
+    Moan:
+      collection: DionaLaugh
+    # Lust-End
   params:
     variation: 0.125
 
@@ -319,6 +353,18 @@
       path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
     Click:
       path: /Audio/Voice/Arachnid/arachnid_click.ogg
+    # Sunrise-Start
+    Yawn:
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
+    Sigh:
+      path: /Audio/Voice/Arachnid/arachnid_chitter.ogg
+    Crying:
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg
+    Cough:
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg
+    SevereCough:
+      path: /Audio/Voice/Arachnid/arachnid_click.ogg
+    # Sunrise-End
     Weh:
       collection: Weh
     Hew:
@@ -329,6 +375,10 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: DeathGasp
+    # Lust-Start
+    Moan:
+      path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+    # Lust-End
 
 - type: emoteSounds
   id: UnisexDwarf
@@ -355,8 +405,10 @@
       collection: Snores
     Sigh:
       collection: MaleSigh
+    # Lust-Start
     Moan:
       collection: MaleMoan
+    # Lust-End
     Honk:
       collection: BikeHorn
     Crying:
@@ -404,8 +456,10 @@
       collection: Snores
     Sigh:
       collection: FemaleSigh
+    # Lust-Start
     Moan:
       collection: FemaleMoan
+    # Lust-End
     Honk:
       collection: BikeHorn
     Crying:
@@ -452,11 +506,23 @@
     Gasp:
       collection: MaleGasp
     # Sunrise-Start
+    Yawn:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Sigh:
+      path: /Audio/Voice/Moth/moth_chitter.ogg
+    Crying:
+      path: /Audio/Voice/Moth/moth_squeak.ogg
+    Cough:
+      path: /Audio/_Sunrise/Voice/Moth/moth_severe_cough.ogg
     SevereCough:
       path: /Audio/_Sunrise/Voice/Moth/moth_severe_cough.ogg
     # Sunrise-End
     DefaultDeathgasp:
       collection: MothDeathGasp
+    # Lust-Start
+    Moan:
+      path: /Audio/Voice/Moth/moth_scream.ogg
+    # Lust-End
 
 - type: emoteSounds
   id: UnisexSilicon
@@ -525,19 +591,24 @@
 # Vulp Sounds
 - type: emoteSounds
   id: MaleVulpkanin
+  # Sunrise-start
+  parent: MaleHuman
+  # Sunrise-end
   params:
     variation: 0.125
   sounds:
     Laugh:
       collection: MaleLaugh
     Sneeze:
-      collection: MaleSneezes
+      collection: VulpkaninSneeze
     Cough:
       collection: MaleCoughs
     Whistle:
       collection: Whistles
     Sigh:
       collection: MaleSigh
+    Yawn:
+      collection: VulpkaninYawns
     Scream:
       collection: VulpkaninScreams
     Growl:
@@ -562,22 +633,31 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: MaleDeathGasp
+    # Lust-Start
+    Moan:
+      collection: MaleMoan
+    # Lust-End
 
 - type: emoteSounds
   id: FemaleVulpkanin
+  # Sunrise-start
+  parent: FemaleHuman
+  # Sunrise-end
   params:
     variation: 0.125
   sounds:
     Laugh:
       collection: FemaleLaugh
     Sneeze:
-      collection: FemaleSneezes
+      collection: VulpkaninSneeze
     Cough:
       collection: FemaleCoughs
     Whistle:
       collection: Whistles
     Sigh:
       collection: FemaleSigh
+    Yawn:
+      collection: VulpkaninYawns
     Scream:
       collection: VulpkaninScreams
     Growl:
@@ -602,6 +682,10 @@
       collection: FemaleGasp
     DefaultDeathgasp:
       collection: FemaleDeathGasp
+    # Lust-Start
+    Moan:
+      collection: FemaleMoan
+    # Lust-End
 
 # body emotes
 - type: emoteSounds
@@ -642,6 +726,22 @@
       path: /Audio/Voice/Reptilian/reptilian_tailthump.ogg
       params:
         variation: 0.125
+    Clap:
+      collection: Claps
+    ClapSingle:
+      collection: ClapSingle
+    Snap:
+      collection: Snaps
+      params:
+        volume: -6
+    Salute:
+      collection: Salutes
+
+- type: emoteSounds
+  id: MothBodyEmotes
+  sounds:
+    Flap:
+      path: /Audio/Voice/Moth/moth_flap.ogg
     Clap:
       collection: Claps
     ClapSingle:
@@ -770,3 +870,7 @@
       collection: MaleGasp
     DefaultDeathgasp:
       collection: WawaDeath
+    # Lust-Start
+    Moan:
+      collection: WawaScream
+    # Lust-End

@@ -20,12 +20,6 @@
             "name": "plushie_pinkers"
         },
         {
-            "name": "plushie-aname"
-        },
-        {
-            "name": "plushie-aname-unshaded"
-        },
-        {
             "name": "plushie-anna"
         },
         {
@@ -55,7 +49,7 @@
             "directions": 4
         },
         {
-            "name": "blizz-equipped-HEAD",
+            "name": "blizz-equipped-HELMET",
             "directions": 4
         },
         {
@@ -93,35 +87,6 @@
         {
             "name": "ulava-equipped-NECK",
             "directions": 4
-        },
-        {
-            "name": "sophiekomissarova"
-        },
-        {
-            "name": "sophiekomissarova-inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "sophiekomissarova-inhand-right",
-            "directions": 4
-        },
-        {
-          "name": "plushie-raneli-toll"
-        },
-        {
-          "name": "plushie-raneli-toll-equipped-HELMET",
-          "directions": 4
-        },
-        {
-          "name": "plushie-raneli-toll-inhand-left",
-          "directions": 4
-        },
-        {
-          "name": "plushie-raneli-toll-inhand-right",
-          "directions": 4
-        },
-        {
-          "name": "plushie-raneli-toll-eyes"
         },
         {
           "name": "plushiediegovulpa"

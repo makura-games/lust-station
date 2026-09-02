@@ -11,6 +11,7 @@ using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Station;
 using Content.Shared.Timing;
+using Robust.Shared.Configuration; // Sunrise-edit
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 
@@ -96,7 +97,10 @@ public sealed class ChameleonControllerSystem : SharedChameleonControllerSystem
 
         profile.Loadouts.TryGetValue(jobProtoId, out customRoleLoadout);
 
-        if (!_proto.HasIndex<RoleLoadoutPrototype>(jobProtoId))
+        // Sunrise-start
+        var effectiveJobProtoId = LoadoutSystem.GetEffectiveRolePrototype(jobProtoId, _proto);
+        if (!_proto.HasIndex<RoleLoadoutPrototype>(effectiveJobProtoId))
+        // Sunrise-end
             return;
 
         defaultRoleLoadout = new RoleLoadout(jobProtoId);

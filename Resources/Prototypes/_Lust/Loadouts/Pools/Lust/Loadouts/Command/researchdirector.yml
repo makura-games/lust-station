@@ -1,0 +1,5 @@
+﻿- type: loadout
+  id: RdSpecialCloak
+  sponsorOnly: true
+  equipment:
+    neck: ClothingNeckRdSpecialCloak

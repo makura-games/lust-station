@@ -1,8 +1,9 @@
 using System;
 using System.Linq;
 using Content.Server.Actions;
-using Content.Server.Humanoid;
 using Content.Server.Popups;
+using Content.Shared._Sunrise.Humanoid;
+using Content.Shared.Body;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Humanoid;
@@ -11,6 +12,8 @@ using Content.Shared.Popups;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Content.Shared.Toggleable;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared._Sunrise.Abilities.Milira;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
@@ -31,10 +34,10 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly SharedStaminaSystem _stamina = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _appearance = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
+    [Dependency] private readonly SunriseHumanoidMarkingSystem _sunriseMarking = default!;
 
     public override void Initialize()
     {
@@ -46,6 +49,7 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
         SubscribeLocalEvent<WingFlightComponent, KnockDownAttemptEvent>(OnKnockDownAttempt);
         SubscribeLocalEvent<WingFlightComponent, DownedEvent>(OnDowned);
         SubscribeLocalEvent<WingFlightComponent, KnockedDownEvent>(OnKnockedDown);
+        SubscribeLocalEvent<WingFlightComponent, MobStateChangedEvent>(OnMobStateChanged);
 
         SubscribeLocalEvent<WingFlightComponent, ComponentInit>(OnComponentInit);
         SubscribeLocalEvent<WingFlightComponent, ComponentRemove>(OnComponentRemove);
@@ -89,7 +93,7 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
         if (_standing.IsDown(ent.Owner))
             return false;
 
-        if (!TryComp<StaminaComponent>(ent.Owner, out var stamina))
+        if (!TryComp<StaminaComponent>(ent, out var stamina))
         {
             Activate(ent, 1f);
             return true;
@@ -98,13 +102,13 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
         var staminaPercent = GetStaminaPercent(stamina);
         if (staminaPercent < ent.Comp.ActivationThreshold)
         {
-            _popup.PopupEntity(Loc.GetString("wing-flight-popup-not-enough-stamina"), ent.Owner, ent.Owner, PopupType.Medium);
+            _popup.PopupEntity(Loc.GetString("wing-flight-popup-not-enough-stamina"), ent, ent, PopupType.Medium);
             return false;
         }
 
-        if (!_stamina.TryTakeStamina(ent.Owner, ent.Comp.ActivationStaminaDamage, stamina, visual: true))
+        if (!_stamina.TryTakeStamina(ent, ent.Comp.ActivationStaminaDamage, stamina, visual: true))
         {
-            _popup.PopupEntity(Loc.GetString("wing-flight-popup-activation-blocked"), ent.Owner, ent.Owner, PopupType.Small);
+            _popup.PopupEntity(Loc.GetString("wing-flight-popup-activation-blocked"), ent, ent, PopupType.Small);
             return false;
         }
 
@@ -142,31 +146,31 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
 
     private void UpdateMarkings(Entity<WingFlightComponent> ent, bool enable)
     {
-        if (!TryComp<HumanoidAppearanceComponent>(ent.Owner, out var humanoid))
+        if (!HasComp<VisualBodyComponent>(ent))
             return;
 
-        if (!humanoid.MarkingSet.Markings.TryGetValue(MarkingCategories.Tail, out var markings) ||
+        if (!_sunriseMarking.TryGetLayerMarkings(ent, HumanoidVisualLayers.Tail, out var markings) ||
             markings.Count == 0)
         {
             return;
         }
 
         if (enable)
-            EnableMarkings(ent, markings, humanoid);
+            EnableMarkings(ent, markings);
         else
-            DisableMarkings(ent, markings, humanoid);
+            DisableMarkings(ent, markings);
     }
 
-    private void EnableMarkings(Entity<WingFlightComponent> ent, List<Marking> markings, HumanoidAppearanceComponent humanoid)
+    private void EnableMarkings(Entity<WingFlightComponent> ent, List<Marking> markings)
     {
         ent.Comp.OriginalMarkings.Clear();
 
         var flightSuffix = ent.Comp.Suffix;
-        var openSuffix = TryComp<WingToggleComponent>(ent.Owner, out var toggle) ? toggle.Suffix : null;
+        var openSuffix = TryComp<WingToggleComponent>(ent, out var toggle) ? toggle.Suffix : null;
 
         for (var i = 0; i < markings.Count; i++)
         {
-            var current = markings[i].MarkingId;
+            var current = markings[i].MarkingId.Id;
 
             if (string.IsNullOrEmpty(current))
                 continue;
@@ -179,13 +183,13 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
                 continue;
 
             ent.Comp.OriginalMarkings[i] = current;
-            _appearance.SetMarkingId(ent.Owner, MarkingCategories.Tail, i, desired, humanoid: humanoid);
+            _sunriseMarking.SetMarkingId(ent, HumanoidVisualLayers.Tail, i, desired);
         }
 
         ent.Comp.AppliedMarkingOnEnable = ent.Comp.OriginalMarkings.Count > 0;
     }
 
-    private void DisableMarkings(Entity<WingFlightComponent> ent, List<Marking> markings, HumanoidAppearanceComponent humanoid)
+    private void DisableMarkings(Entity<WingFlightComponent> ent, List<Marking> markings)
     {
         if (!ent.Comp.AppliedMarkingOnEnable || ent.Comp.OriginalMarkings.Count == 0)
             return;
@@ -198,10 +202,10 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
             if (!_prototype.HasIndex<MarkingPrototype>(original))
                 continue;
 
-            if (markings[index].MarkingId == original)
+            if (markings[index].MarkingId.Id == original)
                 continue;
 
-            _appearance.SetMarkingId(ent.Owner, MarkingCategories.Tail, index, original, humanoid: humanoid);
+            _sunriseMarking.SetMarkingId(ent, HumanoidVisualLayers.Tail, index, original);
         }
 
         ent.Comp.OriginalMarkings.Clear();
@@ -244,7 +248,7 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
                 }
 
                 var staminaCost = ent.Comp.SustainStaminaPerSecond * frameTime;
-                if (!_stamina.TryTakeStamina(ent.Owner, staminaCost, stamina, visual: false))
+                if (!_stamina.TryTakeStamina(ent, staminaCost, stamina, visual: false))
                 {
                     toDisable.Add(ent);
                     SetScaleImmediate(ent, staminaPercent);
@@ -260,7 +264,7 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
 
         foreach (var ent in toDisable)
         {
-            _popup.PopupEntity(Loc.GetString("wing-flight-popup-auto-disable"), ent.Owner, ent.Owner, PopupType.Medium);
+            _popup.PopupEntity(Loc.GetString("wing-flight-popup-auto-disable"), ent, ent, PopupType.Medium);
             DisableFlight(ent);
         }
     }
@@ -305,16 +309,15 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
 
     private void EnableFlightPassability(Entity<WingFlightComponent> ent)
     {
-        if (!TryComp(ent.Owner, out PhysicsComponent? physics))
+        if (!TryComp(ent, out PhysicsComponent? physics))
             return;
 
-        EnsureComp<CanMoveInAirComponent>(ent.Owner);
-        _physics.SetBodyStatus(ent.Owner, physics, BodyStatus.InAir);
+        EnsureComp<CanMoveInAirComponent>(ent);
+        _physics.SetBodyStatus(ent, physics, BodyStatus.InAir);
 
-        if (!TryComp(ent.Owner, out FixturesComponent? fixtures))
+        if (!TryComp(ent, out FixturesComponent? fixtures))
             return;
 
-        // Обратный обход фикстур для избежания изменения коллекции во время перечисления
         var fixtureIds = fixtures.Fixtures.Keys.ToArray();
         for (var i = fixtureIds.Length - 1; i >= 0; i--)
         {
@@ -324,16 +327,16 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
 
             ent.Comp.OriginalCollisionMasks.TryAdd(id, fixture.CollisionMask);
             ent.Comp.OriginalCollisionLayers.TryAdd(id, fixture.CollisionLayer);
-            _physics.RemoveCollisionMask(ent.Owner, id, fixture, (int)CollisionGroup.MidImpassable, manager: fixtures);
+            _physics.RemoveCollisionMask(ent, id, fixture, (int)CollisionGroup.MidImpassable, manager: fixtures);
         }
     }
 
     private void DisableFlightPassability(Entity<WingFlightComponent> ent)
     {
-        RemCompDeferred<CanMoveInAirComponent>(ent.Owner);
+        RemCompDeferred<CanMoveInAirComponent>(ent);
 
         if (TryComp<PhysicsComponent>(ent, out var physics))
-            _physics.SetBodyStatus(ent.Owner, physics, BodyStatus.OnGround);
+            _physics.SetBodyStatus(ent, physics, BodyStatus.OnGround);
 
         if (TryComp<FixturesComponent>(ent, out var fixtures))
         {
@@ -346,14 +349,23 @@ public sealed partial class WingFlightSystem : SharedWingFlightSystem
                     continue;
 
                 if (ent.Comp.OriginalCollisionMasks.TryGetValue(id, out var mask))
-                    _physics.SetCollisionMask(ent.Owner, id, fixture, mask, manager: fixtures);
+                    _physics.SetCollisionMask(ent, id, fixture, mask, manager: fixtures);
 
                 if (ent.Comp.OriginalCollisionLayers.TryGetValue(id, out var layer))
-                    _physics.SetCollisionLayer(ent.Owner, id, fixture, layer, manager: fixtures);
+                    _physics.SetCollisionLayer(ent, id, fixture, layer, manager: fixtures);
             }
         }
 
         ent.Comp.OriginalCollisionMasks.Clear();
         ent.Comp.OriginalCollisionLayers.Clear();
+    }
+
+    private void OnMobStateChanged(Entity<WingFlightComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (!ent.Comp.FlightEnabled)
+            return;
+
+        if (args.NewMobState == MobState.Critical)
+            DisableFlight(ent);
     }
 }

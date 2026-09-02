@@ -1,6 +1,9 @@
-# Behavior flags
+# region Behavior flags
 - type: Tag
   id: CantInteract
+
+- type: Tag
+  id: CannotBeFlatpacked
 
 - type: Tag
   id: Directional
@@ -15,12 +18,25 @@
   id: NoPaint
 
 - type: Tag
+  id: BigSmallArms
+
+- type: Tag
   id: NoSpinOnThrow
 
 - type: Tag
   id: ShowWires
 
-# Uplinks
+- type: Tag
+  id: ForceNoTileWalls
+
+# region Hardsuit injection
+- type: Tag
+  id: FitsHardsuit
+
+- type: Tag
+  id: FitsMurmilloHardsuit
+
+# region Uplinks
 - type: Tag
   id: BlueShield
 
@@ -46,10 +62,10 @@
   id: LoneOpsUplink
 
 - type: Tag
-  id: NTUplink
+  id: NoCommission
 
 - type: Tag
-  id: NoCommission
+  id: NTUplink
 
 - type: Tag
   id: PirateUplink
@@ -60,7 +76,11 @@
 - type: Tag
   id: SyndieAgentUplink
 
-# Species / roles / targets
+# region Ammunition
+- type: Tag
+  id: CartridgeMinigun
+
+# region Species / roles / targets
 - type: Tag
   id: Abductor
 
@@ -71,10 +91,22 @@
   id: CarpRiftHealTarget
 
 - type: Tag
+  id: RogueSiliconHealTarget
+
+- type: Tag
   id: Felinid
 
 - type: Tag
   id: HumanoidXeno
+
+- type: Tag
+  id: Milira
+
+- type: Tag
+  id: NpcBoss
+
+- type: Tag
+  id: NpcVeteranLeader
 
 - type: Tag
   id: Predator
@@ -85,7 +117,7 @@
 - type: Tag
   id: WingToggleAllowed
 
-# Docks
+# region Docks
 - type: Tag
   id: DockCentComm
 
@@ -101,14 +133,17 @@
 - type: Tag
   id: DockSecurity
 
-# Borg modules
+# region Borg modules
 - type: Tag
   id: BorgModuleERT
 
 - type: Tag
   id: BorgModuleSecurity
 
-# Tools / devices
+- type: Tag
+  id: BorgModulePirate
+
+# region Tools / devices
 - type: Tag
   id: CreepyLaugh
 
@@ -128,9 +163,18 @@
   id: PlantAnalyzer
 
 - type: Tag
+  id: RadarConsoleCircuitboard
+
+- type: Tag
+  id: SunriseBlueprintXenoborg
+
+- type: Tag
+  id: SunriseWallhornElectronics
+
+- type: Tag
   id: TrayScanner
 
-# Cores / power
+# region Cores / power
 - type: Tag
   id: AnomalyCore
 
@@ -140,7 +184,7 @@
 - type: Tag
   id: PowerCellHigh
 
-# Ammo / payloads
+# region Ammo / payloads
 - type: Tag
   id: ArtilleryShell
 
@@ -164,6 +208,9 @@
 
 - type: Tag
   id: ImprovisedAmmoBox
+
+- type: Tag
+  id: ImprovisedGrenade
 
 - type: Tag
   id: ImprovisedGrenadeEmpty
@@ -195,12 +242,9 @@
 - type: Tag
   id: SpeedLoaderShotgun
 
-# Magazines
+# region Magazines
 - type: Tag
-  id: MagazineACP14
-
-- type: Tag
-  id: MagazinePistolHighCapacityRubber
+  id: HeavyAmmoBelt127
 
 - type: Tag
   id: MagazineAR18
@@ -215,34 +259,22 @@
   id: MagazineBoxL6Cap
 
 - type: Tag
-  id: MagazineBR64
-
-- type: Tag
   id: MagazineCannonBallMini
 
 - type: Tag
   id: MagazineCaselessRifle
 
 - type: Tag
-  id: MagazineDeagle
-
-- type: Tag
-  id: MagazineDl6902
+  id: MagazineChainGun
 
 - type: Tag
   id: MagazineDragunov
 
 - type: Tag
-  id: MagazineGlock22
-
-- type: Tag
-  id: MagazineGlock22Metus
+  id: MagazineGarand
 
 - type: Tag
   id: MagazineHeavyRifle
-
-- type: Tag
-  id: MagazineHIBrowning
 
 - type: Tag
   id: MagazineLightMachineGunMG60
@@ -251,13 +283,16 @@
   id: MagazineLightRiflePan
 
 - type: Tag
+  id: MagazineLightRifleImprovised
+
+- type: Tag
+  id: MagazineM28
+
+- type: Tag
   id: MagazineMachineGunHeavyRifle
 
 - type: Tag
   id: MagazineMachineGunMG42
-
-- type: Tag
-  id: MagazineM28
 
 - type: Tag
   id: MagazineMP5
@@ -266,30 +301,26 @@
   id: MagazineMP7
 
 - type: Tag
-  id: MagazineNewVector
-
-- type: Tag
   id: MagazineP90
-
-- type: Tag
-  id: MagazinePistolCaselessRifleTec9
 
 - type: Tag
   id: MagazinePistolDPSubMachineGun
 
 - type: Tag
+  id: MagazinePistolHighCapacityRubber
+
+- type: Tag
   id: MagazinePistolSubMachineGunCap
 
-- type: Tag
-  id: MagazineRPD
+# region Weapons
 
 - type: Tag
-  id: MagazineScorpion
+  id: SyndicateRapier
 
 - type: Tag
-  id: MagazineVP78
+  id: WrappedWeapon
 
-# Weapons / upgrades
+# region Upgrades
 - type: Tag
   id: ArmorBasic
 
@@ -298,6 +329,9 @@
 
 - type: Tag
   id: EnergySword
+
+- type: Tag
+  id: SunriseSyndicateRing
 
 - type: Tag
   id: GorillaUpgradeKit
@@ -309,13 +343,13 @@
   id: ModularReceiverAuto
 
 - type: Tag
+  id: ImprovisedModularReceiver
+
+- type: Tag
   id: RiotShield
 
 - type: Tag
   id: RiotShieldStrobe
-
-- type: Tag
-  id: SyndicateRapier
 
 - type: Tag
   id: UpgradeDrozd
@@ -348,18 +382,19 @@
   id: UpgradeLecter
 
 - type: Tag
+  id: UpgradeLecterMk3
+
+- type: Tag
   id: UpgradeWebVest
 
 - type: Tag
   id: WeaponPistolG22
 
+# region shuttles
 - type: Tag
-  id: WeaponPistolTec9
+  id: 120mmRocket
 
-- type: Tag
-  id: WrappedWeapon
-
-# Clothing / gear
+# region Clothing / gear
 - type: Tag
   id: FullBodyOuter
 
@@ -381,7 +416,7 @@
 - type: Tag
   id: WhitelistChameleonSuit
 
-# Materials / construction
+# region Materials / construction
 - type: Tag
   id: Board
 
@@ -403,7 +438,7 @@
 - type: Tag
   id: Tile
 
-# Mechs
+# region Mechs
 - type: Tag
   id: Clarke
 
@@ -427,7 +462,7 @@
 
 - type: Tag
   id: CombatMech
-# TODO: Make medical mech
+# region TODO: Make medical mech
 
 - type: Tag
   id: DollHouse
@@ -549,9 +584,12 @@
 - type: Tag
   id: SpecialMech
 
-# Misc / fun
+# region Misc / fun
 - type: Tag
   id: BluespaceBox
+
+- type: Tag
+  id: ClownKudzu
 
 - type: Tag
   id: Coin
@@ -560,13 +598,13 @@
   id: Geranium
 
 - type: Tag
+  id: PlushieKalium
+
+- type: Tag
   id: PokerCard
 
 - type: Tag
   id: PokerCardClassic
-
-- type: Tag
-  id: PlushieKalium
 
 - type: Tag
   id: SnapPop
@@ -580,14 +618,110 @@
 - type: Tag
   id: ToySword
 
-# Dungeon
+- type: Tag
+  id: WhiteLily
+
+# region Dungeon
 - type: Tag
   id: SalvageSyndicateBase
 
 - type: Tag
-  id: Milira
+  id: ShipWreck
 
-### INTERACTION TAGS ###
+- type: Tag
+  id: SovietDungeon
+
+- type: Tag
+  id: SovietDungeonWEH
+
+- type: Tag
+  id: SovietPinsExped
+
+- type: Tag
+  id: SovietDamagedIDCardExped
+
+- type: Tag
+  id: SovietDamagedIDCardsSoldierExped
+
+- type: Tag
+  id: SovietDamagedIDCardsOfficerExped
+
+- type: Tag
+  id: SovietDamagedIDCardsCaptainExped
+
+- type: Tag
+  id: SovietWarehouse
+
+- type: Tag
+  id: SunriseSovietDungeon11x5
+
+- type: Tag
+  id: SunriseSovietDungeon3x5
+
+- type: Tag
+  id: SunriseSovietDungeon5x5
+
+- type: Tag
+  id: SunriseSovietDungeon7x3
+
+- type: Tag
+  id: SunriseSovietDungeon7x7
+
+- type: Tag
+  id: SunriseSovietDungeonGeneral
+
+- type: Tag
+  id: SunriseSovietDungeonWEH11x5
+
+- type: Tag
+  id: SunriseSovietDungeonWEH3x5
+
+- type: Tag
+  id: SunriseSovietDungeonWEH5x5
+
+- type: Tag
+  id: SunriseSovietDungeonWEH7x3
+
+- type: Tag
+  id: SunriseSovietDungeonWEH7x7
+
+- type: Tag
+  id: SunriseSovietDungeonWEHGeneral
+
+- type: Tag
+  id: SunriseSyndicateBase11x5
+
+- type: Tag
+  id: SunriseSyndicateBase3x5
+
+- type: Tag
+  id: SunriseSyndicateBase5x5
+
+- type: Tag
+  id: SunriseSyndicateBase7x3
+
+- type: Tag
+  id: SunriseSyndicateBase7x7
+
+- type: Tag
+  id: SunriseSyndicateBaseGeneral
+
+- type: Tag
+  id: BoxMaint5x5
+
+- type: Tag
+  id: BoxMaint3x3
+
+- type: Tag
+  id: BoxMaint4x4
+
+- type: Tag
+  id: BoxMaint13x10
+
+- type: Tag
+  id: BoxMaints
+
+# region INTERACTION TAG
 # Как одежда закрывает/не закрывает ту или иную область тела
 - type: Tag
   id: CommandSuit
@@ -627,7 +761,30 @@
 - type: Tag
   id: SmoothGloves
 
+# добавляет вещь в чёрный список ксеноморфов
+- type: Tag
+  id: NoXeno
+
 # head
 # Закрыто только сверху (шлюяпы, кепки)
 - type: Tag
   id: TopCovered
+
+# head
+# обозначает вещь, как твёрдый шлем
+- type: Tag
+  id: Helmet
+
+# emotes
+# Используется для whitelist у MonkeyDeathgasp и blacklist у DefaultDeathgasp.
+- type: Tag
+  id: MonkeyDeathgasp
+
+# emotes
+# Используется для whitelist у ScurretDeathgasp и blacklist у DefaultDeathgasp.
+- type: Tag
+  id: ScurretDeathgasp
+
+# region Medicine
+- type: Tag
+  id: AutoMender  # Используется для whitelist у ClothingBeltMedical =3

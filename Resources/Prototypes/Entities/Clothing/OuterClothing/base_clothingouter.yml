@@ -158,8 +158,6 @@
   - type: HeldSpeedModifier
   - type: Item
     size: Ginormous
-  - type: Pierceable
-    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -191,8 +189,16 @@
     - WhitelistChameleon
     - FullBodyOuter # Sunrise-Edit
     - WhitelistChameleonSuit #Sunrise-edit
-  - type: StaminaResistance #Sunrise-added
-    damageCoefficient: 0.8 #Sunrise-added
+    - NoPaint #Sunrise-edit
+  # Sunrise-start
+  - type: Pierceable
+    level: Metal
+  - type: StaminaResistance
+    damageCoefficient: 0.8
+  - type: BedHealModifierClothing
+    multiplier: 0.25
+  - type: ArmorSparkEffect #starlight
+  # Sunrise-end
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: DamageOnInteractProtection
@@ -203,7 +209,6 @@
   - type: HideLayerClothing
     slots:
     - Tail
-  - type: ArmorSparkEffect #starlight
 
 - type: entity
   abstract: true
@@ -236,11 +241,16 @@
   - type: HideLayerClothing
     slots:
     - Tail
-  # Sunrise-Start
+  # Sunrise-start
+  - type: Pierceable
+    level: Wood
+  - type: BedHealModifierClothing
+    multiplier: 0.25
   - type: Tag
     tags:
     - FullBodyOuter
     - WhitelistChameleon
+    - Hardsuit
   - type: StaminaResistance
     damageCoefficient: 0.9
   # Sunrise-End

@@ -20,10 +20,6 @@
     tags:
     - Kangaroo
     - WhitelistChameleon
-  # Sunrise-Start
-  - type: DiseaseImmuneClothing
-    prob: 0.2
-  # Sunrise-End
 
 - type: entity
   parent: ClothingHandsGlovesBoxingBase
@@ -191,8 +187,6 @@
   components:
   - type: Sprite
     sprite: Clothing/Hands/Gloves/nitrile.rsi
-  - type: DiseaseImmuneClothing
-    prob: 0.4
   - type: Clothing
     sprite: Clothing/Hands/Gloves/nitrile.rsi
   - type: Fiber
@@ -321,16 +315,22 @@
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
-  - type: MeleeWeapon #Sunrise-start
-    attackRate: 1.5
+  # Sunrise-start
+  - type: MeleeWeapon
+    attackRate: 2
     damage:
       types:
-        Blunt: 8
-    bluntStaminaDamageFactor: 1.5
+        Blunt: 6
+    bluntStaminaDamageFactor: 1.3
     soundHit:
       collection: Punch
     animation: WeaponArcFist
-    mustBeEquippedToUse: true #Sunrise-end
+    mustBeEquippedToUse: true
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: ClothingHandsGlovesCombatFingerless
+  # Sunrise-end
 
 # can't parent combat gloves since they are butcherable
 - type: entity

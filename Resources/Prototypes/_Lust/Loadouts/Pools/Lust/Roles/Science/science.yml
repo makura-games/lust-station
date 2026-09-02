@@ -1,0 +1,72 @@
+- type: roleLoadout
+  id: LustJobScientist
+  groups:
+  - GroupTankHarness
+  - ScientistNeck
+  - ScientistJumpsuit
+  - ScientistBackpack
+  - ScientistOuterClothing
+  - ScientistGloves
+  - ScientistShoes
+  - SunriseScientistPDA
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobResearchAssistant
+  groups:
+  - GroupTankHarness
+  - ResearchAssistantJumpsuit
+  - ScientistBackpack
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobSeniorResearcher
+  groups:
+  - SunriseGlasses
+  - SeniorResearcherJumpsuit
+  - ScientistGloves
+  - ScientistBackpack
+  - ScientistShoes
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobRoboticist
+  groups:
+  - RoboticistHead
+  - ScientistNeck
+  - RoboticistJumpsuit
+  - RoboticistOuterClothing
+  - ScientistBackpack
+  - ScientistShoes
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+

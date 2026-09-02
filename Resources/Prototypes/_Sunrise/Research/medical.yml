@@ -17,6 +17,7 @@
     - Cautery
     - Saw
     - Hemostat
+    - BorgModuleSurgical
 
 - type: technology
   id: CyberLimbsTech
@@ -58,8 +59,8 @@
   recipeUnlocks:
   - MedicalAssemblerMachineCircuitboard
   - BlankMediPen
-  # technologyPrerequisites: # Sunrise-todo Привязать JetInjectors
-  #   - MedicalHyposprays
+  technologyPrerequisites:
+    - MechanizedTreatment
 
 - type: technology
   id: SurgeryTechAdvanced
@@ -129,6 +130,26 @@
   - Security
   - Medical
 
+- type: technology
+  id: BiochemicalImplantsTech
+  name: research-technology-biochemical-implants
+  icon:
+    sprite: _Sunrise/Entities/Objects/Implants/implants.rsi
+    state: inject_implant_blue
+  discipline: Biochemical
+  tier: 2
+  cost: 9000
+  recipeUnlocks:
+    - SadTromboneImplant
+    - BikeHornImplant
+    - LightImplant
+    - TrackingImplant
+    - CreepyLaughImplant # EMAG
+  technologyPrerequisites:
+    - CyberImplantsTech
+  radioChannels:
+  - Medical
+
 # Sunrise, moved from civilian to medical. Ave Starlight!
 - type: technology
   id: BiochemicalStasis
@@ -147,7 +168,6 @@
   radioChannels:
   - Medical
 
-# Sunrise-edit: Moved from CivilianServices and renamed a bit to avoid conflict
 - type: technology
   id: MechanizedMedicalTreatment
   name: research-technology-mechanized-medical-treatment
@@ -159,10 +179,21 @@
   cost: 5000
   recipeUnlocks:
   - BorgModuleAdvancedChemical
-  - AutoMenderBurn
-  - AutoMenderBrute
   radioChannels:
   - Medical
+
+- type: technology # Merge with other T2 medical research if possible!
+  id: MechanizedTreatment
+  name: research-technology-mechanized-treatment
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: medical
+  discipline: CivilianServices
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - BorgModuleAdvancedTopical
+  - AdvancedJetInjector
 
 - type: technology
   id: FunctionalCyberLimbsTech
@@ -396,6 +427,27 @@
   - Security
   - Medical
 
+- type: technology
+  id: AdvancedImplantsTech
+  name: research-technology-advanced-implants
+  icon:
+    sprite: _Sunrise/Entities/Objects/Implants/implants.rsi
+    state: reviver_implant
+  discipline: Biochemical
+  tier: 3
+  cost: 12000
+  recipeUnlocks:
+    - ReviverImplant
+    - NutrimentImplant
+    - ProtoAdrenalImplant # EMAG
+    - ScramImplantProto # EMAG
+  technologyPrerequisites:
+    - BiochemicalImplantsTech
+    - SurgeryTechAdvanced
+  radioChannels:
+  - Medical
+  - Security
+
 # Sunrise, moved from civilian to medical
 - type: technology
   id: BluespaceChemistry
@@ -409,7 +461,9 @@
   recipeUnlocks:
   - BluespaceBeaker
   - SyringeBluespace
+  - VialBluespace # Sunrise-Add
   - BluespacePillPatchCanister # Sunrise-Add
+  - JugBluespace # Sunrise-Add
   radioChannels:
   - Medical
 

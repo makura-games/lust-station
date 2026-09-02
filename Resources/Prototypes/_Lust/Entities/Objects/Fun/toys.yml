@@ -1,31 +1,4 @@
 ﻿- type: entity
-  id: PlushieAnameGermanikum
-  parent: BasePlushie
-  name: Plush Aname Germanikum
-  components:
-  - type: Sprite
-    sprite: _Lust/Objects/Fun/toys.rsi
-    layers:
-    - state: plushie-aname
-    - state: plushie-aname-unshaded
-      shader: unshaded
-  - type: TriggerOnUse
-  - type: UseDelayOnTrigger
-  - type: UseDelayTriggerCondition
-  - type: EmitSoundOnTrigger
-    sound: null
-  - type: SpeakOnTrigger
-    pack: LoviAptechku
-  - type: TTS
-    voice: Triss
-
-- type: localizedDataset
-  id: LoviAptechku
-  values:
-    prefix: lovi-aptechku-
-    count: 1
-
-- type: entity
   id: PlushieAnnaLisechanskaya
   parent: BasePlushie
   name: Plush Anna Lisechanskaya
@@ -136,15 +109,32 @@
 - type: entity
   id: PlushieMaksimDedov
   parent: BasePlushie
-  name: Maksim Dedov
+  name: Maksa plushie
   components:
   - type: Sprite
     sprite: _Lust/Objects/Fun/toys.rsi
     state: ded_plushie
+  - type: Item
+    sprite: _Lust/Objects/Fun/maksa_plushie.rsi
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_Lust/half-life_crowbar.ogg
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Lust/half-life_crowbar.ogg
-  - type: TriggerOnActivate
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: Catchable
+    catchChance: 0.8
+    catchSuccessSound:
+      path: /Audio/Items/Toys/rawr.ogg
   - type: UseDelay
     delay: 1
 
@@ -340,90 +330,6 @@
 
 - type: entity
   parent: BasePlushie
-  id: PlushieSophieKomissarova
-  name: Plushie Sophie Komissarova
-  components:
-  - type: Sprite
-    sprite: _Lust/Objects/Fun/toys.rsi
-    state: sophiekomissarova
-  - type: UseDelay
-    delay: 4
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Items/Defib/defib_charge.ogg
-  - type: Item
-    heldPrefix: sophiekomissarova
-
-- type: entity
-  parent: BasePlushie
-  id: PlushieDrasusLeverian
-  name: Plushie Drasus Leverian
-  components:
-  - type: Sprite
-    sprite: _Lust/Objects/Fun/Plushies/drasus_leverian.rsi
-    state: icon
-  - type: UseDelay
-    delay: 6
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Machines/scanning.ogg
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/Machines/scanning.ogg
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Items/Stamp/automatic_stamp.ogg
-  - type: Clothing
-    quickEquip: false
-    sprite: _Lust/Objects/Fun/Plushies/drasus_leverian.rsi
-    slots:
-    - NECK
-  - type: Item
-    sprite: _Lust/Objects/Fun/Plushies/drasus_leverian.rsi
-
-- type: entity
-  parent:
-  - BasePlushie
-  id: PlushieRaneliToll
-  name: Plushie Raneli Toll
-  description: |
-    Pocket doctor and little sorcerer. I'll be very happy if this toy ends up in the clawed paws of a tasty xenomorph...
-    Viva la Pivo!
-  components:
-  - type: Sprite
-    sprite: _Lust/Objects/Fun/toys.rsi
-    layers:
-    - state: plushie-raneli-toll
-    - state: plushie-raneli-toll-eyes
-      visible: true
-      shader: unshaded
-      map: [ "light" ]
-  - type: Item
-    heldPrefix: plushie-raneli-toll
-  - type: Clothing
-    quickEquip: false
-    sprite: _Lust/Objects/Fun/toys.rsi
-    equippedPrefix: plushie-raneli-toll
-    slots:
-    - HEAD
-  - type: EmitSoundOnUse
-    sound:
-      path: /Audio/_Sunrise/Interactions/stroke/stroke_1.ogg
-  - type: MeleeWeapon
-    soundHit:
-      collection: FelinidMews
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/_Sunrise/Interactions/stroke/stroke_1.ogg
-  - type: EmitSoundOnCollide
-    sound:
-      collection: FelinidMews
-  - type: EmitSoundOnLand
-    sound:
-      collection: FelinidMews
-
-- type: entity
-  parent: BasePlushie
   id: PlushieAshito
   name: Plushie Ashito
   components:
@@ -596,75 +502,3 @@
       - state: diego-vulpa-inhand-left
       right:
       - state: diego-vulpa-inhand-right
-
-- type: entity
-  parent: [BasePlushie, BaseFoldable]
-  id: PlushieLilith
-  name: Plushie L.I.L.I.T.H
-  description: A giant plush medborg, with a tag on its hip that reads "L.I.L.I.T.H - Deus Ex Machine." You smell the cloying scent of beer on it, and it makes you want to pet Nians and RAAAR.
-  components:
-  - type: Sprite
-    sprite: _Lust/Objects/Fun/Plushies/lilith.rsi
-    layers:
-    - state: icon
-      map: [ "unfoldedLayer" ]
-    - state: icon2
-      map: ["foldedLayer"]
-      visible: false
-  - type: Item
-    inhandVisuals:
-      left:
-      - state: inhand-LEFT
-      right:
-      - state: inhand-RIGHT
-    heldPrefix: icon
-    size: Large
-  - type: UseDelay
-    delay: 2.0
-  - type: Appearance
-  - type: EmitSoundOnLand
-    sound:
-      path: /Audio/Machines/buzz-two.ogg
-      params:
-        volume: 2
-  - type: Foldable
-    canFoldInsideContainer: true
-  - type: FoldableClothing
-  - type: SpeakOnTrigger
-    pack: lilithPhrases
-    keysIn:
-    - lilith
-  - type: TriggerOnUse
-    keyOut: lilith
-  - type: UseDelayOnTrigger
-    keysIn:
-    - lilith
-  - type: UseDelayTriggerCondition
-    keys:
-    - lilith
-  - type: EmitSoundOnActivate
-    sound:
-      path: /Audio/Items/Toys/rawr.ogg
-      params:
-        volume: 9
-  - type: EmitSoundOnCollide
-    sound:
-      path: /Audio/Effects/Cargo/ping.ogg
-      params:
-        volume: 2
-  - type: EmitSoundOnUse
-    sound: null
-    handle: false
-  - type: EmitSoundOnTrigger
-    sound: null
-  - type: TTS
-    voice: MitaKind
-  - type: BorgVoice
-    selectedVoiceId: MitaKind
-    voiceEffect: robot
-
-- type: localizedDataset
-  id: lilithPhrases
-  values:
-    prefix: lilith-
-    count: 2

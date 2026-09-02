@@ -37,12 +37,20 @@ public sealed partial class TestPair : RobustIntegrationTest.TestPair
                 map.Log.Level = LogLevel.Warning;
         };
 
+        // Sunrise added start - применяем ограничение и к журналам, созданным после чтения CVar
+        ConfigureLogLevels();
+        // Sunrise added end
+
         var settings = (PoolSettings)Settings;
         if (!settings.DummyTicker)
         {
             var gameTicker = Server.System<GameTicker>();
             await Server.WaitPost(() => gameTicker.RestartRound());
         }
+
+        // Sunrise added start - включаем диагностику времени только по запросу
+        await InitializeTimingDiagnostics();
+        // Sunrise added end
     }
 
     public override async Task RevertModifiedCvars()

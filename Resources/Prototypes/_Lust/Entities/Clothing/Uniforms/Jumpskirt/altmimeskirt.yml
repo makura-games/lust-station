@@ -5,6 +5,6 @@
   description: Looks funny a little, but feels so sad...
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/Uniforms/Jumpskirt/altmimeskirt.rsi
+    sprite: _Lust/Clothing/Uniforms/Jumpskirt/alt_mime_skirt.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/Uniforms/Jumpskirt/altmimeskirt.rsi
+    sprite: _Lust/Clothing/Uniforms/Jumpskirt/alt_mime_skirt.rsi

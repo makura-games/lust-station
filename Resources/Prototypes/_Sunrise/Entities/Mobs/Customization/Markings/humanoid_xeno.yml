@@ -1,8 +1,7 @@
 - type: marking
   id: HumanoidXenoTailsDefault
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: long_primary
@@ -10,8 +9,7 @@
 - type: marking
   id: HumanoidXenoTailsWagging
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sponsorOnly: false
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
@@ -20,8 +18,7 @@
 - type: marking
   id: HumanoidXenoTailsPredalien
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: predalien
@@ -29,8 +26,7 @@
 - type: marking
   id: HumanoidXenoTailsPretor
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: pretor
@@ -38,8 +34,7 @@
 - type: marking
   id: HumanoidXenoTailsQueen
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: queen1
@@ -47,8 +42,7 @@
 - type: marking
   id: HumanoidXenoTailsQueenAlt
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: queen2
@@ -56,8 +50,7 @@
 - type: marking
   id: HumanoidXenoTailsRunner
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: runner
@@ -65,8 +58,7 @@
 - type: marking
   id: HumanoidXenoTailsSpitter
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: spitter
@@ -74,8 +66,7 @@
 - type: marking
   id: HumanoidXenoTailsAltQueenV2
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: alt_queen_tail
@@ -83,8 +74,7 @@
 - type: marking
   id: HumanoidXenoTailsBoiler
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: boiler_tail
@@ -92,8 +82,7 @@
 - type: marking
   id: HumanoidXenoTailsCarrier
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: carrier_tail
@@ -101,8 +90,7 @@
 - type: marking
   id: HumanoidXenoTailsCougar
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: cougar_tail
@@ -110,17 +98,31 @@
 - type: marking
   id: HumanoidXenoTailsCrusher
   bodyPart: Tail
-  markingCategory: Tail
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
     state: crusher_tail
 
 - type: marking
+  id: HumanoidXenoTailsRavager
+  bodyPart: Tail
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
+    state: ravage_tail
+
+- type: marking
+  id: HumanoidXenoTailsNeomorph
+  bodyPart: Tail
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/tails.rsi
+    state: neo_tail
+
+- type: marking
   id: HumanoidXenoChestPredalien
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/body.rsi
     state: predalien_chest
@@ -128,8 +130,7 @@
 - type: marking
   id: HumanoidXenoChestPretor
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/body.rsi
     state: pretor_chest
@@ -137,26 +138,47 @@
 - type: marking
   id: HumanoidXenoChestQueen
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/body.rsi
     state: queen_chest
 
 - type: marking
+  id: HumanoidXenoChestNeomorph
+  bodyPart: Chest
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/body.rsi
+    state: neo_body
+
+- type: marking
+  id: HumanoidXenoChestSpitter
+  bodyPart: Chest
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/body.rsi
+    state: spitter_body
+
+- type: marking
   id: HumanoidXenoChestRunner
   bodyPart: Chest
-  markingCategory: Chest
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/body.rsi
     state: runner_chest
 
 - type: marking
+  id: HumanoidXenoChestCougar
+  bodyPart: Chest
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/body.rsi
+    state: cougar_body
+
+- type: marking
   id: HumanoidXenoHeadDefault
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Species/HumanoidXeno/parts.rsi
     state: head_m
@@ -166,8 +188,7 @@
 - type: marking
   id: HumanoidXenoHeadPretor
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: pretor_head
@@ -177,8 +198,7 @@
 - type: marking
   id: HumanoidXenoHeadQueen
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: queen_head
@@ -188,8 +208,7 @@
 - type: marking
   id: HumanoidXenoHeadRunner
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: runner_head
@@ -199,8 +218,7 @@
 - type: marking
   id: HumanoidXenoHeadSpitter
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: spitter_head
@@ -210,8 +228,7 @@
 - type: marking
   id: HumanoidXenoHeadPredalien
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: predalien_head
@@ -223,8 +240,7 @@
 - type: marking
   id: HumanoidXenoHeadAltPretor
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: alt_pretor_head
@@ -234,8 +250,7 @@
 - type: marking
   id: HumanoidXenoHeadAltQueen
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: alt_queen_head
@@ -245,8 +260,7 @@
 - type: marking
   id: HumanoidXenoHeadBoilerHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: boiler_head
@@ -256,8 +270,7 @@
 - type: marking
   id: HumanoidXenoHeadCarrierHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: carrier_head
@@ -267,8 +280,7 @@
 - type: marking
   id: HumanoidXenoHeadCougarHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: cougar_head
@@ -278,8 +290,7 @@
 - type: marking
   id: HumanoidXenoHeadCrusherHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: crusher_head
@@ -289,10 +300,45 @@
 - type: marking
   id: HumanoidXenoHeadWorkerHead
   bodyPart: Head
-  markingCategory: Head
-  speciesRestriction: [HumanoidXeno]
+  groupWhitelist: [ HumanoidXeno ]
   sprites:
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: worker_head
   - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
     state: worker_teeth
+
+- type: marking
+  id: HumanoidXenoHeadRavager
+  bodyPart: Head
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
+    state: ravager_head
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
+    state: ravager_teeth
+
+- type: marking
+  id: HumanoidXenoHeadNeomorph
+  bodyPart: Head
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
+    state: neo_head
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/head.rsi
+    state: neo_teeth
+
+- type: marking
+  id: HumanoidXenoArmsPredalien
+  bodyPart: LArm
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/arms.rsi
+    state: pred_arms
+
+- type: marking
+  id: HumanoidXenoLegsPredalien
+  bodyPart: LLeg
+  groupWhitelist: [ HumanoidXeno ]
+  sprites:
+  - sprite: _Sunrise/Mobs/Customization/HumanoidXeno/legs.rsi
+    state: pred_legs

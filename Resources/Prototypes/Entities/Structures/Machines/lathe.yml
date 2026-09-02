@@ -55,6 +55,11 @@
     price: 800
   - type: ResearchClient
   - type: TechnologyDatabase
+  - type: ApcPowerReceiver
+    powerLoad: 150
+  - type: PowerState
+    idlePowerDraw: 150
+    workingPowerDraw: 1000
 
 # a lathe that can be sped up with space lube / slowed down with glue
 - type: entity
@@ -144,6 +149,7 @@
     emagStaticPacks:
     - SecurityStaticSunrise # Sunrise-Add
     - SyndicateAmmoStatic
+    - SyndicateBorgModulesEmagSunrise # Sunrise-Add
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -223,6 +229,8 @@
     - NightVisionDevice
     # Sunrise-End
   - type: EmagLatheRecipes
+    emagStaticPacks:
+    - SyndicateBorgModulesEmagSunrise # Sunrise-Add
     emagDynamicPacks:
     # - SecurityAmmo # Sunrise-edit
     - SecurityExplosives
@@ -234,7 +242,7 @@
     - MedicalCyberlimbDynamic # Sunrise-Add
     - MedicalCyberOrgansDynamic # Sunrise-Add
     - MedicalImplantDynamic # Sunrise-Add
-    - SyndicateAmmoSunrise # Sunrise-Add
+    - SyndicateAmmoDynamicSunrise # Sunrise-Add
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -336,10 +344,12 @@
     - BorgModules
     - MechParts
     - MechEquipment
-    - RoboticsDynamicSunrise # Sunrise-Add
-    - MedicalCyberlimbDynamic # Sunrise-Add
-    - MedicalCyberOrgansDynamic # Sunrise-Add
-    - MedicalImplantDynamic # Sunrise-Add
+    # Sunrise-start
+    - BorgModulesSunrise
+    - RoboticsDynamicSunrise
+    - MedicalCyberlimbDynamic
+    - MedicalCyberOrgansDynamic
+    # Sunrise-end
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient
@@ -410,6 +420,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
@@ -431,6 +443,7 @@
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SyndicateAmmoStatic
+    - SyndicateBorgModulesEmagSunrise # Sunrise-Add
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient
@@ -475,6 +488,8 @@
     - type: Lathe
       idleState: icon
       runningState: icon
+      unlitIdleState: unlit
+      unlitRunningState: unlit-building
       staticPacks:
     #  - SecurityAmmoStatic # Sunrise - comment
       - SecurityStaticSunrise # Sunrise-Add
@@ -507,6 +522,8 @@
   - type: Lathe
     idleState: icon
     runningState: icon
+    unlitIdleState: unlit
+    unlitRunningState: unlit-building
     staticPacks:
     - TopicalsStatic
     - ChemistryStatic
@@ -523,6 +540,11 @@
     - MedicalCyberlimbDynamic # Sunrise-Add
     - MedicalCyberOrgansDynamic # Sunrise-Add
     - MedicalImplantDynamic # Sunrise-Add
+  # Sunrise-Start
+  - type: EmagLatheRecipes
+    emagDynamicPacks:
+    - MedicalImplantEmag
+  # Sunrise-End
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
@@ -668,7 +690,7 @@
     board: OreProcessorIndustrialMachineCircuitboard
   - type: Lathe
     materialUseMultiplier: 0.75
-    timeMultiplier: 0.5
+    timeMultiplier: 1.25 # Sunrise-Edit
     staticPacks:
     - OreSmelting
     - RGlassSmelting
@@ -739,6 +761,7 @@
     - FloorConcreteTilesStatic
     - CircuitFloorsStatic
     - FloorMarbleTilesStatic
+    - SunriseFloorTilesStatic # Sunrise-Edit
     dynamicPacks:
     - FauxTiles
   - type: MaterialStorage

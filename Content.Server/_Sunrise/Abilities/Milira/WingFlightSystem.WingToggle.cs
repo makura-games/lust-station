@@ -1,6 +1,6 @@
 using Content.Server.Actions;
-using Content.Server.Humanoid;
 using Content.Server.Popups;
+using Content.Shared._Sunrise.Humanoid;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Inventory;
@@ -22,9 +22,9 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
 {
     [Dependency] private readonly ActionsSystem _actions = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _appearance = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
     [Dependency] private readonly InventorySystem _inventory = default!;
+    [Dependency] private readonly SunriseHumanoidMarkingSystem _sunriseMarking = default!;
     [Dependency] private readonly TagSystem _tagSystem = default!;
 
     public override void Initialize()
@@ -34,6 +34,7 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
         SubscribeLocalEvent<WingToggleComponent, MapInitEvent>(OnWingToggleMapInit);
         SubscribeLocalEvent<WingToggleComponent, ComponentShutdown>(OnWingToggleShutdown);
         SubscribeLocalEvent<WingToggleComponent, ToggleActionEvent>(OnWingToggleAction);
+        SubscribeLocalEvent<WingToggleComponent, WingForceClose>(OnWingClose);
     }
 
     private void OnWingToggleMapInit(Entity<WingToggleComponent> ent, ref MapInitEvent args)
@@ -59,24 +60,21 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
         args.Handled = TryToggleWings(ent);
     }
 
-    public bool TryToggleWings(Entity<WingToggleComponent> ent, HumanoidAppearanceComponent? humanoid = null)
+    public bool TryToggleWings(Entity<WingToggleComponent> ent, bool forceClose = false)
     {
-        if (!Resolve(ent.Owner, ref humanoid, false))
-            return false;
-
-        if (!humanoid.MarkingSet.Markings.TryGetValue(MarkingCategories.Tail, out var markings) || markings.Count == 0)
-            return false;
-
-        if (TryComp<WingFlightComponent>(ent, out var wingFlight) && wingFlight.InertiaActive)
-            return false;
-
-        if (!ent.Comp.WingsOpened)
+        if (!_sunriseMarking.TryGetLayerMarkings(ent, HumanoidVisualLayers.Tail, out var markings) ||
+            markings.Count == 0)
         {
-            if (!CanOpenWings(ent))
-            {
-                _popup.PopupEntity(Loc.GetString("wing-toggle-open-blocked"), ent.Owner, ent.Owner, PopupType.Medium);
-                return false;
-            }
+            return false;
+        }
+
+        if (TryComp<WingFlightComponent>(ent, out var wingFlight) && wingFlight.InertiaActive && !forceClose)
+            return false;
+
+        if ((!forceClose || !ent.Comp.WingsOpened) && !CanOpenWings(ent))
+        {
+            _popup.PopupEntity(Loc.GetString("wing-toggle-open-blocked"), ent, ent, PopupType.Medium);
+            return false;
         }
 
         var openTarget = !ent.Comp.WingsOpened;
@@ -85,7 +83,7 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
 
         for (var i = 0; i < markings.Count; i++)
         {
-            var current = markings[i].MarkingId;
+            var current = markings[i].MarkingId.Id;
             var desired = openTarget
                 ? (current.EndsWith(suffix) ? current : $"{current}{suffix}")
                 : (current.EndsWith(suffix) ? current[..^suffix.Length] : current);
@@ -96,7 +94,7 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
             if (desired == current)
                 continue;
 
-            _appearance.SetMarkingId(ent.Owner, MarkingCategories.Tail, i, desired, humanoid: humanoid);
+            _sunriseMarking.SetMarkingId(ent.Owner, HumanoidVisualLayers.Tail, i, desired);
             changed = true;
         }
 
@@ -143,5 +141,10 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
             return;
 
         _actions.SetToggled(ent.Comp.ActionEntity.Value, ent.Comp.WingsOpened);
+    }
+
+    private void OnWingClose(Entity<WingToggleComponent> ent, ref WingForceClose args)
+    {
+        TryToggleWings(ent, forceClose: true);
     }
 }

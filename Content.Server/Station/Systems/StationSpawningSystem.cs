@@ -7,8 +7,10 @@ using Content.Server.Spawners.Components;
 using Content.Server.Station.Components;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Components;
 using Content.Shared._Sunrise.SunriseCCVars;
+using Content.Shared._Sunrise.Humanoid;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
+using Content.Shared.Body;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.DetailExaminable;
@@ -41,7 +43,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
     [Dependency] private readonly ActorSystem _actors = default!;
     [Dependency] private readonly IdCardSystem _cardSystem = default!;
     [Dependency] private readonly IConfigurationManager _configurationManager = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoidSystem = default!;
+    [Dependency] private readonly HumanoidProfileSystem _humanoidProfile = default!;
+    [Dependency] private readonly SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private readonly SunriseHumanoidProfileSystem _sunriseProfile = default!; // Sunrise-Edit
     [Dependency] private readonly IdentitySystem _identity = default!;
     [Dependency] private readonly MetaDataSystem _metaSystem = default!;
     [Dependency] private readonly PdaSystem _pdaSystem = default!;
@@ -110,7 +114,10 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         // Need to get the loadout up-front to handle names if we use an entity spawn override.
         var jobLoadout = LoadoutSystem.GetJobPrototype(prototype?.ID);
 
-        if (_prototypeManager.TryIndex(jobLoadout, out RoleLoadoutPrototype? roleProto))
+        // Sunrise-start
+        var effectiveJobLoadout = LoadoutSystem.GetEffectiveRolePrototype(jobLoadout, _prototypeManager);
+        if (_prototypeManager.TryIndex<RoleLoadoutPrototype>(effectiveJobLoadout, out var roleProto))
+        // Sunrise-end
         {
             profile?.Loadouts.TryGetValue(jobLoadout, out loadout);
 
@@ -153,7 +160,7 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             return jobEntity;
         }
 
-        string speciesId = profile != null ? profile.Species : SharedHumanoidAppearanceSystem.DefaultSpecies;
+        string speciesId = profile != null ? profile.Species : HumanoidCharacterProfile.DefaultSpecies;
 
         if (!_prototypeManager.TryIndex<SpeciesPrototype>(speciesId, out var species))
             throw new ArgumentException($"Invalid species prototype was used: {speciesId}");
@@ -162,7 +169,9 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         if (profile != null)
         {
-            _humanoidSystem.LoadProfile(entity.Value, profile);
+            _visualBody.ApplyProfileTo(entity.Value, profile);
+            _humanoidProfile.ApplyProfileTo(entity.Value, profile);
+            _sunriseProfile.ApplyProfileTo(entity.Value, profile); // Sunrise-Edit
             _metaSystem.SetEntityName(entity.Value, profile.Name);
 
             // Sunrise-Start

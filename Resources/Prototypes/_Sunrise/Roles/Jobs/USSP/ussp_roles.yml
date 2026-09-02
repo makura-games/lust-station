@@ -116,7 +116,7 @@
 #USSP Officer Soldier
 - type: job
   id: USSPOfficerAlt
-  name: job-name-usspofficer
+  name: job-name-ussp-officer-alt
   description: job-description-usspsoldier
   playTimeTracker: JobUSSPOfficeraAlt
   setPreference: false
@@ -257,7 +257,7 @@
     eyes: ClothingEyesHudSyndicate
     back: ClothingBackpackDuffelSyndicate
     outerClothing: ClothingOuterArmorRaidBiocode
-    shoes: ClothingShoesBootsCombatFilled
+    shoes: ClothingShoesBootsMagSyndie
     gloves: ClothingHandsGlovesCombatCQC
     ears: ClothingHeadsetAltSyndicateNoKey
     id: SyndiOperativePDA
@@ -270,6 +270,8 @@
     - PinpointerSyndicateNuclear
     - DeathRattleImplanter
     - RadioImplanter
+    - DeathRattleImplanter
+    - ScramImplanterProto
 
 - type: startingGear
   id: SyndicateRaidTeamLeaderGear

@@ -1,0 +1,11 @@
+- type: loadoutGroup
+  id: LustResearchDirectorNeck
+  name: loadout-group-research-director-neck
+  minLimit: 0
+  loadouts:
+  - ResearchDirectorMantle
+  - ResearchDirectorCloak
+  - ResearchDirectorScarf
+  - ResearchDirectorCloakLegacy
+  - RdSpecialCloak
+

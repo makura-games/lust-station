@@ -12,11 +12,9 @@
     - Book
   - type: StaticPrice
     price: 35
-  # Sunrise-start
   - type: PhysicalComposition
     materialComposition:
       Plastic: 50
-  # Sunrise-end
 
 - type: entity
   parent: BaseHyperLinkBook
@@ -33,7 +31,7 @@
     - state: icon_law
       color: "#fff300"
   - type: HyperLink
-    url: https://lust.station.wiki.shizainc.com/corplaw # Lust Station КЗ
+    url: https://lust.station.wiki.shizainc.com/corplaw # Lust-Edit
   - type: Tag
     tags:
     - Book

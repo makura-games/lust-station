@@ -1,0 +1,30 @@
+- type: loadoutGroup
+  id: LustSecurityGlasses
+  name: loadout-group-security-glasses
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - SecurityEyesHud
+  - SecurityEyesGlasses
+  - SecurityEyesEyepatchHud
+  - EyesHudSecurityAlt
+
+- type: loadoutGroup
+  id: LustSecurityOfficerNeck
+  parent: SecurityNeck
+  name: loadout-group-security-officer-neck
+  minLimit: 0
+  maxLimit: 1
+
+- type: loadoutGroup
+  id: LustHeadofSecurityNeck
+  name: loadout-group-head-of-security-neck
+  minLimit: 0
+  loadouts:
+  - HeadofSecurityCloak
+  - HeadofSecurityMantle
+  - HeadofSecurityDarthHOSCloak
+  - HeadofSecurityCloakHOSCloak
+  - HeadofSecurityScarf
+  - HosSpecialCloak
+

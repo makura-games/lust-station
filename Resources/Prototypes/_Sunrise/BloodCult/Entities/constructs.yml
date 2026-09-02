@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: BaseConstruct
   abstract: true
   categories: [ HideSpawnMenu ]
@@ -94,8 +94,9 @@
       actions: [JuggernautCreateWall]
     - type: Hands
       showInHands: true
-    - type: Body
-      prototype: ConstructJuggernaut
+    - type: ContainerContainer
+      containers:
+        body_organs: !type:Container
     - type: Juggernaut
     - type: TTS
       voice: enigma_dota_2
@@ -154,6 +155,7 @@
     - type: Construct
       actions: [WraithPhase]
     - type: MovementIgnoreGravity
+    - type: GravityAffected
     - type: MeleeWeapon
       hidden: true
       angle: 30

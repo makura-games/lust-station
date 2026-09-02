@@ -21,6 +21,9 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   displayWeight: 60
+  alternativeTitles:
+  - job-alt-title-training-officer
+  - job-alt-title-senior-officer
   access:
   - Security
   - Brig
@@ -33,7 +36,7 @@
 - type: startingGear
   id: SeniorOfficerGear
   equipment:
-#    eyes: ClothingEyesGlassesSecurity #Lust-Edit
+    # eyes: ClothingEyesGlassesSecurity # Lust-Edit
     head: ClothingHeadHatBeretSecurity
     id: SeniorOfficerPDA
     ears: ClothingHeadsetSecurity

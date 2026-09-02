@@ -31,12 +31,12 @@
     eyes: ClothingEyesGlassesSunglasses
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorCentcomCarapace
-    id: CentcomPDA
+    id: CentcomPDAQillu # Lust-Edit
     ears: ClothingHeadsetAltCentCom
     belt: WeaponPistolN1984
   storage:
     back:
-    - PenCentcom
+    - PenCentcomQillu # Lust-Edit
     - BoxFolderBlack
 
 - type: chameleonOutfit

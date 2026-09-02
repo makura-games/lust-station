@@ -1,0 +1,10 @@
+# Pins
+- type: loadout
+  id: ClothingNeckQilluPin
+  startingGear: ClothingNeckQilluPin
+
+- type: startingGear
+  id: ClothingNeckQilluPin
+  storage:
+    back:
+    - ClothingNeckQilluPin

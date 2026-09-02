@@ -1,0 +1,105 @@
+- type: roleLoadout
+  id: LustJobHeadOfPrison
+  groups:
+  - HeadOfPrisonJumpsuit
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobPrisonInspector
+  groups:
+  - PrisonInspectorHats
+  - PrisonInspectorGlasses
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobPrisonWorker
+  groups:
+  - PrisonWorkerHead
+  - PrisonWorkerJumpsuit
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobPrisonEngineer
+  groups:
+  - PrisonEngineerHead
+  - PrisonEngineerJumpsuit
+  - PrisonEngineerPDA
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobPrisonScientist
+  groups:
+  - PrisonScientistHead
+  - PrisonScientistJumpsuit
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobPrisonDoctor
+  groups:
+  - PrisonDoctorHead
+  - PrisonDoctorJumpsuit
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobPrisonTrainee
+  groups:
+  - PrisonTraineeHead
+  - PrisonTraineeJumpsuit
+  - PrisonTraineePDA
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobPrisonChef
+  groups:
+  - PrisonChefHead
+  - PrisonChefJumpsuit
+  - TrinketsPlanetPrison
+  - PlanetPrisonSecurityLoot
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+

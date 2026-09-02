@@ -1,0 +1,84 @@
+- type: roleLoadout
+  id: SunriseJobChiefEngineer
+  groups:
+  - GroupTankHarness
+  - ChiefEngineerHead
+  - SunriseCEMask
+  - ChiefEngineerJumpsuit
+  - SunriseCEGloves
+  - ChiefEngineerBackpack
+  - SunriseChiefEngineerOuterClothing
+  - SunriseChiefEngineerNeck
+  - SunriseChiefEngineerShoes
+  - SunriseChiefEngineerBra
+  - SunriseChiefEngineerPants
+  - SunriseSurvivalExtended
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - TrinketsEngineering
+  - Socks
+  - Contributors
+
+- type: roleLoadout
+  id: SunriseJobTechnicalAssistant
+  groups:
+  - GroupTankHarness
+  - SunriseStationEngineerHead
+  - StationSunriseEngineerMask
+  - TechnicalAssistantJumpsuit
+  - StationSunriseEngineerGloves
+  - StationEngineerBackpack
+  - SunriseStationEngineerOuterClothing
+  - StationSunriseEngineerNeck
+  - SunriseStationEngineerShoes
+  - SunriseSurvivalExtended
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - TrinketsEngineering
+  - Bra
+  - Pants
+  - Socks
+  - Contributors
+
+- type: roleLoadout
+  id: SunriseJobStationEngineer
+  groups:
+  - GroupTankHarness
+  - SunriseStationEngineerHead
+  - StationSunriseEngineerMask
+  - StationEngineerJumpsuit
+  - StationSunriseEngineerGloves
+  - StationEngineerBackpack
+  - SunriseStationEngineerOuterClothing
+  - StationSunriseEngineerNeck
+  - SunriseStationEngineerShoes
+  - SunriseStationEngineerID
+  - SunriseSurvivalExtended
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - TrinketsEngineering
+  - Bra
+  - Pants
+  - Socks
+  - Contributors
+
+- type: roleLoadout
+  id: SunriseJobAtmosphericTechnician
+  groups:
+  - GroupTankHarness
+  - SunriseAtmosHead
+  - SunriseAtmosMask
+  - AtmosphericTechnicianJumpsuit
+  - SunriseAtmosGloves
+  - AtmosphericTechnicianBackpack
+  - SunriseAtmosphericTechnicianOuterClothing
+  - SunriseAtmosNeck
+  - SunriseAtmosphericTechnicianShoes
+  - SunriseSurvivalExtended
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - TrinketsEngineering
+  - Bra
+  - Pants
+  - Socks
+  - Contributors

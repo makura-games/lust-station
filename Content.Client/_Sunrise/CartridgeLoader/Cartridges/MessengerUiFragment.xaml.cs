@@ -60,7 +60,6 @@ public sealed partial class MessengerUiFragment : BoxContainer
     [Dependency] private readonly IEntitySystemManager _entitySystemManager = default!;
     [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
-    [Dependency] private readonly IConfigurationManager _configurationManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly NetTexturesManager _netTexturesManager = default!;
@@ -152,7 +151,7 @@ public sealed partial class MessengerUiFragment : BoxContainer
         MessageInput.Editable = canInteract && hasChatSelected;
         SendButton.Disabled = !canInteract || !hasChatSelected;
         EmojiButton.Disabled = !canInteract || !hasChatSelected;
-        PhotoButton.Disabled = !canInteract || !hasChatSelected;
+        PhotoButton.Disabled = !canInteract || !hasChatSelected || !state.PhotoSendingEnabled;
 
         if (state.PhotoGallery != null && state.PhotoGallery.Count > 0)
         {
@@ -207,9 +206,8 @@ public sealed partial class MessengerUiFragment : BoxContainer
 
         if (_currentChatId != null && state.MessageHistory.TryGetValue(_currentChatId, out var messages))
         {
-            messages = messages.OrderBy(m => m.Timestamp)
+            messages = messages.OrderBy(m => m.MessageId)
                 .ThenBy(m => m.SenderId)
-                .ThenBy(m => m.Content)
                 .ToList();
 
             if (messages.Count > MaxDisplayedMessages)
@@ -1348,11 +1346,12 @@ public sealed partial class MessengerUiFragment : BoxContainer
     /// <summary>
     /// Создает кнопку чата с общими элементами
     /// </summary>
-    private Button CreateChatButton(string chatId, string chatName, bool isPinned, int unreadCount,
+    private Button CreateChatButton(string chatId, string chatName, string controlName, bool isPinned, int unreadCount,
         ProtoId<JobIconPrototype>? jobIconId, Action<string, string> onSelect, Action<string>? onTogglePin)
     {
         var button = new Button
         {
+            Name = controlName,
             HorizontalExpand = true,
             ClipText = false,
             TextAlign = Label.AlignMode.Left,
@@ -1438,6 +1437,7 @@ public sealed partial class MessengerUiFragment : BoxContainer
         return CreateChatButton(
             chatId,
             user.Name,
+            $"MessengerPersonalChat_{user.UserId}",
             isPinned,
             unreadCount,
             user.JobIconId,
@@ -1457,6 +1457,7 @@ public sealed partial class MessengerUiFragment : BoxContainer
         return CreateChatButton(
             group.GroupId,
             group.Name,
+            $"MessengerGroupChat_{group.GroupId}",
             isPinned,
             unreadCount,
             null,

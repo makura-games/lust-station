@@ -1,0 +1,93 @@
+- type: roleLoadout
+  id: LustJobIAA
+  groups:
+  - IAANeck
+  - IAAuniformFormalSuit
+  - IAAOuterClothing
+  - IAASatchel
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobMagistrat
+  groups:
+  - CommonBackpack
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobNtrOfficer
+  groups:
+  - UniformNTR
+  - BackNTR
+  - SunriseTrinkets
+  - SecurityTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobNanoTrasenRepresentative
+  groups:
+  - NanoTrasenRepresentativeJumpsuit
+  - NanoTrasenRepresentativeOuterClothing
+  - NanoTrasenRepresentativeBackpack
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - LustNanoTrasenRepresentativeBra
+  - LustNanoTrasenRepresentativePants
+  - Socks
+  - SunriseTrinkets
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobAdjutant
+  groups:
+  - AdjutantHead
+  - AdjutantJumpsuit
+  - AdjutantOuterClothing
+  - AdjutantBackpack
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - AdjutantBra
+  - AdjutantPants
+  - Socks
+  - SunriseTrinkets
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobComMaid
+  groups:
+  - ComMaidHead
+  - ComMaidNeck
+  - ComMaidJumpsuit
+  - ComMaidGloves
+  - ComMaidShoes
+  - ComMaidBackpack
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - LustSpecialLoadout
+  - Contributors
+

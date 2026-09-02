@@ -76,3 +76,17 @@
   - type: Icon
     sprite: _Lust/Objects/Devices/centcom_operator_pda_qillu.rsi
     state: pda
+
+- type: entity
+  parent: IAAPDA
+  id: IAAPDAQillu
+  suffix: Qillu
+  components:
+  - type: Pda
+    id: IAAIDCard
+    penSlot:
+      startingItem: Pen
+      priority: -1
+      whitelist:
+        tags:
+        - Write

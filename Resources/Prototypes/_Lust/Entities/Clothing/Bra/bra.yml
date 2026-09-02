@@ -1,0 +1,28 @@
+- type: entity
+  parent: ClothingBraStorageBase
+  id: ClothingBraCentComm
+  name: women's bra "CentComm"
+  description: Expensive lingerie in the formal colors of Qillu's highest corporate figures.
+  suffix: Qillu
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Bra/centcomm.rsi
+    state: female_bralette_icon
+  - type: Clothing
+    sprite: _Lust/Clothing/Bra/centcomm.rsi
+    equippedState: female_bralette
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: ClothingBraStorageBase
+  id: ClothingBraNanoTrasenRepresentative
+  name: women's bra "Qillu Representative"
+  description: A formal bra in Qillu representative colors.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Bra/ntrep.rsi
+    state: female_bralette_icon
+  - type: Clothing
+    sprite: _Lust/Clothing/Bra/ntrep.rsi
+    equippedState: female_bralette

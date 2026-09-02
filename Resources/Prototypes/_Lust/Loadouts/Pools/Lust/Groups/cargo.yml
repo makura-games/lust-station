@@ -1,0 +1,15 @@
+- type: loadoutGroup
+  id: LustSalvageSpecialistNeck
+  name: loadout-group-salvage-specialist-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SunriseScarfOrange
+  - SunriseScarfYellow
+  - SunriseScarfBrown
+  - SunriseScarfPurple
+  - SunriseBedsheetCosmos
+  - SalvageSpecialistNeck50h
+  - SalvageSpecialistNeck100h
+  - SalvageSpecialistNeck666h
+

@@ -9,7 +9,7 @@
     - state: icon
   - type: Appearance
   - type: Item
-    size: Huge
+    size: Large
   - type: Clothing
     quickEquip: false
     slots:
@@ -46,19 +46,44 @@
   id: PouchExplosiveFilled
   suffix: Filled Grenade
   components:
-  - type: StorageFill
-    contents:
-      - id: GrenadeIncendiary
-        amount: 1
-      - id: GrenadeShrapnel
-        amount: 1
-      - id: GrenadeStinger
-        amount: 1
-      - id: GrenadeFlashBang
-        amount: 1
-      - id: SmokeGrenade
-        amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: GrenadeIncendiary
+          amount: 1
+        - id: GrenadeShrapnel
+          amount: 1
+        - id: GrenadeStinger
+          amount: 1
+        - id: GrenadeFlashBang
+          amount: 1
+        - id: SmokeGrenade
+          amount: 2
 
+- type: entity
+  parent: PouchExplosive
+  id: PouchExplosiveGrenadeFragTimerFilled
+  suffix: Filled frag-timed
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: GrenadeFragTimer
+          amount: 6
+
+- type: entity
+  parent: PouchExplosive
+  id: PouchExplosiveGrenadeFragContactFilled
+  suffix: Filled frag-contact
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: GrenadeFrag
+          amount: 6
 #Ammo
 - type: entity
   parent: [Pouch]
@@ -81,21 +106,39 @@
   id: PouchAmmoFilledSMG
   suffix: Filled SMG
   components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistolSubMachineGun
-        amount: 4
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MagazinePistolSubMachineGun
+          amount: 4
 
 - type: entity
   parent: PouchAmmo
   id: PouchAmmoFilledPistol40
   suffix: Filled pistol .40
   components:
-  - type: StorageFill
-    contents:
-      - id: MagazinePistol40SP
-        amount: 2
-      - id: MagazinePistol40FMJ
-        amount: 1
-      - id: MagazinePistol40HP
-        amount: 1
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MagazinePistol40SP
+          amount: 2
+        - id: MagazinePistol40FMJ
+          amount: 1
+        - id: MagazinePistol40HP
+          amount: 1
+
+- type: entity
+  parent: PouchAmmo
+  id: PouchAmmoFilledLightRifle
+  suffix: Filled, light rifle
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MagazineLightRifleFMJ
+          amount: 2
+        - id: MagazineLightRifleSP
+          amount: 2

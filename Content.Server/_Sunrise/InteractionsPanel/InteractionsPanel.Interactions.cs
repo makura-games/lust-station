@@ -304,7 +304,7 @@ public partial class InteractionsPanel
         if (string.IsNullOrWhiteSpace(type) || type == "none")
             return;
 
-        var sex = TryComp<HumanoidAppearanceComponent>(ent, out var humanoid)
+        var sex = TryComp<HumanoidProfileComponent>(ent, out var humanoid)
             ? humanoid.Sex.ToString().ToLowerInvariant()
             : "unknown";
 
@@ -487,7 +487,7 @@ public partial class InteractionsPanel
         _chatSystem.TrySendInGameICMessage(uid, "кончает", InGameICChatType.Emote, false);
         _chatSystem.TryEmoteWithChat(uid, "Moan");
 
-        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
+        if (TryComp<HumanoidProfileComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
             SpawnSemen("Semen", Transform(uid).Coordinates);
 
         SetCooldown(uid, "orgasm", TimeSpan.FromSeconds(OrgasmCooldownSeconds));

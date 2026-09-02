@@ -30,6 +30,10 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+  - type: CanDualWield # Sunrise-Edit
+    dualWieldInaccuracyPenalty: 0.50
+    dualWieldFireRatePenalty: 0.25
+    dualWieldRecoilPenalty: 0.25
   - type: UseDelay
     delay: 0.66
   - type: ContainerContainer
@@ -92,6 +96,10 @@
   - type: Appearance
   - type: StaticPrice
     price: 1500
+  # Sunrise - Start
+  - type: StealTarget
+    stealGroup: OfficerHandgun
+  # Sunrise - End
 
 - type: entity
   name: Inspector
@@ -202,4 +210,3 @@
     capacity: 5
     chambers: [ null, null, null, null, null ]
     ammoSlots: [ null, null, null, null, null ]
-

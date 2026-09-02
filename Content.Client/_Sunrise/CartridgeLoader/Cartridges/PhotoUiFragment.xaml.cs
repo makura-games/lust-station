@@ -18,7 +18,6 @@ public sealed partial class PhotoUiFragment : BoxContainer
 {
     public event Action? OnCapturePhoto;
     public event Action<string>? OnDeletePhoto;
-    public event Action<string, string?, string?>? OnSendPhotoToMessenger;
     public event Action? OnRequestGallery;
     public event Action<bool>? OnToggleFlash;
 
@@ -362,11 +361,8 @@ public sealed class PhotoItemControl : ContainerButton
     {
         try
         {
-            var uploadedPath = _netTexturesManager.GetUploadedPath(imagePath);
-            if (_resourceCache.TryGetResource<TextureResource>(uploadedPath, out var textureResource))
-            {
-                 _previewRect.Texture = textureResource.Texture;
-            }
+            if (_netTexturesManager.TryGetTexture(imagePath, out var texture))
+                _previewRect.Texture = texture;
         }
         catch (Exception)
         {

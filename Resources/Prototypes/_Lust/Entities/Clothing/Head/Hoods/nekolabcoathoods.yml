@@ -4,9 +4,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/Head/Hoods/catHood.rsi
+    sprite: _Lust/Clothing/Head/Hoods/cat_hood.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/Head/Hoods/catHood.rsi
+    sprite: _Lust/Clothing/Head/Hoods/cat_hood.rsi
   - type: HideLayerClothing
     slots:
     - Hair
@@ -27,9 +27,9 @@
   description: You look some cute. Nyaa..
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/Head/Hoods/catHood.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood.rsi
     - type: Clothing
-      sprite: _Lust/Clothing/Head/Hoods/catHood.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodCoatNekoBase
@@ -39,9 +39,9 @@
   description: You look some cute. Nyaa..
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/Head/Hoods/catHoodBlue.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood_blue.rsi
     - type: Clothing
-      sprite: _Lust/Clothing/Head/Hoods/catHoodBlue.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood_blue.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodCoatNekoBase
@@ -51,9 +51,9 @@
   description: You look some cute. Nyaa..
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/Head/Hoods/catHoodGreen.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood_green.rsi
     - type: Clothing
-      sprite: _Lust/Clothing/Head/Hoods/catHoodGreen.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood_green.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodCoatNekoBase
@@ -63,6 +63,6 @@
   description: You look some cute. Nyaa..
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/Head/Hoods/catHoodPurple.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood_purple.rsi
     - type: Clothing
-      sprite: _Lust/Clothing/Head/Hoods/catHoodPurple.rsi
+      sprite: _Lust/Clothing/Head/Hoods/cat_hood_purple.rsi

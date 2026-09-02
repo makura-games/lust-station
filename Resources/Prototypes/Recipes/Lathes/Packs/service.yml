@@ -63,12 +63,18 @@
   id: Instruments
   recipes:
   - SynthesizerInstrument
+  # sunrise-start
+  - TapeRecorder
+  - TapeCassetteOneMinute
+  - TapeCassetteTwoMinutes
+  - TapeCassetteThreeMinutes
+  # sunrise-end
   - PushHorn
 
 - type: latheRecipePack
   id: ServiceBoards
   recipes:
-  - BiofabricatorMachineCircuitboard
+  #- BiofabricatorMachineCircuitboard # Sunrise-edit
   - FatExtractorMachineCircuitboard
   - HydroponicsTrayMachineCircuitboard # roundstart gear being unlocked roundstart when
   - SeedExtractorMachineCircuitboard # ^
@@ -76,3 +82,8 @@
   - ReagentGrinderIndustrialMachineCircuitboard
   - JukeboxCircuitBoard
   - DawInstrumentMachineCircuitboard
+  # Sunrise-start
+  - TelecomServerT2Circuitboard
+  - TelecomServerT3Circuitboard
+  - ResearchAndDevelopmentServerMachineCircuitboard
+  # Sunrise-end

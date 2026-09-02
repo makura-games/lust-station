@@ -8,9 +8,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Hands/Gloves/civilprotectionhands.rsi
+    sprite: _Lust/CP/Clothing/Hands/Gloves/civil_protection_hands.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Hands/Gloves/civilprotectionhands.rsi
+    sprite: _Lust/CP/Clothing/Hands/Gloves/civil_protection_hands.rsi
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative
@@ -34,9 +34,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Hands/Gloves/overwatchhands.rsi
+    sprite: _Lust/CP/Clothing/Hands/Gloves/overwatch_hands.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Hands/Gloves/overwatchhands.rsi
+    sprite: _Lust/CP/Clothing/Hands/Gloves/overwatch_hands.rsi
   - type: Insulated
   - type: Fiber
     fiberMaterial: fibers-insulative

@@ -1,5 +1,0 @@
-﻿- type: loadout # Lust Station
-  id: CaptainSpecialCloak
-  sponsorOnly: true
-  equipment:
-    neck: ClothingNeckCapSpecialCloak

@@ -1,7 +1,9 @@
 using System.IO;
+using Content.Server._Sunrise.Mapping;
 using Content.Server.Administration.Managers;
 using Content.Shared.Administration;
 using Content.Shared.Mapping;
+using Robust.Shared.Console;
 using Robust.Server.Player;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Network;
@@ -14,15 +16,18 @@ namespace Content.Server.Mapping;
 
 public sealed class MappingManager : IPostInjectInit
 {
+#if !FULL_RELEASE
     [Dependency] private readonly IAdminManager _admin = default!;
     [Dependency] private readonly ILogManager _log = default!;
     [Dependency] private readonly IServerNetManager _net = default!;
     [Dependency] private readonly IPlayerManager _players = default!;
     [Dependency] private readonly IEntitySystemManager _systems = default!;
     [Dependency] private readonly IEntityManager _ent = default!;
+    [Dependency] private readonly IConsoleHost _console = default!;
 
     private ISawmill _sawmill = default!;
     private ZStdCompressionContext _zstd = default!;
+#endif
 
     public void PostInject()
     {
@@ -49,6 +54,12 @@ public sealed class MappingManager : IPostInjectInit
             {
                 return;
             }
+
+            // Sunrise added start - сообщаем настраиваемые автокоманды сохранения карты перед сериализацией
+            var autoCommands = _systems.GetEntitySystem<MappingAutoSaveSystem>().GetMapSaveAutoCommandsSummary(mapUid);
+            if (autoCommands is not null)
+                _console.WriteLine(session, Loc.GetString("mapping-save-auto-commands", ("commands", autoCommands)));
+            // Sunrise added end
 
             var sys = _systems.GetEntitySystem<MapLoaderSystem>();
             var data = sys.SerializeEntitiesRecursive([mapUid]).Node;

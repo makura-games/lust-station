@@ -1,0 +1,6 @@
+﻿# Neck
+- type: loadout
+  id: CmoSpecialCloak
+  sponsorOnly: true
+  equipment:
+    neck: ClothingNeckCmoSpecialCloak

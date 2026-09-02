@@ -27,7 +27,7 @@
   parent: EnergyDomeBase
   components:
   - type: Sprite
-    sprite: Effects/EnergyDome/energydome_small.rsi
+    sprite: _Sunrise/Effects/EnergyDome/energydome_small.rsi
     layers:
     - state: small
       color: "#006400"
@@ -47,9 +47,9 @@
   suffix: Arrows
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrowsnetrunner.rsi
+    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrows_netrunner.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrowsnetrunner.rsi
+    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrows_netrunner.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -81,6 +81,7 @@
     containers:
       cell_slot: !type:ContainerSlot
       toggleable-clothing: !type:ContainerSlot
+      beakerSlot: !type:ContainerSlot
   - type: PowerCellSlot
     cellSlotId: cell_slot
   - type: ItemSlots
@@ -107,9 +108,9 @@
   suffix: Arrows
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrowsgear.rsi
+    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrows_gear.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrowsgear.rsi
+    sprite: _Lust/Clothing/OuterClothing/Hardsuits/arrows_gear.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -141,6 +142,7 @@
     containers:
       cell_slot: !type:ContainerSlot
       toggleable-clothing: !type:ContainerSlot
+      beakerSlot: !type:ContainerSlot
   - type: PowerCellSlot
     cellSlotId: cell_slot
   - type: ItemSlots
@@ -168,9 +170,9 @@
   components:
   - type: BreathMask
   - type: Sprite
-    sprite: _Lust/Clothing/Head/Hardsuits/arrowshelmet.rsi
+    sprite: _Lust/Clothing/Head/Hardsuits/arrows_helmet.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/Head/Hardsuits/arrowshelmet.rsi
+    sprite: _Lust/Clothing/Head/Hardsuits/arrows_helmet.rsi
   - type: PointLight
     color: darkgreen
     radius: 8
@@ -198,10 +200,10 @@
   suffix: Arrows
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/Shoes/Boots/arrowsmagboots.rsi
+    sprite: _Lust/Clothing/Shoes/Boots/arrows_magboots.rsi
     state: icon
   - type: Clothing
-    sprite: _Lust/Clothing/Shoes/Boots/arrowsmagboots.rsi
+    sprite: _Lust/Clothing/Shoes/Boots/arrows_magboots.rsi
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1

@@ -1,11 +1,11 @@
-﻿- type: loadoutGroup # Lust Station
+﻿- type: loadoutGroup
   id: EngineerNeck
   name: loadout-group-engineer-neck
   minLimit: 0
   loadouts:
   - EngineerCloak
 
-- type: loadoutGroup # Lust Station
+- type: loadoutGroup
   id: SecurityNeck
   name: loadout-group-security-neck
   loadouts:

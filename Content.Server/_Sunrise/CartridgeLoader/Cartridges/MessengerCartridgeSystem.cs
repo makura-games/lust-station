@@ -3,11 +3,14 @@ using Content.Server.DeviceNetwork.Systems;
 using Content.Server.CartridgeLoader;
 using Content.Server.PDA.Ringer;
 using Content.Server.Station.Systems;
+using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
+using Robust.Shared.Configuration;
 using Robust.Shared.Timing;
 using Robust.Shared.Prototypes;
+using Robust.Server.GameObjects;
 
 namespace Content.Server._Sunrise.CartridgeLoader.Cartridges;
 
@@ -25,9 +28,12 @@ public sealed partial class MessengerCartridgeSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly RingerSystem _ringer = default!;
+    [Dependency] private readonly IConfigurationManager _cfg = default!;
+    [Dependency] private readonly UserInterfaceSystem _ui = default!;
 
     private ISawmill Sawmill { get; set; } = default!;
     private const string MessengerFrequencyId = "Messenger";
+    private bool _photoUploadEnabled = true;
 
     public override void Initialize()
     {
@@ -35,11 +41,15 @@ public sealed partial class MessengerCartridgeSystem : EntitySystem
 
         Sawmill = _logManager.GetSawmill("messenger.cartridge");
 
+        _cfg.OnValueChanged(SunriseCCVars.PhotoUploadEnabled, value => _photoUploadEnabled = value, true);
+
         SubscribeLocalEvent<MessengerCartridgeComponent, CartridgeMessageEvent>(OnUiMessage);
         SubscribeLocalEvent<MessengerCartridgeComponent, CartridgeUiReadyEvent>(OnUiReady);
         SubscribeLocalEvent<MessengerCartridgeComponent, CartridgeActivatedEvent>(OnCartridgeActivated);
+        SubscribeLocalEvent<MessengerCartridgeComponent, CartridgeDeactivatedEvent>(OnCartridgeDeactivated);
         SubscribeLocalEvent<MessengerCartridgeComponent, CartridgeAddedEvent>(OnCartridgeAdded);
         SubscribeLocalEvent<MessengerCartridgeComponent, CartridgeDeviceNetPacketEvent>(OnPacketReceived);
+        SubscribeLocalEvent<CartridgeLoaderComponent, BoundUIClosedEvent>(OnLoaderUiClosed);
     }
 
     public override void Update(float frameTime)
@@ -87,11 +97,6 @@ public sealed partial class MessengerCartridgeSystem : EntitySystem
         pdaUid = loaderUid;
         deviceNetwork = device;
         return true;
-    }
-
-    private EntityUid GetEntity(NetEntity netEntity)
-    {
-        return EntityManager.GetEntity(netEntity);
     }
 
     /// <summary>

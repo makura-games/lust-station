@@ -32,7 +32,7 @@
   - Visitor
   - ServiceWorker
   - Barber # Sunrise-Roles
-  - ComMaid  # Sunrise-Lust edit
+  - ComMaid  # Lust-Edit
 
 # Вынесено в _Sunrise
 #- type: department
@@ -65,18 +65,20 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
-  - CBURN
-  - ERTLeader
-  - ERTChaplain
-  - ERTJanitor
-  - ERTMedical
-  - ERTSecurity
-  - ERTEngineer
-  - DeathSquad
-  - CentCommOfficial
+# Sunrise-start
+#  - CBURN
+#  - ERTLeader
+#  - ERTChaplain
+#  - ERTJanitor
+#  - ERTMedical
+#  - ERTSecurity
+#  - ERTEngineer
+#  - DeathSquad
+#  - CentCommOfficial
+# Sunrise-end
   - NanoTrasenRepresentative  #Sunrise-Edit
   - Adjutant  #Sunrise-edit
-  - ComMaid  # Sunrise-Lust edit
+  - ComMaid  # Lust-Edit
   primary: false
   weight: 100
 

@@ -1,6 +1,0 @@
-﻿# Neck
-- type: loadout # Lust Station
-  id: CmoSpecialCloak
-  sponsorOnly: true
-  equipment:
-    neck: ClothingNeckCmoSpecialCloak

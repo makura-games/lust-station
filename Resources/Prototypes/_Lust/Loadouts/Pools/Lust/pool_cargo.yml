@@ -1,0 +1,9 @@
+- type: loadoutPool
+  id: BaseLoadoutPoolLustCargo
+  abstract: true
+  roleLoadouts:
+    JobQuartermaster: LustJobQuartermaster
+    JobCargoTechnician: LustJobCargoTechnician
+    JobSalvageSpecialist: LustJobSalvageSpecialist
+    JobMailCarrier: LustJobMailCarrier
+    JobMiningSpecialist: LustJobMiningSpecialist

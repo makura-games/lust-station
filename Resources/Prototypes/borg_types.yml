@@ -17,10 +17,12 @@
     - BorgModuleScience #until sciborgs are added
 
   defaultModules:
+  - BorgModulePrying
   - BorgModuleTool
   - BorgModuleInflatable
   - BorgModuleArtifact
   - BorgModuleAnomaly
+  - BorgModuleRobotics # Sunrise-Edit
 
   radioChannels:
   - Science
@@ -64,6 +66,7 @@
 
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleAdvancedTool
   - BorgModuleCable
   - BorgModuleConstruction
@@ -122,11 +125,11 @@
 
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
+  - BorgModuleTool
   - BorgModuleMining
   - BorgModuleTraversal
   - BorgModuleAppraisal
-  - BorgModuleMiningCombat
-
   radioChannels:
   - Supply
   - Science
@@ -138,17 +141,6 @@
       volume: -15
 
   addComponents:
-  - type: BorgJetpack
-    acceleration: 1
-    friction: 0.3
-    weightlessModifier: 1.3
-  - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.JetpackVisuals.Enabled:
-        enum.JetpackVisuals.Layer:
-          True: {state: icon-on}
-          False: {state: icon}
   - type: InnateItem
     instantActions:
     - HandheldStationMapUnpowered
@@ -157,7 +149,7 @@
   # Visual
   inventoryTemplateId: borgTall
   spriteBodyState: miner
-#  spriteBodyMovementState: miner_moving # Lust-edit
+#  spriteBodyMovementState: miner_moving # Lust-Edit
   spriteHasMindState: miner_e
   spriteNoMindState: miner_e_r
   spriteToggleLightState: miner_l
@@ -187,6 +179,7 @@
 
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleCleaning
   - BorgModuleCustodial
 
@@ -196,15 +189,15 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider # Lust-edit
+    collection: FootstepCyborgSpider # Lust-Edit
     params:
       volume: -5
-  # Sunrise-Start
+  # Sunrise-End
 
   # Visual
   inventoryTemplateId: borgShort
   spriteBodyState: janitor
-#  spriteBodyMovementState: janitor_moving # Lust-edit
+#  spriteBodyMovementState: janitor_moving # Lust-Edit
   spriteHasMindState: janitor_e
   spriteNoMindState: janitor_e_r
   spriteToggleLightState: janitor_l
@@ -245,7 +238,7 @@
     - BorgModuleMedical
 
   defaultModules:
-  - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
@@ -272,15 +265,15 @@
   - type: InnateItem
     instantActions:
     - HandheldStationMapUnpowered
-    - HandheldEmergencyCrewMonitor
+    - HandheldEmergencyCrewMonitorBorg
     entityTargetActions:
-    - HandheldHealthAnalyzerUnpowered
+    - HandheldHealthAnalyzer
   # Sunrise-End
 
   # Visual
   inventoryTemplateId: borgDutch
   spriteBodyState: medical
-#  spriteBodyMovementState: medical_moving # Lust-edit
+#  spriteBodyMovementState: medical_moving # Lust-Edit
   spriteHasMindState: medical_e
   spriteNoMindState: medical_e_r
   spriteToggleLightState: medical_l
@@ -312,17 +305,24 @@
     - BorgModuleGeneric
     - BorgModuleService
 
+  # Sunrise-Start
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleMusique
-  - BorgModuleService
+  - BorgModulePaperwork
+  - BorgModuleBartender
+  - BorgModuleCooking
   - BorgModuleClowning
-  - BorgModuleGardening
-  - BorgModuleHarvesting
+  - BorgModuleExtensiveGardening
+  # Sunrise-End
 
   radioChannels:
   - Science
   - Service
+
+  addComponents:
+  - type: SolutionScanner
 
   # Visual
   inventoryTemplateId: borgTall

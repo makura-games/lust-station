@@ -1,4 +1,4 @@
-﻿- type: interaction
+- type: interaction
   id: AnalFingering
   name: lust-interaction-AnalFingering
   icon: AnalFingeringIcon
@@ -166,6 +166,11 @@
     checkTarget: true
     checkInitiator: false
     layer: Tail
+  - !type:InteractionNotCondition
+    condition: !type:SpeciesCondition
+      checkInitiator: false
+      checkTarget: true
+      allowedSpecies: [ Moth, Milira ]
   - !type:BodyAreaTagCondition
     checkInitiator: true
     checkTarget: false
@@ -208,6 +213,11 @@
     checkTarget: false
     checkInitiator: true
     layer: Tail
+  - !type:InteractionNotCondition
+    condition: !type:SpeciesCondition
+      checkInitiator: true
+      checkTarget: false
+      allowedSpecies: [ Moth, Milira ]
   - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true

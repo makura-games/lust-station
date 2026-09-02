@@ -76,6 +76,10 @@ public sealed partial class ContentAudioSystem
 
         SubscribeNetworkEvent<LobbyMusicStopEvent>(OnLobbySongStopped);
         SubscribeNetworkEvent<LobbyPlaylistChangedEvent>(OnLobbySongChanged);
+
+        // Sunrise added start - регистрируем отдельный round-end music networking в Sunrise partial.
+        InitializeSunriseLobbyMusic();
+        // Sunrise added end
     }
 
     private void OnLobbySongStopped(LobbyMusicStopEvent ev)
@@ -88,10 +92,12 @@ public sealed partial class ContentAudioSystem
         switch (args.NewState)
         {
             case LobbyState:
+                StopRoundEndMusic(); // Sunrise added
                 StartLobbyMusic();
                 break;
             default:
                 EndLobbyMusic();
+                StopRoundEndMusic(); // Sunrise added
                 break;
         }
     }
@@ -99,6 +105,7 @@ public sealed partial class ContentAudioSystem
     private void OnLeave(object? sender, PlayerEventArgs args)
     {
         EndLobbyMusic();
+        StopRoundEndMusic(); // Sunrise added
     }
 
     private void LobbyMusicVolumeCVarChanged(float volume)
@@ -136,8 +143,11 @@ public sealed partial class ContentAudioSystem
             return;
         }
 
+        // Sunrise added start - кэшируем свежий плейлист, даже если мы еще не в лобби.
+        CacheSunriseLobbyPlaylist(playlist);
+        // Sunrise added end
         EndLobbyMusic();
-        StartLobbyMusic(playlistChangedEvent.Playlist);
+        StartLobbyMusic(playlist);
     }
 
     /// <summary>
@@ -159,8 +169,14 @@ public sealed partial class ContentAudioSystem
     /// <param name="playlist">Array of soundtrack filenames for lobby playlist.</param>
     private void StartLobbyMusic(string[] playlist)
     {
-        if (_lobbySoundtrackInfo != null || !_configManager.GetCVar(CCVars.LobbyMusicEnabled))
+        if (_lobbySoundtrackInfo != null
+            || !_configManager.GetCVar(CCVars.LobbyMusicEnabled)
+            // Sunrise edit start - откладываем воспроизведение лобби до активации настоящего lobby state.
+            || ShouldBlockSunriseLobbyMusicStart())
+            // Sunrise edit end
+        {
             return;
+        }
 
         _lobbyPlaylist = playlist;
         if (_lobbyPlaylist.Length == 0)

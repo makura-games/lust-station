@@ -79,7 +79,7 @@ namespace Content.Server._Sunrise.Fugitive
         public bool SendFugiReport(EntityUid fugitive)
         {
             var report = GenerateFugiReport(fugitive);
-            var faxes = EntityManager.EntityQuery<FaxMachineComponent>();
+            var faxes = EntityQuery<FaxMachineComponent>();
             var wasSent = false;
             foreach (var fax in faxes)
             {
@@ -158,7 +158,7 @@ namespace Content.Server._Sunrise.Fugitive
             report.PushNewline();
 
 
-            if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoidComponent) ||
+            if (!TryComp<HumanoidProfileComponent>(uid, out var humanoidComponent) ||
                 !_prototypeManager.TryIndex(humanoidComponent.Species, out var species))
             {
                 report.AddMarkup(Loc.GetString("fugitive-report-inhuman", ("name", uid)));
@@ -175,7 +175,7 @@ namespace Content.Server._Sunrise.Fugitive
             {
                 Sex.Male => Loc.GetString("fugitive-report-sex-m"),
                 Sex.Female => Loc.GetString("fugitive-report-sex-f"),
-                Sex.Futanari => Loc.GetString("fugitive-report-sex-f"), // Lust-edit
+                Sex.Futanari => Loc.GetString("fugitive-report-sex-f"), // Lust-Edit
                 _ => Loc.GetString("fugitive-report-sex-n")
             };
 

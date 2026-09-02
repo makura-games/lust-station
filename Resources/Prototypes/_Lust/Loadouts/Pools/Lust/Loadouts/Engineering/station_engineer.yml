@@ -1,0 +1,6 @@
+﻿# Neck
+- type: loadout
+  id: EngineerCloak
+  sponsorOnly: true
+  equipment:
+    neck: ClothingNeckEngCloak

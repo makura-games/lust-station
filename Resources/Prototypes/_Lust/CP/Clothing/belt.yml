@@ -8,6 +8,6 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Belt/civilprotectionbelt.rsi
+    sprite: _Lust/CP/Clothing/Belt/civil_protection_belt.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Belt/civilprotectionbelt.rsi
+    sprite: _Lust/CP/Clothing/Belt/civil_protection_belt.rsi

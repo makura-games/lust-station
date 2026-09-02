@@ -11,12 +11,22 @@
   - MagazinePistolSubMachineGunCaselessExtended
   - MagazineBoxAntiMateriel
   # Sunrise-start
+  - MagazineMagnum
+  - MagazineMagnumFMJ
+  - MagazineMagnumHP
   - MagazineRifleBoxSP
   - MagazineRifleBoxFMJ
   - MagazinePistol40SubMachineGunSP
   - MagazinePistol40SubMachineGunHP
   - MagazinePistol40SubMachineGunFMJ
+  - MagazinePistolHighCapacitySP
+  - MagazinePistolHighCapacityHP
+  - MagazinePistolHighCapacityFMJ
+  - MagazinePistolHighCapacityRubber
+  - MagazinePistolHighCapacityEmpty
   - MagazineDragunovSP
-  - MagazineDragunovHP
   - MagazineDragunovFMJ
+  - GrenadeEMP
+  - GrenadeBlast
+  - GrenadeFrag
   # Sunrise-end

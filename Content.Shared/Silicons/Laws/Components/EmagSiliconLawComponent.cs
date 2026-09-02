@@ -34,6 +34,6 @@ public sealed partial class EmagSiliconLawComponent : Component
     /// to let them know they've been emagged
     /// </summary>
     [DataField]
-    public SoundSpecifier EmaggedSound = new SoundPathSpecifier("/Audio/_Lust/Ambience/Antag/death_to_qillu_corporation.ogg"); //Lust-edit
+    public SoundSpecifier EmaggedSound = new SoundPathSpecifier("/Audio/_Lust/Ambience/Antag/death_to_qillu_corporation.ogg"); // Lust-Edit
 
 }

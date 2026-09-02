@@ -1,5 +1,0 @@
-﻿- type: loadout # Lust Station
-  id: HopSpecialCloak
-  sponsorOnly: true
-  equipment:
-    neck: ClothingNeckHopSpecialCloak

@@ -86,7 +86,7 @@
   description: This cloak has seen a lot, just like its owner, having been through ruthless trials in the face of Lavaland's fauna. ‘Remember the first lesson - if my legs get chopped off, run and don't look back!’
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/Neck/Cloaks/Miner.rsi
+    sprite: _Lust/Clothing/Neck/Cloaks/miner.rsi
 
 # IAA
 - type: entity

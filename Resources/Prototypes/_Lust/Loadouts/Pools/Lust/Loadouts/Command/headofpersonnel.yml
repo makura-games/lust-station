@@ -1,0 +1,5 @@
+﻿- type: loadout
+  id: HopSpecialCloak
+  sponsorOnly: true
+  equipment:
+    neck: ClothingNeckHopSpecialCloak

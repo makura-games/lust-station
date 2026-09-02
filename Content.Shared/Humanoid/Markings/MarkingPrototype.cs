@@ -1,24 +1,31 @@
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Humanoid.Markings
 {
     [Prototype]
-    public sealed partial class MarkingPrototype : IPrototype
+    // Sunrise edit start - разрешаем marking-прототипам наследовать общие YAML-поля
+    public sealed partial class MarkingPrototype : IPrototype, IInheritingPrototype
     {
         [IdDataField]
         public string ID { get; private set; } = "uwu";
+
+        [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<MarkingPrototype>))]
+        public string[]? Parents { get; private set; }
+
+        [NeverPushInheritance]
+        [AbstractDataField]
+        public bool Abstract { get; private set; }
+        // Sunrise edit end
 
         public string Name { get; private set; } = default!;
 
         [DataField("bodyPart", required: true)]
         public HumanoidVisualLayers BodyPart { get; private set; } = default!;
 
-        [DataField("markingCategory", required: true)]
-        public MarkingCategories MarkingCategory { get; private set; } = default!;
-
-        [DataField("speciesRestriction")]
-        public List<string>? SpeciesRestrictions { get; private set; }
+        [DataField]
+        public List<ProtoId<MarkingsGroupPrototype>>? GroupWhitelist;
 
         [DataField("sexRestriction")]
         public Sex? SexRestriction { get; private set; }
@@ -27,9 +34,6 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("sponsorOnly")]
         public bool SponsorOnly = false;
         // Sunrise-Sponsors-End
-
-        [DataField("followSkinColor")]
-        public bool FollowSkinColor { get; private set; } = false;
 
         [DataField("forcedColoring")]
         public bool ForcedColoring { get; private set; } = false;

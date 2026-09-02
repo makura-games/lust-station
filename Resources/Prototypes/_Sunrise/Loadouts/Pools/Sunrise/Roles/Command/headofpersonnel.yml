@@ -1,0 +1,17 @@
+- type: roleLoadout
+  id: SunriseJobHeadOfPersonnel
+  groups:
+  - GroupTankHarness
+  - HoPHead
+  - SunriseHoPNeck
+  - HoPJumpsuit
+  - HoPBackpack
+  - HoPOuterClothing
+  - SunriseHoPBra
+  - SunriseHoPPants
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - SunriseGroupSpeciesBreathTool
+  - Socks
+  - Contributors

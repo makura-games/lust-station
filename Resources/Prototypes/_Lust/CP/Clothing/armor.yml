@@ -25,9 +25,9 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.75
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cptrenchcoat.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cp_trenchcoat.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cptrenchcoat.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cp_trenchcoat.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -61,9 +61,9 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.75
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cptrenchcoatcommissar.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cp_trenchcoat_commissar.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cptrenchcoatcommissar.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cp_trenchcoat_commissar.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -95,9 +95,9 @@
   - type: StaminaResistance
     damageCoefficient: 0.65
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cptrenchcoatdl.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cp_trenchcoat_dl.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cptrenchcoatdl.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/cp_trenchcoat_dl.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -126,9 +126,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvest.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvest.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -156,9 +156,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.8
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvestmed.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest_med.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvestmed.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest_med.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -186,9 +186,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.7
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvestcommissar.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest_commissar.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvestcommissar.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest_commissar.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -216,9 +216,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.6
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvestdl.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest_dl.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civilprotectionvestdl.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/civil_protection_vest_dl.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -245,9 +245,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.85
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/armormolle.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/armor_molle.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/armormolle.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/armor_molle.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -278,9 +278,9 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.65
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/kevlarheavy.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/kevlar_heavy.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/kevlarheavy.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/kevlar_heavy.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -311,9 +311,9 @@
   - type: ZombificationResistance
     zombificationResistanceCoefficient: 0.65
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/platearmor.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/plate_armor.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/platearmor.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/plate_armor.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -340,9 +340,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.55
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebelarmorheavy.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebel_armor_heavy.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebelarmorheavy.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebel_armor_heavy.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -369,9 +369,9 @@
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebelarmorlight.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebel_armor_light.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebelarmorlight.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Armor/rebel_armor_light.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -399,9 +399,9 @@
         Caustic: 0.55
         Radiation: 0.15
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/bioboiler.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/bio_boiler.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/bioboiler.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/bio_boiler.rsi
   # SUNRISE EDIT
   - type: Tag
     tags:
@@ -560,9 +560,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatchredsuit.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatch_red_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatchredsuit.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatch_red_suit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -602,9 +602,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatchsuit.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatch_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatchsuit.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatch_suit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -644,9 +644,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatchwhitesuit.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatch_white_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatchwhitesuit.rsi
+    sprite: _Lust/CP/Clothing/OuterClothing/Suits/overwatch_white_suit.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000

@@ -389,10 +389,10 @@ public sealed partial class StationJobsSystem
                     continue;
                 // Sunrise-End
 
-                // Sunrise-Lust start
+                // Lust-Start
                 if (job.SexBlacklist.Contains(profile.Sex))
                     continue;
-                // Sunrise-Lust end
+                // Lust-End
 
                 availableJobs ??= new List<string>(profile.JobPriorities.Count);
                 availableJobs.Add(jobId);

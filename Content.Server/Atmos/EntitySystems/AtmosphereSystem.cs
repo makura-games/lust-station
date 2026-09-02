@@ -1,8 +1,12 @@
+using System.Linq;
 using Content.Server.Administration.Logs;
 using Content.Server.Atmos.Components;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.NodeContainer.EntitySystems;
+using Content.Shared.Atmos;
+using Content.Shared.Atmos.Components;
 using Content.Shared.Atmos.EntitySystems;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Decals;
 using Content.Shared.Doors.Components;
 using Content.Shared.Maps;
@@ -13,8 +17,6 @@ using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
-using System.Linq;
-using Content.Shared.Damage.Systems;
 using Robust.Shared.Threading;
 using System.Diagnostics;
 
@@ -36,7 +38,6 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
     [Dependency] private readonly GasTileOverlaySystem _gasTileOverlaySystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly TileSystem _tile = default!;
     [Dependency] private readonly MapSystem _map = default!;
     [Dependency] public readonly PuddleSystem Puddle = default!;
@@ -53,11 +54,6 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
 
     private string[] _burntDecals = [];
 
-    private readonly Stopwatch _frameStopwatch = new();
-    private float _lastFrameTime;
-    private float _averageFrameTime;
-    private int _frameCount;
-
     public override void Initialize()
     {
         base.Initialize();
@@ -69,6 +65,7 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         InitializeCVars();
         InitializeGridAtmosphere();
         InitializeMap();
+        InitializeChargedElectrovaeSunrise(); // Sunrise-add
 
         _atmosQuery = GetEntityQuery<GridAtmosphereComponent>();
         _mapAtmosQuery = GetEntityQuery<MapAtmosphereComponent>();
@@ -79,6 +76,8 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         SubscribeLocalEvent<PrototypesReloadedEventArgs>(OnPrototypesReloaded);
 
         CacheDecals();
+
+        InitSunriseAtmosCVars(); // Sunrise edit - сивары Atmos
     }
 
     public override void Shutdown()
@@ -86,6 +85,8 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
         base.Shutdown();
 
         ShutdownCommands();
+
+        ShutdownSunriseAtmosCVars(); // Sunrise edit - сивары Atmos
     }
 
     private void OnTileChanged(ref TileChangedEvent ev)
@@ -104,24 +105,10 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
 
     public override void Update(float frameTime)
     {
-        _frameStopwatch.Restart();
-
         base.Update(frameTime);
 
         UpdateProcessing(frameTime);
         UpdateHighPressure(frameTime);
-
-        _frameStopwatch.Stop();
-        _lastFrameTime = (float)_frameStopwatch.Elapsed.TotalMilliseconds;
-        _averageFrameTime = (_averageFrameTime * _frameCount + _lastFrameTime) / (_frameCount + 1);
-        _frameCount++;
-
-#if DEBUG
-        if (_frameCount % 100 == 0)
-        {
-            Log.Debug($"AtmosphereSystem: Last frame time: {_lastFrameTime:F2}ms, Average frame time: {_averageFrameTime:F2}ms"); // Sunrise-edit
-        }
-#endif
 
         _exposedTimer += frameTime;
 
@@ -145,6 +132,6 @@ public sealed partial class AtmosphereSystem : SharedAtmosphereSystem
 
     private void CacheDecals()
     {
-        _burntDecals = _protoMan.EnumeratePrototypes<DecalPrototype>().Where(x => x.Tags.Contains("burnt")).Select(x => x.ID).ToArray();
+        _burntDecals = ProtoMan.EnumeratePrototypes<DecalPrototype>().Where(x => x.Tags.Contains("burnt")).Select(x => x.ID).ToArray();
     }
 }

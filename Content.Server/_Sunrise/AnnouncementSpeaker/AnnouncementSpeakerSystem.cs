@@ -1,7 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Threading.Tasks;
-using Content.Server.Station.Systems;
 using Content.Server._Sunrise.TTS;
 using Content.Server.Power.Components;
 using Content.Shared._Sunrise.AnnouncementSpeaker.Components;
@@ -18,38 +17,27 @@ using Robust.Shared.Timing;
 namespace Content.Server._Sunrise.AnnouncementSpeaker;
 
 /// <summary>
-/// Represents a queued announcement waiting to be played.
-/// </summary>
-public sealed class QueuedAnnouncement
-{
-    public EntityUid Station { get; set; }
-    public string Message { get; set; } = "";
-    public ResolvedSoundSpecifier? AnnouncementSound { get; set; }
-    public string? AnnounceVoice { get; set; }
-    public byte[]? TtsData { get; set; }
-    public TimeSpan QueuedAt { get; set; }
-
-    public QueuedAnnouncement(EntityUid station, string message, ResolvedSoundSpecifier? announcementSound, string? announceVoice, byte[]? ttsData)
-    {
-        Station = station;
-        Message = message;
-        AnnouncementSound = announcementSound;
-        AnnounceVoice = announceVoice;
-        TtsData = ttsData;
-    }
-}
-
-/// <summary>
 /// System that manages announcement speakers distributed across stations.
 /// Replaces global announcements with spatial audio from speaker networks.
 /// </summary>
 public sealed class AnnouncementSpeakerSystem : EntitySystem
 {
+    /// <summary>
+    /// Represents a queued announcement waiting to be played.
+    /// </summary>
+    private sealed record QueuedAnnouncement(EntityUid Station, string Message, ResolvedSoundSpecifier? AnnouncementSound,
+        AudioParams? AnnouncementSoundParams, string? AnnounceVoice, byte[]? TtsData)
+    {
+        public TimeSpan QueuedAt { get; init; }
+    }
+
     [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly TTSSystem _ttsSystem = default!;
+
+    private static readonly ProtoId<TTSVoicePrototype> FallbackVoice = "FatherGrigori";
 
     private bool _isEnabled;
     private string _defaultAnnounceVoice = "Hanson";
@@ -113,6 +101,7 @@ public sealed class AnnouncementSpeakerSystem : EntitySystem
             announcement.Station,
             announcement.Message,
             announcement.AnnouncementSound,
+            announcement.AnnouncementSoundParams,
             announcement.AnnounceVoice,
             announcement.TtsData
         );
@@ -155,13 +144,14 @@ public sealed class AnnouncementSpeakerSystem : EntitySystem
     public async void DispatchAnnouncementToSpeakers(EntityUid station, string message, SoundSpecifier? announcementSound = null, string? announceVoice = null)
     {
         var resolvedSound = announcementSound != null ? _audioSystem.ResolveSound(announcementSound) : null;
+        var soundParams = announcementSound?.Params;
         if (!_isEnabled)
             return;
         if (!GetVoicePrototype(announceVoice ?? _defaultAnnounceVoice, out var protoVoice))
             return;
         var generatedTts = await GenerateTtsForAnnouncement(message, protoVoice);
 
-        var queuedAnnouncement = new QueuedAnnouncement(station, message, resolvedSound, announceVoice, generatedTts)
+        var queuedAnnouncement = new QueuedAnnouncement(station, message, resolvedSound, soundParams, announceVoice, generatedTts)
         {
             QueuedAt = _timing.CurTime
         };
@@ -186,6 +176,7 @@ public sealed class AnnouncementSpeakerSystem : EntitySystem
     public async void DispatchAnnouncementToAllStations(string message, SoundSpecifier? announcementSound = null, string? announceVoice = null)
     {
         var resolvedSound = announcementSound != null ? _audioSystem.ResolveSound(announcementSound) : null;
+        var soundParams = announcementSound?.Params;
         if (!_isEnabled)
             return;
         if (!GetVoicePrototype(announceVoice ?? _defaultAnnounceVoice, out var protoVoice))
@@ -195,7 +186,7 @@ public sealed class AnnouncementSpeakerSystem : EntitySystem
         var stationQuery = EntityQueryEnumerator<StationDataComponent>();
         while (stationQuery.MoveNext(out var stationUid, out var stationData))
         {
-            var queuedAnnouncement = new QueuedAnnouncement(stationUid, message, resolvedSound, announceVoice, generatedTts)
+            var queuedAnnouncement = new QueuedAnnouncement(stationUid, message, resolvedSound, soundParams, announceVoice, generatedTts)
             {
                 QueuedAt = _timing.CurTime
             };
@@ -220,7 +211,7 @@ public sealed class AnnouncementSpeakerSystem : EntitySystem
     {
         if (!_prototypeManager.TryIndex(voiceId, out voicePrototype))
         {
-            return _prototypeManager.TryIndex("father_grigori", out voicePrototype);
+            return _prototypeManager.TryIndex(FallbackVoice, out voicePrototype);
         }
         return true;
     }
@@ -247,7 +238,7 @@ public sealed class AnnouncementSpeakerSystem : EntitySystem
     /// </summary>
     public bool HasWorkingSpeakersNearby(EntityUid playerEntity)
     {
-        if (!TryComp<TransformComponent>(playerEntity, out var playerTransform))
+        if (!TryComp(playerEntity, out TransformComponent? playerTransform))
             return false;
 
         var playerPos = playerTransform.Coordinates;

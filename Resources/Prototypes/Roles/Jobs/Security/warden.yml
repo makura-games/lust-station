@@ -16,6 +16,10 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   displayWeight: 70  # Sunrise
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-jailer
+  # Sunrise-End
   access:
   - Security
   - Brig
@@ -33,7 +37,7 @@
 - type: startingGear
   id: WardenGear
   equipment:
-#    eyes: ClothingEyesGlassesSecurity #Lust-Edit
+    # eyes: ClothingEyesGlassesSecurity # Lust-Edit
     id: WardenPDA
     ears: ClothingHeadsetSecurity
     # pocket1: WeaponPistolMk58 # Sunrise-Edit

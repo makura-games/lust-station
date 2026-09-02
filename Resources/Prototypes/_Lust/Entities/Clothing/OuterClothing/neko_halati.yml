@@ -5,7 +5,7 @@
   description: You look very cute in this outfit.
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCat.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat.rsi
       layers:
       - state: icon
         map: [ "unfoldedLayer" ]
@@ -13,7 +13,7 @@
         map: ["foldedLayer"]
         visible: false
     - type: Clothing
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCat.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat.rsi
     - type: Armor
       modifiers:
         coefficients:
@@ -41,7 +41,7 @@
   description: You look very cute in this outfit.
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCatBlue.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat_blue.rsi
       layers:
       - state: icon
         map: [ "unfoldedLayer" ]
@@ -49,7 +49,7 @@
         map: ["foldedLayer"]
         visible: false
     - type: Clothing
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCatBlue.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat_blue.rsi
     - type: Armor
       modifiers:
         coefficients:
@@ -83,7 +83,7 @@
   description: You look very cute in this outfit.
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCatGreen.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat_green.rsi
       layers:
       - state: icon
         map: [ "unfoldedLayer" ]
@@ -91,7 +91,7 @@
         map: ["foldedLayer"]
         visible: false
     - type: Clothing
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCatGreen.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat_green.rsi
     - type: Armor
       modifiers:
         coefficients:
@@ -125,7 +125,7 @@
   description: You look very cute in this outfit.
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCatPurple.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat_purple.rsi
       layers:
       - state: icon
         map: [ "unfoldedLayer" ]
@@ -133,7 +133,7 @@
         map: ["foldedLayer"]
         visible: false
     - type: Clothing
-      sprite: _Lust/Clothing/OuterClothing/Misc/labCoatCatPurple.rsi
+      sprite: _Lust/Clothing/OuterClothing/Misc/lab_coat_cat_purple.rsi
     - type: Armor
       modifiers:
         coefficients:

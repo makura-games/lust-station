@@ -51,7 +51,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitNTRG
     neck: ClothingNeckCloakNTRG
-    back: ClothingBackpackSatchelNTRG
+    back: ClothingBackpackNTRG
     mask: ClothingMaskGasNTRGLead
     shoes: ClothingShoesBootsCombatFilled
     head: ClothingHeadCapNTGR
@@ -61,10 +61,7 @@
     id: NtrLeadGuardPDA
     ears: ClothingHeadsetMagistrate
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponEnergyGunPulseRevolver
     pocket2: HandheldCriminalRecordsMonitorUnpowered
-  inhand:
-  - WeaponEnergyGunTactical
   storage:
     back:
     - ClothingOuterHardsuitNTRG
@@ -125,7 +122,7 @@
   equipment:
     jumpsuit: ClothingUniformJumpsuitNTRG
     neck: ClothingNeckCloakNTRG
-    back: ClothingBackpackSatchelNTRG
+    back: ClothingBackpackDuffelSecurity
     shoes: ClothingShoesBootsCombatFilled
     mask: ClothingMaskGasNTRG
     head: ClothingHeadCapNTGR

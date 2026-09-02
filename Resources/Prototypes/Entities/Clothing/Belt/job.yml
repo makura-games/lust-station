@@ -43,6 +43,7 @@
       - TrayScanner
       - GasAnalyzer
       - HandLabeler
+      - LightReplacer # Sunrise-Add
   - type: ItemMapper
     sprite: &BeltOverlay Clothing/Belt/belt_overlay.rsi
     mapLayers:
@@ -184,8 +185,9 @@
       - DiscreteHealthAnalyzer
       - SurgeryTool
       - Dropper
-      - Patch # Sunrise-Edit
-      - PatchPack # Sunrise-Edit
+      - Patch # Sunrise-Add
+      - PatchPack # Sunrise-Add
+      - AutoMender # Sunrise-Add
       components:
       - Injector
       - Pill

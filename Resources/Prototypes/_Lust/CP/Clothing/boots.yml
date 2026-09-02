@@ -12,9 +12,9 @@
       item:
       - CombatKnife
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Shoes/Boots/civilprotectionboots.rsi
+    sprite: _Lust/CP/Clothing/Shoes/Boots/civil_protection_boots.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Shoes/Boots/civilprotectionboots.rsi
+    sprite: _Lust/CP/Clothing/Shoes/Boots/civil_protection_boots.rsi
 
 ##workboots
 - type: entity
@@ -29,6 +29,6 @@
       item:
       - CombatKnife
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Shoes/Boots/workboots.rsi
+    sprite: _Lust/CP/Clothing/Shoes/Boots/work_boots.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Shoes/Boots/workboots.rsi
+    sprite: _Lust/CP/Clothing/Shoes/Boots/work_boots.rsi

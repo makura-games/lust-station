@@ -24,6 +24,7 @@
     - EvacuationShuttleRequest_QL
     - ExperimentReport_QL
     - InternalAffairsAgentsReport_QL
+    - InternalAffairsAgentCentcomReport_QL
     - Judgment_QL
     - LetterResignation_QL
     - MarriageCertificate_QL
@@ -42,12 +43,21 @@
     - PermissionToTravelInCaseOfThreat_QL
     - PrescriptionDrugAuthorization_QL
     - ProductManufacturingOrder_QL
+    - ProductManufacturingOrderScience_QL
+    - ProductManufacturingOrderService_QL
+    - ProductManufacturingOrderMedical_QL
+    - ProductManufacturingOrderEngineering_QL
     - ReportDepartment_QL
     - ReportEmployeePerformance_QL
     - ReportOnEliminationOfViolations_QL
     - ReportOnTheChaptersMeeting_QL
     - ReportStation_QL
+    - ResponseProvideCCReport_QL
+    - ReportDecreeHeadsPresence_QL
     - ReportStudyObject_QL
+    - ReportStudyObjectEngineering_QL
+    - ReportStudyObjectMedical_QL
+    - ReportStudyObjectService_QL
     - RequestCallMembersCentralCommitteeDSO_QL
     - RequestChangeSalary_QL
     - RequestConstructionWork_QL
@@ -58,6 +68,7 @@
     - RequestModernization_QL
     - RequestRequestToEstablishThreatLevel_QL
     - SearchPermission_QL
+    - SearchPermissionDepartment_QL
     - Sentence_QL
     - ShuttleRegistrationRequest_QL
     - StatementHealth_QL
@@ -71,6 +82,9 @@
     - ApplicationChangePosition_QL
     - ApplicationPetRegistration_QL
     - ReportQilluRepresentative_QL
+    - TrustedStaffDeathNotice_QL
+    - OrderingSpecialEquipmentCentcomStandard_QL
+    - StationGoal_QL
     - ExplanatoryNote_QL
     - ReportCrewAccessChange_QL
     - RequestLegalProtection_QL
@@ -126,6 +140,8 @@
     - OrderEvacuation_QL
     - OrderProvideCCReport_QL
     - DecreeHeadsPresence_QL
+    - DecreeEnhancedControl_QL
+    - CentcomResponse_QL
     - OrderCentcom_QL
     - OrderReport_QL
     - OrderCentcomTransferStationStaff_QL

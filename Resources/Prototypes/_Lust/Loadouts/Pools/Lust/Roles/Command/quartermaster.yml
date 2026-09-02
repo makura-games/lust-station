@@ -1,0 +1,23 @@
+- type: roleLoadout
+  id: LustJobQuartermaster
+  groups:
+  - SunriseQuartermasterHead
+  - SunriseGlasses
+  - SunriseQuartermasterMask
+  - LustQuartermasterNeck
+  - QuartermasterJumpsuit
+  - SunriseQuartermasterOuterClothing
+  - SunriseQuartermasterGloves
+  - SunriseQuartermasterShoes
+  - GroupTankHarness
+  - CargoTechnicianBackpack
+  - SunriseSurvival
+  - SunriseGroupSpeciesBreathTool
+  - SunriseQuartermasterBra
+  - SunriseQuartermasterPants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsCargo
+  - LustSpecialLoadout
+  - Contributors
+

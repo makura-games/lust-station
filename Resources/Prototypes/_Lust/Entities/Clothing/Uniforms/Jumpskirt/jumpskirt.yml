@@ -5,9 +5,9 @@
   description: A stylized Security Service uniform that mixes protocol compliance with questionable coquetry.
   components:
     - type: Sprite
-      sprite: _Lust/Clothing/Uniforms/Jumpskirt/eleganthos.rsi
+      sprite: _Lust/Clothing/Uniforms/Jumpskirt/elegant_hos.rsi
     - type: Clothing
-      sprite: _Lust/Clothing/Uniforms/Jumpskirt/eleganthos.rsi
+      sprite: _Lust/Clothing/Uniforms/Jumpskirt/elegant_hos.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -16,9 +16,9 @@
   description: A dress for special occasions.
   components:
   - type: Sprite
-    sprite: _Lust/Clothing/Uniforms/Jumpskirt/centcomformaldress.rsi
+    sprite: _Lust/Clothing/Uniforms/Jumpskirt/centcom_formal_dress.rsi
   - type: Clothing
-    sprite: _Lust/Clothing/Uniforms/Jumpskirt/centcomformaldress.rsi
+    sprite: _Lust/Clothing/Uniforms/Jumpskirt/centcom_formal_dress.rsi
 
 
 # IAA

@@ -1,4 +1,4 @@
-﻿- type: interaction
+- type: interaction
   id: CockLegPat
   name: lust-interaction-CockLegPat
   icon: CockFootjobIcon
@@ -138,6 +138,11 @@
     checkTarget: false
     checkInitiator: true
     layer: Tail
+  - !type:InteractionNotCondition
+    condition: !type:SpeciesCondition
+      checkInitiator: true
+      checkTarget: false
+      allowedSpecies: [ Moth, Milira ]
   interactionMessages:
   - "%user похотливо обвивает хвостиком член %target"
   - "%user нежно дрочит хвостиком член %target"

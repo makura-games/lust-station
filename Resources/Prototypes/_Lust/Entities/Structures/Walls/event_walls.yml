@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseWall
+  id: LustERPEventRivetedWall
+  name: yellow wallpaper
+  description: Walls with yellow wallpaper.
+  components:
+  - type: Sprite
+    sprite: _Lust/Structures/Walls/riveted.rsi
+  - type: Icon
+    sprite: _Lust/Structures/Walls/riveted.rsi
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 2000
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          Girder:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: IconSmooth
+    key: walls
+    base: riveted
+  - type: StaticPrice
+    price: 150

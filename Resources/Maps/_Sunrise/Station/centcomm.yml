@@ -6734,7 +6734,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -6.5,-36.5
       parent: 2
-- proto: CrateArmoryM16A4
+- proto: GunSafeRifleM16A4
   entities:
   - uid: 714
     components:
@@ -11508,27 +11508,6 @@ entities:
     components:
     - type: Transform
       pos: -3.4985683,16.513187
-      parent: 2
-- proto: HeadGingerbread
-  entities:
-  - uid: 1504
-    components:
-    - type: Transform
-      pos: 33.53681,16.38725
-      parent: 2
-- proto: HeadVulpkanin
-  entities:
-  - uid: 1505
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 33.28304,16.162498
-      parent: 2
-  - uid: 1506
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 33.755573,16.171757
       parent: 2
 - proto: HighSecArmoryLocked
   entities:
@@ -18240,7 +18219,7 @@ entities:
     - type: Transform
       pos: 16.5,10.5
       parent: 2
-- proto: VendingMachineMayson
+- proto: VendingMachineDiscount
   entities:
   - uid: 2599
     components:

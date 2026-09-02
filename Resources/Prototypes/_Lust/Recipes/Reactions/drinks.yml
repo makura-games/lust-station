@@ -1,5 +1,7 @@
 - type: reaction
   id: SexOnTheBeach
+  requiredMixerCategories:
+  - Shake
   reactants:
     Vodka:
       amount: 1

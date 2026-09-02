@@ -38,6 +38,16 @@
     - ActionJumpToCore
     - ActionSurvCameraLights
     - ActionAIViewLaws
+    # Sunrise-AIVoice-Edit-Start
+    - ActionChangeBorgVoice
+  - type: BorgVoice
+    voiceBlacklist:
+      - Mita
+      - MitaDream
+      - MitaGhost
+      - Biden
+      - Trump
+    # Sunrise-AIVoice-Edit-End
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
@@ -50,6 +60,8 @@
         type: SiliconLawBoundUserInterface
       enum.CommunicationsConsoleUiKey.Key:
         type: CommunicationsConsoleBoundUserInterface
+      enum.BorgVoiceUiKey.Key:
+        type: BorgVoiceBoundUserInterface # Sunrise-AIVoice-Edit
   - type: IntrinsicUI
     uis:
       enum.RadarConsoleUiKey.Key:
@@ -75,6 +87,7 @@
     announceVoice: PortalGlados # Sunrise-Edit
     sound: /Audio/_Sunrise/Announcements/announce_dig.ogg # Sunrise-Edit
   - type: ShowJobIcons
+  - type: ShowCrewIcons
   - type: DamagedSiliconAccent
     startPowerCorruptionAtCharIdx: 4
     maxPowerCorruptionAtCharIdx: 20
@@ -91,6 +104,7 @@
   # Sunrise-End
   - type: Speech # Sunrise-Edit
     speechVerb: Robotic # Sunrise-Edit
+    speechSounds: Borg # Sunrise-Edit
 
 - type: entity
   id: AiHeldIntellicard
@@ -113,6 +127,7 @@
       enum.SiliconLawsUiKey.Key:
         type: SiliconLawBoundUserInterface
   - type: ShowJobIcons
+  - type: ShowCrewIcons
 
 # Ai
 - type: entity
@@ -553,7 +568,7 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHigh
+        startingItem: PowerCellMedium
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
@@ -628,20 +643,21 @@
     - type: GhostTakeoverAvailable
 
 - type: entity
-  name: syndicate invasion borg spawner
-  id: PlayerBorgSyndicateInvasionGhostRoleSpawner
   parent: MarkerBase
+  id: PlayerBorgSyndicateInvasionGhostRoleSpawner
+  name: syndicate invasion borg spawner
   components:
   - type: Sprite
     layers:
       - state: red
       - sprite: Structures/Decoration/banner.rsi
         state: banner_syndicate
-  - type: RandomSpawner
-    prototypes:
-    - PlayerBorgSyndicateAssaultGhostRole
-    - PlayerBorgSyndicateAssaultGhostRole # Saboteurs are kinda like cyborg medics, we want less.
-    - PlayerBorgSyndicateSaboteurGhostRole
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: PlayerBorgSyndicateAssaultGhostRole
+      - id: PlayerBorgSyndicateSaboteurGhostRole
+        weight: 0.5 # Saboteurs are kinda like cyborg medics, we want less.
 
 - type: entity
   parent: EngineeringBorgChassisDerelict
@@ -651,8 +667,9 @@
   - type: ContainerFill
     containers:
       borg_brain:
-      - PositronicBrain
+      - Boris # Sunrise-Edit
       borg_module:
+      - BorgModulePrying
       - BorgModuleTool
       - BorgModuleFireExtinguisher
       - BorgModuleConstruction
@@ -689,8 +706,9 @@
   - type: ContainerFill
     containers:
       borg_brain:
-        - PositronicBrain
+        - Boris # Sunrise-Edit
       borg_module:
+        - BorgModulePrying
         - BorgModuleTool
         - BorgModuleFireExtinguisher
   - type: ItemSlots
@@ -724,8 +742,9 @@
   - type: ContainerFill
     containers:
       borg_brain:
-      - PositronicBrain
+      - Boris # Sunrise-Edit
       borg_module:
+      - BorgModulePrying
       - BorgModuleTool
       - BorgModuleFireExtinguisher
       - BorgModuleCleaning
@@ -761,8 +780,9 @@
   - type: ContainerFill
     containers:
       borg_brain:
-      - PositronicBrain
+      - Boris # Sunrise-Edit
       borg_module:
+      - BorgModulePrying
       - BorgModuleTool
       - BorgModuleFireExtinguisher
       - BorgModuleChemical
@@ -799,8 +819,9 @@
   - type: ContainerFill
     containers:
       borg_brain:
-      - PositronicBrain
+      - Boris # Sunrise-Edit
       borg_module:
+      - BorgModulePrying
       - BorgModuleTool #No fire extinguisher, traversal is better
       - BorgModuleMining
       - BorgModuleTraversal
@@ -828,16 +849,15 @@
     job: Borg
   - type: GhostTakeoverAvailable
 
-#Sunrise-start
 - type: entity
-  parent: SyndicateAssaultBorgChassisDerelictSunrise
+  parent: SyndicateAssaultBorgChassisDerelictSunrise # Sunrise-Edit
   id: PlayerSyndicateAssaultBorgDerelict
   suffix: Battery, Module
   components:
   - type: ContainerFill
     containers:
       borg_brain:
-      - PositronicBrain
+      - Sofia # Sunrise-Edit
       borg_module:
       - BorgModuleOperative
       - BorgModuleC20r
@@ -849,9 +869,7 @@
         startingItem: PowerCellHyper
   - type: RandomMetadata
     nameSegments: [NamesDeathCommando]
-#Sunrise-End
 
-#Sunrise-start
 - type: entity
   parent: PlayerSyndicateAssaultBorgDerelict
   id: PlayerBorgSyndicateDerelictGhostRole
@@ -866,103 +884,3 @@
     reregister: false
     job: Borg
   - type: GhostTakeoverAvailable
-
-- type: entity
-  parent: SyndicateReaperBorgChassisDerelictSunrise
-  id: PlayerSyndicateReaperBorgDerelict
-  suffix: Battery, Module
-  components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-      - PositronicBrain
-      borg_module:
-      - BorgModuleSyndicateGeneric
-      - BorgModuleSyndicateCombat
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHyper
-  - type: RandomMetadata
-    nameSegments: [NamesDeathCommando]
-
-- type: entity
-  parent: PlayerSyndicateReaperBorgDerelict
-  id: PlayerBorgSyndicateReaperDerelictGhostRoleSunrise
-  suffix: Ghost role
-  components:
-  - type: GhostRole
-    name: ghost-role-information-derelict-syndicate-reaper-cyborg-name
-    description: ghost-role-information-derelict-syndicate-reaper-cyborg-description
-    rules: ghost-role-information-silicon-rules
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
-
-- type: entity
-  parent: SyndicateSaboteurBorgChassisDerelictSunrise
-  id: PlayerSyndicateSaboteurBorgDerelict
-  suffix: Battery, Module
-  components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-      - PositronicBrain
-      borg_module:
-      - BorgModuleSyndicateGeneric
-      - BorgScoutModuleSyndicateTool
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHyper
-  - type: RandomMetadata
-    nameSegments: [NamesDeathCommando]
-
-- type: entity
-  parent: PlayerSyndicateSaboteurBorgDerelict
-  id: PlayerBorgSyndicateSaboteurDerelictGhostRoleSunrise
-  suffix: Ghost role
-  components:
-  - type: GhostRole
-    name: ghost-role-information-derelict-syndicate-saboteur-cyborg-name
-    description: ghost-role-information-derelict-syndicate-saboteur-cyborg-description
-    rules: ghost-role-information-silicon-rules
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
-
-- type: entity
-  parent: SyndicateMedicalBorgChassisDerelictSunrise
-  id: PlayerSyndicateMedicalBorgDerelict
-  suffix: Battery, Module
-  components:
-  - type: ContainerFill
-    containers:
-      borg_brain:
-      - PositronicBrain
-      borg_module:
-      - BorgModuleSyndicateGeneric
-      - BorgModuleSyndicateMedical
-  - type: ItemSlots
-    slots:
-      cell_slot:
-        name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHyper
-  - type: RandomMetadata
-    nameSegments: [NamesDeathCommando]
-
-- type: entity
-  parent: PlayerSyndicateMedicalBorgDerelict
-  id: PlayerBorgSyndicateMedicalDerelictGhostRoleSunrise
-  suffix: Ghost role
-  components:
-  - type: GhostRole
-    name: ghost-role-information-derelict-syndicate-medical-cyborg-name
-    description: ghost-role-information-derelict-syndicate-medical-cyborg-description
-    rules: ghost-role-information-silicon-rules
-    raffle:
-      settings: default
-  - type: GhostTakeoverAvailable
-#Sunrise-End

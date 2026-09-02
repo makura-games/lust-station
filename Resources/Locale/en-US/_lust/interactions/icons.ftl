@@ -66,3 +66,7 @@ lust-interaction-icon-ToyPussyIcon = Toy (pussy)
 lust-interaction-icon-BoobsManyKissesIcon = Many kisses (breasts)
 lust-interaction-icon-CheeksKissIcon = Cheek kiss
 lust-interaction-icon-CockTongueFap = Tongue on cock
+lust-interaction-icon-WingKiss = Wing kiss
+lust-interaction-icon-WingLick = Wing lick
+lust-interaction-icon-WingStrokeCrotch = Stroke crotch with wing
+lust-interaction-icon-WingsCockFap = Stroke cock with wing

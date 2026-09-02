@@ -1,0 +1,648 @@
+
+- type: interaction
+  id: CageTap
+  name: lust-interaction-CageTap
+  icon: ERP1Icon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user постукивает пальцем по клетке на %target"
+  - "%user щёлкает ногтем по металлическим прутьям клетки %target"
+  - "%user легонько бьёт ладонью по клетке %target, вызывая металлический звон"
+  - "%user игриво барабанит пальцами по прутьям клетки %target"
+  loveTarget: 2
+  cooldown: 3
+
+- type: interaction
+  id: CageSqueeze
+  name: lust-interaction-CageSqueeze
+  icon: ERP2Icon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user сжимает прутья клетки %target в кулаке"
+  - "%user крепко хватает клетку %target и слегка тянет"
+  - "%user обхватывает клетку %target ладонью и сдавливает"
+  - "%user проводит пальцами между прутьев клетки %target"
+  loveTarget: 3
+  cooldown: 3
+
+- type: interaction
+  id: CageMock
+  name: lust-interaction-CageMock
+  icon: ERP4Icon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user насмешливо смотрит на клетку %target и ухмыляется"
+  - "%user указывает на клетку %target и тихо смеётся"
+  - "%user демонстративно любуется клеткой на %target"
+  - "%user многозначительно постукивает по клетке %target и покачивает головой"
+  - "%user с довольной улыбкой осматривает клетку %target"
+  loveTarget: 1
+  cooldown: 5
+
+- type: interaction
+  id: CageLick
+  name: lust-interaction-CageLick
+  icon: ERP2Icon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "рот" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user медленно проводит языком по поясу верности %target"
+  - "%user дразняще облизывает пояс верности %target"
+  - "%user прижимается губами к поясу верности %target и проводит по нему языком"
+  - "%user смачно лижет пояс верности %target, глядя в глаза"
+  interactionSounds:
+  - FaceLickDoggyStyleSound1
+  - FaceLickDoggyStyleSound2
+  loveUser: 2
+  loveTarget: 5
+  cooldown: 3
+
+- type: interaction
+  id: CageKiss
+  name: lust-interaction-CageKiss
+  icon: KissLipsIcon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "рот" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user нежно целует замок на поясе верности %target"
+  - "%user прижимается губами к поясу верности %target"
+  - "%user чмокает пояс верности %target"
+  - "%user страстно целует пояс верности %target, оставляя след помады"
+  interactionSounds:
+  - Kiss1
+  - Kiss2
+  - Kiss3
+  - Kiss4
+  - Kiss5
+  - Kiss6
+  loveUser: 2
+  loveTarget: 4
+  cooldown: 3
+
+- type: interaction
+  id: CageBlowAttempt
+  name: lust-interaction-CageBlowAttempt
+  icon: CockBlowjobIcon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "рот" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user пытается добраться до члена %target через прутья клетки языком"
+  - "%user просовывает язык сквозь прутья клетки %target"
+  - "%user тщетно пытается достать член %target ртом через клетку"
+  - "%user дразняще водит языком вдоль клетки %target, намекая на то, чего не достичь"
+  interactionSounds:
+  - FaceLickDoggyStyleSound1
+  - FaceLickDoggyStyleSound2
+  loveUser: 3
+  loveTarget: 7
+  cooldown: 3
+
+- type: interaction
+  id: CageGrind
+  name: lust-interaction-CageGrind
+  icon: LegsCockFuckIcon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: true
+    checkTarget: false
+    requiredSex: [ Female, Futanari ]
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "вагина" ]
+    requireExposed: true
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user возбужденно трётся вагиной о клетку %target"
+  - "%user прижимается вагиной к клетке %target и медленно двигает бёдрами"
+  - "%user страстно скользит вагиной вдоль металлических прутьев клетки %target"
+  - "%user трётся о клетку %target, тихо постанывая"
+  interactionSounds:
+  - Hlup1
+  - Hlup2
+  loveUser: 6
+  loveTarget: 8
+  cooldown: 3
+
+- type: interaction
+  id: CageSelfTouch
+  name: lust-interaction-CageSelfTouch
+  icon: ERP3Icon
+  category: Cage
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user нервно трогает свою клетку"
+  - "%user машинально проводит рукой по своей клетке"
+  - "%user стискивает прутья своей клетки и тихо вздыхает"
+  - "%user беспомощно дёргает свою клетку"
+  interactionSounds:
+  - FriendlyStroke
+  loveUser: 2
+  cooldown: 5
+
+- type: interaction
+  id: CageSelfExamine
+  name: lust-interaction-CageSelfExamine
+  icon: ERP1Icon
+  category: Cage
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user внимательно разглядывает свою клетку в поисках слабого места"
+  - "%user осматривает замок на своей клетке с тоскливым видом"
+  - "%user трогает замок клетки и осознаёт, что без ключа никуда"
+  loveUser: 0
+  cooldown: 10
+
+- type: interaction
+  id: CageSelfRattle
+  name: lust-interaction-CageSelfRattle
+  icon: ERP3Icon
+  category: Cage
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user раздражённо трясёт свою клетку, вызывая металлический звон"
+  - "%user нервно гремит прутьями своей клетки"
+  - "%user отчаянно бренчит своей клеткой, но та не поддаётся"
+  - "%user со злостью трясёт клетку — та и не думает сниматься"
+  interactionSounds:
+  - FenceRattle1
+  loveUser: 0
+  cooldown: 5
+
+- type: interaction
+  id: CageSelfAdjust
+  name: lust-interaction-CageSelfAdjust
+  icon: ERP1Icon
+  category: Cage
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user пытается поправить клетку поудобнее, но без особого успеха"
+  - "%user морщится и пробует сдвинуть клетку в более удобное положение"
+  - "%user ёрзает, безуспешно пытаясь пристроить клетку поудобнее"
+  - "%user с тихим вздохом подправляет положение клетки"
+  interactionSounds:
+  - FriendlyStroke
+  loveUser: 0
+  cooldown: 8
+
+- type: interaction
+  id: CageSelfStrain
+  name: lust-interaction-CageSelfStrain
+  icon: ERP2Icon
+  category: Cage
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:SexCondition
+    checkInitiator: true
+    checkTarget: false
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user тихо стонет, чувствуя как давит клетка"
+  - "%user сжимает зубы — прутья клетки неумолимо сдерживают возбуждение"
+  - "%user прерывисто вздыхает, ощущая как плоть упирается в металл"
+  - "%user краснеет, борясь с ощущением тесноты клетки"
+  loveUser: 3
+  cooldown: 5
+
+- type: interaction
+  id: CageSelfReach
+  name: lust-interaction-CageSelfReach
+  icon: ERP3Icon
+  category: Cage
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:SexCondition
+    checkInitiator: true
+    checkTarget: false
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user тщетно пытается просунуть пальцы сквозь прутья клетки"
+  - "%user безуспешно пробует дотянуться до себя через прутья"
+  - "%user с тихим стоном пытается достать хоть что-нибудь через клетку"
+  - "%user отчаянно тянется пальцами к прутьям, осознавая тщетность попытки"
+  interactionSounds:
+  - FriendlyStroke
+  loveUser: 2
+  cooldown: 6
+
+- type: interaction
+  id: BeltSelfSlide
+  name: lust-interaction-BeltSelfSlide
+  icon: ERP2Icon
+  category: Belt
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:SexCondition
+    checkInitiator: true
+    checkTarget: false
+    requiredSex: [ Female, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "вагина" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user проводит пальцами вдоль края пояса верности, пытаясь пролезть под него"
+  - "%user тихо вздыхает, скользя пальцами по краю пояса"
+  - "%user осторожно проводит пальцем под краем пояса, но дальше не пройти"
+  - "%user нервно теребит край пояса верности, безуспешно пытаясь добраться до себя"
+  interactionSounds:
+  - FriendlyStroke
+  loveUser: 2
+  cooldown: 5
+
+- type: interaction
+  id: BeltSelfPress
+  name: lust-interaction-BeltSelfPress
+  icon: ERP3Icon
+  category: Belt
+  appearConditions:
+  - !type:SelfOnlyCondition
+  - !type:SexCondition
+    checkInitiator: true
+    checkTarget: false
+    requiredSex: [ Female, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "вагина" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user надавливает ладонью на пояс верности, пытаясь почувствовать хоть что-нибудь"
+  - "%user с отчаянием прижимает руку к поясу верности"
+  - "%user тихо стонет, сильнее надавливая на металл пояса"
+  - "%user безуспешно давит на пояс верности, понимая что это бесполезно"
+  interactionSounds:
+  - FriendlyStroke
+  loveUser: 3
+  cooldown: 5
+
+- type: interaction
+  id: CagePull
+  name: lust-interaction-CagePull
+  icon: ERP3Icon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user тянет клетку %target вниз, заставляя того болезненно поморщиться"
+  - "%user резко дёргает клетку %target за прутья"
+  - "%user крепко хватает клетку %target и тянет на себя"
+  - "%user потягивает клетку %target, наслаждаясь реакцией"
+  loveTarget: 4
+  cooldown: 3
+
+- type: interaction
+  id: BeltPull
+  name: lust-interaction-BeltPull
+  icon: ERP3Icon
+  category: Belt
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Female, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "вагина" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user тянет пояс верности %target к себе"
+  - "%user подцепляет пальцем пояс верности %target и игриво тянет"
+  - "%user крепко хватает пояс верности %target и тянет на себя"
+  - "%user потягивает пояс верности %target, следя за реакцией"
+  loveTarget: 4
+  cooldown: 3
+
+- type: interaction
+  id: CagePlay
+  name: lust-interaction-CagePlay
+  icon: ERP2Icon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user игриво щёлкает по прутьям клетки %target"
+  - "%user нежно поглаживает клетку %target пальцами"
+  - "%user проводит ногтем вдоль прутьев клетки %target"
+  - "%user игриво перебирает прутья клетки %target"
+  loveTarget: 3
+  cooldown: 3
+
+- type: interaction
+  id: BeltPlay
+  name: lust-interaction-BeltPlay
+  icon: ERP2Icon
+  category: Belt
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Female, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "вагина" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user нежно проводит пальцами по поясу верности %target"
+  - "%user игриво постукивает по поясу верности %target"
+  - "%user ласково поглаживает пояс верности на %target"
+  - "%user проводит пальцем по краю пояса верности %target"
+  interactionSounds:
+  - FriendlyStroke
+  loveTarget: 3
+  cooldown: 3
+
+- type: interaction
+  id: CageSlap
+  name: lust-interaction-CageSlap
+  icon: ERP4Icon
+  category: Cage
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "клетка" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user игриво хлопает ладонью по клетке %target"
+  - "%user шлёпает по клетке %target, вызывая металлический звон"
+  - "%user озорно бьёт ладонью по прутьям клетки %target"
+  - "%user со смешком шлёпает по клетке %target"
+  loveTarget: 4
+  cooldown: 3
+
+- type: interaction
+  id: BeltSlap
+  name: lust-interaction-BeltSlap
+  icon: ERP4Icon
+  category: Belt
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Female, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "вагина" ]
+    requireExposed: false
+  - !type:BodyAreaTagCondition
+    checkTarget: true
+    checkInitiator: false
+    categories: [ "пах" ]
+    requireExposed: true
+  interactionMessages:
+  - "%user игриво шлёпает по поясу верности %target"
+  - "%user слегка бьёт ладонью по поясу верности %target"
+  - "%user хлопает по металлу пояса верности %target"
+  - "%user озорно шлёпает по поясу верности %target, следя за реакцией"
+  loveTarget: 4
+  cooldown: 3

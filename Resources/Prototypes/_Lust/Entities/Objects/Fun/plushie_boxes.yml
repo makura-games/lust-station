@@ -13,8 +13,6 @@
     items:
       - id: ERPNormalDildo
         orGroup: Plushie
-      - id: PlushieAnameGermanikum
-        orGroup: Plushie
       - id: PlushieAnnaLisechanskaya
         orGroup: Plushie
       - id: PlushieLu
@@ -57,19 +55,9 @@
         orGroup: Plushie
       - id: PlushieUlavaBritz
         orGroup: Plushie
-      - id: PlushieSophieKomissarova
-        orGroup: Plushie
-      - id: PlushieDrasusLeverian
-        orGroup: Plushie
-      - id: PlushieKalium
-        orGroup: Plushie
-      - id: PlushieRaneliToll
-        orGroup: Plushie
       - id: PlushieKira
         orGroup: Plushie
       - id: PlushieAshito
         orGroup: Plushie
       - id: PlushieDiegoVulpa
-        orGroup: Plushie
-      - id: PlushieLilith
         orGroup: Plushie

@@ -8,9 +8,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/blacksuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/black_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/blacksuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/black_suit.rsi
 
 ##brownsuit
 - type: entity
@@ -21,9 +21,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/brownsuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/brown_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/brownsuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/brown_suit.rsi
 
 ##citizenblue
 - type: entity
@@ -34,9 +34,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizenblue.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizen_blue.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizenblue.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizen_blue.rsi
 
 ##citizenbluecut
 - type: entity
@@ -47,9 +47,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizenbluecut.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizen_blue_cut.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizenbluecut.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/citizen_blue_cut.rsi
 
 ##civilprotectionsuit
 - type: entity
@@ -60,9 +60,9 @@
   suffix: HL2
   components: 
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civilprotectionsuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civil_protection_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civilprotectionsuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civil_protection_suit.rsi
 
 ##civilprotectionsuitdl
 - type: entity
@@ -73,9 +73,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civilprotectionsuitdl.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civil_protection_suit_dl.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civilprotectionsuitdl.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/civil_protection_suit_dl.rsi
 
 ##classysuit
 - type: entity
@@ -86,9 +86,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/classysuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/classy_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/classysuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/classy_suit.rsi
 
 ##formal
 - type: entity
@@ -151,9 +151,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/heeledsuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/heeled_suit.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/heeledsuit.rsi
+    sprite: _Lust/CP/Clothing/Uniforms/Jumpsuit/heeled_suit.rsi
 
 ##overwatch
 - type: entity

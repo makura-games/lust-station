@@ -1,4 +1,4 @@
-﻿- type: interaction
+- type: interaction
   id: PussyTouch
   name: lust-interaction-PussyTouch
   icon: PussyTouchIcon
@@ -429,6 +429,11 @@
     checkTarget: true
     checkInitiator: false
     layer: Tail
+  - !type:InteractionNotCondition
+    condition: !type:SpeciesCondition
+      checkInitiator: false
+      checkTarget: true
+      allowedSpecies: [ Moth, Milira ]
   interactionMessages:
   - "%user быстро трахает членом вагину %target, держа за хвост"
   - "%user жестко трахает членом вагину %target, взяв за хвост"
@@ -460,11 +465,15 @@
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
-  - !type:BodyAreaTagCondition
-    checkInitiator: true
+  - !type:HasVisualLayerCondition
     checkTarget: false
-    categories: [ "хвост" ]
-    requireExposed: true
+    checkInitiator: true
+    layer: Tail
+  - !type:InteractionNotCondition
+    condition: !type:SpeciesCondition
+      checkInitiator: true
+      checkTarget: false
+      allowedSpecies: [ Moth, Milira ]
   - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true

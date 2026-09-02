@@ -343,6 +343,9 @@
     sprite: Structures/Storage/Crates/weapon.rsi
   - type: AccessReader
     access: [["Armory"]]
+  - type: Pierceable # Sunrise-edit - прострел ящиков
+    level: Metal
+
 
 - type: entity
   parent: [ CrateBaseSecure, BaseSecurityContraband ]
@@ -362,9 +365,9 @@
   name: command crate
   components:
   - type: Icon
-    sprite: _Lust/Structures/Storage/Crates/command.rsi #Lust-edit
+    sprite: _Lust/Structures/Storage/Crates/command.rsi # Lust-Edit
   - type: Sprite
-    sprite: _Lust/Structures/Storage/Crates/command.rsi #Lust-edit
+    sprite: _Lust/Structures/Storage/Crates/command.rsi # Lust-Edit
   - type: AccessReader
     access: [["Command"]]
     # Sunrise-start
@@ -790,7 +793,6 @@
             max: 4
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
-  - type: Coffin
   - type: Construction
     graph: CrateCoffin
     node: cratecoffin

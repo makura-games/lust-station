@@ -12,7 +12,9 @@
   icon: "JobIconMiner"
   startingGear: MiningSpecialistGear
   supervisors: job-supervisors-qm
-  canBeAntag: false #Работать а не антажить!
+  canBeAntag: true
+  alternativeTitles:
+  - job-alt-title-prospector
   access:
   - Cargo
   - Salvage
@@ -31,7 +33,7 @@
     belt: OreBag
     head: ClothingHeadHatHardhatYellowDark
     pocket1: MineralScannerUnpowered
-    pocket2: EnergyPickaxe
+    pocket2: MiningDrill
 
 - type: chameleonOutfit
   id: MiningSpecialistChameleonOutfit

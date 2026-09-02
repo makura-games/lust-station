@@ -1,0 +1,57 @@
+- type: entity
+  parent: ClothingPantsStorageBase
+  id: ClothingPantsWomanCentComm
+  name: women's thong "CentComm"
+  description: Expensive lingerie in the formal colors of Qillu's highest corporate figures.
+  suffix: Qillu
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Pants/Woman/centcomm.rsi
+    state: female_thong_icon
+  - type: Clothing
+    sprite: _Lust/Clothing/Pants/Woman/centcomm.rsi
+    equippedState: female_thong
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: ClothingPantsStorageBase
+  id: ClothingPantsManCentComm
+  name: boxers "CentComm"
+  description: Expensive lingerie in the formal colors of Qillu's highest corporate figures.
+  suffix: Qillu
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Pants/Man/centcomm.rsi
+    state: male_boxers_icon
+  - type: Clothing
+    sprite: _Lust/Clothing/Pants/Man/centcomm.rsi
+    equippedState: male_boxers
+  - type: StaticPrice
+    price: 14000
+
+- type: entity
+  parent: ClothingPantsStorageBase
+  id: ClothingPantsWomanNanoTrasenRepresentative
+  name: women's thong "Qillu Representative"
+  description: A formal thong in Qillu representative colors.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Pants/Woman/ntrep.rsi
+    state: female_thong_icon
+  - type: Clothing
+    sprite: _Lust/Clothing/Pants/Woman/ntrep.rsi
+    equippedState: female_thong
+
+- type: entity
+  parent: ClothingPantsStorageBase
+  id: ClothingPantsManNanoTrasenRepresentative
+  name: boxers "Qillu Representative"
+  description: Formal boxers in Qillu representative colors.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Pants/Man/ntrep.rsi
+    state: male_boxers_icon
+  - type: Clothing
+    sprite: _Lust/Clothing/Pants/Man/ntrep.rsi
+    equippedState: male_boxers

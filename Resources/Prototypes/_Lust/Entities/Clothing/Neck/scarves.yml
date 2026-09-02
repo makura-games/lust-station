@@ -1,8 +1,8 @@
 - type: entity
   parent: [ ClothingNeckBase, BaseCentcommContraband ]
   id: ClothingNeckScarfCentcomElegant
-  name: ent-ClothingNeckScarfCentcomElegant
-  description: ent-ClothingNeckScarfCentcomElegant-desc
+  name: elegant CentCom scarf
+  description: Space nobility does not get cold. It just wraps stylishly.
   components:
   - type: Sprite
     sprite: _Lust/Clothing/Neck/Scarves/centcom_scarf_elegant.rsi

@@ -123,7 +123,6 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
-    - CorgiWearable
     - WhitelistChameleon
     - FullBodyOuter # Sunrise-Edit
   - type: HideLayerClothing
@@ -200,19 +199,21 @@
     parent: true
     components:
     - type: Stealth
-      minVisibility: 0 # Sunrise-Edit
-      lastVisibility: 0 # Sunrise-Edit
+      minVisibility: 0.05
+      lastVisibility: 0.05
   - type: PowerCellDraw
-    drawRate: 20 # Sunrise-edit
+    drawRate: 1.8
   - type: ToggleCellDraw
   # throwing star ability
   - type: ItemCreator
     action: ActionCreateThrowingStar
-    charge: 90 #Sunrise-edit
+    charge: 14.4
     spawnedPrototype: ThrowingStarNinja
     noPowerPopup: ninja-no-power
   # core ninja suit stuff
   - type: NinjaSuit
+  - type: EmpResistance
+    strengthMultiplier: 0
   - type: UseDelay
     delay: 5 # disable time
   - type: PowerCellSlot
@@ -235,6 +236,7 @@
     slots:
     - Tail
   # Sunrise-Start
+  - type: EmpImmune
   - type: Tag
     tags:
     - FullBodyOuter
@@ -328,7 +330,6 @@
     slots: WITHOUT_POCKET
   - type: Tag
     tags:
-    - CorgiWearable
     - WhitelistChameleon
     - FullBodyOuter # Sunrise-Edit
   - type: AddAccentClothing

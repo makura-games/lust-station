@@ -213,6 +213,11 @@ ghost-role-information-derelict-syndicate-saboteur-cyborg-description = Вы - �
 
 ghost-role-information-derelict-syndicate-medical-cyborg-name = Брошенный медицинский киборг Синдиката
 ghost-role-information-derelict-syndicate-medical-cyborg-description = Вы - брошенный медицинский киборг Синдиката, который заблудился в космосе. После долгих лет воздействия ионных бурь вы оказываетесь рядом с космической станцией.
+ghost-role-information-pirate-reprogrammed-cyborg-name = Перепрошитый заброшенный киборг
+ghost-role-information-pirate-reprogrammed-medical-cyborg-name = Перепрошитый заброшенный медицинский киборг
+ghost-role-information-pirate-reprogrammed-mining-cyborg-name = Перепрошитый заброшенный шахтёрский киборг
+ghost-role-information-pirate-reprogrammed-syndicate-cyborg-name = Перепрошитый заброшенный киборг Синдиката
+ghost-role-information-pirate-reprogrammed-cyborg-description = Пираты вытащили вас из дальнего космоса и переписали базовые законы. Годы ионных бурь сделали эти законы нестабильными.
 ghost-role-information-syndicate-cyborg-saboteur-name = Киборг-диверсант Синдиката
 ghost-role-information-syndicate-cyborg-description = Синдикату нужны подкрепления. Вы, холодная металическая машина для убийств, поможете им.
 ghost-role-information-security-name = Охрана
@@ -291,10 +296,31 @@ ghost-role-information-artifact-name = Разумный артефакт
 ghost-role-information-artifact-description = Осуществляйте свои инопланетные прихоти. Принудительно активируйте свои узлы во благо или во зло.
 ghost-role-information-syndie-assaultborg-name = Штурмовой киборг Синдиката
 ghost-role-information-syndie-assaultborg-description = Ядерным оперативникам требуется подкрепление. Вы, хладнокремниевая машина для убийств, будете им помогать. Больше дакки!
+ghost-role-information-emotional-support-scurret-name = Скуррет эмоциональной поддержки
+ghost-role-information-emotional-support-scurret-description = Поддерживайте экипаж, будьте очаровательным и почаще говорите «ва».
 ghost-role-information-expedition-pirate-rules = Вы [color=red][bold]Умный Пират[/bold][/color] более умный ваших товарищей, не дайте утилизаторам вас ограбить. Вам [color=red][bold]запрещено[/bold][/color] покидать комплекс и саму экспедицию на шаттле.
 ghost-role-information-rules-expedition-pirate-antagonist =
     Вы — [color=red][bold]NPC-пират[/bold][/color]. Ваши намерения вредят станции и её экипажу.
     Вы должны [bold]защищать[/bold] свою территорию и сотрудничать с другими пиратами.
+    Вам [color=red][bold]НЕЛЬЗЯ[/bold][/color] покинуть экспедицию на шаттле.
+    Помните, что вы как [color=red][bold]NPC-пират[/bold][/color] [bold]ограничены[/bold] временем: через [color=red][bold]20 минут[/bold][/color] вас автоматически переместят в наблюдателя.
+    Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
+ghost-role-information-expedition-soviet-name = Солдат из Бункера
+ghost-role-information-expedition-soviet-description = Смирно, солдат! Не позволяйте годам службы и алкоголизму сломить вас. Вы — боец вооружённых сил СССП. Выполните приказ и защитите аванпост.
+ghost-role-information-rules-expedition-soviet-antagonist =
+    Вы — [color=red][bold]NPC-солдат[/bold][/color]. Ваши намерения вредят станции и её экипажу.
+    Вы должны [bold]защищать[/bold] свою территорию и сотрудничать с другими NPC.
     Вам [color=green][bold]можно[/bold][/color] покинуть экспедицию на шаттле, но [color=red][bold]только[/bold][/color] если [color=orange][bold]утилизаторы[/bold][/color] (живые или мёртвые) находятся на шаттле.
     Помните, что вы как [color=red][bold]NPC-пират[/bold][/color] [bold]ограничены[/bold] временем: через [color=red][bold]20 минут[/bold][/color] вас автоматически переместят в наблюдателя.
     Вы не помните ничего из своей предыдущей жизни и не помните ничего из того, что узнали, будучи призраком.
+ghost-role-information-corporate-aligned-rules =
+    Вы [color={role-type-corporate-aligned-alternate-color}][bold]{role-type-corporate-aligned-name}[/bold][/color].
+    Вы должны служить интересам NanoTrasen и Центрального Командования, даже если они расходятся с интересами станции.
+    Помните: вы [color=red]НЕ[/color] служите экипажу.
+    Вы не помните ничего из своей прошлой жизни и ничего из того, что узнали, будучи призраком.
+
+ghost-role-information-tsf-aligned-rules =
+    Вы [color={role-type-tsf-aligned-color}][bold]{role-type-tsf-aligned-name}[/bold][/color].
+    Вы должны служить интересам Транс-Солнечной Федерации.
+    Помните: вы [color=red]НЕ[/color] служите экипажу.
+    Вы не помните ничего из своей прошлой жизни и ничего из того, что узнали, будучи призраком.

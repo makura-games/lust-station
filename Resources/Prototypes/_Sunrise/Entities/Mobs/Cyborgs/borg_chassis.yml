@@ -6,10 +6,7 @@
   - type: BorgSwitchableType
     selectedBorgType: security
   - type: Loadout
-    prototypes: [ BorgArmorSiliconLoadoutMk2 ]
-  - type: Tag
-    tags:
-    - NoPaint
+    prototypes: [ BorgArmorSiliconLoadout ]
 
 - type: entity
   id: BorgChassisPeace
@@ -94,7 +91,6 @@
     templateId: reaper
   - type: InventorySlots
   - type: Body
-    prototype: Reaper
   - type: Hands
     showInHands: true
   - type: Loadout
@@ -112,12 +108,12 @@
   - type: InnateItem
     entityTargetActions:
     - AccessBreaker
-  # Lust-start
+  # Lust-Start
   - type: ActionGrant
     actions:
     - ActionViewLaws
   - type: StandingState
-  # Lust-end
+  # Lust-End
 
 - type: startingGear
   id: SyndiReaperHardsuitGear
@@ -174,8 +170,6 @@
       tags:
       - BorgModuleERT
       - BorgModuleSecurity
-      - BorgModuleSyndicate
-      - BorgModuleSyndicateAssault
     hasMindState: ert_borg_e
     noMindState: ert_borg_e_r
   - type: IntrinsicRadioTransmitter
@@ -185,7 +179,7 @@
     - Common
     - Science
     - Command
-    - CentCom
+    - ERT
   - type: ActiveRadio
     channels:
     - Security
@@ -193,7 +187,7 @@
     - Common
     - Science
     - Command
-    - CentCom
+    - ERT
   - type: AccessReader
     access: [["Security"], ["Command"], ["Research"]]
   - type: SiliconLawProvider
@@ -212,12 +206,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 4.5
-  - type: Tag
-    tags:
-    - DoorBumpOpener
-    - CanPilot
-    - FootstepSound
-    - EmagImmune
   - type: InnateItem
     instantActions:
     - PortableSurveillanceCameraMonitorUnpowered
@@ -232,12 +220,12 @@
   - type: PowerCellDraw # Use it to increase battery life further
     drawRate: 0.5
   - type: ToggleableNightVision
-  # Lust-start
+  # Lust-Start
   - type: ActionGrant
     actions:
     - ActionViewLaws
   - type: StandingState
-  # Lust-end
+  # Lust-End
 
 - type: entity
   id: BorgChassisSyndicateHeavy
@@ -348,12 +336,16 @@
   - type: InnateItem
     entityTargetActions:
     - AccessBreaker
-  # Lust-start
+  - type: FootprintEmitter
+    placementOffset: 0,0
+    leftBareFootState: [ footprint-tracked-heavy ]
+    rightBareFootState: [ footprint-tracked-heavy ]
+  # Lust-Start
   - type: ActionGrant
     actions:
     - ActionViewLaws
   - type: StandingState
-  # Lust-end
+  # Lust-End
 
 - type: entity
   id: BorgChassisSyndicateSpider
@@ -385,6 +377,8 @@
       tags:
       - BorgModuleGeneric
       - BorgModuleSecurity
+      - BorgModuleMedical
+      - BorgModuleEngineering
       - BorgModuleSyndicate
     hasMindState: spider_e
     noMindState: spider_e_r
@@ -435,12 +429,12 @@
   - type: InnateItem
     entityTargetActions:
     - AccessBreaker
-  # Lust-start
+  # Lust-Start
   - type: ActionGrant
     actions:
     - ActionViewLaws
   - type: StandingState
-  # Lust-end
+  # Lust-End
 
 - type: entity
   parent: BaseBorgChassisSyndicateDerelict
@@ -591,6 +585,10 @@
     - AccessBreaker
   - type: Construction
     node: derelictcyborg
+
+- type: entity
+  id: SyndicateSaboteurBorgChassisDerelict
+  parent: SyndicateSaboteurBorgChassisDerelictSunrise
 
 - type: entity
   parent: BaseBorgChassisSyndicateDerelict

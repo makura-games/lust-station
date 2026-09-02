@@ -1,0 +1,240 @@
+- type: roleLoadout
+  id: LustJobPassenger
+  groups:
+  - GroupTankHarness
+  - PassengerJumpsuit
+  - SunriseCommonBackpack
+  - PassengerNeck
+  - PassengerFace
+  - PassengerGloves
+  - PassengerOuterClothing
+  - PassengerShoes
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobBartender
+  groups:
+  - GroupTankHarness
+  - BartenderHead
+  - BartenderJumpsuit
+  - SunriseCommonBackpack
+  - BartenderOuterClothing
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - BartenderJobTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobServiceWorker
+  groups:
+  - GroupTankHarness
+  - BartenderJumpsuit
+  - SunriseCommonBackpack
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobChef
+  groups:
+  - GroupTankHarness
+  - ChefHead
+  - ChefMask
+  - ChefJumpsuit
+  - SunriseCommonBackpack
+  - ChefOuterClothing
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobLibrarian
+  groups:
+  - GroupTankHarness
+  - LibrarianJumpsuit
+  - SunriseCommonBackpack
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobLawyer
+  groups:
+  - GroupTankHarness
+  - LawyerNeck
+  - LawyerJumpsuit
+  - SunriseCommonBackpack
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobChaplain
+  groups:
+  - GroupTankHarness
+  - ChaplainHead
+  - ChaplainMask
+  - ChaplainNeck
+  - ChaplainJumpsuit
+  - SunriseCommonBackpack
+  - ChaplainOuterClothing
+  - ChaplainBible
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobJanitor
+  groups:
+  - GroupTankHarness
+  - JanitorHead
+  - SunriseJanitorJumpsuit
+  - JanitorGloves
+  - SunriseCommonBackpack
+  - JanitorOuterClothing
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - JanitorJobTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobBotanist
+  groups:
+  - GroupTankHarness
+  - BotanistHead
+  - BotanistJumpsuit
+  - BotanistBackpack
+  - BotanistOuterClothing
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobClown
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - ClownHead
+  - ClownJumpsuit
+  - ClownBackpack
+  - ClownOuterClothing
+  - ClownShoes
+  - SunriseGlasses
+  - SunriseSurvivalClown
+  - SunriseTrinkets
+  - ClownJobTrinkets
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobMime
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - MimeHead
+  - MimeMask
+  - MimeJumpsuit
+  - MimeBackpack
+  - MimeOuterClothing
+  - MimeBelt
+  - SunriseGlasses
+  - SunriseSurvivalMime
+  - SunriseTrinkets
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobMusician
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - SunriseMusicianJumpsuit
+  - SunriseCommonBackpack
+  - SunriseMusicianOuterClothing
+  - SunriseGlasses
+  - SunriseSurvival
+  - SunriseTrinkets
+  - SunriseInstruments
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobBarber
+  groups:
+  - BarberJumpsuit
+  - CommonBackpack
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - LustSpecialLoadout
+  - Contributors
+

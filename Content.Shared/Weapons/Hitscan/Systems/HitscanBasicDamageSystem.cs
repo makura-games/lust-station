@@ -1,4 +1,5 @@
 using Content.Shared.Damage.Systems;
+using Content.Shared.Projectiles;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Hitscan.Events;
 
@@ -13,6 +14,9 @@ public sealed class HitscanBasicDamageSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<HitscanBasicDamageComponent, HitscanRaycastFiredEvent>(OnHitscanHit);
+        // Sunrise added start - support projectile components in hitscans
+        SubscribeLocalEvent<ProjectileComponent, HitscanRaycastFiredEvent>(OnProjectileHitscanHit);
+        // Sunrise added end
     }
 
     private void OnHitscanHit(Entity<HitscanBasicDamageComponent> ent, ref HitscanRaycastFiredEvent args)
@@ -22,28 +26,45 @@ public sealed class HitscanBasicDamageSystem : EntitySystem
 
         var dmg = ent.Comp.Damage * _damage.UniversalHitscanDamageModifier;
 
-        // var damageDealt = _damage.TryChangeDamage(args.Data.HitEntity.Value, dmg, origin: args.Data.Gun); // Starlight - we redefine this
-        // Starlight start
-        var damageDealt = _damage.ChangeDamage(
-                args.Data.HitEntity.Value,
-                dmg,
-                ignoreResistances: ent.Comp.IgnoreResistances,
-                origin: args.Data.Gun,
-                armorPenetration: ent.Comp.ArmorPenetration,
-                canHeal: false
-            );
-        // Starlight end
-
-        if (damageDealt == null)
+        // Sunrise edit start - credit pilot player as origin for damage overlay compatibility
+        var origin = args.Data.Shooter ?? args.Data.Gun;
+        if(!_damage.TryChangeDamage(args.Data.HitEntity.Value, dmg, out var damageDealt, origin: origin))
             return;
+        // Sunrise edit end
 
         var damageEvent = new HitscanDamageDealtEvent
         {
             Target = args.Data.HitEntity.Value,
             DamageDealt = damageDealt,
-            Data = args.Data, // Starlight
         };
 
         RaiseLocalEvent(ent, ref damageEvent);
     }
+
+    // Sunrise added start - support projectile components in hitscans
+    private void OnProjectileHitscanHit(Entity<ProjectileComponent> ent, ref HitscanRaycastFiredEvent args)
+    {
+        if (HasComp<HitscanBasicDamageComponent>(ent))
+            return;
+
+        if (args.Data.HitEntity == null)
+            return;
+
+        var dmg = ent.Comp.Damage * _damage.UniversalHitscanDamageModifier;
+
+        // Sunrise edit start - credit pilot player as origin for damage overlay compatibility
+        var origin = args.Data.Shooter ?? args.Data.Gun;
+        if (!_damage.TryChangeDamage(args.Data.HitEntity.Value, dmg, out var damageDealt, origin: origin))
+            return;
+        // Sunrise edit end
+
+        var damageEvent = new HitscanDamageDealtEvent
+        {
+            Target = args.Data.HitEntity.Value,
+            DamageDealt = damageDealt,
+        };
+
+        RaiseLocalEvent(ent, ref damageEvent);
+    }
+    // Sunrise added end
 }

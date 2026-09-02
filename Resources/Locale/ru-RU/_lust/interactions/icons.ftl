@@ -66,3 +66,7 @@ lust-interaction-icon-ToyPussyIcon = Игрушка (киска)
 lust-interaction-icon-BoobsManyKissesIcon = Много поцелуев (грудь)
 lust-interaction-icon-CheeksKissIcon = Поцелуй щёк
 lust-interaction-icon-CockTongueFap = Ласкание члена языком
+lust-interaction-icon-WingKiss = Поцелуй крыльев
+lust-interaction-icon-WingLick = Облизывание крыльев
+lust-interaction-icon-WingStrokeCrotch = Погладить промежность крылом
+lust-interaction-icon-WingsCockFap = Погладить член крылом

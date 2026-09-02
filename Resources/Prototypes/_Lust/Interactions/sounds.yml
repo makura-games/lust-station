@@ -72,3 +72,18 @@
   id: FinterLick
   name: lust-interaction-sound-FinterLick
   sound: /Audio/_Lust/Interactions/fingerlick/fingerlick.ogg
+
+- type: interactionSound
+  id: FemaleSigh
+  name: lust-interaction-sound-FemaleSigh
+  sound: /Audio/Voice/Human/female_sigh.ogg
+
+- type: interactionSound
+  id: MaleSigh
+  name: lust-interaction-sound-MaleSigh
+  sound: /Audio/Voice/Human/male_sigh.ogg
+
+- type: interactionSound
+  id: FenceRattle1
+  name: lust-interaction-sound-FenceRattle1
+  sound: /Audio/Effects/fence_rattle1.ogg

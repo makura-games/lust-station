@@ -1,0 +1,359 @@
+- type: interaction
+  id: WingsKiss
+  name: lust-interaction-WingsKiss
+  icon: WingKiss
+  category: Wings
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "рот" ]
+    requireExposed: true
+  - !type:HasMarkingCondition
+    checkInitiator: false
+    checkTarget: true
+    markingWhitelist:
+    - MiliraWingBasic
+    - MiliraWingBasicOpen
+    - MiliraWingBasicFlight
+    - MothWingsDefault
+    - MothWingsCharred
+    - MothWingsDbushy
+    - MothWingsDeathhead
+    - MothWingsFan
+    - MothWingsDfan
+    - MothWingsFeathery
+    - MothWingsFirewatch
+    - MothWingsGothic
+    - MothWingsJungle
+    - MothWingsLadybug
+    - MothWingsMaple
+    - MothWingsMoffra
+    - MothWingsOakworm
+    - MothWingsPlasmafire
+    - MothWingsPointy
+    - MothWingsRoyal
+    - MothWingsStellar
+    - MothWingsStriped
+    - MothWingsSwirly
+    - MothWingsWhitefly
+    - MothWingsWitchwing
+    - MothWingsUnderwing
+  interactionMessages:
+  - "%user нежно целует крылышки %target"
+  - "%user ласково целует крылья %target"
+  - "%user с теплотой прижимается губами к крыльям %target"
+  interactionSounds:
+  - Kiss1
+  - Kiss2
+  - Kiss3
+  - Kiss4
+  - Kiss5
+  - Kiss6
+  loveUser: 2
+  loveTarget: 4
+  cooldown: 3
+
+- type: interaction
+  id: WingsLick
+  name: lust-interaction-WingsLick
+  icon: WingLick
+  category: Wings
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "рот" ]
+    requireExposed: true
+  - !type:HasMarkingCondition
+    checkInitiator: false
+    checkTarget: true
+    markingWhitelist:
+    - MiliraWingBasic
+    - MiliraWingBasicOpen
+    - MiliraWingBasicFlight
+    - MothWingsDefault
+    - MothWingsCharred
+    - MothWingsDbushy
+    - MothWingsDeathhead
+    - MothWingsFan
+    - MothWingsDfan
+    - MothWingsFeathery
+    - MothWingsFirewatch
+    - MothWingsGothic
+    - MothWingsJungle
+    - MothWingsLadybug
+    - MothWingsMaple
+    - MothWingsMoffra
+    - MothWingsOakworm
+    - MothWingsPlasmafire
+    - MothWingsPointy
+    - MothWingsRoyal
+    - MothWingsStellar
+    - MothWingsStriped
+    - MothWingsSwirly
+    - MothWingsWhitefly
+    - MothWingsWitchwing
+    - MothWingsUnderwing
+  interactionMessages:
+  - "%user нежно облизывает крылышки %target, делая их мокренькими"
+  - "%user ласково лижет крылья %target"
+  - "%user проводит языком по крыльям %target, вылизывая их"
+  interactionSounds:
+  - FaceLickDoggyStyleSound1
+  - FaceLickDoggyStyleSound2
+  loveUser: 2
+  loveTarget: 4
+  cooldown: 3
+
+- type: interaction
+  id: WingsStrokeCrotch
+  name: lust-interaction-WingsStrokeCrotch
+  icon: WingStrokeCrotch
+  category: Wings
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:HasMarkingCondition
+    checkInitiator: true
+    checkTarget: false
+    markingWhitelist:
+    - MiliraWingBasic
+    - MiliraWingBasicOpen
+    - MiliraWingBasicFlight
+    - MothWingsDefault
+    - MothWingsCharred
+    - MothWingsDbushy
+    - MothWingsDeathhead
+    - MothWingsFan
+    - MothWingsDfan
+    - MothWingsFeathery
+    - MothWingsFirewatch
+    - MothWingsGothic
+    - MothWingsJungle
+    - MothWingsLadybug
+    - MothWingsMaple
+    - MothWingsMoffra
+    - MothWingsOakworm
+    - MothWingsPlasmafire
+    - MothWingsPointy
+    - MothWingsRoyal
+    - MothWingsStellar
+    - MothWingsStriped
+    - MothWingsSwirly
+    - MothWingsWhitefly
+    - MothWingsWitchwing
+    - MothWingsUnderwing
+  interactionMessages:
+  - "%user нежно гладит промежность %target своим крылом"
+  - "%user медленно ласкает промежность %target своим крылом"
+  - "%user аккуратно проводит крылом по промежности %target"
+  - "%user игриво поглаживает промежность %target своим крылом"
+  interactionSounds:
+  - FriendlyStroke
+  loveUser: 3
+  loveTarget: 6
+  cooldown: 3
+
+- type: interaction
+  id: WingsCockFap
+  name: lust-interaction-WingsCockFap
+  icon: WingsCockFap
+  category: Cock
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: false
+    checkTarget: true
+    categories: [ "член" ]
+    requireExposed: true
+  - !type:HasMarkingCondition
+    checkInitiator: true
+    checkTarget: false
+    markingWhitelist:
+    - MiliraWingBasic
+    - MiliraWingBasicOpen
+    - MiliraWingBasicFlight
+    - MothWingsDefault
+    - MothWingsCharred
+    - MothWingsDbushy
+    - MothWingsDeathhead
+    - MothWingsFan
+    - MothWingsDfan
+    - MothWingsFeathery
+    - MothWingsFirewatch
+    - MothWingsGothic
+    - MothWingsJungle
+    - MothWingsLadybug
+    - MothWingsMaple
+    - MothWingsMoffra
+    - MothWingsOakworm
+    - MothWingsPlasmafire
+    - MothWingsPointy
+    - MothWingsRoyal
+    - MothWingsStellar
+    - MothWingsStriped
+    - MothWingsSwirly
+    - MothWingsWhitefly
+    - MothWingsWitchwing
+    - MothWingsUnderwing
+  interactionMessages:
+  - "%user похотливо обвивает крылом член %target"
+  - "%user нежно дрочит крылом член %target"
+  - "%user ласкает крылом член %target"
+  - "%user игриво поглаживает крылом член %target"
+  - "%user сжимает и трахает крылом член %target"
+  interactionSounds:
+  - Hlup1
+  - Hlup2
+  - Hlup3
+  - Hlup4
+  loveUser: 4
+  loveTarget: 7
+  cooldown: 3
+
+- type: interaction
+  id: WingsPussyFuck
+  name: lust-interaction-WingsPussyFuck
+  icon: WingScratch
+  category: Pussy
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: true
+    checkTarget: false
+    requiredSex: [ Male, Futanari ]
+  - !type:SexCondition
+    checkInitiator: false
+    checkTarget: true
+    requiredSex: [ Female, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "член" ]
+    requireExposed: true
+  - !type:BodyAreaTagCondition
+    checkInitiator: false
+    checkTarget: true
+    categories: [ "вагина" ]
+    requireExposed: true
+  - !type:HasMarkingCondition
+    checkInitiator: false
+    checkTarget: true
+    markingWhitelist:
+    - MiliraWingBasic
+    - MiliraWingBasicOpen
+    - MiliraWingBasicFlight
+    - MothWingsDefault
+    - MothWingsCharred
+    - MothWingsDbushy
+    - MothWingsDeathhead
+    - MothWingsFan
+    - MothWingsDfan
+    - MothWingsFeathery
+    - MothWingsFirewatch
+    - MothWingsGothic
+    - MothWingsJungle
+    - MothWingsLadybug
+    - MothWingsMaple
+    - MothWingsMoffra
+    - MothWingsOakworm
+    - MothWingsPlasmafire
+    - MothWingsPointy
+    - MothWingsRoyal
+    - MothWingsStellar
+    - MothWingsStriped
+    - MothWingsSwirly
+    - MothWingsWhitefly
+    - MothWingsWitchwing
+    - MothWingsUnderwing
+  interactionMessages:
+  - "%user ритмично трахает вагину %target, сжимая её крылья"
+  - "%user крепко держит крылья %target, и жестко трахает её вагину"
+  - "%user стиснув крылья %target, страстно долбит её вагину своим членом"
+  - "%user сжимая крылья %target, натягивает их на себя и трахает её вагину"
+  - "%user на всю длину входит членом в вагину %target, прижимая её за крылья"
+  interactionSounds:
+  - Hlup1
+  - Hlup2
+  - Hlup3
+  - Hlup4
+  loveUser: 10
+  loveTarget: 10
+  cooldown: 3
+
+- type: interaction
+  id: WingsAssFuck
+  name: lust-interaction-WingsAssFuck
+  icon: WingScratch
+  category: Anal
+  appearConditions:
+  - !type:HasTargetCondition
+    allowSelfTargeting: false
+  - !type:SexCondition
+    checkInitiator: true
+    checkTarget: false
+    requiredSex: [ Male, Futanari ]
+  - !type:BodyAreaTagCondition
+    checkInitiator: true
+    checkTarget: false
+    categories: [ "член" ]
+    requireExposed: true
+  - !type:BodyAreaTagCondition
+    checkInitiator: false
+    checkTarget: true
+    categories: [ "анал" ]
+    requireExposed: true
+  - !type:HasMarkingCondition
+    checkInitiator: false
+    checkTarget: true
+    markingWhitelist:
+    - MiliraWingBasic
+    - MiliraWingBasicOpen
+    - MiliraWingBasicFlight
+    - MothWingsDefault
+    - MothWingsCharred
+    - MothWingsDbushy
+    - MothWingsDeathhead
+    - MothWingsFan
+    - MothWingsDfan
+    - MothWingsFeathery
+    - MothWingsFirewatch
+    - MothWingsGothic
+    - MothWingsJungle
+    - MothWingsLadybug
+    - MothWingsMaple
+    - MothWingsMoffra
+    - MothWingsOakworm
+    - MothWingsPlasmafire
+    - MothWingsPointy
+    - MothWingsRoyal
+    - MothWingsStellar
+    - MothWingsStriped
+    - MothWingsSwirly
+    - MothWingsWhitefly
+    - MothWingsWitchwing
+    - MothWingsUnderwing
+  interactionMessages:
+  - "%user ритмично трахает анус %target, сжимая крылья"
+  - "%user крепко держит крылья %target, и жестко трахает анус"
+  - "%user стиснув крылья %target, страстно долбит анус своим членом"
+  - "%user на всю длину входит членом в анус %target, прижимая крылья"
+  interactionSounds:
+  - Hlup1
+  - Hlup2
+  - Hlup3
+  - Hlup4
+  loveUser: 10
+  loveTarget: 10
+  cooldown: 3

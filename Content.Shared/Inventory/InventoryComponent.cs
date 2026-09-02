@@ -52,10 +52,10 @@ public sealed partial class InventoryComponent : Component
     [DataField, AutoNetworkedField]
     public Dictionary<string, DisplacementData> MaleDisplacements = new();
 
-    // Lust-start
+    // Lust-Start
     [DataField]
     public Dictionary<string, DisplacementData> FutanariDisplacements = new();
-    // Lust-end
+    // Lust-End
 }
 
 /// <summary>

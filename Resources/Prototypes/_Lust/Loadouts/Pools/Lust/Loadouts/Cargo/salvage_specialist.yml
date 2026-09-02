@@ -1,0 +1,23 @@
+- type: loadout
+  id: SalvageSpecialistNeck50h
+  equipment:
+    neck: ClothingNeckCloakSalvagerSupreme
+  effects:
+  - !type:GroupLoadoutEffect
+    proto:   MasterSalvage50h
+
+- type: loadout
+  id: SalvageSpecialistNeck100h
+  equipment:
+    neck: ClothingNeckMantleMiner
+  effects:
+  - !type:GroupLoadoutEffect
+    proto:   MasterSalvage100h
+
+- type: loadout
+  id: SalvageSpecialistNeck666h
+  equipment:
+    neck: ClothingNeckMantleGoliathAlive
+  effects:
+  - !type:GroupLoadoutEffect
+    proto:   MasterSalvage666h

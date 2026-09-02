@@ -127,9 +127,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatchred.rsi
+    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatch_red.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatchred.rsi
+    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatch_red.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -168,9 +168,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatchwhite.rsi
+    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatch_white.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatchwhite.rsi
+    sprite: _Lust/CP/Clothing/Head/Hardsuithelmet/overwatch_white.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -348,9 +348,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmask.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmask.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -382,9 +382,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmaskmed.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask_med.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmaskmed.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask_med.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -421,9 +421,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmaskcommissar.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask_commissar.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmaskcommissar.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask_commissar.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -456,9 +456,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmaskdl.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask_dl.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Mask/civilprotectionmaskdl.rsi
+    sprite: _Lust/CP/Clothing/Mask/civil_protection_mask_dl.rsi
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -491,9 +491,9 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Mask/moderngasmask.rsi
+    sprite: _Lust/CP/Clothing/Mask/modern_gas_mask.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Mask/moderngasmask.rsi
+    sprite: _Lust/CP/Clothing/Mask/modern_gas_mask.rsi
 
 ##russiamask
 - type: entity
@@ -517,6 +517,6 @@
   suffix: HL2
   components:
   - type: Sprite
-    sprite: _Lust/CP/Clothing/Mask/swatmask.rsi
+    sprite: _Lust/CP/Clothing/Mask/swat_mask.rsi
   - type: Clothing
-    sprite: _Lust/CP/Clothing/Mask/swatmask.rsi
+    sprite: _Lust/CP/Clothing/Mask/swat_mask.rsi

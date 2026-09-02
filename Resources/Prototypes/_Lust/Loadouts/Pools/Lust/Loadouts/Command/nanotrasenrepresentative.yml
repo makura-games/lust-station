@@ -1,0 +1,20 @@
+- type: loadout
+  id: NanoTrasenRepresentativeBra
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WomanMoment
+  equipment:
+    bra: ClothingBraNanoTrasenRepresentative
+
+- type: loadout
+  id: NanoTrasenRepresentativeThong
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: WomanMoment
+  equipment:
+    pants: ClothingPantsWomanNanoTrasenRepresentative
+
+- type: loadout
+  id: NanoTrasenRepresentativeBoxers
+  equipment:
+    pants: ClothingPantsManNanoTrasenRepresentative

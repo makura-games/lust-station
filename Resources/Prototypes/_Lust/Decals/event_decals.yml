@@ -1,0 +1,6 @@
+- type: decal
+  id: LustERPEventAbyss
+  tags: ["planet", "markings"]
+  sprite:
+    sprite: _Lust/Decals/abyss.rsi
+    state: abyss

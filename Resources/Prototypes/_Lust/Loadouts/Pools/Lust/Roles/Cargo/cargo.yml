@@ -1,0 +1,86 @@
+- type: roleLoadout
+  id: LustJobCargoTechnician
+  groups:
+  - SunriseCargoTechnicianHead
+  - SunriseGlasses
+  - SunriseCargoTechMask
+  - SunriseCargoTechNeck
+  - CargoTechnicianJumpsuit
+  - SunriseCargoTechnicianOuterClothing
+  - SunriseCargoTechGloves
+  - SunriseCargoTechnicianShoes
+  - GroupTankHarness
+  - CargoTechnicianBackpack
+  - CargoTechnicianID
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsCargo
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobSalvageSpecialist
+  groups:
+  - SunriseSalvageHead
+  - SunriseGlasses
+  - SunriseSalvageMask
+  - LustSalvageSpecialistNeck
+  - SunriseSalvageSpecialistOuterClothing
+  - SunriseSalvageGloves
+  - SunriseSalvageSpecialistShoes
+  - GroupTankHarness
+  - SalvageSpecialistBackpack
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsCargo
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobMailCarrier
+  groups:
+  - SunriseCargoTechNeck
+  - MailCarrierJumpsuit
+  - SunriseCargoTechGloves
+  - CargoTechnicianBackpack
+  - GroupTankHarness
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsCargo
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: LustJobMiningSpecialist
+  groups:
+  - SunriseSalvageHead
+  - SunriseGlasses
+  - SunriseSalvageMask
+  - LustSalvageSpecialistNeck
+  - SunriseSalvageSpecialistOuterClothing
+  - SunriseSalvageGloves
+  - SunriseSalvageSpecialistShoes
+  - SalvageSpecialistBackpack
+  - GroupTankHarness
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - TrinketsCargo
+  - LustSpecialLoadout
+  - Contributors
+

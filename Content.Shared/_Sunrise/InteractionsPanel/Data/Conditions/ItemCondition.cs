@@ -1,5 +1,6 @@
 using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
+using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -16,6 +17,12 @@ public sealed partial class ItemCondition : IAppearCondition
 
     [DataField]
     public List<EntProtoId> ItemWhiteList { get; private set; } = new();
+
+    [DataField]
+    public bool CheckEquipped { get; private set; }
+
+    [DataField]
+    public List<string> EquipmentSlots { get; private set; } = new();
 
     public bool IsMet(EntityUid initiator, EntityUid target, EntityManager entityManager)
     {
@@ -38,18 +45,38 @@ public sealed partial class ItemCondition : IAppearCondition
 
     private bool HasRequiredItem(EntityUid entity, EntityManager entityManager, SharedHandsSystem handsSystem)
     {
-        if (!entityManager.TryGetComponent<HandsComponent>(entity, out var handsComponent))
-            return false;
-
-        foreach (var heldEntity in handsSystem.EnumerateHeld((entity, handsComponent)))
+        if (entityManager.TryGetComponent<HandsComponent>(entity, out var handsComponent))
         {
-            if (!entityManager.TryGetComponent<MetaDataComponent>(heldEntity, out var meta))
-                return false;
+            foreach (var heldEntity in handsSystem.EnumerateHeld((entity, handsComponent)))
+            {
+                if (IsMatchingItem(heldEntity, entityManager))
+                    return true;
+            }
+        }
 
-            if (meta.EntityPrototype != null && ItemWhiteList.Contains(meta.EntityPrototype.ID))
-                return true;
+        if (CheckEquipped && entityManager.TryGetComponent<ContainerManagerComponent>(entity, out var containerManager))
+        {
+            foreach (var (key, container) in containerManager.Containers)
+            {
+                if (EquipmentSlots.Count > 0 && !EquipmentSlots.Contains(key))
+                    continue;
+
+                foreach (var containedEntity in container.ContainedEntities)
+                {
+                    if (IsMatchingItem(containedEntity, entityManager))
+                        return true;
+                }
+            }
         }
 
         return false;
+    }
+
+    private bool IsMatchingItem(EntityUid entity, EntityManager entityManager)
+    {
+        if (!entityManager.TryGetComponent<MetaDataComponent>(entity, out var meta))
+            return false;
+
+        return meta.EntityPrototype != null && ItemWhiteList.Contains(meta.EntityPrototype.ID);
     }
 }

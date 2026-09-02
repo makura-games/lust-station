@@ -34,6 +34,7 @@
     ClothingShoesBootsMettaton : 3
     ClothingShoesBootsMajima : 3
     ClothingUniformJumpskirtQipao: 2
+    ClothingMaskZombie: 2
     # Sunrise - End
     ClothingHeadHatSantahat: 2
     ClothingOuterSanta: 2
@@ -73,10 +74,10 @@
     ClothingShoesBootsCowboyBrown: 1
     ClothingShoesBootsCowboyBlack: 1
     ClothingShoesBootsCowboyWhite: 1
-#Lust-start
+# Lust-Start
     ClothingBeerCostume: 2
     ClothingPivozavr: 2
-#Lust-end
+# Lust-End
   contrabandInventory:
     ClothingHeadHatRichard: 1
     ToyFigurineBoxer: 1

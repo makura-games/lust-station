@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: LustJobHeadOfPersonnel
+  groups:
+  - HoPHead
+  - SunriseGlasses
+  - LustHoPNeck
+  - HoPJumpsuit
+  - HoPOuterClothing
+  - GroupTankHarness
+  - HoPBackpack
+  - SunriseSurvival
+  - SunriseGroupSpeciesBreathTool
+  - SunriseHoPBra
+  - SunriseHoPPants
+  - Socks
+  - SunriseTrinkets
+  - LustSpecialLoadout
+  - Contributors
+

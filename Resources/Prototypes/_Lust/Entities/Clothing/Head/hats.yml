@@ -1,8 +1,8 @@
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcomElegantCap
-  name: ent-ClothingHeadHatCentcomElegantCap
-  description: ent-ClothingHeadHatCentcomElegantCap-desc
+  name: elegant CentCom cap
+  description: For space princes and princesses.
   components:
   - type: Sprite
     sprite: _Lust/Clothing/Head/Hats/centcom_cap_elegant.rsi

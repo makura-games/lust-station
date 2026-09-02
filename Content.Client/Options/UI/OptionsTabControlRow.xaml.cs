@@ -209,6 +209,19 @@ public sealed partial class OptionsTabControlRow : Control
         UpdateButtonState();
     }
 
+    // Sunrise added start - разрешаем обновления UI без признака пользовательского изменения
+    /// <summary>
+    /// <see cref="RefreshButtonState"/> updates the options buttons without implying user-driven edits.
+    /// </summary>
+    /// <remarks>
+    /// Unlike <see cref="ValueChanged"/>, <see cref="RefreshButtonState"/> only re-evaluates the current button state.
+    /// </remarks>
+    public void RefreshButtonState()
+    {
+        UpdateButtonState();
+    }
+    // Sunrise added end
+
     private void UpdateButtonState()
     {
         var anyModified = _options.Any(option => option.IsModified());

@@ -1,0 +1,41 @@
+- type: loadoutGroup
+  id: LustCaptainNeck
+  name: loadout-group-captain-neck
+  minLimit: 0
+  loadouts:
+  - CaptainMantle
+  - CaptainMantleWhite
+  - CaptainMantleWhiteShoulder
+  - CaptainMantleBlack
+  - CaptainMantleBlackShoulder
+  - CaptainCloak
+  - CaptainCloakFormal
+  - CaptainEliteCloak
+  - CaptainScarf
+  - CaptainSpecialCloak
+
+- type: loadoutGroup
+  id: LustHoPNeck
+  name: loadout-group-hop-neck
+  minLimit: 0
+  loadouts:
+  - HoPCloak
+  - HoPMantle
+  - HoPScarf
+  - HopSpecialCloak
+
+- type: loadoutGroup
+  id: LustQuartermasterNeck
+  name: loadout-group-quartermaster-neck
+  minLimit: 0
+  loadouts:
+  - QuartermasterCloak
+  - QuartermasterMantle
+  - QuartermasterScarf
+  - SunriseScarfOrange
+  - SunriseScarfYellow
+  - SunriseScarfBrown
+  - SunriseScarfPurple
+  - SunriseBedsheetCosmos
+  - QuartermasterSpecialCloak
+

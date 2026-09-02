@@ -1,0 +1,15 @@
+- type: loadout
+  id: LustQilluCloak
+  sponsorOnly: true
+  equipment:
+    neck: ClothingNeckQilluCloak
+
+- type: loadout
+  id: LustBoombox
+  sponsorOnly: true
+  startingGear: LustBoomboxStartingGear
+
+- type: startingGear
+  id: LustBoomboxStartingGear
+  equipment:
+    back: Boombox

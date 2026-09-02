@@ -17,6 +17,7 @@
     bodyType: Dynamic
     linearDamping: 0
     angularDamping: 0
+    fixedRotation: true
   - type: Fixtures
     fixtures:
       projectile:
@@ -127,7 +128,7 @@
     damage:
       types:
         Heat: 10
-  
+
 - type: entity
   name : disabler bolt
   id: BulletEnergySMGDisabler
@@ -151,3 +152,55 @@
     soundHit:
       collection: WeakHit
     forceSound: true
+
+- type: entity
+  parent: [ BulletGrenadeCleanade, BaseSyndicateContraband ]
+  id: BulletGrenadeCleanadeSyndicate
+  name: cleanade grenade
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: SmokeOnTrigger
+    duration: 3.5
+    spreadAmount: 10
+    smokePrototype: Foam
+    solution:
+      reagents:
+      - ReagentId: UniversalSolvent
+        Quantity: 15
+
+- type: entity
+  id: Bullet60mmRocket
+  name: 60mm rocket
+  parent: BaseBulletTrigger
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Weapons/Guns/Ammunition/Explosives/explosives.rsi
+    layers:
+    - state: rocket60mm
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.1,0.5,0.05"
+        density: 1
+        hard: true
+        layer:
+        - LargeMobLayer
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: Projectile
+    angle: -90
+  - type: ExplodeOnTrigger
+  - type: Explosive
+    explosionType: Default
+    maxIntensity: 20
+    intensitySlope: 3
+    totalIntensity: 100
+    maxTileBreak: 0
+  - type: PointLight
+    radius: 3.5
+    color: orange
+    energy: 0.5

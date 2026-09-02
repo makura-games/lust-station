@@ -17,3 +17,8 @@ ent-ClothingUniformJumpsuitCentcomSuitQillu = костюм Центкома
 ent-ClothingUniformJumpsuitCentcomUniformQillu = форма Центкома
     .suffix = Qillu
     .desc = Регламентная форма Центкома, изготовленная по контракту Qillu.
+
+ent-LustClothingUniformJumpsuitStripperSlim = тонкий костюм стриптизёра
+    .desc = Костюм стриптизёра, открывающий как можно больше кожи.
+ent-LustClothingUniformJumpsuitStripperStarPasties = наклейки на соски
+    .desc = Костюм стриптизёра с нанотехнологичными наклейками, которые не отпадут.

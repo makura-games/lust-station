@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Shared._Sunrise.CartridgeLoader.Cartridges;
+using Content.Shared.CartridgeLoader;
 
 namespace Content.Server._Sunrise.CartridgeLoader.Cartridges;
 
@@ -11,6 +12,10 @@ public sealed partial class MessengerCartridgeSystem
     private void UpdateUiState(EntityUid uid, EntityUid loaderUid, MessengerCartridgeComponent? component, Dictionary<string, PhotoMetadata>? photoGallery = null)
     {
         if (!Resolve(uid, ref component))
+            return;
+
+        // Messenger работает в фоне, но UI-state нужен только активному открытому окну программы.
+        if (!CanUpdateUiState(uid, loaderUid, component))
             return;
 
         var unreadCounts = new Dictionary<string, int>();
@@ -58,10 +63,19 @@ public sealed partial class MessengerCartridgeSystem
             unreadCounts,
             component.ActiveInvites,
             component.PinnedChats,
-            photoGallery
+            photoGallery,
+            _photoUploadEnabled
         );
 
         _cartridgeLoader.UpdateCartridgeUiState(loaderUid, state);
+    }
+
+    private bool CanUpdateUiState(EntityUid uid, EntityUid loaderUid, MessengerCartridgeComponent component)
+    {
+        return component.UiReady &&
+               TryComp<CartridgeLoaderComponent>(loaderUid, out var loader) &&
+               loader.ActiveProgram == uid &&
+               _ui.IsUiOpen(loaderUid, loader.UiKey);
     }
 
     private void ToggleMute(EntityUid uid, MessengerCartridgeComponent component, string chatId, bool isMuted)

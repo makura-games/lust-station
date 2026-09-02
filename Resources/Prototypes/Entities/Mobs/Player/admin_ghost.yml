@@ -36,6 +36,7 @@
     needsHands: false
   - type: CombatMode
   - type: Physics
+    bodyType: Kinematic # Admin ghosts should ignore the laws of physics.
     ignorePaused: true
   - type: Access
     groups:
@@ -90,6 +91,10 @@
     followEntity: true
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
+    # Sunrise - Start отключаем verb
+  - type: CrewMonitoringCorpseAlert
+    showToggleVerb: false
+    # Sunrise - End
   - type: GeneralStationRecordConsole
     canDeleteEntries: true
   - type: DeviceNetwork

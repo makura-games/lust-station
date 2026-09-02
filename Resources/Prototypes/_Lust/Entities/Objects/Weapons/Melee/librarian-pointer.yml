@@ -5,7 +5,7 @@
   description: a pointer for librarian
   components:
   - type: Sprite
-    sprite: _Lust/Objects/Weapons/Melee/librarian-pointer.rsi
+    sprite: _Lust/Objects/Weapons/Melee/librarian_pointer.rsi
     layers:
       - state: librarian-pointer
         map: [ "enum.DamageStateVisualLayers.Base" ]

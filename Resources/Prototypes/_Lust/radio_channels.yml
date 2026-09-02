@@ -1,7 +1,7 @@
 - type: radioChannel
   id: UGE
   name: chat-radio-UGE
-  keycode: 'э'
+  keycode: 'у'
   frequency: 1984
   color: "#4169E1"
   longRange: true

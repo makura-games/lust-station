@@ -1,9 +1,9 @@
-﻿# Базовые эффекты
+# Базовые эффекты
 
 - type: entity
   id: SunriseEffectHeal
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-heal
+  description: Heals nearby living beings
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEDamageInArea
@@ -13,14 +13,19 @@
       components:
       - MobState
     damage:
-      groups:
-        Brute: -300
-        Burn: -300
+      types:
+        Blunt: -100
+        Slash: -100
+        Piercing: -100
+        Heat: -75
+        Shock: -75
+        Cold: -75
+        Caustic: -75
 
 - type: entity
   id: SunriseArtifactGenerateEnergy
   parent: BaseOneTimeXenoArtifactEffect
-  description: artifact-effect-description-generate-energy
+  description: Generates electrical power
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEApplyComponents
@@ -37,7 +42,7 @@
 - type: entity
   id: SunriseArtifactWandering
   parent: BaseOneTimeXenoArtifactEffect
-  description: artifact-effect-description-wandering
+  description: Causes the artifact to move randomly around the area
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEApplyComponents
@@ -51,7 +56,7 @@
 - type: entity
   id: SunriseArtifactThrowThingsAround
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-throw-things
+  description: Throws nearby objects around violently
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEThrowThingsAround
@@ -59,7 +64,7 @@
 - type: entity
   id: SunriseArtifactKnock
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-knock
+  description: Knocks down nearby entities
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEKnock
@@ -68,7 +73,7 @@
 - type: entity
   id: SunriseArtifactEffectJunkSpawn
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-junk-spawn
+  description: Spawns random junk items
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEApplyComponents
@@ -89,7 +94,7 @@
 - type: entity
   id: SunriseArtifactShatterWindows
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-shatter-windows
+  description: Shatters nearby windows
   categories: [ HideSpawnMenu ]
   components:
   - type: XenoArtifactNode
@@ -109,7 +114,7 @@
 - type: entity
   id: SunriseEffectBoltAirlocks
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-bolt-airlocks
+  description: Bolts nearby airlocks
   categories: [ HideSpawnMenu ]
   components:
   - type: ArtifactBoltAirlocks
@@ -117,7 +122,7 @@
 - type: entity
   id: SunriseArtifactHunger
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-hunger
+  description: Increases hunger in nearby beings
   categories: [ HideSpawnMenu ]
   components:
   - type: ArtifactModifyHunger
@@ -125,7 +130,7 @@
 - type: entity
   id: SunriseEffectThirst
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-thirst
+  description: Increases thirst in nearby beings
   categories: [ HideSpawnMenu ]
   components:
   - type: ArtifactModifyThirst
@@ -133,7 +138,7 @@
 - type: entity
   id: SunriseEffectTeslaDischarge
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-tesla-discharge
+  description: Creates tesla discharges
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEApplyComponents
@@ -150,7 +155,7 @@
 - type: entity
   id: SunriseEffectSpawnEvilTwin
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-spawn-evil-twin
+  description: Spawns an evil twin
   categories: [ HideSpawnMenu ]
   components:
   - type: XenoArtifactNode
@@ -166,7 +171,7 @@
 - type: entity
   id: SunriseArtifactTeleport
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-teleport
+  description: Teleports nearby entities
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEApplyComponents
@@ -176,7 +181,7 @@
 - type: entity
   id: SunriseArtifactEmp
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-emp
+  description: Creates electromagnetic pulses
   categories: [ HideSpawnMenu ]
   components:
   - type: XenoArtifactNode
@@ -189,7 +194,7 @@
 - type: entity
   id: SunriseEffectIgnite
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-ignite
+  description: Sets nearby objects on fire
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEIgnite
@@ -201,7 +206,7 @@
 - type: entity
   id: SunriseEffectShuffleUltra
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-shuffle-ultra
+  description: Shuffles positions of nearby entities
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEShuffle
@@ -210,7 +215,7 @@
 - type: entity
   id: SunriseEffectPolyChair
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-polymorph-chair
+  description: Transforms nearby objects into chairs
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
@@ -219,7 +224,7 @@
 - type: entity
   id: SunriseEffectPolyWatermelon
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-polymorph-watermelon
+  description: Transforms nearby objects into watermelons
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
@@ -228,7 +233,7 @@
 - type: entity
   id: SunriseEffectPolyAppendix
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-polymorph-appendix
+  description: Transforms nearby objects into appendices
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
@@ -237,7 +242,7 @@
 - type: entity
   id: SunriseEffectPolyDisposal
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-polymorph-disposal
+  description: Transforms nearby objects into disposal units
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
@@ -246,7 +251,7 @@
 - type: entity
   id: SunriseEffectPolyTable
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-polymorph-table
+  description: Transforms nearby objects into tables
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEPolymorph
@@ -255,7 +260,7 @@
 - type: entity
   id: SunriseEffectSwap
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-swap
+  description: Swaps nearby entities
   categories: [ HideSpawnMenu ]
   components:
   - type: ArtifactWhitelistSwap
@@ -266,7 +271,7 @@
 - type: entity
   id: SunriseEffectRandomTransformation
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-random-transformation
+  description: Randomly transforms nearby objects
   categories: [ HideSpawnMenu ]
   components:
   - type: ArtifactRandomTransformation
@@ -295,6 +300,14 @@
     - SupermatterCrystal
     - TeslaEnergyBall
     - TeslaMiniEnergyBall
+    prototypeIdBlacklistSubstrings:
+    - Debug
+    - Admin
+    - Admeme
+    prototypeSuffixBlacklistSubstrings:
+    - Debug
+    - Admin
+    - Admeme
     componentBlacklist:
     - MapGrid
     - SurgeryStep
@@ -309,7 +322,7 @@
 - type: entity
   id: SunriseEffectMagnetUltra
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-magnet-ultra
+  description: Creates powerful magnetic fields
   categories: [ HideSpawnMenu ]
   components:
   - type: XAEApplyComponents
@@ -324,16 +337,126 @@
 - type: entity
   id: SunriseEffectShiftedAsciiTableAccent
   parent: BaseXenoArtifactEffect
-  description: artifact-effect-description-shifted-ascii
+  description: Makes speech completely incoherent and incomprehensible
   categories: [ HideSpawnMenu ]
   components:
   - type: AddComponentsInRadius
     whitelist:
       components:
-      - HumanoidAppearance
+      - HumanoidProfile
     components:
     - type: AnomalyAccent
     - type: TimedRemoveComponents
       removeAfter: 600
       components:
       - type: AnomalyAccent
+
+- type: entity
+  id: XenoArtifactEffectCreationGasBZ
+  parent: BaseXenoArtifactEffect
+  description: Expels BZ
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      BZ: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasHealium
+  parent: BaseXenoArtifactEffect
+  description: Expels healium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Healium: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasNitrium
+  parent: BaseXenoArtifactEffect
+  description: Expels nitrium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Nitrium: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasChargedElectrovae
+  parent: BaseXenoArtifactEffect
+  description: Expels charged electrovae
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      ChargedElectrovae: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasHalon
+  parent: BaseXenoArtifactEffect
+  description: Expels halon
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Halon: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasPluoxium
+  parent: BaseXenoArtifactEffect
+  description: Expels pluoxium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Pluoxium: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasZauker
+  parent: BaseXenoArtifactEffect
+  description: Expels zauker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Zauker: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasHydrogen
+  parent: BaseXenoArtifactEffect
+  description: Expels hydrogen
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Hydrogen: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasElectrovae
+  parent: BaseXenoArtifactEffect
+  description: Expels electrovae
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Electrovae: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasProtoNitrate
+  parent: BaseXenoArtifactEffect
+  description: Expels proto-nitrate
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      ProtoNitrate: 300
+
+- type: entity
+  id: XenoArtifactEffectCreationGasHelium
+  parent: BaseXenoArtifactEffect
+  description: Expels helium
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: XAECreateGas
+    gases:
+      Helium: 300

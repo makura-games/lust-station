@@ -4,24 +4,18 @@
   name: AJ-100 kit
   description: Includes an AJ-100 submachine gun and two magazines of ammunition.
   components:
-  - type: StorageFill
-    contents:
-    - id: WeaponAJ100Biocode
-    - id: MagazinePistolSubMachineGun
-    - id: MagazinePistol40SubMachineGunSP
-    - id: MagazineRifleSP
-    - id: MagazineLightRifleSP
-
-- type: entity
-  parent: ClothingBackpackSyndie
-  id: ClothingBackpackSyndieDL6902Filled
-  name: DL-6902 kit
-  description: Includes a DL6902 machine gun and one magazine of ammunition.
-  components:
-  - type: StorageFill
-    contents:
-    - id: WeaponDL6902Biocode
-    - id: MagazineDl6902
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponAJ100Biocode
+        - id: MagazinePistolSubMachineGun
+        - id: MagazinePistol40SubMachineGunSP
+        - id: MagazineRifleSP
+        - id: MagazineLightRifleSP
+        - id: MagazinePistol40SP
+        - id: MagazinePistolHighCapacitySP
+        - id: MagazinePistol
 
 - type: entity
   parent: ClothingBackpackSyndie
@@ -29,8 +23,10 @@
   name: SIAR-52 kit
   description: Includes a SIAR-52 machine gun and two magazines of ammunition.
   components:
-  - type: StorageFill
-    contents:
-    - id: WeaponSIAR52Biocode
-    - id: MagazinePistolSubMachineGunCaselessExtended
-      amount: 2
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: WeaponSIAR52Biocode
+        - id: CaselessAmmoKit
+        - id: CaselessAmmoKit

@@ -1,6 +1,67 @@
 # Security Modules
- 
+
 - type: latheRecipe
   parent: BaseGoldBorgModuleRecipe
   id: BorgModuleAdvancedCombat
   result: BorgModuleAdvancedCombat
+
+# Cargo Modules
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleJetpack
+  result: BorgModuleJetpack
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleMiningCombat
+  result: BorgModuleMiningCombat
+
+# Syndicate modules
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleSyndicateCombatAdvanced
+  result: BorgModuleSyndicateCombatAdvanced
+  materials:
+    Steel: 2000
+    Plastic: 200
+    Plasma: 100
+    Gold: 100
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleSyndicateHypoAdvanced
+  result: BorgModuleSyndicateHypoAdvanced
+  materials:
+    Steel: 2000
+    Plastic: 200
+    Plasma: 100
+    Silver: 100
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleSyndicatePenetration
+  result: BorgModuleSyndicatePenetration
+  materials:
+    Steel: 2000
+    Plastic: 200
+    Plasma: 100
+    Gold: 100
+
+# Medical modules
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleSurgical
+  result: BorgModuleSurgical
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModuleAdvancedChemical
+  result: SunriseBorgModuleAdvancedChemical
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleRobotics
+  result: BorgModuleRobotics
