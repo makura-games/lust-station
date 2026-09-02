@@ -5,10 +5,3 @@
   components:
   - type: Contraband
     allowedDepartments: [ CentralCommand, Security ]
-
-- type: entity
-  id: BaseTSFContraband
-  abstract: true
-  components:
-  - type: Contraband
-    severity: TSF
