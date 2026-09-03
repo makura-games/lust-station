@@ -44,6 +44,7 @@
     grindableSolutionName: food
   # Lust-Start
   - type: Clothing
+    quickEquip: false
     slots:
     - PLUG
     equipDelay: 4

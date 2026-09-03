@@ -1221,3 +1221,17 @@
   - url: https://github.com/user-attachments/assets/ef838915-2146-4b59-b412-a8e37e2eaf26
     description: Апстрим
     change: 1
+- author: Nordstream17
+  time: '2026-08-30T19:37:19.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Наконец исправлен давний баг, теперь вы не сможете случайно засунуть фрукты и овощи в свой ass вместо их употребления.
+  id: 309
+  url: https://github.com/makura-games/lust-station/pull/584
+- author: ВАШЕ_ИМЯ
+  time: '2026-08-30T23:11:42.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Исправлено случайное засовывание снарядов в анал(зачем??)
+  id: 310
+  url: https://github.com/makura-games/lust-station/pull/585
