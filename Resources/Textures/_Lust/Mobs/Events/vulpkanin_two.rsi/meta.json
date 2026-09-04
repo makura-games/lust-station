@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Digger for Lust Station",
+  "size": {
+    "x": 32,
+    "y": 64
+  },
+  "states": [
+    {
+      "name": "vulpkanin_1",
+      "directions": 4
+    },
+    {
+      "name": "vulpkanin_2",
+      "directions": 4
+    },
+        {
+      "name": "light",
+      "directions": 4
+    }
+  ]
+}

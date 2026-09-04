@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by Digger for Lust Station",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "moth_1_1",
+      "directions": 4
+    },
+    {
+      "name": "moth_1_2",
+      "directions": 4
+    },
+    {
+      "name": "moth_2_1",
+      "directions": 4
+    },
+        {
+      "name": "moth_2_2",
+      "directions": 4
+    }
+  ]
+}
