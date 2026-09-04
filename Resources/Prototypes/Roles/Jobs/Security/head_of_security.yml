@@ -4,6 +4,10 @@
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 23
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobWarden
       time: 3h

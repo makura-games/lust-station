@@ -4,6 +4,10 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 21
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
       time: 5h

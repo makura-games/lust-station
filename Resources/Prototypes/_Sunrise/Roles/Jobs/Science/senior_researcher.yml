@@ -4,6 +4,10 @@
   description: job-description-senior-researcher
   playTimeTracker: JobSeniorResearcher
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 24
+    # Lust-edit-end
     - !type:DepartmentTimeRequirement
       department: Science
       time: 216000 #60 hrs

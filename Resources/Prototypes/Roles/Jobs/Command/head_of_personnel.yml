@@ -4,6 +4,10 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 22
+    # Lust-edit-end
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 2.5h
@@ -97,4 +101,3 @@
     mask: ClothingMaskNeckGaiterRed
     neck: ClothingNeckCloakHop
     outerClothing: ClothingOuterWinterHoP
-

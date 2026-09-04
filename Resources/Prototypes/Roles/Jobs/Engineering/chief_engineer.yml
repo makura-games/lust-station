@@ -4,6 +4,10 @@
   description: job-description-ce
   playTimeTracker: JobChiefEngineer
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 23
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
       time: 2.5h

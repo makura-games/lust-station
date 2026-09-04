@@ -5,6 +5,10 @@
   description: job-description-senior-engineer
   playTimeTracker: JobSeniorEngineer
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 24
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobAtmosphericTechnician
       time: 21600 # 6 hrs

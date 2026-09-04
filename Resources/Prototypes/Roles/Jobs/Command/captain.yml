@@ -4,6 +4,10 @@
   description: job-description-captain
   playTimeTracker: JobCaptain
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 25
+    # Lust-edit-end
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 4h

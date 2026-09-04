@@ -4,6 +4,10 @@
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 24
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobWarden
       time: 21600 # 6 hrs

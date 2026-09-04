@@ -4,6 +4,10 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
+  # Lust-edit-start
+  - !type:AgeRequirement
+    requiredAge: 23
+  # Lust-edit-end
   - !type:RoleTimeRequirement
     role: JobScientist
     time: 5h

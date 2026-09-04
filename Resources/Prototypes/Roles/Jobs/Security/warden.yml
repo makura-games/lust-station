@@ -4,6 +4,10 @@
   description: job-description-warden
   playTimeTracker: JobWarden
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 22
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 5h

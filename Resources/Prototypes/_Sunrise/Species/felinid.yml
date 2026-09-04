@@ -16,7 +16,9 @@
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
   youngAge: 18
-  oldAge: 30
+  # Lust-edit-start
+  oldAge: 38
+  # Lust-edit-end
   maxAge: 60
   defaultHeight: 0.80
   defaultWidth: 0.80
