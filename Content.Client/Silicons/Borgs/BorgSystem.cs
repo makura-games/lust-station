@@ -74,6 +74,13 @@ public sealed partial class BorgSystem : SharedBorgSystem
         if (!Resolve(ent, ref ent.Comp1, ref ent.Comp2, ref ent.Comp3))
             return;
 
+        // Lust edit start - отдельная обработка визуала сидящих боргов
+        var lustHandled = false;
+        UpdateLustBorgStandingVisuals(ent, ref lustHandled);
+        if (lustHandled)
+            return;
+        // Lust edit end
+
         if (_appearance.TryGetData<MobState>(ent.Owner, MobStateVisuals.State, out var state, ent.Comp2))
         {
             if (state != MobState.Alive)
@@ -89,6 +96,9 @@ public sealed partial class BorgSystem : SharedBorgSystem
         _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.Light, ent.Comp1.BrainEntity != null || hasPlayer);
         _sprite.LayerSetRsiState((ent.Owner, ent.Comp3), BorgVisualLayers.Light, hasPlayer ? ent.Comp1.HasMindState : ent.Comp1.NoMindState);
     }
+
+    // Lust edit - отдельная обработка визуала сидящих боргов
+    partial void UpdateLustBorgStandingVisuals(Entity<BorgChassisComponent?, AppearanceComponent?, SpriteComponent?> ent, ref bool handled);
 
     private void OnMMIAppearanceChanged(EntityUid uid, MMIComponent component, ref AppearanceChangeEvent args)
     {
