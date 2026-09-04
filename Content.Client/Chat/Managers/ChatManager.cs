@@ -60,7 +60,7 @@ internal sealed class ChatManager : IChatManager
                 break;
 
             case ChatSelectChannel.Emotes:
-                _consoleHost.ExecuteCommand($"me \"{CommandParsing.Escape(str)}\"");
+                _consoleHost.ExecuteCommand($"antighost \"{CommandParsing.Escape(str)}\""); // Lust edit - заменяем канал эмоций анти-гост чатом
                 break;
 
             case ChatSelectChannel.Dead:
