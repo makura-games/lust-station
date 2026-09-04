@@ -203,6 +203,7 @@
   save: false
   components:
   - type: EquipmentContainer # Lust edit - контейнер запираемой экипировки
+  - type: IVDripTarget # Lust edit - капельница
   - type: Hunger
   - type: Thirst
   - type: Barotrauma
