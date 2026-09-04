@@ -300,6 +300,19 @@
     - SupermatterCrystal
     - TeslaEnergyBall
     - TeslaMiniEnergyBall
+    # Lust edit : start
+    - FaxMachineCentcom
+    - NukeCodePaper
+    - BoxFolderNuclearCodes
+    - RubberStampVeto
+    - RubberStampRedo
+    - RubberStampMagistrat
+    - RubberStampNtrep
+    - RubberStampCentcom
+    - RubberStampSyndicate
+    - Crematorium
+    - AgentIDCard
+    # Lust edit : end
     prototypeIdBlacklistSubstrings:
     - Debug
     - Admin
@@ -308,12 +321,33 @@
     - Debug
     - Admin
     - Admeme
+    # Lust Edit : Start
+    - HL2
+    - Death Squad
+    - Qillu
+    - CentComm
+    - Central Command
+    - CentralCommand
+    - CentComm ERT
+    - ERT
+    - CBURN
+    - Uplink
+    - Arrows
+    - Event
+    - Unremoveable
+    - Filled
+    - Hardsuit
+    # Lust Edit : End
     componentBlacklist:
     - MapGrid
     - SurgeryStep
     - SpawnPoint
     - Contraband
     - Meteor
+    # Lust Edit : Start
+    - Biocode
+    - Communications
+    # Lust Edit : End
     categoryBlacklist:
     - HideSpawnMenu
     - Debug

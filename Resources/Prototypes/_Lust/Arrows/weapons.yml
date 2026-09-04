@@ -3,7 +3,7 @@
 - type: entity
   name: The Chainsaw Energy Sword
   suffix: Arrows
-  parent: BaseItem
+  parent: [ BaseItem, BaseHighlyIllegalContraband ]
   id: ChainswordArrows
   description: Technology and ultra-violence in one bottle!
   components:
