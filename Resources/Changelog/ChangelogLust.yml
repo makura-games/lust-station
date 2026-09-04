@@ -17,40 +17,18 @@
     type: Add
   id: 152
   time: '2024-08-28T18:16:05.142964+00:00'
-- author: SplikZerys
-  changes:
-  - message: Фрукты, овощи, дилдо и гранаты можно засовывать в одно место.
-    type: Add
-  - message: Фикс верёвки шибари.
-    type: Fix
-  id: 152
-  time: '2024-08-28T18:22:24.781030+00:00'
 - author: Аноним69
   changes:
   - message: Добавлены спрайты для действий ЕРП-панели.
     type: Add
   id: 153
   time: '2024-08-28T18:16:35.843076+00:00'
-- author: VigersRay
-  changes:
-  - message: Оптимизация панели взаимодействий (Фикс вылетов).
-    type: Fix
-  - message: Повышен приоритет отображения панели взаимодействия в контекстном меню.
-    type: Tweak
-  id: 153
-  time: '2024-08-29T12:50:29.711763+00:00'
 - author: Ligyb
   changes:
   - message: Добавлен слот анала.
     type: Add
   id: 154
   time: '2024-08-28T18:18:15.287616+00:00'
-- author: SplikZerys
-  changes:
-  - message: Удалил автозамену многих слов.
-    type: Remove
-  id: 154
-  time: '2024-09-02T11:53:54.376996+00:00'
 - author: 3arek & SplikZerys
   changes:
   - message: Добавлены новые действия в ЕРП-панель.
@@ -1249,3 +1227,25 @@
     message: Насильное использование последнего вздоха отключено ввиду злоупотребления банами игроков со стороны администрации сервера и для защиты игроков от неожиданного бана.
   id: 312
   url: https://github.com/makura-games/lust-station/pull/586
+- author: SplikZerys
+  changes:
+  - message: Фрукты, овощи, дилдо и гранаты можно засовывать в одно место.
+    type: Add
+  - message: Фикс верёвки шибари.
+    type: Fix
+  id: 313
+  time: '2024-08-28T18:22:24.781030+00:00'
+- author: VigersRay
+  changes:
+  - message: Оптимизация панели взаимодействий (Фикс вылетов).
+    type: Fix
+  - message: Повышен приоритет отображения панели взаимодействия в контекстном меню.
+    type: Tweak
+  id: 314
+  time: '2024-08-29T12:50:29.711763+00:00'
+- author: SplikZerys
+  changes:
+  - message: Удалил автозамену многих слов.
+    type: Remove
+  id: 315
+  time: '2024-09-02T11:53:54.376996+00:00'
