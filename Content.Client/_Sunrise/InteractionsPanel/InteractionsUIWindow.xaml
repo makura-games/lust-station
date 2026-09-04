@@ -287,6 +287,40 @@
                                 </BoxContainer>
                             </BoxContainer>
 
+                            <!-- Lust edit start - настройка автоматического снижения прогресса -->
+                            <BoxContainer Orientation="Horizontal" Margin="12 10" VerticalAlignment="Center">
+                                <CheckBox Name="DisableLoveDecayCheckBox"
+                                          Pressed="False"
+                                          Margin="0 0 8 0"/>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'interaction-panel-disable-love-decay-label'}"
+                                           StyleClasses="highlight"
+                                           VerticalAlignment="Center"/>
+                                    <Label Text="{Loc 'interaction-panel-disable-love-decay-description'}"
+                                           StyleClasses="LabelSubText"
+                                           Margin="0 2 0 0"
+                                           MaxWidth="320"/>
+                                </BoxContainer>
+                            </BoxContainer>
+                            <!-- Lust edit end -->
+
+                            <!-- Lust edit start - настройка отключения панели взаимодействия -->
+                            <BoxContainer Orientation="Horizontal" Margin="12 10" VerticalAlignment="Center">
+                                <CheckBox Name="DisableInteractionPanelCheckBox"
+                                          Pressed="False"
+                                          Margin="0 0 8 0"/>
+                                <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+                                    <Label Text="{Loc 'interaction-panel-disable-label'}"
+                                           StyleClasses="highlight"
+                                           VerticalAlignment="Center"/>
+                                    <Label Text="{Loc 'interaction-panel-disable-description'}"
+                                           StyleClasses="LabelSubText"
+                                           Margin="0 2 0 0"
+                                           MaxWidth="320"/>
+                                </BoxContainer>
+                            </BoxContainer>
+                            <!-- Lust edit end -->
+
                             <Control VerticalExpand="True"/>
 
                             <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
