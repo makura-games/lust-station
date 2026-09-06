@@ -20,6 +20,12 @@
     price: 5
   - type: InjectableSolution
     solution: smokable
+  # Lust added start - попадание в рот (mask) даёт носителю запах дыма.
+  - type: ScentEmitter
+    slot: mask
+    scent: LustSmoke
+    duration: 900
+  # Lust added end
 
 # Base for all cigars and cigarettes.
 - type: entity

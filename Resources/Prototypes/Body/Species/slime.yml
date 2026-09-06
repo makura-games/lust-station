@@ -200,6 +200,10 @@
       - "footprint-right-bare-slime"
   - type: Interactions
   # Sunrise end
+  # Lust added start - индивидуальный запах для игроков-слаймов
+  - type: Scent
+    personalScentProfile: LustSlime
+  # Lust added end
 
 - type: entity
   parent: OrganBase

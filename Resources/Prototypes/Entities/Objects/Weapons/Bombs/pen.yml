@@ -35,6 +35,12 @@
       damage:
         types:
           Piercing: 3
+  # Lust added start - ручка-бомба пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end
 
 - type: entity
   parent: [BaseItem, BaseSyndicateContraband]

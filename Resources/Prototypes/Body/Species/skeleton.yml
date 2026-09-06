@@ -186,6 +186,10 @@
     effect: EffectNightVisionPirate
   - type: FootprintEmitter
   # Sunrise-End
+  # Lust added start - индивидуальный запах для игроков-скелетов
+  - type: Scent
+    personalScentProfile: LustSkeleton
+  # Lust added end
 
 - type: entity
   parent: OrganBase

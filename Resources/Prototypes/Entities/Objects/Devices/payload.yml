@@ -42,6 +42,12 @@
       behaviors:
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
+  # Lust added start - взрывной пейлоад пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end
 
 - type: entity
   name: chemical payload

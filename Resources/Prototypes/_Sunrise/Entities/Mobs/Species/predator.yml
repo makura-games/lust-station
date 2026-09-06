@@ -86,6 +86,10 @@
         sprite: Mobs/Effects/brute_damage.rsi
         color: "#008000"
   - type: FootprintEmitter
+  # Lust added start - индивидуальный запах для игроков-хищников
+  - type: Scent
+    personalScentProfile: LustPredator
+  # Lust added end
 
 - type: entity
   parent: AppearancePredator

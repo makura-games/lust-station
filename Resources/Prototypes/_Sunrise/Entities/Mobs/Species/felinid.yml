@@ -192,6 +192,10 @@
       params:
         volume: 1.0
         variation: 0.125
+  # Lust added start - индивидуальный запах для игроков-фелинидов
+  - type: Scent
+    personalScentProfile: LustFelinid
+  # Lust added end
 
 - type: entity
   save: false

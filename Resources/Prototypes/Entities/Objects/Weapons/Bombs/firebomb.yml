@@ -65,6 +65,12 @@
     - HandGrenadeAmmo
     - FireBomb
   # Sunrise-End
+  # Lust added start - самодельная бомба пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end
 
 # has igniter but no fuel or wires
 - type: entity

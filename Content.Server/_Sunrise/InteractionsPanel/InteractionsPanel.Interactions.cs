@@ -6,6 +6,7 @@ using Content.Shared._Sunrise.Aphrodisiac;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Components;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Prototypes;
 using Content.Shared._Sunrise.InteractionsPanel.Data.UI;
+using Content.Shared._Lust.Smell;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Clothing;
@@ -490,6 +491,12 @@ public partial class InteractionsPanel
         if (TryComp<HumanoidProfileComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
             SpawnSemen("Semen", Transform(uid).Coordinates);
 
+        RaiseLocalEvent(new OrgasmPerformedEvent
+        {
+            User = uid,
+            Target = comp.CurrentTarget ?? uid,
+        }); // Lust-Edit
+
         SetCooldown(uid, "orgasm", TimeSpan.FromSeconds(OrgasmCooldownSeconds));
         Dirty(uid, comp);
     }
@@ -517,12 +524,22 @@ public partial class InteractionsPanel
 
         var ratio = (float)(comp.LoveAmount / comp.MaxLoveAmount).Float();
 
-        if (ratio >= 0.33f && !HasComp<LoveVisionComponent>(uid))
+        // Lust edit start - запах возбуждения обновляется каждым действием выше порога
+        if (ratio >= 0.33f)
         {
-            var newComp = AddComp<LoveVisionComponent>(uid);
-            newComp.FromLoveSystem = true;
-            Dirty(uid, newComp);
+            if (!HasComp<LoveVisionComponent>(uid))
+            {
+                var newComp = AddComp<LoveVisionComponent>(uid);
+                newComp.FromLoveSystem = true;
+                Dirty(uid, newComp);
+            }
+
+            RaiseLocalEvent(new ArousalStartedEvent
+            {
+                Uid = uid,
+            });
         }
+        // Lust edit end
         else if (ratio < 0.33f && TryComp<LoveVisionComponent>(uid, out var loveVision) && loveVision.FromLoveSystem)
         {
             RemComp<LoveVisionComponent>(uid);

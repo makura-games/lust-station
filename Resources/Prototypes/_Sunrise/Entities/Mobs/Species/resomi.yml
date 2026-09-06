@@ -295,6 +295,10 @@
     - DoorBumpOpener
     - AnomalyHost
     - Resomi
+  # Lust added start - индивидуальный запах для игроков-ресоми
+  - type: Scent
+    personalScentProfile: LustResomi
+  # Lust added end
 
 - type: entity
   parent: AppearanceResomi

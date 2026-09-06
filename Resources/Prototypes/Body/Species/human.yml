@@ -103,6 +103,10 @@
   - type: Interactions
   - type: FootprintEmitter
   # Sunrise end
+  # Lust added start - индивидуальный запах для игроков-людей
+  - type: Scent
+    personalScentProfile: LustHuman
+  # Lust added end
 
 - type: entity
   parent: OrganBase

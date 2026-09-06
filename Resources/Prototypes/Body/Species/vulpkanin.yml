@@ -370,6 +370,11 @@
       reagents:
       - ReagentId: SulfurBlood
         Quantity: 300
+  # Lust added start - индивидуальный запах и возможность нюхать для игроков-вульпканинов
+  - type: Scent
+    personalScentProfile: LustVulpkanin
+  - type: Smell
+  # Lust added end
 
 - type: entity
   parent: OrganBase

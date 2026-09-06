@@ -76,6 +76,10 @@
           - MobLayer
   - type: TypingIndicator
     proto: gingerbread
+  # Lust added start - индивидуальный запах для игроков-пряничников
+  - type: Scent
+    personalScentProfile: LustGingerbread
+  # Lust added end
 
 - type: entity
   parent: OrganBase

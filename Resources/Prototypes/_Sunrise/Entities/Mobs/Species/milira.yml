@@ -98,6 +98,10 @@
     - DoorBumpOpener
     - AnomalyHost
     - Milira
+  # Lust added start - индивидуальный запах для игроков-милиров
+  - type: Scent
+    personalScentProfile: LustMilira
+  # Lust added end
 
 - type: entity
   save: false

@@ -23,6 +23,12 @@
     min: 1
     max: 10
   - type: ExplodeOnTrigger
+  # Lust added start - связка петард пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end
 
 - type: entity
   parent: BaseItem
@@ -60,6 +66,12 @@
     maxIntensity: 0.01
     intensitySlope: 1
     totalIntensity: 0.01
+  # Lust added start - петарда пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end
 
 - type: entity
   parent: BaseStorageItem
@@ -84,4 +96,10 @@
         - id: Firecracker
           amount: 10
   - type: Dumpable
+  # Lust added start - коробка петард пахнет порохом при носке.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust added end
 
