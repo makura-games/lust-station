@@ -34,11 +34,6 @@
   - !type:HasTargetCondition
     allowSelfTargeting: false
   - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "ладони" ]
-    requireExposed: true
-  - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
     categories: [ "уши" ]
@@ -64,11 +59,6 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "ладони" ]
-    requireExposed: true
   - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true

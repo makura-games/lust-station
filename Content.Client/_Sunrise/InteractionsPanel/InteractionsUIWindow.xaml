@@ -68,7 +68,8 @@
                                        MaxWidth="140"
                                        MaxHeight="40"
                                        VerticalAlignment="Top"
-                                       HorizontalAlignment="Center"
+                                       HorizontalExpand="True"
+                                       Align="Center"
                                        StyleClasses="LabelSubText">
                                 </Label>
                             </BoxContainer>
@@ -124,7 +125,8 @@
                                        MaxWidth="140"
                                        MaxHeight="40"
                                        VerticalAlignment="Top"
-                                       HorizontalAlignment="Center"
+                                       HorizontalExpand="True"
+                                       Align="Center"
                                        StyleClasses="LabelSubText">
                                 </Label>
                             </BoxContainer>
