@@ -1,6 +1,6 @@
 - type: entity
   name: MG-60
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, BaseSovietContraband] # Lust edit :: BaseSovietContraband
   id: WeaponLightMachineGunMG60
   components:
   - type: Sprite
@@ -98,7 +98,7 @@
 
 - type: entity
   name: RPD
-  parent: BaseWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, BaseSovietContraband] # Lust edit :: BaseSovietContraband
   id: WeaponLightMachineGunRPD
   components:
   - type: Sprite
@@ -169,7 +169,7 @@
 
 - type: entity
   name: MG-342
-  parent: BaseWeaponLightMachineGun
+  parent: [ BaseWeaponLightMachineGun, BaseSecurityCentcommContraband ] # Lust edit :: BaseSecurityCentcommContraband
   id: WeaponMachineGunMG42
   components:
   - type: Sprite
