@@ -75,6 +75,10 @@
     solutions:
       pack:
         maxVol: 300
+  - type: RefillableSolution
+    solution: pack      
+  - type: DrainableSolution
+    solution: pack      
   - type: SolutionTransfer
     canChangeTransferAmount: true
   - type: Appearance

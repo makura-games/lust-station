@@ -95,15 +95,12 @@ public sealed class IVDripSystem : SharedIVDripSystem
 
             if (ivComp.Injecting)
             {
-                if (attachedStream is { } bloodSolutionEnt &&
-                    bloodSolutionEnt.Comp.Solution.Volume < bloodSolutionEnt.Comp.Solution.MaxVolume)
-                {
-                    // Don't transfer non-blood reagants
-                    Solution excludedSolution = packSol.SplitSolutionWithout(packSol.MaxVolume, packComponent.TransferableReagents);
-                    _solutionContainer.TryTransferSolution(bloodSolutionEnt, packSol, ivComp.TransferAmount);
-                    _solutionContainer.TryAddSolution(packSolEnt.Value, excludedSolution);
-                    Dirty(packSolEnt.Value);
-                }
+               if (attachedStream is { } bloodSolutionEnt &&
+                   bloodSolutionEnt.Comp.Solution.Volume < bloodSolutionEnt.Comp.Solution.MaxVolume)
+               {
+                _solutionContainer.TryTransferSolution(bloodSolutionEnt, packSol, ivComp.TransferAmount);
+                Dirty(packSolEnt.Value);
+               }
             }
             else
             {
@@ -141,15 +138,12 @@ public sealed class IVDripSystem : SharedIVDripSystem
 
             if (packComp.Injecting)
             {
-                if (attachedStream is { } bloodSolutionEnt &&
-                    bloodSolutionEnt.Comp.Solution.Volume < bloodSolutionEnt.Comp.Solution.MaxVolume)
-                {
-                    // Don't transfer non-blood reagants
-                    Solution excludedSolution = packSol.SplitSolutionWithout(packSol.MaxVolume, packComp.TransferableReagents);
-                    _solutionContainer.TryTransferSolution(bloodSolutionEnt, packSol, packComp.TransferAmount);
-                    _solutionContainer.TryAddSolution(packSolEnt.Value, excludedSolution);
-                    Dirty(packSolEnt.Value);
-                }
+               if (attachedStream is { } bloodSolutionEnt &&
+                  bloodSolutionEnt.Comp.Solution.Volume < bloodSolutionEnt.Comp.Solution.MaxVolume)
+               {
+                _solutionContainer.TryTransferSolution(bloodSolutionEnt, packSol, packComp.TransferAmount);
+                Dirty(packSolEnt.Value);
+               }
             }
             else
             {

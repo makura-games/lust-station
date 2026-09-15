@@ -54,8 +54,6 @@ public sealed partial class BloodPackComponent : Component
     public ProtoId<EmotePrototype> RipEmote = "Scream";
 
     // TODO RMC-14 blood types
-    [DataField, AutoNetworkedField]
-    public string[] TransferableReagents = ["Blood"];
 }
 
 [Serializable, NetSerializable]
