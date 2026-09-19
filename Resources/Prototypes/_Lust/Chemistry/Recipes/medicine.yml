@@ -1,0 +1,79 @@
+﻿- type: reaction
+  id: LustArtiplasm
+  impact: Medium
+  minTemp: 320
+  reactants:
+    Saline:
+      amount: 3
+    HemostaticPowder:
+      amount: 2
+    TranexamicAcid:
+      amount: 1
+    Iron:
+      amount: 2
+    Copper:
+      amount: 2
+  products:
+    LustArtiplasm: 10
+
+- type: reaction
+  id: LustGenocillin
+  impact: Medium
+  reactants:
+    Phalanximine:
+      amount: 2
+    Saline:
+      amount: 2
+    UnstableMutagen:
+      amount: 2
+    Benzene:
+      amount: 2
+    Sugar:
+      amount: 2
+  products:
+    LustGenocillin: 10
+
+- type: reaction
+  id: LustThyreostate
+  impact: Medium
+  reactants:
+    Acetone:
+      amount: 2
+    DexalinPlus:
+      amount: 2
+    SulfuricAcid:
+      amount: 2
+  products:
+    LustThyreostate: 6
+
+- type: reaction
+  id: LustSalicylicAcid
+  impact: Medium
+  priority: 1
+  minTemp: 370
+  reactants:
+    HemostaticPowder:
+      amount: 1
+    SodiumHydroxide:
+      amount: 1
+    Fluorine:
+      amount: 1
+    Bicaridine:
+      amount: 1
+  products:
+    LustSalicylicAcid: 4
+
+- type: reaction
+  id: LustOxanderm
+  impact: Medium
+  reactants:
+    SodiumCarbonate:
+      amount: 1
+    Dermaline:
+      amount: 1
+    Phenol:
+      amount: 1
+    Leporazine:
+      amount: 1
+  products:
+    LustOxanderm: 4
