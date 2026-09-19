@@ -6,3 +6,5 @@ ent-ClothingPantsWomanNanoTrasenRepresentative = women's thong "Qillu Representa
     .desc = A formal thong in Qillu representative colors.
 ent-ClothingPantsManNanoTrasenRepresentative = boxers "Qillu Representative"
     .desc = Formal boxers in Qillu representative colors.
+ent-ClothingPantsManWolf = The Wolf of Wall Street's boxers
+    .desc = If the wolf was a wolf, he was a wolf to other wolves. But if Wolf means keeping going, then he’s no longer just a wolf — he’s THE WOLF. Adds an incredible amount of aura.

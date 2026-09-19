@@ -55,3 +55,17 @@
   - type: Clothing
     sprite: _Lust/Clothing/Pants/Man/ntrep.rsi
     equippedState: male_boxers
+
+- type: entity
+  parent: ClothingPantsStorageBase
+  id: ClothingPantsManWolf
+  name: The Wolf of Wall Street
+  description: A real wolf's boxers
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Pants/Man/wolf.rsi
+    state: male_boxers_icon
+    scale: 0.5, 0.5
+  - type: Clothing
+    sprite: _Lust/Clothing/Pants/Man/wolf.rsi
+    equippedState: male_boxers
