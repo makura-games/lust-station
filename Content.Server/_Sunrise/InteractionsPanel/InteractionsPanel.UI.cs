@@ -72,9 +72,12 @@ public partial class InteractionsPanel
 
     private InteractionWindowBoundUserInterfaceState PrepareUIState(EntityUid user, EntityUid target)
     {
-
         var availableInteractions = FetchInteractions(user, target);
         var interactionIds = availableInteractions.Select(i => i.ID).ToList();
+        // Lust edit - настройка владельца синхронизируется с его окном.
+        var interactions = Comp<InteractionsComponent>(user);
+        var panelEnabled = interactions.Erp;
+        var loveDecayEnabled = interactions.LoveDecayEnabled;
 
         var userNet = GetNetEntity(user);
         var targetNet = GetNetEntity(target);
@@ -82,7 +85,10 @@ public partial class InteractionsPanel
         return new InteractionWindowBoundUserInterfaceState(
             userNet,
             targetNet,
-            interactionIds
+            interactionIds,
+            // Lust edit - состояние доступности панели.
+            panelEnabled,
+            loveDecayEnabled
         );
     }
 
