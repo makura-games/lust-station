@@ -117,7 +117,8 @@
   weights:
     IanStealObjective: 1
     BingusStealObjective: 1
-    McGriffStealObjective: 1
+    # McGriffStealObjective: 1 # Lust-Edit
+    ShoebillStealObjective: 1 # Lust-Add
     WalterStealObjective: 1
     MortyStealObjective: 1
     RenaultStealObjective: 1
