@@ -1,0 +1,33 @@
+- type: entity
+  parent: FoodBurgerBase
+  id: LustFoodBurgerKiller
+  name: burger-killer
+  description: It told you ALL.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Consumable/Food/burger.rsi
+    layers:
+    - state: burger-killer
+  - type: Item
+    sprite: _Lust/Objects/Consumable/Food/burger.rsi
+    size: Normal
+    shape:
+    - 0,0,1,1
+    inhandVisuals:
+      left:
+      - state: killer-burger-inhand-left
+      right:
+      - state: killer-burger-inhand-right
+  - type: FlavorProfile
+    flavors:
+      - bun
+      - lustaggressive
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 25
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 18
+        - ReagentId: Vitamin
+          Quantity: 7
