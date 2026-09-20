@@ -20,8 +20,15 @@
       - type: SpawnGridAndDockToStation
         grids:
           - gridPath: /Maps/_Sunrise/Shuttles/Salvage/mining.yml
-            priorityTag: DockMining                
-          - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+            priorityTag: DockMining
+        # - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml # Lust-Edit
+        # Lust-Add start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+            - /Maps/_Sunrise/Shuttles/Security/avangard.yml
+            - /Maps/_Sunrise/Shuttles/Security/stargaze.yml
+            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            # Lust-Add end
             priorityTag: DockSecurity
       - type: StationJobs
         availableJobs:

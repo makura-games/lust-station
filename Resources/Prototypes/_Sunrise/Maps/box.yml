@@ -18,7 +18,14 @@
           grids:
           - gridPath: /Maps/_Sunrise/Shuttles/Salvage/pickaxe.yml
             priorityTag: DockMining
-          - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+          # - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml # Lust-Edit
+          # Lust-Add start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+            - /Maps/_Sunrise/Shuttles/Security/avangard.yml
+            - /Maps/_Sunrise/Shuttles/Security/stargaze.yml
+            - /Maps/_Sunrise/Shuttles/Security/security.yml
+          # Lust-Add end
             priorityTag: DockSecurity
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency-centipede.yml
