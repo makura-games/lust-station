@@ -54,13 +54,13 @@ public sealed class LustPresetPoolRotationSystem : EntitySystem
             string nextPool;
             if (_cfg.GetCVar(LustCCVars.LustPeacefulAlternation))
             {
-                nextPool = _cfg.GetCVar(LustCCVars.LustAltVotePeacefulPreset);
-            }
-            else
-            {
                 nextPool = IsPeacefulPreset(_lastStartedPresetId)
                     ? _cfg.GetCVar(LustCCVars.LustAltVoteMainPreset)
                     : _cfg.GetCVar(LustCCVars.LustAltVotePeacefulPreset);
+            }
+            else
+            {
+                nextPool = _cfg.GetCVar(LustCCVars.LustAltVoteMainPreset);
             }
 
             SetPool(nextPool);
