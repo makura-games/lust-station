@@ -61,9 +61,9 @@ public sealed partial class VoteManager
         {
             "dynamic" => "lust-preset-dynamic",
             "secret" => "lust-preset-secret",
-            "peaceful" => "lust-preset-peaceful",
-            "storytellerClassic" => "ui-vote-storyteller-type-classic-name",
-            "storytellerInsane" => "ui-vote-storyteller-type-insane-name",
+            "greenshift" => "lust-preset-peaceful",
+            "storytellerclassic" => "ui-vote-storyteller-type-classic-name",
+            "storytellerinsane" => "ui-vote-storyteller-type-insane-name",
             _ => fallbackTitleLocId,
         };
     }

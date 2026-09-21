@@ -86,7 +86,7 @@ public sealed class LustPresetPoolRotationSystem : EntitySystem
 
         return presetId.ToLowerInvariant() switch
         {
-            "peaceful" or "peacefulgamepreset" => true,
+            "greenshift" or "peaceful" or "peacefulgamepreset" => true,
             _ => false,
         };
     }
