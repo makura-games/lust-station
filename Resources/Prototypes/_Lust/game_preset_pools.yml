@@ -1,0 +1,12 @@
+﻿- type: gamePresetPool
+  id: LustPresetPoolAltDefault
+  presets:
+    Dynamic: { min: 20, max: 200 }
+    Secret: { min: 30, max: 200 }
+    StorytellerClassic: { min: 60, max: 200 }
+    StorytellerInsane: { min: 80, max: 200 }
+
+- type: gamePresetPool
+  id: LustPresetPeacefulOnly
+  presets:
+    Greenshift: { min: 0, max: 200 }
