@@ -231,6 +231,11 @@ namespace Content.Server.Voting.Managers
 
         private void CreatePresetVote(ICommonSession? initiator)
         {
+            // Lust edit start
+            if (TryCreateLustPresetVote(initiator))
+                return;
+            // Lust edit end
+
             if (TryCreateSunriseTwoStagePresetVote(initiator)) // Sunrise-Edit
                 return;
 

@@ -411,10 +411,17 @@ namespace Content.Server.Voting.Managers
             // Still allow vote if availbable one is different from current one
             if (voteType == StandardVoteType.Preset)
             {
-                // Sunrise edit start
-                if (!CanCallSunrisePresetVote())
+                // Lust edit start
+                if (IsLustPresetPoolActive())
+                {
+                    if (!CanCallLustPresetVote())
+                        return false;
+                }
+                else if (!CanCallSunrisePresetVote()) // Sunrise edit
+                {
                     return false;
-                // Sunrise edit end
+                }
+                // Lust edit end
             }
 
             return !_voteTimeout.TryGetValue(initiator.UserId, out timeSpan);
