@@ -17,3 +17,11 @@
         - type: StationJobs
           availableJobs:
             CentCommOperator: [ 1, 1 ]
+            # Lust-Start
+            CentCommInspector: [ 1, 1 ]
+            CentCommChiefOfStaff: [ 1, 1 ]
+            CentCommIntern: [ 1, 1 ]
+            CentCommIDOperator: [ 1, 1 ]
+            CentCommSpecOpsOperator: [ 1, 1 ]
+            # Lust-End
+

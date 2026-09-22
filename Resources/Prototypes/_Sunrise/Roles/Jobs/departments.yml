@@ -69,6 +69,11 @@
   roles:
   - CentCommOperator
   - CentCommOfficial
+  - CentCommInspector
+  - CentCommChiefOfStaff
+  - CentCommIntern
+  - CentCommIDOperator
+  - CentCommSpecOpsOperator
   weight: 120
 
 - type: department

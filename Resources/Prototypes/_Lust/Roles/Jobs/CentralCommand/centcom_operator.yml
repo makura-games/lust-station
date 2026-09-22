@@ -1,3 +1,4 @@
+# Operator
 - type: startingGear
   id: CentCommOperatorGearQillu
   equipment:
@@ -11,3 +12,146 @@
   storage:
     back:
     - RubberStampCentcom
+
+# Inspector
+- type: job
+  id: CentCommInspector
+  name: job-name-centcomins
+  description: job-description-centcomins
+  playTimeTracker: JobCentCommInspector
+  requirements:
+  - !type:DiscordRoleRequirement
+  weight: 30
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  canBeAntag: false
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+# Chief of staff
+- type: job
+  id: CentCommChiefOfStaff
+  name: job-name-centcomchief
+  description: job-description-centcomchief
+  playTimeTracker: JobCentCommChiefOfStaff
+  requirements:
+  - !type:DiscordRoleRequirement
+  weight: 30
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  canBeAntag: false
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+# Intern
+- type: job
+  id: CentCommIntern
+  name: job-name-centcomint
+  description: job-description-centcomint
+  playTimeTracker: JobCentCommIntern
+  requirements:
+  - !type:DiscordRoleRequirement
+  weight: 30
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  canBeAntag: false
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+
+# ID Operator
+- type: job
+  id: CentCommIDOperator
+  name: job-name-centcomid
+  description: job-description-centcomid
+  playTimeTracker: JobCentCommIDOperator
+  requirements:
+  - !type:DiscordRoleRequirement
+  weight: 30
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  canBeAntag: false
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+
+# SpecOps Operator
+- type: job
+  id: CentCommSpecOpsOperator
+  name: job-name-centcomso
+  description: job-description-centcomso
+  playTimeTracker: JobCentCommSpecOpsOperator
+  requirements:
+  - !type:DiscordRoleRequirement
+  weight: 30
+  setPreference: true
+  startingGear: CentCommSpecOpsOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  canBeAntag: false
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+
+- type: startingGear
+  id: CentCommSpecOpsOperatorGearQillu
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    head: ClothingHeadCapCentcomBlack
+    shoes: ClothingShoesCentcomBlack
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorBlack
+    id: CentcomOperatorPDA
+    ears: ClothingHeadsetCentCom
+    belt: WeaponPistolN1984
+    back: ClothingBackpackSatchelLeather
+  storage:
+    back:
+    - RubberStampCentcom #!
