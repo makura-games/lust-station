@@ -122,7 +122,7 @@ public partial class InteractionsPanel
             return false;
         if (!HasComp<InteractionsComponent>(entity))
             return false;
-         if (_mobState.IsDead(entity))
+        if (_mobState.IsDead(entity))
             return false;
         OpenUI(player, entity);
         return true;
@@ -183,8 +183,7 @@ public partial class InteractionsPanel
         if (target == null)
             return;
         if (_mobState.IsDead(target.Value))
-            return;
-        
+            return; 
         if (!_playerManager.TryGetSessionByEntity(ent.Owner, out var userSession))
             return;
 
