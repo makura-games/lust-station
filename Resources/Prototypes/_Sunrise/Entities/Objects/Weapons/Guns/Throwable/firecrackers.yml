@@ -23,6 +23,12 @@
     min: 1
     max: 10
   - type: ExplodeOnTrigger
+  #Lust start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  #Lust end
 
 - type: entity
   parent: BaseItem
@@ -60,6 +66,12 @@
     maxIntensity: 0.01
     intensitySlope: 1
     totalIntensity: 0.01
+  #Lust start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  #Lust end
 
 - type: entity
   parent: BaseStorageItem
@@ -84,4 +96,9 @@
         - id: Firecracker
           amount: 10
   - type: Dumpable
-
+  #Lust start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  #Lust end

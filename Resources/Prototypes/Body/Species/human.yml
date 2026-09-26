@@ -103,6 +103,10 @@
   - type: Interactions
   - type: FootprintEmitter
   # Sunrise end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustHuman
+  # Lust end
 
 - type: entity
   parent: OrganBase

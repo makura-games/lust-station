@@ -365,6 +365,11 @@
     leftBareFootState: [ footprint-left-bare-cat ]
     rightBareFootState: [ footprint-right-bare-cat ]
   # Sunrise edit end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustVulpkanin
+  - type: Smell
+  # Lust end
   - type: Bloodstream
     bloodReferenceSolution:
       reagents:

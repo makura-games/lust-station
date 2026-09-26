@@ -212,6 +212,10 @@
   - type: FootprintEmitter
   - type: Interactions
   # Sunrise-end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustMoth
+  # Lust end
 
 - type: entity
   parent: OrganBase

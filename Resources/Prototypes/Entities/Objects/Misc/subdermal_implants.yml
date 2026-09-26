@@ -335,6 +335,12 @@
     - SubdermalImplant
     - HideContextMenu
     - MicroBomb
+  # Lust edit start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust edit end
 
 
 - type: entity
@@ -378,6 +384,12 @@
       tags:
       - SubdermalImplant
       - HideContextMenu
+  # Lust edit start
+    - type: ScentEmitter
+      spot: AnySlot
+      scent: LustGunpowder
+      duration: 400
+  # Lust edit end
 
 - type: entity
   parent: BaseSubdermalImplant

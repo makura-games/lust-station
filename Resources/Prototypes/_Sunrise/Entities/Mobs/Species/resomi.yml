@@ -295,6 +295,10 @@
     - DoorBumpOpener
     - AnomalyHost
     - Resomi
+  #Lust start
+  - type: Scent
+    personalScentProfile: LustResomi
+  #Lust end
 
 - type: entity
   parent: AppearanceResomi

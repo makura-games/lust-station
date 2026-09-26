@@ -77,6 +77,10 @@
   - type: CollectiveMind
     minds:
     - Abductor
+  #Lust start
+  - type: Scent
+    personalScentProfile: LustAbductor
+  #Lust end
 
 - type: entity
   parent: AppearanceAbductor

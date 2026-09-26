@@ -68,6 +68,10 @@
     leftBareFootState: [ footprint-left-bare-dwarf ]
     rightBareFootState: [ footprint-right-bare-dwarf ]
   # Sunrise edit end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustDwarf
+  # Lust end
 
 - type: entity
   parent: OrganBase

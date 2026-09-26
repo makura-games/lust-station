@@ -200,6 +200,10 @@
       - "footprint-right-bare-slime"
   - type: Interactions
   # Sunrise end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustSlime
+  # Lust end
 
 - type: entity
   parent: OrganBase

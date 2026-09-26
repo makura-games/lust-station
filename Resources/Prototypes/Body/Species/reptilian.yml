@@ -237,6 +237,10 @@
     rightBareFootState:
     - "footprint-right-bare-lizard"
   # Sunrise end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustReptilian
+  # Lust end
 
 - type: entity
   parent: OrganBase

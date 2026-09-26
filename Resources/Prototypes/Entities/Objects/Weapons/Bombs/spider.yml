@@ -48,3 +48,9 @@
         base:
           Primed: { state: primed }
           Unprimed: { state: icon }
+  # Lust edit start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust edit end

@@ -180,6 +180,10 @@
     rightBareFootState:
       - "footprint-right-bare-diona"
   # Sunrise end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustDiona
+  # Lust end
 
 - type: entity
   parent: OrganBase

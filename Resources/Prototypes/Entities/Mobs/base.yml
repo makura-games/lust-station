@@ -198,6 +198,9 @@
     lightningExplode: false
   - type: GhostOnMove
     mustBeDead: true
+  # Lust Start
+  - type: ScentOnAttacked
+  # Lust End
 
 # Used for mobs that can enter combat mode and can attack.
 - type: entity

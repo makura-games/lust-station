@@ -156,6 +156,11 @@
   - type: ToggleableNightVision
     effect: EffectNightVisioSpecies
   # Sunrise-end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustArachnid
+  - type: Smell
+  # Lust end
 
 - type: entity
   parent: OrganBase
