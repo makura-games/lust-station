@@ -8,3 +8,11 @@
     sprite: _Sunrise/Clothing/Uniforms/Prison/Jumpskirt/prisoner.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Prison/Jumpskirt/prisoner.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End

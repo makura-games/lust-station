@@ -24,10 +24,6 @@
     checkTarget: true
     categories: [ "рот" ]
     requireExposed: true
-  - !type:HasVisualLayerCondition
-    checkTarget: true
-    checkInitiator: false
-    layer: Tail
   - !type:HasMarkingCondition
     checkInitiator: false
     checkTarget: true

@@ -99,11 +99,6 @@
   - !type:HasTargetCondition
     allowSelfTargeting: false
   - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "рука" ]
-    requireExposed: true
-  - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
     categories: [ "шея" ]

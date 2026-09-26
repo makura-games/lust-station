@@ -40,6 +40,14 @@
   - type: Clothing
     slots: [innerclothing]
     femaleMask: UniformTop
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 
 - type: entity

@@ -171,11 +171,6 @@
     checkTarget: true
     requiredSex: [ Male, Futanari ]
   - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "гладкие перчатки" ]
-    requireExposed: true
-  - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
     categories: [ "член" ]
