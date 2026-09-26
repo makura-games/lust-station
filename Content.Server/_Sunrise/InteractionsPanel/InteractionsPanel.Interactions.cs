@@ -42,6 +42,10 @@ public partial class InteractionsPanel
             {
                 subs.Event<InteractionMessage>(OnInteractionMessageReceived);
                 subs.Event<RequestUndressMessage>(OnUndressMessageReceived);
+                // Lust edit - изменение доступности панели владельцем.
+                subs.Event<SetInteractionPanelEnabledMessage>(OnSetInteractionPanelEnabled);
+                // Lust edit - изменение автоматического снижения прогресса владельцем.
+                subs.Event<SetLoveDecayEnabledMessage>(OnSetLoveDecayEnabled);
             });
 
         SubscribeLocalEvent<InteractionsComponent, GetVerbsEvent<AlternativeVerb>>(AddInteractionsVerb);
@@ -95,6 +99,8 @@ public partial class InteractionsPanel
             if (ent == player) continue;
             if (!HasComp<InteractionsComponent>(ent)) continue;
             if (!_interaction.InRangeAndAccessible(player, ent)) continue;
+            // Lust edit - пропуск персонажей с отключённой панелью.
+            if (!CanOpenUI(player, ent)) continue;
 
             entitiesInRange.Add(ent);
         }
@@ -102,11 +108,11 @@ public partial class InteractionsPanel
         if (entitiesInRange.Count > 0)
         {
             var target = entitiesInRange[0];
-            OpenUI(player, target);
+            TryOpenUI(player, target); // Lust edit - проверка доступности панели.
         }
         else
         {
-            OpenUI(player, player);
+            TryOpenUI(player, player); // Lust edit - свою панель можно открыть для включения.
         }
     }
 
@@ -124,8 +130,7 @@ public partial class InteractionsPanel
             return false;
         if (!HasComp<InteractionsComponent>(entity))
             return false;
-        OpenUI(player, entity);
-        return true;
+        return TryOpenUI(player, entity); // Lust edit - проверка доступности панели.
     }
 
     private void DidEquipped(EntityUid uid, InteractionsComponent component, DidEquipHandEvent args)
@@ -181,6 +186,10 @@ public partial class InteractionsPanel
     {
         var target = ent.Comp.CurrentTarget;
         if (target == null)
+            return;
+
+        // Lust edit - защита от взаимодействия после отключения панели целью.
+        if (!CanOpenUI(ent, target.Value))
             return;
 
         if (!_playerManager.TryGetSessionByEntity(ent.Owner, out var userSession))
@@ -456,11 +465,16 @@ public partial class InteractionsPanel
             return;
         }
 
-        comp.LoveAmount -= LoveDecayRate * frameTime;
-        if (comp.LoveAmount < 0)
-            comp.LoveAmount = 0;
+        // Lust edit start - возможность отключить автоматическое снижение прогресса.
+        if (ShouldDecayLove((uid, comp)))
+        {
+            comp.LoveAmount -= LoveDecayRate * frameTime;
+            if (comp.LoveAmount < 0)
+                comp.LoveAmount = 0;
 
-        Dirty(uid, comp);
+            Dirty(uid, comp);
+        }
+        // Lust edit end
 
         var ratio = (float)(comp.LoveAmount / comp.MaxLoveAmount).Float();
         var hasEffect = HasComp<LoveVisionComponent>(uid);
@@ -485,7 +499,8 @@ public partial class InteractionsPanel
         if (IsOnCooldown(uid, "orgasm"))
             return;
 
-        comp.LoveAmount = 0;
+        if (ShouldDecayLove((uid, comp)))
+            comp.LoveAmount = 0;
 
         _chatSystem.TrySendInGameICMessage(uid, "кончает", InGameICChatType.Emote, false);
         _chatSystem.TryEmoteWithChat(uid, "Moan");
@@ -591,11 +606,15 @@ public partial class InteractionsPanel
         var user = args.User;
         var target = args.Target;
 
+        // Lust edit - не показывать глагол для отключённой панели.
+        if (!CanOpenUI(user, target))
+            return;
+
         AlternativeVerb verb = new()
         {
             Act = () =>
             {
-                OpenUI((user, interfaceComponent), target);
+                TryOpenUI((user, interfaceComponent), target); // Lust edit - повторная проверка при выполнении.
             },
             Text = "Взаимодействовать [F]",
             Priority = -1

@@ -53,7 +53,10 @@ public sealed partial class InteractionsWindowBoundUserInterface : BoundUserInte
             _slave.UpdateState(
                 interactionsState.UserEntity,
                 interactionsState.TargetEntity,
-                interactionsState.AvailableInteractionIds
+                interactionsState.AvailableInteractionIds,
+                // Lust edit - синхронизация настройки отключения панели.
+                interactionsState.PanelEnabled,
+                interactionsState.LoveDecayEnabled
             );
         }
     }
