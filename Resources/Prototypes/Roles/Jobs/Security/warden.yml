@@ -18,7 +18,6 @@
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   displayWeight: 70  # Sunrise
   # Sunrise-Start
   alternativeTitles:

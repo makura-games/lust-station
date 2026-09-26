@@ -10,14 +10,14 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Lust.Toys.Systems;
 
-public sealed class VibratingSystem : EntitySystem
+public sealed partial class VibratingSystem : EntitySystem
 {
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly ChatSystem _chatSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly JitteringSystem _jittering = default!;
-    [Dependency] private readonly InteractionsPanel _panel = default!;
+    [Dependency] private MobStateSystem _mobStateSystem = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private ChatSystem _chatSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private JitteringSystem _jittering = default!;
+    [Dependency] private InteractionsPanel _panel = default!;
 
     // Добавляет стоны и заполняет панель
     public override void Update(float frameTime)

@@ -58,8 +58,9 @@
       path: /Audio/_Sunrise/Machines/energyshield_down.ogg
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StrongMetallic
   - type: Destructible
     thresholds:

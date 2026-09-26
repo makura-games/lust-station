@@ -6,11 +6,11 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Lust.Chat;
 
-public sealed class EmoteOnUseSystem : EntitySystem
+public sealed partial class EmoteOnUseSystem : EntitySystem
 {
-    [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private UseDelaySystem _useDelay = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ChatSystem _chat = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

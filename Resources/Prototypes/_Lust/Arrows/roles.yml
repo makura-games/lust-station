@@ -68,7 +68,6 @@
       - PressureImmunity
       - StaminaModifier
     - type: SolutionRegeneration
-      solution: chemicals
       generated:
         reagents:
         - ReagentId: ReagentArrows
@@ -171,7 +170,6 @@
       - PressureImmunity
       - StaminaModifier
     - type: SolutionRegeneration
-      solution: chemicals
       generated:
         reagents:
         - ReagentId: ReagentArrows
