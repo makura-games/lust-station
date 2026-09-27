@@ -67,14 +67,9 @@
     - !type:HasTargetCondition
       allowSelfTargeting: false
     - !type:BodyAreaTagCondition
-      checkInitiator: false
+      checkInitiator: true
       checkTarget: true
       categories: [ "щёки" ]
-      requireExposed: true
-    - !type:BodyAreaTagCondition
-      checkInitiator: true
-      checkTarget: false
-      categories: [ "рот" ]
       requireExposed: true
   interactionMessages:
     - "%user нежно прижимается щекой к лицу %target"
@@ -93,7 +88,7 @@
     - !type:SexCondition
       checkInitiator: true
       checkTarget: false
-      requiredSex: [ Female ]
+      requiredSex: [ Female, Futanari ]
   interactionMessages:
     - "%user прижимается грудью к лицу %target"
     - "%user прижимает к своей груди лицо %target"
@@ -137,14 +132,9 @@
     - !type:HasTargetCondition
       allowSelfTargeting: false
     - !type:BodyAreaTagCondition
-      checkInitiator: true
-      checkTarget: false
-      categories: [ "лицо" ]
-      requireExposed: true
-    - !type:BodyAreaTagCondition
       checkInitiator: false
       checkTarget: true
-      categories: [ "попа" ]
+      categories: [ "лицо" ]
       requireExposed: true
   interactionMessages:
     - "%user нежно садится попкой на лицо %target"
@@ -213,8 +203,8 @@
       categories: [ "лицо" ]
       requireExposed: true
   interactionMessages:
-    - "user прижимается ступней к лицу %target"
-    - "user нежно гладит ступней лицо %target"
+    - "%user прижимается ступней к лицу %target"
+    - "%user нежно гладит ступней лицо %target"
     - "%user проводит ступней по лицу %target"
   interactionSounds:
     - FriendlyStroke
