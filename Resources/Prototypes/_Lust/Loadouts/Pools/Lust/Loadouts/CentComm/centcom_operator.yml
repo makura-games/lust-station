@@ -84,6 +84,11 @@
     neck: ClothingNeckMantleCentcomQillu
 
 - type: loadout
+  id: CentCommNeckCloakBlack
+  equipment:
+    neck: ClothingNeckCloakCentcomBlack
+
+- type: loadout
   id: CentCommQilluChestplate
   equipment:
     outerClothing: ClothingOuterArmorCentcomChestplateQillu

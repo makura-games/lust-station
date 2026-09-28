@@ -67,3 +67,15 @@
   - LustSpecialLoadout
   - Contributors
 
+- type: roleLoadout
+  id: LustJobCentCommSpecOpsOperator
+  groups:
+  - LustCentCommSpecOpsOperatorNeck
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - LustCentCommOperatorBra
+  - LustCentCommOperatorPants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors

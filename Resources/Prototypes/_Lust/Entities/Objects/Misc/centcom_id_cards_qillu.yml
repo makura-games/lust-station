@@ -85,3 +85,39 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOfficial
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: CentcomChiefOfStaffIDCardQillu
+  name: centcom chief of staff ID card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-chief-of-staff
+    jobIcon: JobIconNanotrasen
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: CentcomInternIDCardQillu
+  name: centcom intern ID card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-intern
+    jobIcon: JobIconNanotrasen
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: CentcomIDOperatorIDCardQillu
+  name: centcom id operator ID card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-id-operator
+    jobIcon: JobIconNanotrasen
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: CentcomSpecOpsOperatorIDCardQillu
+  name: centcom special operations operator ID card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-specops-operator
+    jobIcon: JobIconNanotrasen

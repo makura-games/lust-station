@@ -12,3 +12,18 @@
 
 - type: playTimeTracker
   id: JobSoldierCCAC
+
+- type: playTimeTracker
+  id: JobCentCommInspector
+
+- type: playTimeTracker
+  id: JobCentCommChiefOfStaff
+
+- type: playTimeTracker
+  id: JobCentCommIntern
+
+- type: playTimeTracker
+  id: JobCentCommIDOperator
+
+- type: playTimeTracker
+  id: JobCentCommSpecOpsOperator

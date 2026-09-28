@@ -1,0 +1,10 @@
+ent-SpawnPointCentCommInspector = Central Command Inspector
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointCentCommChiefOfStaff = Central Command Chief Of Staff
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointCentCommIntern = Central Command Intern
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointCentCommIDOperator = Central Command ID Operator
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointCentCommSpecOpsOperator = Central Command Special Operations Operator
+    .desc = { ent-SpawnPointJobBase.desc }

@@ -156,3 +156,12 @@
   - PinkWomanPants
   - PurpleWomanPants
   - BlackWomanPants
+
+- type: loadoutGroup
+  id: LustCentCommSpecOpsOperatorNeck
+  name: loadout-group-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CentCommNeckCloakBlack
+

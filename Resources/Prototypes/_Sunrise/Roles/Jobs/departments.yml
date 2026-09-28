@@ -69,6 +69,13 @@
   roles:
   - CentCommOperator
   - CentCommOfficial
+  # Lust-Start
+  - CentCommInspector
+  - CentCommChiefOfStaff
+  - CentCommIntern
+  - CentCommIDOperator
+  - CentCommSpecOpsOperator
+  # Lust-End
   weight: 120
 
 - type: department

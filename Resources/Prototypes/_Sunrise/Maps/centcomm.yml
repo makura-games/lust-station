@@ -16,6 +16,13 @@
             prefixCreator: 'TG'
         - type: StationJobs
           availableJobs:
-            #centcom
+              #centcom
             CentCommOperator: [ 1, 2 ]
             BlueShieldOperative: [1, 2]
+            # Lust-Start
+            CentCommInspector: [ 1, 1 ]
+            CentCommChiefOfStaff: [ 1, 1 ]
+            CentCommIntern: [ 1, 1 ]
+            CentCommIDOperator: [ 1, 1 ]
+            CentCommSpecOpsOperator: [ 1, 1 ]
+            # Lust-End
