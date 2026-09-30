@@ -1,0 +1,33 @@
+## Kitsune specific ears
+#- type: marking
+#  id: KitsuneEarCow
+#  bodyPart: HeadTop
+#
+#  groupWhitelist: [Kitsune]
+#  sprites:
+#  - sprite: _Fish/Mobs/Customization/Kitsune/ears_cow.rsi
+#    state: cow-ears
+#  - sprite: _Fish/Mobs/Customization/Kitsune/ears_cow.rsi
+#    state: cow-ears-inner
+#
+#- type: marking
+#  id: KitsuneEarDeer
+#  bodyPart: HeadTop
+#
+#  groupWhitelist: [Kitsune]
+#  sprites:
+#  - sprite: _Fish/Mobs/Customization/Kitsune/ears_deer.rsi
+#    state: deer-ears
+#  - sprite: _Fish/Mobs/Customization/Kitsune/ears_deer.rsi
+#    state: deer-ears-inner
+#
+#- type: marking
+#  id: KitsuneEarLynx
+#  bodyPart: HeadTop
+#
+#  groupWhitelist: [Kitsune]
+#  sprites:
+#  - sprite: _Fish/Mobs/Customization/Kitsune/ears_lynx.rsi
+#    state: lynx-ears
+#  - sprite: _Fish/Mobs/Customization/Kitsune/ears_lynx.rsi
+#    state: lynx-ears-inner

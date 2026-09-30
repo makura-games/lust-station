@@ -1,0 +1,36 @@
+- type: species
+  id: Kitsune
+  name: species-name-kitsune
+  roundStart: true
+  prototype: MacKitsune
+  bodyTypes:
+  - HumanNormal
+  - HumanSlimFemale
+  - HumanSlimMale
+  dollPrototype: SunriseAppearanceKitsune
+  skinColoration: HumanToned
+  naming: firstlast
+  youngAge: 50
+  oldAge: 700
+  maxAge: 900
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human
+
+- type: markingsGroup
+  parent: Human
+  id: Kitsune
+  limits:
+    enum.HumanoidVisualLayers.Tail:
+      limit: 1
+      required: true
+      onlyGroupWhitelisted: true
+      default: [ BigFoxTail ]
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: true
+      onlyGroupWhitelisted: true
+      default: [ FoxEars ]
+    enum.HumanoidVisualLayers.Special:
+      limit: 0
+      required: false

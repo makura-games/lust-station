@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "size": {
+    "x": 64,
+    "y": 32
+  },
+  "license": "CLA",
+  "copyright": "Made for Fish Station by fago's, animated by @coco_jamb0o (discord)",
+  "states": [
+    {
+      "name": "fox",
+      "directions": 4
+    },
+    {
+      "name": "fox-moving",
+      "directions": 4,
+      "delays": [
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15]
+      ]
+    },
+    {
+      "name": "fox-moving-color",
+      "directions": 4,
+      "delays": [
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15]
+      ]
+    },
+    {
+      "name": "fox-moving-white",
+      "directions": 4,
+      "delays": [
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15],
+        [0.3, 0.15, 0.3, 0.15]
+      ]
+    },
+    {
+      "name": "nine-tail_fox_gray",
+      "directions": 4
+    },
+    {
+      "name": "nine-tail_fox_gray_color",
+      "directions": 4
+    },
+    {
+      "name": "nine-tail_fox_gray_white",
+      "directions": 4
+    }
+  ]
+}

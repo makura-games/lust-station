@@ -1,0 +1,25 @@
+- type: entity
+  parent: OrganHumanExternal
+  id: OrganKitsuneExternal
+  abstract: true
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      group: Kitsune
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganKitsuneExternal ]
+  id: OrganKitsuneTorso
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      layers:
+      - Chest
+      - Tail
+      - Overlay
+      - TailOverlay
+      group: Kitsune
+
+- type: entity
+  parent: [ OrganBaseHead, OrganKitsuneExternal ]
+  id: OrganKitsuneHead

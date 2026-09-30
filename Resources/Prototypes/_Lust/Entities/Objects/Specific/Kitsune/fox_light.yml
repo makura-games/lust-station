@@ -1,0 +1,22 @@
+- type: entity
+  id: KitsuneFoxLight
+
+  components:
+  - type: Sprite
+    sprite: _Lust/kitsune_fire.rsi
+    state: fire
+    noRot: true
+  - type: PointLight
+    color: "#00ffff"
+    radius: 3
+    energy: 3
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.1
+        hard: false
+        layer:
+        - GhostImpassable # Just a dummy layer
