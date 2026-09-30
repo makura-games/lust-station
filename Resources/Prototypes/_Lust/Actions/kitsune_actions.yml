@@ -1,0 +1,65 @@
+- type: entity
+  parent: BaseAction
+  id: ActionKitsuneTransform
+  name: Fox Transform
+  description: "Transform into a nine-tailed fox form, taking 9 slash damage. Takes 5 seconds. Duration: 4 minutes. Cooldown: 15 seconds."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon:
+      sprite: Mobs/Animals/fox.rsi
+      state: fox
+    useDelay: 3
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:KitsuneTransformActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionKitsuneRevert
+  name: Revert Form
+  description: "Revert from fox form back to humanoid form. Takes 5 seconds."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon:
+      sprite: _Lust/nine_tailed_fox.rsi
+      state: fox
+    useDelay: 3
+    itemIconStyle: NoItem
+  - type: InstantAction
+    event: !type:KitsuneRevertActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionKitsuneFire
+  name: Kitsune Fire
+  description: "Ignite a target with magical blue fire that heals Burns."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Lust/kitsune_fire.rsi, state: fire }
+    useDelay: 15
+    itemIconStyle: NoItem
+    checkCanInteract: false
+  - type: TargetAction
+    range: 15
+    checkCanAccess: false
+  - type: EntityTargetAction
+    canTargetSelf: true
+    event: !type:KitsuneFireActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionKitsuneFoxLights
+  name: Fox Lights
+  description: "Summon dancing wisps of fox fire to light your way."
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    icon: { sprite: _Lust/kitsune_fire.rsi, state: fire }
+    useDelay: 10
+    itemIconStyle: NoItem
+    checkCanInteract: true
+  - type: InstantAction
+    event: !type:KitsuneFoxLightsActionEvent

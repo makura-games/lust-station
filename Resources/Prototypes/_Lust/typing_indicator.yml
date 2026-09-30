@@ -1,0 +1,10 @@
+- type: typingIndicator
+  id: kitsune
+  typingState: default0
+  idleState: default3
+  offset: 0, 0
+#  directionalOffsets:
+#    East: 0.5, 0
+#    West: -0.75, 0
+#    North: 0, 0
+#    South: 0, 0

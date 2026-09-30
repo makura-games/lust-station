@@ -1,0 +1,237 @@
+- type: entity
+  parent: [SimpleMobBase, StripableInventoryBase, BaseSpeciesPickupable]
+  id: MobKitsuneFox
+  name: kitsune-mob-name
+  description: kitsune-mob-description
+  components:
+  - type: Inventory
+    templateId: kitsune_pet
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Lust/nine_tailed_fox.rsi
+    layers:
+    - map: ["movement"]
+      state: fox
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: fox-moving
+    noMovementLayers:
+      movement:
+        state: fox
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 50 #They actually are pretty light, I looked it up
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 6
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: BarestepHard
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      collection: Fox
+  - type: Grammar
+    attributes:
+      gender: epicene
+  - type: ComplexInteraction
+  - type: TTS
+    voice: KateSmirnovaTB
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    damage:
+      types:
+        Piercing: 9
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: NPCRetaliation
+    attackMemoryLength: 10
+  - type: HTN
+    rootTask:
+      task: RuminantHostileCompound
+  - type: CanEscapeInventory
+  - type: TypingIndicator
+    proto: kitsune
+  - type: Damageable
+    damageModifierSet: Kitsune
+  - type: Speech
+    speechSounds: Vulpkanin
+    speechVerb: Vulpkanin
+    speechBubbleOffset: -0.5
+    allowedEmotes: [ 'Bark', 'Snarl', 'Whine', 'Howl', 'Growl' ]
+  - type: Vocal
+    sounds:
+      Male: MaleVulpkanin
+      Female: FemaleVulpkanin
+      Unsexed: MaleVulpkanin
+  - type: TemperatureDamage
+    heatDamageThreshold: 400
+    coldDamageThreshold: 200
+    coldDamage:
+      types:
+        Cold: 0.1
+    heatDamage:
+      types:
+        Heat: 1.5
+  - type: ToggleableNightVision
+  - type: NameIdentifier
+    group: null
+
+# Player-transformed Kitsune form with dual sprite layers for color + white parts
+- type: entity
+  parent: MobKitsuneFox
+  id: MobKitsunePlayerFox
+  components:
+  - type: StatusIcon
+    bounds: -0.5,-0.5,0.5,0.5
+  - type: JobStatus
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Lust/nine_tailed_fox.rsi
+    layers:
+    - map: ["movementColor"]
+      state: nine-tail_fox_gray_color
+    - map: ["movementWhite"]
+      state: nine-tail_fox_gray_white
+  - type: SpriteMovement
+    movementLayers:
+      movementColor:
+        state: fox-moving-color
+      movementWhite:
+        state: fox-moving-white
+    noMovementLayers:
+      movementColor:
+        state: nine-tail_fox_gray_color
+      movementWhite:
+        state: nine-tail_fox_gray_white
+  - type: KitsuneTransform
+    actions:
+    - ActionKitsuneRevert
+
+- type: entity
+  parent:
+  - SunriseHumanBodyTypeDisplacements
+  - BaseSpeciesAppearance
+  id: AppearanceKitsune
+  name: kitsune appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganKitsuneTorso
+      Head: OrganKitsuneHead
+      ArmLeft: OrganHumanArmLeft
+      ArmRight: OrganHumanArmRight
+      HandRight: OrganHumanHandRight
+      HandLeft: OrganHumanHandLeft
+      LegLeft: OrganHumanLegLeft
+      LegRight: OrganHumanLegRight
+      FootLeft: OrganHumanFootLeft
+      FootRight: OrganHumanFootRight
+      Brain: OrganHumanBrain
+      Eyes: OrganHumanEyes
+      Tongue: OrganHumanTongue
+      Appendix: OrganHumanAppendix
+      Ears: OrganHumanEars
+      Lungs: OrganHumanLungs
+      Heart: OrganHumanHeart
+      Stomach: OrganHumanStomach
+      Liver: OrganHumanLiver
+      Kidneys: OrganHumanKidneys
+  - type: HumanoidProfile
+    species: Kitsune
+
+- type: entity
+  parent: AppearanceKitsune
+  id: SunriseAppearanceKitsune
+  name: kitsune appearance
+
+- type: entity
+  parent:
+  - SunriseAppearanceKitsune
+  - BaseSpeciesMobOrganic
+  id: MacKitsune
+  components:
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeatHuman
+      amount: 5
+  - type: Interactions
+  - type: FootprintEmitter
+  - type: HumanoidProfile
+    species: Kitsune
+  - type: SunriseHumanoidProfile
+  - type: Inventory
+    speciesId: human
+  - type: Damageable
+    damageModifierSet: Kitsune
+  - type: KitsuneTransform
+    actions:
+    - ActionKitsuneTransform
+    # - ActionKitsuneFire
+    - ActionKitsuneFoxLights
+  - type: KitsuneFoxLights
+  - type: TemperatureDamage
+    heatDamageThreshold: 400
+    coldDamageThreshold: 200
+    coldDamage:
+      types:
+        Cold: 0.1
+    heatDamage:
+      types:
+        Heat: 1.5
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - AnomalyHost
+
+- type: entity
+  parent: MacKitsune
+  id: MobKitsunePrime
+  suffix: ADMEME
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      400: Critical
+      500: Dead
+  - type: KitsuneTransform
+    actions:
+    - ActionKitsuneTransform
+    - ActionKitsuneFire
+    - ActionKitsuneFoxLights
+    - ActionFireball
+    - ActionBlink
+    - ActionForceWall
+    - ActionSmite
+    - ActionCluwne
+    - ActionSlippery
+    - ActionRepulse
+    - ActionSmoke
+    - ActionVoidApplause
+    - ActionKnock
+    - ActionMindSwap
+    - ActionSpawnMagicarpSpell

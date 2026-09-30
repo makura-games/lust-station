@@ -1,0 +1,25 @@
+- type: polymorph
+  id: KitsuneTransform
+  configuration:
+    entity: MobKitsunePlayerFox
+    revertOnDeath: true
+    revertOnCrit: true
+    forced: true
+    transferDamage: true
+    transferName: true
+    inventory: None
+    # polymorphSound: /Audio/_Sunrise/BloodCult/enter_blood.ogg
+    # exitPolymorphSound: /Audio/_Sunrise/BloodCult/enter_blood.ogg
+
+- type: polymorph
+  id: KitsuneRevert
+  configuration:
+    entity: MacKitsune
+    revertOnDeath: true
+    revertOnCrit: true
+    forced: true
+    transferDamage: true
+    transferName: true
+    inventory: None
+    # polymorphSound: /Audio/_Sunrise/BloodCult/enter_blood.ogg
+    # exitPolymorphSound: /Audio/_Sunrise/BloodCult/enter_blood.ogg
