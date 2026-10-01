@@ -3,6 +3,7 @@ using Content.Server._Sunrise.Presets;
 using Content.Server._Sunrise.Storyteller.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
+using Content.Shared._Lust.LustCCVars;
 using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -60,7 +61,12 @@ public sealed partial class VoteManager
         var storyteller = _entityManager.System<StorytellerSystem>();
 
         var excludedPresets = ticker.ExcludedPresets.ToHashSet();
-        var regularPresets = GetSunriseRegularPresetsForVote(excludedPresets);
+        var regularPresets
+            = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+            ? GetLustRegularPresetsForVote(excludedPresets)
+            : GetSunriseRegularPresetsForVote(excludedPresets);
+        /*var regularPresets = GetSunriseRegularPresetsForVote();*/
+
         var storytellerPresets = storyteller.GetAvailableVotePresets(excludedPresets);
 
         var resetExclusions = false;
@@ -95,6 +101,7 @@ public sealed partial class VoteManager
 
     private bool TryCreateSunriseTwoStagePresetVote(ICommonSession? initiator)
     {
+        var ticker = _entityManager.System<GameTicker>(); // Lust-Edit
         var (regularPresets, storytellerPresets, resetExclusions) = GetSunrisePresetVoteChoices();
 
         if (resetExclusions)
@@ -105,6 +112,17 @@ public sealed partial class VoteManager
             Logger.Warning("No suitable game modes for the current player count.");
             return true;
         }
+
+        // Lust-Start
+        if (_cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+            && ticker.ForceGreenshiftPresetVote)
+        {
+            _chatManager.DispatchServerAnnouncement(
+                Loc.GetString("ui-vote-gamemode-auto-set", ("preset", Loc.GetString(_cfg.GetCVar(LustCCVars.LustGreenshiftPreset)))));
+            _entityManager.System<GameTicker>().SetGamePreset(_cfg.GetCVar(LustCCVars.LustGreenshiftPreset));
+            return true;
+        }
+        // Lust-End
 
         if (regularPresets.Count == 0)
         {

@@ -1,0 +1,7 @@
+﻿- type: gamePresetPool
+  id: LustDefaultPresetPool
+  presets:
+    Survival: { min: 20, max: 200 }
+    Secret: { min: 30, max: 200 }
+    Dynamic: { min: 15, max: 200 }
+    LustKesslerSyndrome: { min: 60, max: 200 }

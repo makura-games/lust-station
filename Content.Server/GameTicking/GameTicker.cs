@@ -75,6 +75,8 @@ namespace Content.Server.GameTicking
 
         private bool _randomizeCharacters;
 
+        public bool ForceGreenshiftPresetVote = false; // Lust-Edit
+
         public override void Initialize()
         {
             base.Initialize();
