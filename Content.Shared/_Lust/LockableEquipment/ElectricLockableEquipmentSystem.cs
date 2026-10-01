@@ -7,12 +7,12 @@ namespace Content.Shared._Lust.LockableEquipment;
 /// <summary>
 /// Temporarily switches the cage item's icon state to the activated animation on trigger, then restores it.
 /// </summary>
-public sealed class ElectricLockableEquipmentSystem : EntitySystem
+public sealed partial class ElectricLockableEquipmentSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly LockableEquipmentSystem _lockable = default!;
-    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private LockableEquipmentSystem _lockable = default!;
+    [Dependency] private INetManager _net = default!;
 
     public override void Initialize()
     {

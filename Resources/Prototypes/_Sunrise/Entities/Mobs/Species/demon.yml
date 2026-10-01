@@ -65,6 +65,7 @@
       Unsexed: FemaleHuman
       Futanari: FemaleHuman # Lust-Edit
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: MeleeWeapon
     hidden: true
