@@ -33,7 +33,12 @@ public sealed partial class VoteManager
     private Dictionary<string, string> GetSunriseRegularPresetsForVote(IReadOnlySet<string>? excludedPresets = null)
     {
         var ticker = _entityManager.System<GameTicker>();
-        var presetPoolId = _cfg.GetCVar(SunriseCCVars.GamePresetPool);
+        // Lust-Start
+        var presetPoolId = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+            ? _cfg.GetCVar(LustCCVars.LustGamePresetPool)
+            : _cfg.GetCVar(SunriseCCVars.GamePresetPool);
+        // Lust-End
+        // var presetPoolId = _cfg.GetCVar(SunriseCCVars.GamePresetPool);
 
         if (!_prototypeManager.TryIndex<GamePresetPoolPrototype>(presetPoolId, out var presetPoolProto))
             return new Dictionary<string, string>();
@@ -72,7 +77,12 @@ public sealed partial class VoteManager
         var resetExclusions = false;
         if (regularPresets.Count == 0 && storytellerPresets.Count == 0 && excludedPresets.Count > 0)
         {
-            regularPresets = GetSunriseRegularPresetsForVote();
+            // Lust-Start
+            regularPresets
+                = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+                    ? GetLustRegularPresetsForVote(excludedPresets)
+                    : GetSunriseRegularPresetsForVote(excludedPresets);
+            // Lust-End
             storytellerPresets = storyteller.GetAvailableVotePresets(new HashSet<string>());
             resetExclusions = true;
         }
@@ -118,7 +128,7 @@ public sealed partial class VoteManager
             && ticker.ForceGreenshiftPresetVote)
         {
             _chatManager.DispatchServerAnnouncement(
-                Loc.GetString("ui-vote-gamemode-auto-set", ("preset", Loc.GetString(_cfg.GetCVar(LustCCVars.LustGreenshiftPreset)))));
+                Loc.GetString("ui-vote-gamemode-auto-set", ("preset",  _loc.GetString("greenshift-title"))));
             _entityManager.System<GameTicker>().SetGamePreset(_cfg.GetCVar(LustCCVars.LustGreenshiftPreset));
             return true;
         }
