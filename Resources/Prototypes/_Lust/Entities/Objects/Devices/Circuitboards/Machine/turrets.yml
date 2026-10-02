@@ -1,0 +1,14 @@
+- type: entity
+  parent: [ BaseMachineCircuitboard, BaseEngineeringContraband ]
+  id: WeaponTurretMeteorHostileMachineCircuitboard
+  name: anti-meteor turret machine board
+  description: A machine printed circuit board for an anti-meteor turret.
+  components:
+  - type: Sprite
+    state: security
+  - type: MachineBoard
+    prototype: WeaponTurretMeteorHostile
+    stackRequirements:
+      Steel: 5
+      CableHV: 5
+      Manipulator: 4
