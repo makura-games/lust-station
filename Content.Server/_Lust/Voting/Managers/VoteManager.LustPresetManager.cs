@@ -14,7 +14,7 @@ public sealed partial class VoteManager
     {
         var ticker = _entityManager.System<GameTicker>();
 
-        ticker.ForceGreenshiftPresetVote = ticker.Preset?.ID != "Greenshift";
+        ticker.ForceGreenshiftPresetVote = ticker.Preset?.ID != _cfg.GetCVar(LustCCVars.LustGreenshiftPreset);
 
         var presetPoolId = _cfg.GetCVar(LustCCVars.LustGamePresetPool);
 

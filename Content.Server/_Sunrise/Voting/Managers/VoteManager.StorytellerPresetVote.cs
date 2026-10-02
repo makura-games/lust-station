@@ -66,11 +66,13 @@ public sealed partial class VoteManager
         var storyteller = _entityManager.System<StorytellerSystem>();
 
         var excludedPresets = ticker.ExcludedPresets.ToHashSet();
+        // Lust-Start
         var regularPresets
             = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
             ? GetLustRegularPresetsForVote(excludedPresets)
             : GetSunriseRegularPresetsForVote(excludedPresets);
         /*var regularPresets = GetSunriseRegularPresetsForVote();*/
+        // Lust-End
 
         var storytellerPresets = storyteller.GetAvailableVotePresets(excludedPresets);
 
@@ -78,12 +80,13 @@ public sealed partial class VoteManager
         if (regularPresets.Count == 0 && storytellerPresets.Count == 0 && excludedPresets.Count > 0)
         {
             // Lust-Start
+            var noExclusions = new HashSet<string>();
             regularPresets
                 = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
                     ? GetLustRegularPresetsForVote(excludedPresets)
                     : GetSunriseRegularPresetsForVote(excludedPresets);
             // Lust-End
-            storytellerPresets = storyteller.GetAvailableVotePresets(new HashSet<string>());
+            storytellerPresets = storyteller.GetAvailableVotePresets(noExclusions);
             resetExclusions = true;
         }
 
@@ -117,12 +120,6 @@ public sealed partial class VoteManager
         if (resetExclusions)
             _entityManager.System<GameTicker>().ClearExcludedPresets();
 
-        if (regularPresets.Count == 0 && storytellerPresets.Count == 0)
-        {
-            Logger.Warning("No suitable game modes for the current player count.");
-            return true;
-        }
-
         // Lust-Start
         if (_cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
             && ticker.ForceGreenshiftPresetVote)
@@ -133,6 +130,12 @@ public sealed partial class VoteManager
             return true;
         }
         // Lust-End
+
+        if (regularPresets.Count == 0 && storytellerPresets.Count == 0)
+        {
+            Logger.Warning("No suitable game modes for the current player count.");
+            return true;
+        }
 
         if (regularPresets.Count == 0)
         {
