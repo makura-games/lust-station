@@ -13,6 +13,8 @@
     - FleshCultSurviveObjective
   - type: AntagSelection
     agentName: flesh-cult-round-end-agent-name
+    # Lust edit - выбираем антагов до спавна игроков, чтобы правило успевало инициализироваться при старте раунда.
+    selectionTime: PrePlayerSpawn
     selectionTime: JobsAssigned
     antags:
     - !type:FixedAntagCount
