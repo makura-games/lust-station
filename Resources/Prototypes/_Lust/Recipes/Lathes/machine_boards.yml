@@ -2,7 +2,7 @@
   parent: [ BaseCircuitboardRecipe, BaseSecurityMachineRecipeCategory ]
   id: WeaponTurretMeteorHostileMachineCircuitboard
   result: WeaponTurretMeteorHostileMachineCircuitboard
-  completetime: 4
+  completetime: 6
   materials:
     Steel: 50
-    Glass: 250
+    Glass: 125
