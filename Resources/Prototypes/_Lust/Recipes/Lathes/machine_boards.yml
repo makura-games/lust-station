@@ -1,0 +1,8 @@
+- type: latheRecipe
+  parent: [ BaseCircuitboardRecipe, BaseSecurityMachineRecipeCategory ]
+  id: WeaponTurretMeteorHostileMachineCircuitboard
+  result: WeaponTurretMeteorHostileMachineCircuitboard
+  completetime: 6
+  materials:
+    Steel: 50
+    Glass: 125
