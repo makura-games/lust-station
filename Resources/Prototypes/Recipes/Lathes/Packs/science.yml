@@ -24,6 +24,8 @@
   - DeviceQuantumSpinInverter
   - DeviceDesynchronizer
   - ClothingBackpackHarmpack
+  - SpectralLocatorEmpty # Lust-Edit
+  - LustAnalyzer # Lust-Edit
 
 - type: latheRecipePack
   id: ScienceClothing
