@@ -53,16 +53,6 @@
   category: Friendly
   appearConditions:
   - !type:SelfOnlyCondition
-  - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "гладкие перчатки" ]
-    requireExposed: true
-  - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "попа" ]
-    requireExposed: true
   interactionMessages:
   - "%user наотмашь шлепает себя по жопе"
   - "%user делает смачный шлепок по своей жопе"
