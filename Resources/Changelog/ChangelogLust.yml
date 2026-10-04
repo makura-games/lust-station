@@ -1321,3 +1321,10 @@
     message: Добавление иммунитета к созданию клонов ролей ЦК и ОБР.
   id: 321
   url: https://github.com/makura-games/lust-station/pull/615
+- author: xaoc
+  time: '2026-10-04T23:05:01.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: запрещено пользоваться ЕРП панелькой с трупами игроков.
+  id: 322
+  url: https://github.com/makura-games/lust-station/pull/603
