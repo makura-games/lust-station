@@ -189,8 +189,10 @@ public partial class InteractionsPanel
         var target = ent.Comp.CurrentTarget;
         if (target == null)
             return;
+        // Lust-Start
         if (_mobState.IsDead(target.Value)) //Lust-Edit
             return; 
+        // Lust-End
         if (!_playerManager.TryGetSessionByEntity(ent.Owner, out var userSession))
             return;
 
