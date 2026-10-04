@@ -77,6 +77,11 @@ public partial class InteractionsPanel
         if (!HasComp<InteractionsComponent>(player))
             return;
 
+        // Lust-Start
+        if (_mobState.IsDead(player))
+            return;
+        // Lust-End
+
         if (_ui.IsUiOpen(player, InteractionWindowUiKey.Key))
         {
             _ui.ServerSendUiMessage(player, InteractionWindowUiKey.Key, new RequestSavePosAndCloseMessage());
