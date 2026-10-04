@@ -127,8 +127,10 @@ public partial class InteractionsPanel
             return false;
         if (!HasComp<InteractionsComponent>(entity))
             return false;
-        if (_mobState.IsDead(entity)) //Lust-Edit
+        // Lust-Start
+        if (_mobState.IsDead(entity))
             return false;
+        // Lust-End
         OpenUI(player, entity);
         return true;
     }
