@@ -100,10 +100,6 @@ public partial class InteractionsPanel
             if (ent == player) continue;
             if (!HasComp<InteractionsComponent>(ent)) continue;
             if (!_interaction.InRangeAndAccessible(player, ent)) continue;
-            // Lust-Start
-            if (_mobState.IsDead(ent))
-                continue;
-            // Lust-End
             entitiesInRange.Add(ent);
         }
 
