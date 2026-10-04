@@ -1314,3 +1314,10 @@
     message: Добавлен бургер-убийца
   id: 320
   url: https://github.com/makura-games/lust-station/pull/593
+- author: Matizze
+  time: '2026-10-04T21:30:49.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавление иммунитета к созданию клонов ролей ЦК и ОБР.
+  id: 321
+  url: https://github.com/makura-games/lust-station/pull/615
