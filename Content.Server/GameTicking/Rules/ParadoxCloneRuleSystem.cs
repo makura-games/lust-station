@@ -50,6 +50,11 @@ public sealed partial class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxClone
     {
         if (ent.Comp.OriginalBody != null) // target was overridden, for example by admin antag control
         {
+            // Lust-Start
+            if (HasComp<ParadoxCloneImmuneComponent>(ent.Comp.OriginalBody.Value))
+                return;
+            // Lust-End
+
             if (Deleted(ent.Comp.OriginalBody.Value) || !_mind.TryGetMind(ent.Comp.OriginalBody.Value, out var originalMindId, out var _))
             {
                 Log.Warning("Could not find mind of target player to paradox clone!");
