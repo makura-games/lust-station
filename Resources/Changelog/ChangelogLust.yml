@@ -1307,3 +1307,17 @@
       Исправлены опечатки и неточности в текстах сообщений.'
   id: 319
   url: https://github.com/makura-games/lust-station/pull/594
+- author: Nordstream17
+  time: '2026-10-04T21:23:19.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлен бургер-убийца
+  id: 320
+  url: https://github.com/makura-games/lust-station/pull/593
+- author: Matizze
+  time: '2026-10-04T21:30:49.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавление иммунитета к созданию клонов ролей ЦК и ОБР.
+  id: 321
+  url: https://github.com/makura-games/lust-station/pull/615
