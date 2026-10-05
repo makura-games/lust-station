@@ -103,6 +103,8 @@
   #Lust start
   - type: Scent
     personalScentProfile: LustDemon
+  - type: TypingIndicator
+    proto: demon
   #Lust end
 
 - type: entity

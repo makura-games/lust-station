@@ -1,0 +1,69 @@
+- type: entity
+  name: Shoebill
+  parent: [SimpleMobBase, StripableInventoryBase]
+  id: LustMobShoebill
+  description: A large bird from hot places and your terrifying dreams.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Lust/Mobs/Animals/shoebill.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: base
+    - map: [ "head" ]
+    - map: [ "eyes" ]
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.35
+        density: 20
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: MeleeWeapon
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Weapons/Guns/Gunshots/bang.ogg
+    damage:
+      types:
+        Piercing: 12
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: base
+      Critical:
+        Base: s_dead
+      Dead:
+        Base: s_dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 2
+  - type: InteractionPopup
+    successChance: 0.5
+    interactSuccessString: petting-success-dog
+    interactFailureString: petting-failure-dog
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Weapons/Guns/Gunshots/hpistol.ogg
+  - type: Grammar
+    attributes:
+      proper: true
+      gender: male
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - VimPilot
+  - type: MessyDrinker
+  - type: CanEscapeInventory
+  - type: AttackOnInteractionFail
+    attackMemoryLength: 10
+  - type: NPCRetaliation
+  - type: FactionException
+  - type: StealTarget
+    stealGroup: AnimalShoebill
