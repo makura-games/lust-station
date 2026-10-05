@@ -1363,3 +1363,14 @@
     message: Добавлен плащ Инспектора Qillu
   id: 324
   url: https://github.com/makura-games/lust-station/pull/608
+- author: 4_ydo
+  time: '2026-10-05T01:00:25.0000000+00:00'
+  changes:
+  - type: Add
+    message: добавлен новый питомец смотрителю, китоглав
+  - type: Remove
+    message: убран макГриф со всех карт
+  id: 325
+  url: https://github.com/makura-games/lust-station/pull/597
+  media:
+  - url: https://youtu.be/TU5iU7gih_E
