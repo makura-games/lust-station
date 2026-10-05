@@ -545,12 +545,12 @@
         conditions:
         - !type:TemperatureCondition
           max: 293.15
-        amount: 100000 # thermal energy, not temperature!
+        amount: 1000000 # thermal energy, not temperature!
       - !type:AdjustTemperature
         conditions:
         - !type:TemperatureCondition
           min: 293.15
-        amount: -10000
+        amount: -1000000
       - !type:PopupMessage
         type: Local
         visualType: Medium
@@ -1526,9 +1526,8 @@
   metabolisms:
     Bloodstream:
       effects:
-      - !type:GenericStatusEffect
-        key: RadiationProtection
-        component: RadiationProtection
+      - !type:ModifyStatusEffect
+        effectProto: StatusEffectRadiationProtection
         time: 2
         type: Add
       - !type:HealthChange

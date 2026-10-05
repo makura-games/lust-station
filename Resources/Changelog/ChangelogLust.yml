@@ -1271,3 +1271,125 @@
     message: Порог пожилого возраста фелинидов повышен.
   id: 317
   url: https://github.com/makura-games/lust-station/pull/570
+- author: Matizze
+  time: '2026-09-18T21:00:28.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: Регенерации ампулы мурмило выставлено КД в 3 минуты.
+  id: 318
+  url: https://github.com/makura-games/lust-station/pull/596
+- author: Den_Gor
+  time: '2026-10-04T16:35:26.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Полоска любви теперь всегда показывает ваше собственное возбуждение, а не возбуждение того, на ком вы открыли панель.
+  - type: Fix
+    message: 'Исправлены проверки условий для ERP-взаимодействий
+
+      Лизать обувь теперь требует, чтобы на цели были надеты ботинки.
+
+      Прижимание щекой требует открытые щёки у обоих участников.
+
+      Садиться на лицо теперь проверяет только открытое лицо цели — одежда на том, кто садится, больше не мешает.
+
+      Прижатие грудью к лицу теперь доступно для футанари.
+
+      Минет за рога для девушек больше не требует наличия хвоста.
+
+      Межъягодичный акт теперь проверяет доступ к попе, а не к аналу.
+
+      Лапание и шлёпание попки, а также порка больше не требуют снятия одежды или перчаток.
+
+      Стимуляцию члена теперь можно выполнять в перчатках.
+
+      Массаж попки — исправлена ошибочная проверка рта у массажиста.
+
+      Исправлены опечатки и неточности в текстах сообщений.'
+  id: 319
+  url: https://github.com/makura-games/lust-station/pull/594
+- author: Nordstream17
+  time: '2026-10-04T21:23:19.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлен бургер-убийца
+  id: 320
+  url: https://github.com/makura-games/lust-station/pull/593
+- author: Matizze
+  time: '2026-10-04T21:30:49.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавление иммунитета к созданию клонов ролей ЦК и ОБР.
+  id: 321
+  url: https://github.com/makura-games/lust-station/pull/615
+- author: xaoc
+  time: '2026-10-04T23:05:01.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: запрещено пользоваться ЕРП панелькой с трупами игроков.
+  id: 322
+  url: https://github.com/makura-games/lust-station/pull/603
+- author: Fooksy2304, Den_Gor
+  time: '2026-10-04T23:32:11.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлен Фентамил(точно не фентанил)
+  - type: Add
+    message: 'Добавлены 5 новых лекарств: артиплазм для быстрого восстановления и остановки крови, геноциллин – слабо лечит клеточные повреждения и истощение, тиреостат – эффективно лечит удушение, салициловая кислота от мехов, оксадерм от всех видов физов.'
+  id: 323
+  url: https://github.com/makura-games/lust-station/pull/595
+  media:
+  - url: https://github.com/user-attachments/assets/aae1cabe-df93-4c3a-8d1f-97bfd286eb05
+    description: image
+  - url: https://github.com/user-attachments/assets/e9289c2f-bfad-46ac-8224-19ab2bc95804
+    description: image
+  - url: https://github.com/user-attachments/assets/47c762e2-76a4-4062-801e-b5ebbb66eace
+    description: image
+  - url: https://github.com/user-attachments/assets/bad0026f-8a85-436f-87ae-11b3f7a782ce
+    description: image
+  - url: https://github.com/user-attachments/assets/86697e4d-6b87-43ef-a667-46f8058fbdc8
+    description: image
+  - url: https://github.com/user-attachments/assets/39b43414-fad6-41c8-8cf4-d50d34291988
+    description: Снимок экрана 2026-09-14 234307
+  - url: https://github.com/user-attachments/assets/9d1470d0-95cc-4e66-abd1-9c2725a76737
+    description: image
+  - url: https://github.com/user-attachments/assets/e6f0e64c-82c1-4c33-bc84-1779fa57b132
+    description: Снимок экрана 2026-09-14 234342
+  - url: https://github.com/user-attachments/assets/78c64647-feac-475d-ac93-952b79d295fb
+    description: Снимок экрана 2026-09-14 234417
+- author: я - оливка
+  time: '2026-10-05T00:25:42.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлен плащ Инспектора Qillu
+  id: 324
+  url: https://github.com/makura-games/lust-station/pull/608
+- author: 4_ydo
+  time: '2026-10-05T01:00:25.0000000+00:00'
+  changes:
+  - type: Add
+    message: добавлен новый питомец смотрителю, китоглав
+  - type: Remove
+    message: убран макГриф со всех карт
+  id: 325
+  url: https://github.com/makura-games/lust-station/pull/597
+  media:
+  - url: https://youtu.be/TU5iU7gih_E
+- author: 4_ydo
+  time: '2026-10-05T01:30:20.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: изменен спрайт маркера заячих поднятых ушей
+  id: 326
+  url: https://github.com/makura-games/lust-station/pull/612
+  media:
+  - url: https://github.com/user-attachments/assets/ac960f84-a317-4751-8e17-0287193689c8
+    description: image
+- author: Bebronya
+  time: '2026-10-05T01:51:24.0000000+00:00'
+  changes:
+  - type: Add
+    message: Теперь арканы имеют уникальное диалоговое облачко
+  id: 327
+  url: https://github.com/makura-games/lust-station/pull/614
+  media:
+  - url: https://github.com/user-attachments/assets/3c86c0c9-60fc-4ca2-8096-9f291f7b413d

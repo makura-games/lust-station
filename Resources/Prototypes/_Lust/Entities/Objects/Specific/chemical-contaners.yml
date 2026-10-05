@@ -3,10 +3,8 @@
   name: aphrodisiac bottle
   parent: BaseChemistryBottleFilled
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: Aphrodisiac
           Quantity: 30

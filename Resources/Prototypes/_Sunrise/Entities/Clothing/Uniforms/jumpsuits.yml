@@ -399,6 +399,14 @@
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/pencilhuencil.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/pencilhuencil.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 - type: entity
   parent: ClothingUniformBase
@@ -409,6 +417,14 @@
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/sadskirt.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/sadskirt.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 - type: entity
   parent: ClothingUniformBase

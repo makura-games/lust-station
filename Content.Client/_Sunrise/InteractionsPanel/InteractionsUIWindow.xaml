@@ -26,7 +26,7 @@
                              Margin="8 12"
                              Name="UserBoxShit">
 
-                    <PanelContainer Margin="0 0 8 0">
+                    <PanelContainer Margin="0 0 8 0" MinSize="185 135">
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#332433"/>
                         </PanelContainer.PanelOverride>
@@ -83,7 +83,7 @@
                               HorizontalExpand="True"
                               Margin="8 12">
 
-                    <PanelContainer Name="TargetContainer" Margin="8 0 0 0">
+                    <PanelContainer Name="TargetContainer" Margin="8 0 0 0" MinSize="185 135">
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#332433"/>
                         </PanelContainer.PanelOverride>
