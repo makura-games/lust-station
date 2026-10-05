@@ -10,6 +10,14 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 36000 # 10h Sunrise-RoleTime
+  # Lust-Start
+  - !type:DepartmentTimeRequirement
+    department: Law
+    time: 36000 # 15h Sunrise-RoleTime
+#  - !type:RoleTimeRequirement
+#    role: JobIAA
+#    time: 36000 #5 hrs
+  # Lust-End
   startingGear: NtrOfficerGear
   icon: "JobIconNtrGuard"
   supervisors: job-supervisors-ntrg

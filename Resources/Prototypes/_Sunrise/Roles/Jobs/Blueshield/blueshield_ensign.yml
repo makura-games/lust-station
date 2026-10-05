@@ -6,10 +6,10 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: BlueShield
-      time: 62000 # 20 hrs
+      time: 72000 # 20 hrs # Lust-Edit
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 62000 # 20 hrs
+      time: 72000 # 20 hrs # Lust-Edit
     - !type:AgeRequirement
       requiredAge: 35
   startingGear: BlueShieldEnsignGear

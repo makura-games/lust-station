@@ -10,6 +10,11 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 18000 # 5h Sunrise-RoleTime
+  # Lust-Start
+  - !type:DepartmentTimeRequirement
+    department: Law
+    time: 18000 # 10h
+  # Lust-End
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-magistrate

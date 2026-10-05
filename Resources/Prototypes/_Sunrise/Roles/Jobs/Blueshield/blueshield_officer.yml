@@ -6,7 +6,12 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 62000 # 20 hrs
+      time: 72000 # 20 hrs # Lust-Edit
+  # Lust-Start
+    - !type:DepartmentTimeRequirement
+      department: Command
+      time: 18000 # 5h
+  # Lust-End
     - !type:AgeRequirement
       requiredAge: 30
   startingGear: BlueShieldOfficerGear
