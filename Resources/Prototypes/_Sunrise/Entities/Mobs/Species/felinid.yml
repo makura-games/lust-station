@@ -137,6 +137,8 @@
       Female: FemaleFelinid
       Unsexed: MaleFelinid
       Futanari: FemaleFelinid # Lust-Edit
+  - type: TypingIndicator
+    proto: felenid # Lust-Edit
   - type: Respirator
     damage:
       types:
