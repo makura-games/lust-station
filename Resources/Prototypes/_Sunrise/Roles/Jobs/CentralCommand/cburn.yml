@@ -18,6 +18,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT ]
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: job
   id: CBURNLeader
@@ -39,6 +45,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT ]
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: CBURNGearEVA

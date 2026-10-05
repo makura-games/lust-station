@@ -20,6 +20,12 @@
   special:
     - !type:AddImplantSpecial
       implants: [ MindShieldImplant ]
+  # Lust-Start
+    - !type:AddComponentSpecial
+      components:
+      - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: BlueShieldOperativeGear
