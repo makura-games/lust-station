@@ -17,9 +17,21 @@
             prefixCreator: 'T'
         - type: SpawnGridAndDockToStation
           grids:
-          - gridPath: /Maps/_Sunrise/Shuttles/Salvage/asteroidcracker.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Salvage/asteroidcracker.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/chisel.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/mining.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/oredozer.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/pickaxe.yml
+          # Lust-End
             priorityTag: DockMining
-          - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+            - /Maps/_Sunrise/Shuttles/Security/arrow.yml
+            - /Maps/_Sunrise/Shuttles/Security/security.yml
+          # Lust-End
             priorityTag: DockSecurity
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency.yml
