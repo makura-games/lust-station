@@ -20,6 +20,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: CentCommOperatorGear
