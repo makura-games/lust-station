@@ -3,10 +3,6 @@
   name: job-name-hos
   description: job-description-hos
   playTimeTracker: JobHeadOfSecurity
-  # Lust-Start
-  speciesBlacklist:
-  - Felinid
-  # Lust-End
   requirements:
     # Lust-edit-start
     - !type:AgeRequirement
@@ -56,6 +52,7 @@
       - type: CommandStaff
   speciesBlacklist:
   - Vox # Sunrise-Edit
+  - Felinid # Lust-Edit
 
 - type: startingGear
   id: HoSGear
