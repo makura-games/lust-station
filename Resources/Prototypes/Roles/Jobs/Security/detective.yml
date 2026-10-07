@@ -3,10 +3,6 @@
   name: job-name-detective
   description: job-description-detective
   playTimeTracker: JobDetective
-  # Lust-Start
-  speciesBlacklist:
-  - Felinid
-  # Lust-End
   requirements:
   - !type:RoleTimeRequirement
     role: JobSecurityOfficer
@@ -34,6 +30,7 @@
     implants: [ MindShieldImplant ]
   speciesBlacklist:
   - Vox
+  - Felinid # Lust-Edit
 
 - type: startingGear
   id: DetectiveGear
