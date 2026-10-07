@@ -16,9 +16,21 @@
             prefixCreator: 'TG'
         - type: SpawnGridAndDockToStation
           grids:
-          - gridPath: /Maps/_Sunrise/Shuttles/Salvage/pickaxe.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Salvage/pickaxe.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/nomad.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/mining.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/oredozer.yml
+          # Lust-End
             priorityTag: DockMining
-          - gridPath: /Maps/_Sunrise/Shuttles/Security/vanguard.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Security/vanguard.yml
+            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+          # Lust-End
             priorityTag: DockSecurity
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency-box-bagel.yml

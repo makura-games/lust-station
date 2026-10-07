@@ -1400,3 +1400,10 @@
     message: Рандомная ротация шаттлов для станции.
   id: 328
   url: https://github.com/makura-games/lust-station/pull/592
+- author: Matizze
+  time: '2026-10-06T16:48:27.0000000+00:00'
+  changes:
+  - type: Add
+    message: Составлен пул для ротаций шаттлов пилота СБ и утилизаторов.
+  id: 329
+  url: https://github.com/makura-games/lust-station/pull/617
