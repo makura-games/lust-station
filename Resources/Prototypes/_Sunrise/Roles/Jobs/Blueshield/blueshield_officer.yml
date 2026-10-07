@@ -3,6 +3,10 @@
   name: job-name-blueshield-officer
   description: job-description-blueshield-officer
   playTimeTracker: JobBlueShield
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security

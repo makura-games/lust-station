@@ -3,6 +3,10 @@
   name: job-name-blueshield-ensign
   description: job-description-blueshield-ensign
   playTimeTracker: JobBlueShieldEnsign
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
       department: BlueShield
