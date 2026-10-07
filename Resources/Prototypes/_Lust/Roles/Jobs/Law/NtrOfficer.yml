@@ -1,5 +1,5 @@
 ﻿- type: job
-  id: NtrOfficer
+  id: LustNtrOfficer
   name: job-name-ntrofficer
   description: job-description-ntrofficer
   playTimeTracker: JobNtrOfficer
