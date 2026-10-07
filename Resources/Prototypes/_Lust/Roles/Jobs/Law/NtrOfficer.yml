@@ -79,6 +79,7 @@
     belt: ClothingBeltSecurityFilled
   storage:
     back:
+    - WeaponDisablerSMG
     - CrowbarRed
     - MedkitCombatFilled
 
