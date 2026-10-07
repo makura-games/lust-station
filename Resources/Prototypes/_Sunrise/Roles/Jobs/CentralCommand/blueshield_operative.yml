@@ -10,7 +10,7 @@
   requirements:
     # Lust-Start
     - !type:AgeRequirement
-      requiredAge: 33
+      requiredAge: 25
     - !type:DepartmentTimeRequirement
       department: BlueShield
       time: 124000 # 40 hrs

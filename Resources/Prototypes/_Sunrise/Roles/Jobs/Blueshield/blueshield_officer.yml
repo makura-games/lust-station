@@ -12,7 +12,7 @@
       department: Security
       time: 62000 # 20 hrs
     - !type:AgeRequirement
-      requiredAge: 29
+      requiredAge: 25 # Lust-Edit
   startingGear: BlueShieldOfficerGear
   icon: JobIconBlueShield
   supervisors: job-supervisors-centcom
