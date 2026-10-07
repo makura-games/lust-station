@@ -1,0 +1,1 @@
+﻿loadout-group-hardsuit = Скафандр

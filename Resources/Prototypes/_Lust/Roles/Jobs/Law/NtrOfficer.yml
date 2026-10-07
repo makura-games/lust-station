@@ -1,0 +1,87 @@
+﻿- type: job
+  id: NtrOfficer
+  name: job-name-ntrofficer
+  description: job-description-ntrofficer
+  playTimeTracker: JobNtrOfficer
+  speciesBlacklist:
+  - Diona
+  - Vox
+  - Felinid
+  - Moth
+  - Arachnid
+  - Reptilian
+  - Vulpkanin
+  - Swine
+  - Tajaran
+  - Demon
+  - SlimePerson
+  - Dwarf
+  - HumanoidXeno
+  - Predator
+  - Resomi
+  - Milira
+  requirements:
+  - !type:AgeRequirement
+    requiredAge: 29
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 54000 # 15h Sunrise-RoleTime
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 72000 # 20h Lust-RoleTime
+  - !type:DepartmentTimeRequirement
+    department: Law
+    time: 72000 # 20h Lust-RoleTime
+  - !type:RoleTimeRequirement
+    role: JobIAA
+    time: 36000 # 10h Lust-RoleTime
+  startingGear: NtrOfficerGear
+  icon: "JobIconNtrGuard"
+  supervisors: job-supervisors-ntrg
+  displayWeight: 40
+  access:
+  - Command
+  - Bar
+  - Service
+  - Maintenance
+  - Janitor
+  - Theatre
+  - Kitchen
+  - Chapel
+  - Hydroponics
+  - External
+  - Chemistry
+  - Engineering
+  - Research
+  - Detective
+  - Salvage
+  - Security
+  - Brig
+  - Cargo
+  - Atmospherics
+  - Medical
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: NtrOfficerGear
+  equipment:
+    #jumpsuit: ClothingUniformJumpsuitNTRG
+    #neck: ClothingNeckCloakNTRG - Testing neck
+    #back: ClothingBackpackSatchelNTRG
+    mask: ClothingMaskGasNTRGLead
+    shoes: ClothingShoesBootsCombatFilled
+    eyes: ClothingEyesGlassesSecurity
+    gloves: ClothingHandsGlovesCombat
+    id: NtrGuardPDA
+    ears: ClothingHeadsetMagistrate
+    belt: ClothingBeltSecurityFilled
+  storage:
+    back:
+    - CrowbarRed
+    - MedkitCombatFilled
+
+- type: chameleonOutfit
+  id: NtrOfficerChameleonOutfit
+  job: NtrOfficer

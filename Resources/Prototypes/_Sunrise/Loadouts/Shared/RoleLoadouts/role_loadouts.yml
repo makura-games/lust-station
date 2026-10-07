@@ -27,8 +27,13 @@
 - type: roleLoadout
   id: JobNtrOfficer
   groups:
+  - LustNtrOfficerHead # Lust-Edit
+  - LustNtrOfficerNeck # Lust-Edit
+  - LustNtrOfficerOuterClothing # Lust-Edit
+  - LustNtrOfficerPrimaryWeapon # Lust-Edit
+  - LustNtrOfficerServiceWeapon # Lust-Edit
   - UniformNTR
-  - BackNTR
+  - LustBackNTR # Lust-Edit
   - SunriseTrinkets
   - SecurityTrinkets
   - GroupSpeciesBreathTool
