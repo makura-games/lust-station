@@ -15,7 +15,7 @@
     department: Law
     time: 72000 # 20h Lust-RoleTime
   - !type:AgeRequirement
-    requiredAge: 29
+    requiredAge: 25
   # Lust-End
   startingGear: IAAGear
   icon: "JobIconIAA"
