@@ -73,8 +73,8 @@
     - AntiMeteor
   - type: Repairable
     doAfterDelay: 10
+    fuelcost: 0.5
     allowSelfRepair: false
-    board: WeaponTurretAntiMeteorMachineCircuitboard
 
   - type: DeviceNetwork
     receiveFrequencyId: LustAntiMeteorTurretControl
