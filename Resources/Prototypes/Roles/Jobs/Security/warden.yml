@@ -3,10 +3,14 @@
   name: job-name-warden
   description: job-description-warden
   playTimeTracker: JobWarden
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
     # Lust-edit-start
     - !type:AgeRequirement
-      requiredAge: 22
+      requiredAge: 24
     # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer

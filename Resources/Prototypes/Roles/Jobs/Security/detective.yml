@@ -30,6 +30,7 @@
     implants: [ MindShieldImplant ]
   speciesBlacklist:
   - Vox
+  - Felinid # Lust-Edit
 
 - type: startingGear
   id: DetectiveGear

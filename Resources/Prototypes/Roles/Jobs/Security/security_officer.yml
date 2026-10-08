@@ -4,6 +4,10 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security

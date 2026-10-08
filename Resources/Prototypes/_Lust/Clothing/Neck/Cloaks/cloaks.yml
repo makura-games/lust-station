@@ -1,0 +1,8 @@
+﻿- type: entity
+  parent: ClothingNeckBase
+  id: LustClothingNeckCloakInspector
+  name: Inspector Qillu cloak
+  description: As crafted Qillu cloak shimmers with the hues of the great corporation. Upon seeing the wearer, you sense the power and devotion to that great corporation.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Neck/Cloaks/inspector_qillu_cloak.rsi
