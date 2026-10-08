@@ -73,7 +73,7 @@
     - AntiMeteor
   - type: Repairable
     doAfterDelay: 10
-    fuelcost: 0.5
+    fuelCost: 0.5
     allowSelfRepair: false
 
   - type: DeviceNetwork
