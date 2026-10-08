@@ -43,3 +43,4 @@ job-description-ntrg = Вы являетесь опорой и защитой Ю
 job-description-ntrofficer = Вы являетесь опорой и защитой Юридического Департамента, выполняя решения и постановления самого Магистрата и Представителя NanoTrasen!
 job-description-miningspec = Stay station side and enrich the station with materials using your salvage magnet and ore processors
 job-description-commaid = Специально подготовленная горничная для приоритетной уборки точек командования.
+job-description-centcom-maid = A specially trained maid assigned to clean Central Command facilities.

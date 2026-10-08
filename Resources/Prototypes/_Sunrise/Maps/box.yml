@@ -22,7 +22,6 @@
             - /Maps/_Sunrise/Shuttles/Salvage/nomad.yml
             - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
             - /Maps/_Sunrise/Shuttles/Salvage/mining.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/oredozer.yml
           # Lust-End
             priorityTag: DockMining
           # Lust-Start

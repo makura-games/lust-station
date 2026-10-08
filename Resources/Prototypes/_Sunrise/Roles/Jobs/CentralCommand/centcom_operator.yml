@@ -5,7 +5,20 @@
   playTimeTracker: JobCentCommOperator
   requirements:
   - !type:DiscordRoleRequirement
-  weight: 30
+  # Lust-Start
+  - !type:OverallPlaytimeRequirement
+    time: 10h
+#  - !type:DepartmentTimeRequirement
+#    department: Command
+#    time: 10h
+#  - !type:DepartmentTimeRequirement
+#    department: Law
+#    time: 10h
+#  - !type:RoleTimeRequirement
+#    role: JobLustCentCommIntern
+#    time: 12h
+  # Lust-End
+  weight: 50 # Lust-Edit
   setPreference: true
   startingGear: CentCommOperatorGearQillu # Lust-Edit
   icon: "JobIconNanotrasen"

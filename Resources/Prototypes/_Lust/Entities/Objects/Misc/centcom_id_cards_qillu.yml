@@ -1,5 +1,5 @@
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseCentcommContraband ]
   id: CentcomOperatorIDCardQillu
   name: command operator ID card
   description: A purple-and-gold Central Command operator identification card. Produced under Qillu contract.
@@ -26,7 +26,7 @@
     job: CentCommOperator
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseCentcommContraband ]
   id: CentcomInspectorIDCardQillu
   name: command inspector ID card
   description: A purple-and-gold Central Command inspector identification card. Produced under Qillu contract.
@@ -60,7 +60,7 @@
 
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseCentcommContraband ]
   id: CentcomIDCardQillu
   name: centcom representative ID card
   suffix: Qillu
@@ -85,3 +85,39 @@
     heldPrefix: blue
   - type: PresetIdCard
     job: CentralCommandOfficial
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: LustCentcomChiefOfStaffIDCardQillu
+  name: centcom chief card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-chief-of-staff
+    jobIcon: JobIconNanotrasen
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: LustCentcomInternIDCardQillu
+  name: centcom intern card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-intern
+    jobIcon: JobIconNanotrasen
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: LustCentcomIDOperatorIDCardQillu
+  name: centcom ID card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-id-operator
+    jobIcon: JobIconNanotrasen
+
+- type: entity
+  parent: CentcomInspectorIDCardQillu
+  id: LustCentcomSpecOpsOperatorIDCardQillu
+  name: centcom specops card
+  components:
+  - type: IdCard
+    jobTitle: job-title-centcom-specops-operator
+    jobIcon: JobIconNanotrasen

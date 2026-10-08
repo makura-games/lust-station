@@ -1453,3 +1453,10 @@
       -'
   id: 331
   url: https://github.com/makura-games/lust-station/pull/624
+- author: Nordstream17
+  time: '2026-10-08T09:35:25.0000000+00:00'
+  changes:
+  - type: Add
+    message: Для ЦК добавлены роли стажёра, начальника штаба, инспектора, оператора СУ и офицера спецопераций, доступные игрокам с вайтлистом.
+  id: 332
+  url: https://github.com/makura-games/lust-station/pull/602
