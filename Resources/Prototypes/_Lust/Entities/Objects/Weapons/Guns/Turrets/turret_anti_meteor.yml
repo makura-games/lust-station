@@ -6,7 +6,7 @@
   suffix: Anti-Meteor
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Turrets/salvage_turret.rsi
+    sprite: _Lust/Objects/Weapons/Guns/Turrets/salvage_turret.rsi
     drawdepth: FloorObjects
     granularLayersRendering: true
     layers:
