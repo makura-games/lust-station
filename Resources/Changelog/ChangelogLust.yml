@@ -1460,3 +1460,14 @@
     message: Для ЦК добавлены роли стажёра, начальника штаба, инспектора, оператора СУ и офицера спецопераций, доступные игрокам с вайтлистом.
   id: 332
   url: https://github.com/makura-games/lust-station/pull/602
+- author: Matizze
+  time: '2026-10-08T18:12:31.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлена противо-метеоритная турель.
+  - type: Add
+    message: Добавлена панель управления противо-метеоритными турелями.
+  - type: Add
+    message: Добавлены микросхемы и рецепты для принтера схем.
+  id: 333
+  url: https://github.com/makura-games/lust-station/pull/610

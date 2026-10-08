@@ -1,0 +1,10 @@
+ent-WeaponTurretAntiMeteor = point defense turret
+    .suffix = Anti-Meteor
+    .desc = An autonomous point defense turret armed with proto-kinetic projectiles.
+ent-WeaponTurretAntiMeteorMachineCircuitboard = point defense board
+    .desc = The control board for the autonomous point defense turret.
+ent-LustWeaponTurretAntiMeteorControlPanel = anti-meteor control panel
+    .suffix = Anti-Meteor, Command
+    .desc = A control panel for configuring linked anti-meteor turrets.
+ent-LustWeaponTurretAntiMeteorControlPanelElectronics =  anti-meteor panel electronics
+    .desc = Electronics for an anti-meteor turret control panel.

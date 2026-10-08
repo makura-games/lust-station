@@ -51,6 +51,12 @@
     shape: Circle
     requireInSpace: true
   # Sunrise-End
+  # Lust-Start
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - SpaceDebris
+  # Lust-End
 
 - type: entity
   parent: BaseMeteor
