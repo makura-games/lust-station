@@ -5,7 +5,7 @@
   completetime: 6
   materials:
     Steel: 50
-    Glass: 125
+    Glass: 500
 - type: latheRecipe
   parent: [ BaseElectronicsRecipe, BaseEngineeringMachineRecipeCategory ]
   id: LustWeaponTurretAntiMeteorControlPanelElectronics
