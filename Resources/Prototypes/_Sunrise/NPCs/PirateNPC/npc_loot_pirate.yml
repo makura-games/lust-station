@@ -250,7 +250,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Sprite
-    sprite: _RMC14/Objects/Clothing/Pouches/large_explosive.rsi
+    sprite: _Sunrise/Clothing/Pouches/large_explosive.rsi
     layers:
     - state: icon
   - type: Item
