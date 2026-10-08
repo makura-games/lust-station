@@ -3,10 +3,18 @@
   name: job-name-blueshield-operative
   description: job-description-blueshield-operative
   playTimeTracker: JobBlueShieldOperative
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
-    # - !type:DepartmentTimeRequirement
-    #   department: BlueShield
-    #   time: 124000 # 40 hrs
+    # Lust-Start
+    - !type:AgeRequirement
+      requiredAge: 25
+    - !type:DepartmentTimeRequirement
+      department: BlueShield
+      time: 124000 # 40 hrs
+    # Lust-End
     - !type:DepartmentTimeRequirement
       department: Command
       time: 124000 # 40 hrs
@@ -20,6 +28,12 @@
   special:
     - !type:AddImplantSpecial
       implants: [ MindShieldImplant ]
+  # Lust-Start
+    - !type:AddComponentSpecial
+      components:
+      - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: BlueShieldOperativeGear

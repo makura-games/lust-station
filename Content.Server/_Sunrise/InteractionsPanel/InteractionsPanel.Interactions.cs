@@ -77,6 +77,11 @@ public partial class InteractionsPanel
         if (!HasComp<InteractionsComponent>(player))
             return;
 
+        // Lust-Start
+        if (_mobState.IsDead(player))
+            return;
+        // Lust-End
+
         if (_ui.IsUiOpen(player, InteractionWindowUiKey.Key))
         {
             _ui.ServerSendUiMessage(player, InteractionWindowUiKey.Key, new RequestSavePosAndCloseMessage());
@@ -95,7 +100,6 @@ public partial class InteractionsPanel
             if (ent == player) continue;
             if (!HasComp<InteractionsComponent>(ent)) continue;
             if (!_interaction.InRangeAndAccessible(player, ent)) continue;
-
             entitiesInRange.Add(ent);
         }
 
@@ -124,6 +128,10 @@ public partial class InteractionsPanel
             return false;
         if (!HasComp<InteractionsComponent>(entity))
             return false;
+        // Lust-Start
+        if (_mobState.IsDead(entity))
+            return false;
+        // Lust-End
         OpenUI(player, entity);
         return true;
     }
@@ -182,7 +190,10 @@ public partial class InteractionsPanel
         var target = ent.Comp.CurrentTarget;
         if (target == null)
             return;
-
+        // Lust-Start
+        if (_mobState.IsDead(target.Value)) //Lust-Edit
+            return; 
+        // Lust-End
         if (!_playerManager.TryGetSessionByEntity(ent.Owner, out var userSession))
             return;
 
