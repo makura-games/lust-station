@@ -30,8 +30,13 @@
 - type: roleLoadout
   id: LustJobNtrOfficer
   groups:
+  - LustNtrOfficerHead
+  - LustNtrOfficerNeck
+  - LustNtrOfficerOuterClothing
+  - LustNtrOfficerPrimaryWeapon
+  - LustNtrOfficerServiceWeapon
   - UniformNTR
-  - BackNTR
+  - LustBackNTR
   - SunriseTrinkets
   - SecurityTrinkets
   - SunriseSurvival

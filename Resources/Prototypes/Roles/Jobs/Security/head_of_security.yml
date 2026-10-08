@@ -6,7 +6,7 @@
   requirements:
     # Lust-edit-start
     - !type:AgeRequirement
-      requiredAge: 23
+      requiredAge: 26
     # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobWarden
@@ -52,6 +52,7 @@
       - type: CommandStaff
   speciesBlacklist:
   - Vox # Sunrise-Edit
+  - Felinid # Lust-Edit
 
 - type: startingGear
   id: HoSGear

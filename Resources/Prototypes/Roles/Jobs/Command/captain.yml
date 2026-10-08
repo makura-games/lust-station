@@ -6,7 +6,7 @@
   requirements:
     # Lust-edit-start
     - !type:AgeRequirement
-      requiredAge: 25
+      requiredAge: 28
     # Lust-edit-end
     - !type:DepartmentTimeRequirement
       department: Engineering

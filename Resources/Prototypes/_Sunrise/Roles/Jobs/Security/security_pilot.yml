@@ -3,6 +3,10 @@
   name: job-name-security-pilot
   description: job-description-security-pilot
   playTimeTracker: JobSecurityPilot
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security

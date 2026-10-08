@@ -173,9 +173,19 @@ public sealed partial class NewLifeSystem : SharedNewLifeSystem
             eui.StateDirty();
             return;
         }
+        // Lust-Start
+        var preferences = _prefsManager.GetPreferences(player.UserId);
+        if (!preferences.Characters.TryGetValue(selectedCharacterId, out var selectedProfile)
+            || !_prototypeManager.Resolve(roleProto, out JobPrototype? selectedJob)
+            || selectedJob.SpeciesBlacklist.Contains(selectedProfile.Species))
+        {
+            eui.StateDirty();
+            return;
+        }
+        // Lust-End
 
         CloseEui(player);
-        _prefsManager.GetPreferences(player.UserId).SetProfile(selectedCharacterId);
+        preferences.SetProfile(selectedCharacterId); // Lust-Edit
         _gameTicker.MakeJoinGame(player, stationUid, roleProto, canBeAntag: false);
     }
 

@@ -1,0 +1,129 @@
+- type: loadout
+  id: LustNtrOfficerCap
+  equipment:
+    head: ClothingHeadCapNTGR
+
+- type: loadout
+  id: LustNtrOfficerBackpack
+  equipment:
+    back: ClothingBackpackNTRG
+
+- type: loadout
+  id: LustNtrOfficerCloak
+  equipment:
+    neck: ClothingNeckCloakNTRG
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 118800 # 33 часа
+
+- type: loadout
+  id: LustNtrOfficerArmor
+  equipment:
+    outerClothing: ClothingOuterArmorNTRG
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 118800 # 33 часа
+
+- type: loadout
+  id: LustNtrOfficerStandardArmor
+  equipment:
+    outerClothing: ClothingOuterArmorNTRGLead
+
+- type: loadout
+  id: LustNtrOfficerHardsuit
+  equipment:
+    outerClothing: ClothingOuterHardsuitNTRG
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 201600 # 56 часов
+
+- type: loadout
+  id: LustNtrOfficerTrenchgun
+  inhand:
+  - WeaponShotgunTrenchgun4034
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 43200 # 12 часов
+
+- type: loadout
+  id: LustNtrOfficerEnforcer
+  inhand:
+  - WeaponShotgunEnforcer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 108000 # 30 часов
+
+- type: loadout
+  id: LustNtrOfficerCycler
+  inhand:
+  - WeaponShotgunCycler
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 396000 # 110 часов
+
+- type: loadout
+  id: LustNtrOfficerMk58
+  inhand:
+  - WeaponPistolMk58
+
+- type: loadout
+  id: LustNtrOfficerM1984
+  inhand:
+  - WeaponPistolM1984
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 72000 # 20 часов
+
+- type: loadout
+  id: LustNtrOfficerDeckard
+  inhand:
+  - WeaponRevolverDeckard
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 144000 # 40 часов
+
+- type: loadout
+  id: LustNtrOfficerN1984
+  inhand:
+  - WeaponPistolN1984
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 468000 # 130 часов
+
+- type: loadout
+  id: LustNtrOfficerMateba
+  inhand:
+  - WeaponRevolverMatebaNew
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobNtrOfficer
+      time: 720000 # 200 часов
