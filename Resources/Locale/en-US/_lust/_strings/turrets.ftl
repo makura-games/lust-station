@@ -1,5 +1,10 @@
-﻿ent-WeaponTurretMeteorHostile = BAL-220 "AMD"
-    .suffix = AMD
-    .desc = Automatic anti‑meteorite defense turret.
-ent-WeaponTurretMeteorHostileMachineCircuitboard = BAL-220 "AMD" machine board
-    .desc = The control board of the automatic meteorite defense turret.
+ent-WeaponTurretAntiMeteor = point defense turret
+    .suffix = Anti-Meteor
+    .desc = An autonomous point defense turret armed with proto-kinetic projectiles.
+ent-WeaponTurretAntiMeteorMachineCircuitboard = point defense turret machine board
+    .desc = The control board for the autonomous point defense turret.
+ent-LustWeaponTurretAntiMeteorControlPanel = anti-meteor turret control panel
+    .suffix = Anti-Meteor, Command
+    .desc = A control panel for configuring linked anti-meteor turrets.
+ent-LustWeaponTurretAntiMeteorControlPanelElectronics = anti-meteor turret control panel electronics
+    .desc = Electronics for an anti-meteor turret control panel.

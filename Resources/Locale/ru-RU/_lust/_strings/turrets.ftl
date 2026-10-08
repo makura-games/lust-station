@@ -1,5 +1,10 @@
-﻿ent-WeaponTurretMeteorHostile = БАЛ-220 "ПМО"
-    .suffix = ПМО
-    .desc = Автоматическая турель противо-метеоритной обороны.
-ent-WeaponTurretMeteorHostileMachineCircuitboard = БАЛ-220 "ПМО" (машинная плата)
-    .desc = Машинная плата втоматической турель противо-метеоритной обороны.
+ent-WeaponTurretAntiMeteor = турель противометеоритной обороны
+    .suffix = Противометеоритная
+    .desc = Автономная турель противометеоритной обороны с прото-кинетическими снарядами.
+ent-WeaponTurretAntiMeteorMachineCircuitboard = плата турели противометеоритной обороны
+    .desc = Плата управления автономной турелью противометеоритной обороны.
+ent-LustWeaponTurretAntiMeteorControlPanel = панель противометеоритной турели
+    .suffix = Противометеоритная, Командование
+    .desc = Панель управления подключёнными противометеоритными турелями.
+ent-LustWeaponTurretAntiMeteorControlPanelElectronics = электроника панели противометеоритной турели
+    .desc = Электроника панели управления противометеоритными турелями.

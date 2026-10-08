@@ -4,11 +4,12 @@
   icon:
     sprite: Objects/Weapons/Guns/Turrets/turrets.rsi
     state: syndie_lethal
-  discipline: Arsenal
+  discipline: Industrial
   tier: 2
   cost: 3500
   recipeUnlocks:
-  - WeaponTurretMeteorHostileMachineCircuitboard
+  - WeaponTurretAntiMeteorMachineCircuitboard
+  - LustWeaponTurretAntiMeteorControlPanelElectronics
   radioChannels:
   - Security
   - Engineering
