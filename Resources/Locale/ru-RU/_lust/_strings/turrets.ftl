@@ -1,10 +1,10 @@
 ent-WeaponTurretAntiMeteor = турель противометеоритной обороны
     .suffix = Противометеоритная
     .desc = Автономная турель противометеоритной обороны с прото-кинетическими снарядами.
-ent-WeaponTurretAntiMeteorMachineCircuitboard = плата турели противометеоритной обороны
+ent-WeaponTurretAntiMeteorMachineCircuitboard = плата противометеоритной обороны
     .desc = Плата управления автономной турелью противометеоритной обороны.
 ent-LustWeaponTurretAntiMeteorControlPanel = панель противометеоритной турели
     .suffix = Противометеоритная, Командование
     .desc = Панель управления подключёнными противометеоритными турелями.
-ent-LustWeaponTurretAntiMeteorControlPanelElectronics = электроника панели противометеоритной турели
+ent-LustWeaponTurretAntiMeteorControlPanelElectronics = электроника противометеоритной панели
     .desc = Электроника панели управления противометеоритными турелями.

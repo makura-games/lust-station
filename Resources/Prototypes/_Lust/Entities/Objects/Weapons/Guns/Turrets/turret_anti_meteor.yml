@@ -2,7 +2,7 @@
   parent: [WeaponEnergyTurretStationBase, ConstructibleMachine]
   id: WeaponTurretAntiMeteor
   name: point defense turret
-  description: An autonomous energy turret designed to intercept hostile projectiles.
+  description: An autonomous point defense turret armed with proto-kinetic projectiles.
   suffix: Anti-Meteor
   components:
   - type: Sprite
