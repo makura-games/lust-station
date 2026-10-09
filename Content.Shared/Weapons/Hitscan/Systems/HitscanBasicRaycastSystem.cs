@@ -49,9 +49,10 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
         var collisionMask = (int) ent.Comp.CollisionMask;
         if (args.Shooter is { } lyingShooter && TryComp<StandingStateComponent>(lyingShooter, out var standing) && !standing.Standing)
             collisionMask |= (int) CollisionGroup.TableLayer;
-        // Lust edit end
 
         var ray = new CollisionRay(mapCords.Position, args.ShotDirection, collisionMask);
+        // Lust edit end
+        
         var rayCastResults = _physics.IntersectRay(mapCords.MapId, ray, ent.Comp.MaxDistance, ignored, false);
 
         var target = args.Target;
