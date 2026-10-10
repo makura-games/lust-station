@@ -8,3 +8,5 @@ ent-LustWeaponTurretAntiMeteorControlPanel = anti-meteor control panel
     .desc = A control panel for configuring linked anti-meteor turrets.
 ent-LustWeaponTurretAntiMeteorControlPanelElectronics =  anti-meteor panel electronics
     .desc = Electronics for an anti-meteor turret control panel.
+ent-LustWeaponTurretAntiMeteorFlatpack = point defense turret flatpack
+    .desc = A flatpack used for constructing a point defense turret.

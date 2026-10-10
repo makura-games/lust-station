@@ -8,3 +8,5 @@ ent-LustWeaponTurretAntiMeteorControlPanel = панель противомете
     .desc = Панель управления подключёнными противометеоритными турелями.
 ent-LustWeaponTurretAntiMeteorControlPanelElectronics = электроника противометеоритной панели
     .desc = Электроника панели управления противометеоритными турелями.
+ent-LustWeaponTurretAntiMeteorFlatpack = упакованная противометеоритная турель
+    .desc = Универсально-сборная упаковка, используемая для создания турели точечной обороны.
