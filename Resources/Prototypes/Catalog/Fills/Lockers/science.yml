@@ -18,6 +18,12 @@
     - id: ClothingOuterCoatRnd
     - id: AnomalyScanner
     - id: NodeScanner
+      # Lust-Edit-Start
+    - id: SpectralLocatorEmpty
+      prob: 0.2
+    - id: LustAnalyzer
+      prob: 0.4
+      # Lust-Edit-End
     - id: NetworkConfigurator
       prob: 0.5
     - id: PlushieLizardJobResearchassistant
