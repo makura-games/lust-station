@@ -67,3 +67,5 @@
   - type: FactionException
   - type: StealTarget
     stealGroup: AnimalShoebill
+  - type: Inventory
+    templateId: pet
