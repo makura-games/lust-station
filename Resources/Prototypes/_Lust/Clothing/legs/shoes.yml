@@ -5,5 +5,5 @@
   description: Minimal comfort, but it has style. Rugged, utilitarian footwear for real hard workers.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/choppers.rsi
+    sprite: _Lust/Clothing/Shoes/Boots/choppers.rsi
 

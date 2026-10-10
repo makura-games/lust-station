@@ -1,3 +1,3 @@
-﻿-ent-ClothingShoesFormalQMBoots = Тяпки
+﻿ent-ClothingShoesChoppers = тяпки
     .suffix = ботинки
     .desc = Экологичное и дышащее изделие, плетение из натуральных растений. Обувь для настоящих простых работ.
