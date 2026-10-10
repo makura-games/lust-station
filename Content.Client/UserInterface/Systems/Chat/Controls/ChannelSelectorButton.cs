@@ -53,7 +53,10 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
 
     public static string ChannelSelectorName(ChatSelectChannel channel)
     {
-        return Loc.GetString($"hud-chatbox-select-channel-{channel}");
+        // Lust edit - заменяем название канала эмоций анти-гост чатом
+        return Loc.GetString(channel == ChatSelectChannel.Emotes
+            ? "hud-chatbox-select-channel-antighost"
+            : $"hud-chatbox-select-channel-{channel}");
     }
 
     public Color ChannelSelectColor(ChatSelectChannel channel)
@@ -63,6 +66,7 @@ public sealed class ChannelSelectorButton : ChatPopupButton<ChannelSelectorPopup
             ChatSelectChannel.Radio => Color.LimeGreen,
             ChatSelectChannel.LOOC => Color.MediumTurquoise,
             ChatSelectChannel.OOC => Color.LightSkyBlue,
+            ChatSelectChannel.Emotes => Color.FromHex("#F4C1C1"), // Lust edit - нежно-розовая кнопка анти-гост чата
             ChatSelectChannel.Dead => Color.MediumPurple,
             ChatSelectChannel.Admin => Color.HotPink,
             _ => Color.DarkGray
