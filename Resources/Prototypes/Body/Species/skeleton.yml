@@ -188,6 +188,10 @@
     effect: EffectNightVisionPirate
   - type: FootprintEmitter
   # Sunrise-End
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustSkeleton
+  # Lust end
 
 - type: entity
   parent: OrganBase

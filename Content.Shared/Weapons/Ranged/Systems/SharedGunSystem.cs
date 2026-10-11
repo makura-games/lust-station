@@ -12,6 +12,7 @@ using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Popups;
+using Content.Shared.Physics;
 using Content.Shared.Projectiles;
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
@@ -22,12 +23,14 @@ using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.Standing;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
+using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
@@ -482,6 +485,21 @@ public abstract partial class SharedGunSystem : EntitySystem
     public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = ProjectileSpeed)
     {
         var physics = EnsureComp<PhysicsComponent>(uid);
+
+        // Lust edit start
+        // лежун теперь попадает по столу
+        if (user is { } lyingShooter && TryComp<StandingStateComponent>(lyingShooter, out var standing) && !standing.Standing
+            && TryComp<FixturesComponent>(uid, out var fixtures)
+            && fixtures.Fixtures.TryGetValue(SharedProjectileSystem.ProjectileFixture, out var projectileFixture))
+        {
+            Physics.SetCollisionMask(uid,
+                SharedProjectileSystem.ProjectileFixture,
+                projectileFixture,
+                projectileFixture.CollisionMask | (int) CollisionGroup.TableLayer,
+                manager: fixtures);
+        }
+        // Lust edit end
+
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
 
         var targetMapVelocity = gunVelocity + direction.Normalized() * speed;

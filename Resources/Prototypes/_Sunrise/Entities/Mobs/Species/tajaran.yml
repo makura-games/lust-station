@@ -181,6 +181,11 @@
   - type: FootprintEmitter
     leftBareFootState: [ footprint-left-bare-cat ]
     rightBareFootState: [ footprint-right-bare-cat ]
+  #Lust start
+  - type: Smell
+  - type: Scent
+    personalScentProfile: LustTajaran
+  #Lust end
 
 - type: entity
   save: false

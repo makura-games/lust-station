@@ -1,0 +1,7 @@
+﻿- type: npcFaction
+  id: AntiMeteor
+  hostile:
+  - SpaceDebris
+
+- type: npcFaction
+  id: SpaceDebris

@@ -1460,3 +1460,84 @@
     message: Для ЦК добавлены роли стажёра, начальника штаба, инспектора, оператора СУ и офицера спецопераций, доступные игрокам с вайтлистом.
   id: 332
   url: https://github.com/makura-games/lust-station/pull/602
+- author: Matizze
+  time: '2026-10-08T18:12:31.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлена противо-метеоритная турель.
+  - type: Add
+    message: Добавлена панель управления противо-метеоритными турелями.
+  - type: Add
+    message: Добавлены микросхемы и рецепты для принтера схем.
+  id: 333
+  url: https://github.com/makura-games/lust-station/pull/610
+- author: Den_Gor
+  time: '2026-10-08T19:05:31.0000000+00:00'
+  changes:
+  - type: Add
+    message: Обоняние! Вульпканины, таяраны и арахниды научились нюхать окружающих.
+  - type: Add
+    message: У каждого персонажа появился уникальный личный аромат, зависящий от имени, возраста, пола и голоса, плюс видовые ноты его расы.
+  - type: Add
+    message: 'Мир стал пахнуть: кровь после ран, перегар после выпивки, дым сигарет, порох гранат и бомб — всё выдаёт носителя.'
+  - type: Add
+    message: Возбуждение и оргазм теперь оставляют характерный запах, а его оттенок зависит от того, насколько вам привлекательна цель.
+  - type: Add
+    message: Мыло научилось смывать временные запахи и на время перебивать собственный аромат резким мыльным духом.
+  id: 334
+  url: https://github.com/makura-games/lust-station/pull/605
+- author: Bebronya
+  time: '2026-10-10T20:32:21.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлены декоративные тыквы к празднику
+  id: 335
+  url: https://github.com/makura-games/lust-station/pull/627
+  media:
+  - url: https://github.com/user-attachments/assets/005e8888-9b25-4757-8175-64c7e514e8bd
+    description: Снимок экрана 2026-10-08 232325
+- author: Matizze
+  time: '2026-10-10T20:40:22.0000000+00:00'
+  changes:
+  - type: Add
+    message: В список закупок, в раздел инженерии добавлена противометеоритная турель за 4500 кредитов.
+  - type: Tweak
+    message: Добавление локализации упаковке с турелью.
+  - type: Tweak
+    message: Убрано требование в предварительном изучении "Механизированная подготовка" за счёт увеличения стоимости изучения.
+  - type: Tweak
+    message: Изменение локализации плюшки Улавы-Бриц на мужское местоимение.
+  - type: Tweak
+    message: Урановые патроны перенесены на тир 3 изучения.
+  - type: Tweak
+    message: Исправлен инвентарь китоглава.
+  id: 336
+  url: https://github.com/makura-games/lust-station/pull/632
+- author: Matizze
+  time: '2026-10-10T21:03:25.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Исправлен баг, позволяющий стрелять под столом. Теперь стрелок под столом попадает по столу, пока тот не сломается. Но скоро будет заменено на иную систему.
+  id: 337
+  url: https://github.com/makura-games/lust-station/pull/630
+- author: Den_Gor
+  time: '2026-10-10T21:20:06.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: Шанс зомби инфекции у фентамила понижен в 2 раза
+  id: 338
+  url: https://github.com/makura-games/lust-station/pull/631
+- author: 'Имя: olivka'
+  time: '2026-10-10T21:24:58.0000000+00:00'
+  changes:
+  - type: Add
+    message: 'Новая обувь: тяпки'
+  id: 339
+  url: https://github.com/makura-games/lust-station/pull/628
+- author: Matizze
+  time: '2026-10-10T21:30:01.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Исправление возможности стрельбы, находясь внутри меха.
+  id: 340
+  url: https://github.com/makura-games/lust-station/pull/633

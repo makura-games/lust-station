@@ -100,10 +100,12 @@
             state: jumpsuit-female
   - type: Perishable
   - type: FootprintEmitter
-  # Lust-Start
+  #Lust start
+  - type: Scent
+    personalScentProfile: LustDemon
   - type: TypingIndicator
-    proto: demon # Lust-Edit
-  # Lust-End
+    proto: demon
+  #Lust end
 
 - type: entity
   save: false

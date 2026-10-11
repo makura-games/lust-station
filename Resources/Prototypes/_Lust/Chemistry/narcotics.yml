@@ -222,7 +222,7 @@
         messages: ["generic-reagent-effect-burning-insides"]
         probability: 0.1
       - !type:CauseZombieInfection
-        probability: 0.01
+        probability: 0.005
         conditions:
         - !type:ReagentCondition
           reagent: LustFentamyl

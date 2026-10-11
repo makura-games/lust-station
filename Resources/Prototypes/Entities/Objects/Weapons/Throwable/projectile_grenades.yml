@@ -122,6 +122,12 @@
   - type: Tag
     tags:
     - HandGrenadeAmmo #Sunrise-End
+  # Lust edit start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust edit end
 
 - type: entity
   parent: [FragileGrenadeBase, ProjectileGrenadeBase, BaseSyndicateContraband]
@@ -161,3 +167,9 @@
   - type: Tag
     tags:
     - HandGrenadeAmmo #Sunrise-End
+  # Lust edit start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust edit end
