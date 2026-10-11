@@ -60,6 +60,7 @@
   - Cargo
   - Atmospherics
   - Medical
+  - Lawyer
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
