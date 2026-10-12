@@ -16,6 +16,9 @@
     - HEAD
     - EARS
     - NECK
+  # Sunrise edit start - Акустическая защита
+  - type: AcousticProtection
+  # Sunrise edit end
   - type: ToggleableVisuals
     spriteLayer: enum.ToggleableVisuals.Layer
     clothingVisuals:
