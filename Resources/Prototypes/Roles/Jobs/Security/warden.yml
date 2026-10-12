@@ -5,7 +5,9 @@
   playTimeTracker: JobWarden
   # Lust-Start
   speciesBlacklist:
+  - Vox
   - Felinid
+  - Resomi
   # Lust-End
   requirements:
     # Lust-edit-start
