@@ -11,3 +11,4 @@
   - type: MultiHandedItem
   - type: CanEscapeInventory
     baseResistTime: 3
+  - type: BlindInStorage # Lust edit: слепота внутри сумок и предметов-хранилищ
