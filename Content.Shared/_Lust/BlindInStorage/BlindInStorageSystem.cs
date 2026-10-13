@@ -2,7 +2,7 @@ using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Storage.Components;
 using Robust.Shared.GameObjects;
 using Content.Shared.Eye.Blinding.Components;
-public sealed class BlindInStorageSystem : EntitySystem
+public sealed partial class BlindInStorageSystem : EntitySystem
 {
     [Dependency] private BlindableSystem _blindable = default!;
 
@@ -17,17 +17,11 @@ public sealed class BlindInStorageSystem : EntitySystem
 
     private void OnStartup(Entity<InsideEntityStorageComponent> ent, ref ComponentStartup args)
     {
-        if (!HasComp<BlindableComponent>(ent))
-            return;
-
         _blindable.UpdateIsBlind(ent.Owner);
     }
 
      private void OnShutdown(Entity<InsideEntityStorageComponent> ent, ref ComponentShutdown args)
     {
-        if (!HasComp<BlindableComponent>(ent))
-            return;
-
         _blindable.UpdateIsBlind(ent.Owner);
     }
 
