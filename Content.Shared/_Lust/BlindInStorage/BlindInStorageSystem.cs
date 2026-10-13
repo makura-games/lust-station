@@ -20,7 +20,7 @@ public sealed partial class BlindInStorageSystem : EntitySystem
         _blindable.UpdateIsBlind(ent.Owner);
     }
 
-     private void OnShutdown(Entity<InsideEntityStorageComponent> ent, ref ComponentShutdown args)
+    private void OnShutdown(Entity<InsideEntityStorageComponent> ent, ref ComponentShutdown args)
     {
         _blindable.UpdateIsBlind(ent.Owner);
     }
