@@ -1541,3 +1541,18 @@
     message: Исправление возможности стрельбы, находясь внутри меха.
   id: 340
   url: https://github.com/makura-games/lust-station/pull/633
+- author: Den_Gor
+  time: '2026-10-14T08:39:04.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Кнопки «Понюхать» и «Смыть запахи» теперь появляются в меню ПКМ сразу, без задержки
+  - type: Tweak
+    message: Временные запахи ран, яда, крови, возбуждения и оргазма держатся дольше
+  - type: Tweak
+    message: Запах пороха от боевых гранат держится долго, а от небоевых выветривается за пару минуты
+  - type: Tweak
+    message: Мыло маскирует базовый запах на 15 минут
+  - type: Add
+    message: Админ-призраки теперь тоже умеют нюхать
+  id: 341
+  url: https://github.com/makura-games/lust-station/pull/635

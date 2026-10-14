@@ -455,6 +455,13 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Effects/countdown.ogg
+  # Lust edit start
+  # Игрушечная граната: порох выветривается быстро.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 120
+  # Lust edit end
 
 - type: entity
   name: syndicate trickybomb

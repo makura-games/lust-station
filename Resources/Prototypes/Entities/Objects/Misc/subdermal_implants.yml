@@ -337,7 +337,7 @@
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
-    duration: 400
+    duration: 900
   # Lust edit end
 
 
@@ -386,7 +386,7 @@
     - type: ScentEmitter
       spot: AnySlot
       scent: LustGunpowder
-      duration: 400
+      duration: 900
   # Lust edit end
 
 - type: entity
