@@ -116,6 +116,7 @@
     - type: Construction
       graph: ImplantSwitchLegCyber
       node: start
+    - type: CyberLeg #Lust-Edit
 
 - type: entity
   id: RightLegCyber
@@ -138,6 +139,7 @@
     - type: Construction
       graph: ImplantSwitchLegCyber
       node: start
+    - type: CyberLeg #Lust-Edit
 
 - type: entity
   id: LeftFootCyber
