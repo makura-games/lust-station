@@ -1,10 +1,11 @@
-using Content.Shared.Eye.Blinding.Systems;
+﻿using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Storage.Components;
-using Robust.Shared.GameObjects;
 using Content.Shared.Eye.Blinding.Components;
-public sealed partial class BlindInStorageSystem : EntitySystem
+
+namespace Content.Shared.Eye.Blinding.Systems;
+public sealed partial class LustBlindableLockerSystem : EntitySystem
 {
-    [Dependency] private BlindableSystem _blindable = default!;
+    [Dependency] private BlindableSystem _blindable = new();
 
     public override void Initialize()
     {
@@ -35,5 +36,4 @@ public sealed partial class BlindInStorageSystem : EntitySystem
 
         args.Cancel();
     }
-
 }
