@@ -6,8 +6,8 @@
   # Lust-Start
   speciesBlacklist:
   - Vox
-  - Felinid
-  - Resomi
+  #- Felinid
+  #- Resomi
   # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
