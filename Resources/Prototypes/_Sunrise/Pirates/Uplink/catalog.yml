@@ -2387,7 +2387,7 @@
 
 - type: listing
   id: UplinkPirateAmmoPouch
-  icon: { sprite: /Textures/_RMC14/Objects/Clothing/Pouches/large_ammo_mag.rsi, state: icon }
+  icon: { sprite: /Textures/_Sunrise/Clothing/Pouches/large_ammo_mag.rsi, state: icon }
   productEntity: PouchAmmo
   cost:
     Doubloon: 2
@@ -2396,7 +2396,7 @@
 
 - type: listing
   id: UplinkPiratePouchExplosive
-  icon: { sprite: /Textures/_RMC14/Objects/Clothing/Pouches/large_explosive.rsi, state: icon }
+  icon: { sprite: /Textures/_Sunrise/Clothing/Pouches/large_explosive.rsi, state: icon }
   productEntity: PouchExplosive
   cost:
     Doubloon: 2
