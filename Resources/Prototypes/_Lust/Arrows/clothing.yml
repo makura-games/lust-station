@@ -281,11 +281,13 @@
   description: Holds the kit of CentComm's most feared agents.
   suffix: Arrows
   components:
-    - type: Storage
-      grid:
-      - 0,0,10,5
-    - type: StorageFill
-      contents:
+  - type: Storage
+    grid:
+    - 0,0,10,5
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
         - id: BoxArrowsKit
         #- id: SmiteImplanter
         - id: WallImplanter
@@ -311,11 +313,13 @@
   description: Holds the kit of CentComm's most feared agents.
   suffix: Arrows
   components:
-    - type: Storage
-      grid:
-      - 0,0,7,5
-    - type: StorageFill
-      contents:
+  - type: Storage
+    grid:
+    - 0,0,7,5
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
         - id: BoxArrowsKit
         - id: MedkitCombatFilled
         - id: WeaponRevolverMatebaAPBiocode
