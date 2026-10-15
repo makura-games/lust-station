@@ -92,7 +92,7 @@
     ears: ClothingHeadsetAltERT
     belt: ClothingBeltMilitaryWebbingERT
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: PouchAmmoLarge
+    pocket2: PouchAmmo
   inhand:
   - WeaponPistolM1911
   - WeaponRifleLecterXL8
@@ -296,7 +296,7 @@
     ears: ClothingHeadsetAltERT
     belt: ClothingBeltChiefEngineerFilled
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: PouchMaterial
+    pocket2: CableHVStack
   inhand:
   - ClothingHandsPowerGlovesUplinkNTERTAmber
   - RCD
@@ -314,7 +314,6 @@
     - CableDetStack
     - MiningDrillDiamond
     - CyberGrenadeThrowerAtmos
-    - CableHVStack
 
 - type: startingGear
   id: ERTEngineerGearGamma
@@ -329,7 +328,7 @@
     ears: ClothingHeadsetAltERT
     belt: ClothingBeltChiefEngineerFilled
     pocket1: DoubleEmergencyOxygenTankFilled
-    pocket2: PouchMaterial
+    pocket2: CableHVStack
   inhand:
   - ClothingHandsPowerGlovesUplinkNTERTRed
   - RCDRecharging
@@ -346,7 +345,6 @@
     - CableDetStack
     - MiningDrillDiamond
     - CyberGrenadeThrowerAtmos
-    - CableHVStack
 # Medical
 
 - type: startingGear

@@ -19,9 +19,18 @@
         emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency-box-bagel.yml
       - type: SpawnGridAndDockToStation
         grids:
-          - gridPath: /Maps/_Sunrise/Shuttles/Salvage/mining.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Salvage/mining.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
+          # Lust-End
             priorityTag: DockMining
-          - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            - /Maps/_Sunrise/Shuttles/Security/vanguard.yml
+          # Lust-End
             priorityTag: DockSecurity
       - type: StationJobs
         availableJobs:
@@ -87,10 +96,9 @@
           #law
           IAA: [ 1, 1 ]
           Lawyer: [ 3, 3 ]
-          NtrOfficer: [1, 2]
           # silicon
           StationAi: [ 1, 1 ]
-          Borg: [ 3, 4 ]
+          Borg: [ 3, 3 ]
           EngineerBorg: [ 1, 1 ]
           MiningBorg: [ 1, 1 ]
           JanitorBorg: [ 1, 1 ]
@@ -110,6 +118,7 @@
         - MiningOutpost
         - Tesla
         - XenobiologyRepair
+        - VirusologyAmbusol
         - Containment
         - WeaponsSecurity
         - MaintsRepair

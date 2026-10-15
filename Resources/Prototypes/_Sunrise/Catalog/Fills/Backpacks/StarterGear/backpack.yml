@@ -8,7 +8,6 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: PouchBackpackPockets
         - id: WeaponAJ100Biocode
         - id: MagazinePistolSubMachineGun
         - id: MagazinePistol40SubMachineGunSP
@@ -28,7 +27,6 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: PouchBackpackPockets
         - id: WeaponSIAR52Biocode
         - id: CaselessAmmoKit
         - id: CaselessAmmoKit

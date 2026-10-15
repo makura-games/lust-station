@@ -32,7 +32,7 @@
     outerClothing: ClothingOuterHardsuitDeathsquad
     shoes: ClothingShoesBootsMagAdv
     id: DeathsquadPDA
-    pocket1: PouchAmmoLarge # Sunrise-Edit
+    pocket1: PouchAmmo # Sunrise-edit
     pocket2: DoubleEmergencyOxygenTankFilled # Sunrise-edit
     belt: ClothingBeltMedicalElite # Sunrise-edit
   storage:
