@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponRifle
-  parent: [BaseItem, BaseGunWieldable, GunMedium]
+  parent: [BaseItem, BaseGunWieldable, GunMedium, BaseLustGunHeat] # Lust edit: наследуем компонент нагрева из _Lust
   id: BaseWeaponRifle
   description: A rooty tooty point and shooty.
   abstract: true

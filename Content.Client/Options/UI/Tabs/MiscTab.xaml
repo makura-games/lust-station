@@ -20,8 +20,12 @@
                 <CheckBox Name="FancyNameBackgroundsCheckBox" Text="{Loc 'ui-options-fancy-name-background'}" />
                 <Label Text="{Loc 'ui-options-general-cursor'}"
                        StyleClasses="LabelKeyText"/>
-                <CheckBox Name="ShowHeldItemCheckBox" Text="{Loc 'ui-options-show-held-item'}" />
+                <!-- Lust edit: выбор режима отображения предмета перенесен в настройки HUD -->
+                <ui:OptionDropDown Name="HeldItemShowModeDropDown" Title="{Loc 'ui-options-held-item-show-mode'}" />
                 <CheckBox Name="ShowCombatModeIndicatorsCheckBox" Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
+                <CheckBox Name="ShowGunHeatIndicatorCheckBox" Text="{Loc 'ui-options-gun-heat-indicator'}" />
+                <CheckBox Name="ShowGunJamIndicatorCheckBox" Text="{Loc 'ui-options-gun-jam-indicator'}" />
+                <CheckBox Name="ShowGunBoltIndicatorCheckBox" Text="{Loc 'ui-options-gun-bolt-indicator'}" />
                 <Label Text="{Loc 'ui-options-general-storage'}"
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="OpaqueStorageWindowCheckBox" Text="{Loc 'ui-options-opaque-storage-window'}" />
