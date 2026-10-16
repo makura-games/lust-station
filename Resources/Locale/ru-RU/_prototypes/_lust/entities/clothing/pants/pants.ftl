@@ -6,3 +6,5 @@ ent-ClothingPantsWomanNanoTrasenRepresentative = женские стринги �
     .desc = Официальные стринги в расцветке представителя Qillu.
 ent-ClothingPantsManNanoTrasenRepresentative = боксёры «Представитель Qillu»
     .desc = Официальные боксёры в расцветке представителя Qillu.
+ent-ClothingPantsManWolf = трусы Волка из Уолк Стрит
+    .desc = Если волк и был волком то волком для волков. А если Волк это идти то он уже не волк - а ВОЛК. Придает невероятную харизму.
