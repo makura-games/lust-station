@@ -62,4 +62,4 @@
       - id: PlushieDiegoVulpa
         orGroup: Plushie
       - id: PlushiePavelitel
-        onGroup: Plushie
+        orGroup: Plushie
