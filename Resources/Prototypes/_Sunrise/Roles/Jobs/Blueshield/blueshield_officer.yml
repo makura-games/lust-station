@@ -48,7 +48,7 @@
     - Mining
   special:
     - !type:AddImplantSpecial
-      implants: [ MindShieldImplant, BluespaceImplant, ReviverImplant, ProtoAdrenalImplant, DeathRattleImplantBlueShield ]
+      implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: BlueShieldOfficerGear
@@ -57,8 +57,11 @@
     eyes: ClothingEyesGlassesBlueShield
     outerClothing: ClothingOuterArmorBlueShield
     id: BlueShieldOfficerPDA
-    ears: ClothingHeadsetBlueShield
+    ears: ClothingHeadsetAltCommand
     gloves: ClothingHandsGlovesCombat
+  storage:
+    back:
+    # - HandheldBSOCrewMonitor
 
 - type: chameleonOutfit
   id: BlueShieldOfficerChameleonOutfit
