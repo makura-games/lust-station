@@ -67,7 +67,7 @@
   container:
     entity: WrappedParcel
     containerId: contents
-  cost: 2000
+  cost: 800 # Lust-Edit
   category: cargoproduct-category-name-service
   group: market
 
@@ -80,7 +80,7 @@
   container:
     entity: WrappedParcel
     containerId: contents
-  cost: 300
+  cost: 500 # Lust-Edit
   category: cargoproduct-category-name-service
   group: market
 

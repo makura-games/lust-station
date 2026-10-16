@@ -70,7 +70,7 @@
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
-    duration: 400
+    duration: 900
   # Lust edit end
 
 # has igniter but no fuel or wires

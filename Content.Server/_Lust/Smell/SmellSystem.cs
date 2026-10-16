@@ -13,7 +13,6 @@ using Content.Shared.Inventory;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.StatusEffectNew.Components;
 using Content.Shared._Sunrise.TTS;
-using Content.Shared.Verbs;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
@@ -44,31 +43,13 @@ public sealed partial class SmellSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<ScentComponent, GetVerbsEvent<InteractionVerb>>(OnGetInteractionVerbs);
+        SubscribeLocalEvent<ScentComponent, SmellExecuteEvent>(OnSmellExecute);
     }
 
-    /// <summary>
-    /// Adds the "smell" verb to a target with ScentComponent if the smeller is
-    /// itself capable of smelling (has SmellComponent) and passes access/interaction checks.
-    /// </summary>
-    private void OnGetInteractionVerbs(
-        Entity<ScentComponent> target,
-        ref GetVerbsEvent<InteractionVerb> args)
+    /// <summary>Executes the "smell" verb via TrySmell.</summary>
+    private void OnSmellExecute(Entity<ScentComponent> target, ref SmellExecuteEvent args)
     {
-        if (!args.CanInteract || !args.CanAccess)
-            return;
-
-        if (!HasComp<SmellComponent>(args.User))
-            return;
-
-        EntityUid user = args.User;
-
-        args.Verbs.Add(new InteractionVerb
-        {
-            Text = _loc.GetString("smell-verb"),
-            TextStyleClass = "Default",
-            Act = () => TrySmell(user, target.AsNullable())
-        });
+        TrySmell(args.User, target.AsNullable());
     }
 
     /// <summary>

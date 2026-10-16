@@ -6,7 +6,9 @@
   playTimeTracker: JobSecurityOfficer
   # Lust-Start
   speciesBlacklist:
+  - Vox
   - Felinid
+  - Resomi
   # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement

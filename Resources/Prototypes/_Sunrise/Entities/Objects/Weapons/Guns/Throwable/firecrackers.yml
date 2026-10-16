@@ -27,7 +27,7 @@
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
-    duration: 400
+    duration: 120
   #Lust end
 
 - type: entity
@@ -71,7 +71,7 @@
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
-    duration: 400
+    duration: 120
   #Lust end
 
 - type: entity
@@ -101,5 +101,5 @@
   - type: ScentEmitter
     spot: AnySlot
     scent: LustGunpowder
-    duration: 400
+    duration: 120
   #Lust end

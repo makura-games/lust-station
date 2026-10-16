@@ -22,6 +22,14 @@
   - type: TimerTriggerVisuals
     primingSound:
       path: /Audio/Items/smoke_grenade_prime.ogg
+  # Lust edit start
+  # Небоевая граната: порох выветривается быстро.
+  # Наследуется CleanerGrenade, TearGasGrenade, MetalFoamGrenade.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 120
+  # Lust edit end
 
 - type: entity
   parent: [ BaseCivilianContraband, SmokeGrenade ]
@@ -134,6 +142,13 @@
     components:
     - type: TriggerOnUse
     - type: TimerTrigger
+  # Lust edit start
+  # Небоевая граната: порох выветривается быстро.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 120
+  # Lust edit end
   #Sunrise-Start
   - type: CartridgeAmmo
     proto: BulletAirGrenade

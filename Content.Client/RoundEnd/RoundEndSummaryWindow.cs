@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Client._Lust.RoundEnd; // Lust-Edit
 using Content.Client._Sunrise.StatsBoard;
 using Content.Client.Message;
 using Content.Shared._Sunrise.StatsBoard;
@@ -123,7 +124,8 @@ namespace Content.Client.RoundEnd
             };
 
             //Put observers at the bottom of the list. Put antags on top.
-            var sortedPlayersInfo = playersInfo.OrderBy(p => p.Observer).ThenBy(p => !p.Antag);
+            var sortedPlayersInfo = playersInfo.OrderBy(p => p.Observer).ThenBy(p => !p.Antag).ToList(); // Lust-Edit
+            var manifestRows = new List<Control>(); // Lust-Edit
 
             //Create labels for each player info.
             foreach (var playerInfo in sortedPlayersInfo)
@@ -174,8 +176,10 @@ namespace Content.Client.RoundEnd
                 }
                 hBox.AddChild(playerInfoText);
                 playerInfoContainer.AddChild(hBox);
+                manifestRows.Add(hBox); // Lust-Edit
             }
 
+            ManifestSearchHook.Apply(playerManifestTab, manifestRows, sortedPlayersInfo); // Lust-Edit
             playerInfoContainerScrollbox.AddChild(playerInfoContainer);
             playerManifestTab.AddChild(playerInfoContainerScrollbox);
 
@@ -280,8 +284,8 @@ namespace Content.Client.RoundEnd
             {
                 StorytellerHistoryType.HelpfulEvent => "Положительные",
                 StorytellerHistoryType.NeutralEvent => "Нейтральные события",
-                StorytellerHistoryType.MinorCalmEvent => "Мелкие проишествия",
-                StorytellerHistoryType.MajorCalmEvent => "Крупные проишествия",
+                StorytellerHistoryType.MinorCalmEvent => "Мелкие происшествия", // Lust-Edit
+                StorytellerHistoryType.MajorCalmEvent => "Крупные происшествия", // Lust-Edit
                 StorytellerHistoryType.MinorAntagEvent => "Антагонисты",
                 StorytellerHistoryType.MajorAntagEvent => "Крупные антагонисты",
                 StorytellerHistoryType.Death => "Смерти",

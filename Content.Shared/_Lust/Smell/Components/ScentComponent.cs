@@ -1,4 +1,5 @@
 ﻿using Content.Shared._Lust.Smell.Prototypes;
+using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lust.Smell.Components;
@@ -7,7 +8,7 @@ namespace Content.Shared._Lust.Smell.Components;
 /// Scent bearer: static base and personal scent, temporary scents from sources,
 /// and the masking state of the base scent.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class ScentComponent : Component
 {
     /// <summary>
