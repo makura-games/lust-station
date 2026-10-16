@@ -503,4 +503,30 @@
       right:
       - state: diego-vulpa-inhand-right
 
-# FILLER
+# 16.10.2026
+- type: localizedDataset
+  id: pavelitelPhrases
+  values:
+    prefix: pavelitel-
+    count: 29
+
+- type: entity
+  id: PlushiePavelitel
+  parent: BasePlushie
+  name: Arianna Ayr’nii‑Wulfovna
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Fun/toys.rsi
+    state: pavelitel
+  - type: VulpaAccent
+  - type: TriggerOnUse
+  - type: UseDelayOnTrigger
+  - type: UseDelayTriggerCondition
+  - type: EmitSoundOnTrigger
+    sound: null
+  - type: SpeakOnTrigger
+    pack: pavelitelPhrases
+  - type: TTS
+    voice: SophroniaFranklin
+  - type: UseDelay
+    delay: 5
