@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: RandomAnomalySpawner
   name: random anomaly spawner
   parent: MarkerBase
@@ -24,6 +24,9 @@
     - AnomalyTech
     # - AnomalySanta # Sunrise-Edit: До следуюшего Рождества
     - AnomalyBanana
+    # Lust edit start - Звуковая аномалия
+    - LustAnomalySound
+    # Lust edit end
     rareChance: 0.3
     rarePrototypes:
     - RandomAnomalyInjectorSpawner
