@@ -77,6 +77,18 @@
   # Sunrise added end
   - type: StackPrice
     price: 5
+  # Lust-start
+  - type: ReagentCraft
+    recipes:
+    - reagent: Leporazine
+      minQuantity: 15
+      time: 3
+      result: Blueointment1
+    - reagent: Pyrazine
+      minQuantity: 15
+      time: 3
+      result: RedOintment1
+  # Lust-end
 
 - type: entity
   id: Ointment1
@@ -218,6 +230,22 @@
   # Sunrise added end
   - type: StackPrice
     price: 5
+  # Lust-start
+  - type: ReagentCraft
+    recipes:
+    - reagent: Puncturase
+      minQuantity: 15
+      time: 3
+      result: RedPunctPack1
+    - reagent: Lacerinol
+      minQuantity: 15
+      time: 3
+      result: RedLacePack1
+    - reagent: Bruizine
+      minQuantity: 15
+      time: 3
+      result: RedBruizPack1
+  # Lust-end
 
 - type: entity
   id: Brutepack1

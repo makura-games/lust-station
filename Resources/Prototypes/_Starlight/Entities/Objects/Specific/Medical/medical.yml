@@ -19,6 +19,10 @@
   description: A therapeutic gel pack and bandages designed to treat blunt-force trauma.
   suffix: Single
   components:
+  # Lust-start
+  - type: ReagentCraft
+    recipes: []
+  # Lust-end
   - type: Sprite
     sprite: _Starlight/Objects/Specific/Medical/medical.rsi
     state: bluebrutepack
@@ -79,6 +83,10 @@
   description: Uses a special blend of dermaline, aloe, and insuzine to treat frostbite and electrical burns. Does nothing for caustic.
   suffix: Single
   components:
+  # Lust-start
+  - type: ReagentCraft
+    recipes: []
+  # Lust-end
   - type: Sprite
     scale: 1.10,1.05
     sprite: _Starlight/Objects/Specific/Medical/medical.rsi
