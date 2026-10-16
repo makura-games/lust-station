@@ -81092,6 +81092,20 @@ entities:
     - type: Transform
       pos: -15.243141,32.524296
       parent: 2
+<<<<<<< HEAD
+- proto: ClothingMaskGasBlueShield
+  entities:
+  - uid: 10795
+    components:
+    - type: Transform
+      parent: 10791
+    - type: Clothing
+      inSlot: mask
+      inSlotFlag: MASK
+    - type: Physics
+      canCollide: False
+=======
+>>>>>>> parent of 39b0213fd1 (Фиксы карты новые. Актуально на 13 октября 2026 года (#4854))
 - proto: ClothingMaskGasExplorer
   entities:
   - uid: 10945
@@ -81336,6 +81350,20 @@ entities:
     - type: Transform
       pos: -13.2739105,-50.45024
       parent: 2
+<<<<<<< HEAD
+- proto: ClothingOuterArmorBlueShield
+  entities:
+  - uid: 10796
+    components:
+    - type: Transform
+      parent: 10791
+    - type: Clothing
+      inSlot: outerClothing
+      inSlotFlag: OUTERCLOTHING
+    - type: Physics
+      canCollide: False
+=======
+>>>>>>> parent of 39b0213fd1 (Фиксы карты новые. Актуально на 13 октября 2026 года (#4854))
 - proto: ClothingOuterCoatBlueshield
   entities:
   - uid: 10797
@@ -142896,7 +142924,11 @@ entities:
         outerClothing: !type:ContainerSlot
           showEnts: False
           occludes: False
+<<<<<<< HEAD
+          ent: 10796
+=======
           ent: null
+>>>>>>> parent of 39b0213fd1 (Фиксы карты новые. Актуально на 13 октября 2026 года (#4854))
         neck: !type:ContainerSlot
           showEnts: False
           occludes: False
@@ -142904,7 +142936,11 @@ entities:
         mask: !type:ContainerSlot
           showEnts: False
           occludes: False
+<<<<<<< HEAD
+          ent: 10795
+=======
           ent: null
+>>>>>>> parent of 39b0213fd1 (Фиксы карты новые. Актуально на 13 октября 2026 года (#4854))
         eyes: !type:ContainerSlot
           showEnts: False
           occludes: False
@@ -142912,7 +142948,11 @@ entities:
         head: !type:ContainerSlot
           showEnts: False
           occludes: False
+<<<<<<< HEAD
+          ent: 10794
+=======
           ent: null
+>>>>>>> parent of 39b0213fd1 (Фиксы карты новые. Актуально на 13 октября 2026 года (#4854))
         suitstorage: !type:ContainerSlot
           showEnts: False
           occludes: False

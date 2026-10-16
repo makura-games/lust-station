@@ -40,7 +40,7 @@
             - /Maps/_Sunrise/Shuttles/Security/vanguard.yml
           # Lust-End
             priorityTag: DockSecurity
-
+           
         - type: StationJobs
           availableJobs:
             #command
