@@ -1,0 +1,10 @@
+- type: polymorph
+  id: ArtifactCat
+  configuration:
+    entity: MobCat
+    forced: true
+    transferName: true
+    inventory: None
+    revertOnDeath: true
+    revertOnCrit: true
+    duration: 20
