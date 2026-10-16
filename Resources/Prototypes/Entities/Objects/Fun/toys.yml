@@ -272,6 +272,20 @@
       params:
         maxDistance: 1
         volume: -8
+  # Lust-Edit-Start
+  - type: Tag
+    tags:
+    - CanAddPoints
+  - type: ActivatableUI
+    key: enum.ResearchClientUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: ResearchClient
+  # Lust-Edit-End
+  
 
 - type: entity
   parent: [ SpectralLocatorUnpowered, PowerCellSlotSmallItem ]

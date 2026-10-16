@@ -32,6 +32,8 @@
   - AnomalyLocatorWide
   - APECircuitboard
   - AnomalyVesselCircuitboard
+  - SpectralLocatorEmpty # Lust-Edit
+  - LustAnalyzer # Lust-Edit
 
 - type: technology
   id: BasicXenoArcheology
