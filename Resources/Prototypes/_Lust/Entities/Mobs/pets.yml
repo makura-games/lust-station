@@ -69,3 +69,123 @@
     stealGroup: AnimalShoebill
   - type: Inventory
     templateId: pet
+
+- type: entity
+  id: LustPetBigRat
+  parent: [SimpleMobBase, BasePet]
+  name: big mouse
+  components:
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 1
+  - type: UserInterface
+    interfaces:
+      enum.PetControlUiKey.Key:
+        type: PetControlBoundUserInterface
+        interactionRange: -1
+  - type: HTN
+    rootTask:
+      task: PetCompound
+    blackboard:
+      IdleRange: !type:Single
+        2.0
+      FollowCloseRange: !type:Single
+        1.0
+      FollowRange: !type:Single
+        1.5
+  - type: Speech
+    speechSounds: Squeak
+    speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
+  - type: Sprite
+    drawdepth: SmallMobs
+    sprite: Mobs/Animals/mouse.rsi
+    color: "#f09260"
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base", "movement"]
+      state: mouse-2
+    scale: 1.25,1.25
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: mouse-2
+      Critical:
+        Base: dead-2
+      Dead:
+        Base: splat-2
+  - type: Item
+    size: Tiny
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: mouse-moving-2
+    noMovementLayers:
+      movement:
+        state: mouse-2
+  - type: Clothing
+    quickEquip: false
+    sprite: Mobs/Animals/mouse.rsi
+    equippedPrefix: 0
+    slots:
+    - HEAD
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.2
+        density: 100
+        mask:
+        - SmallMobMask
+        layer:
+        - SmallMobLayer
+  - type: MobState
+  - type: Deathgasp
+  - type: MobStateActions
+    actions:
+      Critical:
+      - ActionCritSuccumb
+      - ActionCritFakeDeath
+      - ActionCritLastWords
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Critical
+      200: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed : 2.5
+    baseSprintSpeed : 5
+  - type: Vocal
+    sounds:
+      Male: Mouse
+      Female: Mouse
+      Unsexed: Mouse
+    wilhelmProbability: 0.001
+  - type: CombatMode
+  - type: MeleeWeapon
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 5
+        Piercing: 4
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: Blood
+        Quantity: 500
+  - type: CanEscapeInventory
+  - type: FireVisuals
+    sprite: Mobs/Effects/onfire.rsi
+    normalState: Mouse_burning
+  - type: NightVision
+  - type: HolidayVisuals
+    holidays:
+      festive:
+      - WinterPresents
+  - type: HolidayRsiSwap
+    sprite:
+      festive: _Sunrise/Mobs/Animals/mouse_santa.rsi
