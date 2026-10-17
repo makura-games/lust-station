@@ -1,5 +1,5 @@
 - type: entity
-  parent: BaseStructure
+  parent: [BaseStructure, BaseLustDissolvableStructure] # Lust edit: разрешаем разрушение термитом
   id: BaseRailing
   abstract: true
   name: railing

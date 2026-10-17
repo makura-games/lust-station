@@ -27,6 +27,13 @@
   tileReactions:
   - !type:FlammableTileReaction
     temperatureMultiplier: 2
+  # Lust edit: применяем термит к конструкциям при контакте
+  reactiveEffects:
+    Dissolvable:
+      methods: [ Touch ]
+      effects:
+      - !type:DissolvableReaction
+        multiplier: 1
   metabolisms:
     Bloodstream:
       effects:
