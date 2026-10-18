@@ -313,7 +313,7 @@
   components:
     - type: Storage
       grid:
-      - 0,0,7,5
+      - 0,0,9,5
     - type: StorageFill
       contents:
         - id: BoxArrowsKit
