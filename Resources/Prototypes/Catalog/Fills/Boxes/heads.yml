@@ -36,6 +36,7 @@
         children:
         - id: MedicalTechFabCircuitboard
         - id: CargoRequestMedicalComputerCircuitboard
+        - id: MedicalAssemblerMachineCircuitboard # lust-add - lust pr #662
 
 - type: entity
   parent: ToteBase

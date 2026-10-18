@@ -26,6 +26,9 @@
     - id: VentClog
     - id: VentFleshWorms # Sunrise-Edit
     - id: VentbullMigration # Sunrise-Edit
+    - id: LustHoloCarpSpawn # Lust-Edit
+    - id: LustRadiationOutburst # Lust-Edit
+    - id: LustRadiationStorm # Lust-Edit
 
 - type: entityTable
   id: BasicAntagEventsTable
