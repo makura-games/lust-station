@@ -99,7 +99,7 @@
             #law (5)
             IAA: [ 1, 1 ]
             Lawyer: [ 1, 2 ]
-            NtrOfficer: [1, 2]
+            NtrOfficer: [1, 1] # lust-edit
             #silicon (2)
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]
