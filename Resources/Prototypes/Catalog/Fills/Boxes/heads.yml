@@ -36,6 +36,7 @@
         children:
         - id: MedicalTechFabCircuitboard
         - id: CargoRequestMedicalComputerCircuitboard
+        - id: MedicalAssemblerMachineCircuitboard # Lust-Add
 
 - type: entity
   parent: ToteBase
