@@ -4952,3 +4952,55 @@
     message: Офицеру теперь выдаётся профильная гарнитура «Синего щита» c доступом к каналу коммандования.
   id: 2038
   url: https://github.com/makura-games/sunrise-station/pull/4809
+- author: Nordstream17
+  time: '2026-10-07T12:10:13.0000000+00:00'
+  changes:
+  - type: Add
+    message: Т2 технологию "Боевого снаряжения" добавлена печать подсумка для магазинов.
+  - type: Add
+    message: Для ОБР и ЯО добавлены новые подсумки средней и большой вместимости, рассчитанные на 5 и 8 магазинов, соответственно.
+  - type: Add
+    message: В рюкзаки ЯО и ОБР добавлены карманы для снаряжения(небольшое вложенное хранилище в инвентаре), предназначенные для хранения различной взрывчатки, гранат и магазинов для оружия.
+  - type: Add
+    message: Для инженеров добавлен подсумок для материалов.
+  id: 2039
+  url: https://github.com/makura-games/sunrise-station/pull/4782
+- author: ПТ | KAVALDi
+  time: '2026-10-09T09:48:39.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: Изменил требуемое время на открытие тюремных пинов (значок строгого режима -> было 100 часов, стало 1 час) и (значок тюремного блока -> было 50 часов, стало 0 часов)
+  id: 2040
+  url: https://github.com/makura-games/sunrise-station/pull/4849
+- author: privett
+  time: '2026-10-14T17:29:58.0000000+00:00'
+  changes:
+  - type: Remove
+    message: Лазган пилота СБ удален из шкафа пилота.
+  id: 2041
+  url: https://github.com/makura-games/sunrise-station/pull/4855
+- author: privett
+  time: '2026-10-14T21:45:57.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлены роль офицера ИСН и кабинеты для должности на картах Бокс, Багель, Марафон, Поезд и Оазис.
+  - type: Fix
+    message: Доступные игровые карты были изменены с учетом исправления ошибок.
+  - type: Remove
+    message: Удалена цель на Ромерол.
+  id: 2042
+  url: https://github.com/makura-games/sunrise-station/pull/4854
+- author: ThereDrD
+  time: '2026-10-14T21:45:08.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Исправлена уязвимость дающая возможность читерам гостать всех игроков
+  id: 2043
+  url: https://github.com/makura-games/sunrise-station/pull/4856
+- author: ThereDrD
+  time: '2026-10-17T01:42:08.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Исправлена очередная уязвимость, которая позволяла ронять сервер
+  id: 2044
+  url: https://github.com/makura-games/sunrise-station/pull/4857
