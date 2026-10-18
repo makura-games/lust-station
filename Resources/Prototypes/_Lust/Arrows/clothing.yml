@@ -298,8 +298,8 @@
         - id: EnergyShieldArrowsBiocode
         #- id: BaseUplinkNTERT200BC
         - id: WeaponShotgunCarnageBiocode
-        - id: BoxCarnage
-          amount: 2
+        #- id: BoxCarnage
+        #  amount: 2
         - id: MagazineShotgunCarnage
           amount: 2
 
@@ -313,7 +313,7 @@
   components:
     - type: Storage
       grid:
-      - 0,0,9,5
+      - 0,0,10,5
     - type: StorageFill
       contents:
         - id: BoxArrowsKit
