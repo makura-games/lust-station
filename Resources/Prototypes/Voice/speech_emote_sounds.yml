@@ -31,6 +31,8 @@
     # Lust-Start
     Moan:
       collection: MaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
     Crying:
       collection: MaleCry
@@ -83,6 +85,8 @@
     # Lust-Start
     Moan:
       collection: FemaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
     Crying:
       collection: FemaleCry
@@ -134,6 +138,8 @@
     # Lust-Start
     Moan:
       collection: MaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
 
 - type: emoteSounds
@@ -169,6 +175,8 @@
     # Lust-Start
     Moan:
       collection: FemaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
 
 - type: emoteSounds
@@ -203,6 +211,8 @@
     # Lust-Start
     Moan:
       collection: MaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
     Crying:
       collection: MaleCry
@@ -255,6 +265,8 @@
     # Lust-Start
     Moan:
       collection: FemaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
     Crying:
       collection: FemaleCry
@@ -307,6 +319,8 @@
     # Lust-Start
     Moan:
       path: /Audio/Voice/Vox/vox_sigh.ogg
+    Mew:
+      collection: FelinidMews
     # Lust-End
   params:
     variation: 0.125
@@ -336,6 +350,8 @@
     # Lust-Start
     Moan:
       collection: DionaLaugh
+    Mew:
+      collection: FelinidMews
     # Lust-End
   params:
     variation: 0.125
@@ -378,6 +394,8 @@
     # Lust-Start
     Moan:
       path: /Audio/Voice/Arachnid/arachnid_scream.ogg
+    Mew:
+      collection: FelinidMews
     # Lust-End
 
 - type: emoteSounds
@@ -408,6 +426,8 @@
     # Lust-Start
     Moan:
       collection: MaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
     Honk:
       collection: BikeHorn
@@ -459,6 +479,8 @@
     # Lust-Start
     Moan:
       collection: FemaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
     Honk:
       collection: BikeHorn
@@ -522,6 +544,8 @@
     # Lust-Start
     Moan:
       path: /Audio/Voice/Moth/moth_scream.ogg
+    Mew:
+      collection: FelinidMews
     # Lust-End
 
 - type: emoteSounds
@@ -636,6 +660,8 @@
     # Lust-Start
     Moan:
       collection: MaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
 
 - type: emoteSounds
@@ -685,6 +711,8 @@
     # Lust-Start
     Moan:
       collection: FemaleMoan
+    Mew:
+      collection: FelinidMews
     # Lust-End
 
 # body emotes
@@ -873,4 +901,6 @@
     # Lust-Start
     Moan:
       collection: WawaScream
+    Mew:
+      collection: FelinidMews
     # Lust-End

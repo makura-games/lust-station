@@ -26,3 +26,16 @@
       amount: 3
   products:
     Aphrodisiac: 5
+
+- type: reaction
+  id: JuiceThatMakesYouMeow
+  reactants:
+    Felinase:
+      amount: 1
+    StableMutagen:
+      amount: 3
+    Plasma:
+      amount: 1
+      catalyst: true
+  products:
+    JuiceThatMakesYouMeow: 3
