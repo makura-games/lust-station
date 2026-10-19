@@ -226,7 +226,7 @@
         conditions:
         - !type:ReagentCondition
           reagent: LustFentamyl
-          min: 15
+          min: 25
       - !type:ModifyBleed
         amount: -0.5
       - !type:ResetNarcolepsy
