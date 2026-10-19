@@ -7,6 +7,8 @@ using Content.Shared.UserInterface;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
+using System.Linq; // Lust-edit
+using Content.Shared.Medical.SuitSensor; // Lust-edit
 
 namespace Content.Server.Medical.CrewMonitoring;
 
@@ -39,7 +41,7 @@ public sealed partial class CrewMonitoringConsoleSystem
 
             alert.NextCorpseAlertTime = curTime + TimeSpan.FromSeconds(alert.CorpseAlertTime);
 
-            if (!HasCorpsesOutsideMorgue(console))
+            if (!HasCorpsesOutsideMorgue(uid, console)) // Lust-edit - Фикс уведомления мониторов
                 continue;
 
             TryPlayCorpseAlertSound(uid, alert);
@@ -63,9 +65,19 @@ public sealed partial class CrewMonitoringConsoleSystem
         EnsureComp<CrewMonitoringCorpseAlertComponent>(uid);
     }
 
-    private bool HasCorpsesOutsideMorgue(CrewMonitoringConsoleComponent component)
+    
+    // Lust-edit start 
+    // Фикс сигнала тревоги для мониторов. Теперь мониторы пиликают тревогой только на тех пешек, которые на этом мониторе отображаюбтся 
+    // Условно монитор СБ больше не реагирует на крит пассажира.
+    private bool HasCorpsesOutsideMorgue(
+        EntityUid uid,
+        CrewMonitoringConsoleComponent component)
     {
-        foreach (var sensor in component.ConnectedSensors.Values)
+        var sensors = component.ConnectedSensors.Values.ToList();
+        ApplyFilter(uid, ref sensors);
+
+        foreach (var sensor in sensors)
+        // Lust-edit end
         {
             var damagePercentage = sensor.DamagePercentage;
             var isCritical = damagePercentage.HasValue && damagePercentage.Value >= CriticalDamagePercentage;
