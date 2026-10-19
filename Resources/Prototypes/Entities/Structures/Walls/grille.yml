@@ -1,6 +1,6 @@
 - type: entity
   id: Grille
-  parent: BaseStructure
+  parent: [BaseStructure, BaseLustDissolvableStructure] # Lust edit: разрешаем разрушение термитом
   name: grille
   description: A flimsy framework of iron rods.
   components:
@@ -111,7 +111,7 @@
 
 - type: entity
   id: GrilleBroken
-  parent: BaseStructure
+  parent: [BaseStructure, BaseLustDissolvableStructure] # Lust edit: разрешаем разрушение термитом
   name: grille
   description: A flimsy framework of iron rods. It has seen better days.
   components:
@@ -244,4 +244,3 @@
   - type: Construction
     graph: GrilleDiagonal
     node: clockworkGrilleDiagonal
-
