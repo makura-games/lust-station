@@ -2,9 +2,11 @@ using System.Numerics;
 using Content.Shared.Administration.Logs;
 using Content.Shared.Damage.Components;
 using Content.Shared.Database;
+using Content.Shared.Physics;
 using Content.Shared.Weapons.Hitscan.Components;
 using Content.Shared.Weapons.Hitscan.Events;
 using Content.Shared.Weapons.Ranged.Systems;
+using Content.Shared.Standing;
 using Robust.Shared.Containers;
 using Robust.Shared.Map;
 using Robust.Shared.Maths;
@@ -42,7 +44,15 @@ public sealed partial class HitscanBasicRaycastSystem : EntitySystem
         }
         // Sunrise edit end
         var mapCords = _transform.ToMapCoordinates(args.FromCoordinates);
-        var ray = new CollisionRay(mapCords.Position, args.ShotDirection, (int) ent.Comp.CollisionMask);
+        // Lust edit start
+        // лежун теперь попадает по столу
+        var collisionMask = (int) ent.Comp.CollisionMask;
+        if (args.Shooter is { } lyingShooter && TryComp<StandingStateComponent>(lyingShooter, out var standing) && !standing.Standing)
+            collisionMask |= (int) CollisionGroup.TableLayer;
+
+        var ray = new CollisionRay(mapCords.Position, args.ShotDirection, collisionMask);
+        // Lust edit end
+        
         var rayCastResults = _physics.IntersectRay(mapCords.MapId, ray, ent.Comp.MaxDistance, ignored, false);
 
         var target = args.Target;

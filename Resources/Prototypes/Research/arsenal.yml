@@ -94,7 +94,7 @@
     sprite: Objects/Materials/Sheets/other.rsi
     state: uranium
   discipline: Arsenal
-  tier: 1
+  tier: 3 # Lust-Edit
   cost: 7500
   recipeUnlocks:
   - MagazineRifleUranium

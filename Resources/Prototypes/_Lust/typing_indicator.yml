@@ -1,0 +1,5 @@
+﻿- type: typingIndicator
+  id: demon
+  typingState: demon0
+  idleState: demon0
+  offset: 0, 0.125

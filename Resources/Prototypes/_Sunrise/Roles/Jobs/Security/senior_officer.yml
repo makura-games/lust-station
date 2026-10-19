@@ -3,10 +3,16 @@
   name: job-name-senior-officer
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
+  # Lust-Start
+  speciesBlacklist:
+  - Vox
+  - Felinid
+  - Resomi
+  # Lust-End
   requirements:
     # Lust-edit-start
     - !type:AgeRequirement
-      requiredAge: 24
+      requiredAge: 26
     # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobWarden

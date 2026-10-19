@@ -1,15 +1,17 @@
-- type: gamePreset
-  id: FleshCult
-  alias:
-  - fleshcult
-  - fs
-  name: flesh-cult-title
-  description: flesh-cult-description
-  showInVote: true
-  hide: true
-  rules:
-  - FleshCult
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
+# Lust-Start : Temporary Disabled
+#- type: gamePreset
+#  id: FleshCult
+#  alias:
+#  - fleshcult
+#  - fs
+#  name: flesh-cult-title
+#  description: flesh-cult-description
+#  showInVote: true
+#  hide: true
+#  rules:
+#  - FleshCult
+#  - BasicStationEventScheduler
+#  - MeteorSwarmScheduler
+#  - SpaceTrafficControlEventScheduler
+#  - BasicRoundstartVariation
+# Lust-End

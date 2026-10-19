@@ -3,6 +3,7 @@ using Content.Server.Cloning;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Medical.SuitSensors;
 using Content.Server.Objectives.Components;
+using Content.Shared.Cloning.Components;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Gibbing.Components;
 using Content.Shared.Medical.SuitSensor;
@@ -19,6 +20,7 @@ public sealed partial class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxClone
     [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private SuitSensorSystem _sensor = default!;
     [Dependency] private TargetSystem _target = default!;
+    [Dependency] private ParadoxCloneImmuneSystem _immune = default!; // Lust-Edit
 
     public override void Initialize()
     {
@@ -34,6 +36,7 @@ public sealed partial class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxClone
 
         // check if we got enough potential cloning targets, otherwise cancel the gamerule so that the ghost role does not show up
         var allHumans = _target.GetAliveHumans();
+        _immune.RemoveInvalidTargets(allHumans); // Lust-Edit
 
         if (allHumans.Count == 0)
         {
@@ -47,6 +50,11 @@ public sealed partial class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxClone
     {
         if (ent.Comp.OriginalBody != null) // target was overridden, for example by admin antag control
         {
+            // Lust-Start
+            if (HasComp<ParadoxCloneImmuneComponent>(ent.Comp.OriginalBody.Value))
+                return;
+            // Lust-End
+
             if (Deleted(ent.Comp.OriginalBody.Value) || !_mind.TryGetMind(ent.Comp.OriginalBody.Value, out var originalMindId, out var _))
             {
                 Log.Warning("Could not find mind of target player to paradox clone!");
@@ -58,6 +66,7 @@ public sealed partial class ParadoxCloneRuleSystem : GameRuleSystem<ParadoxClone
         {
             // get possible targets
             var allAliveHumanoids = _target.GetAliveHumans();
+            _immune.RemoveInvalidTargets(allAliveHumanoids); // Lust-Edit
 
             // we already checked when starting the gamerule, but someone might have died since then.
             if (allAliveHumanoids.Count == 0)

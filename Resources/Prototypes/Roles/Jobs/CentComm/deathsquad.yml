@@ -14,6 +14,11 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantDeathSquad ] # Sunrise-edit
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
 
 - type: startingGear
   id: DeathSquadGear
@@ -27,7 +32,7 @@
     outerClothing: ClothingOuterHardsuitDeathsquad
     shoes: ClothingShoesBootsMagAdv
     id: DeathsquadPDA
-    pocket1: PouchAmmo # Sunrise-edit
+    pocket1: PouchAmmoLarge # Sunrise-Edit
     pocket2: DoubleEmergencyOxygenTankFilled # Sunrise-edit
     belt: ClothingBeltMedicalElite # Sunrise-edit
   storage:

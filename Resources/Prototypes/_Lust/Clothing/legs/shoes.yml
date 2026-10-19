@@ -1,0 +1,9 @@
+﻿- type: entity
+  parent: ClothingShoesBaseButcherable
+  id: ClothingShoesChoppers
+  name: Тяпки
+  description: Minimal comfort, but it has style. Rugged, utilitarian footwear for real hard workers.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Shoes/Boots/choppers.rsi
+

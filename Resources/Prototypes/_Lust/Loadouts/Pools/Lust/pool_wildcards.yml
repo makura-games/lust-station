@@ -6,3 +6,8 @@
     JobPsychologist: LustJobPsychologist
     JobCentCommOfficial: LustJobCentCommOfficial
     JobCentCommOperator: LustJobCentCommOperator
+    JobLustCentCommInspector: JobLustCentCommInspector
+    JobLustCentCommChiefOfStaff: JobLustCentCommChiefOfStaff
+    JobLustCentCommIntern: JobLustCentCommIntern
+    JobLustCentCommIDOperator: JobLustCentCommIDOperator
+    JobLustCentCommSpecOpsOperator: JobLustCentCommSpecOpsOperator

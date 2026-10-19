@@ -283,25 +283,28 @@
   components:
     - type: Storage
       grid:
-      - 0,0,8,5
-    - type: StorageFill
-      contents:
-        - id: BoxArrowsKit
-        #- id: SmiteImplanter
-        - id: WallImplanter
-        - id: DoorRemoteAllMTl
-        - id: CommunicationsConsolePortativeMT
-        - id: MedkitCombatFilled
-        - id: WeaponRevolverMatebaAPBiocode
-        - id: SpeedLoaderMagnumAP
-          amount: 2
-        - id: EnergyShieldArrowsBiocode
-        #- id: BaseUplinkNTERT200BC
-        - id: WeaponShotgunCarnageBiocode
-        - id: BoxCarnage
-          amount: 2
-        - id: MagazineShotgunCarnage
-          amount: 2
+      - 0,0,10,5
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+          - id: PouchBackpackPockets
+          - id: BoxArrowsKit
+          #- id: SmiteImplanter
+          - id: WallImplanter
+          - id: DoorRemoteAllMTl
+          - id: CommunicationsConsolePortativeMT
+          - id: MedkitCombatFilled
+          - id: WeaponRevolverMatebaAPBiocode
+          - id: SpeedLoaderMagnumAP
+            amount: 2
+          - id: EnergyShieldArrowsBiocode
+          #- id: BaseUplinkNTERT200BC
+          - id: WeaponShotgunCarnageBiocode
+          #- id: BoxCarnage
+          #  amount: 2
+          - id: MagazineShotgunCarnage
+            amount: 2
 
 - type: entity
   parent: ClothingBackpackERTClown
@@ -313,16 +316,19 @@
   components:
     - type: Storage
       grid:
-      - 0,0,7,5
-    - type: StorageFill
-      contents:
-        - id: BoxArrowsKit
-        - id: MedkitCombatFilled
-        - id: WeaponRevolverMatebaAPBiocode
-        - id: SpeedLoaderMagnumAP
-          amount: 2
-        - id: EnergyShieldArrowsBiocode
-        #- id: BaseUplinkNTERT200BC
+      - 0,0,10,5
+    - type: EntityTableContainerFill
+      containers:
+        storagebase: !type:AllSelector
+          children:
+          - id: PouchBackpackPockets
+          - id: BoxArrowsKit
+          - id: MedkitCombatFilled
+          - id: WeaponRevolverMatebaAPBiocode
+          - id: SpeedLoaderMagnumAP
+            amount: 2
+          - id: EnergyShieldArrowsBiocode
+          #- id: BaseUplinkNTERT200BC
 
 # Аварийный набор общий
 

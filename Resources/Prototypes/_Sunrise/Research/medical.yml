@@ -55,12 +55,12 @@
     state: icon
   discipline: Biochemical
   tier: 2
-  cost: 7500
+  cost: 15000 # Lust Edit : Увеличение стоимости, за счёт снижения требований
   recipeUnlocks:
   - MedicalAssemblerMachineCircuitboard
   - BlankMediPen
-  technologyPrerequisites:
-    - MechanizedTreatment
+#  technologyPrerequisites: # Lust Edit : Commited
+#    - MechanizedTreatment # Lust Edit : Commited
 
 - type: technology
   id: SurgeryTechAdvanced

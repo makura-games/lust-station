@@ -29,6 +29,11 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT, NutrimentImplant ] #Sunrise-Edit
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
 
 - type: startingGear
   parent: ERTLeaderGearEVA
@@ -131,6 +136,7 @@
   - !type:AddComponentSpecial
     components:
     - type: BibleUser #Lets them heal with bibles
+    - type: ParadoxCloneImmune # Lust-Edit
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT, NutrimentImplant ] #Sunrise-Edit
 
@@ -215,6 +221,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT, NutrimentImplant ] #Sunrise-Edit
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   parent: ERTEngineerGearEVA
@@ -313,6 +325,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT, NutrimentImplant ] #Sunrise-Edit
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   parent: ERTSecurityGearEVA
@@ -507,6 +525,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT, NutrimentImplant ] #Sunrise-Edit
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   parent: ERTMedicalGearEVA
@@ -607,6 +631,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantERT, NutrimentImplant ] #Sunrise-Edit
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   parent: ERTJanitorGearEVA

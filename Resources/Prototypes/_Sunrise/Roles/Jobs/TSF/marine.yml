@@ -17,6 +17,11 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, DeathRattleImplantTSF ]
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
 
 - type: startingGear
   id: TSFMarineGear

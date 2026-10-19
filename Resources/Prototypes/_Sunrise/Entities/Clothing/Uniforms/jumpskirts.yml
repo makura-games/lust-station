@@ -75,6 +75,14 @@
     sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/guard.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/guard.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -108,6 +116,14 @@
     sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/barber.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/barber.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 - type: entity
   parent: ClothingUniformSkirtBase

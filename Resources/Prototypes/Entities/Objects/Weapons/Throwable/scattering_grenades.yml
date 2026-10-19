@@ -181,3 +181,10 @@
     sound:
       path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
     positional: true
+  # Lust edit start
+  # Игрушечная граната: порох выветривается быстро.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 120
+  # Lust edit end

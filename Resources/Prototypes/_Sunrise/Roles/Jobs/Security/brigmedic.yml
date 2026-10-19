@@ -3,6 +3,12 @@
   name: job-name-brigmedic
   description: job-description-brigmedic
   playTimeTracker: JobBrigmedic
+  # Lust-Start
+  speciesBlacklist:
+  - Vox
+  #- Felinid
+  #- Resomi
+  # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
       department: Medical

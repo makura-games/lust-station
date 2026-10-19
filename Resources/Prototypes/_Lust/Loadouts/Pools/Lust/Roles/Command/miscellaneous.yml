@@ -30,8 +30,13 @@
 - type: roleLoadout
   id: LustJobNtrOfficer
   groups:
+  - LustNtrOfficerHead
+  - LustNtrOfficerNeck
+  - LustNtrOfficerOuterClothing
+  - LustNtrOfficerPrimaryWeapon
+  - LustNtrOfficerServiceWeapon
   - UniformNTR
-  - BackNTR
+  - LustBackNTR
   - SunriseTrinkets
   - SecurityTrinkets
   - SunriseSurvival
@@ -75,6 +80,24 @@
 
 - type: roleLoadout
   id: LustJobComMaid
+  groups:
+  - ComMaidHead
+  - ComMaidNeck
+  - ComMaidJumpsuit
+  - ComMaidGloves
+  - ComMaidShoes
+  - ComMaidBackpack
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - Bra
+  - Pants
+  - Socks
+  - SunriseTrinkets
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: JobLustCentCommMaid
   groups:
   - ComMaidHead
   - ComMaidNeck

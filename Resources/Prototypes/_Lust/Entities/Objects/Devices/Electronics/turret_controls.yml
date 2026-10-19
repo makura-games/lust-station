@@ -1,0 +1,7 @@
+- type: entity
+  parent: WeaponEnergyTurretCommandControlPanelElectronics
+  id: LustWeaponTurretAntiMeteorControlPanelElectronics
+  suffix: Anti-Meteor, Command
+  components:
+  - type: ElectronicsBoard
+    prototype: LustWeaponTurretAntiMeteorControlPanel

@@ -22,6 +22,7 @@
   - type: Ghost
     canInteract: true
   - type: GhostHearing
+  - type: Smell # Lust-edit
   - type: Hands
     hands:
       hand_right:

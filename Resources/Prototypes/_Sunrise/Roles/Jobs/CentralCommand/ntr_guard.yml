@@ -44,6 +44,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantBlueShield ]
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: NtrLeaderGear
@@ -114,6 +120,12 @@
   special:
     - !type:AddImplantSpecial
       implants: [MindShieldImplant]
+  # Lust-Start
+    - !type:AddComponentSpecial
+      components:
+      - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: NtrGuardGear

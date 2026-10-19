@@ -1,0 +1,6 @@
+- type: stealTargetGroup
+  id: AnimalShoebill
+  name: steal-target-groups-animal-shoebill
+  sprite:
+    sprite: _Lust/Mobs/Animals/shoebill.rsi
+    state: icon

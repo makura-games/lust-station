@@ -30,3 +30,7 @@ ent-ClothingNeckCloakCentcomQillu = CentCom cloak
 ent-ClothingNeckMantleCentcomQillu = CentCom mantle
     .suffix = Qillu
     .desc = A mantle for Central Command personnel. Warm, regal, and perfectly suited for late-night reading of classified memos.
+
+ent-ClothingNeckCloakInspector = Inspector cloak
+    .suffix = Qillu
+    .desc = As crafted Qillu cloak shimmers with the hues of the great corporation. Upon seeing the wearer, you sense the power and devotion to that great corporation.

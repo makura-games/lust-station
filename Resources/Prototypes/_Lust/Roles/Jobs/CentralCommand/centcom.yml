@@ -1,0 +1,258 @@
+# Operator
+- type: startingGear
+  id: CentCommOperatorGearQillu
+  equipment:
+    eyes: ClothingEyesGlassesCommand
+    shoes: ClothingShoesBootsCombatFilled
+    gloves: ClothingHandsGlovesCentcomQillu
+    outerClothing: ClothingOuterArmorCentcomChestplateQillu
+    id: CentcomOperatorPDAQillu
+    ears: ClothingHeadsetAltCentCom
+    belt: WeaponPistolN1984
+  storage:
+    back:
+    - RubberStampCentcom
+
+# Inspector
+- type: job
+  id: LustCentCommInspector
+  name: job-name-centcomins
+  description: job-description-centcomins
+  playTimeTracker: JobLustCentCommInspector
+  requirements:
+  - !type:DiscordRoleRequirement
+  - !type:OverallPlaytimeRequirement
+    time: 10h
+#  - !type:DepartmentTimeRequirement
+#    department: Command
+#    time: 10h
+#  - !type:DepartmentTimeRequirement
+#    department: Law
+#    time: 10h
+#  - !type:RoleTimeRequirement
+#    role: JobCentCommOperator
+#    time: 12h
+#  - !type:RoleTimeRequirement
+#    role: JobLustCentCommIntern
+#    time: 12h
+  weight: 30
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+
+# Chief of staff
+- type: job
+  id: LustCentCommChiefOfStaff
+  name: job-name-centcomchief
+  description: job-description-centcomchief
+  playTimeTracker: JobLustCentCommChiefOfStaff
+  requirements:
+  - !type:DiscordRoleRequirement
+  - !type:OverallPlaytimeRequirement
+    time: 10h
+  weight: 60
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+
+# Intern
+- type: job
+  id: LustCentCommIntern
+  name: job-name-centcomint
+  description: job-description-centcomint
+  playTimeTracker: JobLustCentCommIntern
+  requirements:
+  - !type:DiscordRoleRequirement
+  - !type:OverallPlaytimeRequirement
+    time: 10h
+#  - !type:DepartmentTimeRequirement
+#    department: Command
+#    time: 10h
+#  - !type:DepartmentTimeRequirement
+#    department: Law
+#    time: 10h
+  weight: 10
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+
+
+# ID Operator
+- type: job
+  id: LustCentCommIDOperator
+  name: job-name-centcomid
+  description: job-description-centcomid
+  playTimeTracker: JobLustCentCommIDOperator
+  requirements:
+  - !type:DiscordRoleRequirement
+  - !type:OverallPlaytimeRequirement
+    time: 10h
+  weight: 70
+  setPreference: true
+  startingGear: CentCommOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+
+
+# SpecOps Operator
+- type: job
+  id: LustCentCommSpecOpsOperator
+  name: job-name-centcomso
+  description: job-description-centcomso
+  playTimeTracker: JobLustCentCommSpecOpsOperator
+  requirements:
+  - !type:DiscordRoleRequirement
+  - !type:OverallPlaytimeRequirement
+    time: 10h
+#  - !type:RoleTimeRequirement
+#    role: JobCentCommOperator
+#    time: 12h
+#  - !type:RoleTimeRequirement
+#    role: JobLustCentCommIntern
+#    time: 12h
+  weight: 40
+  setPreference: true
+  startingGear: LustCentCommSpecOpsOperatorGearQillu
+  icon: "JobIconNanotrasen"
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+
+# Maid Centcom
+- type: job
+  id: LustCentCommMaid
+  name: job-name-centcom-maid
+  description: job-description-centcom-maid
+  playTimeTracker: JobLustCentCommMaid
+  requirements:
+  - !type:DiscordRoleRequirement
+  - !type:OverallPlaytimeRequirement
+    time: 10h
+  - !type:RoleTimeRequirement
+    role: JobComMaid
+    time: 3h
+  weight: 100
+  setPreference: true
+  startingGear: ComMaidGear
+  icon: JobIconComMaid
+  overrideConsoleVisibility: false
+  supervisors: job-supervisors-centcom
+  radioBold: true
+  alwaysUseSpawner: true
+  accessGroups:
+  - AllAccess
+  access:
+  - CentralCommand
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant, DeathRattleImplantCentcomm ]
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+
+# Образы хамелеона для новых должностей
+- type: chameleonOutfit
+  id: LustCentCommInspectorChameleonOutfit
+  job: LustCentCommInspector
+
+- type: chameleonOutfit
+  id: LustCentCommChiefOfStaffChameleonOutfit
+  job: LustCentCommChiefOfStaff
+
+- type: chameleonOutfit
+  id: LustCentCommInternChameleonOutfit
+  job: LustCentCommIntern
+
+- type: chameleonOutfit
+  id: LustCentCommIDOperatorChameleonOutfit
+  job: LustCentCommIDOperator
+
+- type: chameleonOutfit
+  id: LustCentCommSpecOpsOperatorChameleonOutfit
+  job: LustCentCommSpecOpsOperator
+
+- type: chameleonOutfit
+  id: LustCentCommMaidChameleonOutfit
+  job: LustCentCommMaid
+
+- type: startingGear
+  id: LustCentCommSpecOpsOperatorGearQillu
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCentcomOfficerBlack
+    head: ClothingHeadCapCentcomBlack
+    shoes: ClothingShoesCentcomBlack
+    eyes: ClothingEyesGlassesSunglasses
+    gloves: ClothingHandsGlovesColorBlack
+    id: CentcomOperatorPDA
+    ears: ClothingHeadsetCentCom
+    belt: WeaponPistolN1984
+    back: ClothingBackpackSatchelLeather
+  storage:
+    back:
+    - RubberStampCentcom #!

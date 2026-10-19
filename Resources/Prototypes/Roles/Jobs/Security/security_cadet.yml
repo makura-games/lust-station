@@ -3,6 +3,12 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
+  # Lust-Start
+  speciesBlacklist:
+  - Vox
+  - Felinid
+  - Resomi
+  # Lust-End
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10h

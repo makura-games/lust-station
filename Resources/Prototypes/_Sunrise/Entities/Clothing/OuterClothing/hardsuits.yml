@@ -66,7 +66,7 @@
     clothingPrototype: ClothingHeadHelmetHardsuitBlueshield
 
 - type: entity
-  parent: ClothingOuterHardsuitBlueShield
+  parent: [ ClothingOuterHardsuitBlueShield, BaseCentcommContraband ] # Lust-Edit :: added BaseCentcommContraband
   id: ClothingOuterHardsuitNTRG
   name: NTR Guard's hardsuit
   description: Tough and reliable, just like its owner.
