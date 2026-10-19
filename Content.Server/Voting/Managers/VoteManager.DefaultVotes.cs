@@ -11,6 +11,7 @@ using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
+using Content.Shared._Lust.LustCCVars;
 using Content.Shared.Destructible.Thresholds;
 using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared.CCVar;
@@ -674,7 +675,11 @@ namespace Content.Server.Voting.Managers
         {
             var ticker = _entityManager.System<GameTicker>();
             var excluded = ticker.ExcludedPresets.ToHashSet();
-            var presetPoolId = _cfg.GetCVar(SunriseCCVars.GamePresetPool);
+            // Lust-Start
+            var presetPoolId = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+                ? _cfg.GetCVar(LustCCVars.LustGamePresetPool)
+                : _cfg.GetCVar(SunriseCCVars.GamePresetPool);
+            // Lust-End
 
             if (!_prototypeManager.TryIndex<GamePresetPoolPrototype>(presetPoolId, out var presetPoolProto))
                 return new Dictionary<string, string>();
