@@ -16,6 +16,9 @@
     - HEAD
     - EARS
     - NECK
+  # Lust edit start - Акустическая защита
+  - type: AcousticProtection
+  # Lust edit end
   - type: ToggleableVisuals
     spriteLayer: enum.ToggleableVisuals.Layer
     clothingVisuals:
