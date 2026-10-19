@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponLightMachineGun
-  parent: BaseItem
+  parent: [BaseItem, BaseLustGunHeat] # Lust edit: наследуем компонент нагрева из _Lust
   id: BaseWeaponLightMachineGun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -34,6 +34,9 @@
       collection: m249 # Sunrise-Edit
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
+  - type: GunHeat
+  # Lust added end
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/lmg_cock.ogg

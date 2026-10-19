@@ -102,7 +102,14 @@ public sealed partial class ItemSystem : SharedItemSystem
             : $"{item.HeldPrefix}-{defaultKey}";
 
         if (!rsi.TryGetState(state, out var _))
-            return false;
+        {
+            // Lust added start - используем стандартное состояние RSI, если held-вариант отсутствует
+            if (item.HeldPrefix == null || !rsi.TryGetState(defaultKey, out _))
+                return false;
+
+            state = defaultKey;
+            // Lust added end
+        }
 
         var layer = new PrototypeLayerData();
         layer.RsiPath = rsi.Path.ToString();

@@ -1,6 +1,6 @@
 - type: entity
   name: BasePistol
-  parent: BaseItem
+  parent: [BaseItem, BaseLustGunHeat] # Lust edit: наследуем компонент нагрева из _Lust
   id: BaseWeaponPistol
   description: A rooty tooty point and shooty.
   abstract: true
@@ -34,6 +34,9 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
+  - type: GunHeat
+  # Lust added end
   - type: CanDualWield # Sunrise-Edit
     dualWieldInaccuracyPenalty: 1
     dualWieldFireRatePenalty: 0.25

@@ -1,6 +1,6 @@
 - type: entity
   name: BaseSMG
-  parent: [BaseItem, GunLight]
+  parent: [BaseItem, GunLight, BaseLustGunHeat] # Lust edit: наследуем компонент нагрева из _Lust
   id: BaseWeaponSubMachineGun
   description: A rooty tooty point and shooty.
   abstract: true
@@ -146,7 +146,7 @@
 - type: entity
   name: C-20r ROW #I think ROW stands for Recharging Onboard Weapon so i'm following the L6C's example
   id: WeaponSubMachineGunC20rROW
-  parent: [ BaseItem, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
+  parent: [ BaseItem, BaseSyndicateContraband, BaseLustGunHeat ] # Lust edit: сохраняем контрабандный статус и наследуем нагрев из _Lust
   description: A burst-fire C-20r submachine gun for use by cyborgs. Creates .35 caliber ammo on the fly from an internal ammo fabricator, which slowly self-charges.
   components:
   - type: Gun

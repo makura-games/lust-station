@@ -1,3 +1,4 @@
+using Content.Client._Lust.Weapons.Ranged;
 using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Containers;
 using Robust.Shared.Utility;
@@ -26,14 +27,16 @@ public sealed partial class GunSystem
         QueueDel(args.Entity);
     }
 
+    // Lust edit start - заменяем счетчик патронов визуализацией камор барабана
     private void OnRevolverAmmoUpdate(Entity<RevolverAmmoProviderComponent> ent, ref UpdateAmmoCounterEvent args)
     {
-        if (args.Control is not RevolverStatusControl control) return;
+        if (args.Control is not RevolverCylinderStatusControl control) return;
         control.Update(ent.Comp.CurrentIndex, ent.Comp.Chambers);
     }
 
     private void OnRevolverCounter(Entity<RevolverAmmoProviderComponent> ent, ref AmmoCounterControlEvent args)
     {
-        args.Control = new RevolverStatusControl();
+        args.Control = new RevolverCylinderStatusControl();
     }
+    // Lust edit end
 }

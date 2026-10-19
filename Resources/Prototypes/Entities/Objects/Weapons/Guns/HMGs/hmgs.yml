@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponHeavyMachineGun
-  parent: BaseItem
+  parent: [BaseItem, BaseLustGunHeat] # Lust edit: наследуем компонент нагрева из _Lust
   id: BaseWeaponHeavyMachineGun
   description: Spray and pray.
   abstract: true
@@ -22,6 +22,9 @@
       collection: m249 # Sunrise-Edit
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
+  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
+  - type: GunHeat
+  # Lust added end
   - type: StaticPrice
     price: 500
   # Sunrise-Start
