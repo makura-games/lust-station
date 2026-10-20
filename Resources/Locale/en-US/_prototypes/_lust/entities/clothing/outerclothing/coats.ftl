@@ -4,3 +4,7 @@ ent-ClothingOuterHoSTrenchElegantOpened = Elegant HoS trench
     .desc = A simple and comfortable lightly armored HoS trench with gold patches.
 ent-ClothingOuterCoatIAABlackCoat = IAA black coat
     .desc = Agent attire designed to blend professionalism with intimidation.
+ent-ClothingNeckCloakHop = Jacket TSF
+    .desc = Representatives TSF.
+ent-ClothingOuterArmorUniformsTSFBlackArmor = Uniforms TSF
+    .desc = Representatives TSF.

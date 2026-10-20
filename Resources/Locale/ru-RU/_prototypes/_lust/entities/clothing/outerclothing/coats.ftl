@@ -4,3 +4,7 @@ ent-ClothingOuterHoSTrenchElegantOpened = Элегантный тренч ГСБ
     .desc = Простой и удобный легкобронированный тренч ГСБ с золотыми нашивками.
 ent-ClothingOuterCoatIAABlackCoat = чёрный сюртук АВД
     .desc = Одежда агента, сочетающая профессионализм и внушительность.
+ent-ClothingOuterArmorUniformsTSFBlackArmor = униформа ТСФ
+    .desc = Представителя ТСФ
+ent-ClothingNeckCloakHop = куртка ТСФ
+    .desc = Представителя ТСФ
