@@ -1,9 +1,36 @@
 - type: entity
   id: Vape
   parent: BaseVape
-  name: vape
-  description: "Like a cigar, but for tough teens. (WARNING:Pour only water into the vape)"
+  # Sunrise edit start - модульный вейп с картриджами
+  name: electronic pod-mod vape
+  description: A sleek electronic pod-mod vaporizer. Requires an inserted pod cartridge with e-liquid to use.
   components:
   - type: Sprite
-    sprite: Objects/Consumable/Smokeables/Vapes/vape-standard.rsi
-    state: icon
+    sprite: _Sunrise/Objects/Consumable/Smokeables/Vapes/vape.rsi
+    layers:
+    - state: icon
+      map: ["enum.VapeVisualLayers.Base"]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.VapeVisuals.CartridgeFlavor:
+        enum.VapeVisualLayers.Base:
+          no-cartridge: { state: empty }
+          empty: { state: icon }
+          mint: { state: vape-mint }
+          berry: { state: vape-berry }
+          tobacco: { state: vape-tobacco }
+          banana: { state: vape-banana }
+  - type: ItemSlots
+    slots:
+      cartridge:
+        name: vape-slot-cartridge
+        whitelist:
+          components:
+          - VapeCartridge
+        insertVerbText: vape-cartridge-insert-verb
+        ejectVerbText: vape-cartridge-eject-verb
+  - type: ContainerContainer
+    containers:
+      cartridge: !type:ContainerSlot
+  # Sunrise edit end

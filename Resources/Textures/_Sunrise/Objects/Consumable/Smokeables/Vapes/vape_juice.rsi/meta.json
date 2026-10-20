@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made for Sunrise Station by drewmin",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "bottle-mint"
+    },
+    {
+      "name": "bottle-berry"
+    },
+    {
+      "name": "bottle-tobacco"
+    },
+    {
+      "name": "bottle-banana"
+    }
+  ]
+}
