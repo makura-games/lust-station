@@ -133,3 +133,19 @@
     tags:
     - ClothMade
     - Recyclable
+
+- type: entity
+  parent: ClothingNeckCloakjacketTSF
+  id: ClothingOuterArmorjacketBlackArmor
+  name: Jacket TSF
+  description: Representatives TSF.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Neck/Cloaks/TSF_jacket.rsi
+  - type: Clothing
+    sprite: _Lust/Clothing/Neck/Cloaks/TSF_jacket.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - NudeBottom
+    - WhitelistChameleon
