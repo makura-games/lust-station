@@ -1,3 +1,26 @@
+# Сбой раздатчиков.
+- type: storytellerMetadata
+  id: VendingmachineMalfunction
+  threatType: MinorCalm
+  threatCost: 10
+  minStationStrength: 0
+  maxStress: 80
+
+# Ложные показания мониторинга экипажа.
+- type: storytellerMetadata
+  id: CrewMonitoringMalf
+  threatType: MinorCalm
+  threatCost: 15
+  minStationStrength: 0
+  maxStress: 75
+
+# Перенаправление сообщений между станционными радиоканалами.
+- type: storytellerMetadata
+  id: RadioChannelShuffle
+  threatType: MinorCalm
+  threatCost: 20
+  minStationStrength: 0
+  maxStress: 80
 - type: storytellerMetadata
   id: LustRadiationOutburst
   threatType: MajorCalm
