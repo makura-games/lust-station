@@ -59,26 +59,12 @@ public sealed partial class SunriseMultiTileAirtightSystem
 
     private bool IsMapOrGridPaused(EntityUid gridUid)
     {
-
-
-        if (_pausedGrids.Contains(gridUid))
+        if (Paused(gridUid))
             return true;
 
-        if (Paused((gridUid)))
-        {
-            _pausedGrids.Add(gridUid);
-            return true;
-        }
-
-        if (!_xformQuery.TryGetComponent(gridUid, out var gridXform)
-            || gridXform.MapUid is not { } mapUid)
-            return false;
-
-        if (!Paused(mapUid))
-            return false;
-
-        _pausedGrids.Add(gridUid);
-        return true;
+        return _xformQuery.TryGetComponent(gridUid, out var gridXform)
+               && gridXform.MapUid is { } mapUid
+               && Paused(mapUid);
     }
 
     private void DeleteStaleBlockersOnTile(Entity<MapGridComponent> gridEnt, Vector2i tile, EntityUid sourceDoor)
