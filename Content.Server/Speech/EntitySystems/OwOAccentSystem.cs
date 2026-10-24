@@ -8,6 +8,20 @@ public sealed partial class OwOAccentSystem : RelayAccentSystem<OwOAccentCompone
 {
     [Dependency] private IRobustRandom _random = default!;
 
+    // это такая хуйня кринжовая
+    // ⠄⠄⢀⣀⣤⣤⣴⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣤⣤⣄⣀⠄⠄
+    // ⠄⠠⣿⢿⣿⢿⣯⣿⣽⢯⣟⡿⣽⢯⣿⣽⣯⣿⣽⣟⣟⣗⠄
+    // ⠄⢸⡻⠟⡚⡛⠚⠺⢟⣿⣗⣿⢽⡿⡻⠇⠓⠓⠓⠫⢷⢳⠄
+    // ⠄⢼⡺⡽⣟⡿⣿⣦⡀⡈⣫⣿⡏⠁⢀⣰⣾⢿⣟⢟⢮⢱⡀
+    // ⠄⣳⠑⠝⠌⠊⠃⠃⢏⢆⣺⣿⣧⢘⠎⠋⠊⠑⠨⠣⠑⣕⠂
+    // ⠄⢷⣿⣯⣦⣶⣶⣶⡶⡯⣿⣿⡯⣟⣶⣶⣶⣶⣦⣧⣷⣾⠄
+    // ⠄⢹⢻⢯⢟⣟⢿⢯⢿⡽⣯⣿⡯⣗⡿⡽⡯⣟⡯⣟⠯⡻⠂
+    // ⠄⠢⡑⡑⠝⠜⣑⣭⠻⢝⠿⡿⡯⠫⠯⣭⣊⠪⢊⠢⢑⠰⠁
+    // ⠄⠈⢹⣔⡘⢿⣿⣿⣶⠄⠁⠑⠈⠠⣵⣿⡿⡯⠂⣠⡞⡈⠄
+    // ⠄⠄⠨⢻⡆⢄⣀⢩⠄⠄⠴⠕⠄⠄⠈⠉⣀⠠⢢⡟⢌⠄⠄
+    // ⠄⠄⠈⠐⡝⣧⠈⡉⡙⢛⠛⠛⠛⠛⢋⠉⡀⡼⠩⡂⠁⠄⠄
+    // ⠄⠄⠄⠄⠈⠪⡻⣔⣮⣷⡆⠄⢰⣿⢦⣣⢞⠅⠁⠄⠄⠄⠄
+    // ⠄⠄⠄⠄⠄⠄⠈⠓⣷⣿⡅⠄⢸⣿⡗⠇⠁⠄⠄⠄⠄⠄⠄
     private static readonly IReadOnlyList<string> Faces = new List<string>{
             " (•`ω´•)", " ;;w;;", " owo", " UwU", " >w<", " ^w^"
         }.AsReadOnly();
@@ -28,7 +42,8 @@ public sealed partial class OwOAccentSystem : RelayAccentSystem<OwOAccentCompone
             message = message.Replace(word, repl);
         }
 
-        return message.Replace("!", _random.Pick(Faces))
+        //return message.Replace("!", _random.Pick(Faces)) // lust-edit : commited
+        return message // lust-edit
             // Russian-Localization-Start
             .Replace("р", "в").Replace("Р", "В")
             .Replace("л", "в").Replace("Л", "В")
