@@ -103,17 +103,24 @@ public sealed partial class SunriseMultiTileAirtightSystem : EntitySystem // Lus
             return;
         // lust-add-end
 
-        DeleteBlockers(ent);
+        // DeleteBlockers(ent); // lust-edit : commited
 
         if (!_xformQuery.TryGetComponent(ent.Owner, out var xform))
+        {
+            DeleteBlockers(ent); // lust-added
             return;
+        }
 
         if (!xform.Anchored || xform.GridUid is not { } gridUid || !_gridQuery.TryGetComponent(gridUid, out var grid))
+        {
+            DeleteBlockers(ent); // lust-added
             return;
-
+        }
         // lust-add-start
         if (IsMapOrGridPaused(gridUid))
             return;
+
+        DeleteBlockers(ent);
         // lust-add-end
 
         var baseTile = _transform.GetGridTilePositionOrDefault((ent, xform), grid);
