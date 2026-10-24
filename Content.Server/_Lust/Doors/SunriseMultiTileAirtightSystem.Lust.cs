@@ -36,6 +36,8 @@ public sealed partial class SunriseMultiTileAirtightSystem
         var entitiesToProcess = _pendingUnpaused.ToArray();
         _pendingUnpaused.Clear();
 
+        _pausedGrids.Clear();
+
         foreach (var uid in entitiesToProcess)
         {
             RefreshAfterUnpause(uid);
@@ -57,8 +59,11 @@ public sealed partial class SunriseMultiTileAirtightSystem
 
     private bool IsMapOrGridPaused(EntityUid gridUid)
     {
+
+
         if (_pausedGrids.Contains(gridUid))
             return true;
+
         if (Paused((gridUid)))
         {
             _pausedGrids.Add(gridUid);
