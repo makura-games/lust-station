@@ -6,7 +6,7 @@ namespace Content.Server._Sunrise.Doors.Systems;
 
 public sealed partial class SunriseMultiTileAirtightSystem
 {
-    [Dependency] private readonly SharedMapSystem _map = null!;
+    [Dependency] private SharedMapSystem _map = null!;
 
     private EntityQuery<SunriseMultiTileAirtightBlockerComponent> _blockerQuery;
     private EntityQuery<SunriseMultiTileAirtightComponent> _multiTileQuery;
