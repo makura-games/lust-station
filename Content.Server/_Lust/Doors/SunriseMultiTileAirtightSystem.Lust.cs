@@ -13,8 +13,8 @@ public sealed partial class SunriseMultiTileAirtightSystem
 
     private readonly List<EntityUid> _anchoredEntities = [];
 
-    [Dependency] private readonly HashSet<EntityUid> _pendingUnpaused = [];
-    [Dependency] private readonly HashSet<EntityUid> _pausedGrids = [];
+    [Dependency] private HashSet<EntityUid> _pendingUnpaused = [];
+    [Dependency] private HashSet<EntityUid> _pausedGrids = [];
 
     private int _frameCounter;
 
