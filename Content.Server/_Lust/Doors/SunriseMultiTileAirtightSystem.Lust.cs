@@ -11,10 +11,10 @@ public sealed partial class SunriseMultiTileAirtightSystem
     [Dependency] private EntityQuery<SunriseMultiTileAirtightBlockerComponent> _blockerQuery;
     [Dependency] private EntityQuery<SunriseMultiTileAirtightComponent> _multiTileQuery;
 
-    private readonly List<EntityUid> _anchoredEntities = [];
+    private List<EntityUid> _anchoredEntities = [];
 
-    [Dependency] private HashSet<EntityUid> _pendingUnpaused = [];
-    [Dependency] private HashSet<EntityUid> _pausedGrids = [];
+    private HashSet<EntityUid> _pendingUnpaused = [];
+    private HashSet<EntityUid> _pausedGrids = [];
 
     private int _frameCounter;
 
