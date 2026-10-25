@@ -8,8 +8,8 @@ public sealed partial class SunriseMultiTileAirtightSystem
 {
     [Dependency] private SharedMapSystem _map = null!;
 
-    private EntityQuery<SunriseMultiTileAirtightBlockerComponent> _blockerQuery;
-    private EntityQuery<SunriseMultiTileAirtightComponent> _multiTileQuery;
+    [Dependency] private EntityQuery<SunriseMultiTileAirtightBlockerComponent> _blockerQuery;
+    [Dependency] private EntityQuery<SunriseMultiTileAirtightComponent> _multiTileQuery;
 
     private readonly List<EntityUid> _anchoredEntities = [];
 

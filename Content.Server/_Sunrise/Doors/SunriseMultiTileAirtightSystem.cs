@@ -178,13 +178,10 @@ public sealed partial class SunriseMultiTileAirtightSystem : EntitySystem // Lus
 
     private void DeleteBlockers(Entity<SunriseMultiTileAirtightComponent> ent)
     {
-        // lust-edit-start
-        foreach (var blocker
-                 in ent.Comp.Blockers.Where(blocker
-                     => !TerminatingOrDeleted(blocker))) // lust-edit-end
+        foreach (var blocker in ent.Comp.Blockers)
         {
-            // if (!TerminatingOrDeleted(blocker)) // lust-edit : commented
-            Del(blocker);
+            if (!TerminatingOrDeleted(blocker))
+                Del(blocker);
         }
 
         ent.Comp.Blockers.Clear();
