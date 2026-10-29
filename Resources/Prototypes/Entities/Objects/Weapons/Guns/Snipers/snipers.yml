@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponSniper
-  parent: BaseItem
+  parent: [BaseItem, BaseLustGunHeat] # Lust edit: наследуем компонент нагрева из _Lust
   id: BaseWeaponSniper
   description: A rooty tooty point and shooty.
   abstract: true
@@ -26,6 +26,9 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
+  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
+  - type: GunHeat
+  # Lust added end
   - type: BallisticAmmoProvider
     capacity: 5 # Sunrise-Edit
     proto: CartridgeHeavyRifleRFMJ

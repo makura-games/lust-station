@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponLauncher
-  parent: [ BaseItem, BaseGunWieldable ]
+  parent: [ BaseItem, BaseGunWieldable, BaseLustGunHeat ] # Lust edit: наследуем компонент нагрева из _Lust
   id: BaseWeaponLauncher
   description: A rooty tooty point and shooty.
   abstract: true
@@ -27,6 +27,9 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/grenade_launcher.ogg
+  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
+  - type: GunHeat
+  # Lust added end
   # Sunrise start
   - type: EmitSoundOnPickup
     sound:

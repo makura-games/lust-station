@@ -50,7 +50,8 @@ namespace Content.Client.Hands
 
         protected override bool BeforeDraw(in OverlayDrawArgs args)
         {
-            if (!_cfg.GetCVar(CCVars.HudHeldItemShow))
+            // Lust edit - выбор режима отображения реализован в fork partial
+            if (!ShouldShowHeldItem())
                 return false;
 
             return base.BeforeDraw(in args);
