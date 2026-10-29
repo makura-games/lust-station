@@ -1,0 +1,16 @@
+﻿- type: gamePreset
+  id: LustKesslerSyndrome
+  alias:
+    - kessler
+    - junk
+    - meteorhell
+  name: kessler-syndrome-title
+  showInVote: true
+  hide: false
+  description: kessler-syndrome-description
+  rules:
+    - MeteorSwarmMildScheduler
+    - KesslerSyndromeScheduler
+    - RampingStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation

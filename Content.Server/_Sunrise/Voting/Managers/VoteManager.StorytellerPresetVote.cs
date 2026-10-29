@@ -3,6 +3,7 @@ using Content.Server._Sunrise.Presets;
 using Content.Server._Sunrise.Storyteller.Systems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Presets;
+using Content.Shared._Lust.LustCCVars;
 using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
@@ -32,7 +33,12 @@ public sealed partial class VoteManager
     private Dictionary<string, string> GetSunriseRegularPresetsForVote(IReadOnlySet<string>? excludedPresets = null)
     {
         var ticker = _entityManager.System<GameTicker>();
-        var presetPoolId = _cfg.GetCVar(SunriseCCVars.GamePresetPool);
+        // Lust-Start
+        var presetPoolId = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+            ? _cfg.GetCVar(LustCCVars.LustGamePresetPool)
+            : _cfg.GetCVar(SunriseCCVars.GamePresetPool);
+        // Lust-End
+        // var presetPoolId = _cfg.GetCVar(SunriseCCVars.GamePresetPool);
 
         if (!_prototypeManager.TryIndex<GamePresetPoolPrototype>(presetPoolId, out var presetPoolProto))
             return new Dictionary<string, string>();
@@ -60,14 +66,27 @@ public sealed partial class VoteManager
         var storyteller = _entityManager.System<StorytellerSystem>();
 
         var excludedPresets = ticker.ExcludedPresets.ToHashSet();
-        var regularPresets = GetSunriseRegularPresetsForVote(excludedPresets);
+        // Lust-Start
+        var regularPresets
+            = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+            ? GetLustRegularPresetsForVote(excludedPresets)
+            : GetSunriseRegularPresetsForVote(excludedPresets);
+        /*var regularPresets = GetSunriseRegularPresetsForVote();*/
+        // Lust-End
+
         var storytellerPresets = storyteller.GetAvailableVotePresets(excludedPresets);
 
         var resetExclusions = false;
         if (regularPresets.Count == 0 && storytellerPresets.Count == 0 && excludedPresets.Count > 0)
         {
-            regularPresets = GetSunriseRegularPresetsForVote();
-            storytellerPresets = storyteller.GetAvailableVotePresets(new HashSet<string>());
+            // Lust-Start
+            var noExclusions = new HashSet<string>();
+            regularPresets
+                = _cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+                    ? GetLustRegularPresetsForVote(excludedPresets)
+                    : GetSunriseRegularPresetsForVote(excludedPresets);
+            // Lust-End
+            storytellerPresets = storyteller.GetAvailableVotePresets(noExclusions);
             resetExclusions = true;
         }
 
@@ -95,10 +114,22 @@ public sealed partial class VoteManager
 
     private bool TryCreateSunriseTwoStagePresetVote(ICommonSession? initiator)
     {
+        var ticker = _entityManager.System<GameTicker>(); // Lust-Edit
         var (regularPresets, storytellerPresets, resetExclusions) = GetSunrisePresetVoteChoices();
 
         if (resetExclusions)
             _entityManager.System<GameTicker>().ClearExcludedPresets();
+
+        // Lust-Start
+        if (_cfg.GetCVar(LustCCVars.LustGamePresetAlternationEnabled)
+            && ticker.ForceGreenshiftPresetVote)
+        {
+            _chatManager.DispatchServerAnnouncement(
+                Loc.GetString("ui-vote-gamemode-auto-set", ("preset",  _loc.GetString("greenshift-title"))));
+            _entityManager.System<GameTicker>().SetGamePreset(_cfg.GetCVar(LustCCVars.LustGreenshiftPreset));
+            return true;
+        }
+        // Lust-End
 
         if (regularPresets.Count == 0 && storytellerPresets.Count == 0)
         {

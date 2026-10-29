@@ -4,7 +4,7 @@
     - survival
   name: survival-title
   showInVote: true # Sunrise-Edit
-  hide: true # Sunrise-Edit
+  hide: false # Lust-Edit
   description: survival-description
   minPlayers: 50 # Sunrise-Edit
   rules:
