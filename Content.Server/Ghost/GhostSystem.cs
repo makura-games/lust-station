@@ -35,6 +35,9 @@ using Content.Shared.SSDIndicator;
 using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
 using Content.Shared.Warps;
+using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Starlight.Medical.Surgery.Steps.Parts;
+using Content.Shared.Item;
 using Robust.Server.GameObjects;
 using Robust.Shared.Configuration;
 using Robust.Shared.Map;
@@ -631,6 +634,16 @@ namespace Content.Server.Ghost
                     _damageable.ChangeDamage(playerEntity.Value, damage, true, ignoreVariance: true, ignoreGlobalModifiers: true); // Sunrise-Edit
                 }
             }
+
+            // lust-edit-start
+            // Фикс уязвимости абуза дионами
+            if (playerEntity is { } currentEntity
+                && !HasComp<OrganBrainComponent>(currentEntity)
+                && !HasComp<BorgBrainComponent>(currentEntity))
+            {
+                canReturn = false;
+            }
+            // lust-edit-end
 
             if (playerEntity != null)
                 _adminLog.Add(LogType.Mind, $"{ToPrettyString(playerEntity.Value):player} ghosted{(!canReturn ? " (non-returnable)" : "")}");

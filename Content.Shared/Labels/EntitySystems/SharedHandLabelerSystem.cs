@@ -1,6 +1,7 @@
 using Content.Shared.Administration.Logs;
 using Content.Shared.Database;
 using Content.Shared.Examine;
+using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Labels.Components;
 using Content.Shared.Popups;
@@ -61,6 +62,12 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
 
     private void AddLabelTo(Entity<HandLabelerComponent> ent, EntityUid user, EntityUid target)
     {
+        // Sunrise-added-start
+        // добавлена проверка HumanoidProfileComponent
+        if (HasComp<HumanoidProfileComponent>(target))
+            return;
+        // Sunrise-added-end
+
         if (ent.Comp.AssignedLabel == string.Empty)
         {
             RemoveLabelFrom(ent, user, target);
@@ -93,6 +100,11 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
     {
         if (args.Target is not { Valid: true } target || !_whitelistSystem.CheckBoth(target, ent.Comp.Blacklist, ent.Comp.Whitelist) || !args.CanAccess)
             return;
+
+        // lust-added-start : добавлена проверка HumanoidProfileComponent
+        if (!HasComp<HumanoidProfileComponent>(target))
+            return;
+        // lust-added-end
 
         var user = args.User;   // can't use ref parameter in lambdas
 
