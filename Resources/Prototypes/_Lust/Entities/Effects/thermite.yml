@@ -1,0 +1,47 @@
+- type: entity
+  id: ThermiteEntity
+  name: Thermite
+  components:
+  - type: WallMount
+  - type: Thermite
+  - type: Sprite
+    drawdepth: Effects
+    sprite: _Lust/Effects/thermite.rsi
+    state: icon
+  - type: Appearance
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+    canCollide: false
+
+- type: entity
+  id: ThermiteFire
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    sprite: Effects/fire.rsi
+    noRot: true
+    state: fire
+  - type: Appearance
+  - type: AnimationPlayer
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        hard: false
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.4,-0.4,0.4,0.4"
+        mask:
+        - ItemMask
+        layer:
+        - HighImpassable
+  - type: AmbientSound
+    volume: 1
+    range: 7
+    sound:
+      path: /Audio/_Lust/Effects/thermite_burning.ogg

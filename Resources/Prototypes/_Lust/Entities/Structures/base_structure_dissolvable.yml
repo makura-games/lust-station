@@ -1,0 +1,12 @@
+- type: entity
+  id: BaseLustDissolvableStructure
+  abstract: true
+  components:
+  - type: Appearance
+  - type: Reactive
+    groups:
+      Dissolvable: [ Touch ]
+  - type: Dissolvable
+    damage:
+      types:
+        Structural: 3

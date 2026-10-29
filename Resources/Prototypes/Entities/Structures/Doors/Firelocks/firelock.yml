@@ -1,7 +1,7 @@
 - type: entity
   id: BaseFirelock
   abstract: true
-  parent: BaseStructure
+  parent: [BaseStructure, BaseLustDissolvableStructure] # Lust edit: разрешаем разрушение термитом
   name: firelock
   description: Apply crowbar.
   components:
