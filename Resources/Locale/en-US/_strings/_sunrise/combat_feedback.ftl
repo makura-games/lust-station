@@ -1,0 +1,15 @@
+﻿ui-options-combat-feedback-header = Combat hit sounds
+ui-options-combat-feedback-description = Play sounds locally when your attacks hit, critically injure, or kill a target.
+ui-options-combat-feedback-volume = Hit sound volume
+ui-options-combat-feedback-hit-enabled = Play a sound on hit
+ui-options-combat-feedback-hit-sound = Hit sound
+ui-options-combat-feedback-critical-enabled = Play a sound on critical
+ui-options-combat-feedback-critical-sound = Critical sound
+ui-options-combat-feedback-kill-enabled = Play a sound on kill
+ui-options-combat-feedback-kill-sound = Kill sound
+ui-options-combat-feedback-preview = Preview
+ui-options-general-interaction = Interaction
+ui-options-block-click-placement = Disable placing held items by clicking
+ui-options-block-click-placement-tooltip = Outside combat mode, prevents ordinary clicks from placing held items into storage or onto surfaces. Storage interface transfers and dropping remain available.
+ui-options-combat-block-pickup = Disable picking up items in combat mode
+ui-options-combat-block-drop = Disable dropping items in combat mode

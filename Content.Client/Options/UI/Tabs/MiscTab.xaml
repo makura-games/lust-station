@@ -22,6 +22,14 @@
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="ShowHeldItemCheckBox" Text="{Loc 'ui-options-show-held-item'}" />
                 <CheckBox Name="ShowCombatModeIndicatorsCheckBox" Text="{Loc 'ui-options-show-combat-mode-indicators'}" />
+                <!-- Sunrise-Edit: Добавлены отдельные настройки блокировки подбора и выбрасывания в боевом режиме. -->
+                <Label Text="{Loc 'ui-options-general-interaction'}"
+                       StyleClasses="LabelKeyText"/>
+                <CheckBox Name="BlockPickupInCombatCheckBox" Text="{Loc 'ui-options-combat-block-pickup'}" />
+                <CheckBox Name="BlockDropInCombatCheckBox" Text="{Loc 'ui-options-combat-block-drop'}" />
+                <CheckBox Name="BlockClickPlacementCheckBox"
+                          Text="{Loc 'ui-options-block-click-placement'}"
+                          ToolTip="{Loc 'ui-options-block-click-placement-tooltip'}" />
                 <Label Text="{Loc 'ui-options-general-storage'}"
                        StyleClasses="LabelKeyText"/>
                 <CheckBox Name="OpaqueStorageWindowCheckBox" Text="{Loc 'ui-options-opaque-storage-window'}" />

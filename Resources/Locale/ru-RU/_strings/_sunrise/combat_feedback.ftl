@@ -1,0 +1,15 @@
+﻿ui-options-combat-feedback-header = Звуки попаданий
+ui-options-combat-feedback-description = Проигрывать звуки при попадании, критическом состоянии или убийстве цели. Звук слышите только вы.
+ui-options-combat-feedback-volume = Громкость звуков попаданий
+ui-options-combat-feedback-hit-enabled = Проигрывать звук при попадании
+ui-options-combat-feedback-hit-sound = Звук попадания
+ui-options-combat-feedback-critical-enabled = Проигрывать звук при критическом состоянии
+ui-options-combat-feedback-critical-sound = Звук критического попадания
+ui-options-combat-feedback-kill-enabled = Проигрывать звук при убийстве
+ui-options-combat-feedback-kill-sound = Звук убийства
+ui-options-combat-feedback-preview = Прослушать
+ui-options-general-interaction = Взаимодействие
+ui-options-combat-block-pickup = Отключить подбор предметов в боевом режиме
+ui-options-combat-block-drop = Отключить выбрасывание предметов в боевом режиме
+ui-options-block-click-placement = Защита от случайного размещения предметов
+ui-options-block-click-placement-tooltip = Вне боевого режима не позволяет обычным кликом положить предмет из руки в контейнер или на поверхность. Перекладывание через интерфейс контейнера и выбрасывание остаются доступны.

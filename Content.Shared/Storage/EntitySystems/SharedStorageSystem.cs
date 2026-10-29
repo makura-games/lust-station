@@ -1,6 +1,7 @@
 using System.Collections.Frozen;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._Sunrise.Interaction; // Sunrise-Edit: Личная настройка размещения по клику.
 using Content.Shared.ActionBlocker;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
@@ -50,6 +51,7 @@ namespace Content.Shared.Storage.EntitySystems;
 public abstract partial class SharedStorageSystem : EntitySystem
 {
     [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private ClickPlacementSystem _clickPlacement = default!; // Sunrise-Edit: Защита от случайного складывания.
     [Dependency] private IPrototypeManager _prototype = default!;
     [Dependency] protected IRobustRandom Random = default!;
     [Dependency] private ISharedAdminLogManager _adminLog = default!;
@@ -497,6 +499,14 @@ public abstract partial class SharedStorageSystem : EntitySystem
         RaiseLocalEvent(uid, ref attemptEv);
         if (attemptEv.Cancelled)
             return;
+
+        // Sunrise added start - Блокируем только вставку по клику, сохраняя явное перекладывание.
+        if (_clickPlacement.ShouldBlock(args.User))
+        {
+            args.Handled = true;
+            return;
+        }
+        // Sunrise added end
 
         PlayerInsertHeldEntity((uid, storageComp), args.User);
         // Always handle it, even if insertion fails.

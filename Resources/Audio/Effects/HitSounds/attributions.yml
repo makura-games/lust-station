@@ -1,0 +1,38 @@
+- files: ["hit.ogg", "critical.ogg", "kill.ogg"]
+  license: "CC0-1.0"
+  copyright: "Original procedural sine-wave signals generated for this project; no external recordings or samples."
+  source: "https://creativecommons.org/publicdomain/zero/1.0/"
+
+- files: ["bell_glass_01.ogg", "bell_glass_02.ogg", "bell_glass_03.ogg", "bell_glass_04.ogg", "bell_glass_05.ogg", "bell_glass_06.ogg", "bell_glass_07.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Glass Bell Sounds by Hansjörg Malthaner (Varkalandar), https://opengameart.org/users/varkalandar. Adapted for this project: cropped, mono conversion, 60 Hz high-pass, gain adjustment and fades. The CC-BY-SA-3.0 option of the original multiple license offer is used."
+  source: "https://opengameart.org/content/glass-bell-sounds"
+
+- files: ["bell_church.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Church Bell, copyright 2008-2010 Ulrich Metzner; cut and faded by qubodup from DKB Dreierin. Further adapted for this project: cropped, mono conversion, 60 Hz high-pass, gain adjustment and fades."
+  source: "https://opengameart.org/content/church-bell"
+
+- files: ["click_trigger_shotgun.ogg", "click_bolt_close.ogg", "click_trigger_rifle.ogg", "click_scope_open.ogg", "click_scope_close.ogg", "click_trigger_pistol.ogg", "click_slide.ogg", "click_magazine.ogg", "click_chamber.ogg", "click_trigger_light.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Guns by Gary <http://fossilrecords.net/> licensed under CC-BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0/> hosted by <https://opengameart.org/>. Adapted for this project: individual mechanical actions extracted, mono conversion, 60 Hz high-pass, gain adjustment and fades."
+  source: "https://opengameart.org/content/handling-guns"
+
+- files: ["flesh_punch_heavy.ogg", "flesh_squish_01.ogg", "flesh_squish_02.ogg", "flesh_impact.ogg", "flesh_crunch.ogg", "flesh_squelch.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: >-
+    Punches, hits, swords and squishes by Philippe Groarke (Socapex / tarfmagougou).
+    Source samples credited to afterguard, Benboncan, Black Snow, CGEffex, cinevid,
+    CosmicEmbers, djahren, dobroide, Erdie, Filipe Chagas, HerbertBoland, IEDlabs,
+    jobro, JoelAudio, jymdavis, kibibu, kleanthism, lolamadeus, muses212, Qat,
+    qubodup, Robkinsons, Slave2theLight, snowflakes, stereostereo, Velvorn,
+    xenognosis and ztrees1. Source sample credits are included on the linked
+    original collection page and apply to every file in this group.
+    Adapted for this project: cropped, mono conversion, 60 Hz high-pass, gain
+    adjustment and fades.
+  source: "https://opengameart.org/content/punches-hits-swords-and-squishes"
+
+- files: ["flesh_wet_01.ogg", "flesh_wet_02.ogg", "flesh_wet_03.ogg"]
+  license: "CC-BY-SA-4.0"
+  copyright: "Slime Squelch by Wandering Door Games, https://wanderingdoorgames.obviousgain.ca/, licensed under CC-BY-SA 4.0. Adapted for this project: cropped, mono conversion, 60 Hz high-pass, gain adjustment and fades."
+  source: "https://opengameart.org/content/slime-squelch"

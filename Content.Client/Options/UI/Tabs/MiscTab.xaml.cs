@@ -52,6 +52,10 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CCVars.LoocAboveHeadShow, ShowLoocAboveHeadCheckBox);
         Control.AddOptionCheckBox(CCVars.HudHeldItemShow, ShowHeldItemCheckBox);
         Control.AddOptionCheckBox(CCVars.CombatModeIndicatorsPointShow, ShowCombatModeIndicatorsCheckBox);
+        // Sunrise-Edit: Подключены отдельные настройки блокировки подбора и выбрасывания предметов.
+        Control.AddOptionCheckBox(SunriseCCVars.CombatModeBlockPickup, BlockPickupInCombatCheckBox);
+        Control.AddOptionCheckBox(SunriseCCVars.CombatModeBlockDrop, BlockDropInCombatCheckBox);
+        Control.AddOptionCheckBox(SunriseCCVars.BlockClickPlacement, BlockClickPlacementCheckBox);
         Control.AddOptionCheckBox(CCVars.OpaqueStorageWindow, OpaqueStorageWindowCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatFancyNameBackground, FancyNameBackgroundsCheckBox);

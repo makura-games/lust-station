@@ -1,4 +1,5 @@
 using System.Numerics;
+using Content.Shared._Sunrise.Interaction; // Sunrise-Edit: Личная настройка размещения по клику.
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction;
 using Content.Shared.Storage;
@@ -9,6 +10,7 @@ namespace Content.Shared.Placeable;
 
 public sealed partial class PlaceableSurfaceSystem : EntitySystem
 {
+    [Dependency] private ClickPlacementSystem _clickPlacement = default!; // Sunrise-Edit: Защита от случайного размещения.
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedHandsSystem _handsSystem = default!;
     [Dependency] private SharedTransformSystem _transformSystem = default!;
@@ -67,6 +69,14 @@ public sealed partial class PlaceableSurfaceSystem : EntitySystem
         // Just causes prediction CBT otherwise.
         if (HasComp<DumpableComponent>(args.Used))
             return;
+
+        // Sunrise added start - Сохраняем предмет в руке при отключённом размещении по клику.
+        if (_clickPlacement.ShouldBlock(args.User))
+        {
+            args.Handled = true;
+            return;
+        }
+        // Sunrise added end
 
         if (!_handsSystem.TryDrop(args.User, args.Used))
             return;
