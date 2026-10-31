@@ -21,7 +21,7 @@
           grids:
           # Lust-Start
           - gridPaths:
-            - /Maps/_Sunrise/Shuttles/Salvage/bison.yml # Кабан
+            #- /Maps/_Sunrise/Shuttles/Salvage/bison.yml # Кабан
             - /Maps/_Sunrise/Shuttles/Salvage/asteroidcracker.yml
             - /Maps/_Sunrise/Shuttles/Salvage/chisel.yml
             - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
@@ -35,7 +35,7 @@
           # Lust-Start
           - gridPaths:
             - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
-            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            #- /Maps/_Sunrise/Shuttles/Security/security.yml
             - /Maps/_Sunrise/Shuttles/Security/stargaze.yml
             - /Maps/_Sunrise/Shuttles/Security/vanguard.yml
           # Lust-End

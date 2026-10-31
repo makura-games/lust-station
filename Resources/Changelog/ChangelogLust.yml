@@ -1645,3 +1645,19 @@
   media:
   - url: https://github.com/user-attachments/assets/b09ed946-d9c3-48fd-9eff-3a36f6cf4a3a
     description: image
+- author: Den_Gor
+  time: '2026-10-29T07:15:36.0000000+00:00'
+  changes:
+  - type: Add
+    message: Фторсурфактант теперь выступает катализатором при смешивании с фентанилом, перерабатывая препарат в газ аммиака.
+  - type: Tweak
+    message: Порог заражения зомби-вирусом от фентанила повышен с 15 до 25 единиц в крови.
+  id: 350
+  url: https://github.com/makura-games/lust-station/pull/666
+- author: Den_Gor
+  time: '2026-10-29T09:24:30.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавил больше звуков в интерактивную панель для ваших кастомных эмоутов!
+  id: 351
+  url: https://github.com/makura-games/lust-station/pull/670

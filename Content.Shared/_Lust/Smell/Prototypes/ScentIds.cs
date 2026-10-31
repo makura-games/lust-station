@@ -11,33 +11,26 @@ namespace Content.Shared._Lust.Smell.Prototypes;
 public static class ScentIds
 {
     /// <summary>The entity's own blood, smelled once wound damage crosses the threshold.</summary>
-    [ValidatePrototypeId<ScentPrototype>]
-    public const string Blood = "LustBlood";
+    public static readonly ProtoId<ScentPrototype> Blood = "LustBlood";
 
     /// <summary>Victim's blood smeared onto the attacker finishing off a critical target.</summary>
-    [ValidatePrototypeId<ScentPrototype>]
-    public const string OtherBlood = "LustOtherBlood";
+    public static readonly ProtoId<ScentPrototype> OtherBlood = "LustOtherBlood";
 
     /// <summary>Adrenaline sweat smelled once blunt damage crosses the threshold.</summary>
-    [ValidatePrototypeId<ScentPrototype>]
-    public const string Bruise = "LustBruise";
+    public static readonly ProtoId<ScentPrototype> Bruise = "LustBruise";
 
     /// <summary>Toxic odor smelled once poison damage crosses the threshold.</summary>
-    [ValidatePrototypeId<ScentPrototype>]
-    public const string Poison = "LustPoison";
+    public static readonly ProtoId<ScentPrototype> Poison = "LustPoison";
 
     /// <summary>
     /// Smoke smell from burning tobacco products. Also set in item YAML for the
     /// equip trigger, which is a separate path from the ignite handler in C#.
     /// </summary>
-    [ValidatePrototypeId<ScentPrototype>]
-    public const string Smoke = "LustSmoke";
+    public static readonly ProtoId<ScentPrototype> Smoke = "LustSmoke";
 
     /// <summary>Pheromone scent of an aroused body; the description is chosen per observer.</summary>
-    [ValidatePrototypeId<ScentPrototype>]
-    public const string Arousal = "LustArousal";
+    public static readonly ProtoId<ScentPrototype> Arousal = "LustArousal";
 
     /// <summary>Scent left by an orgasm on both participants.</summary>
-    [ValidatePrototypeId<ScentPrototype>]
-    public const string Orgasm = "LustOrgasm";
+    public static readonly ProtoId<ScentPrototype> Orgasm = "LustOrgasm";
 }

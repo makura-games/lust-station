@@ -8,7 +8,6 @@ using Content.Shared.Popups;
 using Content.Shared.Verbs;
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
-using Robust.Shared.Network;
 
 namespace Content.Shared.Labels.EntitySystems;
 
@@ -18,7 +17,6 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popupSystem = default!;
     [Dependency] private LabelSystem _labelSystem = default!;
     [Dependency] private ISharedAdminLogManager _adminLogger = default!;
-    [Dependency] private INetManager _netManager = default!;
     [Dependency] private EntityWhitelistSystem _whitelistSystem = default!;
 
     public override void Initialize()
@@ -74,10 +72,9 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
             return;
         }
 
-        if (_netManager.IsServer)
-            _labelSystem.Label(target, ent.Comp.AssignedLabel);
+        _labelSystem.Label(target, ent.Comp.AssignedLabel);
 
-        _popupSystem.PopupClient(Loc.GetString("hand-labeler-successfully-applied"), user, user);
+        _popupSystem.PopupEntity(Loc.GetString("hand-labeler-successfully-applied"), user, user);
 
         // Log labeling
         _adminLogger.Add(LogType.Action, LogImpact.Low,
@@ -86,10 +83,12 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
 
     private void RemoveLabelFrom(EntityUid uid, EntityUid user, EntityUid target)
     {
-        if (_netManager.IsServer)
-            _labelSystem.Label(target, null);
+        if (!_labelSystem.HasLabel(target))
+            return;
 
-        _popupSystem.PopupClient(Loc.GetString("hand-labeler-successfully-removed"), user, user);
+        _labelSystem.Label(target, null);
+
+        _popupSystem.PopupEntity(Loc.GetString("hand-labeler-successfully-removed"), user, user);
 
         // Log labeling
         _adminLogger.Add(LogType.Action, LogImpact.Low,
@@ -108,6 +107,7 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
 
         var user = args.User;   // can't use ref parameter in lambdas
 
+        // Don't add the Label verb if the labeler's text is blank.
         if (ent.Comp.AssignedLabel != string.Empty)
         {
             var labelVerb = new UtilityVerb()
@@ -122,18 +122,22 @@ public abstract partial class SharedHandLabelerSystem : EntitySystem
             args.Verbs.Add(labelVerb);
         }
 
-        // add the unlabel verb to the menu even when the labeler has text
-        var unLabelVerb = new UtilityVerb()
+        // Add the Remove Label verb whether or not the labeler's text is blank,
+        // but only if the target is already labeled.
+        if (_labelSystem.HasLabel(target))
         {
-            Act = () =>
+            var unLabelVerb = new UtilityVerb()
             {
-                RemoveLabelFrom(ent, user, target);
-            },
-            Text = Loc.GetString("hand-labeler-remove-label-text"),
-            Priority = -1,
-        };
+                Act = () =>
+                {
+                    RemoveLabelFrom(ent, user, target);
+                },
+                Text = Loc.GetString("hand-labeler-remove-label-text"),
+                Priority = -1,
+            };
 
-        args.Verbs.Add(unLabelVerb);
+            args.Verbs.Add(unLabelVerb);
+        }
     }
 
     private void AfterInteractOn(Entity<HandLabelerComponent> ent, ref AfterInteractEvent args)
