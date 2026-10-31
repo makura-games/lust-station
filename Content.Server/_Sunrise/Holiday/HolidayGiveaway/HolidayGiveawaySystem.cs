@@ -24,7 +24,7 @@ public sealed partial class HolidayGiveawaySystem : EntitySystem
     private readonly List<ProtoId<HolidayGiveawayItemPrototype>> _activeGiveaways = [];
 
     [ViewVariables]
-    private bool _enabled = false; // lust-edit
+    private bool _enabled = true;
 
     public override void Initialize()
     {
