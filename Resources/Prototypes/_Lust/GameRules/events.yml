@@ -12,6 +12,51 @@
   - type: RuleGrids
 
 - type: entity
+  id: LustVendingMachineMalfunction
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vending-malfunction-announcement
+    startAudio:
+      path: /Audio/_Sunrise/Announcements/announce_dig.ogg
+    earliestStart: 15
+    minimumPlayers: 10
+    weight: 5
+    duration: 1
+  - type: VendingMachineMalfRule
+    minMachines: 3
+    maxMachines: 30
+    minItems: 1
+    maxItems: 7
+
+- type: entity
+  id: LustCrewMonitoringMalf
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    endAnnouncement: station-event-crew-monitoring-malf-end
+    endAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 15
+    minimumPlayers: 1
+    weight: 4
+    duration: 60
+    maxDuration: 180
+    reoccurrenceDelay: 1
+    maxOccurrences: 1
+    occursDuringRoundEnd: false
+  - type: CrewMonitoringMalfRule
+    minPlayerFraction: 0.1
+    maxPlayerFraction: 0.3
+    criticalChance: 25
+    deadChance: 10
+    poorChance: 50
+  - type: GameRule
+    delay:
+      min: 0
+      max: 0
+      
+- type: entity    
   id: LustRadiationOutburst
   parent: BaseGameRule
   components:

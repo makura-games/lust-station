@@ -3,6 +3,7 @@ using Content.Server.Medical.CrewMonitoring;
 using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Medical.SuitSensors;
 using Robust.Shared.Timing;
+using Content.Server.StationEvents.Events; //Lust-edit
 
 namespace Content.Server.Medical.SuitSensors;
 
@@ -11,6 +12,7 @@ public sealed partial class SuitSensorSystem : SharedSuitSensorSystem
     [Dependency] private IGameTiming _gameTiming = default!;
     [Dependency] private DeviceNetworkSystem _deviceNetworkSystem = default!;
     [Dependency] private SingletonDeviceNetServerSystem _singletonServerSystem = default!;
+    [Dependency] private CrewMonitoringMalfRuleSystem _crewMonitoringMalf = default!; //Lust-edit
 
     public override void Update(float frameTime)
     {
@@ -35,7 +37,12 @@ public sealed partial class SuitSensorSystem : SharedSuitSensorSystem
             // get sensor status
             var status = GetSensorState((uid, sensor));
             if (status == null)
-                continue;
+            continue;
+            
+            // Lust-Start
+                if (sensor.User is { } user)
+                _crewMonitoringMalf.ApplySpoof(user, status);
+            // Lust-End
 
             //Retrieve active server address if the sensor isn't connected to a server
             if (sensor.ConnectedServer == null)
