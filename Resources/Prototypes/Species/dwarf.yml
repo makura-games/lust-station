@@ -15,6 +15,14 @@
   - HumanDistrofikMale
   dollPrototype: AppearanceDwarf
   skinColoration: HumanToned
+  defaultSoundsBySex:
+  - UnisexDwarf
+  - FemaleDwarf
+  - UnisexDwarf
+  - FemaleDwarf # Lust-Edit
+  voices:
+  - UnisexDwarf
+  - FemaleDwarf
   # Sunrise-Edit
   buttScan:
     sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
