@@ -1,0 +1,40 @@
+# Энергонаручники, которые свармер надевает на телепортированную жертву. Исчезают сразу после снятия.
+- type: entity
+  parent: Zipties
+  id: SwarmerEnergyCuffs
+  name: energy handcuffs
+  description: A pair of crackling energy restraints. They will dissipate the moment they're taken off.
+  components:
+  - type: Handcuff
+    breakoutTime: 3
+    cuffedRSI: Objects/Misc/cablecuffs.rsi
+    bodyIconState: body-overlay
+    color: "#00FFFF"
+    # Создаются сразу на жертве, минуя do-after надевания, который обычно ставит этот флаг.
+    # Без него наручники невозможно снять.
+    used: true
+    breakOnRemove: true
+    # Ничего не остаётся, только искра.
+    brokenPrototype: EffectSparks
+    startCuffSound:
+      path: /Audio/Effects/sparks4.ogg
+    endCuffSound:
+      path: /Audio/Effects/sparks4.ogg
+    startUncuffSound:
+      path: /Audio/Items/Handcuffs/rope_start.ogg
+    endUncuffSound:
+      path: /Audio/Effects/sparks4.ogg
+    startBreakoutSound:
+      path: /Audio/Items/Handcuffs/rope_takeoff.ogg
+  - type: Sprite
+    sprite: Objects/Misc/zipties.rsi
+    state: cuff
+    color: "#00FFFF"
+  - type: PointLight
+    radius: 1
+    energy: 0.5
+    color: "#00FFFF"
+  # Пока надеты, связанный светится, как свармер.
+  - type: SwarmerGlowWhileCuffed
+  - type: PhysicalComposition
+    materialComposition: {}
