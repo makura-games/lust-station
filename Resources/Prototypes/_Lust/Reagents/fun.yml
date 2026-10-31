@@ -43,3 +43,38 @@
         time: 1.0  # Полная баночка = 1 минута тряски
         amplitude: 2
         frequency: 5
+
+- type: reagent
+  id: LustJuiceThatMakesYouMeow
+  name: reagent-name-meow
+  group: Toxins
+  desc: reagent-desc-meow
+  physicalDesc: reagent-physical-desc-vibrant
+  flavor: magical
+  color: "#e89dc5"
+  metabolisms:
+    Bloodstream:
+      metabolismRate: 0.25
+      effects:
+      - !type:Emote
+        emote: Mew
+        showInChat: true
+        showInGuidebook: true
+        force: true
+        probability: 0.5
+      - !type:Polymorph
+        prototype: LustArtifactCat
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Animal ]
+          inverted: true
+        - !type:ReagentCondition
+          reagent: LustJuiceThatMakesYouMeow
+          min: 50
+      - !type:AdjustReagent
+        reagent: LustJuiceThatMakesYouMeow
+        amount: -20
+        conditions:
+        - !type:ReagentCondition
+          reagent: LustJuiceThatMakesYouMeow
+          min: 50
