@@ -78,7 +78,7 @@
 
   # Sounds
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
       volume: -10
 
@@ -182,9 +182,9 @@
 
   # Sounds
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -10
+      volume: -6
 
   addComponents:
   - type: TTS
