@@ -1,0 +1,138 @@
+# Chemical case
+- type: entity
+  id: LustBottleCaseMedTak
+  parent: [ BaseStorageItem, LustBaseMedTakContraband ]
+  name: chemical case
+  description: A reinforced case with padded slots for bottles.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chemistry/chem_bag.rsi
+    state: icon
+  - type: Storage
+    grid:
+    - 0,0,3,1
+    hideStackVisualsWhenClosed: false
+    whitelist:
+      tags:
+      - Bottle
+  - type: Item
+    sprite: Objects/Specific/Chemistry/chem_bag.rsi
+    size: Small
+    shape:
+    - 0,0,1,1
+  - type: Appearance
+  - type: ExplosionResistance
+    damageCoefficient: 0
+
+# MedKit
+- type: entity
+  name: MedTak combat kit
+  description: An operator's personal medical kit
+  parent: Medkit
+  id: LustMedkitCombatMedTak
+  components:
+  - type: Sprite
+    sprite: _Lust/Admeme/Objects/MedTak/medkit.rsi
+    state: medkit
+  - type: Item
+    sprite: _Lust/Admeme/Objects/MedTak/medkit.rsi
+    heldPrefix: medtak
+    size: Normal
+
+# Injector pack
+- type: entity
+  name: autoinjector pack
+  description: A pouch loaded with autoinjectors.
+  parent: BaseStorageItem
+  id: LustPenPackMedTak
+  components:
+  - type: Sprite
+    sprite: _Lust/Admeme/Objects/MedTak/medkit.rsi
+    state: medkit
+  - type: Storage
+    maxItemSize: Small
+    grid:
+    - 0,0,1,2
+    whitelist:
+      tags:
+      - Syringe
+      components:
+      - Injector
+  - type: Item
+    size: Small
+    sprite: _Lust/Admeme/Objects/MedTak/medkit.rsi
+    heldPrefix: medtak
+  - type: PhysicalComposition
+    materialComposition:
+      Cloth: 100
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: EmergencyMedipen
+          amount: 2
+        - id: PunctAutoInjector
+        - id: CombatMedipen
+        - id: PyraAutoInjector
+        - id: AirlossAutoInjector
+
+
+# Surgical Kit
+- type: entity
+  name: advanced surgical kit
+  description: A compact kit of surgical tools.
+  parent: BaseStorageItem
+  id: LustSurgicalKitMedTak
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    state: advkit
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,4,2
+    - 1,2,4,3
+    whitelist:
+       tags:
+        - Brutepack
+       components:
+        - SurgeryTool
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+    sprite: Objects/Specific/Medical/firstaidkits.rsi
+    heldPrefix: advkit
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 150
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: MedicatedSuture
+        - id: BoneGel
+        - id: BoneSetterAdvanced
+        - id: HemostatAdvanced
+        - id: RetractorAdvanced
+        - id: Drill
+        - id: ScalpelLaser
+        - id: SawAdvanced
+
+# I don't think this needs its own file
+- type: entity
+  parent: BoxFolderBaseEmpty
+  id: LustBoxFolderMedTak
+  suffix: MedTak invoices
+  components:
+  - type: Sprite
+    layers:
+    - state: folder-colormap
+      color: "#880606"
+    - state: folder-base
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: LustPaperMedTak
+          amount: 10

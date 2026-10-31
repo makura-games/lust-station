@@ -1,0 +1,74 @@
+# MedTak
+- type: entity
+  id: LustBorgChassisMedTak
+  parent: BaseBorgChassisNotIonStormable
+  name: MedTak silicon
+  description: A multirole heavy silicon chassis designed to support MedTak units.
+  abstract: true
+  components:
+    - type: Sprite
+      sprite: _Lust/Admeme/Mobs/Silicon/Chassis/medtak.rsi
+      layers:
+      - state: borg
+      - state: borg_e
+        map: [ "enum.BorgVisualLayers.Light" ]
+        shader: unshaded
+        visible: false
+      - state: borg_l
+        shader: unshaded
+        map: [ "light" ]
+        visible: false
+    - type: BorgChassis
+      maxModules: 8
+      moduleWhitelist:
+        tags:
+        - BorgModuleGeneric
+        - LustBorgModuleMedTak
+      hasMindState: borg_e
+      noMindState: borg_e_r
+    - type: Repairable
+      allowSelfRepair: true
+    - type: BypassLock
+      bypassDelay: 15
+    - type: Access
+      tags:
+      - LustMedTak
+    - type: AccessReader
+      access: [["LustMedTak"]]
+    - type: ShowHealthBars
+    - type: SolutionScanner
+    - type: FlashImmunity
+      showInExamine: false
+    - type: IntrinsicRadioTransmitter
+      channels:
+      - Binary
+      - LustMedTak
+      - Common
+    - type: ActiveRadio
+      channels:
+      - Binary
+      - LustMedTak
+      - Common
+    - type: MovementAlwaysTouching
+    - type: Speech
+      speechSounds: SyndieBorg
+      allowedEmotes: ['Beep', 'Ping', 'Buzz', 'Buzz-Two', 'Chime']
+    - type: Vocal
+      sounds:
+        Unsexed: UnisexSiliconSyndicate
+    - type: ShowJobIcons
+    - type: ShowMindShieldIcons
+    - type: SiliconLawProvider
+      laws: LustMedTakLawset
+    - type: Tag
+      tags:
+      - DoorBumpOpener
+      - FootstepSound
+      - CanPilot
+      - SiliconEmotes
+      - Unimplantable
+      - EmagImmune
+    - type: PointLight
+      color: "#d55858"
+      radius: 5
+      energy: 3

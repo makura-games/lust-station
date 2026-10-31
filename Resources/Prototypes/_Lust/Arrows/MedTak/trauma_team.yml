@@ -1,0 +1,150 @@
+# Guest roles for the Trauma Team attached to PMC Arrows.
+- type: randomHumanoidSettings
+  id: LustArrowsMedTakDispatcher
+  parent: ERTSecurity
+  components:
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: job-name-medtak-dispatcher
+    description: ghost-role-information-medtak-dispatcher-description
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ LustMedTakDispatcher ]
+    roleLoadout:
+  - type: NpcFactionMember
+    factions:
+    - Arrows
+
+- type: randomHumanoidSettings
+  id: LustArrowsMedTakLeader
+  parent: ERTLeader
+  components:
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: job-name-medtak-leader
+    description: ghost-role-information-medtak-leader-description
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ LustMedTakTeamLead ]
+    roleLoadout:
+  - type: NpcFactionMember
+    factions:
+    - Arrows
+
+- type: randomHumanoidSettings
+  id: LustArrowsMedTakMedic
+  parent: ERTSecurity
+  components:
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: job-name-medtak-medic
+    description: ghost-role-information-medtak-medic-description
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ LustMedTakMedic ]
+    roleLoadout:
+  - type: NpcFactionMember
+    factions:
+    - Arrows
+
+- type: randomHumanoidSettings
+  id: LustArrowsMedTakPilot
+  parent: ERTSecurity
+  components:
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: job-name-medtak-pilot
+    description: ghost-role-information-medtak-pilot-description
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ LustMedTakPilot ]
+    roleLoadout:
+  - type: NpcFactionMember
+    factions:
+    - Arrows
+
+- type: randomHumanoidSettings
+  id: LustArrowsMedTakSecurity
+  parent: ERTSecurity
+  components:
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: job-name-medtak-security
+    description: ghost-role-information-medtak-security-description
+  - type: GhostTakeoverAvailable
+  - type: Loadout
+    prototypes: [ LustMedTakSecurity ]
+    roleLoadout:
+  - type: NpcFactionMember
+    factions:
+    - Arrows
+
+- type: entity
+  id: LustMobHumanArrowsMedTakDispatcher
+  parent: RandomHumanoidSpawnerERTSecurity
+  name: MedTak dispatcher
+  suffix: Arrows, MedTak
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+  - type: RandomHumanoidSpawner
+    settings: LustArrowsMedTakDispatcher
+
+- type: entity
+  id: LustMobHumanArrowsMedTakLeader
+  parent: RandomHumanoidSpawnerERTLeader
+  name: MedTak team leader
+  suffix: Arrows, MedTak
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+  - type: RandomHumanoidSpawner
+    settings: LustArrowsMedTakLeader
+
+- type: entity
+  id: LustMobHumanArrowsMedTakMedic
+  parent: RandomHumanoidSpawnerERTSecurity
+  name: MedTak medic
+  suffix: Arrows, MedTak
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+  - type: RandomHumanoidSpawner
+    settings: LustArrowsMedTakMedic
+
+- type: entity
+  id: LustMobHumanArrowsMedTakPilot
+  parent: RandomHumanoidSpawnerERTSecurity
+  name: MedTak pilot
+  suffix: Arrows, MedTak
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+  - type: RandomHumanoidSpawner
+    settings: LustArrowsMedTakPilot
+
+- type: entity
+  id: LustMobHumanArrowsMedTakSecurity
+  parent: RandomHumanoidSpawnerERTSecurity
+  name: MedTak security
+  suffix: Arrows, MedTak
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+  - type: RandomHumanoidSpawner
+    settings: LustArrowsMedTakSecurity

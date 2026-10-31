@@ -1,0 +1,94 @@
+# MedTak operator loadouts
+
+- type: startingGear
+  id: LustMedTakTeamLead
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualRed
+    back: LustClothingBackpackMedTakFilledLeader
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: LustClothingOuterHardsuitMedTakLeader
+    id: LustMedTakTeamLeadPDA
+    eyes: LustClothingEyesVisorMedTak
+    ears: LustClothingHeadsetAltMedTak
+    mask: ClothingMaskGasSecurity
+    belt: LustClothingBeltMedTakFilledMedic
+    gloves: ClothingHandsGlovesCombat
+    pocket1: LustPenPackMedTak
+    pocket2: DoubleEmergencyOxygenTankFilled
+
+- type: startingGear
+  id: LustMedTakMedic
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualRed
+    back: LustClothingBackpackMedTakFilledMedic
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: LustClothingOuterHardsuitMedTak
+    id: LustMedTakMedicPDA
+    eyes: LustClothingEyesVisorMedTak
+    ears: LustClothingHeadsetAltMedTak
+    mask: ClothingMaskGasSecurity
+    belt: LustClothingBeltMedTakFilledMedic
+    gloves: ClothingHandsGlovesCombat
+    pocket1: LustPenPackMedTak
+    pocket2: DoubleEmergencyOxygenTankFilled
+
+- type: startingGear
+  id: LustMedTakPilot
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualRed
+    back: LustClothingBackpackMedTakFilledBasic
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: LustClothingOuterHardsuitMedTak
+    id: LustMedTakPilotPDA
+    eyes: LustClothingEyesVisorMedTak
+    ears: LustClothingHeadsetAltMedTak
+    mask: ClothingMaskGasSecurity
+    belt: LustClothingBeltMedTakFilledPilot
+    gloves: ClothingHandsGlovesCombat
+    pocket1: LustPenPackMedTak
+    pocket2: DoubleEmergencyOxygenTankFilled
+
+- type: startingGear
+  id: LustMedTakSecurityHeavy
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualRed
+    back: LustClothingBackpackMedTakFilledHeavy
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: LustClothingOuterHardsuitMedTak
+    id: LustMedTakSecurityPDA
+    eyes: LustClothingEyesVisorMedTak
+    ears: LustClothingHeadsetAltMedTak
+    mask: ClothingMaskGasSecurity
+    belt: LustClothingBeltMedTakFilledHeavy
+    gloves: ClothingHandsGlovesCombat
+    pocket1: LustPenPackMedTak
+    pocket2: DoubleEmergencyOxygenTankFilled
+
+- type: startingGear
+  id: LustMedTakDispatcher
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualRed
+    back: LustClothingBackpackMedTakFilledBasic
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: LustClothingOuterHardsuitMedTak
+    id: LustMedTakDispatcherPDA
+    eyes: LustClothingEyesVisorMedTak
+    ears: LustClothingHeadsetAltMedTak
+    mask: ClothingMaskGasSecurity
+    gloves: ClothingHandsGlovesCombat
+
+- type: startingGear
+  id: LustMedTakSecurity
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitCasualRed
+    back: LustClothingBackpackMedTakFilledBasic
+    shoes: ClothingShoesBootsCombatFilled
+    outerClothing: LustClothingOuterHardsuitMedTak
+    id: LustMedTakSecurityPDA
+    eyes: LustClothingEyesVisorMedTak
+    ears: LustClothingHeadsetAltMedTak
+    mask: ClothingMaskGasSecurity
+    belt: LustClothingBeltMedTakFilledSecurity
+    gloves: ClothingHandsGlovesCombat
+    pocket1: LustPenPackMedTak
+    pocket2: DoubleEmergencyOxygenTankFilled
