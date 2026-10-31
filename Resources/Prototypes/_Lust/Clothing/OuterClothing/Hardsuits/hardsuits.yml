@@ -1,0 +1,33 @@
+- type: entity
+  parent: [ClothingOuterHardsuitBase, BaseSalvageMiningContraband]
+  id: ClothingOuterHardsuitSpongeBob
+  name: SpongeBob hardsuit
+  description: For exploring the depths of space.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/OuterClothing/Hardsuits/SpongeBob.rsi
+  - type: Clothing
+    sprite: _Lust/Clothing/OuterClothing/Hardsuits/SpongeBob.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.2
+    lowPressureMultiplier: 1000
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: Pierceable
+    level: Metal
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.7
+        Heat: 0.7
+        Cold: 0.7
+        Radiation: 0.3
+        Caustic: 0.7
+  - type: HeldSpeedModifier
+  - type: ClothingSpeedModifier
+    walkModifier: 1.00
+    sprintModifier: 1.00
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetHardsuitSpongeBob
