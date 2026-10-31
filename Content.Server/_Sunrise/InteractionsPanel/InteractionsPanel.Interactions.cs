@@ -52,6 +52,8 @@ public partial class InteractionsPanel
         SubscribeLocalEvent<InteractionsComponent, ClothingDidUnequippedEvent>(ClothingDidUnequipped);
         SubscribeLocalEvent<InteractionsComponent, DidEquipHandEvent>(DidEquipped);
         SubscribeLocalEvent<InteractionsComponent, DidUnequipHandEvent>(DidUnequipped);
+        // Lust edit - регистрация обработчиков пола борга вынесена в код форка.
+        InitializeLustInteractions();
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.Interact, new PointerInputCmdHandler(HandleInteract))
@@ -319,9 +321,7 @@ public partial class InteractionsPanel
         if (string.IsNullOrWhiteSpace(type) || type == "none")
             return;
 
-        var sex = TryComp<HumanoidProfileComponent>(ent, out var humanoid)
-            ? humanoid.Sex.ToString().ToLowerInvariant()
-            : "unknown";
+        var sex = GetLustInteractionSex(ent);
 
         switch (type.ToLowerInvariant())
         {
@@ -502,7 +502,7 @@ public partial class InteractionsPanel
         _chatSystem.TrySendInGameICMessage(uid, "кончает", InGameICChatType.Emote, false);
         _chatSystem.TryEmoteWithChat(uid, "Moan");
 
-        if (TryComp<HumanoidProfileComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
+        if (ShouldSpawnLustSemen(uid))
             SpawnSemen("Semen", Transform(uid).Coordinates);
         // Lust-Edit-Start
         RaiseLocalEvent(new OrgasmPerformedEvent
@@ -641,4 +641,10 @@ public partial class InteractionsPanel
 
         return result;
     }
+
+    private partial void InitializeLustInteractions();
+
+    private partial string GetLustInteractionSex(EntityUid uid);
+
+    private partial bool ShouldSpawnLustSemen(EntityUid uid);
 }

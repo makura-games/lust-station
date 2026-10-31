@@ -1,0 +1,8 @@
+- type: alert
+  id: LustPassiveRecharge
+  icons:
+  - sprite: /Textures/_Lust/Interface/Alerts/passive_recharge.rsi
+    state: passive_recharge
+  name: lust-alert-passive-recharge-name
+  description: lust-alert-passive-recharge-desc
+  clientHandled: true
