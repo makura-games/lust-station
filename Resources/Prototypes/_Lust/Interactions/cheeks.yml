@@ -21,12 +21,12 @@
   - "%user чмокает %target в обе щёки"
   - "%user расцеловывает %target в обе щеки"
   interactionSounds:
-    - Kiss1
-    - Kiss2
-    - Kiss3
-    - Kiss4
-    - Kiss5
-    - Kiss6
+    - lustKiss1
+    - lustKiss2
+    - lustKiss3
+    - lustKiss4
+    - lustKiss5
+    - lustKiss6
   loveUser: 1
   loveTarget: 1
   cooldown: 3
@@ -54,12 +54,12 @@
     - "%user чмокает %target в обе щёки"
     - "%user расцеловывает %target в обе щеки"
   interactionSounds:
-    - Kiss1
-    - Kiss2
-    - Kiss3
-    - Kiss4
-    - Kiss5
-    - Kiss6
+    - lustKiss1
+    - lustKiss2
+    - lustKiss3
+    - lustKiss4
+    - lustKiss5
+    - lustKiss6
   loveUser: 1
   loveTarget: 1
   cooldown: 3

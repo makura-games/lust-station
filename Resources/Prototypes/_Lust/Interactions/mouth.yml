@@ -21,12 +21,12 @@
   - "%user слегка чмокает в губы %target"
   - "%user нежно чмокает в губы %target"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 1
   loveTarget: 1
   cooldown: 1
@@ -62,12 +62,12 @@
   - "%user слегка целует %target, заводя руку за шею"
   - "%user настойчиво целует %target, заводя руку за шею"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 2
   loveTarget: 2
   cooldown: 2
@@ -98,10 +98,10 @@
   - "%user заставляет сосать %target"
   - "%user заставляет делать минет %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 9
   loveTarget: 5
   cooldown: 3
@@ -129,7 +129,7 @@
   - "%user отодвигает щеку %target своим пальцем"
   - "%user проникает большим пальцем в рот %target"
   interactionSounds:
-  - FinterLick
+  - lustFinterLick
   loveTarget: 5
   cooldown: 3
 
@@ -160,10 +160,10 @@
   - "%user крепко сжав волосы %target делает себе минет его ротиком"
   - "%user сжимая рукой волосы %target, грубо трахает его в ротик"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 10
   loveTarget: 5
   cooldown: 3
@@ -195,10 +195,10 @@
   - "%user крепко сжав волосы %target делает себе минет её ротиком"
   - "%user сжимая рукой волосы %target, грубо трахает её в ротик"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 10
   loveTarget: 5
   cooldown: 3

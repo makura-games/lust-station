@@ -30,7 +30,7 @@
           - gridPaths:
             - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
             - /Maps/_Sunrise/Shuttles/Security/arrow.yml
-            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            #- /Maps/_Sunrise/Shuttles/Security/security.yml
           # Lust-End
             priorityTag: DockSecurity
         - type: StationEmergencyShuttle
