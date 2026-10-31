@@ -1,0 +1,104 @@
+# Антагонист «Рой»: один роевик выбирается из случайной вентиляции станции и размножается.
+
+- type: antag
+  id: Swarm
+  name: roles-antag-swarm-name
+  antagonist: true
+  playTimeTracker: AntagSwarm
+  objective: roles-antag-swarm-objective
+  guides: [ Swarm ]
+
+- type: playTimeTracker
+  id: AntagSwarm
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: Swarm
+  spawnerPrototype: SpawnPointGhostSwarmer
+  pickPlayer: false
+  mindRoles:
+  - MindRoleSwarm
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleSwarm
+  name: Swarm Role
+  components:
+  - type: MindRole
+    antagPrototype: Swarm
+    roleType: TeamAntagonist
+    subtype: role-subtype-swarm
+    exclusiveAntag: true
+  - type: SwarmRole
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: BaseAntagSpawner
+  id: SpawnPointGhostSwarmer
+  components:
+  - type: GhostRole
+    name: ghost-role-information-swarmer-name
+    description: ghost-role-information-swarmer-description
+    rules: ghost-role-information-swarmer-rules
+    mindRoles:
+    - MindRoleSwarm
+    raffle:
+      settings: default
+  - type: Sprite
+    layers:
+    - state: green
+    - sprite: _Lust/Swarmer/Mobs/swarmer.rsi
+      state: swarmer
+
+- type: entity
+  parent: BaseObjective
+  id: SwarmReplicateObjective
+  components:
+  - type: Objective
+    difficulty: 1.5
+    issuer: objective-issuer-swarm
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: ui_replicate
+  - type: RoleRequirement
+    roles:
+    - SwarmRole
+  - type: NumberObjective
+    min: 5
+    max: 5
+    title: objective-swarm-replicate-title
+    description: objective-swarm-replicate-description
+  - type: SwarmReplicateCondition
+
+# Ивент: ЦК замечает блюспейс-сигналы в вентиляции, и из неё выбирается роевик.
+- type: entity
+  parent: BaseAntagGhostRoleRule
+  id: SwarmSpawn
+  components:
+  - type: StationEvent
+    weight: 10
+    earliestStart: 30
+    minimumPlayers: 20
+    maxOccurrences: 1
+    duration: null
+    startAnnouncement: station-event-swarm-start-announcement
+  - type: SwarmVentSpawnRule
+  - type: AntagSpawner
+    prototype: MobSwarmer
+  - type: SwarmRule
+  - type: AntagObjectives
+    objectives:
+    - SwarmReplicateObjective
+  - type: AntagSelection
+    agentName: swarm-round-end-agent-name
+    antags:
+    - !type:FixedAntagCount
+      proto: Swarm
+
+# Рассказчик Lust сам находит ивенты, у которых есть эти данные.
+- type: storytellerMetadata
+  id: SwarmSpawn
+  threatType: MajorAntag
+  threatCost: 90
+  minStationStrength: 15
+  maxStress: 75
