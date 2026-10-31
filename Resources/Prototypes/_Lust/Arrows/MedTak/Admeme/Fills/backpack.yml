@@ -1,0 +1,77 @@
+# Medical team backpack fills without weapons.
+- type: entity
+  id: LustClothingBackpackMedTakFilledMedic
+  parent: LustClothingBackpackMedTak
+  suffix: Filled, Medic
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DefibrillatorSyndicate
+        - id: LustBodyBagMedTakFolded
+        - id: LustMedTakHoverBedSpawnFolded
+        - id: LustSurgicalKitMedTak
+        - id: PowerCellHigh
+        - id: DrinkMREFlask
+        - id: FoodSnackNutribrick
+        - id: LustMedTakMindShieldImplanter
+        - id: LustMedTakDeathRattleImplanter
+
+- type: entity
+  id: LustClothingBackpackMedTakFilledBasic
+  parent: LustClothingBackpackMedTak
+  suffix: Filled, Basic
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkMREFlask
+        - id: FoodSnackNutribrick
+        - id: LustMedTakMindShieldImplanter
+        - id: LustMedTakDeathRattleImplanter
+
+- type: entity
+  id: LustClothingBackpackMedTakFilledHeavy
+  parent: LustClothingBackpackMedTak
+  suffix: Filled, Security, Heavy
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkMREFlask
+        - id: FoodSnackNutribrick
+        - id: LustMedTakMindShieldImplanter
+        - id: LustMedTakDeathRattleImplanter
+
+- type: entity
+  id: LustClothingBackpackMedTakFilledSecurity
+  parent: LustClothingBackpackMedTak
+  suffix: Filled, Security
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkMREFlask
+        - id: FoodSnackNutribrick
+        - id: LustMedTakMindShieldImplanter
+        - id: LustMedTakDeathRattleImplanter
+
+- type: entity
+  id: LustClothingBackpackMedTakFilledLeader
+  parent: LustClothingBackpackMedTak
+  suffix: Filled, Leader
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkMREFlask
+        - id: FoodSnackNutribrick
+        - id: LustMedTakMindShieldImplanter
+        - id: LustMedTakDeathRattleImplanter
+        - id: LustBoxFolderMedTak
+        - id: LustRubberStampMedTak

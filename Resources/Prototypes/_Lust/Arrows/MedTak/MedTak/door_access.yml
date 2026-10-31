@@ -1,0 +1,8 @@
+# MedTak
+- type: entity
+  parent: DoorElectronics
+  id: LustDoorElectronicsMedTak
+  suffix: MedTak, Locked
+  components:
+    - type: AccessReader
+      access: [["LustMedTak"]]

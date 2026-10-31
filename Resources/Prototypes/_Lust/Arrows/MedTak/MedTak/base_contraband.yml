@@ -1,0 +1,7 @@
+# MedTak base contraband
+- type: entity
+  id: LustBaseMedTakContraband
+  abstract: true
+  components:
+  - type: Contraband
+    severity: LustMedTak
