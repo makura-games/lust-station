@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made by olya0523 (Discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "big_pot"
+    },
+    {
+      "name": "big_pot1"
+    },
+    {
+      "name": "garbage"
+    },
+    {
+      "name": "garbage1"
+    },
+    {
+      "name": "garbage2"
+    },
+    {
+      "name": "garbage3"
+    },
+    {
+      "name": "nameplate"
+    },
+    {
+      "name": "nameplate1"
+    },
+    {
+      "name": "paper"
+    },
+    {
+      "name": "paper1"
+    },
+    {
+      "name": "paper2"
+    },
+    {
+      "name": "paper3"
+    },
+    {
+      "name": "paper4"
+    },
+    {
+      "name": "paper5"
+    },
+    {
+      "name": "paper6"
+    },
+    {
+      "name": "poster"
+    },
+    {
+      "name": "poster1"
+    },
+    {
+      "name": "pot"
+    },
+    {
+      "name": "pot1"
+    },
+    {
+      "name": "rack"
+    },
+    {
+      "name": "rack1"
+    },
+    {
+      "name": "rack2"
+    },
+    {
+      "name": "tire"
+    },
+    {
+      "name": "tire1"
+    },
+    {
+      "name": "trash_bag"
+    },
+    {
+      "name": "trash_bags"
+    },
+    {
+      "name": "wood"
+    }
+  ]
+}
