@@ -1,4 +1,4 @@
-﻿- type: interaction
+- type: interaction
   id: LegsKiss
   name: lust-interaction-LegsKiss
   icon: ERP2Icon
@@ -176,7 +176,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Male, Futanari ]

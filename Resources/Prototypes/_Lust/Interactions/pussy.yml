@@ -6,7 +6,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -50,7 +50,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -95,7 +95,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -135,11 +135,11 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Female, Futanari ]
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -178,11 +178,11 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Male, Futanari ]
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -227,7 +227,7 @@
   category: Pussy
   appearConditions:
   - !type:SelfOnlyCondition
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Female, Futanari ]
@@ -261,7 +261,7 @@
   category: Pussy
   appearConditions:
   - !type:SelfOnlyCondition
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Female, Futanari ]
@@ -295,11 +295,11 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Male, Futanari ]
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -337,7 +337,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -371,7 +371,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -407,11 +407,11 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Male, Futanari ]
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]
@@ -461,7 +461,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]

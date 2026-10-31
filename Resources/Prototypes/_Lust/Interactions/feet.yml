@@ -1,4 +1,4 @@
-﻿- type: interaction
+- type: interaction
   id: FeetFaceLickDoggyStyleSound1
   name: lust-interaction-FeetFaceLickDoggyStyleSound1
   icon: LegsLickIcon
@@ -94,7 +94,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Male, Futanari ]

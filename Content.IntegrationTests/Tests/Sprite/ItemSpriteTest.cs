@@ -44,8 +44,15 @@ public sealed class PrototypeSaveTest : GameTest
             foreach (var (proto, _) in pair.GetPrototypesWithComponent<ItemComponent>(Ignored))
             {
                 var dummy = pair.Client.EntMan.Spawn(proto.ID);
-                pair.Client.EntMan.RunMapInit(dummy, pair.Client.MetaData(dummy));
                 var spriteComponent = pair.Client.EntMan.GetComponentOrNull<SpriteComponent>(dummy);
+                // Lust edit start - запуск MapInit нужен только для спрайтов, которые появляются при инициализации карты
+                if (spriteComponent?.Icon == null)
+                {
+                    pair.Client.EntMan.RunMapInit(dummy, pair.Client.MetaData(dummy));
+                    spriteComponent = pair.Client.EntMan.GetComponentOrNull<SpriteComponent>(dummy);
+                }
+                // Lust edit end
+
                 if (spriteComponent?.Icon == null)
                     badPrototypes.Add(proto);
                 pair.Client.EntMan.DeleteEntity(dummy);

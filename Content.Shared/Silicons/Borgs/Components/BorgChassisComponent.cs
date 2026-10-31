@@ -172,4 +172,5 @@ public enum BorgVisualLayers : byte
     /// Layer for the borg flashlight status.
     /// </summary>
     LightStatus,
+
 }
