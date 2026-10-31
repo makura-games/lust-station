@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: ClothingHeadset
   id: ClothingHeadsetAlt
@@ -9,6 +9,9 @@
     state: icon_alt
   - type: Clothing
     equippedPrefix: alt
+  # Lust edit start - Акустическая защита
+  - type: AcousticProtection
+  # Lust edit end
 
 - type: entity
   parent: ClothingHeadsetAlt
