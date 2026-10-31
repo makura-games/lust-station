@@ -10,7 +10,6 @@ namespace Content.Server.Jobs
     [DataDefinition]
     public sealed partial class GiveItemOnHolidaySpecial : JobSpecial
     {
-
         [DataField(required: true)]
         public ProtoId<HolidayPrototype> Holiday;
 
