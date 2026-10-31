@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Made for Sunrise Station by drewmin",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "ring",
+      "delays": [
+        [
+          0.35,
+          0.35,
+          0.35,
+          0.45
+        ]
+      ]
+    }
+  ]
+}

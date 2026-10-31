@@ -26,6 +26,9 @@
     scent: LustSmoke
     duration: 900
   # Lust edit end
+  # Sunrise added start - активная затяжка сигаретой
+  - type: SmokablePuff
+  # Sunrise added end
 
 # Base for all cigars and cigarettes.
 - type: entity
@@ -76,7 +79,9 @@
     damage:
       types:
         Heat: 2
-  - type: RefillableSolution
-    solution: smokable
-  - type: ExaminableSolution
-    solution: smokable
+  # Sunrise edit start - жидкость заправляется только в сменный картридж, а не в корпус
+  # - type: RefillableSolution
+  #   solution: smokable
+  # - type: ExaminableSolution
+  #   solution: smokable
+  # Sunrise edit end
