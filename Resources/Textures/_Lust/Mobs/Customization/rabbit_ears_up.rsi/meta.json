@@ -8,11 +8,19 @@
   },
   "states": [
     {
-      "name": "ears_rabbit_up",
+      "name": "ears_rabbit_up_inner",
       "directions": 4
     },
     {
-      "name": "ears_rabbit_up_mir",
+      "name": "ears_rabbit_up_outer",
+      "directions": 4
+    },
+    {
+      "name": "ears_rabbit_up_inner_mir",
+      "directions": 4
+    },
+    {
+      "name": "ears_rabbit_up_outer_mir",
       "directions": 4
     }
   ]

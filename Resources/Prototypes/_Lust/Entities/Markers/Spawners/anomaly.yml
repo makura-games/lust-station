@@ -5,15 +5,15 @@
   components:
   - type: RadiationSource
     intensity: 2
-    slope: 0.1 #should affect the entire room
+    slope: 0.8 # как далеко фигачит
   - type: TimedDespawn
     lifetime: 50
   - type: PointLight
     color: "#13FF4B" #tritum green
-    energy: 1
+    energy: 10
     falloff: 10
-    radius: 10
-    softness: 1
+    radius: 3.5
+    softness: 10
   - type: EmitSoundOnSpawn
     sound:
       collection:

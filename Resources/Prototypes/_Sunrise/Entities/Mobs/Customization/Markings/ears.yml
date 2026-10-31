@@ -74,9 +74,9 @@
           color: "#FFFFFF"
   sprites:
   - sprite: _Lust/Mobs/Customization/rabbit_ears_up.rsi # Lust-Edit Изменен путь
-    state: ears_rabbit_up # Lust-Edit
-  #- sprite: _Sunrise/Mobs/Customization/rabbit_ears_up.rsi # Lust-Edit
-  #  state: ears_rabbit_up_inner # Lust-Edit
+    state: ears_rabbit_up_outer
+  - sprite: _Lust/Mobs/Customization/rabbit_ears_up.rsi # Lust-Edit
+    state: ears_rabbit_up_inner
 
 - type: marking
   id: RabbitEarsUpMirror
@@ -97,6 +97,6 @@
           color: "#FFFFFF"
   sprites:
   - sprite: _Lust/Mobs/Customization/rabbit_ears_up.rsi # Lust-Edit Изменен путь
-    state: ears_rabbit_up_mir # Lust-Edit
-  #- sprite: _Sunrise/Mobs/Customization/rabbit_ears_up.rsi # Lust-Edit
-  #  state: ears_rabbit_up_inner_mir # Lust-Edit
+    state: ears_rabbit_up_outer_mir
+  - sprite: _Lust/Mobs/Customization/rabbit_ears_up.rsi # Lust-Edit
+    state: ears_rabbit_up_inner_mir
