@@ -1,0 +1,37 @@
+- type: entity
+  parent: BaseAnomalyCore
+  id: LustAnomalyCoreSound
+  suffix: Sound
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/Cores/electric_core.rsi
+    color: "#66ccff"
+  - type: PointLight
+    radius: 1.5
+    energy: 2.0
+    color: "#4da6ff"
+    castShadows: false
+  - type: SoundAnomalyCore
+    isInert: false
+
+- type: entity
+  parent: BaseAnomalyInertCore
+  id: LustAnomalyCoreSoundInert
+  suffix: Sound, Inert
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/Cores/electric_core.rsi
+    color: "#66ccff"
+  - type: SoundAnomalyCore
+    isInert: true
+
+# Alias for backwards compatibility
+- type: entity
+  parent: LustAnomalyCoreSound
+  id: LustAnomalyCoreSonic
+  categories: [ HideSpawnMenu ]
+
+- type: entity
+  parent: LustAnomalyCoreSoundInert
+  id: LustAnomalyCoreSonicInert
+  categories: [ HideSpawnMenu ]

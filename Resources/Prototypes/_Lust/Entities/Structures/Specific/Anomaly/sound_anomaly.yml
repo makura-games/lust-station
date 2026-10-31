@@ -1,0 +1,59 @@
+- type: entity
+  id: LustAnomalySound
+  parent: BaseAnomaly
+  suffix: Sound
+  components:
+  - type: AmbientSound
+    volume: 0
+    range: 6
+    sound:
+      path: /Audio/Ambience/Objects/emf_buzz.ogg
+  - type: Anomaly
+    corePrototype: LustAnomalyCoreSound
+    coreInertPrototype: LustAnomalyCoreSoundInert
+    supercriticalDuration: 8s
+  - type: Sprite
+    sprite: _Lust/Structures/Specific/Anomalies/sound_anom.rsi
+    layers:
+    - state: anom
+      color: "#ffffff"
+      map: ["enum.AnomalyVisualLayers.Base"]
+    - state: pulse
+      color: "#ffffff"
+      map: ["enum.AnomalyVisualLayers.Animated"]
+      visible: false
+  - type: PointLight
+    radius: 6.0
+    energy: 5.0
+    color: "#00ffff"
+    castShadows: false
+  - type: RadioJammer
+    selectedPowerLevel: 0
+    settings:
+    - wattage: 0
+      range: 9
+      message: radio-jammer-component-set-message-low
+      name: radio-jammer-component-setting-low
+  - type: ActiveRadioJammer
+  - type: ActiveListener
+    range: 12
+  - type: TTS
+    voice: SCP049
+  - type: SoundAnomaly
+    pulseRadius: 8
+    supercriticalRadius: 16
+    supercriticalPushStrength: 24
+    supercriticalStunDuration: 6
+    passivePhantomSoundChance: 0.75
+    pulseWindowDamage:
+      types:
+        Structural: 60
+    windowDamage:
+      types:
+        Structural: 150
+
+# Alias for spawn compatibility
+- type: entity
+  parent: LustAnomalySound
+  id: LustAnomalySonic
+  categories: [ HideSpawnMenu ]

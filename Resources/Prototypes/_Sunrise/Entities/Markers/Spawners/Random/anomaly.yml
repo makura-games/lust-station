@@ -37,6 +37,7 @@
     - AnomalyTech
     - AnomalySanta
     - AnomalyBanana
+    - LustAnomalySound # Lust edit
     rareChance: 0.3
     rarePrototypes:
     - MetusRandomAnomalyInjectorSpawner
