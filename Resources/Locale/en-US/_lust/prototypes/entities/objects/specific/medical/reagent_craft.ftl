@@ -1,0 +1,16 @@
+ent-LustBlueointment1ReagentCraft = { ent-Blueointment1 }
+    .desc = { ent-Blueointment1.desc }
+ent-LustRedOintment1ReagentCraft = { ent-RedOintment1 }
+    .desc = { ent-RedOintment1.desc }
+ent-LustRedPunctPack1ReagentCraft = { ent-RedPunctPack1 }
+    .desc = { ent-RedPunctPack1.desc }
+ent-LustRedLacePack1ReagentCraft = { ent-RedLacePack1 }
+    .desc = { ent-RedLacePack1.desc }
+ent-LustRedBruizPack1ReagentCraft = { ent-RedBruizPack1 }
+    .desc = { ent-RedBruizPack1.desc }
+reagent-craft-description-blue-ointment = Heals well: { damage-type-shock }, { damage-type-cold }.
+reagent-craft-description-red-ointment = Heals well: { damage-type-heat }, { damage-type-cold }, { damage-type-shock }.
+reagent-craft-description-red-punct-pack = Heals well: { damage-type-piercing }.
+reagent-craft-description-red-lace-pack = Heals well: { damage-type-slash }.
+reagent-craft-description-red-bruiz-pack = Heals well: { damage-type-blunt }.
+reagent-craft-condition = Container in hand: { $amount }u of { $reagent }, nothing else mixed in.
