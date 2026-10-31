@@ -132,6 +132,10 @@ public sealed partial class LimbSystem : SharedLimbSystem
         }
 
         _sunriseBody.SetLayersVisibility(body.Owner, [layer], true);
+
+        // Lust edit start - Восстанавливаем видимость волос и оверлеев при возвращении головы и конечностей
+        OnLimbVisualAddedLust(body, layer);
+        // Lust edit end
     }
 
     private void RemoveLimbVisual(Entity<HumanoidProfileComponent?> body, Entity<OrganComponent> limb)
@@ -140,6 +144,10 @@ public sealed partial class LimbSystem : SharedLimbSystem
             return;
 
         _sunriseBody.SetLayersVisibility(body.Owner, [layer], false);
+
+        // Lust edit start - Скрываем волосы и слой крови/урона, чтобы не оставался призрак конечности
+        OnLimbVisualRemovedLust(body, layer);
+        // Lust edit end
     }
 
     private bool TryFindBodyOrganByCategory(Entity<BodyComponent> body, string category, out EntityUid organ)
