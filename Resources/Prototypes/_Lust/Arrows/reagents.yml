@@ -18,9 +18,11 @@
       - !type:MovementSpeedModifier
         walkSpeedModifier: 1.4
         sprintSpeedModifier: 1.4
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 2
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 2
 
 # Реагент в крови

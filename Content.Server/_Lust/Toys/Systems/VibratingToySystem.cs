@@ -7,12 +7,16 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Jittering;
 using Content.Shared.Speech.Components;
+using Content.Shared.Speech.EntitySystems;
+using Content.Shared.StatusEffectNew;
 
 namespace Content.Server._Lust.Toys.Systems;
 
 public sealed partial class VibratingToySystem : SharedToySystem
 {
     [Dependency] private MovementSpeedModifierSystem _movementSpeedModifier = default!;
+    [Dependency] private StutteringSystem _stuttering = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
     protected override void OnGotEquipped(EntityUid uid, VibratingToyComponent component, GotEquippedEvent args)
     {
         base.OnGotEquipped(uid, component, args);
@@ -20,11 +24,9 @@ public sealed partial class VibratingToySystem : SharedToySystem
             return;
         EnsureComp<VibratingComponent>(args.EquipTarget).Toy = uid;
 
-        EnsureComp<StutteringAccentComponent>(args.EquipTarget, out var stuttering);
-        stuttering.MatchRandomProb = 0.3f;
-        stuttering.FourRandomProb = 0;
-        stuttering.ThreeRandomProb = 0;
-        stuttering.CutRandomProb = 0;
+        EnsureComp<StutteringAccentComponent>(args.EquipTarget);
+
+        _stuttering.DoStutter(args.EquipTarget, TimeSpan.FromSeconds(30), true);
 
         if (!TryComp<MovementSpeedModifierComponent>(args.EquipTarget, out var modifierComponent))
             return;
@@ -48,10 +50,14 @@ public sealed partial class VibratingToySystem : SharedToySystem
         base.OnGotUnequipped(uid, component, args);
         if (component.IsEquipped)
             return;
+
         RemComp<VibratingComponent>(args.EquipTarget);
         RemComp<StutteringAccentComponent>(args.EquipTarget);
         RemComp<JitteringComponent>(args.EquipTarget);
         RemComp<StutteringAccentComponent>(args.EquipTarget);
+
+        if (!_statusEffects.TryRemoveStatusEffect(args.EquipTarget, "StatusEffectSlurred"))
+            return;
 
         if (!TryComp<MovementSpeedModifierComponent>(args.EquipTarget, out var modifierComponent))
             return;

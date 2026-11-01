@@ -6,8 +6,6 @@
   # Lust-Start
   speciesBlacklist:
   - Vox
-  - Felinid
-  - Resomi
   # Lust-End
   requirements:
     - !type:OverallPlaytimeRequirement
@@ -19,7 +17,6 @@
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
-  displayWeight: 0 # Sunrise-Edit
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-security-trainee

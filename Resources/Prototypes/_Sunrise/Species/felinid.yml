@@ -15,6 +15,14 @@
   - HumanDistrofikMale
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
+  defaultSoundsBySex:
+  - MaleFelinid
+  - FemaleFelinid
+  - MaleFelinid
+  - FemaleFelinid # Lust-Edit
+  voices:
+  - MaleFelinid
+  - FemaleFelinid
   youngAge: 18
   # Lust-edit-start
   oldAge: 38

@@ -181,11 +181,14 @@
         sprite: Mobs/Effects/burn_damage.rsi
   - type: MothAccent
   - type: Vocal
-    sounds:
-      Male: UnisexMoth
-      Female: UnisexMoth
-      Futanari: UnisexMoth # Lust edit - сохраняем общий набор звуков
-      Unsexed: UnisexMoth
+    emoteSounds: UnisexMoth
+  # lust-archived-start
+#    sounds:
+#      Male: UnisexMoth
+#      Female: UnisexMoth
+#      Futanari: UnisexMoth # Lust edit - сохраняем общий набор звуков
+#      Unsexed: UnisexMoth
+  # lust-archived-end
   - type: BodyEmotes
     soundsId: MothBodyEmotes
   - type: MovementSpeedModifier
@@ -196,11 +199,8 @@
     damage:
       types:
         Heat: 2.5 # moths burn more easily
-  - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 46
   - type: TemperatureDamage # Moths hate the heat and thrive in the cold.
-    heatDamageThreshold: 320
+    heatDamageThreshold: 314.15
     coldDamageThreshold: 230
     coldDamage:
       types:
@@ -223,7 +223,7 @@
   # Lust end
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganMoth
   abstract: true
   suffix: Moth

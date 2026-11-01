@@ -6,8 +6,6 @@
   # Lust-Start
   speciesBlacklist:
   - Vox
-  - Felinid
-  - Resomi
   # Lust-End
   requirements:
     # Lust-edit-start
@@ -29,7 +27,6 @@
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos
-  displayWeight: 60
   alternativeTitles:
   - job-alt-title-training-officer
   - job-alt-title-senior-officer

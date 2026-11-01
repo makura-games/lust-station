@@ -207,9 +207,11 @@
         - "norepinephricacid-effect-eyelids"
         probability: 0.35
       - !type:ResetNarcolepsy
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: -1
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -1
       - !type:ModifyBleed
         amount: 0.5
@@ -240,7 +242,8 @@
   - !type:PlantAdjustNutrition
     amount: -2
   - !type:PlantMutateChemicals
-    randomPickBotanyReagent: EvilRandomFillSolution
+    randomChemTables:
+    - EvilRandomFillSolution
   reactiveEffects:
     Acidic:
       methods: [ Touch ]
