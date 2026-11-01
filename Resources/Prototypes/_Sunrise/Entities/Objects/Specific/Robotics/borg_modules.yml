@@ -285,6 +285,14 @@
     - item: CrowbarBorg
     - item: FireExtinguisherBorg
     - item: HypoBorgStandard
+    # Lust-Edit-Start
+    - hand:
+        emptyRepresentative: ClothingHeadHatBeret
+        emptyLabel: borg-slot-heat-empty
+        whitelist:
+          tags:
+          - WhitelistChameleon
+    # Lust-Edit-End
 
 - type: entity
   id: BorgERTModuleStandard
