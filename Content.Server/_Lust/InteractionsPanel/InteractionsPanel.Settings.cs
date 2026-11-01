@@ -27,5 +27,6 @@ public partial class InteractionsPanel
         ent.Comp.LockErpInteractions = args.Locked;
 
         Dirty(ent.Owner, ent.Comp);
+        UpdateUIForClothingChange(ent.Owner);
     }
 }
