@@ -3,6 +3,7 @@ using Content.Server.VendingMachines;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.VendingMachines;
 using Robust.Shared.Random;
+using Content.Shared.VendingMachines.Components;
 
 namespace Content.Server.StationEvents.Events;
 

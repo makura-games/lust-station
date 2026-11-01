@@ -41,7 +41,7 @@ public sealed partial class SuitSensorSystem : SharedSuitSensorSystem
             
             // Lust-Start
                 if (sensor.User is { } user)
-                _crewMonitoringMalf.ApplySpoof(user, status);
+                _crewMonitoringMalf.ApplySpoof(user, status.Value);
             // Lust-End
 
             //Retrieve active server address if the sensor isn't connected to a server
