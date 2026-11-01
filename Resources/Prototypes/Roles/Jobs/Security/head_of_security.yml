@@ -50,8 +50,6 @@
       - type: CommandStaff
   speciesBlacklist:
   - Vox # Sunrise-Edit
-  - Resomi # Lust-Edit
-  - Felinid # Lust-Edit
 
 - type: startingGear
   id: HoSGear
