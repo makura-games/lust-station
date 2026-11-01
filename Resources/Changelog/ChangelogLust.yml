@@ -1541,3 +1541,130 @@
     message: Исправление возможности стрельбы, находясь внутри меха.
   id: 340
   url: https://github.com/makura-games/lust-station/pull/633
+- author: Den_Gor
+  time: '2026-10-14T08:39:04.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Кнопки «Понюхать» и «Смыть запахи» теперь появляются в меню ПКМ сразу, без задержки
+  - type: Tweak
+    message: Временные запахи ран, яда, крови, возбуждения и оргазма держатся дольше
+  - type: Tweak
+    message: Запах пороха от боевых гранат держится долго, а от небоевых выветривается за пару минуты
+  - type: Tweak
+    message: Мыло маскирует базовый запах на 15 минут
+  - type: Add
+    message: Админ-призраки теперь тоже умеют нюхать
+  id: 341
+  url: https://github.com/makura-games/lust-station/pull/635
+- author: xaoc
+  time: '2026-10-14T18:13:46.0000000+00:00'
+  changes:
+  - type: Add
+    message: Система слепоты в шкафах и ящиках
+  id: 342
+  url: https://github.com/makura-games/lust-station/pull/644
+  media:
+  - url: https://github.com/user-attachments/assets/7f73a3c7-cda6-424b-b89e-2a95a5036f57
+- author: Matizze
+  time: '2026-10-14T18:16:14.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: В ID карту офицера ИСН добавлен юридический доступ.
+  - type: Remove
+    message: Новые роли ЦК временно отключены.
+  - type: Remove
+    message: Убрана возможность окрашивать шлюзы при помощи баллончиков с краской.
+  - type: Add
+    message: ТеатроШкаф, ВодаМат и ОдеждоМат незначительно пополнились ассортиментом.
+  - type: Tweak
+    message: Стоимость пополнения посудомата снижена с 2000 до 800.
+  - type: Tweak
+    message: Стоимость пополнения островка соусов увеличина с 300 до 500.
+  - type: Tweak
+    message: Теперь в взломанном островке соусов на одну солонку и перечницу больше.
+  - type: Add
+    message: Добавлены рецепты для новых наборов и мазей. Создать их можно в мед-о-мате.
+  - type: Tweak
+    message: Фелиниды теперь могут занимать роли бригмедика, пилота и детектива.
+  - type: Tweak
+    message: К сожалению резоми постигла участь фелинидов.
+  id: 343
+  url: https://github.com/makura-games/lust-station/pull/639
+- author: dan4ikk3
+  time: '2026-10-14T21:44:06.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлен поиск по IC, OCC и должности в манифесте после конца раунда
+  id: 344
+  url: https://github.com/makura-games/lust-station/pull/640
+- author: Matizze & OVI
+  time: '2026-10-16T02:03:26.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавлена плюшевая игрушка Арианны Айр'нии-Вульфовны.
+  id: 345
+  url: https://github.com/makura-games/lust-station/pull/636
+- author: 4_ydo
+  time: '2026-10-18T21:33:19.0000000+00:00'
+  changes:
+  - type: Add
+    message: ивент на радиацию в коридорах, ивент на облучение случайных предметов, ивент на появление голокарпов
+  id: 346
+  url: https://github.com/makura-games/lust-station/pull/629
+- author: Matizze
+  time: '2026-10-18T21:31:50.0000000+00:00'
+  changes:
+  - type: Add
+    message: В коробку с платами медицинского отдела(которая лежит у СМО) добавлена плата мед-о-мата.
+  - type: Tweak
+    message: Изменено содержание НаноМедаСБ. Количество наборов от ушбов с бруизином/лацеринолом/пунктуразом снижено до 1 штуки. Количество красной и синей мази снижено до 1 штуки. Количество стандартных наборов от ушибов и мазей увеличено на 2 штуки.
+  - type: Tweak
+    message: Изменено содержание НаноМеда. Количество наборов от ушибов и мазей увеличено на 1 штуку.
+  - type: Tweak
+    message: Рецепт для создания красной и синей мази изменён. Теперь сверху требуется 20ед дермалина.
+  id: 347
+  url: https://github.com/makura-games/lust-station/pull/662
+- author: Matizze
+  time: '2026-10-18T21:32:50.0000000+00:00'
+  changes:
+  - type: Add
+    message: Роль офицера ИСН введена в игру.
+  - type: Add
+    message: В лоадаут офицера ИСН добавлен станнер-пулемёт.
+  id: 348
+  url: https://github.com/makura-games/lust-station/pull/663
+- author: Den_Gor
+  time: '2026-10-19T14:14:40.0000000+00:00'
+  changes:
+  - type: Add
+    message: Принтер документов теперь может заклинить при печати и копировании — вместо документа он выдаёт мятую бумагу.
+  - type: Add
+    message: Заклинивший принтер можно починить, ударив по нему.
+  id: 349
+  url: https://github.com/makura-games/lust-station/pull/634
+  media:
+  - url: https://github.com/user-attachments/assets/b09ed946-d9c3-48fd-9eff-3a36f6cf4a3a
+    description: image
+- author: Den_Gor
+  time: '2026-10-29T07:15:36.0000000+00:00'
+  changes:
+  - type: Add
+    message: Фторсурфактант теперь выступает катализатором при смешивании с фентанилом, перерабатывая препарат в газ аммиака.
+  - type: Tweak
+    message: Порог заражения зомби-вирусом от фентанила повышен с 15 до 25 единиц в крови.
+  id: 350
+  url: https://github.com/makura-games/lust-station/pull/666
+- author: Den_Gor
+  time: '2026-10-29T09:24:30.0000000+00:00'
+  changes:
+  - type: Add
+    message: Добавил больше звуков в интерактивную панель для ваших кастомных эмоутов!
+  id: 351
+  url: https://github.com/makura-games/lust-station/pull/670
+- author: Den_Gor
+  time: '2026-10-31T18:57:58.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: Квилоу снова разрешило филинидам и резоми работать в СБ
+  id: 352
+  url: https://github.com/makura-games/lust-station/pull/680

@@ -18,3 +18,16 @@
       amount: 2
   products:
     LustFentamyl: 4
+
+- type: reaction
+  id: LustFentamylFluorosurfactant
+  impact: Medium
+  reactants:
+    LustFentamyl:
+      amount: 1
+    Fluorosurfactant:
+      amount: 1
+      catalyst: true
+  effects:
+  - !type:CreateGas
+    gas: Ammonia

@@ -18,7 +18,7 @@
 #    role: JobLustCentCommIntern
 #    time: 12h
   # Lust-End
-  weight: 50 # Lust-Edit
+  # weight: 50 # Lust-Edit OBSOLETTE
   setPreference: true
   startingGear: CentCommOperatorGearQillu # Lust-Edit
   icon: "JobIconNanotrasen"

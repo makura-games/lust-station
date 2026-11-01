@@ -21,7 +21,7 @@
     FoodPlatePlastic: 10
     FoodPlateSmallPlastic: 10
   contrabandInventory:
-    FoodShakerSalt: 1
-    FoodShakerPepper: 1
+    FoodShakerSalt: 2 # Lust-Edit
+    FoodShakerPepper: 2 # Lust-Edit
     FoodCondimentBottleKetchup: 1
     ReagentContainerMayo: 1

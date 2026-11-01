@@ -14,16 +14,20 @@
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
+        - type: SpawnGridAndDockToStation
+          grids:
+          - gridPath: /Maps/_Sunrise/Shuttles/DSO/Other/gunship.yml
+            priorityTag: DockSecurity          
         - type: StationJobs
           availableJobs:
               #centcom
             CentCommOperator: [ 1, 2 ]
             BlueShieldOperative: [1, 2]
             # Lust-Start
-            LustCentCommInspector: [ 1, 2 ]
-            LustCentCommChiefOfStaff: [ 1, 1 ]
-            LustCentCommIntern: [ 1, 2 ]
-            LustCentCommIDOperator: [ 1, 2 ]
-            LustCentCommSpecOpsOperator: [ 1, 1 ]
-            LustCentCommMaid: [ 1, 1 ]
+            # LustCentCommInspector: [ 1, 2 ]
+            # LustCentCommChiefOfStaff: [ 1, 1 ]
+            # LustCentCommIntern: [ 1, 2 ]
+            # LustCentCommIDOperator: [ 1, 2 ]
+            # LustCentCommSpecOpsOperator: [ 1, 1 ]
+            # LustCentCommMaid: [ 1, 1 ]
             # Lust-End

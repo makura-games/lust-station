@@ -35,9 +35,7 @@
   description: Keeps the bad out and keeps the good in.
   suffix: Arrows
   components:
-  - type: Tag
-    tags:
-      - Wall
+  - type: Wall
   - type: Sprite
     sprite: Structures/Walls/shuttle.rsi
     color: "#505050"
@@ -78,9 +76,7 @@
   description: Keeps the bad out and keeps the good in.
   suffix: Arrows, Diagonal
   components:
-  - type: Tag
-    tags:
-      - Wall
+  - type: Wall
   - type: Sprite
     color: "#505050"
   - type: Injurable
@@ -217,7 +213,7 @@
 # Раздвижное окно
 
 - type: entity
-  parent: WindoorSecureSecurityLocked
+  parent: WindoorSecurityLocked
   id: WindoorMTOLocked
   suffix: Arrows
   #name: армированное раздвижное окно
