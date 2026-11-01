@@ -1661,3 +1661,10 @@
     message: Добавил больше звуков в интерактивную панель для ваших кастомных эмоутов!
   id: 351
   url: https://github.com/makura-games/lust-station/pull/670
+- author: Den_Gor
+  time: '2026-10-31T18:57:58.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: Квилоу снова разрешило филинидам и резоми работать в СБ
+  id: 352
+  url: https://github.com/makura-games/lust-station/pull/680
