@@ -155,6 +155,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         var expand = HideTopPanelCheckBox.Pressed;
         SetEmoteVisibility(emoteVisible);
         SetExpanded(expand);
+        // Lust-Start
+        // Отправляем настройку запрета ERP на сервер.
+        ApplyErpLockSetting();
+        // Lust-End
     }
 
     private void OnSearchTextChanged(LineEdit.LineEditEventArgs args)
@@ -174,6 +178,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
         UpdateButtonsState();
         UpdateLoveProgress();
+        // Lust-Start
+        // Читаем доступность настройки и её сетевое значение.
+        UpdateErpLockSetting();
+        // Lust-End
     }
 
     private void UpdateLoveProgress()
