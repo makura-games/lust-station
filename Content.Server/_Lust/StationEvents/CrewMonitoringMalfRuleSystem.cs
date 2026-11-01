@@ -46,7 +46,7 @@ public sealed class CrewMonitoringMalfRuleSystem
         var candidates = new List<EntityUid>();
 
         // Запрос перебирает только сущности, имеющие одновременно:
-        // ActorComponent     — управление подключённым игроком;
+        // ActorComponent  — управление подключённым игроком;
         // MobStateComponent  — состояние персонажа;
         // TransformComponent — положение и принадлежность к миру.
 
