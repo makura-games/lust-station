@@ -24,6 +24,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Inventory;
+using Content.Shared._Lust.InteractionsPanel; // Lust-Edit
 
 namespace Content.Server._Sunrise.InteractionsPanel;
 
@@ -43,6 +44,10 @@ public partial class InteractionsPanel
             {
                 subs.Event<InteractionMessage>(OnInteractionMessageReceived);
                 subs.Event<RequestUndressMessage>(OnUndressMessageReceived);
+                // Lust-Start
+                // Принимаем изменение галочки запрета ERP-взаимодействий.
+                subs.Event<SetErpInteractionLockMessage>(OnSetErpInteractionLock);
+                // Lust-End
             });
 
         SubscribeLocalEvent<InteractionsComponent, GetVerbsEvent<AlternativeVerb>>(AddInteractionsVerb);
@@ -206,12 +211,29 @@ public partial class InteractionsPanel
 
         if (args is { IsCustom: true, CustomData: not null })
         {
+            // Lust-Start
+            // У кастомных действий нет проверяемого списка зон.
+            // Блокируем их при «Без ERP» или включённой галочке
+            // у цели со статусом «Неполное ERP».
+            if (HasTargetErpLock(ent.Owner, target.Value))
+                return;
+            // Lust-End
             HandleCustomInteraction(ent.Owner, target.Value, args.InteractionId, args.CustomData, userSession, targetSession, targetIsPlayer);
             return;
         }
 
         if (!ProtoMan.TryIndex<InteractionPrototype>(args.InteractionId, out var interactionPrototype))
             return;
+            
+        // Lust-Start
+        // Проверяем запрет зон до выполнения действия:
+        // отправки сообщений, звуков и применения эффектов.
+        if (IsInteractionBlockedByZones(
+                ent.Owner, target.Value, interactionPrototype))
+        {
+            return;
+        }
+        // Lust-End    
 
         if (!CheckAllAppearConditions(interactionPrototype, ent.Owner, target.Value))
             return;

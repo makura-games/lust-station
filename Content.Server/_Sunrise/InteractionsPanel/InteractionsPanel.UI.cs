@@ -93,6 +93,11 @@ public partial class InteractionsPanel
 
         foreach (var interaction in allInteractions)
         {
+            // Lust-Start
+            // Не выдаём клиенту действия с запрещёнными зонами цели.
+            if (IsInteractionBlockedByZones(user, target, interaction))
+                continue;
+            // Lust-End
 
             if (interaction.AppearConditions.Count == 0)
             {
