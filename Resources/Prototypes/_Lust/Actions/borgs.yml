@@ -6,10 +6,11 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: _Lust/Interface/Actions/energy_recover.rsi
-      state: energy_recover
     useDelay: 0.5
+  - type: Sprite
+    sprite: _Lust/Interface/Actions/energy_recover.rsi
+    layers:
+    - state: energy_recover
   - type: InstantAction
     event: !type:BorgToggleRestActionEvent
 
@@ -21,9 +22,10 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: Effects/hearts.rsi
-      state: hearts
     useDelay: 0.5
+  - type: Sprite
+    sprite: Effects/hearts.rsi
+    layers:
+    - state: hearts
   - type: InstantAction
     event: !type:BorgCycleSexActionEvent
