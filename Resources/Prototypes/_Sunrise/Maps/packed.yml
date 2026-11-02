@@ -15,24 +15,9 @@
             prefixCreator: 'TG'
         - type: SpawnGridAndDockToStation
           grids:
-          # Lust-Start
-          - gridPaths:
-            - /Maps/_Sunrise/Shuttles/Salvage/bison.yml # Кабан
-            - /Maps/_Sunrise/Shuttles/Salvage/asteroidcracker.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/chisel.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/mining.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/nomad.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/oredozer.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/pickaxe.yml
-            - /Maps/_Sunrise/Shuttles/Salvage/siera.yml
-            # Lust-End
+          - gridPath: /Maps/_Sunrise/Shuttles/Salvage/mining.yml
             priorityTag: DockMining
-          # Lust-Start
-          - gridPaths:
-            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
-            - /Maps/_Sunrise/Shuttles/Security/security.yml
-            # Lust-End
+          - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
             priorityTag: DockSecurity
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency.yml
@@ -100,6 +85,7 @@
             #law
             IAA: [ 1, 1 ]
             Lawyer: [ 2, 2 ]
+            NtrOfficer: [1, 1]
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]
@@ -122,7 +108,6 @@
           - MiningOutpost
           - Tesla
           - XenobiologyRepair
-          - VirusologyAmbusol
           - Containment
           - WeaponsSecurity
           - MaintsRepair

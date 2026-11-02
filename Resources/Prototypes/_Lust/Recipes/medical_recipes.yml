@@ -71,6 +71,7 @@
   solids:
     Ointment: 10
   reagents:
+    Dermaline: 20
     Leporazine: 20
   recipeType: MedicalAssembler
 
@@ -84,5 +85,6 @@
   solids:
     Ointment: 10
   reagents:
+    Dermaline: 20
     Pyrazine: 20
   recipeType: MedicalAssembler

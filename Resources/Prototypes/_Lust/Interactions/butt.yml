@@ -43,7 +43,7 @@
   - "%user увлеченно покрывает поцелуями попку %target"
   - "%user сжимает и расцеловывает попку %target"
   interactionSounds:
-  - ALotOfKisses
+  - lustALotOfKisses
   loveUser: 2
   loveTarget: 3
   cooldown: 3
@@ -121,10 +121,10 @@
   - "%user трахает упругие булочки %target своим членом"
   - "%user сжимая попку %target, трахает её между булочек"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 7
   loveTarget: 3
   cooldown: 3
@@ -153,9 +153,9 @@
   - "%user замахиваясь, с силой выпарывает %target, делая удар за ударом по телу"
   - "%user выпарывает %target, оставляя множество румянцев на теле"
   interactionSounds:
-  - Whip1
-  - Whip2
-  - Whip3
+  - lustWhip1
+  - lustWhip2
+  - lustWhip3
   loveUser: 1
   loveTarget: 5
   cooldown: 3

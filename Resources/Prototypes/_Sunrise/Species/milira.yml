@@ -8,6 +8,14 @@
   - MiliraNormal
   dollPrototype: MobMiliraDummy
   skinColoration: MiliraLightTones
+  defaultSoundsBySex:
+  - MaleHuman
+  - FemaleHuman
+  - MaleHuman
+  - FemaleHuman # Lust-Edit
+  voices:
+  - MaleHuman
+  - FemaleHuman
   youngAge: 18
   oldAge: 100
   maxAge: 300
