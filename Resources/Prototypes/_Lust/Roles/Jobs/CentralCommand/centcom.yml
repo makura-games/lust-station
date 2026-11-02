@@ -35,7 +35,6 @@
 #  - !type:RoleTimeRequirement
 #    role: JobLustCentCommIntern
 #    time: 12h
-  weight: 30
   setPreference: true
   startingGear: CentCommOperatorGearQillu
   icon: "JobIconNanotrasen"
@@ -64,7 +63,6 @@
   - !type:DiscordRoleRequirement
   - !type:OverallPlaytimeRequirement
     time: 10h
-  weight: 60
   setPreference: true
   startingGear: CentCommOperatorGearQillu
   icon: "JobIconNanotrasen"
@@ -99,7 +97,6 @@
 #  - !type:DepartmentTimeRequirement
 #    department: Law
 #    time: 10h
-  weight: 10
   setPreference: true
   startingGear: CentCommOperatorGearQillu
   icon: "JobIconNanotrasen"
@@ -129,7 +126,6 @@
   - !type:DiscordRoleRequirement
   - !type:OverallPlaytimeRequirement
     time: 10h
-  weight: 70
   setPreference: true
   startingGear: CentCommOperatorGearQillu
   icon: "JobIconNanotrasen"
@@ -165,7 +161,6 @@
 #  - !type:RoleTimeRequirement
 #    role: JobLustCentCommIntern
 #    time: 12h
-  weight: 40
   setPreference: true
   startingGear: LustCentCommSpecOpsOperatorGearQillu
   icon: "JobIconNanotrasen"
@@ -197,7 +192,6 @@
   - !type:RoleTimeRequirement
     role: JobComMaid
     time: 3h
-  weight: 100
   setPreference: true
   startingGear: ComMaidGear
   icon: JobIconComMaid

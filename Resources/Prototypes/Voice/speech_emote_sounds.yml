@@ -1,6 +1,7 @@
 # species
 - type: emoteSounds
   id: MaleHuman
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   params:
     variation: 0.125
   sounds:
@@ -53,6 +54,7 @@
 
 - type: emoteSounds
   id: FemaleHuman
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   params:
     variation: 0.1
   sounds:
@@ -110,6 +112,7 @@
   # Sunrise-start
   parent: MaleHuman
   # Sunrise-end
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   params:
     variation: 0.125
   sounds:
@@ -147,6 +150,7 @@
   # Sunrise-start
   parent: FemaleHuman
   # Sunrise-end
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   params:
     variation: 0.125
   sounds:
@@ -181,6 +185,7 @@
 
 - type: emoteSounds
   id: MaleSlime
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   sounds:
     Squish:
       collection: Squishes
@@ -235,6 +240,7 @@
 
 - type: emoteSounds
   id: FemaleSlime
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   sounds:
     Squish:
       collection: Squishes
@@ -289,6 +295,7 @@
 
 - type: emoteSounds
   id: UnisexVox
+  voiceSelectorName: humanoid-profile-editor-voice-neutral
   sounds:
     Scream:
       path: /Audio/Voice/Vox/shriek1.ogg
@@ -328,6 +335,7 @@
 
 - type: emoteSounds
   id: UnisexDiona
+  voiceSelectorName: humanoid-profile-editor-voice-neutral
   sounds:
     Scream:
       path: /Audio/Voice/Diona/diona_scream.ogg
@@ -358,6 +366,7 @@
 
 - type: emoteSounds
   id: UnisexArachnid
+  voiceSelectorName: humanoid-profile-editor-voice-neutral
   params:
     variation: 0.125
   sounds:
@@ -400,6 +409,7 @@
 
 - type: emoteSounds
   id: UnisexDwarf
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   sounds:
     Scream:
       collection: MaleScreams
@@ -453,6 +463,7 @@
 
 - type: emoteSounds
   id: FemaleDwarf
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   sounds:
     Scream:
       collection: FemaleScreams
@@ -506,6 +517,7 @@
 
 - type: emoteSounds
   id: UnisexMoth
+  voiceSelectorName: humanoid-profile-editor-voice-neutral
   params:
     variation: 0.125
   sounds:
@@ -618,6 +630,7 @@
   # Sunrise-start
   parent: MaleHuman
   # Sunrise-end
+  voiceSelectorName: humanoid-profile-editor-voice-masculine
   params:
     variation: 0.125
   sounds:
@@ -669,6 +682,7 @@
   # Sunrise-start
   parent: FemaleHuman
   # Sunrise-end
+  voiceSelectorName: humanoid-profile-editor-voice-feminine
   params:
     variation: 0.125
   sounds:
@@ -850,6 +864,20 @@
     path: /Audio/Animals/goat_bah.ogg
     params:
       variation: 0.125
+
+- type: emoteSounds
+  id: Sheep
+  sound:
+    collection: Sheep
+    params:
+      variation: 0.05
+
+- type: emoteSounds
+  id: SheepSpace
+  sound:
+    collection: SheepSpace
+    params:
+      variation: 0.05
 
 - type: emoteSounds
   id: Scurret

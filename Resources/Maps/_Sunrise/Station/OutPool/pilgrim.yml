@@ -188034,7 +188034,6 @@ entities:
       dnas: []
       fibers: []
       fingerprints: []
-    - type: ScaleSprite
     - type: InsideEntityStorage
       storage: 9
 - proto: LockboxCaptain
@@ -191716,14 +191715,14 @@ entities:
       content: >+
         [color=#FF4500]░░░░███░░░░██░░░░[/color]
 
-        [color=#FF4500]░░░░████░░░██░░░░[/color]   [head=3]Nakamura Engineering[/head]          
+        [color=#FF4500]░░░░████░░░██░░░░[/color]   [head=3]Nakamura Engineering[/head]
 
         [color=#FF4500]░░░░██░██░░██░░░░[/color]
 
         [color=#FF4500]░░░░██░░██░██░░░░[/color]
 
         [color=#FF4500]░░░░██░░░████░░░░[/color]
-         [head=3]КОНФИДЕНЦИАЛЬНО: ДЛЯ ВНУТРЕННЕГО ПОЛЬЗОВАНИЯ[/head] 
+         [head=3]КОНФИДЕНЦИАЛЬНО: ДЛЯ ВНУТРЕННЕГО ПОЛЬЗОВАНИЯ[/head]
         [bold]Уровень доступа: «Уровень А»
 
         Идентификатор отчёта: NKMR-ENG-LV3052-INC-0892
@@ -191736,7 +191735,7 @@ entities:
 
         ==============================================
 
-        [head=3]ОТЧЁТ О ПРОИСШЕСТВИИ НА ОБЪЕКТЕ  
+        [head=3]ОТЧЁТ О ПРОИСШЕСТВИИ НА ОБЪЕКТЕ
 
         «LV-3052»[/head]
 
@@ -191811,9 +191810,9 @@ entities:
       content: >-
         [color=#FF4500]░░░░███░░░░██░░░░[/color]
 
-        [color=#FF4500]░░░░████░░░██░░░░[/color]   [head=3]Nakamura Engineering[/head]          
+        [color=#FF4500]░░░░████░░░██░░░░[/color]   [head=3]Nakamura Engineering[/head]
 
-        [color=#FF4500]░░░░██░██░░██░░░░[/color]               
+        [color=#FF4500]░░░░██░██░░██░░░░[/color]
 
         [color=#FF4500]░░░░██░░██░██░░░░[/color]
 
