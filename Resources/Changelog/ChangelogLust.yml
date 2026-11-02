@@ -1684,3 +1684,10 @@
       рисовка заячих ушей стала лучше'
   id: 354
   url: https://github.com/makura-games/lust-station/pull/674
+- author: 4_ydo
+  time: '2026-11-02T14:58:42.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: раса миллир теперь не имеет ограничений когда им распустить крылья
+  id: 355
+  url: https://github.com/makura-games/lust-station/pull/683
