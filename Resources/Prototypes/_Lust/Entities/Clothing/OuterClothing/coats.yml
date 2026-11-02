@@ -60,3 +60,19 @@
     - ClothMade
     - NudeBottom
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingOuterArmorUniformsTSFBlackArmor
+  name: Uniforms TSF
+  description: Representatives TSF.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/OuterClothing/Armor/TSF_uniforms.rsi
+  - type: Clothing
+    sprite: _Lust/Clothing/OuterClothing/Armor/TSF_uniforms.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - NudeBottom
+    - WhitelistChameleon
