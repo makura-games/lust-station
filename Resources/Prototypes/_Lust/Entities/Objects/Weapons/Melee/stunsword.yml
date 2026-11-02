@@ -9,8 +9,6 @@
     layers:
     - state: stunsword_off
       map: [ "enum.ToggleableVisuals.Layer" ]
-  - type: Stunbaton
-    energyPerUse: 50
   - type: ItemToggle
     predictable: false
     soundActivate:
@@ -37,6 +35,9 @@
     bluntStaminaDamageFactor: 2.0
     angle: 60
     animation: WeaponArcThrust
+  - type: StaminaDamageOnHitRequiresToggle
+  - type: StaminaDamageOnHitRequiresCharge
+    requiredCharge: 40
   - type: StaminaDamageOnHit
     damage: 35
     sound: /Audio/Weapons/egloves.ogg
