@@ -184,7 +184,7 @@
   footstepCollection:
     collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -6
+      volume: -6 # Lust-Edit
 
   addComponents:
   - type: TTS
