@@ -1668,3 +1668,10 @@
     message: Квилоу снова разрешило филинидам и резоми работать в СБ
   id: 352
   url: https://github.com/makura-games/lust-station/pull/680
+- author: KinliOrey
+  time: '2026-11-02T13:58:41.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Монитор контроля состояния у ОСЩ и Бригмедика более не реагируют сигналом тревоги на датчики, которые не отображают в своем интерфейсе
+  id: 353
+  url: https://github.com/makura-games/lust-station/pull/682
