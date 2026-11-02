@@ -85,7 +85,7 @@
   - type: VentCrittersRule
     entries:
     - id: RadiationTemporary
-      prob: 1.0
+      prob: 0.7
 
 - type: entity
   id: LustHoloCarpSpawn
