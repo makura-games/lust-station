@@ -137,24 +137,20 @@ public sealed partial class LockSystem : EntitySystem
     /// <param name="lockComp"></param>
     /// <param name="skipDoAfter">If true, skip the required do-after if one is configured.</param>
     /// <returns>If locking was successful</returns>
-    public bool TryLock(EntityUid uid, EntityUid user, LockComponent? lockComp = null, bool skipDoAfter = false, bool skipChecks = false) // Lust-Edit борги могут открывать себя
+    public bool TryLock(EntityUid uid, EntityUid user, LockComponent? lockComp = null, bool skipDoAfter = false)
     {
         if (!Resolve(uid, ref lockComp))
             return false;
 
-        // Lust-Edit-Start
-        if (!skipChecks)
-        {
-            if (!CanToggleLock(uid, user, quiet: false))
-                return false;
+        if (!CanToggleLock(uid, user, quiet: false))
+            return false;
 
-            if (lockComp.MindShieldLock && !HasMindshield(uid, user, quiet: false))
-                return false;
+        if (lockComp.MindShieldLock && !HasMindshield(uid, user, quiet: false))
+            return false;
 
-            if (lockComp.UseAccess && !HasUserAccess(uid, user, false))
-                return false;
-        }
-        // Lust-Edit-End
+        if (lockComp.UseAccess && !HasUserAccess(uid, user, false))
+            return false;
+
         if (!skipDoAfter && lockComp.LockTime != TimeSpan.Zero)
         {
             return _doAfter.TryStartDoAfter(
@@ -243,24 +239,19 @@ public sealed partial class LockSystem : EntitySystem
     /// <param name="lockComp"></param>
     /// <param name="skipDoAfter">If true, skip the required do-after if one is configured.</param>
     /// <returns>If locking was successful</returns>
-    public bool TryUnlock(EntityUid uid, EntityUid user, LockComponent? lockComp = null, bool skipDoAfter = false, bool skipChecks = false) // Lust-Edit борги могут открывать себя
+    public bool TryUnlock(EntityUid uid, EntityUid user, LockComponent? lockComp = null, bool skipDoAfter = false)
     {
         if (!Resolve(uid, ref lockComp))
             return false;
 
-        // Lust-Edit-Start
-        if (!skipChecks)
-        {
-            if (!CanToggleLock(uid, user, quiet: false))
-                return false;
+        if (!CanToggleLock(uid, user, quiet: false))
+            return false;
 
-            if (lockComp.MindShieldLock && !HasMindshield(uid, user, quiet: false))
-                return false;
+        if (lockComp.MindShieldLock && !HasMindshield(uid, user, quiet: false))
+            return false;
 
-            if (lockComp.UseAccess && !HasUserAccess(uid, user, false))
-                return false;
-        }
-        // Lust-Edit-End
+        if (lockComp.UseAccess && !HasUserAccess(uid, user, false))
+            return false;
 
         if (!skipDoAfter && lockComp.UnlockTime != TimeSpan.Zero)
         {
@@ -386,14 +377,14 @@ public sealed partial class LockSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || !component.ShowLockVerbs)
             return;
 
-        var isSelf = args.User == uid;
+        var isSelf = args.User == uid; // Lust-Add
 
         AlternativeVerb verb = new()
         {
             Disabled = !isSelf && !CanToggleLock(uid, args.User), // Lust-Edit проверяем борга
             Act = component.Locked
-                ? () => TryUnlock(uid, args.User, component, skipChecks: isSelf) // Lust-Edit
-                : () => TryLock(uid, args.User, component, skipChecks: isSelf), // Lust-Edit
+                ? () => LustTryUnlock(uid, args.User, component, skipChecks: isSelf) // Lust-Edit
+                : () => LustTryLock(uid, args.User, component, skipChecks: isSelf), // Lust-Edit
             Text = Loc.GetString(component.Locked ? "toggle-lock-verb-unlock" : "toggle-lock-verb-lock"),
             Icon = !component.Locked
                 ? new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png"))
