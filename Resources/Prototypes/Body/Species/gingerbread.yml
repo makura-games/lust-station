@@ -77,9 +77,13 @@
           - MobLayer
   - type: TypingIndicator
     proto: gingerbread
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustGingerbread
+  # Lust end
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganGingerbread
   abstract: true
   suffix: gingerbread

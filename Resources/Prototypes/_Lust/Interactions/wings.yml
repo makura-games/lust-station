@@ -46,12 +46,12 @@
   - "%user ласково целует крылья %target"
   - "%user с теплотой прижимается губами к крыльям %target"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 2
   loveTarget: 4
   cooldown: 3
@@ -213,10 +213,10 @@
   - "%user игриво поглаживает крылом член %target"
   - "%user сжимает и трахает крылом член %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 4
   loveTarget: 7
   cooldown: 3
@@ -284,10 +284,10 @@
   - "%user сжимая крылья %target, натягивает их на себя и трахает её вагину"
   - "%user на всю длину входит членом в вагину %target, прижимая её за крылья"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 10
   loveTarget: 10
   cooldown: 3
@@ -350,10 +350,10 @@
   - "%user стиснув крылья %target, страстно долбит анус своим членом"
   - "%user на всю длину входит членом в анус %target, прижимая крылья"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 10
   loveTarget: 10
   cooldown: 3

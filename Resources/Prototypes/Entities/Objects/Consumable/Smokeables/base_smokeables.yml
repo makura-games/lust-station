@@ -20,6 +20,12 @@
     price: 5
   - type: InjectableSolution
     solution: smokable
+  # Lust edit start
+  - type: ScentEmitter
+    slot: mask
+    scent: LustSmoke
+    duration: 900
+  # Lust edit end
 
 # Base for all cigars and cigarettes.
 - type: entity

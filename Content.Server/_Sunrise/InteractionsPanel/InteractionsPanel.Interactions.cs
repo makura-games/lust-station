@@ -19,6 +19,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
+using Content.Shared._Lust.Smell;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Content.Shared.IdentityManagement;
@@ -209,7 +210,7 @@ public partial class InteractionsPanel
             return;
         }
 
-        if (!_prototypeManager.TryIndex<InteractionPrototype>(args.InteractionId, out var interactionPrototype))
+        if (!ProtoMan.TryIndex<InteractionPrototype>(args.InteractionId, out var interactionPrototype))
             return;
 
         if (!CheckAllAppearConditions(interactionPrototype, ent.Owner, target.Value))
@@ -240,7 +241,7 @@ public partial class InteractionsPanel
         {
             var rngSound = _random.Pick(interactionPrototype.InteractionSounds);
 
-            if (_prototypeManager.TryIndex(rngSound, out var soundProto))
+            if (ProtoMan.TryIndex(rngSound, out var soundProto))
             {
                 _audio.PlayPvs(soundProto.Sound, ent.Owner, AudioParams.Default);
             }
@@ -249,7 +250,7 @@ public partial class InteractionsPanel
         if (interactionPrototype.SpawnsEffect)
         {
             if (interactionPrototype.EntityEffect != null
-                && _prototypeManager.TryIndex(interactionPrototype.EntityEffect.Value, out var effectPrototype))
+                && ProtoMan.TryIndex(interactionPrototype.EntityEffect.Value, out var effectPrototype))
             {
                 if (_random.Prob(interactionPrototype.EffectChance))
                 {
@@ -410,13 +411,13 @@ public partial class InteractionsPanel
             _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, msg, msg, user, false, true, Color.Pink);
         }
 
-        if (!string.IsNullOrEmpty(data.SoundId) && _prototypeManager.TryIndex<InteractionSoundPrototype>(data.SoundId, out var soundProto))
+        if (!string.IsNullOrEmpty(data.SoundId) && ProtoMan.TryIndex<InteractionSoundPrototype>(data.SoundId, out var soundProto))
         {
             _audio.PlayPvs(soundProto.Sound, user, AudioParams.Default);
         }
 
         if (data.SpawnsEffect && !string.IsNullOrEmpty(data.EntityEffectId) &&
-            _prototypeManager.TryIndex<InteractionEntityEffectPrototype>(data.EntityEffectId, out var effectProto))
+            ProtoMan.TryIndex<InteractionEntityEffectPrototype>(data.EntityEffectId, out var effectProto))
         {
             if (_random.Prob(data.EffectChance))
             {
@@ -503,7 +504,12 @@ public partial class InteractionsPanel
 
         if (TryComp<HumanoidProfileComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
             SpawnSemen("Semen", Transform(uid).Coordinates);
-
+        // Lust-Edit-Start
+        RaiseLocalEvent(new OrgasmPerformedEvent
+        {
+            User = uid,
+        });
+        // Lust-Edit-End
         SetCooldown(uid, "orgasm", TimeSpan.FromSeconds(OrgasmCooldownSeconds));
         Dirty(uid, comp);
     }
@@ -530,13 +536,22 @@ public partial class InteractionsPanel
         Dirty(uid, comp);
 
         var ratio = (float)(comp.LoveAmount / comp.MaxLoveAmount).Float();
-
-        if (ratio >= 0.33f && !HasComp<LoveVisionComponent>(uid))
+        // Lust-Edit-Start
+        if (ratio >= 0.33f)
         {
-            var newComp = AddComp<LoveVisionComponent>(uid);
-            newComp.FromLoveSystem = true;
-            Dirty(uid, newComp);
+            if (!HasComp<LoveVisionComponent>(uid))
+            {
+                var newComp = AddComp<LoveVisionComponent>(uid);
+                newComp.FromLoveSystem = true;
+                Dirty(uid, newComp);
+            }
+
+            RaiseLocalEvent(new ArousalStartedEvent
+            {
+                Uid = uid,
+            });
         }
+        // Lust edit end
         else if (ratio < 0.33f && TryComp<LoveVisionComponent>(uid, out var loveVision) && loveVision.FromLoveSystem)
         {
             RemComp<LoveVisionComponent>(uid);

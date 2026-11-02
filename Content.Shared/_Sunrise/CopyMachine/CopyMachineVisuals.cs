@@ -5,5 +5,6 @@ namespace Content.Shared._Sunrise.CopyMachine;
 [Serializable, NetSerializable]
 public enum CopyMachineVisuals : byte
 {
-    IsRunning
+    IsRunning,
+    IsJammed, // Lust-edit
 }

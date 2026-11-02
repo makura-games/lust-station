@@ -19,12 +19,12 @@
   interactionMessages:
   - "%user берет %target за руку и целует в кисть"
   interactionSounds:
-    - Kiss1
-    - Kiss2
-    - Kiss3
-    - Kiss4
-    - Kiss5
-    - Kiss6
+    - lustKiss1
+    - lustKiss2
+    - lustKiss3
+    - lustKiss4
+    - lustKiss5
+    - lustKiss6
   cooldown: 3
 
 - type: interaction
@@ -38,12 +38,12 @@
   interactionMessages:
   - "%user посылает воздушный поцелуй %target"
   interactionSounds:
-    - Kiss1
-    - Kiss2
-    - Kiss3
-    - Kiss4
-    - Kiss5
-    - Kiss6
+    - lustKiss1
+    - lustKiss2
+    - lustKiss3
+    - lustKiss4
+    - lustKiss5
+    - lustKiss6
   cooldown: 3
 
 - type: interaction

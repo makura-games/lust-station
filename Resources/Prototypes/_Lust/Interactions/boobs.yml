@@ -105,7 +105,7 @@
   - "%user увлеченно покрывает поцелуями грудь %target"
   - "%user сжимает и расцеловывает грудь %target"
   interactionSounds:
-  - ALotOfKisses
+  - lustALotOfKisses
   loveUser: 2
   loveTarget: 4
   cooldown: 3
@@ -233,7 +233,7 @@
   interactionSounds:
   - FaceLickDoggyStyleSound1
   - FaceLickDoggyStyleSound2
-  - Kiss1
+  - lustKiss1
   loveUser: 3
   loveTarget: 7
   cooldown: 3
@@ -305,10 +305,10 @@
   - "%user активно трахает членом грудь %target"
   - "%user страстно трахает членом сжатую грудь %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 8
   loveTarget: 3
   spawnsEffect: true

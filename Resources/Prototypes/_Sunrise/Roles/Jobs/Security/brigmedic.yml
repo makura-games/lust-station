@@ -5,7 +5,9 @@
   playTimeTracker: JobBrigmedic
   # Lust-Start
   speciesBlacklist:
-  - Felinid
+  - Vox
+  #- Felinid
+  #- Resomi
   # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
@@ -17,7 +19,6 @@
   startingGear: BrigmedicGear
   icon: "JobIconBrigmedic"
   supervisors: job-supervisors-hos
-  displayWeight: 15
   alternativeTitles:
   - job-alt-title-orderly
   access:

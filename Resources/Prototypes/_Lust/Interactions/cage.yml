@@ -146,12 +146,12 @@
   - "%user чмокает пояс верности %target"
   - "%user страстно целует пояс верности %target, оставляя след помады"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 2
   loveTarget: 4
   cooldown: 3
@@ -232,8 +232,8 @@
   - "%user страстно скользит вагиной вдоль металлических прутьев клетки %target"
   - "%user трётся о клетку %target, тихо постанывая"
   interactionSounds:
-  - Hlup1
-  - Hlup2
+  - lustHlup1
+  - lustHlup2
   loveUser: 6
   loveTarget: 8
   cooldown: 3
@@ -312,7 +312,7 @@
   - "%user отчаянно бренчит своей клеткой, но та не поддаётся"
   - "%user со злостью трясёт клетку — та и не думает сниматься"
   interactionSounds:
-  - FenceRattle1
+  - lustFenceRattle1
   loveUser: 0
   cooldown: 5
 

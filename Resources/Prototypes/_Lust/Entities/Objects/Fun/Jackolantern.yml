@@ -1,0 +1,139 @@
+- type: entity
+  id: PumpkinForHalloween
+  parent: BaseItem
+  name: pumpkin for Halloween
+  description: A traditional spooky decoration.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+    state: PumpkinDecoration1
+  - type: Item
+    size: Normal
+
+- type: entity
+  id: PumpkinDecoration2
+  parent: BaseItem
+  name: pumpkin for Halloween
+  description: A jack o' lantern! Believed to ward off evil spirits.
+  components:
+    - type: Sprite
+      sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+      state: PumpkinDecoration2
+    - type: Item
+      size: Normal
+    - type: Appearance
+    - type: PointLight
+      enabled: true
+      color: "#cc6600"
+      radius: 2.0
+      energy: 4.0
+    - type: StealTarget
+      stealGroup: LAMP
+
+- type: entity
+  id: PumpkinForHalloween2
+  parent: BaseItem
+  name: pumpkin for Halloween
+  description: A traditional spooky decoration.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+    state: PumpkinDecoration3
+  - type: Item
+    size: Normal
+
+- type: entity
+  id: PumpkinForHalloween3
+  parent: BaseItem
+  name: pumpkin for Halloween
+  description: A traditional spooky decoration.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+    state: PumpkinDecoration4
+  - type: Item
+    size: Normal
+
+- type: entity
+  id: PumpkinForHalloween4
+  parent: BaseItem
+  name: pumpkin for Halloween
+  description: A traditional spooky decoration.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+    state: PumpkinDecoration5
+  - type: Item
+    size: Normal
+
+- type: entity
+  id: PumpkinCat
+  parent: BaseItem
+  name: a pumpkin with ears
+  description: A cute little pumpkin with ears! OwO
+  components:
+    - type: Sprite
+      sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+      state: PumpkinCat
+    - type: Item
+      size: Normal
+    - type: Appearance
+    - type: PointLight
+      enabled: true
+      color: "#cc6600"
+      radius: 2.0
+      energy: 4.0
+    - type: StealTarget
+      stealGroup: LAMP
+
+- type: entity
+  id: EeriePumpkinLantern
+  parent: BaseItem
+  name: eerie pumpkin lantern
+  description: A jack o' lantern! Believed to ward off evil spirits.
+  components:
+    - type: Sprite
+      sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+      state: PumpkinJackSpooky
+    - type: Item
+      size: Normal
+    - type: Appearance
+    - type: PointLight
+      enabled: true
+      color: "#cc6600"
+      radius: 2.0
+      energy: 4.0
+    - type: StealTarget
+      stealGroup: LAMP
+
+- type: entity
+  id: PumpkinForHalloween5
+  parent: BaseItem
+  name: pumpkin for Halloween
+  description: A jack o' lantern! Believed to ward off evil spirits.
+  components:
+    - type: Sprite
+      sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+      state: PumpkinManyLarge
+    - type: Item
+      size: Normal
+    - type: Appearance
+    - type: PointLight
+      enabled: true
+      color: "#cc6600"
+      radius: 2.0
+      energy: 4.0
+    - type: StealTarget
+      stealGroup: LAMP
+
+- type: entity
+  id: PumpkinForHalloween6
+  parent: BaseItem
+  name: pumpkin for Halloween
+  description: A traditional spooky decoration.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Fun/pumpkinlamp.rsi
+    state: PumpkinManySmall
+  - type: Item
+    size: Normal

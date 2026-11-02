@@ -6,7 +6,7 @@
   playTimeTracker: JobSecurityOfficer
   # Lust-Start
   speciesBlacklist:
-  - Felinid
+  - Vox
   # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
@@ -15,7 +15,6 @@
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
-  displayWeight: 10
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-law-enforcer

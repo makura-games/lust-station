@@ -5,7 +5,7 @@
   playTimeTracker: JobSecurityCadet
   # Lust-Start
   speciesBlacklist:
-  - Felinid
+  - Vox
   # Lust-End
   requirements:
     - !type:OverallPlaytimeRequirement
@@ -17,7 +17,6 @@
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
-  displayWeight: 0 # Sunrise-Edit
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-security-trainee

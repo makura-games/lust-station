@@ -5,7 +5,9 @@
   playTimeTracker: JobSecurityPilot
   # Lust-Start
   speciesBlacklist:
-  - Felinid
+  - Vox
+  #- Felinid
+  #- Resomi
   # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
@@ -14,7 +16,6 @@
   startingGear: SecurityPilotGear
   icon: JobIconSecurityPilot
   supervisors: job-supervisors-hos
-  displayWeight: 50
   alternativeTitles:
   - job-alt-title-security-aviator
   access:
