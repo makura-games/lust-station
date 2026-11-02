@@ -155,12 +155,6 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.5
     baseSprintSpeed : 5
-  - type: Vocal
-    sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
-    wilhelmProbability: 0.001
   - type: CombatMode
   - type: MeleeWeapon
     soundHit:
