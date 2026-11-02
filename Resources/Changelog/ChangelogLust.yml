@@ -1675,3 +1675,12 @@
     message: Монитор контроля состояния у ОСЩ и Бригмедика более не реагируют сигналом тревоги на датчики, которые не отображают в своем интерфейсе
   id: 353
   url: https://github.com/makura-games/lust-station/pull/682
+- author: 4_нвщ
+  time: '2026-11-02T14:37:53.0000000+00:00'
+  changes:
+  - type: Fix
+    message: 'рад ивент начал бить слабее
+
+      рисовка заячих ушей стала лучше'
+  id: 354
+  url: https://github.com/makura-games/lust-station/pull/674
