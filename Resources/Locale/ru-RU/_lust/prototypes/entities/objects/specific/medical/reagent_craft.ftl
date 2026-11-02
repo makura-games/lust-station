@@ -1,0 +1,16 @@
+ent-LustBlueointment1ReagentCraft = { ent-Blueointment1 }
+    .desc = { ent-Blueointment1.desc }
+ent-LustRedOintment1ReagentCraft = { ent-RedOintment1 }
+    .desc = { ent-RedOintment1.desc }
+ent-LustRedPunctPack1ReagentCraft = { ent-RedPunctPack1 }
+    .desc = { ent-RedPunctPack1.desc }
+ent-LustRedLacePack1ReagentCraft = { ent-RedLacePack1 }
+    .desc = { ent-RedLacePack1.desc }
+ent-LustRedBruizPack1ReagentCraft = { ent-RedBruizPack1 }
+    .desc = { ent-RedBruizPack1.desc }
+reagent-craft-description-blue-ointment = Хорошо лечит: { damage-type-shock }, { damage-type-cold }.
+reagent-craft-description-red-ointment = Хорошо лечит: { damage-type-heat }, { damage-type-cold }, { damage-type-shock }.
+reagent-craft-description-red-punct-pack = Хорошо лечит: { damage-type-piercing }.
+reagent-craft-description-red-lace-pack = Хорошо лечит: { damage-type-slash }.
+reagent-craft-description-red-bruiz-pack = Хорошо лечит: { damage-type-blunt }.
+reagent-craft-condition = Ёмкость в руке: { $amount }ед { $reagent }, без примесей.

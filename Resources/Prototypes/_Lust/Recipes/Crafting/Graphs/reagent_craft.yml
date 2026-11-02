@@ -1,0 +1,67 @@
+# Крафты пропиткой для меню крафта
+- type: constructionGraph
+  id: LustReagentCraft
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: blueOintment
+      completed:
+      - !type:ConsumeReagentCraft
+        stack: Ointment
+        reagent: Leporazine
+        amount: 15
+      steps:
+      - material: Ointment
+        amount: 1
+        doAfter: 3
+    - to: redOintment
+      completed:
+      - !type:ConsumeReagentCraft
+        stack: Ointment
+        reagent: Pyrazine
+        amount: 15
+      steps:
+      - material: Ointment
+        amount: 1
+        doAfter: 3
+    - to: redPunctPack
+      completed:
+      - !type:ConsumeReagentCraft
+        stack: Brutepack
+        reagent: Puncturase
+        amount: 15
+      steps:
+      - material: Brutepack
+        amount: 1
+        doAfter: 3
+    - to: redLacePack
+      completed:
+      - !type:ConsumeReagentCraft
+        stack: Brutepack
+        reagent: Lacerinol
+        amount: 15
+      steps:
+      - material: Brutepack
+        amount: 1
+        doAfter: 3
+    - to: redBruizPack
+      completed:
+      - !type:ConsumeReagentCraft
+        stack: Brutepack
+        reagent: Bruizine
+        amount: 15
+      steps:
+      - material: Brutepack
+        amount: 1
+        doAfter: 3
+  - node: blueOintment
+    entity: LustBlueointment1ReagentCraft
+  - node: redOintment
+    entity: LustRedOintment1ReagentCraft
+  - node: redPunctPack
+    entity: LustRedPunctPack1ReagentCraft
+  - node: redLacePack
+    entity: LustRedLacePack1ReagentCraft
+  - node: redBruizPack
+    entity: LustRedBruizPack1ReagentCraft
