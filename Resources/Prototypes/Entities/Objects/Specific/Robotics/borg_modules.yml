@@ -1491,6 +1491,14 @@
     - state: icon-xenoborg-basic
   - type: ItemBorgModule
     hands:
+    # Lust-Edit-Start
+    - hand:
+        emptyRepresentative: ClothingHeadHatBeret
+        emptyLabel: borg-slot-heat-empty
+        whitelist:
+          tags:
+          - WhitelistChameleon
+    # Lust-Edit-End
     - hand:
         emptyRepresentative: MaterialXenoborgCrystal
         emptyLabel: borg-slot-xenoborg-crystal-empty
