@@ -1,8 +1,17 @@
+# Сбой раздатчиков.
 - type: storytellerMetadata
-  id: LustRadiationOutburst
-  threatType: MajorCalm
-  threatCost: 30
-  minStationStrength: 15
+  id: LustVendingMachineMalfunction
+  threatType: MinorCalm
+  threatCost: 10
+  minStationStrength: 0
+  maxStress: 80
+
+# Ложные показания мониторинга экипажа.
+- type: storytellerMetadata
+  id: LustCrewMonitoringMalf
+  threatType: MinorCalm
+  threatCost: 15
+  minStationStrength: 0
   maxStress: 75
 
 - type: storytellerMetadata
@@ -18,3 +27,10 @@
   threatCost: 45
   minStationStrength: 15
   maxStress: 100
+
+- type: storytellerMetadata
+  id: LustRadiationOutburst
+  threatType: MajorCalm
+  threatCost: 30
+  minStationStrength: 15
+  maxStress: 75
