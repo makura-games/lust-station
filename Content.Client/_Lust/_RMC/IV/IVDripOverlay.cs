@@ -1,4 +1,6 @@
-﻿using Content.Shared._RMC14.Medical.IV;
+﻿using System.Diagnostics;
+using System.Runtime.CompilerServices;
+using Content.Shared._RMC14.Medical.IV;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
@@ -9,6 +11,7 @@ namespace Content.Client._RMC14.Medical.IV;
 public sealed class IVDripOverlay : Overlay
 {
     [Dependency] private readonly IEntityManager _entity = default!;
+    [Dependency] private readonly EyeManager _eyeManager = default!;
 
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowEntities;
 
@@ -19,6 +22,9 @@ public sealed class IVDripOverlay : Overlay
 
     protected override void Draw(in OverlayDrawArgs args)
     {
+        if (args.Viewport.Eye != _eyeManager.CurrentEye)
+            return;
+
         var transformSystem = _entity.System<TransformSystem>();
         var handle = args.WorldHandle;
 

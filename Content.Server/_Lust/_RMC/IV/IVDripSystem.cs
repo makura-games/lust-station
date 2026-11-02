@@ -30,11 +30,14 @@ public sealed class IVDripSystem : SharedIVDripSystem
 
     private readonly List<ProtoId<ReagentPrototype>> _reagentRemovalBuffer = [];
 
+    private EntityQuery<BloodPackComponent> _bloodPackQuery;
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<PortableDialysisComponent, PowerCellChangedEvent>(OnDialysisBatteryChargeChanged);
+
+        _bloodPackQuery = GetEntityQuery<BloodPackComponent>();
     }
 
     private bool TryGetBloodstream(
@@ -74,7 +77,7 @@ public sealed class IVDripSystem : SharedIVDripSystem
                 continue;
 
             if (!InRange(ivId, attachedTo, ivComp.Range))
-                DetachIV((ivId, ivComp), null, true, false);
+                DetachIV((ivId, ivComp), null, true, false); continue;
 
             if (time < ivComp.TransferAt)
                 continue;
@@ -82,7 +85,7 @@ public sealed class IVDripSystem : SharedIVDripSystem
             if (_itemSlots.GetItemOrNull(ivId, ivComp.Slot) is not { } pack)
                 continue;
 
-            if (!TryComp(pack, out BloodPackComponent? packComponent))
+            if (!_bloodPackQuery.TryComp(pack, out var packComponent))
                 continue;
 
             ivComp.TransferAt = time + ivComp.TransferDelay;
@@ -95,12 +98,12 @@ public sealed class IVDripSystem : SharedIVDripSystem
 
             if (ivComp.Injecting)
             {
-               if (attachedStream is { } bloodSolutionEnt &&
+                if (attachedStream is { } bloodSolutionEnt &&
                    bloodSolutionEnt.Comp.Solution.Volume < bloodSolutionEnt.Comp.Solution.MaxVolume)
-               {
-                _solutionContainer.TryTransferSolution(bloodSolutionEnt, packSol, ivComp.TransferAmount);
-                Dirty(packSolEnt.Value);
-               }
+                {
+                    _solutionContainer.TryTransferSolution(bloodSolutionEnt, packSol, ivComp.TransferAmount);
+                    Dirty(packSolEnt.Value);
+                }
             }
             else
             {
@@ -123,7 +126,7 @@ public sealed class IVDripSystem : SharedIVDripSystem
                 continue;
 
             if (!InRange(packId, attachedTo, packComp.Range))
-                DetachPack((packId, packComp), null, true, false);
+                DetachPack((packId, packComp), null, true, false); continue;
 
             if (time < packComp.TransferAt)
                 continue;
@@ -171,10 +174,10 @@ public sealed class IVDripSystem : SharedIVDripSystem
                 continue;
 
             if (!InRange(dialysisId, attachedTo, dialysisComp.Range))
-                DetachDialysis((dialysisId, dialysisComp), null, true, false);
+                DetachDialysis((dialysisId, dialysisComp), null, true, false); continue;
 
             if (!_powerCell.HasActivatableCharge(dialysisId))
-                DetachDialysis((dialysisId, dialysisComp), null, false, false);
+                DetachDialysis((dialysisId, dialysisComp), null, false, false); continue;
 
             if (time < dialysisComp.TransferAt)
                 continue;
@@ -218,7 +221,7 @@ public sealed class IVDripSystem : SharedIVDripSystem
         if (!_powerCell.TryGetBatteryFromSlot(dialysis.Owner, out var battery) || battery == null)
             return DialysisBatteryLevel.Battery0;
 
-        var charge = _battery.GetCharge(dialysis.Owner);
+        var charge = _battery.GetChargeLevel(battery.Value.AsNullable());
         return charge switch
         {
             > 0.85f => DialysisBatteryLevel.Battery100,
