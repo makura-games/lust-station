@@ -8,11 +8,11 @@ namespace Content.Client._Sunrise.InteractionsPanel;
 
 public sealed partial class InteractionsUIWindow
 {
-    private partial void UpdateLustEntityInformation(NetEntity userEntity, NetEntity targetEntity, bool selfTargeting)
+    private partial void UpdateLustEntityInformation(NetEntity userEntity, NetEntity targetEntity, bool selfTargeting, Sex? userSex, Sex? targetSex)
     {
-        if (BorgSexSystem.TryGetSex(_entityManager.GetEntity(userEntity), _entityManager, out var userSex))
+        if (userSex is { } currentUserSex)
         {
-            var userGenitals = GenitalsHelper.GetGenitals(userSex)
+            var userGenitals = GenitalsHelper.GetGenitals(currentUserSex)
                 .OrderBy(slot => GenitalDisplayOrder.GetValueOrDefault(slot, 99))
                 .ToList();
 
@@ -24,10 +24,9 @@ public sealed partial class InteractionsUIWindow
             SetGenitalsText(UserGenitalsLabel, "???");
         }
 
-        if (!selfTargeting &&
-            BorgSexSystem.TryGetSex(_entityManager.GetEntity(targetEntity), _entityManager, out var targetSex))
+        if (!selfTargeting && targetSex is { } currentTargetSex)
         {
-            var targetGenitals = GenitalsHelper.GetGenitals(targetSex)
+            var targetGenitals = GenitalsHelper.GetGenitals(currentTargetSex)
                 .OrderBy(slot => GenitalDisplayOrder.GetValueOrDefault(slot, 99))
                 .ToList();
             var targetGenitalsText = string.Join(", ", targetGenitals.Select(GenitalSlotToString));

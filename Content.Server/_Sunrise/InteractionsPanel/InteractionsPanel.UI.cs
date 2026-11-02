@@ -1,8 +1,10 @@
 using System.Linq;
+using Content.Shared._Lust.Borgs;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Components;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Prototypes;
 using Content.Shared._Sunrise.InteractionsPanel.Data.UI;
 using Content.Shared.Database;
+using Content.Shared.Humanoid;
 
 namespace Content.Server._Sunrise.InteractionsPanel;
 
@@ -78,11 +80,19 @@ public partial class InteractionsPanel
 
         var userNet = GetNetEntity(user);
         var targetNet = GetNetEntity(target);
+        Sex? userSex = BorgSexSystem.TryGetSex(user, EntityManager, out var currentUserSex)
+            ? currentUserSex
+            : null;
+        Sex? targetSex = BorgSexSystem.TryGetSex(target, EntityManager, out var currentTargetSex)
+            ? currentTargetSex
+            : null;
 
         return new InteractionWindowBoundUserInterfaceState(
             userNet,
             targetNet,
-            interactionIds
+            interactionIds,
+            userSex,
+            targetSex
         );
     }
 

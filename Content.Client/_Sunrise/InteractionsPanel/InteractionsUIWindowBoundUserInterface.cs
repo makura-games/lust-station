@@ -53,7 +53,9 @@ public sealed partial class InteractionsWindowBoundUserInterface : BoundUserInte
             _slave.UpdateState(
                 interactionsState.UserEntity,
                 interactionsState.TargetEntity,
-                interactionsState.AvailableInteractionIds
+                interactionsState.AvailableInteractionIds,
+                interactionsState.UserSex,
+                interactionsState.TargetSex
             );
         }
     }

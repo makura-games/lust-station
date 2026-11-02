@@ -1,3 +1,4 @@
+using Content.Shared.Humanoid;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
@@ -11,11 +12,18 @@ public enum InteractionWindowUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed class InteractionWindowBoundUserInterfaceState(NetEntity userEntity, NetEntity targetEntity, List<string> availableInteractionIds) : BoundUserInterfaceState
+public sealed class InteractionWindowBoundUserInterfaceState(
+    NetEntity userEntity,
+    NetEntity targetEntity,
+    List<string> availableInteractionIds,
+    Sex? userSex,
+    Sex? targetSex) : BoundUserInterfaceState
 {
     public NetEntity UserEntity { get; } = userEntity;
     public NetEntity TargetEntity { get; } = targetEntity;
     public List<string> AvailableInteractionIds { get; } = availableInteractionIds;
+    public Sex? UserSex { get; } = userSex;
+    public Sex? TargetSex { get; } = targetSex;
 }
 
 [Serializable, NetSerializable]
