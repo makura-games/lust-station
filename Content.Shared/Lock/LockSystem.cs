@@ -377,12 +377,14 @@ public sealed partial class LockSystem : EntitySystem
         if (!args.CanAccess || !args.CanInteract || !args.CanComplexInteract || !component.ShowLockVerbs)
             return;
 
+        var isSelf = args.User == uid; // Lust-Add
+
         AlternativeVerb verb = new()
         {
-            Disabled = !CanToggleLock(uid, args.User),
+            Disabled = !isSelf && !CanToggleLock(uid, args.User), // Lust-Edit проверяем борга
             Act = component.Locked
-                ? () => TryUnlock(uid, args.User, component)
-                : () => TryLock(uid, args.User, component),
+                ? () => LustTryUnlock(uid, args.User, component, skipChecks: isSelf) // Lust-Edit
+                : () => LustTryLock(uid, args.User, component, skipChecks: isSelf), // Lust-Edit
             Text = Loc.GetString(component.Locked ? "toggle-lock-verb-unlock" : "toggle-lock-verb-lock"),
             Icon = !component.Locked
                 ? new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/lock.svg.192dpi.png"))
