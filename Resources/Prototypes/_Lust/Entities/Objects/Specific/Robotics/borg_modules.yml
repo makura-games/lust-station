@@ -1,0 +1,35 @@
+- type: entity
+  id: LustBorgModuleRepaire
+  parent: [ BaseBorgModule, BaseProviderBorgModule ]
+  name: self-repaire module
+  components:
+  - type: Sprite
+    layers:
+    - state: generic
+    - state: icon-nano
+      sprite: _Lust/Objects/Specific/Robotics/borgmodule.rsi
+  - type: ItemBorgModule
+    hands:
+    - item: Nanopaste1
+      hand:
+        emptyLabel: borg-slot-nano-empty
+        emptyRepresentative: Nanopaste1
+        whitelist:
+          components:
+          - Healing
+    - item: Welder
+      hand:
+        emptyLabel: borg-slot-welder-empty
+        emptyRepresentative: Welder
+        whitelist:
+          components:
+          - Welder
+    - item: CableApcStack
+      hand:
+        emptyLabel: borg-slot-cable-empty
+        emptyRepresentative: CableApcStack
+        whitelist:
+          components:
+          - CablePlacer
+  - type: BorgModuleIcon
+    icon: { sprite: _Lust/Interface/Actions/actions_borg.rsi, state: state-nanopasta }

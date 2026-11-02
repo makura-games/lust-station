@@ -29,9 +29,9 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -15
+      volume: -6 # Lust-Edit
   # Sunrise-End
 
   # Visual
@@ -78,9 +78,9 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -15
+      volume: -6 # Lust-Edit
   addComponents:
   - type: ShowHealthBars
     damageContainers:
@@ -136,9 +136,9 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -15
+      volume: 0 # Lust-Edit
 
   addComponents:
   - type: InnateItem
@@ -189,9 +189,9 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider # Lust-Edit
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -5
+      volume: 0 # Lust-Edit
   # Sunrise-End
 
   # Visual
