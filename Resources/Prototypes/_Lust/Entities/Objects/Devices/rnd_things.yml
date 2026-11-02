@@ -1,0 +1,44 @@
+- type: entity
+  parent: BaseItem
+  id: LustAnalyzer
+  name: object scanner
+  description: A new development based on established things.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Research/anomalyscanner.rsi
+    color: "#073565"
+    layers:
+      - state: icon
+        map: ["enum.AnomalyScannerVisualLayers.Base"]
+  - type: Appearance
+  - type: ActivatableUI
+    key: enum.ResearchClientUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: ResearchClient
+  - type: Analyzer
+    pointsPerScan: 4500
+    possibleComponents:
+    - Gun
+    - MeleeWeapon
+    - EntityStorage
+    - Tool
+    - PowerCell
+    - Flash
+    - Radio
+    - MobThresholds
+    - Construction
+    - Destructible
+    - Item
+    - Analyzer
+    - Seed
+    - WallMount
+    - PointLight
+    - Clothing
+    - ApcPowerReceiver
+    - Injurable
+    - Material
+    - Holopad

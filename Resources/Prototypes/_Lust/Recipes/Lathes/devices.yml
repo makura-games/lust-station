@@ -1,0 +1,16 @@
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: SpectralLocatorEmpty
+  result: SpectralLocatorEmpty
+  materials:
+    Plastic: 200
+    Glass: 150
+
+- type: latheRecipe
+  parent: BaseToolRecipe
+  id: LustAnalyzer
+  result: LustAnalyzer
+  materials:
+    Plastic: 200
+    Glass: 150
+    Gold: 10
