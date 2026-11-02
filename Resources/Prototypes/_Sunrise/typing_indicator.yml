@@ -15,3 +15,10 @@
   typingState: resomi0
   idleState: resomi0
   offset: -0.3, 0
+
+- type: typingIndicator
+  id: felenid
+  typingState: neko0
+  idleState: neko3
+  offset: 0.025, 0.125
+
