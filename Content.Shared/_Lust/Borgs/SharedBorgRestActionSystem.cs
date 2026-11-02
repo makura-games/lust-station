@@ -59,8 +59,8 @@ public sealed partial class SharedBorgRestActionSystem : EntitySystem
 
     private void OnRestingStartup(Entity<BorgRestingComponent> ent, ref ComponentStartup args)
     {
-        _movementSpeed.RefreshMovementSpeedModifiers(ent);
-        _movementSpeed.RefreshWeightlessModifiers(ent);
+        _movementSpeed.RefreshMovementSpeedModifiers(ent.Owner);
+        _movementSpeed.RefreshWeightlessModifiers(ent.Owner);
         RefreshBatteryChargeRate(ent);
 
         if (TryComp<BorgRestActionComponent>(ent, out var borgRest))
@@ -70,8 +70,8 @@ public sealed partial class SharedBorgRestActionSystem : EntitySystem
     private void OnRestingRemove(Entity<BorgRestingComponent> ent, ref ComponentRemove args)
     {
         ClearRestingVisual(ent.Owner);
-        _movementSpeed.RefreshMovementSpeedModifiers(ent);
-        _movementSpeed.RefreshWeightlessModifiers(ent);
+        _movementSpeed.RefreshMovementSpeedModifiers(ent.Owner);
+        _movementSpeed.RefreshWeightlessModifiers(ent.Owner);
         RefreshBatteryChargeRate(ent);
 
         if (TryComp<BorgRestActionComponent>(ent, out var borgRest))
