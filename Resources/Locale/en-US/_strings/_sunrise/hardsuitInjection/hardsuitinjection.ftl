@@ -40,3 +40,108 @@ ent-AmpulaMurmillo = { ent-Ampula }
     .desc = A sealed ampoule filled with a regenerating combat stimulant mixture.
 ent-AmpulaPirate = pirate ampula
     .desc = A reinforced pirate ampoule for emergency hardsuit injection systems.
+
+ent-AmpulaMini = mini ampoule
+    .desc = Small single-use ampoule.
+
+ent-AmpulaMedium = medium ampoule
+    .desc = Medium-sized ampoule.
+
+ent-AmpulaBig = big ampoule
+    .desc = Large ampoule for intensive care.
+
+ent-AmpulaRadiationPoison = {ent-Ampula}
+    .suffix = Diphenhydramine + Retroindralyne
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaDiphenhydramine = {ent-AmpulaMini}
+    .suffix = Diphenhydramine (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaRetroindralyne = {ent-AmpulaMini}
+    .suffix = Retroindralyne (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaPuncturase = {ent-AmpulaMini}
+    .suffix = Puncturase (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaLacerinol = {ent-AmpulaMini}
+    .suffix = Lacerinol (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaBruizine = {ent-AmpulaMini}
+    .suffix = Bruizine (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaInsuzine = {ent-AmpulaMini}
+    .suffix = Insuzine (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaPyrazine = {ent-AmpulaMini}
+    .suffix = Pyrazine (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaLeporazine = {ent-AmpulaMini}
+    .suffix = Leporazine (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaSigynate = {ent-AmpulaMini}
+    .suffix = Sigynate (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaPhalanximine = {ent-AmpulaMini}
+    .suffix = Phalanximine (10u)
+    .desc = {ent-AmpulaMini.desc}
+
+ent-AmpulaDexalinPlus = {ent-Ampula}
+    .suffix = Dexalin Plus (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaBarozinePlus = {ent-Ampula}
+    .suffix = Barozine Plus (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaPotassiumIodide = {ent-Ampula}
+    .suffix = Potassium Iodide (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaEthylredoxrazine = {ent-Ampula}
+    .suffix = Ethylredoxrazine (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaOculine = {ent-Ampula}
+    .suffix = Oculine (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaUltravasculine = {ent-Ampula}
+    .suffix = Ultravasculine (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaOmnizine = {ent-Ampula}
+    .suffix = Omnizine (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaSaline = {ent-Ampula}
+    .suffix = Saline (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaHolyWater = {ent-Ampula}
+    .suffix = Holy Water (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaSiderlac = {ent-Ampula}
+    .suffix = Siderlac (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaHaloperidol = {ent-Ampula}
+    .suffix = Haloperidol (20u)
+    .desc = {ent-Ampula.desc}
+
+ent-AmpulaEpinephrine = {ent-AmpulaMedium}
+    .suffix = Epinephrine (15u)
+    .desc = {ent-AmpulaMedium.desc}
+
+ent-AmpulaArithrazine = {ent-AmpulaMedium}
+    .suffix = Arithrazine (15u)
+    .desc = {ent-AmpulaMedium.desc}
