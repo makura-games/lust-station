@@ -1661,3 +1661,55 @@
     message: Добавил больше звуков в интерактивную панель для ваших кастомных эмоутов!
   id: 351
   url: https://github.com/makura-games/lust-station/pull/670
+- author: Den_Gor
+  time: '2026-10-31T18:57:58.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: Квилоу снова разрешило филинидам и резоми работать в СБ
+  id: 352
+  url: https://github.com/makura-games/lust-station/pull/680
+- author: KinliOrey
+  time: '2026-11-02T13:58:41.0000000+00:00'
+  changes:
+  - type: Fix
+    message: Монитор контроля состояния у ОСЩ и Бригмедика более не реагируют сигналом тревоги на датчики, которые не отображают в своем интерфейсе
+  id: 353
+  url: https://github.com/makura-games/lust-station/pull/682
+- author: 4_нвщ
+  time: '2026-11-02T14:37:53.0000000+00:00'
+  changes:
+  - type: Fix
+    message: 'рад ивент начал бить слабее
+
+      рисовка заячих ушей стала лучше'
+  id: 354
+  url: https://github.com/makura-games/lust-station/pull/674
+- author: 4_ydo
+  time: '2026-11-02T14:58:42.0000000+00:00'
+  changes:
+  - type: Tweak
+    message: раса миллир теперь не имеет ограничений когда им распустить крылья
+  id: 355
+  url: https://github.com/makura-games/lust-station/pull/683
+- author: 4_ydo
+  time: '2026-11-02T15:58:41.0000000+00:00'
+  changes:
+  - type: Add
+    message: 'модуль самопочинки для боргов
+
+      - изменен звук ходьбы некоторых боргов на более мягкий
+
+      - любой борг теперь может сам себя закрывать/открывать'
+  - type: Tweak
+    message: в базовый модуль добавлена рука для шляп
+  id: 356
+  url: https://github.com/makura-games/lust-station/pull/679
+  media:
+  - url: https://github.com/user-attachments/assets/0d8daec0-0513-48ea-9dfe-6e0ae91ff4cd
+- author: 4_ydo
+  time: '2026-11-02T16:31:09.0000000+00:00'
+  changes:
+  - type: Add
+    message: новый питомец донатерам, большая мышь
+  id: 357
+  url: https://github.com/makura-games/lust-station/pull/649

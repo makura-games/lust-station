@@ -6,8 +6,6 @@
   # Lust-Start
   speciesBlacklist:
   - Vox
-  - Felinid
-  - Resomi
   # Lust-End
   requirements:
     - !type:OverallPlaytimeRequirement
