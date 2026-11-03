@@ -20,21 +20,14 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
     private TimeSpan _nextPassiveCooling;
     private bool _firing;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<GunHeatComponent, ComponentStartup>(OnStartup);
-        SubscribeLocalEvent<GunHeatComponent, MapInitEvent>(OnMapInit, after: [typeof(TemperatureSystem)]);
-        SubscribeLocalEvent<GunHeatComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<GunHeatComponent, TemperatureChangedEvent>(OnTemperatureChange);
-    }
-
+    [SubscribeLocalEvent]
     private void OnStartup(Entity<GunHeatComponent> ent, ref ComponentStartup args)
     {
         EnsureComp<TemperatureComponent>(ent);
         EnsureComp<AtmosExposedComponent>(ent);
     }
 
+    [SubscribeLocalEvent(after: [typeof(TemperatureSystem)])]
     private void OnMapInit(Entity<GunHeatComponent> ent, ref MapInitEvent args)
     {
         var temperature = EnsureComp<TemperatureComponent>(ent);
@@ -63,11 +56,13 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
         }
     }
 
+    [SubscribeLocalEvent]
     private void OnShutdown(Entity<GunHeatComponent> ent, ref ComponentShutdown args)
     {
         _lastShot.Remove(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnTemperatureChange(Entity<GunHeatComponent> ent, ref TemperatureChangedEvent args)
     {
         if (!_firing && args.TemperatureDelta > 0f && args.CurrentTemperature > ent.Comp.JamTemperature - 20f

@@ -18,16 +18,6 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
 
     private const int JamSalt = -3;
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<GunHeatComponent, GunShotEvent>(OnGunShot);
-        SubscribeLocalEvent<GunHeatComponent, AttemptShootEvent>(OnAttemptShoot);
-        SubscribeLocalEvent<GunHeatComponent, UseInHandEvent>(OnUseInHand,
-            before: [typeof(SharedWieldableSystem), typeof(SharedGunSystem)]);
-        SubscribeLocalEvent<GunHeatComponent, ExaminedEvent>(OnExamined);
-    }
-
     public static float GetGlow(GunHeatComponent comp, float temperature)
     {
         var range = comp.MeltTemperature - comp.GlowTemperature;
@@ -47,6 +37,7 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
     {
     }
 
+    [SubscribeLocalEvent]
     private void OnGunShot(Entity<GunHeatComponent> ent, ref GunShotEvent args)
     {
         if (args.Ammo.Count == 0)
@@ -87,12 +78,14 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
         return (seed >> 8) * (1f / 16777216f);
     }
 
+    [SubscribeLocalEvent]
     private void OnAttemptShoot(Entity<GunHeatComponent> ent, ref AttemptShootEvent args)
     {
         if (!TryShoot(ent, args.User))
             args.Cancelled = true;
     }
 
+    [SubscribeLocalEvent(before: [typeof(SharedWieldableSystem), typeof(SharedGunSystem)])]
     private void OnUseInHand(Entity<GunHeatComponent> ent, ref UseInHandEvent args)
     {
         if (args.Handled)
@@ -139,6 +132,7 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
         _popup.PopupPredicted(Loc.GetString("lust-gun-heat-unjammed"), ent, user);
     }
 
+    [SubscribeLocalEvent]
     private void OnExamined(Entity<GunHeatComponent> ent, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)

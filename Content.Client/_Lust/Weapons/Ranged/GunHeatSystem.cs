@@ -19,30 +19,25 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
     private readonly Dictionary<EntityUid, HeldGlow> _held = new();
     private static readonly Color HeatGlowColor = Color.FromHex("#ff3b1f");
 
-    public override void Initialize()
-    {
-        base.Initialize();
-        SubscribeLocalEvent<GunHeatComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<GunHeatComponent, AfterAutoHandleStateEvent>(OnHandleState);
-        SubscribeLocalEvent<GunHeatComponent, HeldVisualsUpdatedEvent>(OnHeldVisualsUpdated);
-        SubscribeLocalEvent<GunHeatComponent, ItemStatusCollectMessage>(OnItemStatus, after: [typeof(GunSystem)]);
-    }
-
+    [SubscribeLocalEvent(after: [typeof(GunSystem)])]
     private void OnItemStatus(Entity<GunHeatComponent> ent, ref ItemStatusCollectMessage args)
     {
         args.Controls.Add(new GunHeatStatusControl(ent.Comp));
     }
 
+    [SubscribeLocalEvent]
     private void OnShutdown(Entity<GunHeatComponent> ent, ref ComponentShutdown args)
     {
         ClearHeldGlow(ent);
     }
 
+    [SubscribeLocalEvent]
     private void OnHandleState(Entity<GunHeatComponent> ent, ref AfterAutoHandleStateEvent args)
     {
         UpdateHeldGlow(ent, SharedGunHeatSystem.GetGlow(ent.Comp, ent.Comp.Temperature));
     }
 
+    [SubscribeLocalEvent]
     private void OnHeldVisualsUpdated(Entity<GunHeatComponent> ent, ref HeldVisualsUpdatedEvent args)
     {
         ClearHeldGlow(ent);
