@@ -10,8 +10,23 @@
     - type: BreathMask
     - type: Sprite
       sprite: _Lust/Admeme/Clothing/Head/Hardsuits/medtak_helmet.rsi
+      layers:
+      - state: icon
+      - state: icon-flash
+        visible: false
+        map: ["light"]
     - type: Clothing
       sprite: _Lust/Admeme/Clothing/Head/Hardsuits/medtak_helmet.rsi
+      equippedPrefix: off
+      clothingVisuals:
+        head:
+        - state: off-equipped-HELMET
+    - type: ToggleableVisuals
+      spriteLayer: light
+      clothingVisuals:
+        head:
+        - state: on-equipped-HELMET
+          shader: unshaded
     - type: PointLight
       color: "#90EE90"
       radius: 8
