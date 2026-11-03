@@ -6,7 +6,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: false
     checkTarget: true
     requiredSex: [ Female, Futanari ]

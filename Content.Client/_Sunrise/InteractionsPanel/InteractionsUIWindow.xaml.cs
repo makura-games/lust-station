@@ -269,10 +269,12 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
     public void UpdateState(NetEntity userEntity,
         NetEntity targetEntity,
-        List<string> availableInteractionIds)
+        List<string> availableInteractionIds,
+        Sex? userSex,
+        Sex? targetSex)
     {
         _userEntity = userEntity; // Lust-Edit
-        UpdateEntityInformation(userEntity, targetEntity);
+        UpdateEntityInformation(userEntity, targetEntity, userSex, targetSex);
         _currentInteractionIds = availableInteractionIds;
         _buttonInteractions.Clear();
         _customInteractionIds.Clear();
@@ -281,7 +283,9 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
     private void UpdateEntityInformation(
         NetEntity userEntity,
-        NetEntity targetEntity)
+        NetEntity targetEntity,
+        Sex? userSex,
+        Sex? targetSex)
     {
         var selfTargeting = userEntity == targetEntity;
 
@@ -304,33 +308,8 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         }
 
 
-        if (_entityManager.TryGetComponent<HumanoidProfileComponent>(_entityManager.GetEntity(userEntity), out var userHumanoid))
-        {
-            var userGenitals = GenitalsHelper.GetGenitals(userHumanoid.Sex)
-                .OrderBy(slot => GenitalDisplayOrder.GetValueOrDefault(slot, 99))
-                .ToList();
-
-            var userGenitalsText = string.Join(", ", userGenitals.Select(GenitalSlotToString));
-            SetGenitalsText(UserGenitalsLabel, userGenitalsText);
-        }
-        else
-        {
-            SetGenitalsText(UserGenitalsLabel, "???");
-        }
-
-        if (!selfTargeting &&
-            _entityManager.TryGetComponent<HumanoidProfileComponent>(_entityManager.GetEntity(targetEntity), out var targetHumanoid))
-        {
-            var targetGenitals = GenitalsHelper.GetGenitals(targetHumanoid.Sex)
-                .OrderBy(slot => GenitalDisplayOrder.GetValueOrDefault(slot, 99))
-                .ToList();
-            var targetGenitalsText = string.Join(", ", targetGenitals.Select(GenitalSlotToString));
-            SetGenitalsText(TargetGenitalsLabel, targetGenitalsText);
-        }
-        else
-        {
-            SetGenitalsText(TargetGenitalsLabel, "");
-        }
+        // Lust edit - формируем отображение гениталий в коде форка.
+        UpdateLustEntityInformation(selfTargeting, userSex, targetSex); // Lust-Edit
     }
 
     private void SetGenitalsText(Label label, string genitalsText)
@@ -1286,4 +1265,6 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
     }
 
     #endregion
+
+    private partial void UpdateLustEntityInformation(bool selfTargeting, Sex? userSex, Sex? targetSex); // Lust-Edit
 }
