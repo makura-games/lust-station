@@ -35,16 +35,15 @@
   description: Keeps the bad out and keeps the good in.
   suffix: Arrows
   components:
-  - type: Tag
-    tags:
-      - Wall
+  - type: Wall
   - type: Sprite
     sprite: Structures/Walls/shuttle.rsi
     color: "#505050"
   - type: Icon
     sprite: Structures/Walls/shuttle.rsi
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Reflect
     reflectProb: 1
@@ -77,13 +76,12 @@
   description: Keeps the bad out and keeps the good in.
   suffix: Arrows, Diagonal
   components:
-  - type: Tag
-    tags:
-      - Wall
+  - type: Wall
   - type: Sprite
     color: "#505050"
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Reflect
     reflectProb: 1
@@ -115,8 +113,9 @@
   components:
   - type: Sprite
     color: "#505050"
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Destructible
     thresholds:
@@ -141,8 +140,9 @@
   components:
   - type: Sprite
     color: "#505050"
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
 
 # Платы шлюзов
@@ -179,8 +179,9 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsMTO ]
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: Reflect
     reflectProb: 1
@@ -212,7 +213,7 @@
 # Раздвижное окно
 
 - type: entity
-  parent: WindoorSecureSecurityLocked
+  parent: WindoorSecurityLocked
   id: WindoorMTOLocked
   suffix: Arrows
   #name: армированное раздвижное окно
@@ -236,7 +237,8 @@
   - type: Thruster
     baseThrust: 350
     thrust: 350
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
 

@@ -18,7 +18,6 @@
   startingGear: NtrLeaderGear
   icon: JobIconNtrLeader
   supervisors: job-supervisors-ntrg
-  canBeAntag: false
   access:
     - Command
     - Bar
@@ -45,6 +44,12 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantBlueShield ]
+  # Lust-Start
+  - !type:AddComponentSpecial
+    components:
+    - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: NtrLeaderGear
@@ -61,10 +66,7 @@
     id: NtrLeadGuardPDA
     ears: ClothingHeadsetMagistrate
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponEnergyGunPulseRevolver
     pocket2: HandheldCriminalRecordsMonitorUnpowered
-  inhand:
-  - WeaponEnergyGunTactical
   storage:
     back:
     - ClothingOuterHardsuitNTRG
@@ -93,7 +95,6 @@
   startingGear: NtrLeaderGear
   icon: JobIconNtrGuard
   supervisors: job-supervisors-ntrg
-  canBeAntag: false
   access:
     - Command
     - Bar
@@ -119,6 +120,12 @@
   special:
     - !type:AddImplantSpecial
       implants: [MindShieldImplant]
+  # Lust-Start
+    - !type:AddComponentSpecial
+      components:
+      - type: ParadoxCloneImmune
+  # Lust-End
+
 
 - type: startingGear
   id: NtrGuardGear

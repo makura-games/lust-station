@@ -21,12 +21,12 @@
   - "%user слегка касается губами губ %target"
   - "%user в нежном поцелуе соединяется губами с %target"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 3
   loveTarget: 3
   cooldown: 2
@@ -53,12 +53,12 @@
   - "%user быстро чмокает %target в губы"
   - "%user дарит лёгкий поцелуй %target"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 1
   loveTarget: 1
   cooldown: 3
@@ -85,12 +85,12 @@
   - "%user глубоко целует %target, увлекаясь"
   - "%user страстно соединяет губы с губами %target"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 4
   loveTarget: 4
   cooldown: 3
@@ -117,12 +117,12 @@
   - "%user игриво прикусывает губу %target"
   - "%user нежно кусает губу %target, добавляя страсти"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 3
   loveTarget: 3
   cooldown: 3
@@ -151,12 +151,12 @@
   - "%user страстно соединяет губы с губами %target"
   - "%user с любовью целует %target в губы"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 5
   loveTarget: 5
   cooldown: 4
@@ -192,12 +192,12 @@
   - "%user слегка целует %target, заводя руку за шею"
   - "%user настойчиво целует %target, заводя руку за шею"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 2
   loveTarget: 2
   cooldown: 2
@@ -223,7 +223,7 @@
   interactionMessages:
   - "%user совершает град поцелуев, ни оставляя сухого места на %target"
   interactionSounds:
-  - ALotOfKisses
+  - lustALotOfKisses
   loveUser: 4
   loveTarget: 4
   cooldown: 5

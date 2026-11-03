@@ -4,10 +4,8 @@
   name: sex on the beach
   description: A bright drink with an enticing aroma... The name speaks for itself.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
         reagents:
         - ReagentId: SexOnTheBeach
           Quantity: 30

@@ -1,0 +1,9 @@
+
+- type: entity
+  parent: BaseFlatpack
+  id: LustWeaponTurretAntiMeteorFlatpack
+  name: point defense turret
+  description: A flatpack used for constructing a point defense turret.
+  components:
+  - type: Flatpack
+    entity: WeaponTurretAntiMeteor

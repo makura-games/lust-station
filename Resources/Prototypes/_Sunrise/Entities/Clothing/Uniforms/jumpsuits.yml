@@ -321,9 +321,9 @@
   description: A seemingly simple business suit.. until the first bullet bounced..
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/lawyerblack.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Service/lawyerblack.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/lawyerblack.rsi
+    sprite: Clothing/Uniforms/Jumpsuits/Service/lawyerblack.rsi
   - type: Item
     size: Small
     shape:
@@ -399,6 +399,14 @@
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/pencilhuencil.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/pencilhuencil.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 - type: entity
   parent: ClothingUniformBase
@@ -409,6 +417,14 @@
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/sadskirt.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/sadskirt.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 - type: entity
   parent: ClothingUniformBase

@@ -1,0 +1,12 @@
+ent-SpawnPointLustCentCommInspector = инспектор Центком
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointLustCentCommChiefOfStaff = начальник штаба
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointLustCentCommIntern = стажёр Центком
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointLustCentCommIDOperator = оператор СУ
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointLustCentCommSpecOpsOperator = офицер спецопераций
+    .desc = { ent-SpawnPointJobBase.desc }
+ent-SpawnPointLustCentCommMaid = горничная Центрального командования
+    .desc = { ent-SpawnPointJobBase.desc }

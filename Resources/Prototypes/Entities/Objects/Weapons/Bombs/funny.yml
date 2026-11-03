@@ -55,6 +55,12 @@
           base:
             Primed: { state: activated }
             Unprimed: { state: icon }
+    # Lust edit start
+    - type: ScentEmitter
+      spot: AnySlot
+      scent: LustGunpowder
+      duration: 120
+    # Lust edit end
 
 - type: entity
   id: HotPotatoEffect
@@ -96,6 +102,7 @@
   - type: DeleteOnTrigger
   - type: AnimationPlayer
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -111,6 +118,12 @@
     - Recyclable
     - Trash
     - BananaPeel
+  # Lust edit start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 120
+  # Lust edit end
 
 - type: entity
   parent: BaseItem
@@ -145,3 +158,9 @@
   - type: Construction
     graph: SnapPopExplosiveGraph
     node: snapPopExplosive
+  # Lust edit start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 120
+  # Lust edit end

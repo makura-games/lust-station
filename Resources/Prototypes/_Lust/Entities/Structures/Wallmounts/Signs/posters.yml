@@ -1,0 +1,30 @@
+# Legit
+- type: entity
+  parent: PosterBase
+  id: PosterLegitQilluLogo
+  name: Qillu logo
+  description: A poster depicting the Qillu logo.
+  components:
+  - type: Sprite
+    sprite: _Lust/Structures/Wallmounts/posters.rsi
+    state: poster1_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitQilluTGC
+  name: Qillu tactical game cards
+  description: "An advertisement for Qillu's TCG cards: BUY MORE CARDS."
+  components:
+    - type: Sprite
+      sprite: _Lust/Structures/Wallmounts/posters.rsi
+      state: poster2_legit
+
+- type: entity
+  parent: PosterBase
+  id: PosterLegitQilluVacation
+  name: "Qillu corporate perks: vacation"
+  description: This informational poster provides information on some of the prizes available via the Qillu Corporate Perks program, including a two-week vacation for two on the resort world Idyllus.
+  components:
+    - type: Sprite
+      sprite: _Lust/Structures/Wallmounts/posters.rsi
+      state: poster3_legit

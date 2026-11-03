@@ -1,0 +1,34 @@
+- type: entity
+  parent: WeaponEnergyTurretCommandControlPanel
+  id: LustWeaponTurretAntiMeteorControlPanel
+  suffix: Anti-Meteor, Command
+  components:
+  - type: AccessReader
+    access: [["Engineering"], ["Command"]]
+  - type: ContainerFill
+    containers:
+      board:
+      - LustWeaponTurretAntiMeteorControlPanelElectronics
+  - type: DeployableTurretController
+    accessGroups:
+    - Command
+    - Engineering
+    accessLevels:
+    - ChiefEngineer
+    - Engineering
+    - Captain
+    - Command
+  - type: DeviceNetwork
+    receiveFrequencyId: LustAntiMeteorTurret
+    transmitFrequencyId: LustAntiMeteorTurretControl
+  - type: GenericVisualizer
+    visuals:
+      enum.TurretControllerVisuals.ControlPanel:
+        enum.PowerDeviceVisualLayers.Powered:
+          -1: { state: safe }
+          0: { state: lethal }
+          1: { state: lethal }
+  - type: TurretTargetSettings
+    exemptAccessLevels:
+    - Command
+    - ChiefEngineer

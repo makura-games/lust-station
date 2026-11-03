@@ -10,8 +10,6 @@
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
-  canBeAntag: false
-  displayWeight: 20  # Sunrise
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-investigator
@@ -31,7 +29,6 @@
     implants: [ MindShieldImplant ]
   speciesBlacklist:
   - Vox
-
 - type: startingGear
   id: DetectiveGear
   equipment:

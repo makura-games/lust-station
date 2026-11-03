@@ -188,23 +188,23 @@
     stock: 1
 
 - type: listing
-  id: UplinkLustEroticBoxCandleSmall
+  id: UplinkLustRomanticBoxCandleSmall
   productEntity: BoxCandleSmall
   cost:
     Suntick: 15
   categories:
-  - Erotic
+  - Romantic
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
 
 - type: listing
-  id: UplinkLustEroticBoxCandle
+  id: UplinkLustRomanticBoxCandle
   productEntity: BoxCandle
   cost:
     Suntick: 20
   categories:
-  - Erotic
+  - Romantic
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -221,34 +221,34 @@
     stock: 1
 
 - type: listing
-  id: UplinkLustEroticArrowRouletteErot
+  id: UplinkLustRomanticArrowRouletteErot
   productEntity: ArrowRouletteErot
   cost:
     Suntick: 25
   categories:
-  - Erotic
+  - Romantic
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
 
 - type: listing
-  id: UplinkLustEroticArrowRouletteEros
+  id: UplinkLustRomanticArrowRouletteEros
   productEntity: ArrowRouletteEros
   cost:
     Suntick: 25
   categories:
-  - Erotic
+  - Romantic
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
 
 - type: listing
-  id: UplinkLustEroticClothingHeadHatDeerHorns
+  id: UplinkLustRomanticClothingHeadHatDeerHorns
   productEntity: ClothingHeadHatDeerHorns
   cost:
     Suntick: 35
   categories:
-  - Erotic
+  - Romantic
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
@@ -273,6 +273,391 @@
     Suntick: 4
   categories:
   - Erotic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustEroticBoxCageMaleNormal
+  productEntity: BoxCageMaleNormal
+  cost:
+    Suntick: 12
+  categories:
+  - Erotic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustEroticBoxCageMaleIron
+  productEntity: BoxCageMaleIron
+  cost:
+    Suntick: 12
+  categories:
+  - Erotic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustEroticBoxCageMaleFlat
+  productEntity: BoxCageMaleFlat
+  cost:
+    Suntick: 10
+  categories:
+  - Erotic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustEroticBoxCageMaleElectric
+  productEntity: BoxCageMaleElectric
+  cost:
+    Suntick: 12
+  categories:
+  - Erotic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustEroticBoxCageFemaleBelt
+  productEntity: BoxCageFemaleBelt
+  cost:
+    Suntick: 12
+  categories:
+  - Erotic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustEroticToyHandcuffs
+  productEntity: ToyHandcuffs
+  cost:
+    Suntick: 10
+  categories:
+  - Erotic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticDrinkGlass
+  productEntity: DrinkGlass
+  cost:
+    Suntick: 3
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: UplinkLustRomanticDrinkGlassCoupeShaped
+  productEntity: DrinkGlassCoupeShaped
+  cost:
+    Suntick: 3
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
+
+- type: listing
+  id: UplinkLustRomanticDrinkWineBottleFull
+  productEntity: DrinkWineBottleFull
+  cost:
+    Suntick: 4
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 2
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckCollar1
+  productEntity: ClothingNeckCollar1
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckCollar2
+  productEntity: ClothingNeckCollar2
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckCollar3
+  productEntity: ClothingNeckCollar3
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckCollar4
+  productEntity: ClothingNeckCollar4
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckBellCollarPlain
+  productEntity: ClothingNeckBellCollarPlain
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckBellCollarYellow
+  productEntity: ClothingNeckBellCollarYellow
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckBellCollarPink
+  productEntity: ClothingNeckBellCollarPink
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckRibbon
+  productEntity: ClothingNeckRibbon
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckCollarStar
+  productEntity: ClothingNeckCollarStar
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingNeckCollarCross
+  productEntity: ClothingNeckCollarCross
+  cost:
+    Suntick: 5
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingHandsCatPawsBlack
+  productEntity: ClothingHandsCatPawsBlack
+  cost:
+    Suntick: 4
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingHandsCatPawsWhite
+  productEntity: ClothingHandsCatPawsWhite
+  cost:
+    Suntick: 4
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingHandsCatPawsBlackWhite
+  productEntity: ClothingHandsCatPawsBlackWhite
+  cost:
+    Suntick: 4
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingHandsCatPawsBrown
+  productEntity: ClothingHandsCatPawsBrown
+  cost:
+    Suntick: 4
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticBunnyEars
+  productEntity: BunnyEars
+  cost:
+    Suntick: 6
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticBunnyManjets
+  productEntity: BunnyManjets
+  cost:
+    Suntick: 6
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticBunnyButterfly
+  productEntity: BunnyButterfly
+  cost:
+    Suntick: 6
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticBunnyUniform
+  productEntity: BunnyUniform
+  cost:
+    Suntick: 6
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticBlueFlowers
+  productEntity: BlueFlowers
+  cost:
+    Suntick: 10
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticRedFlowers
+  productEntity: RedFlowers
+  cost:
+    Suntick: 10
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticBouquet
+  productEntity: Bouquet
+  cost:
+    Suntick: 10
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticSunflowerCrown
+  productEntity: SunflowerCrown
+  cost:
+    Suntick: 10
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticPoppyCrown
+  productEntity: PoppyCrown
+  cost:
+    Suntick: 10
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticGeraniumCrown
+  productEntity: GeraniumCrown
+  cost:
+    Suntick: 10
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticWhiteLilyCrown
+  productEntity: WhiteLilyCrown
+  cost:
+    Suntick: 10
+  categories:
+  - Romantic
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: UplinkLustRomanticClothingShoesHighheelBoots
+  productEntity: ClothingShoesHighheelBoots
+  cost:
+    Suntick: 15
+  categories:
+  - Romantic
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1

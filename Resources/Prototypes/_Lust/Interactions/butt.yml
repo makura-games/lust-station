@@ -1,4 +1,4 @@
-﻿- type: interaction
+- type: interaction
   id: ButtPaw
   name: lust-interaction-ButtPaw
   icon: HandsOnButtIcon
@@ -6,16 +6,6 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "гладкие перчатки" ]
-    requireExposed: true
-  - !type:BodyAreaTagCondition
-    checkInitiator: false
-    checkTarget: true
-    categories: [ "попа" ]
-    requireExposed: true
   interactionMessages:
   - "%user похотливо лапает попку %target"
   - "%user сочно сжимает задницу %target"
@@ -53,7 +43,7 @@
   - "%user увлеченно покрывает поцелуями попку %target"
   - "%user сжимает и расцеловывает попку %target"
   interactionSounds:
-  - ALotOfKisses
+  - lustALotOfKisses
   loveUser: 2
   loveTarget: 3
   cooldown: 3
@@ -86,11 +76,6 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "рот" ]
-    requireExposed: true
   - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
@@ -129,17 +114,17 @@
   - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
-    categories: [ "анал" ]
+    categories: [ "попа" ]
     requireExposed: true
   interactionMessages:
   - "%user скользит членом между булок %target"
   - "%user трахает упругие булочки %target своим членом"
   - "%user сжимая попку %target, трахает её между булочек"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 7
   loveTarget: 3
   cooldown: 3
@@ -163,19 +148,14 @@
     - ClothingBeltSuspendersRed
     - ClothingBeltBandolier
     - Gohei
-  - !type:BodyAreaTagCondition
-    checkInitiator: false
-    checkTarget: true
-    categories: [ "попа" ]
-    requireExposed: true
   interactionMessages:
-  - "%user крепко удерживания в руках плетевидный предмет, выпарывает %target"
+  - "%user, крепко удерживая в руках плетевидный предмет, выпарывает %target"
   - "%user замахиваясь, с силой выпарывает %target, делая удар за ударом по телу"
   - "%user выпарывает %target, оставляя множество румянцев на теле"
   interactionSounds:
-  - Whip1
-  - Whip2
-  - Whip3
+  - lustWhip1
+  - lustWhip2
+  - lustWhip3
   loveUser: 1
   loveTarget: 5
   cooldown: 3
@@ -224,6 +204,11 @@
     checkTarget: false
     checkInitiator: true
     layer: Tail
+  - !type:InteractionNotCondition
+    condition: !type:SpeciesCondition
+      checkInitiator: true
+      checkTarget: false
+      allowedSpecies: [ Moth, Milira ]
   interactionMessages:
   - "%user нежно гладит попу %target своим хвостом"
   - "%user аккуратно проводит своим хвостом по попке %target"

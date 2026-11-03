@@ -14,7 +14,7 @@
         - id: Nanopaste
         - id: CableApcStack
         - id: ToolboxMechanicalFilled
-        - id: TowelColorNT
+        - id: TowelColorQillu # Lust-Edit
         - id: WelderIndustrial
 
 - type: entity
@@ -33,7 +33,7 @@
         - id: Nanopaste
         - id: CableApcStack
         - id: ToolboxMechanicalFilled
-        - id: TowelColorNT
+        - id: TowelColorQillu # Lust-Edit
         - id: WelderIndustrial
 
 - type: entity
@@ -52,5 +52,5 @@
         - id: Nanopaste
         - id: CableApcStack
         - id: ToolboxMechanicalFilled
-        - id: TowelColorNT
+        - id: TowelColorQillu # Lust-Edit
         - id: WelderIndustrial

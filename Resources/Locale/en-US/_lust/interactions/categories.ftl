@@ -10,7 +10,6 @@ lust-interaction-category-Lips = Lips
 lust-interaction-category-Mouth = Mouth
 lust-interaction-category-Pussy = Pussy
 lust-interaction-category-Thighs = Thighs
-lust-interaction-category-Wings = Wings
 lust-interaction-category-Dildos = Dildos
 lust-interaction-category-Fleshlights = Fleshlights
 lust-interaction-category-Legs = Legs

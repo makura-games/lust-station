@@ -26,79 +26,74 @@
   priority: 4
 
 - type: storeCategory
-  id: Erotic
-  name: store-category-erotic
-  priority: 5
-
-- type: storeCategory
   id: HOSHeadOfDepartment
   name: store-category-hos
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: CEHeadOfDepartment
   name: store-category-ce
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: CMOHeadOfDepartment
   name: store-category-cmo
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: RDHeadOfDepartment
   name: store-category-rd
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: QMHeadOfDepartment
   name: store-category-qm
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: HOPHeadOfDepartment
   name: store-category-hop
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: IAAHeadOfDepartment
   name: store-category-iaa
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: CaptainHeadOfDepartment
   name: store-category-captain
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: ServiceThings
   name: store-category-service
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: MedicalThings
   name: store-category-medical
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: ScienceThings
   name: store-category-science
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: EngineeringThings
   name: store-category-engineering
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: CargoThings
   name: store-category-cargo
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: SecurityThings
   name: store-category-security
-  priority: 6
+  priority: 7
 
 - type: storeCategory
   id: PaintThings

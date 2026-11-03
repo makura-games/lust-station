@@ -23,7 +23,7 @@
   interactionSounds:
   - FaceLickDoggyStyleSound1
   - FaceLickDoggyStyleSound2
-  - Kiss1
+  - lustKiss1
   loveUser: 2
   loveTarget: 2
   cooldown: 3
@@ -47,13 +47,13 @@
     categories: [ "лицо" ]
     requireExposed: true
   interactionMessages:
-  - "%user снимает обувь с одной ступни и тычет ножкой в лицо %target"
-  - "%user снимает обувь с одной ступни и прислоняет ножку ко рту %target"
+  - "%user тычет ножкой в лицо %target"
+  - "%user прислоняет ножку ко рту %target"
   - "%user подносит свою ножку к лицу %target, заставляя лизать её"
   interactionSounds:
   - FaceLickDoggyStyleSound1
   - FaceLickDoggyStyleSound2
-  - Kiss1
+  - lustKiss1
   loveUser: 2
   loveTarget: 2
   cooldown: 3
@@ -133,7 +133,8 @@
   - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
-    categories: [ "shoes" ]
+    categories: [ "носки" ]
+    requireExposed: false
   interactionMessages:
   - "%user старательно вылизывает языком обувь %target"
   - "%user тщательно проходит языком по подошве обуви %target"

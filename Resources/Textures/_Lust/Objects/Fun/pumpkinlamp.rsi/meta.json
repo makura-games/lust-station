@@ -1,0 +1,74 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from Gaguchka1 git from Lust Station. Discord: Bebronya",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "PumpkinDecoration1"
+    },
+    {
+        "name": "PumpkinDecoration2",
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "PumpkinDecoration3"
+    },
+    {
+        "name": "PumpkinDecoration4"
+    },
+    {
+        "name": "PumpkinDecoration5"
+    },
+    {
+        "name": "PumpkinCat",
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "PumpkinJackSpooky",
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "PumpkinManyLarge",
+        "delays": [
+            [
+                0.2,
+                0.2,
+                0.2,
+                0.2,
+                0.2
+            ]
+        ]
+    },
+    {
+        "name": "PumpkinManySmall"
+    }
+  ]
+}

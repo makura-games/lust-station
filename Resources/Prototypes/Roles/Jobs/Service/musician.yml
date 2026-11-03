@@ -1,0 +1,40 @@
+- type: job
+  id: Musician
+  name: job-name-musician
+  description: job-description-musician
+  playTimeTracker: JobMusician
+  startingGear: MusicianGear
+  icon: "JobIconMusician"
+  supervisors: job-supervisors-hop
+  # Sunrise-Start
+  alternativeTitles:
+  - job-alt-title-bard
+  # Sunrise-End
+  access:
+  - Maintenance
+  - Theatre
+  special:
+  - !type:GiveItemOnHolidaySpecial
+    holiday: MikuDay
+    prototype: BoxPerformer
+
+- type: startingGear
+  id: MusicianGear
+  equipment:
+    eyes: ClothingEyesGlassesSunglasses
+    shoes: ClothingShoesBootsLaceup
+    id: MusicianPDA
+    ears: ClothingHeadsetService
+  #storage:
+    #back:
+    #- Stuff
+
+- type: chameleonOutfit
+  id: MusicianChameleonOutfit
+  job: Musician
+  equipment:
+    head: ClothingHeadHatTophat
+    mask: ClothingMaskBreath
+    neck: ClothingMultipleHeadphones
+    outerClothing: ClothingOuterWinterMusician
+    gloves: ClothingHandsGlovesColorBlack

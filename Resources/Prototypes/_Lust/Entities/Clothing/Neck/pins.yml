@@ -1,0 +1,15 @@
+- type: entity
+  parent: ClothingNeckPinBase
+  id: ClothingNeckQilluPin
+  name: Qillu pin
+  description: The pin of corporation Qillu.
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Neck/Misc/pins.rsi
+    layers:
+    - state: qillu
+  - type: Clothing
+    sprite: _Lust/Clothing/Neck/Misc/pins.rsi
+    clothingVisuals:
+      neck:
+      - state: qillu-equipped

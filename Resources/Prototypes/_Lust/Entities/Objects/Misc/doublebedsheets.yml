@@ -1,0 +1,33 @@
+- type: entity
+  id: DoubleBedsheetCaptainQillu
+  parent: DoubleBedsheetBase
+  name: captain's bedsheet
+  description: It has a Qillu symbol on it, and was woven with a revolutionary new kind of thread guaranteed to have 0.01% permeability for most non-chemical substances, popular among most modern captains.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/doublebedsheets.rsi
+    state: sheetcaptain
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: DoubleBedsheetCentcomQillu
+  parent: DoubleBedsheetBase
+  name: CentComm bedsheet
+  description: Woven with advanced nanothread for warmth as well as being very decorated, essential for all officials.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/doublebedsheets.rsi
+    state: sheetcentcom
+  - type: StealTarget
+    stealGroup: HeadBedsheet
+
+- type: entity
+  id: DoubleBedsheetQillu
+  parent: DoubleBedsheetBase
+  name: Qillu bedsheet
+  description: It has the Qillu logo on it and an aura of lust.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/doublebedsheets.rsi
+    state: sheetqillu

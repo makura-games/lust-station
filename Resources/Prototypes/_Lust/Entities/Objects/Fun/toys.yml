@@ -109,15 +109,32 @@
 - type: entity
   id: PlushieMaksimDedov
   parent: BasePlushie
-  name: Maksim Dedov
+  name: Maksa plushie
   components:
   - type: Sprite
     sprite: _Lust/Objects/Fun/toys.rsi
     state: ded_plushie
+  - type: Item
+    sprite: _Lust/Objects/Fun/maksa_plushie.rsi
+  - type: MeleeWeapon
+    soundHit:
+      path: /Audio/_Lust/half-life_crowbar.ogg
   - type: EmitSoundOnUse
     sound:
-      path: /Audio/_Lust/half-life_crowbar.ogg
-  - type: TriggerOnActivate
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: EmitSoundOnActivate
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: EmitSoundOnCollide
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Items/Toys/rawr.ogg
+  - type: Catchable
+    catchChance: 0.8
+    catchSuccessSound:
+      path: /Audio/Items/Toys/rawr.ogg
   - type: UseDelay
     delay: 1
 
@@ -485,3 +502,31 @@
       - state: diego-vulpa-inhand-left
       right:
       - state: diego-vulpa-inhand-right
+
+# 16.10.2026
+- type: localizedDataset
+  id: pavelitelPhrases
+  values:
+    prefix: pavelitel-
+    count: 29
+
+- type: entity
+  id: PlushiePavelitel
+  parent: BasePlushie
+  name: Arianna Ayr’nii‑Wulfovna
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Fun/toys.rsi
+    state: pavelitel
+  - type: VulpaAccent
+  - type: TriggerOnUse
+  - type: UseDelayOnTrigger
+  - type: UseDelayTriggerCondition
+  - type: EmitSoundOnTrigger
+    sound: null
+  - type: SpeakOnTrigger
+    pack: pavelitelPhrases
+  - type: TTS
+    voice: SophroniaFranklin
+  - type: UseDelay
+    delay: 5

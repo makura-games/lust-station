@@ -135,6 +135,13 @@ lust-interaction-ERPSelftoyPlaceholderFleshflight1 = Insert cock into pussy
 lust-interaction-ERPSelftoyPlaceholderDildo = Insert dildo into anus
 lust-interaction-ERPSelftoyPlaceholderDildo2 = Insert dildo into pussy
 
+lust-interaction-WingsKiss = Kiss wings
+lust-interaction-WingsLick = Lick wings
+lust-interaction-WingsStrokeCrotch = Stroke crotch with wing
+lust-interaction-WingsCockFap = Stroke cock with wing
+lust-interaction-WingsPussyFuck = Fuck pussy while holding wings
+lust-interaction-WingsAssFuck = Fuck anus while holding wings
+
 lust-interaction-CageTap = Tap on cage
 lust-interaction-CageSqueeze = Squeeze cage bars
 lust-interaction-CageMock = Mock the cage

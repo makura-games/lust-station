@@ -4,6 +4,10 @@
   description: job-description-senior-physician
   playTimeTracker: JobSeniorPhysician
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 24
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobChemist
       time: 21600 #6 hrs
@@ -16,7 +20,6 @@
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
   supervisors: job-supervisors-cmo
-  displayWeight: 35
   alternativeTitles:
   - job-alt-title-attending-physician
   access:

@@ -9,6 +9,14 @@
     sprite: _Sunrise/Clothing/Uniforms/Prison/Jumpskirt/regular.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Prison/Jumpskirt/regular.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
 
 - type: entity
   parent: ClothingUniformBase
@@ -21,3 +29,11 @@
     sprite: _Sunrise/Clothing/Uniforms/Prison/Jumpskirt/veteran.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/Uniforms/Prison/Jumpskirt/veteran.rsi
+  # Lust-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - Recyclable
+    - WhitelistChameleon
+    - NudeBottom
+  # Lust-End
