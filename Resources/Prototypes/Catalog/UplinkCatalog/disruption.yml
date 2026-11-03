@@ -122,7 +122,7 @@
   id: UplinkToolbox
   name: uplink-toolbox-name
   description: uplink-toolbox-desc
-  productEntity: ToolboxSyndicateFilled
+  productEntity: SunriseToolboxSyndicateFilled # Lust edit - используется отдельный набор инструментов Синдиката
   discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 1

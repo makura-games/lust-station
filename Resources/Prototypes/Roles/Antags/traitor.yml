@@ -146,7 +146,7 @@
     pocket1: WeaponPistolViper
     pocket2: MagazinePistolHighCapacity
   inhand:
-    - ToolboxSyndicateFilled
+    - SunriseToolboxSyndicateFilled # Lust edit - ящик Синдиката с улучшенным содержимым
   storage:
     back:
     - SyndicateJawsOfLife
