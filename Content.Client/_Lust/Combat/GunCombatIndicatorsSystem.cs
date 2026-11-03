@@ -9,7 +9,7 @@ namespace Content.Client._Lust.Combat;
 
 public sealed partial class GunCombatIndicatorsSystem : EntitySystem
 {
-    [Dependency] private IOverlayManager _overlayManager = default!;
+    [Dependency] private IOverlayManager _overlay = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IInputManager _input = default!;
     [Dependency] private IEyeManager _eye = default!;
@@ -26,7 +26,7 @@ public sealed partial class GunCombatIndicatorsSystem : EntitySystem
 
     public override void Shutdown()
     {
-        _overlayManager.RemoveOverlay<GunCombatIndicatorsOverlay>();
+        _overlay.RemoveOverlay<GunCombatIndicatorsOverlay>();
         base.Shutdown();
     }
 
@@ -37,14 +37,14 @@ public sealed partial class GunCombatIndicatorsSystem : EntitySystem
 
     private void UpdateOverlay()
     {
-        _overlayManager.RemoveOverlay<GunCombatIndicatorsOverlay>();
+        _overlay.RemoveOverlay<GunCombatIndicatorsOverlay>();
         if (!_cfg.GetCVar(CCVars.CombatModeIndicatorsPointShow)
             && !_cfg.GetCVar(CCVars.HudShowGunHeatIndicator)
             && !_cfg.GetCVar(CCVars.HudShowGunJamIndicator)
             && !_cfg.GetCVar(CCVars.HudShowGunBoltIndicator))
             return;
 
-        _overlayManager.AddOverlay(new GunCombatIndicatorsOverlay(
+        _overlay.AddOverlay(new GunCombatIndicatorsOverlay(
             _input,
             EntityManager,
             _eye,
