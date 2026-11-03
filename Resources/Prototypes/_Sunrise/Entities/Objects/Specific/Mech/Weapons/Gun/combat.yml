@@ -2,7 +2,7 @@
   id: WeaponMechCombatVindictor
   name: Mounted MG-100 Vindicator Minigun
   suffix: Mech Weapon, Gun, Combat, Minigun
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseHighlyIllegalContraband ] # Lust edit :: BaseHighlyIllegalContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_vindictor.rsi
@@ -25,42 +25,11 @@
     price: 20000
 
 - type: entity
-  id: WeaponMechCombatChaingun
-  name: Mounted Chaingun
-  suffix: Mech Weapon, Gun, Combat
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Sunrise/Objects/Specific/Mech/mecha_chaingun.rsi
-    state: mecha_chaingun
-  - type: Gun
-    minAngle: 1
-    maxAngle: 45
-    angleIncrease: 0.5
-    angleDecay: 30
-    fireRate: 15
-    selectedMode: FullAuto
-    availableModes:
-      - FullAuto
-    soundGunshot:
-      collection: L6
-      params:
-        volume: -5
-        pitch: 1.03
-  - type: BatteryAmmoProvider
-    proto: CartridgeMinigun
-    fireCost: 1
-  - type: Appearance
-  - type: AmmoCounter
-  - type: StaticPrice
-    price: 20000
-
-- type: entity
   id: WeaponMechCombatMaxim
   name: Mounted Kardashev-Maxim
   description: An ancient heavy machine gun given new life as a mech-mounted gun
   suffix: Mech Weapon, Combat, USSP
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_maxim.rsi
@@ -87,11 +56,13 @@
   name: Mounted MG
   description: An ancient heavy machine gun given new life as a mech-mounted gun
   suffix: Mech Weapon, Combat
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_mg.rsi
     state: mecha_mg
+  - type: Item
+    sprite: _Sunrise/Objects/Weapons/Guns/LMGs/mg42/tiny.rsi
   - type: Gun
     minAngle: -15
     maxAngle: 40
@@ -114,176 +85,11 @@
     price: 1000
 
 - type: entity
-  id: WeaponMechCombatPirateCannon
-  name: Mounted PirateCannon
-  description: An ancient heavy gun given new life as a mech-mounted gun
-  suffix: Mech Weapon, Gun, Combat, Pirate
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Sunrise/Objects/Specific/Mech/mecha_piratecannon.rsi
-    state: mecha_piratecannon
-  - type: Item
-    sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_inhands_64x.rsi
-    storedSprite:
-      state: storage
-      sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_storage_64x.rsi
-  - type: Gun
-    minAngle: -10
-    maxAngle: 15
-    fireRate: 0.25
-    selectedMode: SemiAuto
-    availableModes:
-      - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-  - type: BatteryAmmoProvider
-    proto: CannonBall
-    fireCost: 150
-  - type: Appearance
-  - type: AmmoCounter
-  - type: StaticPrice
-    price: 3000
-
-- type: entity
-  id: WeaponMechCombatPirateMachineCannon
-  name: Mounted Pirate Machine Cannon
-  description: A unique strange gun given new life as a mech-mounted gun
-  suffix: Mech Weapon, Gun, Combat, Pirate
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Sunrise/Objects/Specific/Mech/mecha_piratecannon_auto.rsi
-    state: mecha_piratecannon
-  - type: Item
-    sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_inhands_64x.rsi
-    storedSprite:
-      state: storage
-      sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_storage_64x.rsi
-  - type: Gun
-    minAngle: -10
-    maxAngle: 15
-    fireRate: 6.5
-    projectileSpeed: 20
-    bigTrigger: true
-    selectedMode: FullAuto
-    availableModes:
-      - FullAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-      params:
-        volume: -1
-        pitch: 1.2
-  - type: BatteryAmmoProvider
-    proto: CannonBallMini
-    fireCost: 25
-  - type: Appearance
-  - type: AmmoCounter
-  - type: StaticPrice
-    price: 4000
-
-- type: entity
-  id: WeaponMechCombatPirateGrapeshot
-  name: Mounted PirateGrapeshot
-  description: An ancient heavy gun given new life as a mech-mounted gun
-  suffix: Mech Weapon, Gun, Combat, Pirate
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Sunrise/Objects/Specific/Mech/mecha_blunderbuss.rsi
-    state: mecha_blunderbuss
-  - type: Item
-    sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_inhands_64x.rsi
-    storedSprite:
-      state: storage
-      sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_storage_64x.rsi
-  - type: Gun
-    minAngle: -10
-    maxAngle: 15
-    fireRate: 0.25
-    selectedMode: SemiAuto
-    availableModes:
-      - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-  - type: BatteryAmmoProvider
-    proto: CannonBallGrapeshot
-    fireCost: 75
-  - type: Appearance
-  - type: AmmoCounter
-  - type: StaticPrice
-    price: 2000
-
-- type: entity
-  id: WeaponMechCombatPirateGrapeshotMini
-  name: Mounted BlunderBuss
-  description: An ancient big blunderbuss gun given new life as a mech-mounted gun
-  suffix: Mech Weapon, Gun, Combat, Pirate
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Sunrise/Objects/Specific/Mech/mecha_blunderbuss.rsi
-    state: mecha_blunderbuss
-  - type: Item
-    sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_inhands_64x.rsi
-    storedSprite:
-      state: storage
-      sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_storage_64x.rsi
-  - type: Gun
-    minAngle: -10
-    maxAngle: 15
-    fireRate: 0.65
-    selectedMode: SemiAuto
-    availableModes:
-      - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-  - type: BatteryAmmoProvider
-    proto: CannonBallGrapeshotMini
-    fireCost: 25
-  - type: Appearance
-  - type: AmmoCounter
-  - type: StaticPrice
-    price: 2000
-
-- type: entity
-  id: WeaponMechCombatPirateGlassshot
-  name: Mounted PirateGlassshot
-  description: An ancient heavy gun given new life as a mech-mounted gun
-  suffix: Mech Weapon, Gun, Combat, Pirate
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
-  components:
-  - type: Sprite
-    sprite: _Sunrise/Objects/Specific/Mech/mecha_piratecannon.rsi
-    state: mecha_piratecannon
-  - type: Item
-    sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_inhands_64x.rsi
-    storedSprite:
-      state: storage
-      sprite: _Sunrise/Objects/Weapons/Guns/LMGs/piratecannon_storage_64x.rsi
-  - type: Gun
-    minAngle: -10
-    maxAngle: 15
-    fireRate: 0.25
-    selectedMode: SemiAuto
-    availableModes:
-      - SemiAuto
-    soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mateba.ogg
-  - type: BatteryAmmoProvider
-    proto: CannonBallGlassshot
-    fireCost: 75
-  - type: Appearance
-  - type: AmmoCounter
-  - type: StaticPrice
-    price: 2000
-
-- type: entity
   id: WeaponMechCombatUVM31
   name: UVM-31 "Drake"
   description: A heavy weapon of mass destruction developed by Cybersun based on the minigun. now on a sturdy tripod that allows you to fire directly from the MECH!
   suffix: Mech Weapon, Gun, Combat, Laser , Minigun
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_uvm31.rsi
@@ -302,7 +108,7 @@
       params:
         volume: -1
   - type: BatteryAmmoProvider
-    proto: IgnitionRedLaser # Sunrise-TODO: Нужен товый прототип для данной пушки
+    proto: SunriseMechHitscanIgnitionRedLaser
     fireCost: 15
   - type: Appearance
   - type: AmmoCounter
@@ -314,7 +120,7 @@
   name: Mounted EXP-220 Duster
   description: An  heavy Auto Cannon as a mech-mounted gun with Frag ammo
   suffix: Mech Weapon, Gun, Combat
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     sprite: Objects/Specific/Mech/mecha_equipment.rsi
@@ -351,7 +157,7 @@
   name: mounted "Kord"
   description: Rapid-fire machine gun chambered for 12.7 x 108 mm
   suffix: Mech Weapon, Combat, Kord
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseHighlyIllegalContraband ] # Lust edit :: BaseHighlyIllegalContraband
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Specific/Mech/mecha_kord.rsi
@@ -386,7 +192,7 @@
   name: LBX AC 20 "Minotaur"
   description: A mounted Auto-Shotgun.
   suffix: Mech Weapon, Gun, Combat, Shotgun
-  parent: [ BaseMechWeaponRange, CombatMechEquipment ]
+  parent: [ BaseMechWeaponRange, CombatMechEquipment, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   components:
   - type: Sprite
     scale: 1.1,1.2

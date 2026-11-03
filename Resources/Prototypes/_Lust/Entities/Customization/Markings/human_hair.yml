@@ -1,7 +1,6 @@
 - type: marking
   id: HumanHairDoublebunLongNot
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
   - sprite: _Lust/Mobs/Customization/human_hair.rsi
     state: doublebun_long_not
@@ -9,7 +8,6 @@
 - type: marking
   id: HumanHairBluntbungs5
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
   - sprite: _Lust/Mobs/Customization/human_hair.rsi
     state: bluntbungs5
@@ -17,7 +15,6 @@
 - type: marking
   id: HumanHairBluntbungs6
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
   - sprite: _Lust/Mobs/Customization/human_hair.rsi
     state: bluntbungs6
@@ -25,7 +22,6 @@
 - type: marking
   id: HumanHairBluntbungs7
   bodyPart: Hair
-  markingCategory: Hair
   sprites:
   - sprite: _Lust/Mobs/Customization/human_hair.rsi
     state: bluntbungs7

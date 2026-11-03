@@ -78,7 +78,7 @@
 
   # Sounds
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
       volume: -10
 
@@ -159,8 +159,6 @@
     tags:
     - BorgModuleGeneric
     - BorgModuleSecurity
-    - BorgModuleSyndicate
-    - BorgModuleSyndicateAssault
 
   defaultModules:
   - BorgModuleStandart
@@ -184,9 +182,9 @@
 
   # Sounds
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -10
+      volume: -6 # Lust-Edit
 
   addComponents:
   - type: TTS

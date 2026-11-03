@@ -27,8 +27,13 @@
 - type: roleLoadout
   id: JobNtrOfficer
   groups:
+  - LustNtrOfficerHead # Lust-Edit
+  - LustNtrOfficerNeck # Lust-Edit
+  - LustNtrOfficerOuterClothing # Lust-Edit
+  - LustNtrOfficerPrimaryWeapon # Lust-Edit
+  - LustNtrOfficerServiceWeapon # Lust-Edit
   - UniformNTR
-  - BackNTR
+  - LustBackNTR # Lust-Edit
   - SunriseTrinkets
   - SecurityTrinkets
   - GroupSpeciesBreathTool
@@ -48,7 +53,7 @@
   - SunriseTrinkets
   - SecurityTrinkets
   - GroupSpeciesBreathTool
-  - SunriseSecurityGun
+  - SunriseBrigmedGun
   - Bra
   - Pants
   - Socks
@@ -101,6 +106,7 @@
   id: JobBlueShieldOfficer
   groups:
   - BlueShieldHead
+  - SunriseLoadoutGroupBlueShieldMask
   - BlueShieldNeck
   - BlueShieldJumpsuit
   - BlueShieldBackpack

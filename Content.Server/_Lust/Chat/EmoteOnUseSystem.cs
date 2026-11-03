@@ -1,17 +1,18 @@
 ﻿using Content.Server.Chat.Systems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Timing;
+using Content.Shared.Timing.Components;
+using Content.Shared.Timing.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._Lust.Chat;
 
-public sealed class EmoteOnUseSystem : EntitySystem
+public sealed partial class EmoteOnUseSystem : EntitySystem
 {
-    [Dependency] private readonly UseDelaySystem _useDelay = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly ChatSystem _chat = default!;
+    [Dependency] private UseDelaySystem _useDelay = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ChatSystem _chat = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

@@ -1,0 +1,9 @@
+- type: storeCategory
+  id: Romantic
+  name: store-category-romantic
+  priority: 5
+
+- type: storeCategory
+  id: Erotic
+  name: store-category-erotic
+  priority: 6

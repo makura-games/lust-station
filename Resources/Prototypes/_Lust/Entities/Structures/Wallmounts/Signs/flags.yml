@@ -1,0 +1,9 @@
+- type: entity
+  parent: BaseFlag
+  id: QilluFlag
+  name: Qillu flag
+  description: Glory to Qillu! Wait, they really made a flag for a corporation?
+  components:
+  - type: Sprite
+    sprite: _Lust/Structures/Wallmounts/flags.rsi
+    state: qillu_flag

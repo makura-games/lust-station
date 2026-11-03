@@ -68,37 +68,30 @@
       - PressureImmunity
       - StaminaModifier
     - type: SolutionRegeneration
-      solution: chemicals
       generated:
         reagents:
         - ReagentId: ReagentArrows
           Quantity: 0.25
-    - type: Thirst
-      startingThirst: 2500  # spawn with Okay thirst state
-      thresholds:
-        OverHydrated: 3500
-        Okay: 2500
-        Thirsty: 1500
-        Parched: 1000
-        Dead: 0
-      baseDecayRate: 0.0001
-    - type: Hunger
-      thresholds:
-        Overfed: 3500
-        Okay: 2500
-        Peckish: 1500
-        Starving: 1000
-        Dead: 0
-      baseDecayRate: 0.0001
+    - type: Satiation
+      satiations:
+        Hunger:
+          prototype: NormalSatiationHunger
+        Thirst:
+          prototype: NormalSatiationThirst
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 150
       damage:
-        groups:
-          Brute: -0.2
-          Burn: -0.2
-          Toxin: -0.5
+        types:
+          Blunt: -0.2
+          Slash: -0.2
+          Piercing: -0.2
+          Heat: -0.2
+          Shock: -0.2
+          Cold: -0.2
+          Caustic: -0.2
+          Poison: -0.5
+          Radiation: -0.5
 
 - type: randomHumanoidSettings
   id: ArrowsSoldRandom
@@ -166,37 +159,30 @@
       - PressureImmunity
       - StaminaModifier
     - type: SolutionRegeneration
-      solution: chemicals
       generated:
         reagents:
         - ReagentId: ReagentArrows
           Quantity: 0.25
-    - type: Thirst
-      startingThirst: 2500  # spawn with Okay thirst state
-      thresholds:
-        OverHydrated: 3500
-        Okay: 2500
-        Thirsty: 1500
-        Parched: 1000
-        Dead: 0
-      baseDecayRate: 0.0001
-    - type: Hunger
-      thresholds:
-        Overfed: 3500
-        Okay: 2500
-        Peckish: 1500
-        Starving: 1000
-        Dead: 0
-      baseDecayRate: 0.0001
+    - type: Satiation
+      satiations:
+        Hunger:
+          prototype: NormalSatiationHunger
+        Thirst:
+          prototype: NormalSatiationThirst
     - type: PassiveDamage
       allowedStates:
       - Alive
-      damageCap: 150
       damage:
-        groups:
-          Brute: -0.2
-          Burn: -0.2
-          Toxin: -0.2
+        types:
+          Blunt: -0.2
+          Slash: -0.2
+          Piercing: -0.2
+          Heat: -0.2
+          Shock: -0.2
+          Cold: -0.2
+          Caustic: -0.2
+          Poison: -0.2
+          Radiation: -0.2
 
 - type: jobIcon
   parent: JobIcon

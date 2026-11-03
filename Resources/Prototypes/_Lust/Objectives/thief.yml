@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseThiefStealAnimalObjective
+  id: ShoebillStealObjective
+  components:
+  - type: NotJobRequirement
+    jobs: [ Detective ]
+  - type: StealCondition
+    stealGroup: AnimalShoebill
+  - type: Objective
+    difficulty: 1

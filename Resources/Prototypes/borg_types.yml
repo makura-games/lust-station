@@ -17,6 +17,7 @@
     - BorgModuleScience #until sciborgs are added
 
   defaultModules:
+  - BorgModulePrying
   - BorgModuleTool
   - BorgModuleInflatable
   - BorgModuleArtifact
@@ -28,9 +29,9 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -15
+      volume: -6 # Lust-Edit
   # Sunrise-End
 
   # Visual
@@ -65,6 +66,7 @@
 
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleAdvancedTool
   - BorgModuleCable
   - BorgModuleConstruction
@@ -76,9 +78,9 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -15
+      volume: -6 # Lust-Edit
   addComponents:
   - type: ShowHealthBars
     damageContainers:
@@ -123,6 +125,7 @@
 
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleTool
   - BorgModuleMining
   - BorgModuleTraversal
@@ -133,9 +136,9 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -15
+      volume: 0 # Lust-Edit
 
   addComponents:
   - type: InnateItem
@@ -176,6 +179,7 @@
 
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleCleaning
   - BorgModuleCustodial
 
@@ -185,10 +189,10 @@
 
   # Sunrise-Start
   footstepCollection:
-    collection: FootstepCyborgSpider # Lust-Edit
+    collection: FootstepHighHeels # Lust-Edit
     params:
-      volume: -5
-  # Sunrise-Start
+      volume: 0 # Lust-Edit
+  # Sunrise-End
 
   # Visual
   inventoryTemplateId: borgShort
@@ -205,10 +209,10 @@
   - type: FootprintAreaCleaner
   - type: Absorbent
     pickupAmount: 500
-  - type: SolutionContainerManager
-    solutions:
-      absorbed:
-        maxVol: 500
+  - type: Solution
+    id: absorbed
+    solution:
+      maxVol: 500
   - type: Spillable
     solution: absorbed
   - type: RefillableSolution
@@ -234,6 +238,7 @@
     - BorgModuleMedical
 
   defaultModules:
+  - BorgModulePrying
   - BorgModuleChemical
   - BorgModuleTopicals
   - BorgModuleRescue
@@ -303,6 +308,7 @@
   # Sunrise-Start
   defaultModules:
   - BorgModuleStandart
+  - BorgModulePrying
   - BorgModuleMusique
   - BorgModulePaperwork
   - BorgModuleBartender

@@ -7,7 +7,6 @@
   startingGear: CentcommGear
   icon: "JobIconNanotrasen"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   accessGroups:
   - AllAccess
   access:
@@ -25,11 +24,11 @@
     eyes: ClothingEyesGlassesCommand
     gloves: ClothingHandsGlovesColorBlack
     outerClothing: ClothingOuterArmorCentcommCarapace
-    id: CentcomPDA
+    id: CentcomPDAQillu # Lust-Edit
     ears: ClothingHeadsetAltCentCom
     belt: WeaponPistolN1984
     pocket1: BoxFolderCentComClipboardThreePapers
-    pocket2: PenCentcom
+    pocket2: PenCentcomQillu # Lust-Edit
 
 
 - type: chameleonOutfit

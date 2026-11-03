@@ -181,7 +181,7 @@
       collection: MaleSevereCough
     # Lust-Start
     Moan:
-      collection: MaleMoan
+      path: /Audio/_Sunrise/Voice/Talk/pig_exclaim.ogg
     # Lust-End
   params:
     variation: 0.125
@@ -209,6 +209,10 @@
       collection: HumanoidXenoCry
     DefaultDeathgasp:
       collection: HumanoidXenoDeathgasp
+    # Lust-Start
+    Moan:
+      collection: HumanoidXenoScreams
+    # Lust-End
   params:
     variation: 0.125
 
@@ -300,6 +304,7 @@
     Hisses:
       collection: FelinidHisses
     # Lust-Start
+    # TODO: Add proper moans for Resomi
     Moan:
-      collection: FemaleMoan
+      path: /Audio/_Sunrise/Voice/Resomi/resomi_scream.ogg
     # Lust-End

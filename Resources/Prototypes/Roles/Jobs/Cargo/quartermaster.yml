@@ -4,6 +4,10 @@
   description: job-description-qm
   playTimeTracker: JobQuartermaster
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 21
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobCargoTechnician
       time: 5h
@@ -13,13 +17,10 @@
     - !type:DepartmentTimeRequirement
       department: Cargo
       time: 10h
-  weight: 10
   startingGear: QuartermasterGear
   icon: "JobIconQuarterMaster"
   supervisors: job-supervisors-captain
-  canBeAntag: true # Sunrise-Edit
   radioBold: true # Sunrise-Edit
-  displayWeight: 40  # Sunrise-Edit
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-intendant

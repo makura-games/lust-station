@@ -1,6 +1,6 @@
 - type: currency
   id: Suntick
-  displayName: Lust Coin # Lust-Edit
+  displayName: store-currency-display-lust-coin # Lust-Edit
   cash:
     1: Suntick1
   canWithdraw: false

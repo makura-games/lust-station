@@ -11,9 +11,9 @@
   - Wizard
   - Zombies
   - Xenoborgs
+  - Changelings
   - MinorAntagonists
-  - Changelings # Sunrise-Edit
-  - FleshCult # Sunrise-Edit
+ # - FleshCult # Sunrise-Edit # Lust-Edit : Temporary Disabled
   - SELFAgent # Sunrise-Edit
 
 - type: guideEntry
@@ -35,6 +35,11 @@
   id: Revolutionaries
   name: guide-entry-revolutionaries
   text: "/ServerInfo/Guidebook/_Sunrise/Antagonist/Revolutionaries.xml"  # Sunrise-Edit
+
+- type: guideEntry
+  id: Changelings
+  name: guide-entry-changelings
+  text: "/ServerInfo/Guidebook/Antagonist/Changelings.xml"
 
 - type: guideEntry
   id: MinorAntagonists

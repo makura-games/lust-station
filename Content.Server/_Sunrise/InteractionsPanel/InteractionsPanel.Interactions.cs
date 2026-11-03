@@ -19,15 +19,19 @@ using Robust.Shared.Audio;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Map;
 using Robust.Shared.Network;
+using Content.Shared._Lust.Smell;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
+using Content.Shared.IdentityManagement;
+using Content.Shared.Inventory;
 
 namespace Content.Server._Sunrise.InteractionsPanel;
 
 public partial class InteractionsPanel
 {
-    [Dependency] private readonly PlayerCacheManager _playerCacheManager = default!;
-    [Dependency] private readonly PuddleSystem _puddle = default!;
+    [Dependency] private PlayerCacheManager _playerCacheManager = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
+    [Dependency] private InventorySystem _inventory = default!; // Lust-Edit
 
     private const float LoveDecayRate = 0.5f;
     private const float OrgasmCooldownSeconds = 15f;
@@ -78,6 +82,11 @@ public partial class InteractionsPanel
         if (!HasComp<InteractionsComponent>(player))
             return;
 
+        // Lust-Start
+        if (_mobState.IsDead(player))
+            return;
+        // Lust-End
+
         if (_ui.IsUiOpen(player, InteractionWindowUiKey.Key))
         {
             _ui.ServerSendUiMessage(player, InteractionWindowUiKey.Key, new RequestSavePosAndCloseMessage());
@@ -98,7 +107,6 @@ public partial class InteractionsPanel
             if (!_interaction.InRangeAndAccessible(player, ent)) continue;
             // Lust edit - пропуск персонажей с отключённой панелью.
             if (!CanOpenUI(player, ent)) continue;
-
             entitiesInRange.Add(ent);
         }
 
@@ -127,6 +135,10 @@ public partial class InteractionsPanel
             return false;
         if (!HasComp<InteractionsComponent>(entity))
             return false;
+        // Lust-Start
+        if (_mobState.IsDead(entity))
+            return false;
+        // Lust-End
         return TryOpenUI(player, entity); // Lust edit - проверка доступности панели.
     }
 
@@ -184,11 +196,13 @@ public partial class InteractionsPanel
         var target = ent.Comp.CurrentTarget;
         if (target == null)
             return;
-
         // Lust edit - защита от взаимодействия после отключения панели целью.
         if (!CanOpenUI(ent, target.Value))
             return;
-
+        // Lust-Start
+        if (_mobState.IsDead(target.Value)) //Lust-Edit
+            return;
+        // Lust-End
         if (!_playerManager.TryGetSessionByEntity(ent.Owner, out var userSession))
             return;
 
@@ -204,7 +218,7 @@ public partial class InteractionsPanel
             return;
         }
 
-        if (!_prototypeManager.TryIndex<InteractionPrototype>(args.InteractionId, out var interactionPrototype))
+        if (!ProtoMan.TryIndex<InteractionPrototype>(args.InteractionId, out var interactionPrototype))
             return;
 
         if (!CheckAllAppearConditions(interactionPrototype, ent.Owner, target.Value))
@@ -235,7 +249,7 @@ public partial class InteractionsPanel
         {
             var rngSound = _random.Pick(interactionPrototype.InteractionSounds);
 
-            if (_prototypeManager.TryIndex(rngSound, out var soundProto))
+            if (ProtoMan.TryIndex(rngSound, out var soundProto))
             {
                 _audio.PlayPvs(soundProto.Sound, ent.Owner, AudioParams.Default);
             }
@@ -244,7 +258,7 @@ public partial class InteractionsPanel
         if (interactionPrototype.SpawnsEffect)
         {
             if (interactionPrototype.EntityEffect != null
-                && _prototypeManager.TryIndex(interactionPrototype.EntityEffect.Value, out var effectPrototype))
+                && ProtoMan.TryIndex(interactionPrototype.EntityEffect.Value, out var effectPrototype))
             {
                 if (_random.Prob(interactionPrototype.EffectChance))
                 {
@@ -313,7 +327,7 @@ public partial class InteractionsPanel
         if (string.IsNullOrWhiteSpace(type) || type == "none")
             return;
 
-        var sex = TryComp<HumanoidAppearanceComponent>(ent, out var humanoid)
+        var sex = TryComp<HumanoidProfileComponent>(ent, out var humanoid)
             ? humanoid.Sex.ToString().ToLowerInvariant()
             : "unknown";
 
@@ -405,13 +419,13 @@ public partial class InteractionsPanel
             _chatManager.ChatMessageToManyFiltered(filter, ChatChannel.Emotes, msg, msg, user, false, true, Color.Pink);
         }
 
-        if (!string.IsNullOrEmpty(data.SoundId) && _prototypeManager.TryIndex<InteractionSoundPrototype>(data.SoundId, out var soundProto))
+        if (!string.IsNullOrEmpty(data.SoundId) && ProtoMan.TryIndex<InteractionSoundPrototype>(data.SoundId, out var soundProto))
         {
             _audio.PlayPvs(soundProto.Sound, user, AudioParams.Default);
         }
 
         if (data.SpawnsEffect && !string.IsNullOrEmpty(data.EntityEffectId) &&
-            _prototypeManager.TryIndex<InteractionEntityEffectPrototype>(data.EntityEffectId, out var effectProto))
+            ProtoMan.TryIndex<InteractionEntityEffectPrototype>(data.EntityEffectId, out var effectProto))
         {
             if (_random.Prob(data.EffectChance))
             {
@@ -502,9 +516,14 @@ public partial class InteractionsPanel
         _chatSystem.TrySendInGameICMessage(uid, "кончает", InGameICChatType.Emote, false);
         _chatSystem.TryEmoteWithChat(uid, "Moan");
 
-        if (TryComp<HumanoidAppearanceComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
+        if (TryComp<HumanoidProfileComponent>(uid, out var humanoidAppearanceComponent) && humanoidAppearanceComponent.Sex == Sex.Male)
             SpawnSemen("Semen", Transform(uid).Coordinates);
-
+        // Lust-Edit-Start
+        RaiseLocalEvent(new OrgasmPerformedEvent
+        {
+            User = uid,
+        });
+        // Lust-Edit-End
         SetCooldown(uid, "orgasm", TimeSpan.FromSeconds(OrgasmCooldownSeconds));
         Dirty(uid, comp);
     }
@@ -531,13 +550,22 @@ public partial class InteractionsPanel
         Dirty(uid, comp);
 
         var ratio = (float)(comp.LoveAmount / comp.MaxLoveAmount).Float();
-
-        if (ratio >= 0.33f && !HasComp<LoveVisionComponent>(uid))
+        // Lust-Edit-Start
+        if (ratio >= 0.33f)
         {
-            var newComp = AddComp<LoveVisionComponent>(uid);
-            newComp.FromLoveSystem = true;
-            Dirty(uid, newComp);
+            if (!HasComp<LoveVisionComponent>(uid))
+            {
+                var newComp = AddComp<LoveVisionComponent>(uid);
+                newComp.FromLoveSystem = true;
+                Dirty(uid, newComp);
+            }
+
+            RaiseLocalEvent(new ArousalStartedEvent
+            {
+                Uid = uid,
+            });
         }
+        // Lust edit end
         else if (ratio < 0.33f && TryComp<LoveVisionComponent>(uid, out var loveVision) && loveVision.FromLoveSystem)
         {
             RemComp<LoveVisionComponent>(uid);
@@ -622,8 +650,8 @@ public partial class InteractionsPanel
 
     private string FormatInteractionMessage(string template, EntityUid user, EntityUid target)
     {
-        var userName = MetaData(user).EntityName;
-        var targetName = MetaData(target).EntityName;
+        var userName = Identity.Name(user, EntityManager);
+        var targetName = Identity.Name(target, EntityManager);
 
         var result = template
             .Replace("%user", userName)

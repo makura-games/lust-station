@@ -108,3 +108,21 @@
     sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcom_uniform_qillu.rsi
   - type: Clothing
     sprite: _Lust/Clothing/Uniforms/Jumpsuit/centcom_uniform_qillu.rsi
+
+- type: entity
+  parent: UnsensoredClothingUniformBase
+  id: LustClothingUniformJumpsuitStripperSlim
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Uniforms/stripper_slimsuit.rsi
+  - type: Clothing
+    sprite: _Lust/Clothing/Uniforms/stripper_slimsuit.rsi
+
+- type: entity
+  parent: UnsensoredClothingUniformBase
+  id: LustClothingUniformJumpsuitStripperStarPasties
+  components:
+  - type: Sprite
+    sprite: _Lust/Clothing/Uniforms/stripper_starpastiessuit.rsi
+  - type: Clothing
+    sprite: _Lust/Clothing/Uniforms/stripper_starpastiessuit.rsi

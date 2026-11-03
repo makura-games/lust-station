@@ -4,15 +4,17 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
+  # Lust-Start
+  speciesBlacklist:
+  - Vox
+  # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 2.5h
+      time: 4h
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
-  canBeAntag: false
-  displayWeight: 10
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-law-enforcer

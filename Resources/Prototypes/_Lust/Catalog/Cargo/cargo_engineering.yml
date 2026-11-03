@@ -1,0 +1,12 @@
+﻿- type: cargoProduct
+  id: LustCrateEngineeringAntiMeteorTurret
+  icon:
+    sprite: _Lust/Objects/Weapons/Guns/Turrets/salvage_turret.rsi
+    state: base
+  product: LustWeaponTurretAntiMeteorFlatpack
+  container:
+    entity: WrappedParcel
+    containerId: contents
+  cost: 4500
+  category: cargoproduct-category-name-engineering
+  group: market

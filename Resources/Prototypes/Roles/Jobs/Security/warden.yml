@@ -3,19 +3,24 @@
   name: job-name-warden
   description: job-description-warden
   playTimeTracker: JobWarden
+  # Lust-Start
+  speciesBlacklist:
+  - Vox
+  # Lust-End
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 24
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 5h
     - !type:DepartmentTimeRequirement
       department: Security
       time: 10h
-  weight: 5
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
-  canBeAntag: false
-  displayWeight: 70  # Sunrise
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-jailer

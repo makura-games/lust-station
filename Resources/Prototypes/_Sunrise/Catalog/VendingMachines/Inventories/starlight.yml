@@ -39,6 +39,7 @@
     ClothingEyesEyepatchHudMedical: 2
     AutoMenderBruteFilled: 1
     AutoMenderBurnFilled: 1
+    MedipenCaseSyndicate: 3
     SpaceMedipen: 1
     PatchPackHeat: 2
     PatchPackBrute: 2
@@ -77,14 +78,16 @@
   startingInventory:
     HandheldHealthAnalyzer: 3
     BodyBagFolded: 5
-    Brutepack: 3
-    RedBrutePack: 2
-    Ointment: 3
-    RedOintment: 2
-    Blueointment20: 2
-    RedPunctPack: 2
-    RedLacePack: 2
-    RedBruizPack: 2
+    # lust-edit-start - lust pr #662
+    Brutepack: 5
+    RedBrutePack: 3
+    Ointment: 5
+    RedOintment: 1
+    Blueointment20: 1
+    RedPunctPack: 1
+    RedLacePack: 1
+    RedBruizPack: 1
+    # lust-edit-start
     RegenerativeMesh: 2
     MedicatedSuture: 2
     Bloodpack: 5
@@ -104,6 +107,7 @@
     PillCanisterCharcoal: 1
     AutoMenderBruteFilled: 1
     AutoMenderBurnFilled: 1
+    MedipenCaseBrigmedic: 2
   contrabandInventory:
     PillCanisterRandom: 1
     ToyFigurineBrigmedic: 1

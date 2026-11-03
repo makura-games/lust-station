@@ -135,6 +135,13 @@ lust-interaction-ERPSelftoyPlaceholderFleshflight1 = Вставить член �
 lust-interaction-ERPSelftoyPlaceholderDildo = Вставить дилдо в анал
 lust-interaction-ERPSelftoyPlaceholderDildo2 = Вставить дилдо в вагину
 
+lust-interaction-WingsKiss = Поцеловать крылышки
+lust-interaction-WingsLick = Облизать крылышки
+lust-interaction-WingsStrokeCrotch = Погладить промежность крылом
+lust-interaction-WingsCockFap = Погладить член крылом
+lust-interaction-WingsPussyFuck = Трахать вагину держа за крылья
+lust-interaction-WingsAssFuck = Трахать анус держа за крылья
+
 lust-interaction-CageTap = Постучать по клетке
 lust-interaction-CageSqueeze = Сжать прутья клетки
 lust-interaction-CageMock = Насмехаться над клеткой

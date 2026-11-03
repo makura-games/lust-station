@@ -10,7 +10,6 @@ lust-interaction-category-Lips = Губы
 lust-interaction-category-Mouth = Рот
 lust-interaction-category-Pussy = Вагина
 lust-interaction-category-Thighs = Ляжки
-lust-interaction-category-Wings = Крылья
 lust-interaction-category-Dildos = Дилдо
 lust-interaction-category-Fleshlights = Искусственная вагина
 lust-interaction-category-Legs = Ножки

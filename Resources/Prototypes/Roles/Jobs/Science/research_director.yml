@@ -4,19 +4,20 @@
   description: job-description-rd
   playTimeTracker: JobResearchDirector
   requirements:
+  # Lust-edit-start
+  - !type:AgeRequirement
+    requiredAge: 23
+  # Lust-edit-end
   - !type:RoleTimeRequirement
     role: JobScientist
     time: 5h
   - !type:DepartmentTimeRequirement
     department: Science
     time: 10h
-  weight: 10
   startingGear: ResearchDirectorGear
   icon: "JobIconResearchDirector"
   supervisors: job-supervisors-captain
-  canBeAntag: true # Sunrise-Edit
   radioBold: true # Sunrise-Edit
-  displayWeight: 50 # Sunrise-Edit
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-science-lead
