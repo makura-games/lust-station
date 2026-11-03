@@ -1,0 +1,10 @@
+ent-LustWeaponLaserSvalinn = svalinn laser pistol
+    .desc = A cheap and widely used laser pistol.
+ent-LustWeaponPistolEchis = echis
+    .desc = A cyborg-mounted weapon system based on the Viper pistol. Creates ammunition on the fly from an internal fabricator, which slowly self-charges.
+ent-LustWeaponLightMachineGunL6C = L6C ROW
+    .desc = A L6 SAW for use by cyborgs. Creates .30 rifle ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+ent-LustWeaponSubMachineGunC20rROW = C-20r ROW
+    .desc = A burst-fire C-20r submachine gun for use by cyborgs. Creates .35 caliber ammo on the fly from an internal ammo fabricator, which slowly self-charges.
+ent-LustWeaponShotgunBulldog = Bulldog
+    .desc = An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses .50 shotgun shells.
