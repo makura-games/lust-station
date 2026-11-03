@@ -1871,10 +1871,10 @@
     plantId: GatfruitPlants
   - type: Edible
     trash:
-    - WeaponRevolverPython
+    - LustWeaponRevolverPython
   - type: ToolRefinable
     refineResult:
-    - id: WeaponRevolverPython
+    - id: LustWeaponRevolverPython
   - type: Tag
     tags:
     - Fruit # It's in the name

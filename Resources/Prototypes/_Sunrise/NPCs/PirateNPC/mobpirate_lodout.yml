@@ -277,7 +277,7 @@
   equipment:
     gloves: ClothingHandsBlackPirateCannon
     belt: ClothingAmmoBeltGrapeShot
-    pocket1: WeaponRevolverPirate
+    pocket1: LustWeaponRevolverPirate
     pocket2: CannonBallFuze
 
 - type: startingGear

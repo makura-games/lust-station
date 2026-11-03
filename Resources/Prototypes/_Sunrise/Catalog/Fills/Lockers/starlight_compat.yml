@@ -57,7 +57,7 @@
         children:
         - id: FlashlightSeclite
           amount: 2
-        - id: WeaponShotgunRiotSawn
+        - id: LustWeaponShotgunRiotSawn
         - id: BoxBeanbag
         - id: WeaponDisabler
           amount: 2
@@ -105,8 +105,8 @@
         children:
         - id: FlashlightSeclite
           amount: 2
-        - id: WeaponShotgunRiotSawn
-        - id: WeaponEnergyShotgun
+        - id: LustWeaponShotgunRiotSawn
+        - id: LustWeaponEnergyShotgun
         - id: WeaponDisabler
           amount: 2
         - id: ClothingBeltSecurityFilled

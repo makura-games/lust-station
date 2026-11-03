@@ -50,7 +50,7 @@
   # Sunrise end
 
 - type: entity
-  parent: [ LustWeaponLauncher, BaseSyndicateContraband ] # Lust edit: используем fork-прототип с нагревом
+  parent: [ BaseWeaponLauncher, BaseSyndicateContraband ]
   id: WeaponLauncherChinaLake
   name: China Lake
   description: PLOOP.
@@ -86,7 +86,7 @@
     price: 10000
 
 - type: entity
-  parent: [ LustWeaponLauncher, BaseMajorContraband ] # Lust edit: используем fork-прототип с нагревом
+  parent: [ BaseWeaponLauncher, BaseMajorContraband ]
   id: WeaponLauncherHydra
   name: hydra
   description: PLOOP... FSSSSSS...
@@ -131,7 +131,7 @@
     proto: GrenadeFrag
 
 - type: entity
-  parent: [ LustWeaponLauncher, BaseMajorContraband ] # Lust edit: используем fork-прототип с нагревом
+  parent: [ BaseWeaponLauncher, BaseMajorContraband ]
   id: WeaponLauncherRocket
   name: RPG-7
   description: A modified ancient rocket-propelled grenade launcher.
@@ -205,7 +205,7 @@
     channel: XenoborgGuidedMissileLauncher
 
 - type: entity
-  parent: [LustWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband; Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   id: WeaponLauncherMultipleRocket
   name: multiple rocket launcher
   description: A modified ancient rocket-propelled grenade launcher.
@@ -283,7 +283,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [LustWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband; Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   id: WeaponLauncherPirateCannon
   name: pirate cannon
   description: Kaboom!

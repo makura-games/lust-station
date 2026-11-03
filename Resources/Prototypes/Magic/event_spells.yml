@@ -34,65 +34,65 @@
     event: !type:RandomGlobalSpawnSpellEvent
       makeSurvivorAntagonist: true
       spawns:
-      - id: WeaponPistolViper
+      - id: LustWeaponPistolViper
         orGroup: Guns
-      - id: WeaponPistolCobra
+      - id: LustWeaponPistolCobra
         orGroup: Guns
-      - id: WeaponPistolMk58
+      - id: LustWeaponPistolMk58
         orGroup: Guns
-      - id: WeaponPistolN1984
+      - id: LustWeaponPistolN1984
         orGroup: Guns
-      - id: WeaponRevolverDeckard
+      - id: LustWeaponRevolverDeckard
         orGroup: Guns
-      - id: WeaponRevolverInspector
+      - id: LustWeaponRevolverInspector
         orGroup: Guns
-      - id: WeaponRevolverMateba
+      - id: LustWeaponRevolverMateba
         orGroup: Guns
-      - id: WeaponRevolverPython
+      - id: LustWeaponRevolverPython
         orGroup: Guns
-      - id: WeaponRevolverPirate
+      - id: LustWeaponRevolverPirate
         orGroup: Guns
-      - id: WeaponRifleAk
+      - id: LustWeaponRifleAk
         orGroup: Guns
-      - id: WeaponRifleLecter
+      - id: LustWeaponRifleLecter
         orGroup: Guns
       - id: LustWeaponShotgunBulldog # Lust edit: используем fork-прототип с нагревом
         orGroup: Guns
-      - id: WeaponShotgunDoubleBarreled
+      - id: LustWeaponShotgunDoubleBarreled
         orGroup: Guns
-      - id: WeaponShotgunEnforcer
+      - id: LustWeaponShotgunEnforcer
         orGroup: Guns
-      - id: WeaponShotgunTrenchgun4034 # Sunrise-Edit
+      - id: LustWeaponShotgunTrenchgun4034 # Sunrise-Edit
         orGroup: Guns
-      - id: WeaponShotgunSawn
+      - id: LustWeaponShotgunSawn
         orGroup: Guns
-      - id: WeaponShotgunHandmade
+      - id: LustWeaponShotgunHandmade
         orGroup: Guns
-      - id: WeaponShotgunBlunderbuss
+      - id: LustWeaponShotgunBlunderbuss
         orGroup: Guns
-      - id: WeaponShotgunImprovised
+      - id: LustWeaponShotgunImprovised
         orGroup: Guns
-      - id: WeaponSubMachineGunAtreides
+      - id: LustWeaponSubMachineGunAtreides
         orGroup: Guns
-      - id: WeaponSubMachineGunC20r
+      - id: LustWeaponSubMachineGunC20r
         orGroup: Guns
-      - id: WeaponSubMachineGunDrozd
+      - id: LustWeaponSubMachineGunDrozd
         orGroup: Guns
       - id: WeaponRifleM16A4 # Sunrise-Edit
         orGroup: Guns
-      - id: WeaponSniperMosin
+      - id: LustWeaponSniperMosin
         orGroup: Guns
-      - id: WeaponSniperHristov
+      - id: LustWeaponSniperHristov
         orGroup: Guns
-      - id: Musket
+      - id: LustMusket
         orGroup: Guns
-      - id: WeaponPistolFlintlock
+      - id: LustWeaponPistolFlintlock
         orGroup: Guns
-      - id: WeaponLauncherChinaLake
+      - id: LustWeaponLauncherChinaLake
         orGroup: Guns
-      - id: WeaponLauncherRocket
+      - id: LustWeaponLauncherRocket
         orGroup: Guns
-      - id: WeaponLauncherPirateCannon
+      - id: LustWeaponLauncherPirateCannon
         orGroup: Guns
       - id: WeaponTetherGun
         orGroup: Guns
@@ -100,7 +100,7 @@
         orGroup: Guns
       - id: WeaponGrapplingGun
         orGroup: Guns
-      - id: WeaponLightMachineGunL6
+      - id: LustWeaponLightMachineGunL6
         orGroup: Guns
       - id: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
         orGroup: Guns
@@ -108,11 +108,11 @@
         orGroup: Guns
       - id: WeaponMakeshiftLaser
         orGroup: Guns
-      - id: WeaponTeslaGun
+      - id: LustWeaponTeslaGun
         orGroup: Guns
-      - id: WeaponLaserCarbinePractice
+      - id: LustWeaponLaserCarbinePractice
         orGroup: Guns
-      - id: WeaponLaserCarbine
+      - id: LustWeaponLaserCarbine
         orGroup: Guns
       - id: WeaponPulsePistol
         orGroup: Guns
@@ -120,17 +120,17 @@
         orGroup: Guns
       - id: WeaponPulseRifle
         orGroup: Guns
-      - id: WeaponLaserCannon
+      - id: LustWeaponLaserCannon
         orGroup: Guns
-      - id: WeaponParticleDecelerator
+      - id: LustWeaponParticleDecelerator
         orGroup: Guns
-      - id: WeaponXrayCannon
+      - id: LustWeaponXrayCannon
         orGroup: Guns
       - id: WeaponDisablerPractice
         orGroup: Guns
       - id: WeaponDisabler
         orGroup: Guns
-      - id: WeaponDisablerSMG
+      - id: LustWeaponDisablerSMG
         orGroup: Guns
       - id: WeaponTaser
         orGroup: Guns
@@ -142,9 +142,9 @@
         orGroup: Guns
       - id: WeaponBehonkerLaser
         orGroup: Guns
-      - id: WeaponEnergyShotgun
+      - id: LustWeaponEnergyShotgun
         orGroup: Guns
-      - id: WeaponMinigun
+      - id: LustWeaponMinigun
         orGroup: Guns
       - id: BowImprovised
         orGroup: Guns

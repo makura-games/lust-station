@@ -3,7 +3,7 @@
   start: start
   graph:
     - node: start
-      entity: WeaponRifleLecter
+      entity: LustWeaponRifleLecter
       edges:
         - to: upgradelecter
           steps:
@@ -22,7 +22,7 @@
   start: start
   graph:
     - node: start
-      entity: WeaponSubMachineGunDrozd
+      entity: LustWeaponSubMachineGunDrozd
       edges:
         - to: upgradedrozd
           steps:

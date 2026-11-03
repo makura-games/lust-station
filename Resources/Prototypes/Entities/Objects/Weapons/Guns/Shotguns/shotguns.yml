@@ -51,7 +51,7 @@
         staminaMultiplier: 20
 
 - type: entity
-  parent: LustWeaponShotgunAny # Lust edit: используем fork-прототип с нагревом
+  parent: BaseWeaponShotgunAny
   id: BaseWeaponShotgun
   abstract: true
   components:
@@ -68,7 +68,7 @@
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
 
 - type: entity
-  parent: [LustWeaponShotgunAny, GunLight] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponShotgunAny, GunLight]
   id: BaseWeaponShotgunPump
   abstract: true
   components:
@@ -157,7 +157,7 @@
 
 - type: entity
   name: double-barreled shotgun
-  parent: [LustWeaponShotgunAny, BaseGunWieldable, BaseSecurityBartenderContraband] # Sunrise-Edit; Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSecurityBartenderContraband] # Sunrise-Edit
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. Uses .50 shotgun shells.
   components:
@@ -266,7 +266,7 @@
 
 - type: entity
   name: sawn-off shotgun
-  parent: [ LustWeaponShotgunAny, BaseSecurityBartenderContraband ] # Sunrise-Edit; Lust edit: используем fork-прототип с нагревом
+  parent: [ BaseWeaponShotgunAny, BaseSecurityBartenderContraband ] # Sunrise-Edit
   id: WeaponShotgunSawn
   description: Groovy! Uses .50 shotgun shells.
   components: # needs to be super inaccurate because you don't need to wield it

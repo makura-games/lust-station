@@ -101,13 +101,13 @@
       items:
       - SurvivalKnife
       - CombatTutorialWeaponDisablerPractice
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-keep-weapon
     - type: TutorialEquipBlockedSoftLock
       items:
       - SurvivalKnife
       - CombatTutorialWeaponDisablerPractice
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       blockAllSlots: true
       popup: combat-tut-softlock-keep-weapon
     - type: TutorialAttackSoftLock
@@ -506,11 +506,11 @@
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialStorageInsertSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialEquipBlockedSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       blockAllSlots: true
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialAttackSoftLock
@@ -555,7 +555,7 @@
 - type: tutorialStep
   id: CombatTutTakeCarbine
   parent: BaseTutorialStepBase
-  target: WeaponLaserCarbinePractice
+  target: LustWeaponLaserCarbinePractice
   bubble:
     text: combat-tut-take-carbine-bubble
     attachToTarget: true
@@ -564,23 +564,23 @@
   observeRange: 14
   uiHighlight:
   - !type:UiByEntityPrototype
-    prototype: WeaponLaserCarbinePractice
+    prototype: LustWeaponLaserCarbinePractice
   effects:
   - !type:TutorialComponentEffect
     components:
     - type: TutorialPickupSoftLock
       allowedItems:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-pickup-highlighted
     - type: TutorialDropSoftLock
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialStorageInsertSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialEquipBlockedSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       blockAllSlots: true
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialAttackSoftLock
@@ -588,7 +588,7 @@
       popup: combat-tut-softlock-follow-step
   conditions:
   - !type:PickupListenedCondition
-    target: WeaponLaserCarbinePractice
+    target: LustWeaponLaserCarbinePractice
 
 - type: tutorialStep
   id: CombatTutShootCarbineUnwielded
@@ -602,7 +602,7 @@
   observeRange: 20
   uiHighlight:
   - !type:UiByEntityPrototype
-    prototype: WeaponLaserCarbinePractice
+    prototype: LustWeaponLaserCarbinePractice
   effects:
   - !type:TutorialComponentEffect
     components:
@@ -613,23 +613,23 @@
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialStorageInsertSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialEquipBlockedSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       blockAllSlots: true
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialWieldSoftLock
       popup: combat-tut-softlock-shoot-one-handed
     - type: TutorialAttackSoftLock
       allowedRangedWeapons:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-shoot-carbine
   failures:
   - conditions:
     - !type:HoldInHandsCondition
-      item: WeaponLaserCarbinePractice
+      item: LustWeaponLaserCarbinePractice
       inverted: true
     repairStep: CombatTutTakeCarbine
   - conditions:
@@ -638,7 +638,7 @@
     repairStep: CombatTutEnableCombatMode
   conditions:
   - !type:GunShotListenedCondition
-    target: WeaponLaserCarbinePractice
+    target: LustWeaponLaserCarbinePractice
     count: 3
 
 - type: tutorialStep
@@ -650,7 +650,7 @@
   ttsMessage: combat-tut-wield-carbine-tts
   uiHighlight:
   - !type:UiByEntityPrototype
-    prototype: WeaponLaserCarbinePractice
+    prototype: LustWeaponLaserCarbinePractice
   effects:
   - !type:TutorialComponentEffect
     components:
@@ -661,11 +661,11 @@
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialStorageInsertSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialEquipBlockedSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       blockAllSlots: true
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialAttackSoftLock
@@ -674,12 +674,12 @@
   failures:
   - conditions:
     - !type:HoldInHandsCondition
-      item: WeaponLaserCarbinePractice
+      item: LustWeaponLaserCarbinePractice
       inverted: true
     repairStep: CombatTutTakeCarbine
   conditions:
   - !type:WieldedCondition
-    item: WeaponLaserCarbinePractice
+    item: LustWeaponLaserCarbinePractice
 
 - type: tutorialStep
   id: CombatTutShootCarbineWielded
@@ -693,7 +693,7 @@
   observeRange: 20
   uiHighlight:
   - !type:UiByEntityPrototype
-    prototype: WeaponLaserCarbinePractice
+    prototype: LustWeaponLaserCarbinePractice
   effects:
   - !type:TutorialComponentEffect
     components:
@@ -704,26 +704,26 @@
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialStorageInsertSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialEquipBlockedSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       blockAllSlots: true
       popup: combat-tut-softlock-keep-carbine
     - type: TutorialAttackSoftLock
       allowedRangedWeapons:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-shoot-carbine
   failures:
   - conditions:
     - !type:HoldInHandsCondition
-      item: WeaponLaserCarbinePractice
+      item: LustWeaponLaserCarbinePractice
       inverted: true
     repairStep: CombatTutTakeCarbine
   - conditions:
     - !type:WieldedCondition
-      item: WeaponLaserCarbinePractice
+      item: LustWeaponLaserCarbinePractice
       wielded: false
     repairStep: CombatTutWieldCarbine
   - conditions:
@@ -732,7 +732,7 @@
     repairStep: CombatTutEnableCombatMode
   conditions:
   - !type:GunShotListenedCondition
-    target: WeaponLaserCarbinePractice
+    target: LustWeaponLaserCarbinePractice
     count: 3
 
 - type: tutorialStep
@@ -750,11 +750,11 @@
     components:
     - type: TutorialPickupSoftLock
       allowedItems:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       popup: combat-tut-softlock-pickup-highlighted
     - type: TutorialEquipBlockedSoftLock
       items:
-      - WeaponLaserCarbinePractice
+      - LustWeaponLaserCarbinePractice
       blockAllSlots: true
       popup: combat-tut-softlock-charge-carbine
     - type: TutorialAttackSoftLock
@@ -767,7 +767,7 @@
   conditions:
   - !type:ItemInsertedListenedCondition
     target: WeaponCapacitorRecharger
-    item: WeaponLaserCarbinePractice
+    item: LustWeaponLaserCarbinePractice
 
 - type: tutorialStep
   id: CombatTutForceEscalation

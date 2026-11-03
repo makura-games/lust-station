@@ -260,13 +260,13 @@
         - proto: TechnologyDiskRare
           prob: 0.5
           cost: 5
-        - proto: WeaponTeslaGun
+        - proto: LustWeaponTeslaGun
           prob: 0.1
           cost: 2
-        - proto: WeaponPistolViper
+        - proto: LustWeaponPistolViper
           prob: 0.5
           cost: 4
-        - proto: WeaponShotgunDoubleBarreled
+        - proto: LustWeaponShotgunDoubleBarreled
           prob: 0.5
           cost: 5
         - proto: WeaponShotgunDoubleBarreledRubber

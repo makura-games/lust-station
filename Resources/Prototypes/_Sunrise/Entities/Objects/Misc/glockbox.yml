@@ -37,7 +37,7 @@
     - state: icon
   - type: SpawnItemsOnUse
     items:
-      - id: WeaponPistolMk58
+      - id: LustWeaponPistolMk58
       - id: MagazinePistolRubber
     sound:
       path: /Audio/Effects/unwrap.ogg

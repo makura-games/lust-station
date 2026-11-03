@@ -39,7 +39,7 @@
 - type: entity
   name: minigun
   id: WeaponMinigun
-  parent: [ LustWeaponHeavyMachineGun, BaseMajorContraband ] # Lust edit: используем fork-прототип с нагревом
+  parent: [ BaseWeaponHeavyMachineGun, BaseMajorContraband ]
   description: Vzzzzzt! Rahrahrahrah! Vrrrrr! Uses .10 rifle ammo.
   components:
   - type: Sprite

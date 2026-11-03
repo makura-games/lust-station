@@ -8,7 +8,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponShotgunTrenchgun4034
+        - id: LustWeaponShotgunTrenchgun4034
           amount: 2
         - id: ClothingBeltBandolier
           amount: 2

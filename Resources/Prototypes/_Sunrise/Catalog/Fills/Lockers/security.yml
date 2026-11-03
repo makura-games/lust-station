@@ -82,7 +82,7 @@
       entity_storage: !type:AllSelector
         children:
         - id: WeaponIonRifle
-        - id: WeaponTemperatureGun
+        - id: LustWeaponTemperatureGun
 
 - type: entity
   parent: GunSafeSuperweaponSecureGamma
@@ -393,7 +393,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponShotgunTrenchgun4034
+        - id: LustWeaponShotgunTrenchgun4034
           amount: 2
         - id: SpeedLoaderShellShotgun
           amount: 4
@@ -416,7 +416,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponShotgunRiot
+        - id: LustWeaponShotgunRiot
           amount: 2
         - id: SpeedLoaderShellShotgun
           amount: 4
@@ -440,7 +440,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponShotgunDoubleBarreled
+        - id: LustWeaponShotgunDoubleBarreled
           amount: 4
         - id: SpeedLoaderShellShotgun
           amount: 4
@@ -464,7 +464,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponRifleLecter
+        - id: LustWeaponRifleLecter
         - id: MagazineRifleSP
           amount: 2
         - id: DrinkBottleBeer
@@ -489,7 +489,7 @@
       entity_storage: !type:AllSelector
         children:
         - id: WeaponPistolGoldenMk58
-        - id: WeaponPistolMk58
+        - id: LustWeaponPistolMk58
           amount: 2
         - id: DrinkColaCanEmpty
           amount: 2
@@ -510,7 +510,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponSubMachineGunDrozd
+        - id: LustWeaponSubMachineGunDrozd
         - id: FoodTinBeansTrash
         - id: FoodPacketBoritosTrash
         - id: PouchAmmoFilledSMG
@@ -532,8 +532,8 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponShotgunRiot
-        - id: WeaponShotgunRiotSawn
+        - id: LustWeaponShotgunRiot
+        - id: LustWeaponShotgunRiotSawn
         - id: FoodBowlBigTrash
         - id: FoodPacketRaisinsTrash
         - id: CigaretteSpent
@@ -555,7 +555,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponLaserCarbine
+        - id: LustWeaponLaserCarbine
         - id: FoodPacketPistachioTrash
         - id: FoodPlateTrash
         - id: DrinkColaCanEmpty

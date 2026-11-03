@@ -59,7 +59,7 @@
 - type: loadout
   id: DetectiveWeapon
   equipment:
-    pocket1: WeaponRevolverInspector
+    pocket1: LustWeaponRevolverInspector
 
 - type: loadout
   id: WeaponRevolverSnubRevolver
@@ -69,7 +69,7 @@
 - type: loadout
   id: DetectiveWeapon20h
   equipment:
-    pocket1: WeaponRevolverDeckard
+    pocket1: LustWeaponRevolverDeckard
   effects:
   - !type:GroupLoadoutEffect
     proto: MasterDetective

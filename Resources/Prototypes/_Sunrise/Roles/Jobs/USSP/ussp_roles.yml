@@ -229,7 +229,7 @@
     id: USSPCaptainPDA
     ears: ClothingHeadsetAltUSSP
     belt: ClothingBeltHolster
-    pocket1: WeaponRevolverPython
+    pocket1: LustWeaponRevolverPython
   storage:
     back:
     - DrinkVodkaBottleFull
@@ -257,7 +257,7 @@
     ears: ClothingHeadsetAltSyndicateNoKey
     id: SyndiOperativePDA
     belt: ClothingBeltMilitaryWebbingMedRaidFilled
-    pocket1: WeaponPistolViper
+    pocket1: LustWeaponPistolViper
     pocket2: PouchAmmo
   storage:
     back:
@@ -290,7 +290,7 @@
     shoes: ClothingShoesBootsMagPirate
     id: PiratePDA
     belt: JetpackMiniFilled
-    pocket1: WeaponRevolverPirate
+    pocket1: LustWeaponRevolverPirate
     pocket2: CombatKnife
   storage:
     back:
@@ -317,7 +317,7 @@
     shoes: ClothingShoesBootsMagPirate
     id: PiratePDA
     belt: JetpackMiniFilled
-    pocket1: WeaponPistolFlintlock
+    pocket1: LustWeaponPistolFlintlock
     pocket2: MagazineBoxMagnumSP
   storage:
     back:

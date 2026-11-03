@@ -218,7 +218,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipePractice
   id: WeaponLaserCarbinePractice
-  result: WeaponLaserCarbinePractice
+  result: LustWeaponLaserCarbinePractice
   materials:
     Steel: 1800
     Glass: 400
@@ -228,7 +228,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
   id: WeaponLaserCarbine
-  result: WeaponLaserCarbine
+  result: LustWeaponLaserCarbine
   materials:
     Steel: 2000
     Glass: 800
@@ -247,7 +247,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
   id: WeaponLaserCannon
-  result: WeaponLaserCannon
+  result: LustWeaponLaserCannon
   materials:
     Steel: 1250
     Plastic: 750
@@ -256,7 +256,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
   id: WeaponXrayCannon
-  result: WeaponXrayCannon
+  result: LustWeaponXrayCannon
   materials:
     Steel: 1500
     Glass: 500
@@ -266,7 +266,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeLong
   id: WeaponTemperatureGun
-  result: WeaponTemperatureGun
+  result: LustWeaponTemperatureGun
   materials:
     Steel: 2000
     Glass: 500
@@ -286,7 +286,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeSidearm
   id: WeaponDisablerSMG
-  result: WeaponDisablerSMG
+  result: LustWeaponDisablerSMG
   materials:
     Steel: 1000
     Glass: 500

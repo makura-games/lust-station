@@ -87,7 +87,7 @@
 
 - type: entity
   name: viper
-  parent: [LustWeaponPistol, BaseSyndicateContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponPistol, BaseSyndicateContraband]
   id: WeaponPistolViper
   description: A common handgun illegally modified by the Syndicate. The Viper sports a selector switch between semi-auto and ‘rock and roll’. The standard sidearm for any soldier who fights under the three serpents. Feeds from .35 pistol magazines.
   components:
@@ -160,7 +160,7 @@
 
 - type: entity
   name: cobra
-  parent: [ LustWeaponPistol, BaseSyndicateContraband ] # Lust edit: используем fork-прототип с нагревом
+  parent: [ BaseWeaponPistol, BaseSyndicateContraband ]
   id: WeaponPistolCobra
   description: Integrally suppressed semi-automatic pistol used by the Syndicate, firing caseless subsonic rounds. Favored by any agent who likes to keep things quiet and leave no evidence behind. Feeds from .25 pistol magazines.
   components:
@@ -210,7 +210,7 @@
 
 - type: entity
   name: mk 58
-  parent: [LustWeaponPistol, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponPistol, BaseSecurityContraband]
   id: WeaponPistolMk58
   description: Designed by Nanotrasen’s Small Arms Division, the Mk58 is a conventional semi-automatic pistol with a simple recoil-operated action and excellent reliability. The standard sidearm of Nanotrasen’s station security and emergency response teams. Feeds from .35 pistol magazines.
   components:
@@ -236,7 +236,7 @@
 
 - type: entity
   name: N1984
-  parent: [LustWeaponPistol, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponPistol, BaseSecurityContraband]
   id: WeaponPistolN1984
   description: An exceptionally powerful ‘hand cannon’ designed as part of Nanotrasen's BFG initiative. Chambered in .45, the lord’s caliber, it is generally considered too unwieldy for standard use but has become something of a status symbol among Nanotrasen officials. Feeds from .45 pistol magazines.
   components:

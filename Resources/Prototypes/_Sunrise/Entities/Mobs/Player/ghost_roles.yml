@@ -239,7 +239,7 @@
     pocket1: LanternFlash
     pocket2: ClothingHandsPowerGlovesUplinkNTERTAmber
   inhand:
-  - WeaponShotgunKammerer
+  - LustWeaponShotgunKammerer
   storage:
     back:
     - BoxErtBaseKit
@@ -267,7 +267,7 @@
     pocket1: LanternFlash
     pocket2: ClothingHandsPowerGlovesUplinkNTERTRed
   inhand:
-  - WeaponShotgunEnforcer
+  - LustWeaponShotgunEnforcer
   storage:
     back:
     - BoxErtBaseKit
@@ -433,7 +433,7 @@
     pocket1: Holoprojector
     pocket2: HoloprojectorField
   inhand:
-  - WeaponLauncherHydra
+  - LustWeaponLauncherHydra
   - ClothingHandsPowerGlovesUplinkNTERTAmber
   storage:
     back:
@@ -457,7 +457,7 @@
     pocket1: Holoprojector
     pocket2: HoloprojectorField
   inhand:
-  - WeaponLauncherHydra
+  - LustWeaponLauncherHydra
   - DoubleEmergencyOxygenTankFilled
   storage:
     back:

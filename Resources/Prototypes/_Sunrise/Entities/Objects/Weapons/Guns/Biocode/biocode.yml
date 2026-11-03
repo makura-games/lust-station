@@ -19,7 +19,7 @@
     - Pirate
 
 - type: entity
-  parent: WeaponLightMachineGunL6
+  parent: LustWeaponLightMachineGunL6
   id: WeaponLightMachineGunL6Biocode
   suffix: BIOCODE
   components:
@@ -39,7 +39,7 @@
     - Pirate
 
 - type: entity
-  parent: WeaponSubMachineGunC20r
+  parent: LustWeaponSubMachineGunC20r
   id: WeaponSubMachineGunC20rBiocode
   suffix: BIOCODE
   components:
@@ -49,7 +49,7 @@
     - Pirate
 
 - type: entity
-  parent: WeaponRifleEstoc
+  parent: LustWeaponRifleEstoc
   id: WeaponRifleEstocBiocode
   suffix: BIOCODE
   components:
@@ -59,7 +59,7 @@
     - Pirate
 
 - type: entity
-  parent: WeaponLauncherChinaLake
+  parent: LustWeaponLauncherChinaLake
   id: WeaponLauncherChinaLakeBiocode
   suffix: BIOCODE
   components:
@@ -79,7 +79,7 @@
     - Pirate
 
 - type: entity
-  parent: WeaponSniperHristov
+  parent: LustWeaponSniperHristov
   id: WeaponSniperHristovBiocode
   suffix: BIOCODE
   components:

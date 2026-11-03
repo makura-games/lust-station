@@ -110,15 +110,15 @@
     children:
     - id: WeaponPulseCarbine
       weight: 0.01
-    - id: WeaponRifleAk
+    - id: LustWeaponRifleAk
       weight: 0.01
-    - id: WeaponLauncherPirateCannon
+    - id: LustWeaponLauncherPirateCannon
       weight: 0.1
     - id: Throngler
       weight: 0.0001
     - id: WeaponPistolCHIMP
       weight: 0.1
-    - id: WeaponSniperMosin
+    - id: LustWeaponSniperMosin
     - id: WeaponMakeshiftLaser
       weight: 0.1
     - id: Sledgehammer
@@ -127,7 +127,7 @@
     - id: ThrowingStar
     - id: WeaponLaserGun
       weight: 0.1
-    - id: WeaponShotgunHandmade
+    - id: LustWeaponShotgunHandmade
     - id: WeaponFlareGun
     - id: Bola
     - id: Shovel

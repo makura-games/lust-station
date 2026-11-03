@@ -1256,7 +1256,7 @@
   - type: ItemBorgModule
     hands:
     - item: HoloprojectorClownBorg
-    - item: BorgLauncherCreamPie
+    - item: LustBorgLauncherCreamPie
     - item: ClownRecorder
     - item: PushHorn
     - item: BikeHornInstrument

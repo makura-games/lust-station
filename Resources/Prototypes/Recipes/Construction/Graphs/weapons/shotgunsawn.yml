@@ -22,4 +22,4 @@
       - tool: Sawing
         doAfter: 2
   - node: shotgunsawn
-    entity: WeaponShotgunRiotSawnEmpty
+    entity: LustWeaponShotgunRiotSawnEmpty

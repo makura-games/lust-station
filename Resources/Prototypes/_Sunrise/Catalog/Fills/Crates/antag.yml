@@ -145,7 +145,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponLauncherPirateCannon
+        - id: LustWeaponLauncherPirateCannon
           amount: 2
         - id: Cutlass
         - id: CannonBall
@@ -158,17 +158,17 @@
           amount: 3
         - id: CannonBallGrapeshot
           amount: 4
-        - id: WeaponPistolFlintlock
+        - id: LustWeaponPistolFlintlock
           amount: 2
         - id: MagazineBoxMagnumAP
           amount: 2
-        - id: Musket
+        - id: LustMusket
         - id: MagazineBoxAntiMateriel
           amount: 2
         - id: WeaponGrapplingGun
           amount: 2
-        - id: WeaponShotgunBlunderbuss
-        - id: WeaponRevolverPirate
+        - id: LustWeaponShotgunBlunderbuss
+        - id: LustWeaponRevolverPirate
           prob: 0.9
         - id: EnergyCutlass
           prob: 0.9
@@ -186,11 +186,11 @@
           prob: 0.40
         - id: WeaponRevolverSnubRevolver
           prob: 0.30
-        - id: WeaponShotgunTrenchgun4034Sawn
+        - id: LustWeaponShotgunTrenchgun4034Sawn
           prob: 0.30
         - id: ToolboxElectricalTurret
           prob: 0.25
-        - id: WeaponRevolverPython
+        - id: LustWeaponRevolverPython
           prob: 0.25
         - id: WeaponRifleSKM24Scrap
           prob: 0.15

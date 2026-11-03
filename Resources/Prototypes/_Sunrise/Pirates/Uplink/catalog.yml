@@ -152,7 +152,7 @@
 - type: listing
   id: UplinkPirateHristov
   icon: { sprite: /Textures/Objects/Weapons/Guns/Snipers/heavy_sniper.rsi, state: base }
-  productEntity: WeaponSniperHristov
+  productEntity: LustWeaponSniperHristov
   cost:
     Doubloon: 45
   categories:
@@ -216,7 +216,7 @@
 
 - type: listing
   id: UplinkPirateShotgunImprovised
-  productEntity: WeaponShotgunImprovised
+  productEntity: LustWeaponShotgunImprovised
   categories:
   - UplinkPirateRangedWeaponry
   conditions:
@@ -313,7 +313,7 @@
 
 - type: listing
   id: UplinkPirateMusket
-  productEntity: Musket
+  productEntity: LustMusket
   cost:
     Doubloon: 3
   categories:
@@ -356,7 +356,7 @@
 
 - type: listing
   id: UplinkPirateRevolverPython
-  productEntity: WeaponRevolverPython
+  productEntity: LustWeaponRevolverPython
   cost:
     Doubloon: 16
   categories:
@@ -364,7 +364,7 @@
 
 - type: listing
   id: UplinkPirateMosin
-  productEntity: WeaponSniperMosin
+  productEntity: LustWeaponSniperMosin
   cost:
     Doubloon: 2
   categories:
@@ -454,7 +454,7 @@
 
 - type: listing
   id: UplinkPirateL6SAW
-  productEntity: WeaponLightMachineGunL6
+  productEntity: LustWeaponLightMachineGunL6
   cost:
     Doubloon: 80
   categories:
@@ -495,7 +495,7 @@
 
 - type: listing
   id: UplinkPiratePistolViper
-  productEntity: WeaponPistolViper
+  productEntity: LustWeaponPistolViper
   cost:
     Doubloon: 15
   categories:
@@ -503,7 +503,7 @@
 
 - type: listing
   id: UplinkPirate4034Sawn
-  productEntity: WeaponShotgunTrenchgun4034Sawn
+  productEntity: LustWeaponShotgunTrenchgun4034Sawn
   cost:
     Doubloon: 11
   categories:

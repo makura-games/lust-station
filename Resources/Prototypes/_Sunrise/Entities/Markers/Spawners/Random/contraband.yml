@@ -87,7 +87,7 @@
         - EnergyDagger
         - WhiteholeGrenade
         - HotPotato
-        - WeaponSniperMosin
+        - LustWeaponSniperMosin
         - SpeedLoaderMagnumAP
       rareChance: 0.2
       prototypes:

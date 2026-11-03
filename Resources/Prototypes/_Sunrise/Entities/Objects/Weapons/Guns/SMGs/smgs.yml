@@ -128,7 +128,7 @@
 
 - type: entity
   name: New Vector
-  parent: WeaponSubMachineGunDrozd
+  parent: LustWeaponSubMachineGunDrozd
   id: WeaponSubMachineGunNewVector
   description: A modern 30-round Vector by Waffle Corp chambered in .35 Auto. Its delayed-blowback system redirects the bolt assembly downward, helping control its high rate of fire.
   components:
@@ -461,7 +461,7 @@
 
 - type: entity
   name: Drozd Mk2
-  parent: [WeaponSubMachineGunDrozd]
+  parent: [LustWeaponSubMachineGunDrozd]
   id: WeaponSubMachineGunDrozdMk2
   description: An improved variant of the Drozd submachine gun developed by NanoTrasen’s Small Arms Division. It features an exceptional rate of fire in burst mode, making it effective for holding defensive positions or engaging targets at medium to long ranges. Equipped with an automatic magazine release for faster reloads. Uses .35 SMG magazines.
   components:

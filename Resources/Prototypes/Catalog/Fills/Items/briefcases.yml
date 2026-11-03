@@ -23,7 +23,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponSniperHristov
+        - id: LustWeaponSniperHristov
         - id: MagazineBoxAntiMateriel
         - id: MagazineBoxAntiMateriel # Sunrise-add
         - id: MagazineBauer127Penetrator # Sunrise-add
@@ -75,7 +75,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponShotgunHushpup
+        - id: LustWeaponShotgunHushpup
         - id: TreasureCoinIron
 
 - type: entity
@@ -88,7 +88,7 @@
       # Sunrise-start
       storagebase: !type:AllSelector
         children:
-        - id: WeaponSubMachineGunC20r
+        - id: LustWeaponSubMachineGunC20r
         - id: MagazineBoxPistolSP
       # Sunrise-end
 
@@ -111,6 +111,6 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponLauncherChinaLake
+        - id: LustWeaponLauncherChinaLake
         - id: GrenadeFrag
           amount: 2

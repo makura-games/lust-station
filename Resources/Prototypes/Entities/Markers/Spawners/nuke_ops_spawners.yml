@@ -66,9 +66,9 @@
     - id: ClothingHandsKnuckleDustersSyndicate
     - id: EnergyDaggerLoud
       weight: 0.5
-    - id: WeaponRevolverPython
-    - id: WeaponPistolCobra
-    - id: WeaponShotgunSawn
+    - id: LustWeaponRevolverPython
+    - id: LustWeaponPistolCobra
+    - id: LustWeaponShotgunSawn
     - id: RevolverCapGunFake
       weight: .01
 

@@ -821,7 +821,7 @@
     - id: SpaceCash500
       prob: 0.45
     # Weapons
-    - id: WeaponPistolFlintlock
+    - id: LustWeaponPistolFlintlock
       prob: 0.9
     - id: CartridgeMagnumAP
       prob: 0.75
@@ -856,10 +856,10 @@
     - id: SpaceCash500
       prob: 0.45
     # Weapons
-    - id: WeaponPistolMk58
+    - id: LustWeaponPistolMk58
       prob: 0.8
       orGroup: PistolT1Pool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.15
       orGroup: PistolT1Pool
     - id: WeaponPistolM1984
@@ -894,10 +894,10 @@
     - id: SpaceCash500
       prob: 0.45
     # Weapons
-    - id: WeaponPistolMk58
+    - id: LustWeaponPistolMk58
       prob: 0.8
       orGroup: PistolT1Pool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.15
       orGroup: PistolT1Pool
     - id: WeaponPistolM1984
@@ -938,7 +938,7 @@
     - id: SpaceCash1000
       prob: 0.4
     # Weapons
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.7
       orGroup: PistolT2Pool
     - id: WeaponPistolM1984
@@ -977,7 +977,7 @@
     - id: WeaponPistolM1984
       prob: 0.85
       orGroup: PistolT3Pool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.15
       orGroup: PistolT3Pool
     - id: MagazineBoxPistolSP
@@ -1067,7 +1067,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-    - id: WeaponPistolFlintlock
+    - id: LustWeaponPistolFlintlock
       prob: 0.9
     - id: CartridgeMagnumImprovised
       prob: 0.8
@@ -1101,7 +1101,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-    - id: WeaponSniperMosin
+    - id: LustWeaponSniperMosin
       prob: 0.9
     - id: SpeedLoaderHeavyRifleRFMJ
       prob: 0.8
@@ -1351,7 +1351,7 @@
     # Weapons
     - id: CombatKnife
       prob: 0.15
-    - id: WeaponShotgunBlunderbuss
+    - id: LustWeaponShotgunBlunderbuss
       prob: 0.8
     # Items
     - id: ClothingOuterHardsuitPirateEVA
@@ -1549,7 +1549,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-    - id: Musket
+    - id: LustMusket
       prob: 0.9
     - id: CartridgeAntiMateriel
       prob: 0.8
@@ -1669,9 +1669,9 @@
     items:
     # Cash
     - id: PirateCashSpawner03
-    - id: WeaponPistolFlintlock
+    - id: LustWeaponPistolFlintlock
       prob: 0.9
-    - id: WeaponPistolFlintlock
+    - id: LustWeaponPistolFlintlock
       prob: 0.5
     - id: CartridgeMagnumAP
       prob: 0.8
@@ -1721,9 +1721,9 @@
     items:
     # Cash
     - id: PirateCashSpawner03
-    - id: WeaponRevolverPirate
+    - id: LustWeaponRevolverPirate
       prob: 0.9
-    - id: WeaponRevolverPirate
+    - id: LustWeaponRevolverPirate
       prob: 0.5
     - id: SpeedLoaderMagnumHP
       prob: 0.8
@@ -2565,7 +2565,7 @@
     # Weapons
     - id: CombatKnife
       prob: 0.15
-    - id: WeaponLauncherPirateCannon
+    - id: LustWeaponLauncherPirateCannon
       prob: 0.75
     # Items
     - id: CannonBallGrapeshot
@@ -3308,10 +3308,10 @@
     # Cash
     - id: PirateCashSpawner06
     # Weapons
-    - id: WeaponPistolMk58
+    - id: LustWeaponPistolMk58
       prob: 0.5
       orGroup: PistolT3Pool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.4
       orGroup: PistolT3Pool
     - id: WeaponPistolM1984
@@ -3371,7 +3371,7 @@
     # Cash
     - id: PirateCashSpawner06
     # Weapons
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.5
       orGroup: PistolT3Pool
     - id: SunriseWeaponSubMachineGunUzi
@@ -3557,7 +3557,7 @@
     - id: PirateCashSpawner01
     - id: PirateCashSpawner03
     # Weapons
-    - id: WeaponLightMachineGunL6
+    - id: LustWeaponLightMachineGunL6
       prob: 0.5
       orGroup: WeaponMGPool
     - id: WeaponLightMachineGunL6Biocode
@@ -3693,7 +3693,7 @@
     - id: WeaponSyndieLaserGunBiocode
       prob: 0.3
       orGroup: LaserGunPool
-    - id: WeaponLaserCannon
+    - id: LustWeaponLaserCannon
       prob: 0.3
       orGroup: LaserGunPool
     # Items

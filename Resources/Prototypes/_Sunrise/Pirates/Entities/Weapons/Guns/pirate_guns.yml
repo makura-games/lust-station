@@ -359,7 +359,7 @@
 # region Revolvers
 - type: entity
   parent:
-  - WeaponRevolverPirate
+  - LustWeaponRevolverPirate
   - PowerCellSlotSmallItem
   id: SunriseWeaponRevolverPirateJammer
   name: pirate jammer revolver

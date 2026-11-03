@@ -71,7 +71,7 @@
 
 - type: entity
   name: Deckard
-  parent: [LustWeaponRevolver, BaseSecurityCommandContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponRevolver, BaseSecurityCommandContraband]
   id: WeaponRevolverDeckard
   description: A beautifully machined, custom-built revolver. Used when there is no time for the Voight-Kampff test. Loads 5 rounds of .45 magnum.
   components:
@@ -103,7 +103,7 @@
 
 - type: entity
   name: Inspector
-  parent: [LustWeaponRevolver, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponRevolver, BaseSecurityContraband]
   id: WeaponRevolverInspector
   description: A double-action revolver manufactured by various companies. It is readily available on the civilian market, making it a popular choice among private investigators. You feel lucky just holding it. Loads 6 rounds of .45 magnum.
   components:
@@ -122,7 +122,7 @@
 
 - type: entity
   name: Mateba
-  parent: [LustWeaponRevolver, BaseMajorContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponRevolver, BaseMajorContraband]
   id: WeaponRevolverMateba
   description: A modern revolver used by Nanotrasen’s elite, near mythical ‘Death Squad’ task force. Its unique trigger action and barrel placement enable a high fire rate with minimal muzzle flip. Many have looked down this barrel, but few have lived to tell of it. Loads 6 rounds of .45 magnum.
   components:
@@ -147,7 +147,7 @@
 
 - type: entity
   name: Python
-  parent: [LustWeaponRevolver, BaseSyndicateContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponRevolver, BaseSyndicateContraband]
   id: WeaponRevolverPython
   description: A powerful double-action revolver manufactured by the Syndicate. Loud and flashy, perfect for any agent looking to make a statement. Loads 6 rounds of .45 magnum.
   components:
@@ -180,7 +180,7 @@
 
 - type: entity
   name: pirate revolver
-  parent: [LustWeaponRevolver, BaseMajorContraband] # Lust edit: используем fork-прототип с нагревом
+  parent: [BaseWeaponRevolver, BaseMajorContraband]
   id: WeaponRevolverPirate
   description: A crude single-action revolver handmade by a space pirate. Old and covered in rust, it somehow still works. Loads 5 rounds of .45 magnum.
   components:

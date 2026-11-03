@@ -290,7 +290,7 @@
 
 - type: listing
   id: VendorSalvageWeaponPistolMK58
-  productEntity: WeaponPistolMk58
+  productEntity: LustWeaponPistolMk58
   cost:
     SalvageTicket: 225
   categories:

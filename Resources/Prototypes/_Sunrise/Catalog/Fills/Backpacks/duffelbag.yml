@@ -220,7 +220,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponShotgunTrenchgun4034
+        - id: LustWeaponShotgunTrenchgun4034
         - id: BoxLethalshot
         - id: BoxShotgunFlare
         - id: BoxBeanbag
@@ -235,7 +235,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponShotgunEnforcer
+        - id: LustWeaponShotgunEnforcer
         - id: BoxLethalshot
         - id: BoxShotgunFlare
         - id: BoxShotgunSlug
@@ -339,7 +339,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponSniperHristov
+        - id: LustWeaponSniperHristov
         - id: MagazineBoxAntiMateriel
           amount: 3
 

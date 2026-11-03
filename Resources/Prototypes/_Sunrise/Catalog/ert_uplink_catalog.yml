@@ -443,7 +443,7 @@
 - type: listing
   id: ERTUplinkWeaponPistolN1984
   name: N1984
-  productEntity: WeaponPistolN1984
+  productEntity: LustWeaponPistolN1984
   icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: n1984 }
   cost:
     Bluecrystal: 8

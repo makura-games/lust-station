@@ -58,7 +58,7 @@
     dualWieldRecoilPenalty: 0.2
 
 - type: entity
-  parent: WeaponShotgunRiotSawn
+  parent: LustWeaponShotgunRiotSawn
   id: WeaponShotgunRiotSawnEmpty
   suffix: Empty
   components:

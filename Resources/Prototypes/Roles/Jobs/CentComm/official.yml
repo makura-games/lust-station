@@ -26,7 +26,7 @@
     outerClothing: ClothingOuterArmorCentcommCarapace
     id: CentcomPDAQillu # Lust-Edit
     ears: ClothingHeadsetAltCentCom
-    belt: WeaponPistolN1984
+    belt: LustWeaponPistolN1984
     pocket1: BoxFolderCentComClipboardThreePapers
     pocket2: PenCentcomQillu # Lust-Edit
 

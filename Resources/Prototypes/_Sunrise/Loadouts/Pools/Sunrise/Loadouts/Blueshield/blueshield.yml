@@ -137,7 +137,7 @@
 - type: loadout
   id: BlueshieldWT550
   inhand:
-  - WeaponSubMachineGunWt550
+  - LustWeaponSubMachineGunWt550
   effects:
   - !type:GroupLoadoutEffect
     proto: MisterBlueShit5

@@ -36,7 +36,7 @@
 
 - type: entity
   name: Sawn Trenchgun L-4034
-  parent: WeaponShotgunTrenchgun4034
+  parent: LustWeaponShotgunTrenchgun4034
   id: WeaponShotgunTrenchgun4034Sawn
   components:
   - type: Sprite
@@ -82,7 +82,7 @@
 
 - type: entity
   name: Sawn Trenchgun L-4034
-  parent: WeaponShotgunTrenchgun4034Sawn
+  parent: LustWeaponShotgunTrenchgun4034Sawn
   suffix: Empty
   id: WeaponShotgunTrenchgun4034SawnEmpty
   components:

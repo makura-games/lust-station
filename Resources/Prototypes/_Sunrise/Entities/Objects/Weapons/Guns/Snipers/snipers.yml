@@ -293,7 +293,7 @@
 # Смазанная винтовка для ящика винтовок
 - type: entity
   name: Kardashev-Mosin
-  parent: [WeaponSniperMosin, BaseGunWieldable, BaseMajorContraband]
+  parent: [LustWeaponSniperMosin, BaseGunWieldable, BaseMajorContraband]
   id: WeaponSniperMosinLubed
   description: A relic Kardashev-Mosin rifle that has survived countless wars, and it's still deadly. Freshly unsealed, heavily greased — ready for the next war! Uses .30 caliber rounds.
   components:

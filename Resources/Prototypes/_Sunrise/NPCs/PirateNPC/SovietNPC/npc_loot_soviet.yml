@@ -513,7 +513,7 @@
     # Cash
     - id: PirateCashSpawner08
     # Weapons
-    - id: WeaponPistolMk58
+    - id: LustWeaponPistolMk58
       prob: 0.9
     # Armor
     - id: ClothingOuterArmorSovietPlateRandomSpawner
@@ -568,7 +568,7 @@
     - id: WeaponLightMachineGunDP28
       prob: 0.05
       orGroup: DP28Pool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.5
       orGroup: DP28Pool
     - id: CrateAmmunitionSmallLightRifle
@@ -610,7 +610,7 @@
     - id: WeaponLightMachineGunMG60Empty
       prob: 0.25
       orGroup: DP28Pool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.3
       orGroup: DP28Pool
     - id: CrateAmmunitionSmallLightRifle
@@ -671,7 +671,7 @@
     - id: WeaponLightMachineGunRPD
       prob: 0.05
       orGroup: MgPool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.5
       orGroup: MgPool
     - id: MagazineLightRifleBeltBoxFMJ
@@ -752,7 +752,7 @@
     # Cash
     - id: PirateCashSpawner08
     # Weapons
-    - id: WeaponSniperMosin
+    - id: LustWeaponSniperMosin
       prob: 0.9
     # Armor
     - id: SovietSoldierPoolLootSpawner
@@ -874,7 +874,7 @@
     # Cash
     - id: PirateCashSpawner03
     # Weapons
-    - id: WeaponRevolverPython
+    - id: LustWeaponRevolverPython
       prob: 0.75
     - id: WeaponRevolverPythonAP
       prob: 0.25
@@ -944,7 +944,7 @@
     - id: WeaponShotgunGA12
       prob: 0.25
       orGroup: Weapons
-    - id: WeaponShotgunEnforcer
+    - id: LustWeaponShotgunEnforcer
       prob: 0.25
       orGroup: Weapons
     - id: WeaponShotgunBulldogBiocode
@@ -1029,7 +1029,7 @@
     - id: WeaponPistolM1984
       prob: 0.5
       orGroup: PistolT3Pool
-    - id: WeaponPistolViper
+    - id: LustWeaponPistolViper
       prob: 0.5
       orGroup: PistolT3Pool
     - id: MagazineBoxPistolSP

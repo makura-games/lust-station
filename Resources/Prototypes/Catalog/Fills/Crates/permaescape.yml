@@ -97,17 +97,17 @@
     containers:
       entity_storage: !type:GroupSelector
         children:
-        - id: WeaponPistolMk58
+        - id: LustWeaponPistolMk58
           weight: 1.5
         - id: FoamCrossbow
         - id: WeaponRifleFoam
           weight: 0.5
-        - id: WeaponPistolFlintlock
+        - id: LustWeaponPistolFlintlock
           weight: 2
-        - id: WeaponShotgunBlunderbuss
-        - id: WeaponShotgunBlunderbuss
+        - id: LustWeaponShotgunBlunderbuss
+        - id: LustWeaponShotgunBlunderbuss
           weight: 1.5
-        - id: WeaponRevolverPirate
+        - id: LustWeaponRevolverPirate
           weight: 1.5
         - id: WeaponProtoKineticAccelerator
           weight: 2

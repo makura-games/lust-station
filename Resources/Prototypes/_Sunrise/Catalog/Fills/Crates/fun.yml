@@ -79,7 +79,7 @@
           children:
           - id: WeaponPistolMakeshiftCrafted
           - id: WeaponRevolverMakeshift
-          - id: WeaponShotgunImprovisedLoaded
+          - id: LustWeaponShotgunImprovisedLoaded
           - id: WeaponSubMachineGunMakeshift
           - id: WeaponSniperMakeshift
 
@@ -100,7 +100,7 @@
           children:
           - id: WeaponPistolImprovised
           - id: WeaponRevolverImprovised
-          - id: WeaponShotgunImprovised
+          - id: LustWeaponShotgunImprovised
           - id: WeaponSubMachineGunImprovised
           - id: WeaponSniperImprovised
           - id: WeaponGrenadeLauncherImprovised

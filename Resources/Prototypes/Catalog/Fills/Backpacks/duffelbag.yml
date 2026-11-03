@@ -141,7 +141,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponLauncherChinaLake
+        - id: LustWeaponLauncherChinaLake
         - id: GrenadeBlast
           amount: 1
         - id: GrenadeFrag
@@ -364,7 +364,7 @@
       storagebase: !type:AllSelector
         children:
         - id: SyringeRomerol
-        - id: WeaponRevolverPython
+        - id: LustWeaponRevolverPython
         - id: MagazineBoxMagnumIncendiary
         - id: PillCanisterAmbuzol
           amount: 5
@@ -439,7 +439,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponSubMachineGunC20r
+        - id: LustWeaponSubMachineGunC20r
         - id: MagazinePistolSubMachineGun
           amount: 3
         - id: EnergySword
@@ -460,7 +460,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponShotgunHushpup
+        - id: LustWeaponShotgunHushpup
         - id: BoxLethalshot
         - id: SpeedLoaderShellShotgun # Sunrise-add
         - id: TreasureCoinIron

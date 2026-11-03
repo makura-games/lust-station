@@ -17,7 +17,7 @@
   special:
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
-    prototype: WeaponRevolverInspector
+    prototype: LustWeaponRevolverInspector
 
 - type: startingGear
   id: JanitorGear

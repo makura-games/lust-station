@@ -46,7 +46,7 @@
     belt: ClothingBeltPrisonInspectorMetus
     back: ClothingBackpackSatchelPrisonInspectorMetus
     shoes: ClothingShoesBootsJack
-    pocket1: WeaponRevolverInspector
+    pocket1: LustWeaponRevolverInspector
     pocket2: Flash
   storage:
     back:
