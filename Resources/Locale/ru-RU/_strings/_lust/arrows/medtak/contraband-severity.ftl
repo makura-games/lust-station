@@ -1,1 +1,1 @@
-contraband-examine-text-medtak = [color=white]Этот предмет принадлежит операторам МедТак.[/color]
+contraband-examine-text-medtak = [color=white]Этот предмет предназначен для операторов МедТак.[/color]

@@ -10,6 +10,8 @@
     state: bag
   - type: AccessReader
     access: [["LustMedTak"]]
+  - type: Lock
+    locked: true
   - type: Destructible
     thresholds:
     - trigger:

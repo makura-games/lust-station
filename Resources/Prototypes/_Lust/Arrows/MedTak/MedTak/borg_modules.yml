@@ -1,5 +1,14 @@
 # region MedTak
 - type: entity
+  parent: MedipenCombatInjector
+  id: LustMedTakCombatInjector
+  components:
+  - type: Tag
+    tags:
+    - Trash
+    - Syringe
+
+- type: entity
   id: LustBaseBorgModuleMedTak
   parent: BaseBorgModule
   abstract: true
@@ -44,10 +53,10 @@
   - type: ItemBorgModule
     hands:
     - item: HandheldHealthAnalyzer
-    - item: MedipenCombatInjector
+    - item: LustMedTakCombatInjector
       hand:
         emptyLabel: borg-slot-syringe-empty
-        emptyRepresentative: MedipenCombatInjector
+        emptyRepresentative: LustMedTakCombatInjector
         whitelist:
           tags:
           - Syringe

@@ -76,6 +76,7 @@
     ears: LustClothingHeadsetAltMedTak
     mask: ClothingMaskGasSecurity
     gloves: ClothingHandsGlovesCombat
+    pocket2: DoubleEmergencyOxygenTankFilled
 
 - type: startingGear
   id: LustMedTakSecurity

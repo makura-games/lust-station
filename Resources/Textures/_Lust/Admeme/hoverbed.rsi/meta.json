@@ -23,12 +23,12 @@
             "name": "hover_folded"
         },
         {
-        "name": "inhand-left",
-        "directions": 4
+            "name": "rollerbed-inhand-left",
+            "directions": 4
         },
         {
-        "name": "inhand-right",
-        "directions": 4
+            "name": "rollerbed-inhand-right",
+            "directions": 4
         }
     ]
 }

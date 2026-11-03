@@ -31,7 +31,7 @@
   id: LustPaperMedTak
   parent: Paper
   name: MedTak invoice
-  description: A piece of paper headed by the MedTak logo. It looks expensive. For you.
+  description: A piece of paper headed by the MedTak logo.
   components:
   - type: Sprite
     layers:

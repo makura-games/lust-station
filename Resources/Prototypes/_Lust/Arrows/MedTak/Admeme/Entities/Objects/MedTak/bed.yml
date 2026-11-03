@@ -2,7 +2,7 @@
   id: LustStasisBedMedTak
   name: MedTak bed
   parent: BaseMachine
-  description: "A dual stasis and medical bed built for MedTak operations. Ensure stasis is disabled before applying chemicals."
+  description: "A dual stasis and medical bed built for MedTak operations."
   components:
   - type: StasisBed
   - type: AntiRotOnBuckle
