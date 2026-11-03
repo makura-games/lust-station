@@ -105,12 +105,8 @@ public partial class InteractionsPanel
             if (ent == player) continue;
             if (!HasComp<InteractionsComponent>(ent)) continue;
             if (!_interaction.InRangeAndAccessible(player, ent)) continue;
-<<<<<<< HEAD
             // Lust edit - пропуск персонажей с отключённой панелью.
             if (!CanOpenUI(player, ent)) continue;
-
-=======
->>>>>>> pr-678-medtak-clean
             entitiesInRange.Add(ent);
         }
 
@@ -139,16 +135,11 @@ public partial class InteractionsPanel
             return false;
         if (!HasComp<InteractionsComponent>(entity))
             return false;
-<<<<<<< HEAD
-        return TryOpenUI(player, entity); // Lust edit - проверка доступности панели.
-=======
         // Lust-Start
         if (_mobState.IsDead(entity))
             return false;
         // Lust-End
-        OpenUI(player, entity);
-        return true;
->>>>>>> pr-678-medtak-clean
+        return TryOpenUI(player, entity); // Lust edit - проверка доступности панели.
     }
 
     private void DidEquipped(EntityUid uid, InteractionsComponent component, DidEquipHandEvent args)
@@ -205,18 +196,13 @@ public partial class InteractionsPanel
         var target = ent.Comp.CurrentTarget;
         if (target == null)
             return;
-<<<<<<< HEAD
-
         // Lust edit - защита от взаимодействия после отключения панели целью.
         if (!CanOpenUI(ent, target.Value))
             return;
-
-=======
         // Lust-Start
         if (_mobState.IsDead(target.Value)) //Lust-Edit
-            return; 
+            return;
         // Lust-End
->>>>>>> pr-678-medtak-clean
         if (!_playerManager.TryGetSessionByEntity(ent.Owner, out var userSession))
             return;
 

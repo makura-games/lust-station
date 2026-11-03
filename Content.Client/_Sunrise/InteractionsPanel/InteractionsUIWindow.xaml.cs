@@ -277,8 +277,6 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         bool panelEnabled,
         bool loveDecayEnabled)
     {
-<<<<<<< HEAD
-        _targetEntity = targetEntity;
         // Lust edit start - синхронизация настройки отключения панели.
         _panelEnabled = panelEnabled;
         _updatingPanelSetting = true;
@@ -291,9 +289,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         DisableLoveDecayCheckBox.Pressed = !loveDecayEnabled;
         _updatingLoveDecaySetting = false;
         // Lust edit end
-=======
         _userEntity = userEntity; // Lust-Edit
->>>>>>> pr-678-medtak-clean
         UpdateEntityInformation(userEntity, targetEntity);
         _currentInteractionIds = availableInteractionIds;
         _buttonInteractions.Clear();
