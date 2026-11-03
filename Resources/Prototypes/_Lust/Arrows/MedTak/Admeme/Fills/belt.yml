@@ -1,0 +1,58 @@
+# Medical team belt fills without weapons or ammunition.
+- type: entity
+  id: LustClothingBeltMedTakFilledHeavy
+  parent: LustClothingBeltMedTak
+  suffix: Filled, Security, Heavy
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SyndicateJawsOfLife
+        - id: Tourniquet
+        - id: LustMedkitCombatMedTakFilled
+
+- type: entity
+  id: LustClothingBeltMedTakFilledSecurity
+  parent: LustClothingBeltMedTak
+  suffix: Filled, Security
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SyndicateJawsOfLife
+        - id: Tourniquet
+        - id: LustMedkitCombatMedTakFilled
+
+- type: entity
+  id: LustClothingBeltMedTakFilledMedic
+  parent: LustClothingBeltMedTak
+  suffix: Filled, Medic
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SyndicateJawsOfLife
+        - id: LustBottleCaseMedTakFilled
+        - id: MedipenCombatInjector
+        - id: MedicatedSuture
+          amount: 2
+        - id: RegenerativeMesh
+
+- type: entity
+  id: LustClothingBeltMedTakFilledPilot
+  parent: LustClothingBeltMedTak
+  suffix: Filled, Pilot
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: SyndicateJawsOfLife
+        - id: PowerDrill
+        - id: WelderExperimental
+        - id: Multitool
+        - id: Tourniquet
+        - id: LustMedkitCombatMedTakFilled

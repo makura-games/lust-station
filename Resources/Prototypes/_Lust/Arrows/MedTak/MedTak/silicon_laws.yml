@@ -1,0 +1,24 @@
+# MedTak lawset
+- type: siliconLaw
+  id: LustMedTak1
+  order: 1
+  lawString: law-medtak-1
+
+- type: siliconLaw
+  id: LustMedTak2
+  order: 2
+  lawString: law-medtak-2
+
+- type: siliconLaw
+  id: LustMedTak3
+  order: 3
+  lawString: law-medtak-3
+
+- type: siliconLawset
+  id: LustMedTakLawset
+  name: law-medtak-name
+  laws:
+  - LustMedTak1
+  - LustMedTak2
+  - LustMedTak3
+  obeysTo: laws-owner-medtak

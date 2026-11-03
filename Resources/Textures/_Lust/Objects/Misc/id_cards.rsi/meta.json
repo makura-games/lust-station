@@ -1,96 +1,99 @@
-{
-    "version": 1,
-    "license": "CLA",
-    "copyright": "© SUNRISE, An EULA/CLA with a hosting restriction, full text: https://github.com/space-sunrise/space-station-14/blob/master/CLA.txt, made bt gardsnake",
-    "size": {
-        "x": 32,
-        "y": 32
-    },
-    "states": [
-        {
-            "name": "default"
-        },
-        {
-            "name": "default-inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "default-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "silver"
-        },
-        {
-            "name": "silver-inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "silver-inhand-right",
-            "directions": 4
-        },
-        {
-            "name": "admin"
-        },
-        {
-            "name": "centcom"
-        },
-        {
-            "name": "ert_chaplain"
-        },
-        {
-            "name": "ert_commander"
-        },
-        {
-            "name": "ert_engineer"
-        },
-        {
-            "name": "ert_janitor"
-        },
-        {
-            "name": "ert_medic"
-        },
-        {
-            "name": "ert_security"
-        },
-        {
-            "name": "gold"
-        },
-        {
-            "name": "idcentcom"
-        },
-        {
-            "name": "orange"
-        },
-        {
-            "name": "prisoner_001"
-        },
-        {
-            "name": "prisoner_002"
-        },
-        {
-            "name": "prisoner_003"
-        },
-        {
-            "name": "prisoner_004"
-        },
-        {
-            "name": "prisoner_005"
-        },
-        {
-            "name": "prisoner_006"
-        },
-        {
-            "name": "prisoner_007"
-        },
-        {
-            "name": "id_CCA"
-        },
-        {
-            "name": "id_OTA"
-        },
-        {
-            "name": "id_CCAC"
-        }
-    ]
+﻿{
+    "version":  1,
+    "license":  "CLA",
+    "copyright":  "В© SUNRISE, An EULA/CLA with a hosting restriction, full text: https://github.com/space-sunrise/space-station-14/blob/master/CLA.txt, made bt gardsnake",
+    "size":  {
+                 "x":  32,
+                 "y":  32
+             },
+    "states":  [
+                   {
+                       "name":  "default"
+                   },
+                   {
+                       "name":  "default-inhand-left",
+                       "directions":  4
+                   },
+                   {
+                       "name":  "default-inhand-right",
+                       "directions":  4
+                   },
+                   {
+                       "name":  "silver"
+                   },
+                   {
+                       "name":  "silver-inhand-left",
+                       "directions":  4
+                   },
+                   {
+                       "name":  "silver-inhand-right",
+                       "directions":  4
+                   },
+                   {
+                       "name":  "admin"
+                   },
+                   {
+                       "name":  "centcom"
+                   },
+                   {
+                       "name":  "ert_chaplain"
+                   },
+                   {
+                       "name":  "ert_commander"
+                   },
+                   {
+                       "name":  "ert_engineer"
+                   },
+                   {
+                       "name":  "ert_janitor"
+                   },
+                   {
+                       "name":  "ert_medic"
+                   },
+                   {
+                       "name":  "ert_security"
+                   },
+                   {
+                       "name":  "gold"
+                   },
+                   {
+                       "name":  "idcentcom"
+                   },
+                   {
+                       "name":  "orange"
+                   },
+                   {
+                       "name":  "prisoner_001"
+                   },
+                   {
+                       "name":  "prisoner_002"
+                   },
+                   {
+                       "name":  "prisoner_003"
+                   },
+                   {
+                       "name":  "prisoner_004"
+                   },
+                   {
+                       "name":  "prisoner_005"
+                   },
+                   {
+                       "name":  "prisoner_006"
+                   },
+                   {
+                       "name":  "prisoner_007"
+                   },
+                   {
+                       "name":  "id_CCA"
+                   },
+                   {
+                       "name":  "id_OTA"
+                   },
+                   {
+                       "name":  "id_CCAC"
+                   },
+                   {
+                       "name":  "medtak"
+                   }
+               ]
 }
