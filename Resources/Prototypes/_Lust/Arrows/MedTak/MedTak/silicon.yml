@@ -1,0 +1,30 @@
+# region MedTak
+
+- type: entity
+  id: LustPlayerBorgChassisMedTakBattery
+  parent: LustBorgChassisMedTak
+  suffix: Battery, Modules
+  components:
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleTool
+        - LustBorgModuleMedTakMedical
+        - BorgModuleFireExtinguisher
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: job-name-medtak-borg
+    description: ghost-role-information-medtak-borg-description
+  - type: GhostTakeoverAvailable
+  - type: NpcFactionMember
+    factions:
+    - Arrows

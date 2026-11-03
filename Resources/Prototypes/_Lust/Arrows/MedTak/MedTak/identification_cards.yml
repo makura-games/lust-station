@@ -1,0 +1,90 @@
+# MedTak ID cards
+- type: entity
+  parent: IDCardStandard
+  id: LustMedTakTeamLeadIDCard
+  name: MedTak team leader ID card
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/id_cards.rsi
+    layers:
+    - state: medtak
+    - sprite: &medtak-icon-rsi _Lust/Interface/Misc/job_icons.rsi
+      offset: &medtak-icon-offset -0.09375, 0.0625
+      state: MedTakLeader
+  - type: IdCard
+    jobTitle: job-name-medtak-leader
+    jobIcon: LustJobIconMedTakLeader
+  - type: Access
+    tags: [ LustMedTak, MTO, MTOL ]
+
+- type: entity
+  parent: IDCardStandard
+  id: LustMedTakDispatcherIDCard
+  name: MedTak dispatcher ID card
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/id_cards.rsi
+    layers:
+    - state: medtak
+    - sprite: *medtak-icon-rsi
+      offset: *medtak-icon-offset
+      state: MedTakDispatcher
+  - type: IdCard
+    jobTitle: job-name-medtak-dispatcher
+    jobIcon: LustJobIconMedTakDispatcher
+  - type: Access
+    tags: [ LustMedTak, MTO ]
+
+- type: entity
+  parent: IDCardStandard
+  id: LustMedTakMedicIDCard
+  name: MedTak medic ID card
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/id_cards.rsi
+    layers:
+    - state: medtak
+    - sprite: *medtak-icon-rsi
+      offset: *medtak-icon-offset
+      state: MedTakMedic
+  - type: IdCard
+    jobTitle: job-name-medtak-medic
+    jobIcon: LustJobIconMedTakMedic
+  - type: Access
+    tags: [ LustMedTak, MTO ]
+
+- type: entity
+  parent: IDCardStandard
+  id: LustMedTakPilotIDCard
+  name: MedTak pilot ID card
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/id_cards.rsi
+    layers:
+    - state: medtak
+    - sprite: *medtak-icon-rsi
+      offset: *medtak-icon-offset
+      state: MedTakPilot
+  - type: IdCard
+    jobTitle: job-name-medtak-pilot
+    jobIcon: LustJobIconMedTakPilot
+  - type: Access
+    tags: [ LustMedTak, MTO ]
+
+- type: entity
+  parent: IDCardStandard
+  id: LustMedTakSecurityIDCard
+  name: MedTak security ID card
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Misc/id_cards.rsi
+    layers:
+    - state: medtak
+    - sprite: *medtak-icon-rsi
+      offset: *medtak-icon-offset
+      state: MedTakSecurity
+  - type: IdCard
+    jobTitle: job-name-medtak-security
+    jobIcon: LustJobIconMedTakSecurity
+  - type: Access
+    tags: [ LustMedTak, MTO ]

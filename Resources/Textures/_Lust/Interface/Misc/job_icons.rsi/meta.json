@@ -1,32 +1,50 @@
-{
-    "version": 1,
-    "license": "CLA",
-    "copyright": "Created by pacable for Lust Station, made by gardsnake",
-    "size": {
-        "x": 8,
-        "y": 8
-    },
-    "states": [
-        {
-            "name": "Nanotrasen"
-        },
-        {
-            "name": "Qillu"
-        },
-        {
-            "name": "Arrows"
-        },
-        {
-            "name": "go"
-        },
-        {
-            "name": "ota"
-        },
-        {
-            "name": "dvl"
-        },
-        {
-            "name": "commaid"
-        }
-    ]
+﻿{
+    "version":  1,
+    "license":  "CLA",
+    "copyright":  "Created by pacable for Lust Station, made by gardsnake",
+    "size":  {
+                 "x":  8,
+                 "y":  8
+             },
+    "states":  [
+                   {
+                       "name":  "Nanotrasen"
+                   },
+                   {
+                       "name":  "Qillu"
+                   },
+                   {
+                       "name":  "Arrows"
+                   },
+                   {
+                       "name":  "go"
+                   },
+                   {
+                       "name":  "ota"
+                   },
+                   {
+                       "name":  "dvl"
+                   },
+                   {
+                       "name":  "commaid"
+                   },
+                   {
+                       "name":  "MedTakBorg"
+                   },
+                   {
+                       "name":  "MedTakDispatcher"
+                   },
+                   {
+                       "name":  "MedTakLeader"
+                   },
+                   {
+                       "name":  "MedTakMedic"
+                   },
+                   {
+                       "name":  "MedTakPilot"
+                   },
+                   {
+                       "name":  "MedTakSecurity"
+                   }
+               ]
 }
