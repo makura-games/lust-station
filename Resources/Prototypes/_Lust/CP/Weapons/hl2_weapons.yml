@@ -56,7 +56,7 @@
 
 - type: entity
   name: MP7
-  parent: [BaseWeaponSubMachineGun, BaseSecurityContraband]
+  parent: [LustWeaponSubMachineGun, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponSubMachineGunMP7HL2
   suffix: HL2
   description: A compact submachine gun originating from old Earth.

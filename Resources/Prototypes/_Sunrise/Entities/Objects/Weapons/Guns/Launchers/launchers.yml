@@ -1,6 +1,6 @@
-﻿- type: entity
+- type: entity
   name: RL-5
-  parent: [BaseWeaponLauncher, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
+  parent: [LustWeaponLauncher, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLauncherRL5
   components:
   - type: Sprite
@@ -46,7 +46,7 @@
 
 - type: entity
   name: GL-70
-  parent: [BaseWeaponLauncher, BaseCentcommContraband] # Lust edit :: BaseCentcommContraband
+  parent: [LustWeaponLauncher, BaseCentcommContraband] # Lust edit :: BaseCentcommContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponGrenadeLauncherGL70
   components:
   - type: Sprite

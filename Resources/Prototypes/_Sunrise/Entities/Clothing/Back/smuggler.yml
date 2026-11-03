@@ -232,7 +232,7 @@
     - id: WeaponSniperMosin
     - id: WeaponShotgunTrenchgun4034Sawn
     - id: WeaponShotgunSawn
-    - id: WeaponLaserSvalinn
+    - id: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
     - id: WeaponMakeshiftLaser
     - id: LauncherSyringePistol
     - id: WeaponLaserGun

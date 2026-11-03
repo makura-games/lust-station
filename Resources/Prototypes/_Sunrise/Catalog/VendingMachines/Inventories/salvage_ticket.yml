@@ -1,4 +1,4 @@
-﻿# equipment
+# equipment
 
 - type: listing
   id: VendorSalvageClothingMaskGasExplorer
@@ -238,7 +238,7 @@
 # weapons
 - type: listing
   id: VendorSalvageWeaponLaserSvalinn
-  productEntity: WeaponLaserSvalinn
+  productEntity: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
   cost:
     SalvageTicket: 200
   categories:

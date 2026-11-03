@@ -1,6 +1,6 @@
 - type: entity
   name: BaseWeaponShotgun
-  parent: [BaseItem, GunMedium, BaseGunShotgunSound, BaseLustGunHeat] # Sunrise edit - shotgun handling sounds; Lust edit: наследуем компонент нагрева из _Lust
+  parent: [BaseItem, GunMedium, BaseGunShotgunSound] # Sunrise edit - shotgun handling sounds
   id: BaseWeaponShotgunAny
   description: A rooty tooty point and shooty.
   abstract: true
@@ -51,7 +51,7 @@
         staminaMultiplier: 20
 
 - type: entity
-  parent: BaseWeaponShotgunAny
+  parent: LustWeaponShotgunAny # Lust edit: используем fork-прототип с нагревом
   id: BaseWeaponShotgun
   abstract: true
   components:
@@ -68,7 +68,7 @@
       path: /Audio/Weapons/Guns/MagIn/shotgun_insert.ogg
 
 - type: entity
-  parent: [BaseWeaponShotgunAny, GunLight]
+  parent: [LustWeaponShotgunAny, GunLight] # Lust edit: используем fork-прототип с нагревом
   id: BaseWeaponShotgunPump
   abstract: true
   components:
@@ -90,7 +90,7 @@
 - type: entity
   name: Bulldog
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable, BaseSyndicateContraband, GunLight, BaseGunShotgunSound, BaseLustGunHeat] # Sunrise edit - shotgun handling sounds; Lust edit: наследуем нагрев из _Lust
+  parent: [BaseItem, BaseGunWieldable, BaseSyndicateContraband, GunLight, BaseGunShotgunSound] # Sunrise edit - shotgun handling sounds
   id: WeaponShotgunBulldog
   description: An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses .50 shotgun shells.
   components:
@@ -157,7 +157,7 @@
 
 - type: entity
   name: double-barreled shotgun
-  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSecurityBartenderContraband] # Sunrise-Edit
+  parent: [LustWeaponShotgunAny, BaseGunWieldable, BaseSecurityBartenderContraband] # Sunrise-Edit; Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunDoubleBarreled
   description: An immortal classic. Uses .50 shotgun shells.
   components:
@@ -266,7 +266,7 @@
 
 - type: entity
   name: sawn-off shotgun
-  parent: [ BaseWeaponShotgunAny, BaseSecurityBartenderContraband ] # Sunrise-Edit
+  parent: [ LustWeaponShotgunAny, BaseSecurityBartenderContraband ] # Sunrise-Edit; Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunSawn
   description: Groovy! Uses .50 shotgun shells.
   components: # needs to be super inaccurate because you don't need to wield it

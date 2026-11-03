@@ -457,7 +457,7 @@
 
 - type: entity
   name: cyborg's pulse weapon
-  parent: BaseWeaponBattery
+  parent: LustWeaponBattery # Lust edit: используем fork-прототип с нагревом
   id: WeaponPulseCarbineBorg
   components:
   - type: Sprite

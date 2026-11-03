@@ -1,6 +1,6 @@
 - type: entity
   name: BasePistol
-  parent: BaseWeaponPistol
+  parent: LustWeaponPistol # Lust edit: используем fork-прототип с нагревом
   id: BaseWeaponPistolSunrise
   suffix: Sunrise
   description: A rooty tooty point and shooty.
@@ -99,7 +99,7 @@
 - type: entity
   name: Glock-22 Prison
   description: Manufactured by special order for prison complex security. Semi-automatic firearm chambered in .35 Auto.
-  parent: [ BaseWeaponPistol, BaseSecurityContraband ] # Lust Edit :: BaseSecurityContraband
+  parent: [ LustWeaponPistol, BaseSecurityContraband ] # Lust Edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponPistolG22Prison
   suffix: Sunrise
   components:
@@ -213,7 +213,7 @@
 
 # Sidearm for detectives.
 - type: entity
-  parent: [ BaseWeaponRevolver, BaseSecurityCentcommContraband ] # Lust edit :: BaseSecurityCentcommContraband
+  parent: [ LustWeaponRevolver, BaseSecurityCentcommContraband ] # Lust edit :: BaseSecurityCentcommContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponRevolverSpearhead
   name: Spearhead autorevolver
   description: A bulky revolver, occasionally carried by assault troops and officers in SWAT, as well as civilian law enforcement. Fires .45 Magnum rounds. #Fires .357 Magnum rounds.

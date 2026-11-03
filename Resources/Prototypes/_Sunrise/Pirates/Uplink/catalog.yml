@@ -470,7 +470,7 @@
 
 - type: listing
   id: UplinkPirateLaserSvalinn
-  productEntity: WeaponLaserSvalinn
+  productEntity: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
   cost:
     Doubloon: 8
   categories:

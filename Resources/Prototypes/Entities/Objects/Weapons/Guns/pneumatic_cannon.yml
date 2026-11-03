@@ -109,7 +109,7 @@
 
 - type: entity
   name: experimental pie cannon
-  parent: BaseWeaponBattery
+  parent: LustWeaponBattery # Lust edit: используем fork-прототип с нагревом
   id: BorgLauncherCreamPie
   description: Deliver a generous portion of cream directly to the crew! Automatically bakes pies over time.
   components:

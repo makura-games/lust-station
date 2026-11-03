@@ -286,7 +286,7 @@
     shoes: ClothingShoesBootsMagPirate
     outerClothing: ClothingOuterLightHardsuitUSSP
     mask: ClothingMaskGasMerc
-    pocket1: WeaponLaserSvalinn
+    pocket1: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
 
 - type: startingGear
   id: SovietCorpseGearEVALightB
@@ -296,7 +296,7 @@
     shoes: ClothingShoesBootsMagPirate
     outerClothing: ClothingOuterLightHardsuitUSSP
     mask: ClothingMaskGasMerc
-    pocket1: WeaponLaserSvalinn
+    pocket1: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
 
 - type: startingGear
   id: SovietCorpseGearEVA

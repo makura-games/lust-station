@@ -1659,4 +1659,12 @@ PlushieAnameGermanikum: PlushieLizardJobChiefmedicalofficer
 ClothingUniformJumpsuitCentcomFormal: ClothingUniformJumpsuitCentcomFormalQillu
 ClothingUniformJumpskirtCentcomFormalDress: ClothingUniformJumpskirtCentcomFormalDressQillu
 
+# Lust edit: переносим оружие на fork-прототипы с нагревом
+# Абстрактные базы используются только в наследовании, поэтому мигрируют только конкретные сущности.
+WeaponLaserSvalinn: LustWeaponLaserSvalinn
+WeaponPistolEchis: LustWeaponPistolEchis
+WeaponLightMachineGunL6C: LustWeaponLightMachineGunL6C
+WeaponSubMachineGunC20rROW: LustWeaponSubMachineGunC20rROW
+WeaponShotgunBulldog: LustWeaponShotgunBulldog
+
 # Lust-End

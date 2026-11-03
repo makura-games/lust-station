@@ -56,7 +56,7 @@
         orGroup: Guns
       - id: WeaponRifleLecter
         orGroup: Guns
-      - id: WeaponShotgunBulldog
+      - id: LustWeaponShotgunBulldog # Lust edit: используем fork-прототип с нагревом
         orGroup: Guns
       - id: WeaponShotgunDoubleBarreled
         orGroup: Guns
@@ -102,7 +102,7 @@
         orGroup: Guns
       - id: WeaponLightMachineGunL6
         orGroup: Guns
-      - id: WeaponLaserSvalinn
+      - id: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
         orGroup: Guns
       - id: WeaponLaserGun
         orGroup: Guns

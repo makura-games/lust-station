@@ -1895,7 +1895,7 @@
     belt: ClothingBeltMercWebbing
     ears: ClothingHeadsetGrey
     outerClothing: ClothingOuterVestWebMerc
-    pocket1: WeaponLaserSvalinn
+    pocket1: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
     pocket2: RadioHandheld
 
 - type: startingGear

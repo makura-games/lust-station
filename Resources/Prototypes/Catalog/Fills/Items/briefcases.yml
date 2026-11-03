@@ -100,7 +100,7 @@
   - type: EntityTableContainerFill
     containers:
       storagebase:
-        id: WeaponShotgunBulldog
+        id: LustWeaponShotgunBulldog # Lust edit: используем fork-прототип с нагревом
 
 - type: entity
   id: BriefcaseWeaponChinaLakeFilled

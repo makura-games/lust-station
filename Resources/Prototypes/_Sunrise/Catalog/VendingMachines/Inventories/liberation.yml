@@ -10,7 +10,7 @@
     WeaponPulsePistol: 3
     WeaponPistolVP78: 3
     WeaponPistolEnforcer: 3
-    WeaponPistolEchis: 3
+    LustWeaponPistolEchis: 3 # Lust edit: используем fork-прототип с нагревом
     WeaponPistolDeagle: 6
     WeaponPistolM1984: 3
     WeaponPistolG22Prison: 3
@@ -46,7 +46,7 @@
     WeaponRifleLeikha: 3
     WeaponRifleAsh12: 3
 
-    WeaponShotgunBulldog: 3
+    LustWeaponShotgunBulldog: 3 # Lust edit: используем fork-прототип с нагревом
     WeaponShotgunDoubleBarreled: 3
     WeaponShotgunKammerer: 3
     WeaponShotgunEnforcer: 3
@@ -80,7 +80,7 @@
     WeaponSubMachineGunSP91RC: 3
     WeaponSubMachineGunPPSH: 3
     WeaponSubMachineGunWt550: 3
-    WeaponSubMachineGunC20rROW: 3
+    LustWeaponSubMachineGunC20rROW: 3 # Lust edit: используем fork-прототип с нагревом
     WeaponSubMachineGunBriefcase: 3
     WeaponSubMachineGunMakeshift: 3
     WeaponSubMachineGunImprovised: 3
@@ -112,7 +112,7 @@
 
     WeaponLightMachineGunL6: 3
     WeaponLightMachineGunL6Max: 3
-    WeaponLightMachineGunL6C: 3
+    LustWeaponLightMachineGunL6C: 3 # Lust edit: используем fork-прототип с нагревом
     WeaponLightMachineGunMG60: 3
     WeaponLightMachineGunRPD: 3
     WeaponMachineGunMG42: 3
@@ -125,7 +125,7 @@
     WeaponMinigun: 3
     WeaponLightMachineGunDP28: 3
     WeaponLightMachineGunPirateCannon: 3
-    WeaponLaserSvalinn: 3
+    LustWeaponLaserSvalinn: 3 # Lust edit: используем fork-прототип с нагревом
     WeaponLaserGun: 3
     WeaponMakeshiftLaser: 3
     WeaponTeslaGun: 3

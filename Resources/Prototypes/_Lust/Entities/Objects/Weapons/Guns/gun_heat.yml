@@ -1,5 +1,5 @@
 - type: entity
-  id: BaseLustGunHeat
+  id: LustGunHeat
   abstract: true
   components:
   - type: GunHeat

@@ -99,7 +99,7 @@
     id: USSPOfficerPDA
     ears: ClothingHeadsetUSSPSec
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponLaserSvalinn
+    pocket1: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
   storage:
     back:
     - Gauze

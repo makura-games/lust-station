@@ -34,7 +34,7 @@
 
 - type: entity
   name: Type U3 Uzi
-  parent: [BaseWeaponSubMachineGun, BaseMajorContraband]
+  parent: [LustWeaponSubMachineGun, BaseMajorContraband] # Lust edit: используем fork-прототип с нагревом
   id: SunriseWeaponSubMachineGunUzi
   description: Lightweight submachine gun with a 32-round magazine that has single or 4 round firing modes.
   components:
@@ -92,7 +92,7 @@
 
 - type: entity
   name: makeshift SMG
-  parent: [BaseWeaponSubMachineGun, BaseMinorContraband]
+  parent: [LustWeaponSubMachineGun, BaseMinorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponSubMachineGunMakeshift
   description: Held together with cloth and dreams, it rattles ominously with every shot.
   components:

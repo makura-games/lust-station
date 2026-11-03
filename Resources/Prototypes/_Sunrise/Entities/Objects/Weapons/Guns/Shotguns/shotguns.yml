@@ -96,7 +96,7 @@
 # region Admeme
 - type: entity
   name: "AS-12 'Hasta la vista' Shotgun"
-  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [LustWeaponShotgunAny, BaseGunWieldable, BaseSyndicateContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunMinotaurAdmeme
   description: Smooth, powerful, highly illegal. Full auto shotgun available at the market, utilizes standard 12g drum mags. Property of Admeme-Marauders. Can be Dual Wielded with another AS-12 for maximum carnage.
   suffix: Admeme

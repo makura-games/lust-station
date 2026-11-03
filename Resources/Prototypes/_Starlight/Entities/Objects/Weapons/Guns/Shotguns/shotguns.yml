@@ -71,7 +71,7 @@
 
 - type: entity
   name: cycler shotgun
-  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSecurityContraband] # , BaseSecuritySalvageContraband
+  parent: [LustWeaponShotgunAny, BaseGunWieldable, BaseSecurityContraband] # , BaseSecuritySalvageContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunCycler
   description: An advanced shotgun with two separate magazine tubes, allowing you to quickly toggle between ammo types.
   components:
@@ -116,7 +116,7 @@
 
 - type: entity
   name: Tkach Ya-Sui GA 12 revolver
-  parent: [BaseWeaponShotgunAny, BaseSecurityContraband] # , BaseSecuritySalvageContraband
+  parent: [LustWeaponShotgunAny, BaseSecurityContraband] # , BaseSecuritySalvageContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunGA12
   description: An outdated sidearm rarely seen in use by certain PMCs that operate throughout the frontier systems, featuring a three-shell cylinder. Thats right, shell, this one shoots twelve gauge.
   components:
@@ -175,7 +175,7 @@
 
 - type: entity
   name: "AS-12 'Minotaur' Shotgun"
-  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [LustWeaponShotgunAny, BaseGunWieldable, BaseSyndicateContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunMinotaur
   description: Smooth, powerful, highly illegal. The newest full auto shotgun available at the market, utilizes standard 12g drum mags. Property of Gorlex Marauders.
   components:
@@ -234,7 +234,7 @@
 
 - type: entity
   name: forged double-barrel shotgun
-  parent: [BaseWeaponShotgunAny, BaseGunWieldable, BaseMinorContraband]
+  parent: [LustWeaponShotgunAny, BaseGunWieldable, BaseMinorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunForged
   description: Decently made double-barrel shotgun, reinforced with mixed steel and plasteel plates to keep it together. Not as accurate as a real gun.
   components:

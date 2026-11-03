@@ -38,13 +38,13 @@
 
 - type: entity
   abstract: true
-  parent: [BaseWeaponBatteryNoAmmoCounter, BaseLustGunHeat] # Lust edit: наследуем компонент нагрева из _Lust
+  parent: BaseWeaponBatteryNoAmmoCounter
   id: BaseWeaponBattery
   components:
   - type: AmmoCounter
 
 - type: entity
-  parent: [BaseWeaponBattery, BaseGunWieldable]
+  parent: [LustWeaponBattery, BaseGunWieldable] # Lust edit: используем fork-прототип с нагревом
   id: BaseLaserRifle
   abstract: true
   components:
@@ -182,7 +182,7 @@
 
 - type: entity
   name: svalinn laser pistol
-  parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband, BaseLustGunHeat] # Lust edit: добавляем нагрев из _Lust
+  parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband]
   id: WeaponLaserSvalinn
   description: A cheap and widely used laser pistol.
   components:
@@ -276,7 +276,7 @@
 
 - type: entity
   name: tesla gun
-  parent: [BaseWeaponBattery, BaseMajorContraband]
+  parent: [LustWeaponBattery, BaseMajorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponTeslaGun
   description: The power of the primordial element of lightning in your hands.
   components:
@@ -443,7 +443,7 @@
 
 - type: entity
   name: laser cannon
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponLaserCannon
   description: A heavy duty, high powered laser weapon.
   components:
@@ -479,7 +479,7 @@
 
 - type: entity
   name: portable particle decelerator
-  parent: [BaseWeaponBattery, BaseEngineeringContraband]
+  parent: [LustWeaponBattery, BaseEngineeringContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponParticleDecelerator
   description: A portable particle decelerator capable of decomposing a tesla or singularity.
   components:
@@ -514,7 +514,7 @@
 
 - type: entity
   name: x-ray cannon
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponXrayCannon
   description: An experimental weapon that uses concentrated x-ray energy against its target.
   components:
@@ -622,7 +622,7 @@
 
 - type: entity
   name: disabler SMG
-  parent: [BaseWeaponBattery, BaseSecurityContraband]
+  parent: [LustWeaponBattery, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponDisablerSMG
   description: Advanced weapon that exhausts organic targets, weakening them until they collapse.
   components:
@@ -906,7 +906,7 @@
 
 - type: entity
   name: energy shotgun
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponEnergyShotgun
   description: A one-of-a-kind prototype energy weapon that uses various shotgun configurations. It offers the possibility of both lethal and non-lethal shots, making it a versatile weapon.
   components:
@@ -1007,7 +1007,7 @@
 
 - type: entity
   name: temperature gun
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponTemperatureGun
   description: An advanced gun that shoots body-temperature-changing beams. This probably constitutes as some kind of war crime.
   components:

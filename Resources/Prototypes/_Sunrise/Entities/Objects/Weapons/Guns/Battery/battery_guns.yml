@@ -312,7 +312,7 @@
 
 - type: entity
   name: EarthGov laser rifle
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponEarthGovLaserRifle
   components:
   - type: Sprite
@@ -360,7 +360,7 @@
 
 - type: entity
   name: EarthGov laser carbine
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponEarthGovLaserCarbine
   components:
   - type: Sprite
@@ -405,7 +405,7 @@
 
 - type: entity
   name: EarthGov laser machine gun
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponEarthGovLaserMG
   components:
   - type: Sprite
@@ -454,7 +454,7 @@
 
 - type: entity
   name: EarthGov Experemental X-Ray
-  parent: [BaseWeaponBattery, BaseGunPulseSound, BaseTSFContraband] # Lust edit :: BaseTSFContraband
+  parent: [LustWeaponBattery, BaseGunPulseSound, BaseTSFContraband] # Lust edit :: BaseTSFContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponEarthGovXRay
   suffix: SUNRISE14CM
   description: Earth Government Experemental x-ray weapon, it looks like it emits radiation.
@@ -504,7 +504,7 @@
 
 - type: entity
   name: EarthGov heavy laser rifle
-  parent: [BaseWeaponBattery, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
+  parent: [LustWeaponBattery, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponEarthGovLaserSniper
   components:
   - type: Sprite
@@ -560,7 +560,7 @@
 
 - type: entity
   name: S-13 «Black mamba»
-  parent: [ BaseWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
+  parent: [ LustWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponSyndieLaserGun
   description: A modernised Lecter, converted to a plasma energy module.
   components:
@@ -612,7 +612,7 @@
 
 - type: entity
   name: SAM-300
-  parent: [ BaseWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
+  parent: [ LustWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponSyndieLaserPistol
   description: The Syndicate's laser pistol, developed from the NT Captain's pistol.
   components:
@@ -655,7 +655,7 @@
 
 - type: entity
   name: UVL-21 «Vivern»
-  parent: [BaseWeaponBattery, BaseGunPulseSound, BaseSyndicateContraband] # Lust edit :: BaseSyndicateContraband
+  parent: [LustWeaponBattery, BaseGunPulseSound, BaseSyndicateContraband] # Lust edit :: BaseSyndicateContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLaserMinigun
   description: A heavy weapon of mass destruction based on the minigun.
   components:
@@ -797,7 +797,7 @@
 
 - type: entity
   name: pulse carbine
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband, BaseGunPulseSound]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseCentcommContraband, BaseGunPulseSound] # Lust edit: используем fork-прототип с нагревом
   id: WeaponPulseCarbine
   description: A high tech energy carbine favoured by the NT-ERT operatives.
   components:
@@ -851,7 +851,7 @@
 
 - type: entity
   name: heavy pulse carbine
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband, BaseGunPulseSound]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseCentcommContraband, BaseGunPulseSound] # Lust edit: используем fork-прототип с нагревом
   id: WeaponSniperPulseCarbine
   description: "A high tech heavy carbine. favoured by the NT-ERT operatives."
   components:
@@ -914,7 +914,7 @@
 
 - type: entity
   name: pulse rifle
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband, BaseGunPulseSound]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseCentcommContraband, BaseGunPulseSound] # Lust edit: используем fork-прототип с нагревом
   id: WeaponPulseRifle
   description: A weapon that is almost as infamous as its users.
   components:
@@ -1000,7 +1000,7 @@
     - LaserWeapon
 
 - type: entity
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband]
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponPilotLasgun
   name: pilot lasgun
   description: The Imperium's main argument in disputes with heretics and cultists. Cauterizes wounds on hit, saving a battle brother's bandages.

@@ -59,7 +59,7 @@
 
 - type: entity
   name: enforcer
-  parent: [BaseWeaponPistol, BaseSecurityContraband]
+  parent: [LustWeaponPistol, BaseSecurityContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponPistolEnforcer
   description: A versatile pistol of modern design.
   components:
@@ -138,7 +138,7 @@
 
 - type: entity
   name: makeshift pistol
-  parent: [BaseWeaponPistol, BaseMinorContraband]
+  parent: [LustWeaponPistol, BaseMinorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponPistolMakeshiftCrafted
   description: Little more than a space eoka. Very unreliable.
   components:
@@ -192,7 +192,7 @@
 
 - type: entity
   name: improvised pistol
-  parent: [BaseWeaponSniper, BaseMinorContraband]
+  parent: [LustWeaponSniper, BaseMinorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponPistolImprovised
   description: A cobbled together pistol with an internal magazine. More reliable, but still liable to blow up in your face.
   components:
@@ -257,7 +257,7 @@
 
 - type: entity
   name: forged pistol
-  parent: [BaseWeaponPistol, BaseMinorContraband]
+  parent: [LustWeaponPistol, BaseMinorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponPistolForged
   description: A reliable magazine-fed pistol made by the best tider blacksmiths.
   components:

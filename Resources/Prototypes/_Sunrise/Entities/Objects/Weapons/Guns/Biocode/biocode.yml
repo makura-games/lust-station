@@ -9,7 +9,7 @@
     - Pirate
 
 - type: entity
-  parent: WeaponShotgunBulldog
+  parent: LustWeaponShotgunBulldog # Lust edit: используем fork-прототип с нагревом
   id: WeaponShotgunBulldogBiocode
   suffix: BIOCODE
   components:

@@ -1,6 +1,6 @@
 - type: entity
   name: Makeshift Repeater Rifle
-  parent: [BaseWeaponSniper, BaseMinorContraband]
+  parent: [LustWeaponSniper, BaseMinorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponSniperMakeshift
   description: It'll blow a hole in the guy you point this at, if it doesn't snap your wrist first.
   components:

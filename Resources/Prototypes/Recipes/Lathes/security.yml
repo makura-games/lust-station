@@ -295,7 +295,7 @@
 - type: latheRecipe
   parent: BaseWeaponRecipeSidearm
   id: WeaponLaserSvalinn
-  result: WeaponLaserSvalinn
+  result: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
   materials:
     Steel: 2000
     Gold: 500

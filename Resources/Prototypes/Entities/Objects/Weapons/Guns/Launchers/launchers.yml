@@ -1,6 +1,6 @@
 - type: entity
   abstract: true
-  parent: [ BaseItem, BaseGunWieldable, BaseLustGunHeat ] # Lust edit: наследуем компонент нагрева из _Lust
+  parent: [ BaseItem, BaseGunWieldable ]
   id: BaseWeaponLauncher
   name: BaseWeaponLauncher
   description: A rooty tooty point and shooty.
@@ -50,7 +50,7 @@
   # Sunrise end
 
 - type: entity
-  parent: [ BaseWeaponLauncher, BaseSyndicateContraband ]
+  parent: [ LustWeaponLauncher, BaseSyndicateContraband ] # Lust edit: используем fork-прототип с нагревом
   id: WeaponLauncherChinaLake
   name: China Lake
   description: PLOOP.
@@ -86,7 +86,7 @@
     price: 10000
 
 - type: entity
-  parent: [ BaseWeaponLauncher, BaseMajorContraband ]
+  parent: [ LustWeaponLauncher, BaseMajorContraband ] # Lust edit: используем fork-прототип с нагревом
   id: WeaponLauncherHydra
   name: hydra
   description: PLOOP... FSSSSSS...
@@ -131,7 +131,7 @@
     proto: GrenadeFrag
 
 - type: entity
-  parent: [ BaseWeaponLauncher, BaseMajorContraband ]
+  parent: [ LustWeaponLauncher, BaseMajorContraband ] # Lust edit: используем fork-прототип с нагревом
   id: WeaponLauncherRocket
   name: RPG-7
   description: A modified ancient rocket-propelled grenade launcher.
@@ -205,7 +205,7 @@
     channel: XenoborgGuidedMissileLauncher
 
 - type: entity
-  parent: [BaseWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
+  parent: [LustWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLauncherMultipleRocket
   name: multiple rocket launcher
   description: A modified ancient rocket-propelled grenade launcher.
@@ -283,7 +283,7 @@
   - type: Appearance
 
 - type: entity
-  parent: [BaseWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
+  parent: [LustWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLauncherPirateCannon
   name: pirate cannon
   description: Kaboom!

@@ -1,6 +1,6 @@
 - type: entity
   name: P-90
-  parent: [ BaseWeaponSubMachineGun, BaseSecurityContraband ] # Lust edit :: BaseSecurityContraband
+  parent: [ LustWeaponSubMachineGun, BaseSecurityContraband ] # Lust edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponSubMachineGunP90
   components:
   - type: Item
@@ -180,7 +180,7 @@
 #PPSH
 - type: entity
   name: PPSH 59 SMG
-  parent: [BaseWeaponSubMachineGun, BaseSovietContraband]
+  parent: [LustWeaponSubMachineGun, BaseSovietContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponSubMachineGunPPSH
   description: Beloved by USSP veterans and feared by friendly fire protocols everywhere. Uses .35 ammo.
   components:
@@ -327,7 +327,7 @@
 
 - type: entity
   name: AJ-100
-  parent: [ BaseWeaponSubMachineGun, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
+  parent: [ LustWeaponSubMachineGun, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponAJ100
   description: High-speed SMG, equipped with a universal connector for other types of pistol magazines.
   components:
@@ -400,7 +400,7 @@
 
 - type: entity
   name: SIAR-52 SMG
-  parent: [ BaseWeaponSubMachineGun, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
+  parent: [ LustWeaponSubMachineGun, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponSIAR52
   description: A high rate of fire weapon, equipped with integrated silencer.
   components:
@@ -538,7 +538,7 @@
 
 - type: entity
   name: Vector Super
-  parent: [BaseWeaponSubMachineGun, BaseSyndicateContraband]
+  parent: [LustWeaponSubMachineGun, BaseSyndicateContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponSubMachineGunVector
   description: An early 30-round Vector Super by Waffle Corp chambered in .40. Effective at short to medium range, it fires in two-round bursts or full auto. Its delayed-blowback system redirects the bolt assembly downward.
   components:

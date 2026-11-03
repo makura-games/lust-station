@@ -950,7 +950,7 @@
     - id: WeaponShotgunBulldogBiocode
       prob: 0.3
       orGroup: Weapons
-    - id: WeaponShotgunBulldog
+    - id: LustWeaponShotgunBulldog # Lust edit: используем fork-прототип с нагревом
       prob: 0.25
       orGroup: Weapons
     - id: MagazineShotgunXL
