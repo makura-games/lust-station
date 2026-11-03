@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using Content.Client.UserInterface.Screens;
-using Content.Shared._Lust.CCVar;
 using Content.Shared._Sunrise.Lobby;
 using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared.CCVar;
@@ -51,20 +50,8 @@ public sealed partial class MiscTab : Control
         Control.AddOptionCheckBox(CVars.DiscordEnabled, DiscordRich);
         Control.AddOptionCheckBox(CCVars.ShowOocPatronColor, ShowOocPatronColor);
         Control.AddOptionCheckBox(CCVars.LoocAboveHeadShow, ShowLoocAboveHeadCheckBox);
-        // Lust added start - режим отображения предмета и индикаторы оружия
-        Control.AddOptionDropDown(
-            CCVars.HudHeldItemShowMode,
-            HeldItemShowModeDropDown,
-            [
-                new OptionDropDownCVar<int>.ValueOption((int) HeldItemShowMode.Always, Loc.GetString("ui-options-held-item-show-mode-always")),
-                new OptionDropDownCVar<int>.ValueOption((int) HeldItemShowMode.CombatModeOnly, Loc.GetString("ui-options-held-item-show-mode-combat-only")),
-                new OptionDropDownCVar<int>.ValueOption((int) HeldItemShowMode.NonCombatModeOnly, Loc.GetString("ui-options-held-item-show-mode-non-combat-only")),
-                new OptionDropDownCVar<int>.ValueOption((int) HeldItemShowMode.Never, Loc.GetString("ui-options-held-item-show-mode-never")),
-            ]);
-        Control.AddOptionCheckBox(CCVars.CombatModeIndicatorsPointShow, ShowCombatModeIndicatorsCheckBox);
-        Control.AddOptionCheckBox(CCVars.HudShowGunHeatIndicator, ShowGunHeatIndicatorCheckBox);
-        Control.AddOptionCheckBox(CCVars.HudShowGunJamIndicator, ShowGunJamIndicatorCheckBox);
-        Control.AddOptionCheckBox(CCVars.HudShowGunBoltIndicator, ShowGunBoltIndicatorCheckBox);
+        // Lust added start - подключаем fork-настройки отображения оружия
+        InitializeLustOptions();
         // Lust added end
         Control.AddOptionCheckBox(CCVars.OpaqueStorageWindow, OpaqueStorageWindowCheckBox);
         Control.AddOptionCheckBox(CCVars.ChatEnableFancyBubbles, FancySpeechBubblesCheckBox);

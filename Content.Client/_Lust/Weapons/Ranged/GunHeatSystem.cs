@@ -16,8 +16,8 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
 {
     [Dependency] private SpriteSystem _sprite = default!;
 
-    private readonly Dictionary<EntityUid, HeldGlow> _held = new();
     private static readonly Color HeatGlowColor = Color.FromHex("#ff3b1f");
+    private readonly Dictionary<EntityUid, HeldGlow> _held = new();
 
     [SubscribeLocalEvent(after: [typeof(GunSystem)])]
     private void OnItemStatus(Entity<GunHeatComponent> ent, ref ItemStatusCollectMessage args)
