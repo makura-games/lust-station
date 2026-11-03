@@ -95,10 +95,10 @@
   - type: SolutionContainerVisuals
     fillBaseName: null
     inHandsFillBaseName: null
-  - type: SolutionContainerManager
-    solutions:
-      melee:
-        maxVol: 5
+  - type: Solution
+    id: melee
+    solution:
+      maxVol: 5
 
 - type: entity
   name: dragon slayer
