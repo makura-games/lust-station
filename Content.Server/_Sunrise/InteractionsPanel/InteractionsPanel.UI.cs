@@ -80,12 +80,14 @@ public partial class InteractionsPanel
 
         var userNet = GetNetEntity(user);
         var targetNet = GetNetEntity(target);
+        // Lust edit start - фиксируем пол сущностей в состоянии BUI
         Sex? userSex = BorgSexSystem.TryGetSex(user, EntityManager, out var currentUserSex)
             ? currentUserSex
             : null;
         Sex? targetSex = BorgSexSystem.TryGetSex(target, EntityManager, out var currentTargetSex)
             ? currentTargetSex
             : null;
+        // Lust edit end
 
         return new InteractionWindowBoundUserInterfaceState(
             userNet,

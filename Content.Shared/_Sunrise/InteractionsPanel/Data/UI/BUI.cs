@@ -12,6 +12,7 @@ public enum InteractionWindowUiKey : byte
 }
 
 [Serializable, NetSerializable]
+// Lust edit start - передаём актуальный пол в состоянии BUI
 public sealed class InteractionWindowBoundUserInterfaceState(
     NetEntity userEntity,
     NetEntity targetEntity,
@@ -25,6 +26,7 @@ public sealed class InteractionWindowBoundUserInterfaceState(
     public Sex? UserSex { get; } = userSex;
     public Sex? TargetSex { get; } = targetSex;
 }
+// Lust edit end
 
 [Serializable, NetSerializable]
 public sealed class InteractionMessage : BoundUserInterfaceMessage

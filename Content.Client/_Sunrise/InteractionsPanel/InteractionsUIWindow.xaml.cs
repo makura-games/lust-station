@@ -309,7 +309,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
 
         // Lust edit - формируем отображение гениталий в коде форка.
-        UpdateLustEntityInformation(userEntity, targetEntity, selfTargeting, userSex, targetSex);
+        UpdateLustEntityInformation(selfTargeting, userSex, targetSex); // Lust-Edit
     }
 
     private void SetGenitalsText(Label label, string genitalsText)
@@ -1266,5 +1266,5 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
     #endregion
 
-    private partial void UpdateLustEntityInformation(NetEntity userEntity, NetEntity targetEntity, bool selfTargeting, Sex? userSex, Sex? targetSex);
+    private partial void UpdateLustEntityInformation(bool selfTargeting, Sex? userSex, Sex? targetSex); // Lust-Edit
 }

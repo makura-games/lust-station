@@ -1,14 +1,12 @@
 using System.Linq;
-using Content.Shared._Lust.Borgs;
 using Content.Shared._Sunrise.InteractionsPanel.Data.Conditions;
 using Content.Shared.Humanoid;
-using Robust.Shared.Network;
 
 namespace Content.Client._Sunrise.InteractionsPanel;
 
 public sealed partial class InteractionsUIWindow
 {
-    private partial void UpdateLustEntityInformation(NetEntity userEntity, NetEntity targetEntity, bool selfTargeting, Sex? userSex, Sex? targetSex)
+    private partial void UpdateLustEntityInformation(bool selfTargeting, Sex? userSex, Sex? targetSex)
     {
         if (userSex is { } currentUserSex)
         {

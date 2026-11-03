@@ -55,7 +55,7 @@ public sealed partial class InteractionsWindowBoundUserInterface : BoundUserInte
                 interactionsState.TargetEntity,
                 interactionsState.AvailableInteractionIds,
                 interactionsState.UserSex,
-                interactionsState.TargetSex
+                interactionsState.TargetSex // Lust-Edit
             );
         }
     }
