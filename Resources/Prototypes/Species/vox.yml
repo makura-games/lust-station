@@ -13,6 +13,13 @@
   naming: First
   sexes:
   - Unsexed
+  defaultSoundsBySex:
+  - UnisexVox
+  - UnisexVox
+  - UnisexVox
+  - UnisexVox # Lust-Edit
+  voices:
+  - UnisexVox
   # Sunrise-Edit
   buttScan:
     sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
