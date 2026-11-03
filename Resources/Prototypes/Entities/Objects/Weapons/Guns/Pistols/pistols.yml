@@ -34,9 +34,6 @@
       - FullAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
-  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
-  - type: GunHeat
-  # Lust added end
   - type: CanDualWield # Sunrise-Edit
     dualWieldInaccuracyPenalty: 1
     dualWieldFireRatePenalty: 0.25
@@ -96,6 +93,8 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Pistols/viper.rsi
+  - type: Gun
+    selectedMode: FullAuto # Override of BaseWeaponPistol to default to full-auto
   - type: ItemSlots
     slots:
       gun_magazine:
@@ -125,7 +124,7 @@
 
 - type: entity
   name: echis
-  parent: [ BaseItem, BaseSyndicateContraband ]
+  parent: [ BaseItem, BaseSyndicateContraband, BaseLustGunHeat ] # Lust edit: добавляем нагрев из _Lust
   id: WeaponPistolEchis
   description: A cyborg-mounted weapon system based on the Viper pistol. Creates ammunition on the fly from an internal fabricator, which slowly self-charges.
   components:

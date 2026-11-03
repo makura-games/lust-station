@@ -38,7 +38,10 @@ public sealed partial class GunCombatIndicatorsSystem : EntitySystem
     private void UpdateOverlay()
     {
         _overlayManager.RemoveOverlay<GunCombatIndicatorsOverlay>();
-        if (!_cfg.GetCVar(CCVars.CombatModeIndicatorsPointShow))
+        if (!_cfg.GetCVar(CCVars.CombatModeIndicatorsPointShow)
+            && !_cfg.GetCVar(CCVars.HudShowGunHeatIndicator)
+            && !_cfg.GetCVar(CCVars.HudShowGunJamIndicator)
+            && !_cfg.GetCVar(CCVars.HudShowGunBoltIndicator))
             return;
 
         _overlayManager.AddOverlay(new GunCombatIndicatorsOverlay(

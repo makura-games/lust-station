@@ -64,7 +64,8 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
 
         foreach (var key in held.Layers)
         {
-            if (!sprite.LayerMapTryGet(key, out var index) || sprite[index] is not SpriteComponent.Layer layer)
+            if (!_sprite.LayerMapTryGet((held.Holder, sprite), key, out var index, false)
+                || sprite[index] is not SpriteComponent.Layer layer)
                 continue;
 
             if (glow <= 0f)
@@ -92,7 +93,7 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
 
         foreach (var (key, color) in held.OriginalColors)
         {
-            if (sprite.LayerMapTryGet(key, out var index))
+            if (_sprite.LayerMapTryGet((held.Holder, sprite), key, out var index, false))
                 _sprite.LayerSetColor((held.Holder, sprite), index, color);
         }
     }

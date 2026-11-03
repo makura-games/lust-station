@@ -22,9 +22,6 @@
       collection: m249 # Sunrise-Edit
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/lmg_empty.ogg
-  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
-  - type: GunHeat
-  # Lust added end
   - type: StaticPrice
     price: 500
   # Sunrise-Start
@@ -51,6 +48,10 @@
     - state: icon
   - type: Item
     sprite: Objects/Weapons/Guns/HMGs/minigun.rsi
+    shape:
+    - 0,0,2,0
+    - 0,1,6,2
+    - 1,3,4,4
   - type: Gun
     fireRate: 15
     soundGunshot:

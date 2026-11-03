@@ -14,9 +14,6 @@ public sealed partial class GunHeatComponent : Component
     public float TemperaturePerShot;
 
     [DataField]
-    public float CoolingEfficiency = 0.05f;
-
-    [DataField]
     public float PassiveCooling = 2.5f;
 
     [DataField]

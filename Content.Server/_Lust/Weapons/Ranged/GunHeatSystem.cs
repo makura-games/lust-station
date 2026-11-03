@@ -23,21 +23,27 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<GunHeatComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<GunHeatComponent, ModifyChangedTemperatureEvent>(OnModifyTemperature);
+        SubscribeLocalEvent<GunHeatComponent, ComponentStartup>(OnStartup);
+        SubscribeLocalEvent<GunHeatComponent, MapInitEvent>(OnMapInit, after: [typeof(TemperatureSystem)]);
         SubscribeLocalEvent<GunHeatComponent, ComponentShutdown>(OnShutdown);
-        SubscribeLocalEvent<GunHeatComponent, OnTemperatureChangeEvent>(OnTemperatureChange);
+        SubscribeLocalEvent<GunHeatComponent, TemperatureChangedEvent>(OnTemperatureChange);
+    }
+
+    private void OnStartup(Entity<GunHeatComponent> ent, ref ComponentStartup args)
+    {
+        EnsureComp<TemperatureComponent>(ent);
+        EnsureComp<AtmosExposedComponent>(ent);
     }
 
     private void OnMapInit(Entity<GunHeatComponent> ent, ref MapInitEvent args)
     {
         var temperature = EnsureComp<TemperatureComponent>(ent);
-        temperature.AtmosTemperatureTransferEfficiency = ent.Comp.CoolingEfficiency;
         EnsureComp<AtmosExposedComponent>(ent);
 
-        var heatCapacity = _temperature.GetHeatCapacity(ent, temperature);
-        ent.Comp.TemperaturePerShot = heatCapacity > 0f ? ent.Comp.HeatPerShot / heatCapacity : 0f;
-        Sync(ent, temperature.CurrentTemperature, true);
+        ent.Comp.TemperaturePerShot = temperature.HeatCapacity > 0f
+            ? ent.Comp.HeatPerShot / temperature.HeatCapacity
+            : 0f;
+        Sync(ent, temperature.Temperature, true);
     }
 
     protected override void AddShotHeat(Entity<GunHeatComponent> ent, int shots)
@@ -49,7 +55,7 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
         _firing = true;
         try
         {
-            _temperature.ChangeHeat(ent, ent.Comp.HeatPerShot * shots, ignoreHeatResistance: true, temperature);
+            _temperature.ChangeHeat((ent.Owner, temperature), ent.Comp.HeatPerShot * shots, ignoreHeatResistance: true);
         }
         finally
         {
@@ -57,23 +63,22 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
         }
     }
 
-    private void OnModifyTemperature(Entity<GunHeatComponent> ent, ref ModifyChangedTemperatureEvent args)
-    {
-        if (_firing || args.TemperatureDelta <= 0f || !TryComp<TemperatureComponent>(ent, out var temperature))
-            return;
-
-        var limit = ent.Comp.JamTemperature - 20f;
-        var room = (limit - temperature.CurrentTemperature) * _temperature.GetHeatCapacity(ent, temperature);
-        args.TemperatureDelta = Math.Clamp(args.TemperatureDelta, 0f, Math.Max(0f, room));
-    }
-
     private void OnShutdown(Entity<GunHeatComponent> ent, ref ComponentShutdown args)
     {
         _lastShot.Remove(ent);
     }
 
-    private void OnTemperatureChange(Entity<GunHeatComponent> ent, ref OnTemperatureChangeEvent args)
+    private void OnTemperatureChange(Entity<GunHeatComponent> ent, ref TemperatureChangedEvent args)
     {
+        if (!_firing && args.TemperatureDelta > 0f && args.CurrentTemperature > ent.Comp.JamTemperature - 20f
+            && TryComp<TemperatureComponent>(ent, out var temperature))
+        {
+            var excessHeat = (args.CurrentTemperature - (ent.Comp.JamTemperature - 20f))
+                             * temperature.HeatCapacity;
+            _temperature.ChangeHeat((ent.Owner, temperature), -excessHeat, ignoreHeatResistance: true);
+            return;
+        }
+
         if (MathF.Abs(args.CurrentTemperature - ent.Comp.Temperature) < SyncStep)
             return;
 
@@ -94,12 +99,12 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
         var query = EntityQueryEnumerator<GunHeatComponent, TemperatureComponent>();
         while (query.MoveNext(out var uid, out var heat, out var temperature))
         {
-            var excess = temperature.CurrentTemperature - Atmospherics.T20C;
+            var excess = temperature.Temperature - Atmospherics.T20C;
             if (excess <= 0.5f)
                 continue;
 
-            var heatLoss = MathF.Min(excess * heat.PassiveCooling, excess * _temperature.GetHeatCapacity(uid, temperature));
-            _temperature.ChangeHeat(uid, -heatLoss, ignoreHeatResistance: true, temperature);
+            var heatLoss = MathF.Min(excess * heat.PassiveCooling, excess * temperature.HeatCapacity);
+            _temperature.ChangeHeat(uid, -heatLoss, ignoreHeatResistance: true);
         }
     }
 

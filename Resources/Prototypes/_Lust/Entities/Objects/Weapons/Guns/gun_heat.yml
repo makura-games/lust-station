@@ -3,3 +3,7 @@
   abstract: true
   components:
   - type: GunHeat
+  - type: AtmosExposed
+  - type: Temperature
+    thermalConductivity: 0.05
+    heatCapacity: 15000

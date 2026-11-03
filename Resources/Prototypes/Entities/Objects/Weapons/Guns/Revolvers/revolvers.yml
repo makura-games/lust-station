@@ -30,9 +30,6 @@
     - SemiAuto
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
-  # Lust added start - нагрев применяется только к прототипам огнестрельного оружия
-  - type: GunHeat
-  # Lust added end
   - type: CanDualWield # Sunrise-Edit
     dualWieldInaccuracyPenalty: 0.50
     dualWieldFireRatePenalty: 0.25
