@@ -103,9 +103,10 @@ public sealed partial class ItemSystem : SharedItemSystem
 
         if (!rsi.TryGetState(state, out var _))
         {
-            // Lust edit - проверяем fallback-состояние в fork partial
+            // Lust edit start - проверяем fallback-состояние в fork partial
             if (!TryGetLustDefaultHeldState(rsi, item, defaultKey, out state))
                 return false;
+            // Lust edit end
         }
 
         var layer = new PrototypeLayerData();
