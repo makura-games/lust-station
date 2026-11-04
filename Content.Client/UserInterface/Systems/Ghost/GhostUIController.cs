@@ -2,6 +2,7 @@ using Content.Client.Gameplay;
 using Content.Client.Ghost;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
+using Content.Shared._Lust.DmArena; // Lust-edit
 using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
 using Robust.Client.UserInterface;
@@ -19,6 +20,7 @@ namespace Content.Client.UserInterface.Systems.Ghost;
 public sealed partial class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
 {
     [Dependency] private IEntityNetworkManager _net = default!;
+    [Dependency] private IEntityManager _entManager = default!; // Lust-edit
     [Dependency] private ServersHubManager _serversHubManager = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     private ISharedSponsorsManager? _sponsorsManager; // Sunrise-Sponsors
@@ -36,6 +38,10 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         gameplayStateLoad.OnScreenUnload += OnScreenUnload;
 
         IoCManager.Instance!.TryResolveType(out _sponsorsManager); // Sunrise-Sponsors
+
+        // Lust-start
+        _entManager.EventBus.SubscribeEvent<DmArenaPlayerCountEvent>(EventSource.Network, this, OnDmArenaPlayerCount);
+        // Lust-end
     }
 
     private void OnScreenLoad()
@@ -176,12 +182,14 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.RespawnPressed += Respawn; // Sunrise-Sponsors
         Gui.ChangeServerPressed += ChangeServerPressed;
+        Gui.DmArenaPressed += DmArenaPressed; // Lust-edit
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
         Gui.TargetWindow.OnWarpToRandomFollowedClicked += OnWarpToRandomFollowedClicked;
         Gui.TargetWindow.OnWarpToRandomClicked += OnWarpToRandomClicked;
 
         UpdateGui();
+        Gui.UpdateDmArena(_dmArenaCount, _dmArenaEnabled); // Lust-edit
     }
 
     public void UnloadGui()
@@ -194,10 +202,29 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.RespawnPressed -= Respawn; // Sunrise-Sponsors
         Gui.ChangeServerPressed -= ChangeServerPressed;
+        Gui.DmArenaPressed -= DmArenaPressed; // Lust-edit
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
 
         Gui.Hide();
     }
+
+    // Lust-start
+    // Состояние хранится, чтобы применить его после пересоздания GUI
+    private int _dmArenaCount;
+    private bool _dmArenaEnabled;
+
+    private void DmArenaPressed()
+    {
+        _net.SendSystemNetworkMessage(new DmArenaJoinRequestEvent());
+    }
+
+    private void OnDmArenaPlayerCount(DmArenaPlayerCountEvent ev)
+    {
+        _dmArenaCount = ev.Count;
+        _dmArenaEnabled = ev.Enabled;
+        Gui?.UpdateDmArena(ev.Count, ev.Enabled);
+    }
+    // Lust-end
 
     private void ReturnToBody()
     {
