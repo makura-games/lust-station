@@ -1,8 +1,8 @@
 using Content.Shared.Body;
+using Content.Shared.Chat.Prototypes;
 using Content.Shared.Dataset;
 using Content.Shared.Humanoid.Markings;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Shared.Humanoid.Prototypes;
 
@@ -81,7 +81,19 @@ public sealed partial class SpeciesPrototype : IPrototype
     public SpeciesNaming Naming { get; private set; } = SpeciesNaming.FirstLast;
 
     [DataField]
-    public List<Sex> Sexes { get; private set; } = new() { Sex.Male, Sex.Female };
+    public List<Sex> Sexes { get; private set; } = new() { Sex.Male, Sex.Female, Sex.Futanari }; // Lust edit - добавляем Futanari в доступные значения пола
+
+    /// <summary>
+    ///     Emote sounds prototype conversion id for every sex, indexed by the numeric value of Sex: Male; Female; Unsexed; Futanari.
+    /// </summary>
+    [DataField]
+    public ProtoId<EmoteSoundsPrototype>[] DefaultSoundsBySex = ["MaleHuman", "FemaleHuman", "MaleHuman", "FemaleHuman"]; // Lust edit - добавляем голос по умолчанию для Futanari
+
+    /// <summary>
+    ///     List of user selectable voices in the menu. This should at least have the same sound banks as the defaults.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<EmoteSoundsPrototype>> Voices = ["MaleHuman", "FemaleHuman"];
 
     /// <summary>
     ///     Characters younger than this are too young to be hired by Nanotrasen.

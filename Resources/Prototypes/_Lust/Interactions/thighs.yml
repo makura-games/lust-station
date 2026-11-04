@@ -23,12 +23,12 @@
   - "%user страстно целует ножки %target"
   - "%user сочно прижимается губами к ножке %target"
   interactionSounds:
-  - Kiss1
-  - Kiss2
-  - Kiss3
-  - Kiss4
-  - Kiss5
-  - Kiss6
+  - lustKiss1
+  - lustKiss2
+  - lustKiss3
+  - lustKiss4
+  - lustKiss5
+  - lustKiss6
   loveUser: 2
   loveTarget: 4
   cooldown: 2
@@ -197,10 +197,10 @@
   - "%user медленно водит членом между ляжек %target"
   - "%user с наслаждением трахает ляжки %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 10
   loveTarget: 5
   cooldown: 5

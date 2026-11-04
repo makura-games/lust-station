@@ -13,14 +13,8 @@
     size: Tiny
   - type: WarpPoint
     follow: true
-    location: Icarus key
-    # Lust-Start
-    blacklist:
-      tags:
-      - GhostOnlyWarp
-    # Lust-End
+    location: location-icarus-key
   - type: SubdermalImplant
   - type: Tag
     tags:
     - SubdermalImplant
-    - GhostOnlyWarp # Lust-Edit

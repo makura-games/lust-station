@@ -18,7 +18,8 @@
         amount: -1.5
       - !type:ModifyBloodLevel
         amount: 8
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 4
       - !type:HealthChange
         conditions:

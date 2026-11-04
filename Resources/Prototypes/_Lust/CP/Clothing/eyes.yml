@@ -20,7 +20,9 @@
     parent: true
     components:
       - type: NightVision
-        effect: EffectNightVisionSyndie
+        enabled: false
+        relayOverlay: true
+        lightingColor: '#FFFFFF26'
   - type: ItemSlots
     slots:
       cell_slot:

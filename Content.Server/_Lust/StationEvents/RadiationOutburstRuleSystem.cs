@@ -9,6 +9,7 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Tag;
 using Content.Shared.Stacks;
 using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 
 namespace Content.Server.StationEvents.Events;
 
