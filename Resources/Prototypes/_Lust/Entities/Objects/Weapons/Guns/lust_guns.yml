@@ -1,0 +1,359 @@
+- type: entity
+  id: LustWeaponBattery
+  parent: [BaseWeaponBattery, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponHeavyMachineGun
+  parent: [BaseWeaponHeavyMachineGun, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponLightMachineGun
+  parent: [BaseWeaponLightMachineGun, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponLauncher
+  parent: [BaseWeaponLauncher, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponPistol
+  parent: [BaseWeaponPistol, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponRevolver
+  parent: [BaseWeaponRevolver, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponRifle
+  parent: [BaseWeaponRifle, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponSubMachineGun
+  parent: [BaseWeaponSubMachineGun, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponShotgunAny
+  parent: [BaseWeaponShotgunAny, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponSniper
+  parent: [BaseWeaponSniper, LustGunHeat]
+  abstract: true
+
+- type: entity
+  id: LustWeaponLaserSvalinn
+  parent: [WeaponLaserSvalinn, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponPistolEchis
+  parent: [WeaponPistolEchis, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLightMachineGunL6C
+  parent: [WeaponLightMachineGunL6C, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSubMachineGunC20rROW
+  parent: [WeaponSubMachineGunC20rROW, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunBulldog
+  parent: [WeaponShotgunBulldog, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustBorgLauncherCreamPie
+  parent: [BorgLauncherCreamPie, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustMusket
+  parent: [Musket, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponDisablerSMG
+  parent: [WeaponDisablerSMG, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponEnergyShotgun
+  parent: [WeaponEnergyShotgun, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLaserCannon
+  parent: [WeaponLaserCannon, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLaserCarbine
+  parent: [WeaponLaserCarbine, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLaserCarbinePractice
+  parent: [WeaponLaserCarbinePractice, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLauncherChinaLake
+  parent: [WeaponLauncherChinaLake, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLauncherHydra
+  parent: [WeaponLauncherHydra, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLauncherMultipleRocket
+  parent: [WeaponLauncherMultipleRocket, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLauncherPirateCannon
+  parent: [WeaponLauncherPirateCannon, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLauncherRocket
+  parent: [WeaponLauncherRocket, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponLightMachineGunL6
+  parent: [WeaponLightMachineGunL6, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponMinigun
+  parent: [WeaponMinigun, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponParticleDecelerator
+  parent: [WeaponParticleDecelerator, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponPistolCobra
+  parent: [WeaponPistolCobra, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponPistolFlintlock
+  parent: [WeaponPistolFlintlock, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponPistolMk58
+  parent: [WeaponPistolMk58, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponPistolN1984
+  parent: [WeaponPistolN1984, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponPistolViper
+  parent: [WeaponPistolViper, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverDeckard
+  parent: [WeaponRevolverDeckard, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverInspector
+  parent: [WeaponRevolverInspector, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverMateba
+  parent: [WeaponRevolverMateba, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverMatebaAP
+  parent: [WeaponRevolverMatebaAP, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverPirate
+  parent: [WeaponRevolverPirate, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverPirateEmpty
+  parent: [WeaponRevolverPirateEmpty, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverPython
+  parent: [WeaponRevolverPython, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverPythonAP
+  parent: [WeaponRevolverPythonAP, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRifleAk
+  parent: [WeaponRifleAk, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRifleEstoc
+  parent: [WeaponRifleEstoc, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRifleLecter
+  parent: [WeaponRifleLecter, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunBlunderbuss
+  parent: [WeaponShotgunBlunderbuss, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunDoubleBarreled
+  parent: [WeaponShotgunDoubleBarreled, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunEnforcer
+  parent: [WeaponShotgunEnforcer, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunEnforcerRubber
+  parent: [WeaponShotgunEnforcerRubber, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunHandmade
+  parent: [WeaponShotgunHandmade, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunHushpup
+  parent: [WeaponShotgunHushpup, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunImprovised
+  parent: [WeaponShotgunImprovised, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunImprovisedLoaded
+  parent: [WeaponShotgunImprovisedLoaded, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunKammerer
+  parent: [WeaponShotgunKammerer, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunRiot
+  parent: [WeaponShotgunRiot, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunRiotSawn
+  parent: [WeaponShotgunRiotSawn, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunRiotSawnEmpty
+  parent: [WeaponShotgunRiotSawnEmpty, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunSawn
+  parent: [WeaponShotgunSawn, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunTrenchgun4034
+  parent: [WeaponShotgunTrenchgun4034, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunTrenchgun4034Sawn
+  parent: [WeaponShotgunTrenchgun4034Sawn, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponShotgunTrenchgun4034SawnEmpty
+  parent: [WeaponShotgunTrenchgun4034SawnEmpty, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSniperHristov
+  parent: [WeaponSniperHristov, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSniperMosin
+  parent: [WeaponSniperMosin, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSubMachineGunAtreides
+  parent: [WeaponSubMachineGunAtreides, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSubMachineGunBriefcase
+  parent: [WeaponSubMachineGunBriefcase, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSubMachineGunC20r
+  parent: [WeaponSubMachineGunC20r, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSubMachineGunDrozd
+  parent: [WeaponSubMachineGunDrozd, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponSubMachineGunWt550
+  parent: [WeaponSubMachineGunWt550, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponTemperatureGun
+  parent: [WeaponTemperatureGun, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponTeslaGun
+  parent: [WeaponTeslaGun, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponXrayCannon
+  parent: [WeaponXrayCannon, LustGunHeat]
+  categories: [HideSpawnMenu]

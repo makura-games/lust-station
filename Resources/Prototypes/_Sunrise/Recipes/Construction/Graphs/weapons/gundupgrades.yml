@@ -3,7 +3,7 @@
   start: start
   graph:
     - node: start
-      entity: WeaponRifleLecter
+      entity: LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
       edges:
         - to: upgradelecter
           steps:
@@ -22,7 +22,7 @@
   start: start
   graph:
     - node: start
-      entity: WeaponSubMachineGunDrozd
+      entity: LustWeaponSubMachineGunDrozd # Lust edit: ссылка на прототип Lust с механикой нагрева
       edges:
         - to: upgradedrozd
           steps:

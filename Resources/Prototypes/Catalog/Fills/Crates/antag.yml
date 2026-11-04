@@ -22,14 +22,14 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponLauncherPirateCannon
+        - id: LustWeaponLauncherPirateCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: ClothingOuterCoatGentle
         - id: Cutlass
           amount: 2
         - id: CannonBall
           amount: 2
-        - id: WeaponPistolFlintlock
+        - id: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 4
-        - id: WeaponShotgunBlunderbuss
+        - id: LustWeaponShotgunBlunderbuss # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2

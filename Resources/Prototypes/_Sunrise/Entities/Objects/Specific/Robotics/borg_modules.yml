@@ -252,7 +252,7 @@
   - type: ItemBorgModule
     hands:
     - item: SawAdvanced
-    - item: WeaponPistolEchis #Todo: Заменить на вариант Шприцемета с выбором снарядов
+    - item: LustWeaponPistolEchis #Todo: Заменить на вариант Шприцемета с выбором снарядов; Lust edit: используем fork-прототип с нагревом # Lust edit: ссылка на прототип Lust с механикой нагрева
     - item: HypoBorgMedicalSyndicate
     - item: DefibrillatorOneHandedUnpowered
 
@@ -267,7 +267,7 @@
     - state: icon-syndicate
   - type: ItemBorgModule
     hands:
-    - item: WeaponLightMachineGunL6C
+    - item: LustWeaponLightMachineGunL6C # Lust edit: используем fork-прототип с нагревом
     - item: EnergySword
     - item: PinpointerNuclear
 
@@ -660,7 +660,7 @@
         color: "#7B0F12"
   - type: ItemBorgModule
     hands:
-    - item: WeaponPistolEchis
+    - item: LustWeaponPistolEchis # Lust edit: используем fork-прототип с нагревом
     - item: CyberMantisBlade
 
 - type: entity

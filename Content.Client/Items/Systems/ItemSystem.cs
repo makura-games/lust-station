@@ -102,7 +102,12 @@ public sealed partial class ItemSystem : SharedItemSystem
             : $"{item.HeldPrefix}-{defaultKey}";
 
         if (!rsi.TryGetState(state, out var _))
-            return false;
+        {
+            // Lust edit start - проверяем fallback-состояние в fork partial
+            if (!TryGetLustDefaultHeldState(rsi, item, defaultKey, out state))
+                return false;
+            // Lust edit end
+        }
 
         var layer = new PrototypeLayerData();
         layer.RsiPath = rsi.Path.ToString();

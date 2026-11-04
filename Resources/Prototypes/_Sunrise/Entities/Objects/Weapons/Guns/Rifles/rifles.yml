@@ -87,7 +87,7 @@
 
 - type: entity
   name: M16A4
-  parent: [ BaseWeaponRifle, BaseSecurityContraband ] # Lust Edit :: BaseSecurityContraband
+  parent: [ LustWeaponRifle, BaseSecurityContraband ] # Lust Edit :: BaseSecurityContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponRifleM16A4
   components:
   - type: Sprite
@@ -155,7 +155,7 @@
 
 - type: entity
   name: Lecter Mk2
-  parent: [WeaponRifleLecter, GunLight]
+  parent: [LustWeaponRifleLecter, GunLight] # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponRifleLecterMk2
   description: A high end military grade assault rifle. Uses .20 rifle ammo.
   components:
@@ -218,7 +218,7 @@
 
 - type: entity
   name: ASH-12
-  parent: [GunLight, BaseWeaponRifle, BaseSecurityCentcommContraband ] # Lust Edit :: BaseSecurityCentcommContraband
+  parent: [GunLight, LustWeaponRifle, BaseSecurityCentcommContraband ] # Lust Edit :: BaseSecurityCentcommContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponRifleAsh12
   components:
   - type: Sprite
@@ -292,7 +292,7 @@
 
 - type: entity
   name: SKM-24
-  parent: [BaseWeaponRifle, BaseMajorContraband]
+  parent: [LustWeaponRifle, BaseMajorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponRifleSKM24
   description: Cheap and reliable. Enough firepower, little accuracy. Easy to repair, hard to control during sustained.
   components:
@@ -497,7 +497,7 @@
 
 - type: entity
   name: SKM-28
-  parent: [BaseWeaponRifle, BaseMajorContraband]
+  parent: [LustWeaponRifle, BaseMajorContraband] # Lust edit: используем fork-прототип с нагревом
   id: WeaponRifleSKM28
   description: A marksman conversion of the standard SKM-24. Features an extended heavy barrel, reworked internals, and a mounted optical sight. Chambered in .308.
   components:

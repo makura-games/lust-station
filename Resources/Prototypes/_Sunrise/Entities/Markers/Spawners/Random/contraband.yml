@@ -87,7 +87,7 @@
         - EnergyDagger
         - WhiteholeGrenade
         - HotPotato
-        - WeaponSniperMosin
+        - LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
         - SpeedLoaderMagnumAP
       rareChance: 0.2
       prototypes:
@@ -138,7 +138,7 @@
         - Emag
         - RadioJammer
         - SyndicateBomb
-        - WeaponRevolverPythonAP
+        - LustWeaponRevolverPythonAP # Lust edit: используем прототип с нагревом
         - ThrowingKnivesKit
         - ExGrenade
         - ChemistryBottleNocturine

@@ -107,7 +107,7 @@
     shoes: ClothingShoesBootsCowboyBlackFilled
     mask: ClothingMaskGasSyndicate
     head: ClothingHeadHatSyndieMAA
-    pocket1: WeaponRevolverPython
+    pocket1: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
     outerClothing: ClothingOuterCoatSyndieCapArmored
     belt: ClothingBeltSyndieHolster
 
@@ -139,7 +139,7 @@
     shoes: ClothingShoesBootsCombat
     head: ClothingHeadHelmetHardsuitSyndie
     outerClothing: ClothingOuterHardsuitSyndieBiocode
-    pocket1: WeaponPistolViper
+    pocket1: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: Telecrystal1
 
 # region USSP
@@ -200,7 +200,7 @@
     pocket1: SpeedLoaderHeavyRifleRFMJ
     gloves: ClothingHandsGlovesFingerless
   inhand:
-  - WeaponSniperMosin
+  - LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 - type: startingGear
   id: SovietCorpseGearMarine
@@ -286,7 +286,7 @@
     shoes: ClothingShoesBootsMagPirate
     outerClothing: ClothingOuterLightHardsuitUSSP
     mask: ClothingMaskGasMerc
-    pocket1: WeaponLaserSvalinn
+    pocket1: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
 
 - type: startingGear
   id: SovietCorpseGearEVALightB
@@ -296,7 +296,7 @@
     shoes: ClothingShoesBootsMagPirate
     outerClothing: ClothingOuterLightHardsuitUSSP
     mask: ClothingMaskGasMerc
-    pocket1: WeaponLaserSvalinn
+    pocket1: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
 
 - type: startingGear
   id: SovietCorpseGearEVA
@@ -319,7 +319,7 @@
     outerClothing: ClothingOuterHeavyHardsuitUSSP
     neck: ClothingNeckCloakWhite
     mask: ClothingMaskGasMerc
-    pocket1: WeaponRevolverPython
+    pocket1: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 - type: startingGear
   id: MercenaryCorpseGear

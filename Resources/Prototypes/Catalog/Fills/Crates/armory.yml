@@ -8,7 +8,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponSubMachineGunWt550
+        - id: LustWeaponSubMachineGunWt550 # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: MagazinePistolSubMachineGunTopMountedSP # Sunrise-Edit
           amount: 4
@@ -23,7 +23,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponShotgunEnforcer
+        - id: LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: BoxLethalshot
           amount: 4
@@ -38,7 +38,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponSniperMosin
+        - id: LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 3
         - id: SpeedLoaderLightRifle
           amount: 12
@@ -79,7 +79,7 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage:
-        id: WeaponLaserCarbine
+        id: LustWeaponLaserCarbine # Lust edit: ссылка на прототип Lust с механикой нагрева
         amount: 3
 
 - type: entity
@@ -92,7 +92,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponPistolMk58
+        - id: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: MagazinePistol
           amount: 4
@@ -111,7 +111,7 @@
           amount: 2
         - id: ClothingHeadHelmetRiot
           amount: 2
-        - id: WeaponShotgunRiot #Sunrise-Edit
+        - id: LustWeaponShotgunRiot #Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: BoxBeanbag
           amount: 2
@@ -128,7 +128,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: WeaponRifleLecter
+        - id: LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: MagazineRifleFMJ
           amount: 4

@@ -60,7 +60,7 @@
     ears: ClothingHeadsetAltERT #Sunrise-Edit
     belt: ClothingBeltMilitaryWebbingERT
     pocket2: CombatKnife
-    suitstorage: WeaponDisablerSMG
+    suitstorage: LustWeaponDisablerSMG # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - Binoculars
@@ -77,7 +77,7 @@
     - Handcuffs
     - Handcuffs
     - CrowbarRed
-    - WeaponPistolN1984
+    - LustWeaponPistolN1984 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazineMagnum
     - EmergencyMedipen
 
@@ -105,7 +105,7 @@
     - Handcuffs
     - Handcuffs
     - CrowbarRed
-    - WeaponPistolN1984
+    - LustWeaponPistolN1984 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazineMagnum
     - EmergencyMedipen
 
@@ -182,7 +182,7 @@
     - Lantern
     - Lantern
     - CrowbarRed
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - FlippoEngravedLighter
 
@@ -271,7 +271,7 @@
     - PowerDrill
     - WelderIndustrialAdvanced
     - Multitool
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - EmergencyMedipen
 
@@ -279,7 +279,7 @@
   parent: ERTEngineerGearEVA
   id: ERTEngineerGearArmed
   equipment:
-    suitstorage: WeaponShotgunEnforcer
+    suitstorage: LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - RCD
@@ -356,7 +356,7 @@
     ears: ClothingHeadsetAltERT #Sunrise-Edit
     belt: ClothingBeltMilitaryWebbingERT
     pocket2: CombatKnife
-    suitstorage: WeaponDisablerSMG
+    suitstorage: LustWeaponDisablerSMG # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - BoxZiptie
@@ -373,7 +373,7 @@
     - Handcuffs
     - Handcuffs
     - CrowbarRed
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - EmergencyMedipen
 
@@ -390,9 +390,9 @@
     ears: ClothingHeadsetAltERT #Sunrise-Edit
     belt: ClothingBeltMilitaryWebbingERT
     pocket2: CombatKnife
-    suitstorage: WeaponRifleLecter
+    suitstorage: LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
   inhand:
-    - WeaponLaserCannon
+    - LustWeaponLaserCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
     - PortableRecharger
   storage:
     belt:
@@ -433,7 +433,7 @@
     - Handcuffs
     - Handcuffs
     - CrowbarRed
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - EmergencyMedipen
 
@@ -442,7 +442,7 @@
   id: ERTSecurityGearArmedVanguard
   equipment:
     pocket2: WeaponDisabler
-    suitstorage: WeaponSubMachineGunWt550
+    suitstorage: LustWeaponSubMachineGunWt550 # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - ExGrenade
@@ -462,7 +462,7 @@
     - Handcuffs
     - Handcuffs
     - CrowbarRed
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - EmergencyMedipen
 
@@ -471,7 +471,7 @@
   id: ERTSecurityGearArmedShotgun
   equipment:
     pocket2: WeaponDisabler
-    suitstorage: WeaponShotgunEnforcer
+    suitstorage: LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - SmokeGrenade
@@ -488,7 +488,7 @@
     - Handcuffs
     - Handcuffs
     - CrowbarRed
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - EmergencyMedipen
 
@@ -573,7 +573,7 @@
     - DefibrillatorCompact
     - MedkitCombatFilled
     - CrowbarRed
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - EmergencyMedipen
 
@@ -581,7 +581,7 @@
   parent: ERTMedicalGearEVA
   id: ERTMedicalGearArmed
   equipment:
-    suitstorage: WeaponRifleLecter
+    suitstorage: LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: WeaponDisabler
   storage:
     back:
@@ -661,7 +661,7 @@
     ears: ClothingHeadsetAltERT #Sunrise-Edit
     belt: ClothingBeltMilitaryWebbingERT
     pocket2: CombatKnife
-    suitstorage: WeaponLauncherHydra
+    suitstorage: LustWeaponLauncherHydra # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - SoapNT
@@ -680,7 +680,7 @@
     - LightReplacerFilled
     - WireBrush
     - CrowbarRed
-    - WeaponPistolMk58
+    - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     - MagazinePistol
     - EmergencyMedipen
   inhand:

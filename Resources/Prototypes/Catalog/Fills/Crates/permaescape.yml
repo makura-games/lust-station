@@ -97,17 +97,17 @@
     containers:
       entity_storage: !type:GroupSelector
         children:
-        - id: WeaponPistolMk58
+        - id: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
           weight: 1.5
         - id: FoamCrossbow
         - id: WeaponRifleFoam
           weight: 0.5
-        - id: WeaponPistolFlintlock
+        - id: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
           weight: 2
-        - id: WeaponShotgunBlunderbuss
-        - id: WeaponShotgunBlunderbuss
+        - id: LustWeaponShotgunBlunderbuss # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - id: LustWeaponShotgunBlunderbuss # Lust edit: ссылка на прототип Lust с механикой нагрева
           weight: 1.5
-        - id: WeaponRevolverPirate
+        - id: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
           weight: 1.5
         - id: WeaponProtoKineticAccelerator
           weight: 2

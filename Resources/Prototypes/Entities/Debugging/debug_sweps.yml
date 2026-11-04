@@ -33,7 +33,7 @@
 
 - type: entity
   name: bang, ded
-  parent: BaseWeaponPistol
+  parent: LustWeaponPistol # Lust edit: используем fork-прототип с нагревом
   id: WeaponPistolDebug
   description: ded
   suffix: DEBUG

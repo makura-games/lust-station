@@ -187,7 +187,7 @@
   - type: EntityTableContainerFill
     containers:
       entity_storage:
-        id: WeaponParticleDecelerator
+        id: LustWeaponParticleDecelerator # Lust edit: ссылка на прототип Lust с механикой нагрева
         amount: 3
 
 - type: entity

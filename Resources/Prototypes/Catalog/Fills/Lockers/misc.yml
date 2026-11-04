@@ -194,7 +194,7 @@
     - id: ClothingShoesBootsCombatFilled
     - id: ToolboxSyndicateFilled
     - id: BalloonSyn
-    - id: WeaponSniperMosin
+    - id: LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
       #Sunrise-start
     - id: LeftArmCyberMechwright
     - id: RightArmCyberRobust

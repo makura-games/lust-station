@@ -28,12 +28,13 @@ public sealed partial class GunSystem
 
     private void OnRevolverAmmoUpdate(Entity<RevolverAmmoProviderComponent> ent, ref UpdateAmmoCounterEvent args)
     {
-        if (args.Control is not RevolverStatusControl control) return;
-        control.Update(ent.Comp.CurrentIndex, ent.Comp.Chambers);
+        // Lust edit - передаем обновление индикатора барабана в fork partial
+        UpdateLustRevolverAmmo(ent, ref args);
     }
 
     private void OnRevolverCounter(Entity<RevolverAmmoProviderComponent> ent, ref AmmoCounterControlEvent args)
     {
-        args.Control = new RevolverStatusControl();
+        // Lust edit - создаем индикатор барабана в fork partial
+        args.Control = CreateLustRevolverCounter();
     }
 }

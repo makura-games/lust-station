@@ -1,6 +1,6 @@
 # region LMGs
 - type: entity
-  parent: [BaseWeaponLightMachineGun, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
+  parent: [LustWeaponLightMachineGun, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLightMachineGunPirateCannon
   description: Kaboom!
   components:
@@ -84,7 +84,7 @@
 - type: entity
   id: WeaponMachineGunLCG
   name: light chain gun
-  parent: [BaseWeaponLightMachineGun,BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
+  parent: [LustWeaponLightMachineGun,BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband; Lust edit: используем fork-прототип с нагревом
   description: Light machine gun with a high rate of fire and low recoil. Effective for firing on the move and suppressing advancing squads. The high rate of fire and heat reduce accuracy, and prolonged firing increases the chance of jamming.
   components:
   - type: Sprite
@@ -359,7 +359,7 @@
 # region Revolvers
 - type: entity
   parent:
-  - WeaponRevolverPirate
+  - LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
   - PowerCellSlotSmallItem
   id: SunriseWeaponRevolverPirateJammer
   name: pirate jammer revolver
@@ -428,7 +428,7 @@
 # region Rifles
 - type: entity
   id: SunriseWeaponRifleRomulan
-  parent: [BaseWeaponRifle, BaseMajorContraband]
+  parent: [LustWeaponRifle, BaseMajorContraband] # Lust edit: используем fork-прототип с нагревом
   name: Romulan
   description: Yarrr, a retrofitted lecter befitting of a pirate! Make lotta dakka dakka. Uses .20 rifle ammo.
   components:

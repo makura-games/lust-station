@@ -66,9 +66,9 @@
     - id: ClothingHandsKnuckleDustersSyndicate
     - id: EnergyDaggerLoud
       weight: 0.5
-    - id: WeaponRevolverPython
-    - id: WeaponPistolCobra
-    - id: WeaponShotgunSawn
+    - id: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
+    - id: LustWeaponPistolCobra # Lust edit: ссылка на прототип Lust с механикой нагрева
+    - id: LustWeaponShotgunSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
     - id: RevolverCapGunFake
       weight: .01
 

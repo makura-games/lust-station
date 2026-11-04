@@ -102,7 +102,7 @@
         - proto: WaterTankHighCapacity
         - proto: WeldingFuelTankHighCapacity
           cost: 3
-        - proto: WeaponTeslaGun
+        - proto: LustWeaponTeslaGun # Lust edit: ссылка на прототип Lust с механикой нагрева
           prob: 0.1
           cost: 2
 

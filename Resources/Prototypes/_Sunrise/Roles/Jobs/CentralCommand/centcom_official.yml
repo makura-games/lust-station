@@ -31,7 +31,7 @@
     outerClothing: ClothingOuterArmorCentcomCarapace
     id: CentcomPDAQillu # Lust-Edit
     ears: ClothingHeadsetAltCentCom
-    belt: WeaponPistolN1984
+    belt: LustWeaponPistolN1984 # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - PenCentcomQillu # Lust-Edit

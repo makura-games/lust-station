@@ -44,7 +44,7 @@
   - type: ContainerFill
     containers:
       ItemCabinet:
-      - WeaponShotgunTrenchgun4034 #Sunrise-Edit
+      - LustWeaponShotgunTrenchgun4034 #Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 - type: entity
   parent: [ShotGunCabinetFilled, ShotGunCabinetOpen]

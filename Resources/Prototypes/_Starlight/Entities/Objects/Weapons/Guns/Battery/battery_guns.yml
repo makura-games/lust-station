@@ -132,7 +132,7 @@
     stealGroup: WeaponEnergyGunMultiphase
 
 - type: entity
-  parent: [ BaseWeaponBattery, BaseGunWieldable, BaseSecurityContraband ]
+  parent: [ LustWeaponBattery, BaseGunWieldable, BaseSecurityContraband ] # Lust edit: используем fork-прототип с нагревом
   id: WeaponIonRifle
   name: ion rifle
   components:
@@ -170,7 +170,7 @@
     pvsIncrease: 0.7
 
 - type: entity
-  parent: [BaseWeaponBattery, BaseSecurityContraband ]
+  parent: [LustWeaponBattery, BaseSecurityContraband ] # Lust edit: используем fork-прототип с нагревом
   id: WeaponIonCarbine
   name: ion carbine
   components:
@@ -200,7 +200,7 @@
 
 - type: entity
   name: immolator laser gun
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseSecuritySalvageContraband] # Lust edit :: BaseSecuritySalvageContraband # , BaseSecuritySalvageContraband
+  parent: [LustWeaponBattery, BaseGunWieldable, BaseSecuritySalvageContraband] # Lust edit :: BaseSecuritySalvageContraband # , BaseSecuritySalvageContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLaserImmolator
   description: Favoured by Nanotrasen Security for being cheap and easy to use.
   components:
@@ -291,7 +291,7 @@
       heldPrefix: destroy
 
 - type: entity
-  parent: [ BaseWeaponBattery, BaseGunWieldable, BaseCentcommContraband ]
+  parent: [ LustWeaponBattery, BaseGunWieldable, BaseCentcommContraband ] # Lust edit: используем fork-прототип с нагревом
   id: WeaponEnergySniper
   name: LWAP
   components:

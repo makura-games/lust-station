@@ -443,7 +443,7 @@
 
 - type: entity
   name: cyborg disabler machine gun
-  parent: WeaponDisablerSMG
+  parent: LustWeaponDisablerSMG # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponDisablerSMGBorg
   components:
   - type: BatterySelfRecharger
@@ -457,7 +457,7 @@
 
 - type: entity
   name: cyborg's pulse weapon
-  parent: BaseWeaponBattery
+  parent: LustWeaponBattery # Lust edit: используем fork-прототип с нагревом
   id: WeaponPulseCarbineBorg
   components:
   - type: Sprite
@@ -788,7 +788,7 @@
 
 - type: entity
   name: Borg heavy laser cannon
-  parent: WeaponLaserCannon
+  parent: LustWeaponLaserCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponHeavyLaserBorg
   description: Borg Heavy Laser Gun is a high-output directed-energy system built for sustained combat operations. Its capacitors deliver concentrated thermal pulses capable of breaching reinforced materials, while the internal cooling assembly allows continuous firing without performance decay. The weapon integrates directly with borg power systems, removing the need for traditional ammunition and ensuring uninterrupted operational efficiency.
   categories: [ HideSpawnMenu ]

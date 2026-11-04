@@ -1,6 +1,6 @@
 - type: entity
   name: MG-60
-  parent: [BaseWeaponLightMachineGun, BaseSovietContraband] # Lust edit :: BaseSovietContraband
+  parent: [LustWeaponLightMachineGun, BaseSovietContraband] # Lust edit :: BaseSovietContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLightMachineGunMG60
   components:
   - type: Sprite
@@ -98,7 +98,7 @@
 
 - type: entity
   name: RPD
-  parent: [BaseWeaponLightMachineGun, BaseSovietContraband] # Lust edit :: BaseSovietContraband
+  parent: [LustWeaponLightMachineGun, BaseSovietContraband] # Lust edit :: BaseSovietContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponLightMachineGunRPD
   components:
   - type: Sprite
@@ -169,7 +169,7 @@
 
 - type: entity
   name: MG-342
-  parent: [ BaseWeaponLightMachineGun, BaseSecurityCentcommContraband ] # Lust edit :: BaseSecurityCentcommContraband
+  parent: [ LustWeaponLightMachineGun, BaseSecurityCentcommContraband ] # Lust edit :: BaseSecurityCentcommContraband; Lust edit: используем fork-прототип с нагревом
   id: WeaponMachineGunMG42
   components:
   - type: Sprite
@@ -243,7 +243,7 @@
 - type: entity
   name: L6 MAX
   id: WeaponLightMachineGunL6Max
-  parent: WeaponLightMachineGunL6
+  parent: LustWeaponLightMachineGunL6 # Lust edit: ссылка на прототип Lust с механикой нагрева
   description: Developed by Waffle Corporation, the L6 MAX is a heavily reinforced modification of the L6 machine gun that has gained popularity among the elite of the Gorlex Marauders. Its reinforced barrel and powerful .308 caliber allow it not only to suppress enemies with a hail of fire, but also to tear their cover to splinters. Feeds from .308 ammunition belts.
   components:
   - type: Sprite

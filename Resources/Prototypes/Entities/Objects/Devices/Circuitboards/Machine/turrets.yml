@@ -19,7 +19,7 @@
     tagRequirements:
       TurretCompatibleWeapon:
         amount: 1
-        defaultPrototype: WeaponLaserCannon
+        defaultPrototype: LustWeaponLaserCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
         examineName: construction-insert-info-examine-name-laser-cannon
       ProximitySensor:
         amount: 1

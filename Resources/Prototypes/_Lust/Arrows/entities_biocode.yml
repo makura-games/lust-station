@@ -8,6 +8,7 @@
   - type: Biocode
     factions:
     - Arrows
+
   - type: FactionClothingBlocker
   - type: StaticPrice
     price: 10000
@@ -50,7 +51,7 @@
     - Arrows
 
 - type: entity
-  parent: WeaponRevolverMatebaAP
+  parent: LustWeaponRevolverMatebaAP
   id: WeaponRevolverMatebaAPBiocode
   suffix: Arrows, BIOCODE
   components:
@@ -87,4 +88,3 @@
   - type: Biocode
     factions:
     - Arrows
-

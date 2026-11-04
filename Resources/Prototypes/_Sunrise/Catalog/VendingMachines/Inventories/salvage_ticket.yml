@@ -238,7 +238,7 @@
 # weapons
 - type: listing
   id: VendorSalvageWeaponLaserSvalinn
-  productEntity: WeaponLaserSvalinn
+  productEntity: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
   cost:
     SalvageTicket: 200
   categories:
@@ -290,7 +290,7 @@
 
 - type: listing
   id: VendorSalvageWeaponPistolMK58
-  productEntity: WeaponPistolMk58
+  productEntity: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     SalvageTicket: 225
   categories:

@@ -176,7 +176,7 @@
     belt: ClothingBeltMilitaryWebbing
   storage:
     back:
-    - WeaponPistolViper
+    - LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 
@@ -192,7 +192,7 @@
     pocket1: BaseUplinkRadio0TC # Sunrise-Edit
   storage:
     back:
-    - WeaponPistolViper
+    - LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 
@@ -243,7 +243,7 @@
     - SawAdvanced
     - Cautery
     - CombatKnife
-    - WeaponPistolViper
+    - LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     - PinpointerSyndicateNuclear
     - HandheldHealthAnalyzer
     - CombatMedipen

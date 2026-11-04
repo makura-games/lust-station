@@ -38,7 +38,7 @@
   storage:
     back:
     - WeaponPulsePistol
-    - WeaponRevolverMatebaAP
+    - LustWeaponRevolverMatebaAP # Lust edit: выдаём револьвер с нагревом
     - SpeedLoaderMagnumAP
     - SpeedLoaderMagnumAP
     - BoxFlashbang

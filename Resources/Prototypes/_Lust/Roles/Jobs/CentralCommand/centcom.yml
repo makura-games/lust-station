@@ -8,7 +8,7 @@
     outerClothing: ClothingOuterArmorCentcomChestplateQillu
     id: CentcomOperatorPDAQillu
     ears: ClothingHeadsetAltCentCom
-    belt: WeaponPistolN1984
+    belt: LustWeaponPistolN1984
   storage:
     back:
     - RubberStampCentcom
@@ -245,7 +245,7 @@
     gloves: ClothingHandsGlovesColorBlack
     id: CentcomOperatorPDA
     ears: ClothingHeadsetCentCom
-    belt: WeaponPistolN1984
+    belt: LustWeaponPistolN1984
     back: ClothingBackpackSatchelLeather
   storage:
     back:

@@ -71,7 +71,7 @@
     - type: RandomSpawner
       rarePrototypes:
         - ClothingHeadHelmetSwat
-        - WeaponShotgunEnforcer
+        - LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
 #        - WeaponRifleAk
       rareChance: 0.05
       prototypes:
@@ -85,11 +85,11 @@
         - ClothingOuterArmorBulletproof
         - WeaponRifleM16A4 # Sunrise-Edit
         - WeaponDisabler
-        - WeaponPistolMk58
-        - WeaponRifleLecter
-        - WeaponSubMachineGunDrozd
-        - WeaponLaserCarbine
-        - WeaponShotgunTrenchgun4034 # Sunrise-Edit
+        - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponSubMachineGunDrozd # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponLaserCarbine # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponShotgunTrenchgun4034 # Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
       chance: 0.95
       offset: 0.0
 
@@ -106,17 +106,17 @@
           state: icon
     - type: RandomSpawner
       rarePrototypes:
-        - WeaponShotgunEnforcer
+        - LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
 #        - WeaponRifleAk
       rareChance: 0.05
       prototypes:
         - WeaponRifleM16A4 # Sunrise-Edit
         - WeaponDisabler
-        - WeaponPistolMk58
-        - WeaponRifleLecter
-        - WeaponSubMachineGunDrozd
-        - WeaponLaserCarbine
-        - WeaponShotgunTrenchgun4034 # Sunrise-Edit
+        - LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponSubMachineGunDrozd # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponLaserCarbine # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - LustWeaponShotgunTrenchgun4034 # Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
       chance: 0.95
       offset: 0.0
 

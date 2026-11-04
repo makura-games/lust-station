@@ -85,7 +85,7 @@
     ears: ClothingHeadsetSecurity
     gloves: ClothingHandsGlovesCombat
   inhand:
-   - WeaponSubMachineGunWt550 # Sunrise-Edit
+   - LustWeaponSubMachineGunWt550 # Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - BoxSurvivalSecurity

@@ -243,7 +243,7 @@
   id: uplinkBriefcaseGun
   name: uplink-briefcase-gun-name
   description: uplink-briefcase-gun-desc
-  productEntity: WeaponSubMachineGunBriefcase
+  productEntity: LustWeaponSubMachineGunBriefcase # Lust edit: ссылка на прототип Lust с механикой нагрева
   discountCategory: veryRareDiscounts
   discountDownTo:
     Telecrystal: 10

@@ -222,7 +222,7 @@
     # Scrap chunks
     - id: ScrapAirlock1
       prob: 1.0
-    - id: WeaponLaserCannon
+    - id: LustWeaponLaserCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
       prob: 0.1
     # Parts
     - id: PowerCellMicroreactor
@@ -400,7 +400,7 @@
   components:
   - type: SpawnItemsOnUse
     items:
-    - id: WeaponTeslaGun
+    - id: LustWeaponTeslaGun # Lust edit: ссылка на прототип Lust с механикой нагрева
       prob: 0.25
     - id: WeaponMechCombatTeslaCannon
       prob: 0.05
@@ -826,7 +826,7 @@
     # Scrap chunks
     - id: ScrapAirlock1
       prob: 1.0
-    - id: WeaponLaserCannon
+    - id: LustWeaponLaserCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
       prob: 0.1
     # Parts
     - id: PowerCellMicroreactor

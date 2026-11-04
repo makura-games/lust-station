@@ -131,7 +131,7 @@
 
 - type: entity
   abstract: true
-  parent: BaseWeaponBatteryNoAmmoCounter
+  parent: [BaseWeaponBatteryNoAmmoCounter, LustGunHeat] # Lust edit: нагреваем малые батарейные пушки
   id: BaseWeaponBatterySmallNoAmmoCounter
   components:
   - type: Item

@@ -55,7 +55,7 @@
 - type: entity
   name: automatic syringe gun
   description: Once a heavily modified toy for fun, this syringe gun can no longer be loaded by hand. Its built-in microreactor cell now synthesizes disposable syringes internally. No fun allowed.
-  parent: [BaseWeaponBattery, BaseMinorContraband]
+  parent: [LustWeaponBattery, BaseMinorContraband] # Lust edit: используем fork-прототип с нагревом
   id: LauncherSyringeAuto
   components:
   - type: Sprite

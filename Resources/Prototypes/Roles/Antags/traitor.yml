@@ -90,7 +90,7 @@
     gloves: ClothingHandsGlovesColorBlack
   storage:
     back:
-    - WeaponPistolViper
+    - LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     - PinpointerSyndicateNuclear
     - DeathAcidifierImplanter
 
@@ -124,7 +124,7 @@
     - CigPackSyndicate
     - UniformScrubsColorPurple
     - ChemistryBottleToxin
-    - WeaponPistolViper
+    - LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     - Syringe
     - Syringe
 
@@ -135,7 +135,7 @@
     back: ClothingBackpack
     shoes: ClothingShoesColorBlack
     gloves: ClothingHandsGlovesColorBlack
-    pocket1: WeaponPistolViper
+    pocket1: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: VoiceMaskImplanter
   inhand:
     - ClothingBackpackChameleonFillAgent
@@ -143,7 +143,7 @@
   id: SyndicateReinforcementThief
   parent: SyndicateOperativeClothing
   equipment:
-    pocket1: WeaponPistolViper
+    pocket1: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: MagazinePistolHighCapacity
   inhand:
     - ToolboxSyndicateFilled
