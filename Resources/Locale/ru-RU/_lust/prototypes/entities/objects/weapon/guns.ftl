@@ -1,10 +1,10 @@
-ent-LustWeaponLaserSvalinn = лазерный пистолет Свалинн
+ent-LustWeaponLaserSvalinn = лазерный пистолет свалинн
     .desc = Дешёвый и широко распространённый лазерный пистолет.
 ent-LustWeaponPistolEchis = эфа
     .desc = Гадюка для киборгов. На ходу создаёт патроны калибра .35 из встроенного самозарядного фабрикатора боеприпасов.
-ent-LustWeaponLightMachineGunL6C = L6C ROW
+ent-LustWeaponLightMachineGunL6C = l6c row
     .desc = L6 SAW для киборгов. На ходу создаёт патроны калибра 5,56x45мм из встроенного самозарядного фабрикатора боеприпасов.
-ent-LustWeaponSubMachineGunC20rROW = C-20r ROW
+ent-LustWeaponSubMachineGunC20rROW = c-20r row
     .desc = Пистолет-пулемёт C-20r для киборгов. На ходу создаёт патроны калибра .35 из встроенного самозарядного фабрикатора боеприпасов.
 ent-LustWeaponShotgunBulldog = бульдог
     .desc = Магазинный дробовик, предназначенный для ведения ближнего боя. Использует патроны 12 калибра.
