@@ -22,7 +22,7 @@
   - External
   extendedAccess:
   - CargoPurchaseAccess
-  # Lust-Start: 
+  # Lust-Start:  Добавляем щит разума по предложке 
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
