@@ -159,7 +159,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
         _playerManager.PlayerStatusChanged -= OnPlayerStatusChanged;
     }
 
-    // Новый игрок не видел прошлых рассылок, отправляем ему текущее состояние
     private void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs args)
     {
         if (args.NewStatus == SessionStatus.Disconnected)
@@ -439,7 +438,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
         args.Cancelled = true;
     }
 
-    // Событие приходит и инструменту, и цели: сами инструменты не блокируем
     private void OnArenaEntityToolUse(EntityUid uid, DmArenaShieldedComponent component, ToolUseAttemptEvent args)
     {
         if (HasComp<ToolComponent>(uid))
@@ -463,7 +461,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
     {
         if (!IsOpen)
         {
-            // Клиент мог не знать, что арена выключена
             RaiseNetworkEvent(new DmArenaPlayerCountEvent(0, false), session.Channel);
             return false;
         }
@@ -667,7 +664,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
                 _meta.SetEntityName(mob, profile.Name);
         }
 
-        // Выдача могла упасть: удаляем тело без владельца
         if (!rofls && !TryEquipLoadout(mob, rule, chosen, session))
         {
             QueueDel(mob);
@@ -682,7 +678,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
             return false;
         }
 
-        // Метку ставим только после успешной подмены, иначе она осталась бы на теле без бойца
         if (originalBody is { Valid: true } body && !HasComp<DmArenaDormantBodyComponent>(body))
         {
             var marker = EnsureComp<DmArenaDormantBodyComponent>(body);
@@ -757,7 +752,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
             if (!_inventory.TryGetSlotEntity(mob, slot, out var old))
                 continue;
 
-            // Слоты, зависящие от одежды (карманы), снимаются вместе с ней: сохраняем их содержимое
             foreach (var dependent in definitions.Where(x => x.DependsOn == slot))
             {
                 if (_inventory.TryGetSlotEntity(mob, dependent.Name, out var content)
@@ -776,7 +770,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
     {
         foreach (var (slot, item) in kept)
         {
-            // Новая одежда может не иметь таких слотов, тогда предмет не нужен
             if (!_inventory.TryEquip(mob, item, slot, silent: true, force: true))
                 QueueDel(item);
         }
@@ -975,7 +968,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
         if (args.Player.Status != SessionStatus.Disconnected)
             return;
 
-        // Разум мог быть уже очищен, ищем по UserId
         var dormant = EntityQueryEnumerator<DmArenaDormantBodyComponent>();
         while (dormant.MoveNext(out var uid, out var marker))
         {
@@ -1014,7 +1006,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
 
     private void OnDespawnPickedUp(Entity<DmArenaSweptComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
-        // Рюкзак и другое хранилище бойца тоже считаются: поднятое в них не должно исчезнуть
         EntityUid? owner = args.Container.Owner;
         while (owner is { } current)
         {
@@ -1190,7 +1181,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
     {
         items = new List<(DmArenaStoreItem, int)>();
 
-        // Каждый предмет стоит минимум 1 очко, длиннее бюджета список быть не может
         if (indexes.Count > rule.Budget)
             return false;
 
@@ -1247,7 +1237,6 @@ public sealed partial class DmArenaMatchSystem : EntitySystem
 
             foreach (var container in _container.GetAllContainers(current, manager))
             {
-                // Патронник и барабан хранят уже потраченные патроны
                 var spentAmmo = container.ID is "gun_chamber" or "revolver-ammo";
 
                 foreach (var contained in container.ContainedEntities)

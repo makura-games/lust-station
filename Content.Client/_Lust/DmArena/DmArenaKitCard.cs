@@ -64,7 +64,6 @@ public sealed class DmArenaKitCard : PanelContainer
         OnMouseExited += _ => _styleBox.Modulate = DmArenaPalette.CardBg;
     }
 
-    // RichTextLabel переносит длинный текст
     private static RichTextLabel MakeText(string text, Color color)
     {
         var label = new RichTextLabel { HorizontalExpand = true };

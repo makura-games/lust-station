@@ -35,7 +35,6 @@ public sealed class DmArenaDollFrame : Control
     {
         base.Resized();
 
-        // Целый масштаб, чтобы спрайт не плыл
         var scale = Math.Clamp((int) (Math.Min(Size.X, Size.Y) / 36f), 3, 12);
         View.Scale = new Vector2(scale, scale);
         View.SetSize = new Vector2(scale * 40, scale * 40);

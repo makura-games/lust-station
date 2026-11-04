@@ -79,7 +79,6 @@ public sealed class DmArenaStoreTests : GameTest
                 Assert.That(cost, Is.LessThanOrEqualTo(rule.Budget), $"{set.Name}: set is over the budget");
             }
 
-            // Наборы дороже бюджета сервер молча прячет
             var state = SEntMan.System<DmArenaMatchSystem>().GetLoadoutState(ruleUid, new NetUserId(Guid.NewGuid()));
             Assert.That(state.Sets, Has.Count.EqualTo(rule.Sets.Count));
         });
@@ -102,29 +101,23 @@ public sealed class DmArenaStoreTests : GameTest
                 return preset != null && preset.SequenceEqual(items);
             }
 
-            // Обычный предмет без боеприпасов сохраняется
             var plain = rule.ShopItems.FindIndex(x => x.AmmoFor is null or "base");
             Assert.That(plain, Is.GreaterThanOrEqualTo(0));
             Assert.That(Saved(new List<int> { plain }), "A single plain item should be accepted");
 
-            // Несуществующие индексы отклоняются
             Assert.That(Saved(new List<int> { -1 }), Is.False, "Negative index");
             Assert.That(Saved(new List<int> { rule.ShopItems.Count }), Is.False, "Index past the end");
 
-            // Не расходник нельзя взять дважды
             var single = rule.ShopItems.FindIndex(x => x.MaxCount == 1);
             Assert.That(single, Is.GreaterThanOrEqualTo(0));
             Assert.That(Saved(new List<int> { single, single }), Is.False, "Duplicate of a single item");
 
-            // Список длиннее бюджета отклоняется до разбора
             Assert.That(Saved(Enumerable.Repeat(plain, rule.Budget + 1).ToList()), Is.False, "List longer than the budget");
 
-            // Боеприпасы без подходящего оружия нельзя
             var ammo = rule.ShopItems.FindIndex(x => x.AmmoFor is { } f && f != "base");
             if (ammo >= 0)
                 Assert.That(Saved(new List<int> { ammo }), Is.False, "Ammo without a weapon");
 
-            // Два предмета в один слот нельзя
             for (var a = 0; a < rule.ShopItems.Count; a++)
             {
                 var slotsA = SProtoMan.Index(rule.ShopItems[a].Gear).Equipment.Keys.ToHashSet();

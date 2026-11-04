@@ -33,7 +33,6 @@ public sealed class DmArenaKitEui : BaseEui
     {
         base.Closed();
 
-        // Сервер уже закрыл EUI, повторно ему писать не нужно
         _window.OnClose -= OnWindowClosed;
         _window.Close();
     }

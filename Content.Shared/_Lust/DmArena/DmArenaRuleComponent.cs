@@ -42,7 +42,6 @@ public sealed partial class DmArenaStoreItem
     [DataField]
     public string? AmmoType;
 
-    // "base" доступно всегда
     [DataField]
     public string? AmmoFor;
 }
@@ -71,7 +70,6 @@ public sealed partial class DmArenaRuleComponent : Component
 
     public bool Active;
 
-    // Пресет живёт до конца раунда
     public Dictionary<NetUserId, List<int>> Presets = new();
 
     /// <summary>

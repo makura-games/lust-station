@@ -54,7 +54,6 @@ public sealed partial class DmArenaMindSwapSystem : EntitySystem
         {
             _mind.UnVisit(origMindId, origMind);
 
-            // Освобождаем userId для одноразового разума
             _mind.SetUserId(origMindId, null, origMind);
 
             newMind = _mind.CreateMind(userId, origMind.CharacterName);

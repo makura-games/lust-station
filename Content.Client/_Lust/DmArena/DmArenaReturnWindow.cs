@@ -31,7 +31,6 @@ public sealed class DmArenaReturnWindow : DmArenaFrameWindow
             PanelOverride = new StyleBoxFlat { BackgroundColor = DmArenaPalette.Divider },
         });
 
-
         var buttons = new BoxContainer
         {
             Orientation = BoxContainer.LayoutOrientation.Horizontal,
