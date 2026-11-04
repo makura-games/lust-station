@@ -24,6 +24,11 @@
   - CargoPurchaseAccess
   - Mining
   # Sunrise-end
+  # Lust-Start:
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  # Lust-End
 
 - type: startingGear
   id: SalvageSpecialistGear

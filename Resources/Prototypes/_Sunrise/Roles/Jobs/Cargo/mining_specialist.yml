@@ -22,6 +22,11 @@
   - External
   extendedAccess:
   - CargoPurchaseAccess
+  # Lust-Start: 
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  # Lust-End
 
 - type: startingGear
   id: MiningSpecialistGear
