@@ -36,8 +36,7 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
                 ent.Comp.Jammed = true;
                 ent.Comp.NextPopupTime = _timing.CurTime + ent.Comp.PopupCooldown;
                 _audio.PlayPredicted(ent.Comp.JamSound, ent, args.User);
-                if (_timing.IsFirstTimePredicted && !_timing.ApplyingState)
-                    _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed"), ent, PopupType.MediumCaution);
+                _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed"), ent, PopupType.MediumCaution);
                 DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Jammed));
                 DirtyField(ent, ent.Comp, nameof(GunHeatComponent.NextPopupTime));
             }
@@ -100,8 +99,7 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
 
         ent.Comp.NextPopupTime = _timing.CurTime + ent.Comp.PopupCooldown;
         DirtyField(ent, ent.Comp, nameof(GunHeatComponent.NextPopupTime));
-        if (_timing.IsFirstTimePredicted && !_timing.ApplyingState)
-            _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed-blocked"), ent, PopupType.SmallCaution);
+        _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed-blocked"), ent, PopupType.SmallCaution);
         return false;
     }
 
@@ -144,7 +142,6 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
         DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Jammed));
 
         _audio.PlayPredicted(ent.Comp.UnjamSound, ent, user);
-        if (_timing.IsFirstTimePredicted && !_timing.ApplyingState)
-            _popup.PopupEntity(Loc.GetString("lust-gun-heat-unjammed"), ent);
+        _popup.PopupEntity(Loc.GetString("lust-gun-heat-unjammed"), ent);
     }
 }
