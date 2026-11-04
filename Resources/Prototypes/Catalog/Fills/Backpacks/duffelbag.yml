@@ -112,7 +112,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: WeaponRevolverPythonAP
+        - id: LustWeaponRevolverPythonAP # Lust edit: выдаём револьвер с нагревом
         - id: SpeedLoaderMagnumAP
           amount: 2
 

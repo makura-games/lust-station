@@ -224,7 +224,7 @@
     - id: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
     - id: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
       weight: 0.5
-    - id: WeaponRevolverPythonAP
+    - id: LustWeaponRevolverPythonAP # Lust edit: используем прототип с нагревом
       weight: 0.5
     - id: RevolverCapGunFake
       weight: 0.5

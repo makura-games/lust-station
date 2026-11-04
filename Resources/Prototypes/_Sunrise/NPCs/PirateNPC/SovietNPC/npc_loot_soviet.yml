@@ -876,7 +876,7 @@
     # Weapons
     - id: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
       prob: 0.75
-    - id: WeaponRevolverPythonAP
+    - id: LustWeaponRevolverPythonAP # Lust edit: используем прототип с нагревом
       prob: 0.25
     # Armor
     - id: ClothingOuterCoatDetective

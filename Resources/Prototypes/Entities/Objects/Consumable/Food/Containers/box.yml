@@ -720,7 +720,7 @@
     - id: ToyMauler
     - id: ToyNuke
     - id: ToySword
-    - id: WeaponRevolverPythonAP
+    - id: LustWeaponRevolverPythonAP # Lust edit: выдаём револьвер с нагревом
       weight: 0.4
     - id: BalloonSyn
       weight: 0.3

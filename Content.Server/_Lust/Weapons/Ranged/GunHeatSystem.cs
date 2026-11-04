@@ -12,11 +12,14 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
 {
     [Dependency] private TemperatureSystem _temperature = default!;
 
+    // Запас ограничивает внешний нагрев ниже температуры заклинивания.
+    private const float ExternalHeatMargin = 20f;
     private const float SyncStep = 2f;
     private static readonly TimeSpan PassiveCoolingInterval = TimeSpan.FromSeconds(1);
     private static readonly TimeSpan SyncHold = TimeSpan.FromSeconds(2);
 
     private readonly Dictionary<EntityUid, TimeSpan> _lastShot = new();
+    private readonly Dictionary<EntityUid, float> _lastSyncedTemperature = new();
     private TimeSpan _nextPassiveCooling;
     private bool _firing;
 
@@ -24,6 +27,7 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
     private void OnShutdown(Entity<GunHeatComponent> ent, ref ComponentShutdown args)
     {
         _lastShot.Remove(ent);
+        _lastSyncedTemperature.Remove(ent);
     }
 
     [SubscribeLocalEvent]
@@ -42,29 +46,39 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
         ent.Comp.TemperaturePerShot = temperature.HeatCapacity > 0f
             ? ent.Comp.HeatPerShot / temperature.HeatCapacity
             : 0f;
-        Sync(ent, temperature.Temperature, true);
+        Sync(ent, temperature.Temperature);
     }
 
     [SubscribeLocalEvent]
     private void OnTemperatureChange(Entity<GunHeatComponent> ent, ref TemperatureChangedEvent args)
     {
-        if (!_firing && args.TemperatureDelta > 0f && args.CurrentTemperature > ent.Comp.JamTemperature - 20f
+        var maximumExternalTemperature = ent.Comp.JamTemperature - ExternalHeatMargin;
+        if (!_firing && args.TemperatureDelta > 0f && args.CurrentTemperature > maximumExternalTemperature
             && TryComp<TemperatureComponent>(ent, out var temperature))
         {
-            var excessHeat = (args.CurrentTemperature - (ent.Comp.JamTemperature - 20f))
-                             * temperature.HeatCapacity;
+            var preservedTemperature = MathF.Max(args.LastTemperature, maximumExternalTemperature);
+            var excessHeat = (args.CurrentTemperature - preservedTemperature) * temperature.HeatCapacity;
             _temperature.ChangeHeat((ent.Owner, temperature), -excessHeat, ignoreHeatResistance: true);
             return;
         }
 
-        if (MathF.Abs(args.CurrentTemperature - ent.Comp.Temperature) < SyncStep)
+        var shouldSync = MathF.Abs(args.CurrentTemperature
+                                   - _lastSyncedTemperature.GetValueOrDefault(ent, ent.Comp.Temperature)) >= SyncStep;
+        ent.Comp.Temperature = args.CurrentTemperature;
+
+        if (_firing)
+        {
+            _lastSyncedTemperature[ent] = args.CurrentTemperature;
+            return;
+        }
+
+        if (!shouldSync)
             return;
 
         if (_lastShot.TryGetValue(ent, out var lastShot) && _timing.CurTime < lastShot + SyncHold)
             return;
 
-        ent.Comp.Temperature = args.CurrentTemperature;
-        DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Temperature));
+        Sync(ent, args.CurrentTemperature);
     }
 
     protected override void AddShotHeat(Entity<GunHeatComponent> ent, int shots)
@@ -94,6 +108,13 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
         var query = EntityQueryEnumerator<GunHeatComponent, TemperatureComponent>();
         while (query.MoveNext(out var uid, out var heat, out var temperature))
         {
+            if (_lastShot.TryGetValue(uid, out var lastShot)
+                && _timing.CurTime >= lastShot + SyncHold
+                && MathF.Abs(heat.Temperature - _lastSyncedTemperature.GetValueOrDefault(uid, heat.Temperature)) >= SyncStep)
+            {
+                Sync((uid, heat), heat.Temperature);
+            }
+
             var excess = temperature.Temperature - Atmospherics.T20C;
             if (excess <= 0.5f)
                 continue;
@@ -103,15 +124,10 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
         }
     }
 
-    private void Sync(Entity<GunHeatComponent> ent, float temperature, bool force = false)
+    private void Sync(Entity<GunHeatComponent> ent, float temperature)
     {
-        if (!force && MathF.Abs(temperature - ent.Comp.Temperature) < SyncStep)
-            return;
-
-        if (!force && _lastShot.TryGetValue(ent, out var lastShot) && _timing.CurTime < lastShot + SyncHold)
-            return;
-
         ent.Comp.Temperature = temperature;
+        _lastSyncedTemperature[ent] = temperature;
         DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Temperature));
     }
 }

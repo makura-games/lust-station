@@ -189,13 +189,28 @@
   categories: [HideSpawnMenu]
 
 - type: entity
+  id: LustWeaponRevolverMatebaAP
+  parent: [WeaponRevolverMatebaAP, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
   id: LustWeaponRevolverPirate
   parent: [WeaponRevolverPirate, LustGunHeat]
   categories: [HideSpawnMenu]
 
 - type: entity
+  id: LustWeaponRevolverPirateEmpty
+  parent: [WeaponRevolverPirateEmpty, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
   id: LustWeaponRevolverPython
   parent: [WeaponRevolverPython, LustGunHeat]
+  categories: [HideSpawnMenu]
+
+- type: entity
+  id: LustWeaponRevolverPythonAP
+  parent: [WeaponRevolverPythonAP, LustGunHeat]
   categories: [HideSpawnMenu]
 
 - type: entity
