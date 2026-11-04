@@ -1,0 +1,5 @@
+# Страница гайдбука про Рой. Открывается кнопкой «?» у роевика и из выбора роли антагониста.
+- type: guideEntry
+  id: Swarm
+  name: guide-entry-swarm
+  text: "/ServerInfo/Guidebook/_Lust/Swarmer/Swarm.xml"

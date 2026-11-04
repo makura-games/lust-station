@@ -1,0 +1,245 @@
+- type: npcFaction
+  id: Swarmer
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - PetsNT
+
+# Общее тело свармера: характеристики, ресурсы и что ему можно разбирать.
+- type: entity
+  abstract: true
+  parent: [MobRobotic, MobCombat]
+  id: BaseMobSwarmer
+  name: swarmer
+  description: A small glowing machine that strips everything around it for parts and builds more of itself.
+  components:
+  - type: Swarmer
+    replicateCost: 100
+    # С запасом над порогом гибели (40): модификаторы урона не должны спасать свармера от ЭМИ.
+    empDamage:
+      types:
+        Shock: 50
+    integrateMaterials:
+    - Steel
+    - Glass
+    - Plasteel
+    integrateBlacklist:
+      components:
+      - Gun
+      - Intellicard
+    # Осколки не описывают свой состав, поэтому разрешены отдельно.
+    integrateWhitelist:
+      tags:
+      - GlassShard
+      - ReinforcedGlassShard
+      - PlasmaGlassShard
+      - UraniumGlassShard
+    # Стены оставляют балку и лист своего материала, балки разбираются на листы.
+    # Столы оставляют каркас и материал столешницы, каркасы разбираются на стержни.
+    # Стулья возвращают материалы, из которых построены.
+    salvageWhitelist:
+      tags:
+      - Wall
+    salvageGraphs:
+    - Girder
+    - Table
+    - Seat
+    # Шлюзы, кроме самой разборки, оставляют сталь.
+    extraLoot:
+    - whitelist:
+        components:
+        - Airlock
+      spawn: SheetSteel1
+      amount: 5
+    # Порядок важен: сообщение об отказе берётся из первой подошедшей записи.
+    forbiddenTargets:
+    - whitelist:
+        components:
+        - Nuke
+        - NukeLabel
+      message: swarmer-forbidden-nuke
+    - whitelist:
+        components:
+        - Explosive
+      message: swarmer-forbidden-explosive
+    - whitelist:
+        components:
+        - ReagentDispenser
+      message: swarmer-forbidden-chemicals
+    - whitelist:
+        components:
+        - Gun
+        - DeployableTurret
+      message: swarmer-forbidden-turret
+    - whitelist:
+        components:
+        - Cable
+        - Apc
+        - PowerNetworkBattery
+        - PowerSupplier
+        - RadiationCollector
+      message: swarmer-forbidden-power
+    - whitelist:
+        components:
+        - AtmosDevice
+        - AtmosPipeLayers
+        - GasCanister
+        - DisposalTube
+      message: swarmer-forbidden-atmos
+    - whitelist:
+        components:
+        - Thruster
+      message: swarmer-forbidden-thruster
+    - whitelist:
+        components:
+        - TelecomServer
+      message: swarmer-forbidden-telecom
+    - whitelist:
+        components:
+        - StationAiCore
+        - StationAiHolder
+      message: swarmer-forbidden-ai
+    - whitelist:
+        components:
+        - GravityGenerator
+      message: swarmer-forbidden-gravity
+    - whitelist:
+        components:
+        - ContainmentField
+      message: swarmer-forbidden-field
+    - whitelist:
+        components:
+        - Swarmer
+      message: swarmer-forbidden-swarmer
+  # Нужно, чтобы клики доходили до SharedSwarmerSystem, а не до обычной активации.
+  - type: ComplexInteraction
+  # Alt+клик по вентиляции (или ПКМ -> Enter Pipe Network), чтобы ползать по трубам.
+  - type: VentCrawler
+  # Пустое тело без органов, как у боргов: вентиляция пускает в трубы только существ с телом.
+  - type: Body
+  # Кнопка «?» при осмотре открывает страницу гайдбука про Рой.
+  - type: GuideHelp
+    guides:
+    - Swarm
+  - type: Sprite
+    sprite: _Lust/Swarmer/Mobs/swarmer.rsi
+    layers:
+    - state: swarmer
+      map: ["enum.SwarmerVisualLayers.Body"]
+    - state: swarmer_unactivated
+      map: ["enum.SwarmerVisualLayers.Dormant"]
+      visible: false
+  # Без игрока свармер — спящая оболочка (см. SwarmerSystem.SetActive).
+  - type: GenericVisualizer
+    visuals:
+      enum.SwarmerVisuals.Active:
+        enum.SwarmerVisualLayers.Body:
+          True: { visible: true }
+          False: { visible: false }
+        enum.SwarmerVisualLayers.Dormant:
+          True: { visible: false }
+          False: { visible: true }
+  - type: PointLight
+    radius: 3
+    energy: 1
+    color: "#00FFFF"
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.75
+    baseSprintSpeed: 5.625
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      40: Dead
+    stateAlertDict:
+      Alive: BorgHealth
+      Dead: BorgDead
+    showOverlays: false
+  # Свармер всегда лопается и оставляет лут.
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 40
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/pop.ogg
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SheetSteel1:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  # Свармеры никого не ранят, их удары только отнимают выносливость.
+  - type: MeleeWeapon
+    hidden: true
+    soundHit:
+      path: /Audio/Effects/sparks4.ogg
+    damage:
+      types:
+        Shock: 0
+  - type: StaminaDamageOnHit
+    damage: 30
+  - type: NpcFactionMember
+    factions:
+    - Swarmer
+  - type: Tag
+    tags:
+    - SiliconEmotes
+    - Unimplantable
+
+# Сам свармер. Без игрока — спящая оболочка, ждущая призрака.
+- type: entity
+  parent: BaseMobSwarmer
+  id: MobSwarmer
+  components:
+  - type: ActionGrant
+    actions:
+    - ActionSwarmerBarricade
+    - ActionSwarmerTrap
+    - ActionSwarmerSelfRepair
+    - ActionSwarmerToggleLight
+    - ActionSwarmerTeleport
+    - ActionSwarmerReplicate
+    # Экстренный прыжок временно отключён: код и прототип способности на месте, чтобы вернуть — раскомментировать.
+    # - ActionSwarmerEscape
+  # Дизейблер: ПКМ в боевом режиме. ЛКМ остаётся ударом по выносливости.
+  - type: Gun
+    useKey: false
+    fireRate: 0.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletDisabler
+    capacity: 1
+    count: 1
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+  - type: CollectiveMind
+    minds:
+    - Swarmer
+  - type: ReplacementAccent
+    accent: swarmer
+  # Без стандартного «бипа» борга: каждая фраза звучит своим звуком.
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: null
+  - type: SwarmerSpeechSounds
+    sounds:
+      swarmer-speech-buzz:
+        path: /Audio/_Lust/Swarmer/swarmer_weep.ogg
+      swarmer-speech-whoop:
+        path: /Audio/_Lust/Swarmer/swarmer_waap.ogg
+      swarmer-speech-beep:
+        path: /Audio/_Lust/Swarmer/swarmer_bep.ogg
+  - type: GhostRole
+    name: ghost-role-information-swarmer-name
+    description: ghost-role-information-swarmer-description
+    rules: ghost-role-information-swarmer-rules
+    mindRoles:
+    - MindRoleSwarm
+  - type: GhostTakeoverAvailable
+

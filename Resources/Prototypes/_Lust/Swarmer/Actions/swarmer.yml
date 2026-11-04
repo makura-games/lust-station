@@ -1,0 +1,113 @@
+# В этой версии движка иконка способности задаётся полем icon компонента Action.
+
+- type: entity
+  parent: BaseAction
+  id: ActionSwarmerBarricade
+  name: Build barrier
+  description: Costs 4 resources. Raises a hard light barrier on your tile that only swarmers can pass.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: ui_barricade
+  - type: InstantAction
+    event: !type:SwarmerBarricadeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSwarmerTrap
+  name: Build trap
+  description: Costs 4 resources. Click a tile within reach to lay a shock plate that stuns the first non-swarmer to step on it.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: ui_trap
+  - type: TargetAction
+    range: 1.5
+  - type: WorldTargetAction
+    event: !type:SwarmerTrapActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSwarmerSelfRepair
+  name: Self repair
+  description: Hold still for 10 seconds to repair all damage.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: ui_self_repair
+  - type: InstantAction
+    event: !type:SwarmerSelfRepairActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSwarmerToggleLight
+  name: Toggle light
+  description: Switches your glow on or off.
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: ui_light
+  - type: InstantAction
+    event: !type:SwarmerToggleLightActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSwarmerTeleport
+  name: Disperse target
+  description: Hold a living being for 3 seconds to cuff it and send it to a random safe spot on the station.
+  components:
+  - type: Action
+    useDelay: 3
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: swarmer_tele1
+  - type: TargetAction
+    range: 1.5
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - MobState
+    event: !type:SwarmerTeleportActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSwarmerReplicate
+  name: Replicate
+  description: Costs 100 resources. Hold still for 5 seconds to assemble a copy of yourself. It sleeps until another mind takes it over.
+  components:
+  - type: Action
+    useDelay: 1
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: ui_replicate
+  - type: InstantAction
+    event: !type:SwarmerReplicateActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSwarmerEscape
+  name: Emergency jump
+  description: Costs 10 resources. Instantly blink to a random safe spot on the station. Recharges in 60 seconds.
+  components:
+  - type: Action
+    useDelay: 60
+    itemIconStyle: BigAction
+    icon:
+      sprite: _Lust/Swarmer/Interface/Actions/swarmer.rsi
+      state: swarmer_tele2
+  - type: InstantAction
+    event: !type:SwarmerEscapeActionEvent
