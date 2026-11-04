@@ -221,22 +221,22 @@
   table: !type:GroupSelector
     children:
     - id: WeaponRevolverSnubRevolver
-    - id: LustWeaponRevolverPirate
-    - id: LustWeaponRevolverPython
+    - id: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
+    - id: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
       weight: 0.5
     - id: WeaponRevolverPythonAP
       weight: 0.5
     - id: RevolverCapGunFake
       weight: 0.5
     - id: WeaponSniperRepeater
-    - id: LustWeaponSniperMosin
-    - id: LustWeaponShotgunTrenchgun4034Sawn
-    - id: LustWeaponShotgunSawn
+    - id: LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
+    - id: LustWeaponShotgunTrenchgun4034Sawn # Lust edit: ссылка на прототип Lust с механикой нагрева
+    - id: LustWeaponShotgunSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
     - id: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
     - id: WeaponMakeshiftLaser
     - id: LauncherSyringePistol
     - id: WeaponLaserGun
-    - id: LustMusket
+    - id: LustMusket # Lust edit: ссылка на прототип Lust с механикой нагрева
     - id: Flash
     - id: ImplanterExtractor
 
@@ -257,7 +257,7 @@
     - id: WeaponMakeshiftLaser
     - id: LauncherSyringePistol
     - id: WeaponLaserGun
-    - id: LustMusket
+    - id: LustMusket # Lust edit: ссылка на прототип Lust с механикой нагрева
     - id: Flash
     - id: ImplanterExtractor
     - id: PinpointerSmugglerRevolutionaryStash

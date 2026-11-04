@@ -34,65 +34,65 @@
     event: !type:RandomGlobalSpawnSpellEvent
       makeSurvivorAntagonist: true
       spawns:
-      - id: LustWeaponPistolViper
+      - id: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponPistolCobra
+      - id: LustWeaponPistolCobra # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponPistolMk58
+      - id: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponPistolN1984
+      - id: LustWeaponPistolN1984 # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponRevolverDeckard
+      - id: LustWeaponRevolverDeckard # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponRevolverInspector
+      - id: LustWeaponRevolverInspector # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponRevolverMateba
+      - id: LustWeaponRevolverMateba # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponRevolverPython
+      - id: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponRevolverPirate
+      - id: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponRifleAk
+      - id: LustWeaponRifleAk # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponRifleLecter
+      - id: LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: LustWeaponShotgunBulldog # Lust edit: используем fork-прототип с нагревом
         orGroup: Guns
-      - id: LustWeaponShotgunDoubleBarreled
+      - id: LustWeaponShotgunDoubleBarreled # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponShotgunEnforcer
+      - id: LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponShotgunTrenchgun4034 # Sunrise-Edit
+      - id: LustWeaponShotgunTrenchgun4034 # Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponShotgunSawn
+      - id: LustWeaponShotgunSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponShotgunHandmade
+      - id: LustWeaponShotgunHandmade # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponShotgunBlunderbuss
+      - id: LustWeaponShotgunBlunderbuss # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponShotgunImprovised
+      - id: LustWeaponShotgunImprovised # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponSubMachineGunAtreides
+      - id: LustWeaponSubMachineGunAtreides # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponSubMachineGunC20r
+      - id: LustWeaponSubMachineGunC20r # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponSubMachineGunDrozd
+      - id: LustWeaponSubMachineGunDrozd # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: WeaponRifleM16A4 # Sunrise-Edit
         orGroup: Guns
-      - id: LustWeaponSniperMosin
+      - id: LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponSniperHristov
+      - id: LustWeaponSniperHristov # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustMusket
+      - id: LustMusket # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponPistolFlintlock
+      - id: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponLauncherChinaLake
+      - id: LustWeaponLauncherChinaLake # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponLauncherRocket
+      - id: LustWeaponLauncherRocket # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponLauncherPirateCannon
+      - id: LustWeaponLauncherPirateCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: WeaponTetherGun
         orGroup: Guns
@@ -100,7 +100,7 @@
         orGroup: Guns
       - id: WeaponGrapplingGun
         orGroup: Guns
-      - id: LustWeaponLightMachineGunL6
+      - id: LustWeaponLightMachineGunL6 # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: LustWeaponLaserSvalinn # Lust edit: используем fork-прототип с нагревом
         orGroup: Guns
@@ -108,11 +108,11 @@
         orGroup: Guns
       - id: WeaponMakeshiftLaser
         orGroup: Guns
-      - id: LustWeaponTeslaGun
+      - id: LustWeaponTeslaGun # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponLaserCarbinePractice
+      - id: LustWeaponLaserCarbinePractice # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponLaserCarbine
+      - id: LustWeaponLaserCarbine # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: WeaponPulsePistol
         orGroup: Guns
@@ -120,17 +120,17 @@
         orGroup: Guns
       - id: WeaponPulseRifle
         orGroup: Guns
-      - id: LustWeaponLaserCannon
+      - id: LustWeaponLaserCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponParticleDecelerator
+      - id: LustWeaponParticleDecelerator # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponXrayCannon
+      - id: LustWeaponXrayCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: WeaponDisablerPractice
         orGroup: Guns
       - id: WeaponDisabler
         orGroup: Guns
-      - id: LustWeaponDisablerSMG
+      - id: LustWeaponDisablerSMG # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: WeaponTaser
         orGroup: Guns
@@ -142,9 +142,9 @@
         orGroup: Guns
       - id: WeaponBehonkerLaser
         orGroup: Guns
-      - id: LustWeaponEnergyShotgun
+      - id: LustWeaponEnergyShotgun # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
-      - id: LustWeaponMinigun
+      - id: LustWeaponMinigun # Lust edit: ссылка на прототип Lust с механикой нагрева
         orGroup: Guns
       - id: BowImprovised
         orGroup: Guns

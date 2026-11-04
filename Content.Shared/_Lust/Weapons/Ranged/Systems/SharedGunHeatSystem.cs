@@ -18,25 +18,6 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
 
     private const int JamSalt = -3;
 
-    public static float GetGlow(GunHeatComponent comp, float temperature)
-    {
-        var range = comp.MeltTemperature - comp.GlowTemperature;
-        return range <= 0f ? 0f : Math.Clamp((temperature - comp.GlowTemperature) / range, 0f, 1f);
-    }
-
-    public static float GetJamChance(GunHeatComponent comp, float temperature)
-    {
-        var range = comp.MeltTemperature - comp.JamTemperature;
-        if (temperature < comp.JamTemperature || range <= 0f)
-            return 0f;
-
-        return comp.MaxJamChance * Math.Clamp((temperature - comp.JamTemperature) / range, 0f, 1f);
-    }
-
-    protected virtual void AddShotHeat(Entity<GunHeatComponent> ent, int shots)
-    {
-    }
-
     [SubscribeLocalEvent]
     private void OnGunShot(Entity<GunHeatComponent> ent, ref GunShotEvent args)
     {
@@ -55,27 +36,14 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
                 ent.Comp.Jammed = true;
                 ent.Comp.NextPopupTime = _timing.CurTime + ent.Comp.PopupCooldown;
                 _audio.PlayPredicted(ent.Comp.JamSound, ent, args.User);
-                _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed"), ent, PopupType.MediumCaution);
+                if (_timing.IsFirstTimePredicted && !_timing.ApplyingState)
+                    _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed"), ent, PopupType.MediumCaution);
                 DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Jammed));
                 DirtyField(ent, ent.Comp, nameof(GunHeatComponent.NextPopupTime));
             }
         }
 
         DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Temperature));
-    }
-
-    private float GetJamRoll(Entity<GunHeatComponent> ent)
-    {
-        var seed = unchecked((uint) _timing.CurTick.Value
-                             ^ (uint) GetNetEntity(ent).Id
-                             ^ (uint) ent.Comp.ShotCount * 0x9e3779b9
-                             ^ (uint) JamSalt);
-        seed ^= seed >> 16;
-        seed *= 0x7feb352d;
-        seed ^= seed >> 15;
-        seed *= 0x846ca68b;
-        seed ^= seed >> 16;
-        return (seed >> 8) * (1f / 16777216f);
     }
 
     [SubscribeLocalEvent]
@@ -94,6 +62,34 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
         args.Handled = TryUnjam(ent, args.User);
     }
 
+    [SubscribeLocalEvent]
+    private void OnExamined(Entity<GunHeatComponent> ent, ref ExaminedEvent args)
+    {
+        if (!args.IsInDetailsRange)
+            return;
+
+        if (ent.Comp.Jammed)
+            args.PushMarkup(Loc.GetString("lust-gun-heat-examine-jammed"));
+
+        if (ent.Comp.Temperature >= ent.Comp.JamTemperature)
+            args.PushMarkup(Loc.GetString("lust-gun-heat-examine-hot"));
+    }
+
+    public static float GetGlow(GunHeatComponent comp, float temperature)
+    {
+        var range = comp.MeltTemperature - comp.GlowTemperature;
+        return range <= 0f ? 0f : Math.Clamp((temperature - comp.GlowTemperature) / range, 0f, 1f);
+    }
+
+    public static float GetJamChance(GunHeatComponent comp, float temperature)
+    {
+        var range = comp.MeltTemperature - comp.JamTemperature;
+        if (temperature < comp.JamTemperature || range <= 0f)
+            return 0f;
+
+        return comp.MaxJamChance * Math.Clamp((temperature - comp.JamTemperature) / range, 0f, 1f);
+    }
+
     public bool TryShoot(Entity<GunHeatComponent> ent, EntityUid user)
     {
         if (CanShoot(ent))
@@ -104,7 +100,8 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
 
         ent.Comp.NextPopupTime = _timing.CurTime + ent.Comp.PopupCooldown;
         DirtyField(ent, ent.Comp, nameof(GunHeatComponent.NextPopupTime));
-        _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed-blocked"), ent, PopupType.SmallCaution);
+        if (_timing.IsFirstTimePredicted && !_timing.ApplyingState)
+            _popup.PopupEntity(Loc.GetString("lust-gun-heat-jammed-blocked"), ent, PopupType.SmallCaution);
         return false;
     }
 
@@ -123,25 +120,31 @@ public abstract partial class SharedGunHeatSystem : EntitySystem
     public bool CanUnjam(Entity<GunHeatComponent> ent)
         => ent.Comp.Jammed;
 
+    protected virtual void AddShotHeat(Entity<GunHeatComponent> ent, int shots)
+    {
+    }
+
+    private float GetJamRoll(Entity<GunHeatComponent> ent)
+    {
+        var seed = unchecked((uint) _timing.CurTick.Value
+                             ^ (uint) GetNetEntity(ent).Id
+                             ^ (uint) ent.Comp.ShotCount * 0x9e3779b9
+                             ^ (uint) JamSalt);
+        seed ^= seed >> 16;
+        seed *= 0x7feb352d;
+        seed ^= seed >> 15;
+        seed *= 0x846ca68b;
+        seed ^= seed >> 16;
+        return (seed >> 8) * (1f / 16777216f);
+    }
+
     private void Unjam(Entity<GunHeatComponent> ent, EntityUid user)
     {
         ent.Comp.Jammed = false;
         DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Jammed));
 
         _audio.PlayPredicted(ent.Comp.UnjamSound, ent, user);
-        _popup.PopupEntity(Loc.GetString("lust-gun-heat-unjammed"), ent);
-    }
-
-    [SubscribeLocalEvent]
-    private void OnExamined(Entity<GunHeatComponent> ent, ref ExaminedEvent args)
-    {
-        if (!args.IsInDetailsRange)
-            return;
-
-        if (ent.Comp.Jammed)
-            args.PushMarkup(Loc.GetString("lust-gun-heat-examine-jammed"));
-
-        if (ent.Comp.Temperature >= ent.Comp.JamTemperature)
-            args.PushMarkup(Loc.GetString("lust-gun-heat-examine-hot"));
+        if (_timing.IsFirstTimePredicted && !_timing.ApplyingState)
+            _popup.PopupEntity(Loc.GetString("lust-gun-heat-unjammed"), ent);
     }
 }

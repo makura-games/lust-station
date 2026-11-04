@@ -243,7 +243,7 @@
 - type: entity
   name: L6 MAX
   id: WeaponLightMachineGunL6Max
-  parent: LustWeaponLightMachineGunL6
+  parent: LustWeaponLightMachineGunL6 # Lust edit: ссылка на прототип Lust с механикой нагрева
   description: Developed by Waffle Corporation, the L6 MAX is a heavily reinforced modification of the L6 machine gun that has gained popularity among the elite of the Gorlex Marauders. Its reinforced barrel and powerful .308 caliber allow it not only to suppress enemies with a hail of fire, but also to tear their cover to splinters. Feeds from .308 ammunition belts.
   components:
   - type: Sprite

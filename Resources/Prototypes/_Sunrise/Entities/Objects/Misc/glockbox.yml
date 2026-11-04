@@ -37,7 +37,7 @@
     - state: icon
   - type: SpawnItemsOnUse
     items:
-      - id: LustWeaponPistolMk58
+      - id: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
       - id: MagazinePistolRubber
     sound:
       path: /Audio/Effects/unwrap.ogg

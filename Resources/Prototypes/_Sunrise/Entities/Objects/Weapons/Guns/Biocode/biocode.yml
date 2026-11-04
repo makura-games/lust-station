@@ -19,7 +19,7 @@
     - Pirate
 
 - type: entity
-  parent: LustWeaponLightMachineGunL6
+  parent: LustWeaponLightMachineGunL6 # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponLightMachineGunL6Biocode
   suffix: BIOCODE
   components:
@@ -39,7 +39,7 @@
     - Pirate
 
 - type: entity
-  parent: LustWeaponSubMachineGunC20r
+  parent: LustWeaponSubMachineGunC20r # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponSubMachineGunC20rBiocode
   suffix: BIOCODE
   components:
@@ -49,7 +49,7 @@
     - Pirate
 
 - type: entity
-  parent: LustWeaponRifleEstoc
+  parent: LustWeaponRifleEstoc # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponRifleEstocBiocode
   suffix: BIOCODE
   components:
@@ -59,7 +59,7 @@
     - Pirate
 
 - type: entity
-  parent: LustWeaponLauncherChinaLake
+  parent: LustWeaponLauncherChinaLake # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponLauncherChinaLakeBiocode
   suffix: BIOCODE
   components:
@@ -79,7 +79,7 @@
     - Pirate
 
 - type: entity
-  parent: LustWeaponSniperHristov
+  parent: LustWeaponSniperHristov # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponSniperHristovBiocode
   suffix: BIOCODE
   components:

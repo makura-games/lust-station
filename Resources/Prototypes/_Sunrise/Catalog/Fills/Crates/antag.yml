@@ -145,7 +145,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponLauncherPirateCannon
+        - id: LustWeaponLauncherPirateCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: Cutlass
         - id: CannonBall
@@ -158,17 +158,17 @@
           amount: 3
         - id: CannonBallGrapeshot
           amount: 4
-        - id: LustWeaponPistolFlintlock
+        - id: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: MagazineBoxMagnumAP
           amount: 2
-        - id: LustMusket
+        - id: LustMusket # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: MagazineBoxAntiMateriel
           amount: 2
         - id: WeaponGrapplingGun
           amount: 2
-        - id: LustWeaponShotgunBlunderbuss
-        - id: LustWeaponRevolverPirate
+        - id: LustWeaponShotgunBlunderbuss # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - id: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
           prob: 0.9
         - id: EnergyCutlass
           prob: 0.9
@@ -186,11 +186,11 @@
           prob: 0.40
         - id: WeaponRevolverSnubRevolver
           prob: 0.30
-        - id: LustWeaponShotgunTrenchgun4034Sawn
+        - id: LustWeaponShotgunTrenchgun4034Sawn # Lust edit: ссылка на прототип Lust с механикой нагрева
           prob: 0.30
         - id: ToolboxElectricalTurret
           prob: 0.25
-        - id: LustWeaponRevolverPython
+        - id: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
           prob: 0.25
         - id: WeaponRifleSKM24Scrap
           prob: 0.15

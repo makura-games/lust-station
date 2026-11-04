@@ -239,7 +239,7 @@
     pocket1: LanternFlash
     pocket2: ClothingHandsPowerGlovesUplinkNTERTAmber
   inhand:
-  - LustWeaponShotgunKammerer
+  - LustWeaponShotgunKammerer # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - BoxErtBaseKit
@@ -267,7 +267,7 @@
     pocket1: LanternFlash
     pocket2: ClothingHandsPowerGlovesUplinkNTERTRed
   inhand:
-  - LustWeaponShotgunEnforcer
+  - LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - BoxErtBaseKit
@@ -433,7 +433,7 @@
     pocket1: Holoprojector
     pocket2: HoloprojectorField
   inhand:
-  - LustWeaponLauncherHydra
+  - LustWeaponLauncherHydra # Lust edit: ссылка на прототип Lust с механикой нагрева
   - ClothingHandsPowerGlovesUplinkNTERTAmber
   storage:
     back:
@@ -457,7 +457,7 @@
     pocket1: Holoprojector
     pocket2: HoloprojectorField
   inhand:
-  - LustWeaponLauncherHydra
+  - LustWeaponLauncherHydra # Lust edit: ссылка на прототип Lust с механикой нагрева
   - DoubleEmergencyOxygenTankFilled
   storage:
     back:

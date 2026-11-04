@@ -220,7 +220,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: LustWeaponShotgunTrenchgun4034
+        - id: LustWeaponShotgunTrenchgun4034 # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: BoxLethalshot
         - id: BoxShotgunFlare
         - id: BoxBeanbag
@@ -235,7 +235,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: LustWeaponShotgunEnforcer
+        - id: LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: BoxLethalshot
         - id: BoxShotgunFlare
         - id: BoxShotgunSlug
@@ -339,7 +339,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: LustWeaponSniperHristov
+        - id: LustWeaponSniperHristov # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: MagazineBoxAntiMateriel
           amount: 3
 

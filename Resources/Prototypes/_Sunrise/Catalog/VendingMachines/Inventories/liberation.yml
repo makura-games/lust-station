@@ -1,11 +1,11 @@
 - type: vendingMachineInventory
   id: LiberationInventory
   startingInventory:
-    LustWeaponPistolViper: 3
-    LustWeaponPistolCobra: 3
-    LustWeaponPistolMk58: 3
-    LustWeaponPistolN1984: 3
-    LustWeaponPistolFlintlock: 3
+    LustWeaponPistolViper: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponPistolCobra: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponPistolMk58: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponPistolN1984: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponPistolFlintlock: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponPistolCHIMP: 3
     WeaponPulsePistol: 3
     WeaponPistolVP78: 3
@@ -18,11 +18,11 @@
     WeaponPistolMakeshiftCrafted: 3
     WeaponPistolForged: 3
 
-    LustWeaponRevolverDeckard: 3
-    LustWeaponRevolverInspector: 3
-    LustWeaponRevolverMateba: 3
-    LustWeaponRevolverPython: 3
-    LustWeaponRevolverPirate: 3
+    LustWeaponRevolverDeckard: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponRevolverInspector: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponRevolverMateba: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponRevolverPython: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponRevolverPirate: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     RevolverCapGun: 3
     RevolverCapGunFake: 3
     WeaponRevolverMakeshift: 3
@@ -32,45 +32,45 @@
     WeaponRevolverMatebaNew: 3
     WeaponRevolverSpearhead: 6
 
-    LustWeaponRifleAk: 3
+    LustWeaponRifleAk: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponRifleSKM28: 3
     WeaponRifleSKM24: 3
     WeaponRifleLecterMk2: 3
     WeaponRifleFoam: 3
     WeaponRifleM52: 3
     WeaponRifleM90GrenadeLauncher: 3
-    LustWeaponRifleLecter: 3
+    LustWeaponRifleLecter: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponRifleM16A4: 3
-    LustWeaponRifleEstoc: 3
+    LustWeaponRifleEstoc: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponRifleLecterXL8: 3
     WeaponRifleLeikha: 3
     WeaponRifleAsh12: 3
 
     LustWeaponShotgunBulldog: 3 # Lust edit: используем fork-прототип с нагревом
-    LustWeaponShotgunDoubleBarreled: 3
-    LustWeaponShotgunKammerer: 3
-    LustWeaponShotgunEnforcer: 3
+    LustWeaponShotgunDoubleBarreled: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunKammerer: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunEnforcer: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     #WeaponShotgunEnforcerRubber: 3
-    LustWeaponShotgunSawn: 3
-    LustWeaponShotgunHandmade: 3
-    LustWeaponShotgunHushpup: 3
-    LustWeaponShotgunBlunderbuss: 3
-    LustWeaponShotgunImprovised: 3
-    LustMusket: 3
-    LustWeaponEnergyShotgun: 3
-    LustWeaponShotgunTrenchgun4034: 3
-    LustWeaponShotgunTrenchgun4034Sawn: 3
-    LustWeaponShotgunRiot: 3
-    LustWeaponShotgunRiotSawn: 3
+    LustWeaponShotgunSawn: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunHandmade: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunHushpup: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunBlunderbuss: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunImprovised: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustMusket: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponEnergyShotgun: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunTrenchgun4034: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunTrenchgun4034Sawn: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunRiot: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponShotgunRiotSawn: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponShotgunCycler: 3
     WeaponShotgunGA12: 3
     WeaponShotgunMinotaur: 3
     WeaponShotgunForged: 3
 
-    LustWeaponSubMachineGunAtreides: 3
-    LustWeaponSubMachineGunC20r: 3
+    LustWeaponSubMachineGunAtreides: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponSubMachineGunC20r: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponSubMachineGunVector: 3
-    LustWeaponSubMachineGunDrozd: 3
+    LustWeaponSubMachineGunDrozd: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponSubMachineGunDrozdMk2: 3
     WeaponSubMachineGunP90: 3
     WeaponSubMachineGunForged: 6
@@ -79,13 +79,13 @@
     WeaponSIAR52: 3
     WeaponSubMachineGunSP91RC: 3
     WeaponSubMachineGunPPSH: 3
-    LustWeaponSubMachineGunWt550: 3
+    LustWeaponSubMachineGunWt550: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     LustWeaponSubMachineGunC20rROW: 3 # Lust edit: используем fork-прототип с нагревом
-    LustWeaponSubMachineGunBriefcase: 3
+    LustWeaponSubMachineGunBriefcase: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponSubMachineGunMakeshift: 3
     WeaponSubMachineGunImprovised: 3
-    LustWeaponSniperMosin: 3
-    LustWeaponSniperHristov: 3
+    LustWeaponSniperMosin: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponSniperHristov: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponSniperMakeshift: 3
     WeaponSniperImprovised: 3
     WeaponSniperForged: 3
@@ -94,23 +94,23 @@
     WeaponRifleBauer127: 3
     WeaponSniperDragunov: 3
 
-    LustWeaponLauncherChinaLake: 3
-    LustWeaponLauncherRocket: 3
-    LustWeaponLauncherPirateCannon: 3
+    LustWeaponLauncherChinaLake: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponLauncherRocket: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponLauncherPirateCannon: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponLauncherRL5: 3
     WeaponGrenadeLauncherGL70: 3
     WeaponGrenadeLauncherGL70Flash: 3
     WeaponGrenadeLauncherSecurity: 3
     WeaponLauncherM79: 3
     WeaponGrenadeLauncherImprovised: 3
-    LustWeaponLauncherMultipleRocket: 3
+    LustWeaponLauncherMultipleRocket: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
 
     WeaponTetherGun: 3
     WeaponForceGun: 3
     WeaponGrapplingGun: 3
     WeaponPlasmaCutter: 3
 
-    LustWeaponLightMachineGunL6: 3
+    LustWeaponLightMachineGunL6: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponLightMachineGunL6Max: 3
     LustWeaponLightMachineGunL6C: 3 # Lust edit: используем fork-прототип с нагревом
     WeaponLightMachineGunMG60: 3
@@ -122,19 +122,19 @@
     WeaponLightMachineGunM492Cburn: 3
     WeaponLightMachineGunM492: 3
     PowerpackDL6902: 3
-    LustWeaponMinigun: 3
+    LustWeaponMinigun: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponLightMachineGunDP28: 3
     WeaponLightMachineGunPirateCannon: 3
     LustWeaponLaserSvalinn: 3 # Lust edit: используем fork-прототип с нагревом
     WeaponLaserGun: 3
     WeaponMakeshiftLaser: 3
-    LustWeaponTeslaGun: 3
-    LustWeaponLaserCarbinePractice: 3
-    LustWeaponLaserCarbine: 3
+    LustWeaponTeslaGun: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponLaserCarbinePractice: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponLaserCarbine: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponSunriseLaserPistol: 3
-    LustWeaponLaserCannon: 3
-    LustWeaponParticleDecelerator: 3
-    LustWeaponXrayCannon: 3
+    LustWeaponLaserCannon: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponParticleDecelerator: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
+    LustWeaponXrayCannon: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponPulseCarbine: 3
     WeaponPulseRifle: 3
     WeaponBehonkerLaser: 3
@@ -143,7 +143,7 @@
 
     WeaponDisablerPractice: 3
     WeaponDisabler: 3
-    LustWeaponDisablerSMG: 3
+    LustWeaponDisablerSMG: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponTaser: 3
     WeaponAdvancedTaser: 3
     WeaponTaserSuper: 3
@@ -151,7 +151,7 @@
     WeaponMultiphaseGun: 3
     WeaponIonRifle: 3
     WeaponIonCarbine: 3
-    LustWeaponTemperatureGun: 3
+    LustWeaponTemperatureGun: 3 # Lust edit: ссылка на прототип Lust с механикой нагрева
     WeaponLaserImmolator: 3
     WeaponGunLaserCarbineSemi: 3
     WeaponGunLaserCarbineAutomatic: 3

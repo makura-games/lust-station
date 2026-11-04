@@ -229,7 +229,7 @@
     id: USSPCaptainPDA
     ears: ClothingHeadsetAltUSSP
     belt: ClothingBeltHolster
-    pocket1: LustWeaponRevolverPython
+    pocket1: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - DrinkVodkaBottleFull
@@ -257,7 +257,7 @@
     ears: ClothingHeadsetAltSyndicateNoKey
     id: SyndiOperativePDA
     belt: ClothingBeltMilitaryWebbingMedRaidFilled
-    pocket1: LustWeaponPistolViper
+    pocket1: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: PouchAmmo
   storage:
     back:
@@ -290,7 +290,7 @@
     shoes: ClothingShoesBootsMagPirate
     id: PiratePDA
     belt: JetpackMiniFilled
-    pocket1: LustWeaponRevolverPirate
+    pocket1: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: CombatKnife
   storage:
     back:
@@ -317,7 +317,7 @@
     shoes: ClothingShoesBootsMagPirate
     id: PiratePDA
     belt: JetpackMiniFilled
-    pocket1: LustWeaponPistolFlintlock
+    pocket1: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: MagazineBoxMagnumSP
   storage:
     back:

@@ -137,7 +137,7 @@
 - type: loadout
   id: BlueshieldWT550
   inhand:
-  - LustWeaponSubMachineGunWt550
+  - LustWeaponSubMachineGunWt550 # Lust edit: ссылка на прототип Lust с механикой нагрева
   effects:
   - !type:GroupLoadoutEffect
     proto: MisterBlueShit5

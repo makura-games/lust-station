@@ -77,7 +77,7 @@
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: LustWeaponRifleEstoc
+        - id: LustWeaponRifleEstoc # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: MagazineRifle
         - id: MagazineRifleAP
 

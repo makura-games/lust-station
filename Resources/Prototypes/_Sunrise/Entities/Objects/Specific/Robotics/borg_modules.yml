@@ -252,7 +252,7 @@
   - type: ItemBorgModule
     hands:
     - item: SawAdvanced
-    - item: LustWeaponPistolEchis #Todo: Заменить на вариант Шприцемета с выбором снарядов; Lust edit: используем fork-прототип с нагревом
+    - item: LustWeaponPistolEchis #Todo: Заменить на вариант Шприцемета с выбором снарядов; Lust edit: используем fork-прототип с нагревом # Lust edit: ссылка на прототип Lust с механикой нагрева
     - item: HypoBorgMedicalSyndicate
     - item: DefibrillatorOneHandedUnpowered
 

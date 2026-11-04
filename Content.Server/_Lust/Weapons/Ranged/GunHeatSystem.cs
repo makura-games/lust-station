@@ -21,6 +21,12 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
     private bool _firing;
 
     [SubscribeLocalEvent]
+    private void OnShutdown(Entity<GunHeatComponent> ent, ref ComponentShutdown args)
+    {
+        _lastShot.Remove(ent);
+    }
+
+    [SubscribeLocalEvent]
     private void OnStartup(Entity<GunHeatComponent> ent, ref ComponentStartup args)
     {
         EnsureComp<TemperatureComponent>(ent);
@@ -37,29 +43,6 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
             ? ent.Comp.HeatPerShot / temperature.HeatCapacity
             : 0f;
         Sync(ent, temperature.Temperature, true);
-    }
-
-    protected override void AddShotHeat(Entity<GunHeatComponent> ent, int shots)
-    {
-        if (!TryComp<TemperatureComponent>(ent, out var temperature))
-            return;
-
-        _lastShot[ent] = _timing.CurTime;
-        _firing = true;
-        try
-        {
-            _temperature.ChangeHeat((ent.Owner, temperature), ent.Comp.HeatPerShot * shots, ignoreHeatResistance: true);
-        }
-        finally
-        {
-            _firing = false;
-        }
-    }
-
-    [SubscribeLocalEvent]
-    private void OnShutdown(Entity<GunHeatComponent> ent, ref ComponentShutdown args)
-    {
-        _lastShot.Remove(ent);
     }
 
     [SubscribeLocalEvent]
@@ -82,6 +65,23 @@ public sealed partial class GunHeatSystem : SharedGunHeatSystem
 
         ent.Comp.Temperature = args.CurrentTemperature;
         DirtyField(ent, ent.Comp, nameof(GunHeatComponent.Temperature));
+    }
+
+    protected override void AddShotHeat(Entity<GunHeatComponent> ent, int shots)
+    {
+        if (!TryComp<TemperatureComponent>(ent, out var temperature))
+            return;
+
+        _lastShot[ent] = _timing.CurTime;
+        _firing = true;
+        try
+        {
+            _temperature.ChangeHeat((ent.Owner, temperature), ent.Comp.HeatPerShot * shots, ignoreHeatResistance: true);
+        }
+        finally
+        {
+            _firing = false;
+        }
     }
 
     public override void Update(float frameTime)

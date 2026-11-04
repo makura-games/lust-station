@@ -152,7 +152,7 @@
 - type: listing
   id: UplinkPirateHristov
   icon: { sprite: /Textures/Objects/Weapons/Guns/Snipers/heavy_sniper.rsi, state: base }
-  productEntity: LustWeaponSniperHristov
+  productEntity: LustWeaponSniperHristov # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     Doubloon: 45
   categories:
@@ -216,7 +216,7 @@
 
 - type: listing
   id: UplinkPirateShotgunImprovised
-  productEntity: LustWeaponShotgunImprovised
+  productEntity: LustWeaponShotgunImprovised # Lust edit: ссылка на прототип Lust с механикой нагрева
   categories:
   - UplinkPirateRangedWeaponry
   conditions:
@@ -313,7 +313,7 @@
 
 - type: listing
   id: UplinkPirateMusket
-  productEntity: LustMusket
+  productEntity: LustMusket # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     Doubloon: 3
   categories:
@@ -356,7 +356,7 @@
 
 - type: listing
   id: UplinkPirateRevolverPython
-  productEntity: LustWeaponRevolverPython
+  productEntity: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     Doubloon: 16
   categories:
@@ -364,7 +364,7 @@
 
 - type: listing
   id: UplinkPirateMosin
-  productEntity: LustWeaponSniperMosin
+  productEntity: LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     Doubloon: 2
   categories:
@@ -454,7 +454,7 @@
 
 - type: listing
   id: UplinkPirateL6SAW
-  productEntity: LustWeaponLightMachineGunL6
+  productEntity: LustWeaponLightMachineGunL6 # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     Doubloon: 80
   categories:
@@ -495,7 +495,7 @@
 
 - type: listing
   id: UplinkPiratePistolViper
-  productEntity: LustWeaponPistolViper
+  productEntity: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     Doubloon: 15
   categories:
@@ -503,7 +503,7 @@
 
 - type: listing
   id: UplinkPirate4034Sawn
-  productEntity: LustWeaponShotgunTrenchgun4034Sawn
+  productEntity: LustWeaponShotgunTrenchgun4034Sawn # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     Doubloon: 11
   categories:

@@ -82,7 +82,7 @@
       entity_storage: !type:AllSelector
         children:
         - id: WeaponIonRifle
-        - id: LustWeaponTemperatureGun
+        - id: LustWeaponTemperatureGun # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 - type: entity
   parent: GunSafeSuperweaponSecureGamma
@@ -393,7 +393,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponShotgunTrenchgun4034
+        - id: LustWeaponShotgunTrenchgun4034 # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: SpeedLoaderShellShotgun
           amount: 4
@@ -416,7 +416,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponShotgunRiot
+        - id: LustWeaponShotgunRiot # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: SpeedLoaderShellShotgun
           amount: 4
@@ -440,7 +440,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponShotgunDoubleBarreled
+        - id: LustWeaponShotgunDoubleBarreled # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 4
         - id: SpeedLoaderShellShotgun
           amount: 4
@@ -464,7 +464,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponRifleLecter
+        - id: LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: MagazineRifleSP
           amount: 2
         - id: DrinkBottleBeer
@@ -489,7 +489,7 @@
       entity_storage: !type:AllSelector
         children:
         - id: WeaponPistolGoldenMk58
-        - id: LustWeaponPistolMk58
+        - id: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
           amount: 2
         - id: DrinkColaCanEmpty
           amount: 2
@@ -510,7 +510,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponSubMachineGunDrozd
+        - id: LustWeaponSubMachineGunDrozd # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: FoodTinBeansTrash
         - id: FoodPacketBoritosTrash
         - id: PouchAmmoFilledSMG
@@ -532,8 +532,8 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponShotgunRiot
-        - id: LustWeaponShotgunRiotSawn
+        - id: LustWeaponShotgunRiot # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - id: LustWeaponShotgunRiotSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: FoodBowlBigTrash
         - id: FoodPacketRaisinsTrash
         - id: CigaretteSpent
@@ -555,7 +555,7 @@
     containers:
       entity_storage: !type:AllSelector
         children:
-        - id: LustWeaponLaserCarbine
+        - id: LustWeaponLaserCarbine # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: FoodPacketPistachioTrash
         - id: FoodPlateTrash
         - id: DrinkColaCanEmpty

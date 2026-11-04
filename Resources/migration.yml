@@ -1661,64 +1661,64 @@ ClothingUniformJumpskirtCentcomFormalDress: ClothingUniformJumpskirtCentcomForma
 
 # Lust edit: переносим оружие на fork-прототипы с нагревом
 # Абстрактные базы используются только в наследовании, поэтому мигрируют только конкретные сущности.
-BorgLauncherCreamPie: LustBorgLauncherCreamPie
-Musket: LustMusket
-WeaponDisablerSMG: LustWeaponDisablerSMG
-WeaponEnergyShotgun: LustWeaponEnergyShotgun
-WeaponLaserCannon: LustWeaponLaserCannon
-WeaponLaserCarbine: LustWeaponLaserCarbine
-WeaponLaserCarbinePractice: LustWeaponLaserCarbinePractice
-WeaponLaserSvalinn: LustWeaponLaserSvalinn
-WeaponLauncherChinaLake: LustWeaponLauncherChinaLake
-WeaponLauncherHydra: LustWeaponLauncherHydra
-WeaponLauncherMultipleRocket: LustWeaponLauncherMultipleRocket
-WeaponLauncherPirateCannon: LustWeaponLauncherPirateCannon
-WeaponLauncherRocket: LustWeaponLauncherRocket
-WeaponLightMachineGunL6: LustWeaponLightMachineGunL6
-WeaponLightMachineGunL6C: LustWeaponLightMachineGunL6C
-WeaponMinigun: LustWeaponMinigun
-WeaponParticleDecelerator: LustWeaponParticleDecelerator
-WeaponPistolCobra: LustWeaponPistolCobra
-WeaponPistolEchis: LustWeaponPistolEchis
-WeaponPistolFlintlock: LustWeaponPistolFlintlock
-WeaponPistolMk58: LustWeaponPistolMk58
-WeaponPistolN1984: LustWeaponPistolN1984
-WeaponPistolViper: LustWeaponPistolViper
-WeaponRevolverDeckard: LustWeaponRevolverDeckard
-WeaponRevolverInspector: LustWeaponRevolverInspector
-WeaponRevolverMateba: LustWeaponRevolverMateba
-WeaponRevolverPirate: LustWeaponRevolverPirate
-WeaponRevolverPython: LustWeaponRevolverPython
-WeaponRifleAk: LustWeaponRifleAk
-WeaponRifleEstoc: LustWeaponRifleEstoc
-WeaponRifleLecter: LustWeaponRifleLecter
-WeaponShotgunBlunderbuss: LustWeaponShotgunBlunderbuss
-WeaponShotgunBulldog: LustWeaponShotgunBulldog
-WeaponShotgunDoubleBarreled: LustWeaponShotgunDoubleBarreled
-WeaponShotgunEnforcer: LustWeaponShotgunEnforcer
-WeaponShotgunEnforcerRubber: LustWeaponShotgunEnforcerRubber
-WeaponShotgunHandmade: LustWeaponShotgunHandmade
-WeaponShotgunHushpup: LustWeaponShotgunHushpup
-WeaponShotgunImprovised: LustWeaponShotgunImprovised
-WeaponShotgunImprovisedLoaded: LustWeaponShotgunImprovisedLoaded
-WeaponShotgunKammerer: LustWeaponShotgunKammerer
-WeaponShotgunRiot: LustWeaponShotgunRiot
-WeaponShotgunRiotSawn: LustWeaponShotgunRiotSawn
-WeaponShotgunRiotSawnEmpty: LustWeaponShotgunRiotSawnEmpty
-WeaponShotgunSawn: LustWeaponShotgunSawn
-WeaponShotgunTrenchgun4034: LustWeaponShotgunTrenchgun4034
-WeaponShotgunTrenchgun4034Sawn: LustWeaponShotgunTrenchgun4034Sawn
-WeaponShotgunTrenchgun4034SawnEmpty: LustWeaponShotgunTrenchgun4034SawnEmpty
-WeaponSniperHristov: LustWeaponSniperHristov
-WeaponSniperMosin: LustWeaponSniperMosin
-WeaponSubMachineGunAtreides: LustWeaponSubMachineGunAtreides
-WeaponSubMachineGunBriefcase: LustWeaponSubMachineGunBriefcase
-WeaponSubMachineGunC20r: LustWeaponSubMachineGunC20r
-WeaponSubMachineGunC20rROW: LustWeaponSubMachineGunC20rROW
-WeaponSubMachineGunDrozd: LustWeaponSubMachineGunDrozd
-WeaponSubMachineGunWt550: LustWeaponSubMachineGunWt550
-WeaponTemperatureGun: LustWeaponTemperatureGun
-WeaponTeslaGun: LustWeaponTeslaGun
-WeaponXrayCannon: LustWeaponXrayCannon
+BorgLauncherCreamPie: LustBorgLauncherCreamPie # Lust edit: ссылка на прототип Lust с механикой нагрева
+Musket: LustMusket # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponDisablerSMG: LustWeaponDisablerSMG # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponEnergyShotgun: LustWeaponEnergyShotgun # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLaserCannon: LustWeaponLaserCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLaserCarbine: LustWeaponLaserCarbine # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLaserCarbinePractice: LustWeaponLaserCarbinePractice # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLaserSvalinn: LustWeaponLaserSvalinn # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLauncherChinaLake: LustWeaponLauncherChinaLake # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLauncherHydra: LustWeaponLauncherHydra # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLauncherMultipleRocket: LustWeaponLauncherMultipleRocket # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLauncherPirateCannon: LustWeaponLauncherPirateCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLauncherRocket: LustWeaponLauncherRocket # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLightMachineGunL6: LustWeaponLightMachineGunL6 # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponLightMachineGunL6C: LustWeaponLightMachineGunL6C # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponMinigun: LustWeaponMinigun # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponParticleDecelerator: LustWeaponParticleDecelerator # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponPistolCobra: LustWeaponPistolCobra # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponPistolEchis: LustWeaponPistolEchis # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponPistolFlintlock: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponPistolMk58: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponPistolN1984: LustWeaponPistolN1984 # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponPistolViper: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRevolverDeckard: LustWeaponRevolverDeckard # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRevolverInspector: LustWeaponRevolverInspector # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRevolverMateba: LustWeaponRevolverMateba # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRevolverPirate: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRevolverPython: LustWeaponRevolverPython # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRifleAk: LustWeaponRifleAk # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRifleEstoc: LustWeaponRifleEstoc # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponRifleLecter: LustWeaponRifleLecter # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunBlunderbuss: LustWeaponShotgunBlunderbuss # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunBulldog: LustWeaponShotgunBulldog # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunDoubleBarreled: LustWeaponShotgunDoubleBarreled # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunEnforcer: LustWeaponShotgunEnforcer # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunEnforcerRubber: LustWeaponShotgunEnforcerRubber # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunHandmade: LustWeaponShotgunHandmade # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunHushpup: LustWeaponShotgunHushpup # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunImprovised: LustWeaponShotgunImprovised # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunImprovisedLoaded: LustWeaponShotgunImprovisedLoaded # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunKammerer: LustWeaponShotgunKammerer # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunRiot: LustWeaponShotgunRiot # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunRiotSawn: LustWeaponShotgunRiotSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunRiotSawnEmpty: LustWeaponShotgunRiotSawnEmpty # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunSawn: LustWeaponShotgunSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunTrenchgun4034: LustWeaponShotgunTrenchgun4034 # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunTrenchgun4034Sawn: LustWeaponShotgunTrenchgun4034Sawn # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponShotgunTrenchgun4034SawnEmpty: LustWeaponShotgunTrenchgun4034SawnEmpty # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSniperHristov: LustWeaponSniperHristov # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSniperMosin: LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSubMachineGunAtreides: LustWeaponSubMachineGunAtreides # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSubMachineGunBriefcase: LustWeaponSubMachineGunBriefcase # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSubMachineGunC20r: LustWeaponSubMachineGunC20r # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSubMachineGunC20rROW: LustWeaponSubMachineGunC20rROW # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSubMachineGunDrozd: LustWeaponSubMachineGunDrozd # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponSubMachineGunWt550: LustWeaponSubMachineGunWt550 # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponTemperatureGun: LustWeaponTemperatureGun # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponTeslaGun: LustWeaponTeslaGun # Lust edit: ссылка на прототип Lust с механикой нагрева
+WeaponXrayCannon: LustWeaponXrayCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 # Lust-End

@@ -46,7 +46,7 @@
     belt: ClothingBeltPrisonInspectorMetus
     back: ClothingBackpackSatchelPrisonInspectorMetus
     shoes: ClothingShoesBootsJack
-    pocket1: LustWeaponRevolverInspector
+    pocket1: LustWeaponRevolverInspector # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: Flash
   storage:
     back:

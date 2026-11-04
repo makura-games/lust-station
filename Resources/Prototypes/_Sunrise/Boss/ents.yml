@@ -216,11 +216,11 @@
       prob: 0.1
     - id: WeaponLightMachineGunDP28
       prob: 0.1
-    - id: LustMusket
+    - id: LustMusket # Lust edit: ссылка на прототип Lust с механикой нагрева
       prob: 0.5
-    - id: LustWeaponRevolverPirate
+    - id: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
       prob: 0.5
-    - id: LustWeaponPistolFlintlock
+    - id: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
       prob: 0.5
     - id: WeaponShotgunGA12
       prob: 0.5

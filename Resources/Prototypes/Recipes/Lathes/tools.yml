@@ -218,7 +218,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: WeaponParticleDecelerator
-  result: LustWeaponParticleDecelerator
+  result: LustWeaponParticleDecelerator # Lust edit: ссылка на прототип Lust с механикой нагрева
   completetime: 6
   materials:
     Steel: 750

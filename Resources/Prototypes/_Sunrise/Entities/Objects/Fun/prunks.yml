@@ -358,7 +358,7 @@
 
 - type: entity
   name: C-20r submachine gun
-  parent: [BaseMinorContraband, LustWeaponSubMachineGunC20r]
+  parent: [BaseMinorContraband, LustWeaponSubMachineGunC20r] # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponSubMachineGunC20rFake
   description: A classic and widespread submachine gun, infamous for its use by the Clowns. Looks almost like the real thing! Ages 8 and up.
   components:
@@ -393,7 +393,7 @@
 
 - type: entity
   name: L6 SAW
-  parent: [BaseMinorContraband, LustWeaponLightMachineGunL6]
+  parent: [BaseMinorContraband, LustWeaponLightMachineGunL6] # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponLightMachineGunL6Fake
   description: L6 Squad Automatic Weapon is a deadly light machine gun often used by the Honk Marauders. Although bulky and cumbersome, its heavy barrel and high ammo capacity make it perfect for suppressing combatants with a hail of darts. Feeds from darts belts.
   components:

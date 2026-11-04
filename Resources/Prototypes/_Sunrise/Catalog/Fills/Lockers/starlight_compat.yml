@@ -57,7 +57,7 @@
         children:
         - id: FlashlightSeclite
           amount: 2
-        - id: LustWeaponShotgunRiotSawn
+        - id: LustWeaponShotgunRiotSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: BoxBeanbag
         - id: WeaponDisabler
           amount: 2
@@ -105,8 +105,8 @@
         children:
         - id: FlashlightSeclite
           amount: 2
-        - id: LustWeaponShotgunRiotSawn
-        - id: LustWeaponEnergyShotgun
+        - id: LustWeaponShotgunRiotSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
+        - id: LustWeaponEnergyShotgun # Lust edit: ссылка на прототип Lust с механикой нагрева
         - id: WeaponDisabler
           amount: 2
         - id: ClothingBeltSecurityFilled

@@ -142,10 +142,10 @@
     id: NtrGuardPDA
     ears: ClothingHeadsetMagistrate
     belt: ClothingBeltSecurityFilled
-    pocket1: LustWeaponPistolN1984
+    pocket1: LustWeaponPistolN1984 # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: MagazineMagnum
   inhand:
-  - LustWeaponDisablerSMG
+  - LustWeaponDisablerSMG # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - ClothingOuterHardsuitNTRG

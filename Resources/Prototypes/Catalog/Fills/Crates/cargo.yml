@@ -110,15 +110,15 @@
     children:
     - id: WeaponPulseCarbine
       weight: 0.01
-    - id: LustWeaponRifleAk
+    - id: LustWeaponRifleAk # Lust edit: ссылка на прототип Lust с механикой нагрева
       weight: 0.01
-    - id: LustWeaponLauncherPirateCannon
+    - id: LustWeaponLauncherPirateCannon # Lust edit: ссылка на прототип Lust с механикой нагрева
       weight: 0.1
     - id: Throngler
       weight: 0.0001
     - id: WeaponPistolCHIMP
       weight: 0.1
-    - id: LustWeaponSniperMosin
+    - id: LustWeaponSniperMosin # Lust edit: ссылка на прототип Lust с механикой нагрева
     - id: WeaponMakeshiftLaser
       weight: 0.1
     - id: Sledgehammer
@@ -127,7 +127,7 @@
     - id: ThrowingStar
     - id: WeaponLaserGun
       weight: 0.1
-    - id: LustWeaponShotgunHandmade
+    - id: LustWeaponShotgunHandmade # Lust edit: ссылка на прототип Lust с механикой нагрева
     - id: WeaponFlareGun
     - id: Bola
     - id: Shovel

@@ -49,7 +49,7 @@
     outerClothing: ClothingOuterArmorBasic
     id: CentcomOperatorPDA
     ears: ClothingHeadsetCentCom
-    belt: LustWeaponPistolN1984
+    belt: LustWeaponPistolN1984 # Lust edit: ссылка на прототип Lust с механикой нагрева
   storage:
     back:
     - RubberStampCentcom

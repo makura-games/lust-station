@@ -260,13 +260,13 @@
         - proto: TechnologyDiskRare
           prob: 0.5
           cost: 5
-        - proto: LustWeaponTeslaGun
+        - proto: LustWeaponTeslaGun # Lust edit: ссылка на прототип Lust с механикой нагрева
           prob: 0.1
           cost: 2
-        - proto: LustWeaponPistolViper
+        - proto: LustWeaponPistolViper # Lust edit: ссылка на прототип Lust с механикой нагрева
           prob: 0.5
           cost: 4
-        - proto: LustWeaponShotgunDoubleBarreled
+        - proto: LustWeaponShotgunDoubleBarreled # Lust edit: ссылка на прототип Lust с механикой нагрева
           prob: 0.5
           cost: 5
         - proto: WeaponShotgunDoubleBarreledRubber

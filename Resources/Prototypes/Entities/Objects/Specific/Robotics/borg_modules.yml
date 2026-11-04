@@ -1,4 +1,4 @@
-- type: entity
+﻿- type: entity
   id: BaseBorgModule
   parent: BaseItem
   name: borg module
@@ -1256,7 +1256,7 @@
   - type: ItemBorgModule
     hands:
     - item: HoloprojectorClownBorg
-    - item: LustBorgLauncherCreamPie
+    - item: LustBorgLauncherCreamPie # Lust edit: ссылка на прототип Lust с механикой нагрева
     - item: ClownRecorder
     - item: PushHorn
     - item: BikeHornInstrument

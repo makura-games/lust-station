@@ -1,4 +1,4 @@
-# equipment
+﻿# equipment
 
 - type: listing
   id: VendorSalvageClothingMaskGasExplorer
@@ -290,7 +290,7 @@
 
 - type: listing
   id: VendorSalvageWeaponPistolMK58
-  productEntity: LustWeaponPistolMk58
+  productEntity: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
   cost:
     SalvageTicket: 225
   categories:

@@ -227,7 +227,7 @@
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasic
-    pocket1: LustWeaponPistolMk58
+    pocket1: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: MagazinePistol
   inhand:
   - FlashlightSeclite
@@ -245,7 +245,7 @@
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasicSlim
-    pocket1: LustWeaponPistolMk58
+    pocket1: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: MagazinePistol
   inhand:
   - FlashlightSeclite
@@ -262,7 +262,7 @@
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasic
-    pocket1: LustWeaponPistolMk58
+    pocket1: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: MagazinePistol
   inhand:
   - FlashlightSeclite
@@ -280,7 +280,7 @@
     ears: ClothingHeadsetSecurity
     eyes: ClothingEyesGlassesSecurity
     outerClothing: ClothingOuterArmorBasicSlim
-    pocket1: LustWeaponPistolMk58
+    pocket1: LustWeaponPistolMk58 # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: MagazinePistol
   inhand:
   - FlashlightSeclite
@@ -339,7 +339,7 @@
     pocket2: Zipties
   inhand:
   - FlashlightSeclite
-  - LustWeaponShotgunTrenchgun4034 # Sunrise-Edit
+  - LustWeaponShotgunTrenchgun4034 # Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 - type: startingGear
   id: VisitorWardenAlt
@@ -358,7 +358,7 @@
     pocket2: Zipties
   inhand:
   - FlashlightSeclite
-  - LustWeaponShotgunTrenchgun4034 # Sunrise-Edit
+  - LustWeaponShotgunTrenchgun4034 # Sunrise-Edit # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 # Cargo
 
@@ -951,7 +951,7 @@
     ears: ClothingHeadsetService
     eyes: ClothingEyesHudBeer
     outerClothing: ClothingOuterWinterBar
-    pocket1: LustWeaponShotgunSawn
+    pocket1: LustWeaponShotgunSawn # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: DrinkTequilaBottleFull
 
 - type: startingGear
@@ -1840,7 +1840,7 @@
     back: ClothingBackpackSatchelLeather
     belt: ClothingBeltUtility
     ears: ClothingHeadsetFreelance
-    pocket1: LustWeaponPistolFlintlock
+    pocket1: LustWeaponPistolFlintlock # Lust edit: ссылка на прототип Lust с механикой нагрева
     pocket2: PinpointerPirate # Sunrise-edit
   inhand:
     - Cutlass
@@ -1862,7 +1862,7 @@
   equipment:
     head: ClothingHeadBandBlack
   inhand:
-    - LustWeaponShotgunBlunderbuss
+    - LustWeaponShotgunBlunderbuss # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 - type: startingGear
   id: PirateScoonerAltD
@@ -1870,7 +1870,7 @@
   equipment:
     id: PiratePDAMusic # Sunrise-added
     head: ClothingHeadHatPirateTricord
-    pocket1: LustWeaponRevolverPirate
+    pocket1: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 - type: startingGear
   id: PirateCaptainScooner
@@ -1880,7 +1880,7 @@
     ears: ClothingHeadsetAltFreelancer
     neck: ClothingNeckCloakPirateCap
     outerClothing: ClothingOuterVestWeb
-    pocket1: LustWeaponRevolverPirate
+    pocket1: LustWeaponRevolverPirate # Lust edit: ссылка на прототип Lust с механикой нагрева
 
 ### Other
 

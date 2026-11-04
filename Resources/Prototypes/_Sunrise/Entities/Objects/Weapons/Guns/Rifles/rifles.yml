@@ -155,7 +155,7 @@
 
 - type: entity
   name: Lecter Mk2
-  parent: [LustWeaponRifleLecter, GunLight]
+  parent: [LustWeaponRifleLecter, GunLight] # Lust edit: ссылка на прототип Lust с механикой нагрева
   id: WeaponRifleLecterMk2
   description: A high end military grade assault rifle. Uses .20 rifle ammo.
   components:
