@@ -73,4 +73,4 @@
 <summary><a href="#"><img src="https://img.shields.io/badge/licence-CLA-orange?style=for-the-badge" alt="CLA"></a></summary>
 
 >Весь код а так-же ассеты MakuraGames Studio, защищены лицензией [CLA](https://github.com/makura-games/sunrise-station/blob/master/CLA.txt).
-</details>
+</details> 
