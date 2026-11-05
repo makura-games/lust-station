@@ -1,5 +1,5 @@
 ent-StationTeleporter = teleporter
-    .desc = The peak of bluespace technology. A giant teleporter that allows you to travel vast distances in the blink of an eye.
+    .desc = The peak of bluespace technology. A massive metallic platform with a glowing circular emitter ring.
     .suffix = Unknown Coordinates, Without Autolink
 
 ent-StationTeleporterNanotrasen = { ent-StationTeleporter }
