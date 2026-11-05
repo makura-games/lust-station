@@ -100,3 +100,7 @@ ent-XenoborgCameraMonitorCircuitboard = монитор беспроводных 
     .desc = Печатная плата для монитора беспроводных камер ксеноборгов.
 ent-ComputerXenoborgsControlCircuitboard = консоль управления ксеноборгами (печатная плата)
     .desc = Печатная плата для консоли управления ксеноборгами.
+ent-StationTeleportersControlCircuitboard = консоль управления телепортами (печатная плата)
+    .desc = Печатная плата для консоли управления телепортами.
+ent-SyndicateTeleportersControlCircuitboard = консоль управления телепортами Синдиката (печатная плата)
+    .desc = { ent-StationTeleportersControlCircuitboard.desc }

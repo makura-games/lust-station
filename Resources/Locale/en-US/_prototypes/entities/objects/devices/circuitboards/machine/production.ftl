@@ -168,3 +168,5 @@ ent-CutterMachineCircuitboard = cutter machine board
     .desc = { ent-BaseMachineCircuitboard.desc }
 ent-SmartFridgeCircuitboard = smart fridge machine board
     .desc = { ent-BaseMachineCircuitboard.desc }
+ent-StationTeleporterMachineCircuitboard = teleporter machine board
+    .desc = A machine printed circuit board for a bluespace teleporter.

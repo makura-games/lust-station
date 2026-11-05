@@ -172,3 +172,5 @@ ent-SurveillanceCameraWirelessRouterXenoborgCircuitboard = маршрутиза�
     .desc = Печатная плата маршрутизатора беспроводных камер ксеноборгов.
 ent-MaterialReclaimerMachineCircuitboard = переработчик материалов (машинная плата)
     .desc = { ent-BaseMachineCircuitboard.desc }
+ent-StationTeleporterMachineCircuitboard = телепорт (машинная плата)
+    .desc = Машинная печатная плата для блюспейс-телепорта.
