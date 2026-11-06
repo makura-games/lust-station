@@ -10,12 +10,20 @@ public enum InteractionWindowUiKey : byte
     Key
 }
 
+// Lust edit - состояние включает настройку доступности панели взаимодействия.
 [Serializable, NetSerializable]
-public sealed class InteractionWindowBoundUserInterfaceState(NetEntity userEntity, NetEntity targetEntity, List<string> availableInteractionIds) : BoundUserInterfaceState
+public sealed class InteractionWindowBoundUserInterfaceState(
+    NetEntity userEntity,
+    NetEntity targetEntity,
+    List<string> availableInteractionIds,
+    bool panelEnabled,
+    bool loveDecayEnabled) : BoundUserInterfaceState
 {
     public NetEntity UserEntity { get; } = userEntity;
     public NetEntity TargetEntity { get; } = targetEntity;
     public List<string> AvailableInteractionIds { get; } = availableInteractionIds;
+    public bool PanelEnabled { get; } = panelEnabled;
+    public bool LoveDecayEnabled { get; } = loveDecayEnabled;
 }
 
 [Serializable, NetSerializable]
