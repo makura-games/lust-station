@@ -6,5 +6,5 @@ interaction-panel-disable-confirmation-text = Are you sure you want to disable t
 interaction-panel-disable-confirm = Disable
 interaction-panel-disable-cancel = Cancel
 interaction-panel-disable-love-decay-label = Disable progress decay
-interaction-panel-disable-love-decay-description = Disabling this setting stops your interaction progress from decaying over time.
+interaction-panel-disable-love-decay-description = Progress decay is disabled while this checkbox is selected and resumes when it is cleared.
 # Lust added end

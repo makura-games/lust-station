@@ -6,5 +6,5 @@ interaction-panel-disable-confirmation-text = Вы уверены, что хот
 interaction-panel-disable-confirm = Отключить
 interaction-panel-disable-cancel = Отмена
 interaction-panel-disable-love-decay-label = Отключить снижение прогресса
-interaction-panel-disable-love-decay-description = При отключении этой настройки прогресс взаимодействия вашего персонажа не будет снижаться со временем.
+interaction-panel-disable-love-decay-description = Снижение прогресса отключено, пока установлен этот флажок, и возобновляется после его снятия.
 # Lust added end

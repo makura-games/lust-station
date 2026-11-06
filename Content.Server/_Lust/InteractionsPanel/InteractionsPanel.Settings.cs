@@ -57,17 +57,6 @@ public partial class InteractionsPanel
         ent.Comp.Erp = enabled;
         Dirty(ent);
 
-        // Lust edit - синхронизирует статус ERP для осмотра с доступностью панели.
-        var erpStatus = EnsureComp<ErpStatusComponent>(ent);
-        var oldErp = erpStatus.Erp;
-        var newErp = enabled ? Erp.Yes : Erp.No;
-        if (oldErp != newErp)
-        {
-            erpStatus.Erp = newErp;
-            Dirty(ent, erpStatus);
-            RaiseLocalEvent(ent.Owner, new ErpChangedEvent(oldErp, newErp));
-        }
-
         if (!enabled)
         {
             ClosePanelsTargeting(ent);
@@ -175,6 +164,7 @@ public partial class InteractionsPanel
             return true;
 
         return TryComp<InteractionsComponent>(user, out var userInteractions) && userInteractions.Erp &&
-               TryComp<InteractionsComponent>(target, out var targetInteractions) && targetInteractions.Erp;
+               TryComp<InteractionsComponent>(target, out var targetInteractions) && targetInteractions.Erp &&
+               TryComp<ErpStatusComponent>(target, out var erpStatus) && erpStatus.Erp != Erp.No;
     }
 }
