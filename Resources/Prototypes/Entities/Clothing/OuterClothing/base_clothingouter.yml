@@ -16,7 +16,7 @@
 
 - type: entity
   abstract: true
-  parent: Clothing
+  parent: [Clothing, AllowSuitStorageClothingGasTanks] # Lust edit
   id: ClothingOuterBase
   components:
   - type: Clothing
