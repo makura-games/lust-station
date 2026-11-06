@@ -116,6 +116,7 @@ public sealed partial class InteractionsUIWindow
         confirmButton.OnPressed += _ =>
         {
             confirmed = true;
+            ApplySettings();
             _owner?.SendBoundUserInterfaceMessage(new SetInteractionPanelEnabledMessage(false));
             confirmDialog.Close();
         };

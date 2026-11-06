@@ -155,6 +155,12 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
     private void OnApplySettings(BaseButton.ButtonEventArgs args)
     {
+        ApplySettings();
+    }
+
+    // Lust edit - применяет отложенные настройки окна перед его возможным закрытием.
+    private void ApplySettings()
+    {
         var emoteVisible = EmoteVisibilityCheckBox.Pressed;
         var expand = HideTopPanelCheckBox.Pressed;
         SetEmoteVisibility(emoteVisible);

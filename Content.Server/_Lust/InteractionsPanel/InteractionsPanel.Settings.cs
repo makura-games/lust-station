@@ -1,5 +1,7 @@
 using Content.Shared._Sunrise.InteractionsPanel.Data.Components;
 using Content.Shared._Sunrise.InteractionsPanel.Data.UI;
+using Content.Shared._Lust.ErpStatus;
+using Content.Shared.Humanoid;
 
 // Lust edit - расширение Sunrise-панели хранится в папке форка.
 #pragma warning disable IDE0130
@@ -55,13 +57,21 @@ public partial class InteractionsPanel
         ent.Comp.Erp = enabled;
         Dirty(ent);
 
+        // Lust edit - синхронизирует статус ERP для осмотра с доступностью панели.
+        var erpStatus = EnsureComp<ErpStatusComponent>(ent);
+        var oldErp = erpStatus.Erp;
+        var newErp = enabled ? Erp.Yes : Erp.No;
+        if (oldErp != newErp)
+        {
+            erpStatus.Erp = newErp;
+            Dirty(ent, erpStatus);
+            RaiseLocalEvent(ent.Owner, new ErpChangedEvent(oldErp, newErp));
+        }
+
         if (!enabled)
         {
             ClosePanelsTargeting(ent);
-
-            if (_ui.IsUiOpen(ent.Owner, InteractionWindowUiKey.Key))
-                _ui.CloseUi(ent.Owner, InteractionWindowUiKey.Key);
-
+            UpdateOwnerUIState(ent);
             return;
         }
 
@@ -105,14 +115,7 @@ public partial class InteractionsPanel
 
     private bool ShouldDecayLove(Entity<InteractionsComponent> ent)
     {
-        if (ent.Comp.LoveDecayEnabled)
-            return true;
-
-        if (ent.Comp.CurrentTarget is not { } target || target == ent.Owner)
-            return true;
-
-        return !TryComp<InteractionsComponent>(target, out var targetInteractions) ||
-               targetInteractions.LoveDecayEnabled;
+        return ent.Comp.LoveDecayEnabled;
     }
 
     private void SetLoveDecayEnabledValue(Entity<InteractionsComponent> ent, bool enabled)
@@ -141,7 +144,8 @@ public partial class InteractionsPanel
         var query = EntityQueryEnumerator<InteractionsComponent>();
         while (query.MoveNext(out var observer, out var interactions))
         {
-            if (interactions.CurrentTarget != target)
+            // Lust edit - не закрывает собственную панель владельца при отключении.
+            if (observer == target || interactions.CurrentTarget != target)
                 continue;
 
             if (!_ui.IsUiOpen(observer, InteractionWindowUiKey.Key))
@@ -170,6 +174,7 @@ public partial class InteractionsPanel
         if (user == target)
             return true;
 
-        return TryComp<InteractionsComponent>(target, out var interactions) && interactions.Erp;
+        return TryComp<InteractionsComponent>(user, out var userInteractions) && userInteractions.Erp &&
+               TryComp<InteractionsComponent>(target, out var targetInteractions) && targetInteractions.Erp;
     }
 }

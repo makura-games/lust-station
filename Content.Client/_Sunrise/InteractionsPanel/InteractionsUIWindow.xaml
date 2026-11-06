@@ -298,10 +298,10 @@
                                     <Label Text="{Loc 'interaction-panel-disable-love-decay-label'}"
                                            StyleClasses="highlight"
                                            VerticalAlignment="Center"/>
-                                    <Label Text="{Loc 'interaction-panel-disable-love-decay-description'}"
-                                           StyleClasses="LabelSubText"
-                                           Margin="0 2 0 0"
-                                           MaxWidth="320"/>
+                                    <RichTextLabel Text="{Loc 'interaction-panel-disable-love-decay-description'}"
+                                                   StyleClasses="LabelSubText"
+                                                   HorizontalExpand="True"
+                                                   Margin="0 2 0 0"/>
                                 </BoxContainer>
                             </BoxContainer>
                             <!-- Lust edit end -->

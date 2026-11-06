@@ -510,8 +510,8 @@ public partial class InteractionsPanel
         if (IsOnCooldown(uid, "orgasm"))
             return;
 
-        if (ShouldDecayLove((uid, comp)))
-            comp.LoveAmount = 0;
+        // Lust edit - отключение спада не отменяет сброс прогресса после оргазма.
+        comp.LoveAmount = 0;
 
         _chatSystem.TrySendInGameICMessage(uid, "кончает", InGameICChatType.Emote, false);
         _chatSystem.TryEmoteWithChat(uid, "Moan");
@@ -619,6 +619,10 @@ public partial class InteractionsPanel
 
     private void AddInteractionsVerb(Entity<InteractionsComponent> ent, ref GetVerbsEvent<AlternativeVerb> args)
     {
+        // Lust edit - глагол доступен только персонажам с компонентом панели.
+        if (!TryComp<InteractionsComponent>(args.User, out _))
+            return;
+
         if (!TryComp<UserInterfaceComponent>(args.User, out var interfaceComponent))
             return;
 
