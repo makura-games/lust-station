@@ -59,6 +59,7 @@
   - type: Item
     heldPrefix: off
     size: Normal
+  - type: MobilityAid
   - type: DisarmMalus
     malus: 0.300
   - type: Appearance

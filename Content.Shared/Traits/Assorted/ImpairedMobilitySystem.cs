@@ -62,6 +62,10 @@ public sealed partial class ImpairedMobilitySystem : EntitySystem
             if (TryComp<WieldableComponent>(held, out var wieldable) && wieldable.Wielded)
                 continue;
 
+            // Lust-Edit - трость не дает опору в активном боевом режиме
+            if (!IsMobilityAidActive(held))
+                continue;
+
             return true;
         }
 
