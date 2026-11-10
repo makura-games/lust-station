@@ -1,0 +1,11 @@
+# Lust edit
+- type: polymorph
+  id: LustAdminPigSmite
+  configuration:
+    entity: MobPig
+    forced: true
+    inventory: Drop
+    ignoreAllowRepeatedMorphs: true
+    transferDamage: false
+    revertOnCrit: false
+    revertOnDeath: false

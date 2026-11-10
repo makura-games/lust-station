@@ -90,6 +90,7 @@ namespace Content.Server.Administration.Systems
             AddTricksVerbs(ev);
             AddAntagVerbs(ev);
             AddBountySmiteVerb(ev); // Sunrise-Edit
+            AddKabanizatorSmiteVerb(ev); // Lust edit
         }
 
         private void AddAdminVerbs(GetVerbsEvent<Verb> args)
