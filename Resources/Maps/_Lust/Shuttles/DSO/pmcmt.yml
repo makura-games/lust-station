@@ -4,7 +4,7 @@ meta:
   engineVersion: 289.0.3
   forkId: ""
   forkVersion: ""
-  time: 11/11/2026 21:57:59
+  time: 11/11/2026 22:20:20
   entityCount: 253
 maps: []
 grids:
@@ -87,20 +87,20 @@ entities:
           moles:
             Oxygen: 21.824879
             Nitrogen: 82.10312
-        - volume: 2500
-          moles: {}
-          immutable: True
         - temperature: 293.14975
           volume: 2500
           moles:
             Oxygen: 21.824879
             Nitrogen: 82.10312
+        - volume: 2500
+          moles: {}
+          immutable: True
         tiles:
           0,0:
             0: 20475
           0,-1:
             0: 65006
-            2: 512
+            1: 512
           -1,0:
             0: 136
           0,1:
@@ -109,29 +109,29 @@ entities:
             0: 34952
           0,2:
             0: 1
-            1: 240
+            2: 240
           -1,2:
-            1: 8
+            2: 8
           1,0:
             0: 307
           1,2:
             0: 1
-            1: 18
+            2: 18
           1,-1:
             0: 4352
-            1: 34
+            2: 34
           1,1:
             0: 8738
           0,-2:
-            1: 240
+            2: 240
             0: 2816
           -1,-2:
             0: 128
-            1: 32768
+            2: 32768
           -1,-1:
-            1: 136
+            2: 136
           1,-2:
-            1: 8208
+            2: 8208
             0: 288
         chunkSize: 4
     - type: GasTileOverlay
@@ -905,6 +905,9 @@ entities:
     - type: Transform
       parent: 1
       pos: 3.5,-1.5
+      anchored: True
+    - type: Physics
+      bodyType: Static
     - type: ContainerContainer
       containers:
         entity_storage: !type:Container
