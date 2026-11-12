@@ -26,3 +26,6 @@
     receiveFrequencyId: BasicDevice
   - type: WirelessNetworkConnection
     range: 15
+  - type: Tag #lust
+    tags:
+    - voicesensor

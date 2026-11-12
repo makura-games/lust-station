@@ -16,6 +16,7 @@
     - HamsterWearable
     - FaceCovered # Sunrise-Edit
     - WhitelistChameleon
+    - gasmask #Lust
   - type: HideLayerClothing
     layers:
       Snout: Mask

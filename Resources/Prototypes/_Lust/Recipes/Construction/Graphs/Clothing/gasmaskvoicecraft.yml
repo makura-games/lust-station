@@ -1,0 +1,40 @@
+- type: construction
+  id: MaskGasVoice
+  graph: MaskGasVoice
+  startNode: start
+  targetNode: gasMaskVoice
+  category: construction-category-clothing
+  objectType: Item
+
+- type: constructionGraph
+  id: MaskGasVoice
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: gasMaskVoice
+          steps:
+            - tag: gasmask
+              name: ent-ClothingMaskGas
+              icon:
+                sprite: Clothing/Mask/gas.rsi
+                state: icon
+            - tag: voicesensor
+              name: construction-graph-tag-voice-sensor
+              icon:
+                sprite: Objects/Devices/voicesensor.rsi
+                state: icon
+              doAfter: 5
+            - tag: SmallAIChip
+              name: construction-graph-tag-super-compact-ai-chip
+              icon:
+                sprite: Objects/Misc/potatoai_chip.rsi
+                state: icon
+            - material: Cable
+              amount: 10
+              doAfter: 5
+            - material: Manipulator
+              amount: 3
+              doAfter: 5
+    - node: gasMaskVoice
+      entity: ClothingMaskGasVoice

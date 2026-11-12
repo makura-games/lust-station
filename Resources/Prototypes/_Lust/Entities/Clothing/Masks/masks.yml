@@ -1,0 +1,25 @@
+- type: entity
+  parent: ClothingMaskGas
+  id: ClothingMaskGasVoice
+  name: голосовой противогаз
+  description: Обычный противогаз для обычного ассистента. Вещь для тех кто не любит внимания к своей персоне
+  suffix: голосовая маска
+  components:
+    - type: Sprite
+      sprite: _Lust/Clothing/Masks/voicemask.rsi
+    - type: VoiceMask
+    - type: UIRequiresLock
+      userInterfaceKeys:
+        - enum.VoiceMaskUIKey.Key
+      accessDeniedSound: null
+      popup: null
+    - type: HideLayerClothing
+      slots:
+      - Snout
+    - type: UserInterface
+      interfaces:
+        enum.VoiceMaskUIKey.Key:
+          type: VoiceMaskBoundUserInterface
+    - type: Construction
+      graph: MaskGasVoice
+      node: gasMaskVoice
