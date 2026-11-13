@@ -216,4 +216,6 @@
     - id: RandomSentience
     - id: SolarFlare
     - id: VentClog
+    - id: LustVendingMachineMalfunction # Lust-edit
+    - id: LustCrewMonitoringMalf # Lust-edit
     - id: LustRadiationOutburst # Lust-Edit
