@@ -576,7 +576,7 @@
       path: "/Audio/Items/drill_use.ogg"
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 3.6
+    baseSprintSpeed: 3 # Lust-Edit изменена скорость с 3.6 до 3
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
