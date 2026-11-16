@@ -3,7 +3,7 @@
                          xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client">
     <ScrollContainer VerticalExpand="True" ReturnMeasure="True">
         <BoxContainer Orientation="Vertical" HorizontalExpand="True" Margin="8" SeparationOverride="4">
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-distinguishing-features'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-distinguishing-features'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -11,30 +11,30 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="DistinguishingFeaturesEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="DistinguishingFeaturesGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="DistinguishingFeaturesGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-group-residence'}" StyleClasses="LabelHeading" Margin="0 6" />
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-region'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-residence'}" StyleClasses="LabelHeading" Margin="0 6" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-region'}" />
             <BoxContainer Orientation="Horizontal">
                 <LineEdit Name="RegionEdit" HorizontalExpand="True" SizeFlagsStretchRatio="3" MinWidth="180" />
-                <Button Name="RegionGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" />
+                <Button Name="RegionGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-planet-or-colony'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-planet-or-colony'}" />
             <BoxContainer Orientation="Horizontal">
                 <LineEdit Name="PlanetOrColonyEdit" HorizontalExpand="True" SizeFlagsStretchRatio="3" MinWidth="180" />
-                <Button Name="PlanetOrColonyGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" />
+                <Button Name="PlanetOrColonyGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-address'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-address'}" />
             <BoxContainer Orientation="Horizontal">
                 <LineEdit Name="AddressEdit" HorizontalExpand="True" SizeFlagsStretchRatio="3" MinWidth="180" />
-                <Button Name="AddressGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" />
+                <Button Name="AddressGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-group-personal'}" StyleClasses="LabelHeading" Margin="0 6" />
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-education'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-personal'}" StyleClasses="LabelHeading" Margin="0 6" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-education'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -42,10 +42,10 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="EducationEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="EducationGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="EducationGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-work-experience'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-work-experience'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -53,16 +53,16 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="WorkExperienceEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="WorkExperienceGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="WorkExperienceGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
             <BoxContainer Orientation="Horizontal">
-                    <Label Text="{Loc 'humanoid-profile-editor-portfolio-marital-status'}" />
+                    <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-marital-status'}" />
                     <Control HorizontalExpand="True"/>
                     <OptionButton Name="MaritalStatusButton" HorizontalAlignment="Right" />
                 </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-close-relatives'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-close-relatives'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -70,10 +70,10 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="CloseRelativesEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="CloseRelativesGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="CloseRelativesGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-emergency-contact'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -81,11 +81,11 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="EmergencyContactEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="EmergencyContactGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="EmergencyContactGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-group-medical'}" StyleClasses="LabelHeading" Margin="0 6" />
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-physiological-traits'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-medical'}" StyleClasses="LabelHeading" Margin="0 6" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-physiological-traits'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -93,10 +93,10 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="PhysiologicalTraitsEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="PhysiologicalTraitsGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="PhysiologicalTraitsGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-psychological-traits'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-psychological-traits'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -104,11 +104,11 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="PsychologicalTraitsEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="PsychologicalTraitsGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="PsychologicalTraitsGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-group-legal'}" StyleClasses="LabelHeading" Margin="0 6" />
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-arrest-history'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-legal'}" StyleClasses="LabelHeading" Margin="0 6" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-arrest-history'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -116,10 +116,10 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="ArrestHistoryEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="ArrestHistoryGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="ArrestHistoryGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
 
-            <Label Text="{Loc 'humanoid-profile-editor-portfolio-conviction-history'}" />
+            <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-conviction-history'}" />
             <BoxContainer Orientation="Horizontal" VerticalExpand="False">
                 <PanelContainer HorizontalExpand="True" MinHeight="60">
                     <PanelContainer.PanelOverride>
@@ -127,7 +127,7 @@
                     </PanelContainer.PanelOverride>
                     <TextEdit Name="ConvictionHistoryEdit" HorizontalExpand="True" MinHeight="60" MinWidth="180" />
                 </PanelContainer>
-                <Button Name="ConvictionHistoryGen" Text="{Loc 'humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
+                <Button Name="ConvictionHistoryGen" Text="{Loc 'lust-humanoid-profile-editor-portfolio-generate'}" StyleClasses="OpenLeft" VerticalAlignment="Top" />
             </BoxContainer>
         </BoxContainer>
     </ScrollContainer>

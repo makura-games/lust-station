@@ -43,7 +43,7 @@ public sealed partial class LustCriminalRecordPortfolioControl : Control
 
         MaritalStatus.Text = portfolio is not null
             ? Loc.GetString(
-                $"humanoid-profile-editor-portfolio-marital-{portfolio.MaritalStatusValue.ToString().ToLowerInvariant()}-text")
+                $"lust-humanoid-profile-editor-portfolio-marital-{portfolio.MaritalStatusValue.ToString().ToLowerInvariant()}-text")
             : missing;
     }
 

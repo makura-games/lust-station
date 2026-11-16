@@ -96,7 +96,7 @@ public sealed partial class HumanoidProfileEditor
         _portfolio = new PortfolioEditor();
         _portfolio.OnProfileChanged += OnPortfolioChange;
         TabContainer.AddChild(_portfolio);
-        TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("humanoid-profile-editor-portfolio-tab"));
+        TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("lust-humanoid-profile-editor-portfolio-tab"));
     }
 
     private void OnPortfolioChange(HumanoidCharacterProfile profile)

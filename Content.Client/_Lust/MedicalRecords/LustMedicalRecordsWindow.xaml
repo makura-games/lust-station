@@ -59,7 +59,7 @@
                             <controls:StripeBack HorizontalExpand="True" HasTopEdge="False" Margin="0 4">
                                 <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="6" HorizontalExpand="True">
                                     <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
-                                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-close-relatives'}"
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-close-relatives'}"
                                                VerticalAlignment="Top" />
                                         <TextEdit Name="CloseRelatives"
                                                   StyleClasses="LustReadOnlyPortfolioField"
@@ -67,7 +67,7 @@
                                                   MinSize="420 55"
                                                   HorizontalExpand="True" />
 
-                                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-emergency-contact'}"
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}"
                                                VerticalAlignment="Top" />
                                         <TextEdit Name="EmergencyContact"
                                                   StyleClasses="LustReadOnlyPortfolioField"
@@ -79,7 +79,7 @@
                                     <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
 
                                     <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
-                                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-physiological-traits'}"
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-physiological-traits'}"
                                                VerticalAlignment="Top" />
                                         <TextEdit Name="PhysiologicalTraits" MinSize="420 65" HorizontalExpand="True" />
                                     </GridContainer>
@@ -87,7 +87,7 @@
                                     <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
 
                                     <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
-                                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-psychological-traits'}"
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-psychological-traits'}"
                                                VerticalAlignment="Top" />
                                         <TextEdit Name="PsychologicalTraits" MinSize="420 65" HorizontalExpand="True" />
                                     </GridContainer>

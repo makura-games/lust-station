@@ -236,7 +236,7 @@ public sealed partial class LustGeneralRecord : BoxContainer
         foreach (var status in Enum.GetValues<MaritalStatus>())
         {
             LustMaritalStatus.AddItem(
-                _loc.GetString($"humanoid-profile-editor-portfolio-marital-{status.ToString().ToLowerInvariant()}-text"),
+                _loc.GetString($"lust-humanoid-profile-editor-portfolio-marital-{status.ToString().ToLowerInvariant()}-text"),
                 (int) status);
         }
         LustMaritalStatus.SelectId((int) marital);

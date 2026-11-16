@@ -1,7 +1,7 @@
 <Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <Collapsible Name="PortfolioCollapsible" HorizontalExpand="True">
-        <CollapsibleHeading Title="{Loc 'humanoid-profile-editor-portfolio-additional-information'}"
+        <CollapsibleHeading Title="{Loc 'lust-humanoid-profile-editor-portfolio-additional-information'}"
                             MinHeight="32" />
         <CollapsibleBody>
             <ScrollContainer HorizontalExpand="True"
@@ -13,7 +13,7 @@
                               Margin="8 4"
                               SeparationOverride="4">
                     <GridContainer Columns="1" HorizontalExpand="True">
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-distinguishing-features'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-distinguishing-features'}"
                                StyleClasses="LabelSecondaryColor"
                                VerticalAlignment="Top" />
                         <TextEdit Name="DistinguishingFeatures"
@@ -25,22 +25,22 @@
 
                     <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
 
-                    <Label Text="{Loc 'humanoid-profile-editor-portfolio-group-residence'}"
+                    <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-residence'}"
                            StyleClasses="LabelHeading" />
                     <GridContainer Columns="2" HorizontalExpand="True">
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-region'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-region'}"
                                StyleClasses="LabelSecondaryColor" />
                         <Label Name="Region"
                                StyleClasses="LustReadOnlyPortfolioField"
                                HorizontalExpand="True" />
 
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-planet-or-colony'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-planet-or-colony'}"
                                StyleClasses="LabelSecondaryColor" />
                         <Label Name="PlanetOrColony"
                                StyleClasses="LustReadOnlyPortfolioField"
                                HorizontalExpand="True" />
 
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-address'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-address'}"
                                StyleClasses="LabelSecondaryColor" />
                         <Label Name="Address"
                                StyleClasses="LustReadOnlyPortfolioField"
@@ -49,10 +49,10 @@
 
                     <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
 
-                    <Label Text="{Loc 'humanoid-profile-editor-portfolio-group-personal'}"
+                    <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-personal'}"
                            StyleClasses="LabelHeading" />
                     <GridContainer Columns="2" HorizontalExpand="True">
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-marital-status'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-marital-status'}"
                                StyleClasses="LabelSecondaryColor" />
                         <Label Name="MaritalStatus"
                                StyleClasses="LustReadOnlyPortfolioField"
@@ -60,7 +60,7 @@
                     </GridContainer>
 
                     <GridContainer Columns="1" HorizontalExpand="True">
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-close-relatives'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-close-relatives'}"
                                StyleClasses="LabelSecondaryColor"
                                VerticalAlignment="Top" />
                         <TextEdit Name="CloseRelatives"
@@ -69,7 +69,7 @@
                                   MinSize="420 75"
                                   Editable="False" />
 
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-emergency-contact'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}"
                                StyleClasses="LabelSecondaryColor"
                                VerticalAlignment="Top" />
                         <TextEdit Name="EmergencyContact"
@@ -81,10 +81,10 @@
 
                     <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
 
-                    <Label Text="{Loc 'humanoid-profile-editor-portfolio-group-legal'}"
+                    <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-legal'}"
                            StyleClasses="LabelHeading" />
                     <GridContainer Columns="1" HorizontalExpand="True">
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-arrest-history'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-arrest-history'}"
                                StyleClasses="LabelSecondaryColor"
                                VerticalAlignment="Top" />
                         <TextEdit Name="ArrestHistory"
@@ -93,7 +93,7 @@
                                   MinSize="420 75"
                                   Editable="False" />
 
-                        <Label Text="{Loc 'humanoid-profile-editor-portfolio-conviction-history'}"
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-conviction-history'}"
                                StyleClasses="LabelSecondaryColor"
                                VerticalAlignment="Top" />
                         <TextEdit Name="ConvictionHistory"

@@ -23,6 +23,6 @@ public sealed partial class GeneralStationRecordConsoleSystem
             return Loc.GetString("printed-station-records-unrecognized");
 
         return Loc.GetString(
-            $"humanoid-profile-editor-portfolio-marital-{maritalStatus.Value.ToString().ToLowerInvariant()}-text");
+            $"lust-humanoid-profile-editor-portfolio-marital-{maritalStatus.Value.ToString().ToLowerInvariant()}-text");
     }
 }

@@ -70,7 +70,7 @@ public sealed partial class PortfolioEditor : Control
         foreach (var status in Enum.GetValues<MaritalStatus>())
         {
             MaritalStatusButton.AddItem(
-                Loc.GetString($"humanoid-profile-editor-portfolio-marital-{status.ToString().ToLowerInvariant()}-text"),
+                Loc.GetString($"lust-humanoid-profile-editor-portfolio-marital-{status.ToString().ToLowerInvariant()}-text"),
                 (int) status);
         }
 
