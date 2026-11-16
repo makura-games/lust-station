@@ -231,6 +231,7 @@ namespace Content.Shared.Preferences
                 Sex = sex.Value,
                 Appearance = HumanoidCharacterAppearance.DefaultWithSpecies(species.Value, sex.Value),
                 SunriseProfile = SunriseCharacterProfile.DefaultForSpecies(species.Value, sex.Value), // Sunrise-Edit
+                Portfolio = PortfolioProfile.RandomForSpecies(species.Value), // Lust edit
             };
         }
 
