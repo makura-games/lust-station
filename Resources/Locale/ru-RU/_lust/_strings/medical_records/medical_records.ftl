@@ -14,3 +14,4 @@ lust-medical-records-biometrics-locked = Консоль заблокирован
 lust-medical-records-advanced-access-locked = Продвинутый доступ: Заблокирован
 lust-medical-records-advanced-access-unlocked = Продвинутый доступ: Разблокирован
 lust-medical-records-notes-placeholder = Здесь будет текст...
+lust-medical-records-access-denied = Доступ запрещён

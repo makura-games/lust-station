@@ -97,10 +97,20 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         if (args.Handled
             || !args.CanReach
             || !this.IsPowered(ent.Owner, EntityManager)
-            || !TryComp<IdCardComponent>(args.Used, out _)
-            || !_access.FindAccessTags(args.Used)
-                .Contains(ent.Comp.BiometricsAccess))
+            || !TryComp<IdCardComponent>(args.Used, out _))
         {
+            return;
+        }
+
+        if (!_access.FindAccessTags(args.Used).Contains(ent.Comp.BiometricsAccess))
+        {
+            // Карта не подходит для биометрии — фидбек, без переключения режима
+            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
+            _popup.PopupEntity(
+                Loc.GetString("lust-medical-records-access-denied"),
+                ent.Owner,
+                args.User);
+            args.Handled = true;
             return;
         }
 
@@ -138,7 +148,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// </summary>
     private void OnSelectRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsSelectRecordMessage msg)
     {
-        if (!_access.IsAllowed(msg.Actor, ent.Owner))
+        if (!CheckAccessOrDeny(ent, msg.Actor))
             return;
 
         if (msg.SelectedKey == null)
@@ -175,13 +185,12 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// <summary>
     /// При открытии консоли проверяет доступ и отправляет стейт + детали актору.
     /// </summary>
-    private void OnOpened(EntityUid uid, LustMedicalRecordsConsoleComponent component, BoundUIOpenedEvent args)
+    private void OnOpened(Entity<LustMedicalRecordsConsoleComponent> ent, ref BoundUIOpenedEvent args)
     {
-        if (!_access.IsAllowed(args.Actor, uid))
-            return;
+        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
 
-        UpdateUserInterface(uid, component, component.BiometricsUnlocked);
-        SendRecordDetails(uid, component, args.Actor);
+        if (_access.IsAllowed(args.Actor, ent.Owner))
+            SendRecordDetails(ent.Owner, ent.Comp, args.Actor);
     }
 
     /// <summary>
@@ -190,8 +199,10 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// </summary>
     private void OnSaveRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsSaveMessage msg)
     {
-        if (!_access.IsAllowed(msg.Actor, ent.Owner)
-            || ent.Comp.ActiveKey != msg.RecordId
+        if (!CheckAccessOrDeny(ent, msg.Actor))
+            return;
+
+        if (ent.Comp.ActiveKey != msg.RecordId
             || !Enum.IsDefined(typeof(Gender), msg.Gender)
             || _station.GetOwningStation(ent.Owner) is not { } station
             || !_prototype.TryIndex<SpeciesPrototype>(msg.Species, out _))
@@ -245,8 +256,10 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// </summary>
     private void OnPrintRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsPrintMessage msg)
     {
-        if (!_access.IsAllowed(msg.Actor, ent.Owner)
-            || ent.Comp.ActiveKey != msg.RecordId)
+        if (!CheckAccessOrDeny(ent, msg.Actor))
+            return;
+
+        if (ent.Comp.ActiveKey != msg.RecordId)
             return;
 
         if (_timing.CurTime < ent.Comp.NextPrintTime)
@@ -403,5 +416,25 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         }
 
         return result.ToString();
+    }
+
+    /// <summary>
+    /// Проверяет доступ актора к консоли. При отказе играет звук,
+    /// показывает попап только актору и возвращает false.
+    /// </summary>
+    private bool CheckAccessOrDeny(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        EntityUid actor)
+    {
+        if (_access.IsAllowed(actor, ent.Owner))
+            return true;
+
+        _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
+        _popup.PopupEntity(
+            Loc.GetString("lust-medical-records-access-denied"),
+            ent.Owner,
+            actor);
+
+        return false;
     }
 }

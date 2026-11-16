@@ -1,0 +1,17 @@
+lust-medical-records-empty-state = Select a crewmember on the left.
+lust-medical-records-section-notes = Doctor's notes:
+lust-medical-records-field-name = Name:
+lust-medical-records-field-age = Age:
+lust-medical-records-field-gender = Gender:
+lust-medical-records-field-species = Species:
+lust-medical-records-field-job = Job:
+lust-medical-records-field-fingerprint = Fingerprints:
+lust-medical-records-field-dna = DNA:
+lust-medical-records-save = Save
+lust-medical-records-print = Print
+lust-medical-records-biometrics-unlocked = Console unlocked. DNA and fingerprint editing allowed.
+lust-medical-records-biometrics-locked = Console locked. DNA and fingerprint editing forbidden.
+lust-medical-records-advanced-access-locked = Advanced access: Locked
+lust-medical-records-advanced-access-unlocked = Advanced access: Unlocked
+lust-medical-records-notes-placeholder = Text will appear here...
+lust-medical-records-access-denied = Access denied
