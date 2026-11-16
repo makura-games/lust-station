@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._Lust.Preferences;
 using Content.Shared._Sunrise.Preferences;
 using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared.CCVar;
@@ -393,7 +394,10 @@ namespace Content.Shared.Preferences
             else if (profile.Species != baseProfile.Species || profile.Sex != baseProfile.Sex)
                 profile.AdaptSunriseRandomProfile(speciesProto, prototypeManager);
             // Sunrise edit end
-
+            // Lust start - регенерируем портфолио только при полной рандомизации
+            if (fullRandom)
+                profile.Portfolio = PortfolioProfile.RandomForSpecies(profile.Species);
+            // Lust end
             return profile;
         }
 
