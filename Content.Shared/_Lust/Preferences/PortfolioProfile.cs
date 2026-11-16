@@ -11,8 +11,7 @@ namespace Content.Shared._Lust.Preferences;
 [Serializable, NetSerializable]
 public sealed partial class PortfolioProfile : IEquatable<PortfolioProfile>
 {
-    // Лимиты длин. Должны совпадать с MaxLength в БД (Model.Lust.cs),
-    // иначе Postgres уронит сохранение, а SQLite молча пропустит мусор.
+    // Лимиты длин. Должны совпадать с MaxLength на полях ProfilePortfolio в БД (Model.Lust.cs).
     private const int MaxTextLength = 512;
     private const int MaxShortTextLength = 128;
 

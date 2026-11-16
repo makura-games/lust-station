@@ -1,7 +1,7 @@
 ﻿namespace Content.Shared._Lust.Preferences;
 
 /// <summary>
-/// Семейное положение персонажа. В портфолио хранится строкой через ToString().
+/// Семейное положение персонажа. Хранится как enum в PortfolioProfile.MaritalStatusValue.
 /// </summary>
 public enum MaritalStatus : byte
 {
