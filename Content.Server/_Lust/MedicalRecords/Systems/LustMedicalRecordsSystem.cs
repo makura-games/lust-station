@@ -1,4 +1,5 @@
-﻿using Content.Server.Hands.Systems;
+﻿using System.Linq;
+using Content.Server.Hands.Systems;
 using Content.Server._Lust.MedicalRecords.Components;
 using Content.Server.Popups;
 using Content.Server.Power.EntitySystems;
@@ -338,18 +339,36 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
             return;
         }
 
-        var listing = _records.BuildListing((station, stationRecords), null);
+        var listingRecords = new List<LustMedicalRecordListing>();
+        foreach (var (id, _) in _records.BuildListing((station, stationRecords), null))
+        {
+            var key = new StationRecordKey(id, station);
+            if (_records.TryGetRecord<GeneralStationRecord>(key, out var general))
+            {
+                listingRecords.Add(new LustMedicalRecordListing(
+                    id,
+                    general.Name,
+                    general.DNA,
+                    general.Fingerprint,
+                    general.Species,
+                    general.Gender.ToString(),
+                    general.JobTitle));
+            }
+        }
 
-        if (listing.Count == 0)
+        if (listingRecords.Count == 0)
         {
             _ui.SetUiState(
                 uid,
                 LustMedicalRecordsUiKey.Key,
-                new LustMedicalRecordsUiState(listing, null));
+                new LustMedicalRecordsUiState(
+                    listingRecords,
+                    null,
+                    canEditBiometrics));
             return;
         }
 
-        if (component.ActiveKey is { } selectedKey && !listing.ContainsKey(selectedKey))
+        if (component.ActiveKey is { } selectedKey && !listingRecords.Any(r => r.Id == selectedKey))
             component.ActiveKey = null;
 
         // В общий стейт детали не кладём: их смотрит только проверенный актор через SendRecordDetails.
@@ -357,7 +376,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
             uid,
             LustMedicalRecordsUiKey.Key,
             new LustMedicalRecordsUiState(
-                listing,
+                listingRecords,
                 component.ActiveKey,
                 canEditBiometrics));
     }

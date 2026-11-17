@@ -1,4 +1,5 @@
-﻿using Content.Shared.Preferences;
+﻿using System.Collections.Generic;
+using Content.Shared.Preferences;
 using Robust.Shared.Enums;
 using Robust.Shared.Serialization;
 
@@ -14,6 +15,19 @@ public enum LustMedicalRecordsUiKey : byte
 }
 
 /// <summary>
+/// Упрощённая запись для листинга медицинской консоли — только поля, по которым можно искать.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed record LustMedicalRecordListing(
+    uint Id,
+    string Name,
+    string? DNA,
+    string? Fingerprints,
+    string? Species,
+    string? Gender,
+    string? JobTitle);
+
+/// <summary>
 /// Данные медицинской консоли, которые сервер отправляет клиенту.
 /// Содержит только листинг и выбор: детали записи едут отдельным
 /// направленным сообщением только проверенному актору.
@@ -21,7 +35,7 @@ public enum LustMedicalRecordsUiKey : byte
 [Serializable, NetSerializable]
 public sealed class LustMedicalRecordsUiState : BoundUserInterfaceState
 {
-    public readonly Dictionary<uint, string>? RecordListing;
+    public readonly List<LustMedicalRecordListing>? RecordListing;
     public readonly uint? SelectedKey;
     public readonly bool CanEditBiometrics;
 
@@ -37,20 +51,10 @@ public sealed class LustMedicalRecordsUiState : BoundUserInterfaceState
     }
 
     /// <summary>
-    /// Создаёт состояние со списком и текущим выбором.
-    /// </summary>
-    public LustMedicalRecordsUiState(Dictionary<uint, string> recordListing, uint? selectedKey)
-    {
-        RecordListing = recordListing;
-        SelectedKey = selectedKey;
-        CanEditBiometrics = false;
-    }
-
-    /// <summary>
     /// Создаёт состояние со списком, выбором и флагом доступа к биометрии.
     /// </summary>
     public LustMedicalRecordsUiState(
-        Dictionary<uint, string> recordListing,
+        List<LustMedicalRecordListing> recordListing,
         uint? selectedKey,
         bool canEditBiometrics)
     {
