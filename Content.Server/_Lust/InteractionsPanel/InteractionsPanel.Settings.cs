@@ -17,7 +17,6 @@ public partial class InteractionsPanel
 
     /// <summary>
     /// Пытается изменить запрет ERP-взаимодействий персонажа.
-    /// Возвращает true, только если значение было изменено.
     /// </summary>
     public bool TrySetErpInteractionLock(
         Entity<InteractionsComponent> ent,
@@ -33,7 +32,6 @@ public partial class InteractionsPanel
 
     /// <summary>
     /// Проверяет право изменить настройку и необходимость изменения.
-    /// Не изменяет компоненты и не обновляет интерфейсы.
     /// </summary>
     public bool CanSetErpInteractionLock(
         Entity<InteractionsComponent> ent,
@@ -41,7 +39,7 @@ public partial class InteractionsPanel
         bool locked)
     {
         // Изменять настройку может только сам владелец персонажа.
-        if (actor != ent.Owner)
+        if (actor != ent.Owner)  
             return false;
 
         // Настройка доступна только при «Неполном ERP».
