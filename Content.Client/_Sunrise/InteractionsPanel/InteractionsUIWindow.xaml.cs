@@ -420,6 +420,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
         foreach (var customInteraction in customInteractions)
         {
+            // Lust-Start: скрываем кастомные ERP-действия при запрете цели.
+            if (_targetErpLocked && customInteraction.IsErp)
+                continue;
+            // Lust-End
             var categoryId = customInteraction.CategoryId;
 
             if (string.IsNullOrEmpty(categoryId) || !_prototypeManager.TryIndex<InteractionCategoryPrototype>(categoryId, out _))
@@ -1179,7 +1183,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
             SpawnsEffect = interaction.SpawnsEffect,
             EffectChance = interaction.EffectChance,
             EntityEffectId = interaction.EntityEffectId,
-            Cooldown = interaction.Cooldown
+            Cooldown = interaction.Cooldown,
+            // Lust-Start: переносим ERP-метку в копию для редактора.
+            IsErp = interaction.IsErp
+            // Lust-End
         };
 
         var editor = new CustomInteractionEditor(interactionCopy);

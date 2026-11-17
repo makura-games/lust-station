@@ -83,7 +83,12 @@ public partial class InteractionsPanel
             userNet,
             targetNet,
             interactionIds
-        );
+        )
+        {
+        // Lust-Start: тот же запрет используем для клиентских кастомных действий.
+        TargetErpLocked = HasTargetErpLock(user, target)
+        // Lust-End
+        };
     }
 
     private List<InteractionPrototype> FetchInteractions(EntityUid user, EntityUid target)

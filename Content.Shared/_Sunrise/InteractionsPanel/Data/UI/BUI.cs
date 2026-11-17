@@ -11,7 +11,7 @@ public enum InteractionWindowUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed class InteractionWindowBoundUserInterfaceState(NetEntity userEntity, NetEntity targetEntity, List<string> availableInteractionIds) : BoundUserInterfaceState
+public sealed partial  class InteractionWindowBoundUserInterfaceState(NetEntity userEntity, NetEntity targetEntity, List<string> availableInteractionIds) : BoundUserInterfaceState
 {
     public NetEntity UserEntity { get; } = userEntity;
     public NetEntity TargetEntity { get; } = targetEntity;
