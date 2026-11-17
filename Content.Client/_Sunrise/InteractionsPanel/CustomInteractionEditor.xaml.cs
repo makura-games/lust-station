@@ -390,11 +390,11 @@ public sealed partial class CustomInteractionEditor : DefaultWindow
 
         _interaction.Cooldown = CooldownSlider.Value;
 
-        _customInteractionService.SaveInteraction(_interaction);
-
         // Lust-Start
         SaveErpSetting();
         // Lust-End
+
+        _customInteractionService.SaveInteraction(_interaction);
 
         _onClose?.Invoke(true);
         Close();

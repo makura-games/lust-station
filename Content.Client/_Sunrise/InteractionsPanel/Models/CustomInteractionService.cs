@@ -219,6 +219,10 @@ public sealed partial class CustomInteractionService
                 writer.WriteLine($"EFFECT_ID:{interaction.EntityEffectId}");
                 writer.WriteLine($"COOLDOWN:{interaction.Cooldown}");
 
+                // Lust-Start: сохраняем ERP-метку в запись кастомного действия.
+                SaveErpSetting(writer, interaction);
+                // Lust-End
+
                 writer.WriteLine();
             }
 
