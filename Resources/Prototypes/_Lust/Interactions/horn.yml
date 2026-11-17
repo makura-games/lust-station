@@ -1,5 +1,6 @@
 - type: interaction
   id: HornsBlowjobFemale
+  isErp: true
   name: lust-interaction-HornsBlowjobFemale
   icon: HornsAssFemaleIcon
   category: Face
@@ -57,6 +58,7 @@
 
 - type: interaction
   id: HornsBlowjobMale
+  isErp: true
   name: lust-interaction-HornsBlowjobMale
   icon: HornsAssFemaleIcon
   category: Face
@@ -114,6 +116,7 @@
 
 - type: interaction
   id: HornsCunnilingusMale
+  isErp: true
   name: lust-interaction-HornsCunnilingusMale
   icon: HornsAssFemaleIcon
   category: Pussy
@@ -169,6 +172,7 @@
 
 - type: interaction
   id: HornsPussyFuck
+  isErp: true
   name: lust-interaction-HornsPussyFuck
   icon: HornsAssFemaleIcon
   category: Pussy
@@ -230,6 +234,7 @@
 
 - type: interaction
   id: HornsAssFuckFemale
+  isErp: true
   name: lust-interaction-HornsAssFuckFemale
   icon: HornsAssFemaleIcon
   category: Butt
@@ -290,6 +295,7 @@
 
 - type: interaction
   id: HornsAssFuckMale
+  isErp: true
   name: lust-interaction-HornsAssFuckMale
   icon: HornsAssFemaleIcon
   category: Butt

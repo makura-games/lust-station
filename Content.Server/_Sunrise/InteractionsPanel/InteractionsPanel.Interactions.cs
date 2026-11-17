@@ -227,15 +227,14 @@ public partial class InteractionsPanel
         if (!ProtoMan.TryIndex<InteractionPrototype>(args.InteractionId, out var interactionPrototype))
             return;
             
-        // Lust-Start
-        // Проверяем запрет зон до выполнения действия:
-        // отправки сообщений, звуков и применения эффектов.
-        if (IsInteractionBlockedByZones(
+        // Lust-Start: повторно проверяем ERP-запрет перед выполнением действия.
+        // Проверка нужна даже для сообщения из уже открытого окна.
+        if (IsInteractionBlockedByErp(
                 ent.Owner, target.Value, interactionPrototype))
         {
             return;
         }
-        // Lust-End    
+        // Lust-End
 
         if (!CheckAllAppearConditions(interactionPrototype, ent.Owner, target.Value))
             return;

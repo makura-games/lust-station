@@ -93,9 +93,8 @@ public partial class InteractionsPanel
 
         foreach (var interaction in allInteractions)
         {
-            // Lust-Start
-            // Не выдаём клиенту действия с запрещёнными зонами цели.
-            if (IsInteractionBlockedByZones(user, target, interaction))
+            // Lust-Start: фильтруем ERP-действия по метке прототипа и запрету цели.
+            if (IsInteractionBlockedByErp(user, target, interaction))
                 continue;
             // Lust-End
 

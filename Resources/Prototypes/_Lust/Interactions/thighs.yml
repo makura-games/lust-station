@@ -1,5 +1,6 @@
 ﻿- type: interaction
   id: LegsKiss
+  isErp: true
   name: lust-interaction-LegsKiss
   icon: ERP2Icon
   category: Legs
@@ -35,6 +36,7 @@
 
 - type: interaction
   id: LegsLick
+  isErp: true
   name: lust-interaction-LegsLick
   icon: LegsLickIcon
   category: Legs
@@ -65,6 +67,7 @@
 
 - type: interaction
   id: LegsFeetKiss
+  isErp: true
   name: lust-interaction-LegsFeetKiss
   icon: ERP2Icon
   category: Legs
@@ -93,6 +96,7 @@
 
 - type: interaction
   id: LegsFeetLick
+  isErp: true
   name: lust-interaction-LegsFeetLick
   icon: LegsLickIcon
   category: Legs
@@ -122,6 +126,7 @@
 
 - type: interaction
   id: LegsStrokeBetween
+  isErp: true
   name: lust-interaction-LegsStrokeBetween
   icon: LegsStrokeBetweenIcon
   category: Legs
@@ -143,6 +148,7 @@
 
 - type: interaction
   id: LegsBite
+  isErp: true
   name: lust-interaction-LegsBite
   icon: ERP2Icon
   category: Legs
@@ -170,6 +176,7 @@
 
 - type: interaction
   id: LegsCockFuck
+  isErp: true
   name: lust-interaction-LegsCockFuck
   icon: LegsCockFuckIcon
   category: Legs

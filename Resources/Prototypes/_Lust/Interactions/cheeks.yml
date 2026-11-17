@@ -1,5 +1,6 @@
 ﻿- type: interaction
   id: CheeksKiss
+  isErp: false
   name: lust-interaction-CheeksKiss
   icon: CheeksKissIcon
   category: Cheeks
@@ -33,6 +34,7 @@
 
 - type: interaction
   id: CheeksKissBoth
+  isErp: false
   name: lust-interaction-CheeksKissBoth
   icon: CheeksKissBothIcon
   category: Cheeks
@@ -66,6 +68,7 @@
 
 - type: interaction
   id: CheeksPat
+  isErp: false
   name: lust-interaction-CheeksPat
   icon: CheeksPressIcon
   category: Cheeks
@@ -92,6 +95,7 @@
 
 - type: interaction
   id: CheeksLick
+  isErp: false
   name: lust-interaction-CheeksLick
   icon: ERP2Icon
   category: Cheeks

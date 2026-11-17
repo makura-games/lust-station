@@ -1,5 +1,6 @@
 ﻿- type: interaction
   id: FriendlyKissHand
+  isErp: false
   name: lust-interaction-FriendlyKissHand
   icon: KissHandIcon
   category: Friendly
@@ -29,6 +30,7 @@
 
 - type: interaction
   id: FriendlyFlyingKiss
+  isErp: false
   name: lust-interaction-FriendlyFlyingKiss
   icon: FriendlyFlyingKissIcon
   category: Friendly
@@ -48,6 +50,7 @@
 
 - type: interaction
   id: FriendlyButtSlap
+  isErp: true
   name: lust-interaction-FriendlyButtSlap
   icon: SlapButtIcon
   category: Friendly
@@ -65,6 +68,7 @@
 
 - type: interaction
   id: FriendlyButtTwerk
+  isErp: true
   name: lust-interaction-FriendlyButtTwerk
   icon: SlapButtIcon
   category: Friendly

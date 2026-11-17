@@ -1,5 +1,6 @@
 ﻿- type: interaction
   id: MouthQuickPeck
+  isErp: false
   name: lust-interaction-MouthQuickPeck
   icon: GentleKissIcon
   category: Mouth
@@ -33,6 +34,7 @@
 
 - type: interaction
   id: MouthKissLips
+  isErp: false
   name: lust-interaction-MouthKissLips
   icon: GentleKissIcon
   category: Mouth
@@ -74,6 +76,7 @@
 
 - type: interaction
   id: MouthBlowjob
+  isErp: true
   name: lust-interaction-MouthBlowjob
   icon: CockBlowjobIcon
   category: Mouth
@@ -108,6 +111,7 @@
 
 - type: interaction
   id: MouthFingering
+  isErp: true
   name: lust-interaction-MouthFingering
   icon: ERP2Icon
   category: Mouth
@@ -135,6 +139,7 @@
 
 - type: interaction
   id: MouthHairFaceFuckMale
+  isErp: true
   name: lust-interaction-MouthHairFaceFuckMale
   icon: HairFaceFuckIcon
   category: Mouth
@@ -170,6 +175,7 @@
 
 - type: interaction
   id: MouthHairFaceFuckFemale
+  isErp: true
   name: lust-interaction-MouthHairFaceFuckFemale
   icon: HairFaceFuckIcon
   category: Mouth
