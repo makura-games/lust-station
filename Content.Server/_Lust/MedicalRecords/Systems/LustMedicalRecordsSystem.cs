@@ -150,12 +150,16 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     {
         if (msg.SelectedKey == null)
         {
-            ent.Comp.ActiveKey = null;
             if (ent.Comp.ActiveKey != null)
             {
+                ent.Comp.ActiveKey = null;
+                UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
+            }
             return;
         }
 
+        if (!CheckAccessOrDeny(ent, msg.Actor))
+            return;
 
         if (_station.GetOwningStation(ent.Owner) is not { } station)
             return;
