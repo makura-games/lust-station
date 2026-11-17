@@ -11,7 +11,7 @@ public enum InteractionWindowUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed partial  class InteractionWindowBoundUserInterfaceState(NetEntity userEntity, NetEntity targetEntity, List<string> availableInteractionIds) : BoundUserInterfaceState
+public sealed partial class InteractionWindowBoundUserInterfaceState(NetEntity userEntity, NetEntity targetEntity, List<string> availableInteractionIds) : BoundUserInterfaceState // Lust-Edit: расширение состояния панели ERP-данными в partial-файле _Lust.
 {
     public NetEntity UserEntity { get; } = userEntity;
     public NetEntity TargetEntity { get; } = targetEntity;
