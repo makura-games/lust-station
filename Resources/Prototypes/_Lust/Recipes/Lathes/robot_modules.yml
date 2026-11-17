@@ -1,0 +1,5 @@
+# TODO: нарисовать оснаску модулей
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: LustBorgModuleRepaire
+  result: LustBorgModuleRepaire
