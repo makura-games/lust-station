@@ -59,13 +59,13 @@ public sealed partial class LustMedicalRecordsConsoleComponent : Component
     public SoundSpecifier FailedSound = new SoundPathSpecifier("/Audio/Effects/Cargo/buzz_sigh.ogg");
 
     /// <summary>
-    /// Звук при успешном действии (сохранение записи, разблокировка биометрии).
+    /// Звук при успешном действии.
     /// </summary>
     [DataField]
     public SoundSpecifier SuccessfulSound = new SoundPathSpecifier("/Audio/Effects/Cargo/ping.ogg");
 
     /// <summary>
-    /// Звук при вставке ID-карты (переключение режима биометрии).
+    /// Звук при вставке ID-карты.
     /// </summary>
     [DataField]
     public SoundSpecifier CardInsertSound = new SoundPathSpecifier("/Audio/Weapons/Guns/MagIn/batrifle_magin.ogg");

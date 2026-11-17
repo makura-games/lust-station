@@ -150,7 +150,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
         RecordDetails.Visible = state.SelectedKey != null && _detailsKey == state.SelectedKey;
         SaveButton.Disabled = true;
-        PrintButton.Disabled = state.SelectedKey == null;
+        PrintButton.Disabled = !RecordDetails.Visible;
         FingerprintValue.Editable = state.CanEditBiometrics;
         DnaValue.Editable = state.CanEditBiometrics;
 
@@ -201,7 +201,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         RecordDetails.Visible = true;
         _isPopulating = false;
         SaveButton.Disabled = true;
-        PrintButton.Disabled = _selectedKey == null;
+        PrintButton.Disabled = false;
     }
 
     /// <summary>

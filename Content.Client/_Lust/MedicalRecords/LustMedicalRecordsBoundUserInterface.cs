@@ -21,8 +21,10 @@ public sealed class LustMedicalRecordsBoundUserInterface : BoundUserInterface
         base.Open();
 
         _window = this.CreateWindow<LustMedicalRecordsWindow>();
+
         _window.OnRecordSelected += selectedKey =>
             SendMessage(new LustMedicalRecordsSelectRecordMessage(selectedKey));
+
         _window.OnSaveRequested += (recordId, gender, species, physiologicalTraits, psychologicalTraits, notes, fingerprint, dna) =>
             SendMessage(new LustMedicalRecordsSaveMessage(
                 recordId,
@@ -33,6 +35,7 @@ public sealed class LustMedicalRecordsBoundUserInterface : BoundUserInterface
                 notes,
                 fingerprint,
                 dna));
+
         _window.OnPrintRequested += recordId =>
             SendMessage(new LustMedicalRecordsPrintMessage(recordId));
     }

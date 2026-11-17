@@ -144,17 +144,15 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     }
 
     /// <summary>
-    /// Обрабатывает выбор/снятие выбора записи.
+    /// Обрабатывает выбор/снятие выбора записи, издаёт звук отказа и поап при попытки выбрать запись без доступа.
     /// </summary>
     private void OnSelectRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsSelectRecordMessage msg)
     {
-        if (!CheckAccessOrDeny(ent, msg.Actor))
-            return;
-
         if (msg.SelectedKey == null)
         {
             ent.Comp.ActiveKey = null;
-            UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
+            if (ent.Comp.ActiveKey != null)
+            {
             return;
         }
 
