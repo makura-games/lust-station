@@ -1,0 +1,70 @@
+# Крафты пропиткой реагентом в меню крафта
+- type: construction
+  id: LustReagentCraftBlueOintment
+  graph: LustReagentCraft
+  startNode: start
+  targetNode: blueOintment
+  category: construction-category-tools
+  objectType: Item
+  description: reagent-craft-description-blue-ointment
+  conditions:
+  - !type:ReagentCraftCondition
+    stack: Ointment
+    reagent: Leporazine
+    amount: 15
+
+- type: construction
+  id: LustReagentCraftRedOintment
+  graph: LustReagentCraft
+  startNode: start
+  targetNode: redOintment
+  category: construction-category-tools
+  objectType: Item
+  description: reagent-craft-description-red-ointment
+  conditions:
+  - !type:ReagentCraftCondition
+    stack: Ointment
+    reagent: Pyrazine
+    amount: 15
+
+- type: construction
+  id: LustReagentCraftRedPunctPack
+  graph: LustReagentCraft
+  startNode: start
+  targetNode: redPunctPack
+  category: construction-category-tools
+  objectType: Item
+  description: reagent-craft-description-red-punct-pack
+  conditions:
+  - !type:ReagentCraftCondition
+    stack: Brutepack
+    reagent: Puncturase
+    amount: 15
+
+- type: construction
+  id: LustReagentCraftRedLacePack
+  graph: LustReagentCraft
+  startNode: start
+  targetNode: redLacePack
+  category: construction-category-tools
+  objectType: Item
+  description: reagent-craft-description-red-lace-pack
+  conditions:
+  - !type:ReagentCraftCondition
+    stack: Brutepack
+    reagent: Lacerinol
+    amount: 15
+
+- type: construction
+  id: LustReagentCraftRedBruizPack
+  graph: LustReagentCraft
+  startNode: start
+  targetNode: redBruizPack
+  category: construction-category-tools
+  objectType: Item
+  description: reagent-craft-description-red-bruiz-pack
+  conditions:
+  - !type:ReagentCraftCondition
+    stack: Brutepack
+    reagent: Bruizine
+    amount: 15
