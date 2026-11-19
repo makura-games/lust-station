@@ -1,0 +1,21 @@
+- type: alert
+  id: SwarmerResources
+  icons:
+  - sprite: /Textures/Interface/Alerts/generic_counter.rsi
+    state: base
+  alertViewEntity: AlertSwarmerResourcesSpriteView
+  name: alerts-swarmer-resources-name
+  description: alerts-swarmer-resources-desc
+
+- type: entity
+  id: AlertSwarmerResourcesSpriteView
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GenericCounterAlert
+  - type: Sprite
+    sprite: /Textures/Interface/Alerts/generic_counter.rsi
+    layers:
+    - map: [ "enum.AlertVisualLayers.Base" ]
+    - map: [ "1" ]
+    - map: [ "10" ]
+    - map: [ "100" ]

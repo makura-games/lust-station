@@ -1,0 +1,117 @@
+- type: entity
+  abstract: true
+  id: BaseSwarmerStructure
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+    # Постройки всегда стоят ровно по сетке.
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Inorganic
+
+- type: entity
+  parent: BaseSwarmerStructure
+  id: SwarmerBarricade
+  name: swarmer barricade
+  description: A shimmering wall of hard light. Swarmers and their shots pass straight through it.
+  components:
+  - type: SwarmerStructure
+    swarmerPassable: true
+  - type: Sprite
+    sprite: _Lust/Swarmer/Structures/swarmer_structures.rsi
+    state: barricade
+    drawdepth: Mobs
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        density: 1000
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer
+  - type: PointLight
+    radius: 1.5
+    energy: 0.5
+    color: "#00FFFF"
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          path: /Audio/Effects/sparks4.ogg
+      - !type:SpawnEntitiesBehavior
+        offset: 0
+        spawn:
+          EffectSparks:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  parent: BaseSwarmerStructure
+  id: SwarmerTrap
+  name: swarmer trap
+  description: A crackling plate of energy, waiting for someone to step on it.
+  placement:
+    mode: PlaceFree
+  components:
+  # Ловушка лежит там, куда кликнули, а не в центре клетки: закреплённый объект движок ставит ровно по сетке.
+  - type: Transform
+    anchored: false
+    noRot: true
+  - type: SwarmerStructure
+  - type: Sprite
+    sprite: _Lust/Swarmer/Structures/swarmer_structures.rsi
+    state: trap
+    drawdepth: FloorObjects
+  - type: CollisionWake
+    enabled: false
+  - type: Fixtures
+    fixtures:
+      slips:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.3,-0.3,0.3,0.3"
+        hard: false
+        layer:
+        - SlipLayer
+  - type: StepTrigger
+    intersectRatio: 0.2
+    requiredTriggeredSpeed: 0
+  # Разрешает срабатывание на всех живых, кроме свармеров.
+  - type: SwarmerTrap
+  - type: TriggerOnStepTrigger
+  - type: ShockOnTrigger
+    targetUser: true
+    damage: 5
+    duration: 10
+  - type: EmitSoundOnTrigger
+    sound:
+      path: /Audio/Effects/sparks4.ogg
+  - type: SpawnOnTrigger
+    proto: EffectSparks
+    # Ловушку удаляет тот же триггер, поэтому искры к ней не привязываем.
+    useMapCoords: true
+  - type: DeleteOnTrigger
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 10
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]

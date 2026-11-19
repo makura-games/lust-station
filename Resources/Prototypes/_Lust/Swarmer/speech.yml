@@ -1,0 +1,15 @@
+# Мысленная связь роя: пишется через `+с`, слышат только свармеры. В отличие от радио, текст не проходит
+# через акцент, поэтому свармеры понимают друг друга, а вслух издают только звуки.
+- type: collectiveMind
+  id: Swarmer
+  name: collective-mind-swarmer
+  keycode: 'с'
+  color: "#00c8c8"
+
+# Вслух свармер не говорит: любая его речь заменяется одним из этих звуков.
+- type: accent
+  id: swarmer
+  fullReplacements:
+  - swarmer-speech-buzz
+  - swarmer-speech-whoop
+  - swarmer-speech-beep

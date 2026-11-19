@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/6830f24 (removed in PR #63989)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "swarmer",
+      "directions": 4
+    },
+    {
+      "name": "swarmer-move",
+      "directions": 4,
+      "delays": [
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+      ]
+    },
+    {
+      "name": "swarmer_unactivated"
+    },
+    {
+      "name": "swarmer_ranged",
+      "directions": 4
+    },
+    {
+      "name": "swarmer_ranged-move",
+      "directions": 4,
+      "delays": [
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+      ]
+    },
+    {
+      "name": "swarmer_melee",
+      "directions": 4
+    },
+    {
+      "name": "swarmer_melee-move",
+      "directions": 4,
+      "delays": [
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1, 0.1, 0.1]
+      ]
+    }
+  ]
+}

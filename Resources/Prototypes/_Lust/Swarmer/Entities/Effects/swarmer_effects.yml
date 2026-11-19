@@ -1,0 +1,53 @@
+- type: entity
+  abstract: true
+  id: BaseEffectSwarmer
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+    sprite: _Lust/Swarmer/Effects/swarmer_effects.rsi
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: AnimationPlayer
+
+- type: entity
+  parent: BaseEffectSwarmer
+  id: EffectSwarmerIntegrate
+  components:
+  - type: TimedDespawn
+    lifetime: 0.5
+  - type: Sprite
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      state: integrate
+
+- type: entity
+  parent: BaseEffectSwarmer
+  id: EffectSwarmerDisintegrate
+  components:
+  - type: TimedDespawn
+    lifetime: 0.8
+  - type: Sprite
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      state: disintegrate
+
+- type: entity
+  parent: BaseEffectSwarmer
+  id: EffectSwarmerDismantle
+  components:
+  - type: TimedDespawn
+    lifetime: 2
+  - type: Sprite
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      state: dismantle
