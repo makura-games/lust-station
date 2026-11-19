@@ -145,11 +145,21 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         var currentExpand = _cfg.GetCVar(InteractionsCVars.Expand);
         EmoteVisibilityCheckBox.Pressed = currentVisibility;
         HideTopPanelCheckBox.Pressed = currentExpand;
+        // Lust edit - подтверждение отключения панели взаимодействия.
+        DisableInteractionPanelCheckBox.OnToggled += OnDisableInteractionPanelToggled;
+        // Lust edit - управление автоматическим снижением прогресса.
+        DisableLoveDecayCheckBox.OnToggled += OnDisableLoveDecayToggled;
         ApplySettingsButton.OnPressed += OnApplySettings;
         TopUserInfoBox.Visible = !currentExpand;
     }
 
     private void OnApplySettings(BaseButton.ButtonEventArgs args)
+    {
+        ApplySettings();
+    }
+
+    // Lust edit - применяет отложенные настройки окна перед его возможным закрытием.
+    private void ApplySettings()
     {
         var emoteVisible = EmoteVisibilityCheckBox.Pressed;
         var expand = HideTopPanelCheckBox.Pressed;
@@ -269,8 +279,22 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
     public void UpdateState(NetEntity userEntity,
         NetEntity targetEntity,
-        List<string> availableInteractionIds)
+        List<string> availableInteractionIds,
+        bool panelEnabled,
+        bool loveDecayEnabled)
     {
+        // Lust edit start - синхронизация настройки отключения панели.
+        _panelEnabled = panelEnabled;
+        _updatingPanelSetting = true;
+        DisableInteractionPanelCheckBox.Pressed = !panelEnabled;
+        _updatingPanelSetting = false;
+        // Lust edit end
+        // Lust edit start - синхронизация настройки снижения прогресса.
+        _loveDecayEnabled = loveDecayEnabled;
+        _updatingLoveDecaySetting = true;
+        DisableLoveDecayCheckBox.Pressed = !loveDecayEnabled;
+        _updatingLoveDecaySetting = false;
+        // Lust edit end
         _userEntity = userEntity; // Lust-Edit
         UpdateEntityInformation(userEntity, targetEntity);
         _currentInteractionIds = availableInteractionIds;
