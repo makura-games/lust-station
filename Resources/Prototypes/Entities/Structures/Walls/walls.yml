@@ -53,7 +53,7 @@
 
 - type: entity
   abstract: true
-  parent: BaseStructureWall
+  parent: [BaseStructureWall, SunriseWallDamageVisualsBase] # Lust edit - визуализировать повреждения стен
   id: BaseWall
   components:
   - type: Occluder # Breaks on diagonal walls
@@ -66,7 +66,7 @@
 
 - type: entity
   abstract: true
-  parent: BaseStructureWall
+  parent: [BaseStructureWall, SunriseWallDamageVisualsBase] # Lust edit - визуализировать повреждения стен
   id: WallDiagonalBase
   suffix: Diagonal
   components:
