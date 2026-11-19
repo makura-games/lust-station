@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Numerics;
 using Content.Server._Sunrise.Doors.Components;
 using Content.Server.Atmos.Components;
@@ -7,6 +8,7 @@ using Content.Shared.Doors.Components;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Server.GameObjects;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Sunrise.Doors.Systems;
 
@@ -14,9 +16,9 @@ namespace Content.Server._Sunrise.Doors.Systems;
 ///     Нужна чтобы мультитайловые двойные или тройные шлюзы нормально не пропускали газы
 ///     Спавнит блокеры на соседних тайлах и регулирует когда блокеры не пропускают газ, когда пропускают. В зависимости от состояния шлюза
 /// </summary>
-public sealed partial class SunriseMultiTileAirtightSystem : EntitySystem
+public sealed partial class SunriseMultiTileAirtightSystem : EntitySystem // Lust-Edit : added partial
 {
-    private const string BlockerPrototype = "SunriseMultiTileAirtightBlocker";
+    private static readonly EntProtoId BlockerPrototype = "SunriseMultiTileAirtightBlocker"; // lust-edit
 
     [Dependency] private AirtightSystem _airtight = default!;
     [Dependency] private TransformSystem _transform = default!;
@@ -38,6 +40,13 @@ public sealed partial class SunriseMultiTileAirtightSystem : EntitySystem
         SubscribeLocalEvent<SunriseMultiTileAirtightComponent, AnchorStateChangedEvent>(OnAnchorChanged);
         SubscribeLocalEvent<SunriseMultiTileAirtightComponent, ReAnchorEvent>(OnReAnchor);
         SubscribeLocalEvent<SunriseMultiTileAirtightComponent, MoveEvent>(OnMoved);
+
+        // lust-add-start
+        _blockerQuery = GetEntityQuery<SunriseMultiTileAirtightBlockerComponent>();
+        _multiTileQuery = GetEntityQuery<SunriseMultiTileAirtightComponent>();
+
+        SubscribeLocalEvent<SunriseMultiTileAirtightComponent, EntityUnpausedEvent>(OnUnpaused);
+        // lust-add-end
     }
 
     private void OnMapInit(Entity<SunriseMultiTileAirtightComponent> ent, ref MapInitEvent args)
@@ -89,13 +98,30 @@ public sealed partial class SunriseMultiTileAirtightSystem : EntitySystem
     /// </summary>
     private void RefreshGeometry(Entity<SunriseMultiTileAirtightComponent> ent)
     {
-        DeleteBlockers(ent);
+        // lust-add-start
+        if (Paused(ent))
+            return;
+        // lust-add-end
+
+        // DeleteBlockers(ent); // lust-edit : commited
 
         if (!_xformQuery.TryGetComponent(ent.Owner, out var xform))
+        {
+            DeleteBlockers(ent); // lust-added
             return;
+        }
 
         if (!xform.Anchored || xform.GridUid is not { } gridUid || !_gridQuery.TryGetComponent(gridUid, out var grid))
+        {
+            DeleteBlockers(ent); // lust-added
             return;
+        }
+        // lust-add-start
+        if (IsMapOrGridPaused(gridUid))
+            return;
+
+        DeleteBlockers(ent);
+        // lust-add-end
 
         var baseTile = _transform.GetGridTilePositionOrDefault((ent, xform), grid);
         var rotation = xform.LocalRotation.RoundToCardinalAngle();
@@ -105,6 +131,8 @@ public sealed partial class SunriseMultiTileAirtightSystem : EntitySystem
             var rotated = rotation.RotateVec(new Vector2(local.X, local.Y));
             var offset = new Vector2i((int)MathF.Round(rotated.X), (int)MathF.Round(rotated.Y));
             var tile = baseTile + offset;
+
+            DeleteStaleBlockersOnTile((gridUid, grid), tile, ent.Owner); // lust-add
 
             var coords = GetTileCenter(gridUid, grid, tile);
             var blocker = Spawn(BlockerPrototype, coords);

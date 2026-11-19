@@ -1,8 +1,10 @@
 - type: entity
   id: SunriseMultiTileAirtightBlocker
   name: airtight blocker
+  save: false # Lust-Add
   categories: [ HideSpawnMenu ]
   components:
+  - type: SunriseMultiTileAirtightBlocker # Lust-Add
   - type: Airtight
     airBlocked: false
     noAirWhenFullyAirBlocked: false
