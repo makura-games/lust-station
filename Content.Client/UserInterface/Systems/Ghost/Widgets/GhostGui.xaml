@@ -6,6 +6,9 @@
             <Button Name="ReturnToBodyButton" Text="{Loc ghost-gui-return-to-body-button}" />
             <Button Name="GhostWarpButton" Text="{Loc ghost-gui-ghost-warp-button}" />
             <Button Name="GhostRolesButton" />
+            <!-- Lust-start -->
+            <Button Name="DmArenaButton" Text="{Loc dm-arena-ghost-button-default}" />
+            <!-- Lust-end -->
         </BoxContainer>
         <!-- Sunrise-Sponsor-Start -->
         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">

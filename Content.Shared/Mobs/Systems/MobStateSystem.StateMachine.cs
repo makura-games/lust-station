@@ -1,4 +1,5 @@
-﻿using Content.Shared.Database;
+﻿using Content.Shared._Lust.DmArena; // Lust-edit
+using Content.Shared.Database;
 using Content.Shared.Humanoid;
 using Content.Shared.Mobs.Components;
 using Robust.Shared.Player;
@@ -96,6 +97,13 @@ public partial class MobStateSystem
         var ev = new MobStateChangedEvent(target, component, oldState, newState, origin);
         OnStateChanged(target, component, oldState, newState);
         RaiseLocalEvent(target, ev, true);
+        // Lust-start
+        if (HasComp<DmArenaFighterComponent>(target))
+        {
+            Dirty(target, component);
+            return;
+        }
+        // Lust-end
         if (origin != null && HasComp<ActorComponent>(origin) && HasComp<ActorComponent>(target) && oldState < newState)
             _adminLogger.Add(LogType.Damaged, LogImpact.High, $"{ToPrettyString(origin):player} caused {ToPrettyString(target):player} state to change from {oldState} to {newState}");
         else

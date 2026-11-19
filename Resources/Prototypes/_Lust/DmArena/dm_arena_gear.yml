@@ -1,0 +1,617 @@
+- type: startingGear
+  id: LustDmArenaBaseGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitTactical
+    outerClothing: ClothingOuterArmorBasic
+    head: ClothingHeadHelmetBasic
+    mask: ClothingMaskGasSecurity
+    eyes: ClothingEyesGlassesCheapSunglasses
+    gloves: ClothingHandsGlovesFingerless
+    shoes: ClothingShoesSwat
+    back: ClothingBackpack
+    pocket1: WeaponPistolM1984
+    pocket2: MagazinePistol40FMJ
+  storage:
+    back:
+    - Brutepack
+    - Ointment
+
+- type: startingGear
+  id: LustDmArenaSpear
+  inhand:
+  - SpearUranium
+
+- type: startingGear
+  id: LustDmArenaKnife
+  inhand:
+  - CombatKnife
+
+- type: startingGear
+  id: LustDmArenaCleaver
+  inhand:
+  - ButchCleaver
+
+- type: startingGear
+  id: LustDmArenaKatana
+  inhand:
+  - Katana
+
+- type: startingGear
+  id: LustDmArenaFireaxe
+  inhand:
+  - FireAxe
+
+- type: startingGear
+  id: LustDmArenaSledge
+  inhand:
+  - Sledgehammer
+
+- type: startingGear
+  id: LustDmArenaSabre
+  inhand:
+  - LustArenaCaptainSabre
+
+- type: startingGear
+  id: LustDmArenaEsword
+  equipment:
+    suitstorage: LustArenaEnergySword
+
+- type: startingGear
+  id: LustDmArenaInspector
+  equipment:
+    suitstorage: WeaponRevolverInspector
+  storage:
+    back:
+    - SpeedLoaderMagnumSP
+    - SpeedLoaderMagnumSP
+
+- type: startingGear
+  id: LustDmArenaCobra
+  equipment:
+    suitstorage: WeaponPistolCobra
+  storage:
+    back:
+    - MagazinePistolCaselessRifle
+    - MagazinePistolCaselessRifle
+
+- type: startingGear
+  id: LustDmArenaViper
+  equipment:
+    suitstorage: WeaponPistolViper
+  storage:
+    back:
+    - MagazinePistolHighCapacity
+    - MagazinePistolHighCapacity
+
+- type: startingGear
+  id: LustDmArenaPython
+  equipment:
+    suitstorage: WeaponRevolverPythonAP
+  storage:
+    back:
+    - SpeedLoaderMagnumAP
+
+- type: startingGear
+  id: LustDmArenaN1984
+  equipment:
+    suitstorage: LustWeaponPistolN1984
+  storage:
+    back:
+    - MagazinePistol
+    - MagazinePistol
+
+- type: startingGear
+  id: LustDmArenaEnforcer
+  equipment:
+    suitstorage: WeaponShotgunEnforcer
+  storage:
+    back:
+    - BoxLethalshot
+    - BoxLethalshot
+
+- type: startingGear
+  id: LustDmArenaKammerer
+  equipment:
+    suitstorage: WeaponShotgunKammerer
+  storage:
+    back:
+    - BoxLethalshot
+    - BoxShotgunSlug
+
+- type: startingGear
+  id: LustDmArenaBulldog
+  equipment:
+    suitstorage: WeaponShotgunBulldog
+  storage:
+    back:
+    - MagazineShotgun
+    - MagazineShotgun
+
+- type: startingGear
+  id: LustDmArenaWt550
+  equipment:
+    suitstorage: WeaponSubMachineGunWt550
+  storage:
+    back:
+    - MagazinePistolSubMachineGunTopMountedSP
+    - MagazinePistolSubMachineGunTopMountedSP
+
+- type: startingGear
+  id: LustDmArenaDrozd
+  equipment:
+    suitstorage: WeaponSubMachineGunDrozd
+  storage:
+    back:
+    - MagazinePistolSubMachineGunSP
+    - MagazinePistolSubMachineGunSP
+
+- type: startingGear
+  id: LustDmArenaMosin
+  equipment:
+    suitstorage: WeaponSniperMosin
+  storage:
+    back:
+    - SpeedLoaderHeavyRifleRFMJ
+    - SpeedLoaderHeavyRifleRFMJ
+    - ClothingHeadHatUshanka
+    - DrinkVodkaBottleFull
+
+- type: startingGear
+  id: LustDmArenaLasercarbine
+  equipment:
+    suitstorage: WeaponLaserCarbine
+
+- type: startingGear
+  id: LustDmArenaAkms
+  equipment:
+    suitstorage: WeaponRifleAk
+  storage:
+    back:
+    - MagazineLightRifleSP
+    - MagazineLightRifleSP
+
+- type: startingGear
+  id: LustDmArenaEstoc
+  equipment:
+    suitstorage: WeaponRifleEstoc
+  storage:
+    back:
+    - MagazineRifleSP
+    - MagazineRifleSP
+
+- type: startingGear
+  id: LustDmArenaLecter
+  equipment:
+    suitstorage: WeaponRifleLecter
+  storage:
+    back:
+    - MagazineRifleSP
+    - MagazineRifleSP
+    - MagazineRifleIncendiary
+
+- type: startingGear
+  id: LustDmArenaVestBp
+  equipment:
+    outerClothing: ClothingOuterArmorBulletproof
+
+- type: startingGear
+  id: LustDmArenaVestRefl
+  equipment:
+    outerClothing: ClothingOuterArmorReflective
+
+- type: startingGear
+  id: LustDmArenaVestRiot
+  equipment:
+    outerClothing: ClothingOuterArmorRiot
+
+- type: startingGear
+  id: LustDmArenaVestCarapace
+  equipment:
+    outerClothing: ClothingOuterArmorCaptainCarapace
+
+- type: startingGear
+  id: LustDmArenaHelmRiot
+  equipment:
+    head: ClothingHeadHelmetRiot
+
+- type: startingGear
+  id: LustDmArenaHelmSwat
+  equipment:
+    head: ClothingHeadHelmetSwat
+
+- type: startingGear
+  id: LustDmArenaShield
+  inhand:
+  - LustArenaRiotShield
+
+- type: startingGear
+  id: LustDmArenaAmPistol
+  storage:
+    back:
+    - MagazinePistol40FMJ
+    - MagazinePistol40FMJ
+
+- type: startingGear
+  id: LustDmArenaAmBuckshot
+  storage:
+    back:
+    - BoxLethalshot
+
+- type: startingGear
+  id: LustDmArenaAmSlugs
+  storage:
+    back:
+    - BoxShotgunSlug
+
+- type: startingGear
+  id: LustDmArenaAmViper
+  storage:
+    back:
+    - MagazinePistolHighCapacity
+    - MagazinePistolHighCapacity
+
+- type: startingGear
+  id: LustDmArenaAmCobra
+  storage:
+    back:
+    - MagazinePistolCaselessRifle
+    - MagazinePistolCaselessRifle
+
+- type: startingGear
+  id: LustDmArenaAmN1984
+  storage:
+    back:
+    - MagazinePistol
+    - MagazinePistol
+
+- type: startingGear
+  id: LustDmArenaAmRevolver
+  storage:
+    back:
+    - SpeedLoaderMagnumSP
+    - SpeedLoaderMagnumSP
+
+- type: startingGear
+  id: LustDmArenaAmIncendiary
+  storage:
+    back:
+    - MagazineRifleIncendiary
+
+- type: startingGear
+  id: LustDmArenaAmBulldog
+  storage:
+    back:
+    - MagazineShotgun
+    - MagazineShotgun
+
+- type: startingGear
+  id: LustDmArenaAmDrozd
+  storage:
+    back:
+    - MagazinePistolSubMachineGunSP
+    - MagazinePistolSubMachineGunSP
+
+- type: startingGear
+  id: LustDmArenaAmWt550
+  storage:
+    back:
+    - MagazinePistolSubMachineGunTopMountedSP
+    - MagazinePistolSubMachineGunTopMountedSP
+
+- type: startingGear
+  id: LustDmArenaAmMosin
+  storage:
+    back:
+    - SpeedLoaderHeavyRifleRFMJ
+    - SpeedLoaderHeavyRifleRFMJ
+
+- type: startingGear
+  id: LustDmArenaAmAkms
+  storage:
+    back:
+    - MagazineLightRifleSP
+    - MagazineLightRifleSP
+
+- type: startingGear
+  id: LustDmArenaAmRifle
+  storage:
+    back:
+    - MagazineRifleSP
+    - MagazineRifleSP
+
+- type: startingGear
+  id: LustDmArenaSmoke
+  storage:
+    back:
+    - SmokeGrenade
+
+- type: startingGear
+  id: LustDmArenaGauze
+  storage:
+    back:
+    - Gauze
+
+- type: startingGear
+  id: LustDmArenaBrutepack
+  storage:
+    back:
+    - Brutepack
+
+- type: startingGear
+  id: LustDmArenaOintment
+  storage:
+    back:
+    - Ointment
+
+- type: startingGear
+  id: LustDmArenaBlood
+  storage:
+    back:
+    - Bloodpack
+
+- type: startingGear
+  id: LustDmArenaKitBasic
+  storage:
+    back:
+    - MedkitFilled
+
+- type: startingGear
+  id: LustDmArenaKitBrute
+  storage:
+    back:
+    - MedkitBruteFilled
+
+- type: startingGear
+  id: LustDmArenaKitBurn
+  storage:
+    back:
+    - MedkitBurnFilled
+
+- type: startingGear
+  id: LustDmArenaKitCombat
+  storage:
+    back:
+    - MedkitCombatFilled
+
+- type: startingGear
+  id: LustDmArenaKitUniversal
+  storage:
+    back:
+    - MedkitUniversalFilled
+
+- type: startingGear
+  id: LustDmArenaMinistim
+  storage:
+    back:
+    - StimpackMini
+
+- type: startingGear
+  id: LustDmArenaPenEmergency
+  storage:
+    back:
+    - EmergencyMedipen
+
+- type: startingGear
+  id: LustDmArenaPenCombat
+  storage:
+    back:
+    - CombatMedipen
+
+- type: startingGear
+  id: LustDmArenaGlow
+  storage:
+    back:
+    - GlowstickRed
+
+- type: startingGear
+  id: LustDmArenaCowboy
+  equipment:
+    head: ClothingHeadHatCowboyBrown
+
+- type: startingGear
+  id: LustDmArenaSombrero
+  equipment:
+    head: ClothingHeadHatSombrero
+
+- type: startingGear
+  id: LustDmArenaPirate
+  equipment:
+    head: ClothingHeadHatPirate
+
+- type: startingGear
+  id: LustDmArenaDuck
+  inhand:
+  - ToyRubberDuck
+
+- type: startingGear
+  id: LustDmArenaToysword
+  inhand:
+  - ToySword
+
+- type: startingGear
+  id: LustDmArenaBeer
+  storage:
+    back:
+    - DrinkBeerBottleFull
+
+- type: startingGear
+  id: LustDmArenaTophat
+  equipment:
+    head: ClothingHeadHatTophat
+
+- type: startingGear
+  id: LustDmArenaFez
+  equipment:
+    head: ClothingHeadHatFez
+
+- type: startingGear
+  id: LustDmArenaWitch
+  equipment:
+    head: ClothingHeadHatWitch
+
+- type: startingGear
+  id: LustDmArenaPumpkin
+  equipment:
+    head: ClothingHeadHatPumpkin
+
+- type: startingGear
+  id: LustDmArenaBunny
+  equipment:
+    head: ClothingHeadHatBunny
+
+- type: startingGear
+  id: LustDmArenaSanta
+  equipment:
+    head: ClothingHeadHatSantahat
+
+- type: startingGear
+  id: LustDmArenaLizard
+  inhand:
+  - PlushieLizard
+
+- type: startingGear
+  id: LustDmArenaHorn
+  inhand:
+  - BikeHorn
+
+- type: startingGear
+  id: LustDmArenaClown
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitClown
+    mask: ClothingMaskClown
+    shoes: ClothingShoesClownLarge
+  storage:
+    back:
+    - BikeHorn
+
+- type: startingGear
+  id: LustDmArenaDeagle
+  equipment:
+    suitstorage: WeaponPistolDeagle
+  storage:
+    back:
+    - MagazineMagnum
+    - MagazineMagnum
+
+- type: startingGear
+  id: LustDmArenaUzi
+  equipment:
+    suitstorage: SunriseWeaponSubMachineGunUzi
+  storage:
+    back:
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+
+- type: startingGear
+  id: LustDmArenaSiar
+  equipment:
+    suitstorage: WeaponSIAR52
+  storage:
+    back:
+    - MagazinePistolSubMachineGunCaselessExtended
+    - MagazinePistolSubMachineGunCaselessExtended
+
+- type: startingGear
+  id: LustDmArenaM16
+  equipment:
+    suitstorage: WeaponRifleM16A4
+  storage:
+    back:
+    - MagazineRifleSP
+    - MagazineRifleSP
+
+- type: startingGear
+  id: LustDmArenaVestElite
+  equipment:
+    outerClothing: ClothingOuterVestWebElite
+
+- type: startingGear
+  id: LustDmArenaShieldBullet
+  inhand:
+  - LustArenaRiotBulletShield
+
+- type: startingGear
+  id: LustDmArenaShieldLaser
+  inhand:
+  - LustArenaRiotLaserShield
+
+- type: startingGear
+  id: LustDmArenaShieldEnergy
+  inhand:
+  - LustArenaEnergyShield
+
+- type: startingGear
+  id: LustDmArenaDomeBelt
+  equipment:
+    belt: LustEnergyDomeGeneratorMicroreactor
+
+- type: startingGear
+  id: LustDmArenaAmBulldogSlug
+  storage:
+    back:
+    - MagazineShotgunSlug
+    - MagazineShotgunSlug
+
+- type: startingGear
+  id: LustDmArenaAmUzi
+  storage:
+    back:
+    - MagazinePistolSubMachineGun
+    - MagazinePistolSubMachineGun
+
+- type: startingGear
+  id: LustDmArenaAmSiar
+  storage:
+    back:
+    - MagazinePistolSubMachineGunCaselessExtended
+    - MagazinePistolSubMachineGunCaselessExtended
+
+- type: startingGear
+  id: LustDmArenaAmDeagle
+  storage:
+    back:
+    - MagazineMagnum
+    - MagazineMagnum
+
+- type: startingGear
+  id: LustDmArenaPenPyra
+  storage:
+    back:
+    - PyraAutoInjector
+
+- type: startingGear
+  id: LustDmArenaPenPunct
+  storage:
+    back:
+    - PunctAutoInjector
+
+- type: startingGear
+  id: LustDmArenaVp78
+  equipment:
+    suitstorage: WeaponPistolVP78
+  storage:
+    back:
+    - MagazinePistol40FMJ
+
+- type: startingGear
+  id: LustDmArenaP90
+  equipment:
+    suitstorage: WeaponSubMachineGunP90
+  storage:
+    back:
+    - MagazineP90
+    - MagazineP90
+
+- type: startingGear
+  id: LustDmArenaAmVp78
+  storage:
+    back:
+    - MagazinePistol40FMJ
+    - MagazinePistol40FMJ
+
+- type: startingGear
+  id: LustDmArenaAmP90
+  storage:
+    back:
+    - MagazineP90
+    - MagazineP90

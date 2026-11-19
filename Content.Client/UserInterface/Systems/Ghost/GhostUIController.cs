@@ -2,6 +2,7 @@ using Content.Client.Gameplay;
 using Content.Client.Ghost;
 using Content.Client.UserInterface.Systems.Gameplay;
 using Content.Client.UserInterface.Systems.Ghost.Widgets;
+using Content.Client._Lust.DmArena; // Lust-edit
 using Content.Shared.Ghost.Components;
 using Content.Shared.Ghost.Systems;
 using Robust.Client.UserInterface;
@@ -16,7 +17,7 @@ using GhostWarpsResponseEvent = Content.Shared.Ghost.Systems.SharedGhostSystem.G
 namespace Content.Client.UserInterface.Systems.Ghost;
 
 // TODO hud refactor BEFORE MERGE fix ghost gui being too far up
-public sealed partial class GhostUIController : UIController, IOnSystemChanged<GhostSystem>
+public sealed partial class GhostUIController : UIController, IOnSystemChanged<GhostSystem>, IOnSystemChanged<DmArenaGhostSystem> // Lust-edit
 {
     [Dependency] private IEntityNetworkManager _net = default!;
     [Dependency] private ServersHubManager _serversHubManager = default!;
@@ -24,6 +25,7 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
     private ISharedSponsorsManager? _sponsorsManager; // Sunrise-Sponsors
 
     [UISystemDependency] private readonly GhostSystem? _system = default;
+    [UISystemDependency] private readonly DmArenaGhostSystem? _dmArena = default; // Lust-edit
 
     private GhostGui? Gui => UIManager.GetActiveUIWidgetOrNull<GhostGui>();
 
@@ -176,12 +178,14 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.GhostRolesPressed += GhostRolesPressed;
         Gui.RespawnPressed += Respawn; // Sunrise-Sponsors
         Gui.ChangeServerPressed += ChangeServerPressed;
+        Gui.DmArenaPressed += DmArenaPressed; // Lust-edit
         Gui.TargetWindow.WarpClicked += OnWarpClicked;
         Gui.TargetWindow.OnGhostnadoClicked += OnGhostnadoClicked;
         Gui.TargetWindow.OnWarpToRandomFollowedClicked += OnWarpToRandomFollowedClicked;
         Gui.TargetWindow.OnWarpToRandomClicked += OnWarpToRandomClicked;
 
         UpdateGui();
+        UpdateDmArena(); // Lust-edit
     }
 
     public void UnloadGui()
@@ -194,10 +198,36 @@ public sealed partial class GhostUIController : UIController, IOnSystemChanged<G
         Gui.GhostRolesPressed -= GhostRolesPressed;
         Gui.RespawnPressed -= Respawn; // Sunrise-Sponsors
         Gui.ChangeServerPressed -= ChangeServerPressed;
+        Gui.DmArenaPressed -= DmArenaPressed; // Lust-edit
         Gui.TargetWindow.WarpClicked -= OnWarpClicked;
 
         Gui.Hide();
     }
+
+    // Lust-start
+    public void OnSystemLoaded(DmArenaGhostSystem system)
+    {
+        system.StateChanged += UpdateDmArena;
+        UpdateDmArena();
+    }
+
+    public void OnSystemUnloaded(DmArenaGhostSystem system)
+    {
+        system.StateChanged -= UpdateDmArena;
+        Gui?.UpdateDmArena(0, false);
+    }
+
+    private void DmArenaPressed()
+    {
+        _dmArena?.RequestJoin();
+    }
+
+    private void UpdateDmArena()
+    {
+        if (_dmArena != null)
+            Gui?.UpdateDmArena(_dmArena.PlayerCount, _dmArena.Enabled);
+    }
+    // Lust-end
 
     private void ReturnToBody()
     {

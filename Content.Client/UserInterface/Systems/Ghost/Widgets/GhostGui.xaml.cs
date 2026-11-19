@@ -19,6 +19,7 @@ public sealed partial class GhostGui : UIWidget
     private int _prevNumberRoles;
     public event Action? RespawnPressed; // Sunrise-Edit
     public event Action? ChangeServerPressed;
+    public event Action? DmArenaPressed; // Lust-edit
 
     public GhostGui()
     {
@@ -35,7 +36,16 @@ public sealed partial class GhostGui : UIWidget
         GhostRolesButton.OnPressed += _ => GhostRolesButton.StyleClasses.Remove(StyleClass.Negative);
         RespawnButton.OnPressed += _ => RespawnPressed?.Invoke(); // Sunrise-Edit
         ChangeServerButton.OnPressed += _ => ChangeServerPressed?.Invoke();
+        DmArenaButton.OnPressed += _ => DmArenaPressed?.Invoke(); // Lust-edit
     }
+
+    // Lust-start
+    public void UpdateDmArena(int playerCount, bool enabled)
+    {
+        DmArenaButton.Disabled = !enabled;
+        DmArenaButton.Text = Loc.GetString(enabled ? "dm-arena-ghost-button" : "dm-arena-ghost-button-disabled", ("count", playerCount));
+    }
+    // Lust-end
 
     public void Hide()
     {
