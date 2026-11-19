@@ -1086,8 +1086,8 @@
         Structural: 200
     bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
-    baseWalkSpeed: 2.5
-    baseSprintSpeed: 4
+    baseWalkSpeed: 2 # Lust-Edit уменьшена скорость меха с 2.5 до 2
+    baseSprintSpeed: 2.75 # Lust-Edit уменьшена скорость меха с 4 до 2.75
   # Sunrise-Start
   - type: Loadout
     prototypes: [ MechArmorMediumSyndiLoadout ]
@@ -1178,7 +1178,7 @@
     bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5
-    baseSprintSpeed: 2
+    baseSprintSpeed: 1.75 # Lust-Edit изменена скорость с 2 до 1.75
   # Sunrise-Start
   - type: Loadout
     prototypes: [ MechArmorHeavySyndiLoadout ]
