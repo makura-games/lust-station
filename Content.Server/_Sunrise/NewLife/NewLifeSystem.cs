@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using Content.Server._Sunrise.NewLife.UI;
 using Content.Server.EUI;
@@ -176,7 +177,7 @@ public sealed partial class NewLifeSystem : SharedNewLifeSystem
         var preferences = _prefsManager.GetPreferences(player.UserId);
         if (!preferences.Characters.TryGetValue(selectedCharacterId, out var selectedProfile)
             || !ProtoMan.Resolve(roleProto, out JobPrototype? selectedJob)
-            || selectedJob.SpeciesBlacklist.Contains(selectedProfile.Species))
+            || selectedJob.Requirements?.OfType<SpeciesRequirement>().Any(requirement => requirement.Inverted && requirement.Species.Contains(selectedProfile.Species)) == true)
         {
             eui.StateDirty();
             return;
