@@ -40387,7 +40387,7 @@ entities:
         categories:
         - NTexplosive
       - costModifiersBySourceId: {}
-        productEntity: ToolboxSyndicateFilled
+        productEntity: SunriseToolboxSyndicateFilled
         originalCost:
           Doubloon: 4
         name: uplink-toolbox-name
@@ -41954,7 +41954,7 @@ entities:
         categories:
         - CargoThings
       - costModifiersBySourceId: {}
-        productEntity: ToolboxSyndicateFilled
+        productEntity: SunriseToolboxSyndicateFilled
         originalCost:
           Telecrystal: 2
         name: uplink-toolbox-name

@@ -192,7 +192,7 @@
     - id: ClothingBackpackDuffelSyndicatePyjamaBundle
     - id: ClothingBeltMilitaryWebbing
     - id: ClothingShoesBootsCombatFilled
-    - id: ToolboxSyndicateFilled
+    - id: SunriseToolboxSyndicateFilled # Lust edit - ящик Синдиката с улучшенным содержимым
     - id: BalloonSyn
     - id: WeaponSniperMosin
       #Sunrise-start

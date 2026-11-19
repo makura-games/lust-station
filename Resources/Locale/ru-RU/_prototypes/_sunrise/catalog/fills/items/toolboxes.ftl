@@ -1,12 +1,12 @@
-ent-ToolboxSyndicateFilledCoreExtraction = { ent-ToolboxSyndicate }
+ent-ToolboxSyndicateFilledCoreExtraction = { ent-SunriseToolboxSyndicate }
     .suffix = Заполнен, Извлечение ядра
-    .desc = { ent-ToolboxSyndicate.desc }
+    .desc = { ent-SunriseToolboxSyndicate.desc }
 ent-ToolboxElectricalTurretPirateFilled = { ent-ToolboxElectricalTurretPirate }
     .suffix = Пират, Турель, Заполненный
     .desc = { ent-ToolboxElectricalTurretPirate.desc }
 ent-ToolboxArtisticFilledCleaner = { ent-ToolboxArtistic }
     .suffix = Уборка
     .desc = { ent-ToolboxArtistic.desc }
-ent-ToolboxSyndicateFilledRepair = { ent-ToolboxSyndicate }
-    .desc = { ent-ToolboxSyndicate.desc }
+ent-ToolboxSyndicateFilledRepair = { ent-SunriseToolboxSyndicate }
+    .desc = { ent-SunriseToolboxSyndicate.desc }
     .suffix = Заполнен, Ремонт мехов

@@ -1662,4 +1662,7 @@ PlushieAnameGermanikum: PlushieLizardJobChiefmedicalofficer
 ClothingUniformJumpsuitCentcomFormal: ClothingUniformJumpsuitCentcomFormalQillu
 ClothingUniformJumpskirtCentcomFormalDress: ClothingUniformJumpskirtCentcomFormalDressQillu
 
+# Lust edit - направляем старые ящики к новым прототипам Синдиката
+ToolboxSyndicate: SunriseToolboxSyndicate
+ToolboxSyndicateFilled: SunriseToolboxSyndicateFilled
 # Lust-End
