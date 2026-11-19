@@ -5,7 +5,7 @@
                xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
                Title="Interactions Panel"
                MinSize="475 600"
-               SetSize="475 600">
+               SetSize="475 750">
 
     <PanelContainer>
         <PanelContainer.PanelOverride>
@@ -288,8 +288,37 @@
                                            MaxWidth="320"/>
                                 </BoxContainer>
                             </BoxContainer>
+                            
+                            <!-- Lust-Start: настройка запрета ERP-взаимодействий -->
+                            <BoxContainer Name="ErpInteractionLockSettingsContainer"
+                                        Visible="False"
+                                        Orientation="Horizontal"
+                                        Margin="12 10"
+                                        VerticalAlignment="Center">
+
+                                <CheckBox Name="LockErpInteractionsCheckBox"
+                                        Pressed="False"
+                                        Disabled="True"
+                                        Margin="0 0 8 0"/>
+
+                                <BoxContainer Orientation="Vertical"
+                                            HorizontalExpand="True">
+
+                                    <Label Text="{Loc 'lust-interactions-lock-erp-label'}"
+                                        FontColorOverride="#ffb6c1"
+                                        VerticalAlignment="Center"/>
+
+                                    <Label Text="{Loc 'lust-interactions-lock-erp-description'}"
+                                        FontColorOverride="#b39db3"
+                                        StyleClasses="LabelSubText"
+                                        Margin="0 2 0 0"
+                                        MaxWidth="320"/>
+                                </BoxContainer>
+                            </BoxContainer>
+                            <!-- Lust-End -->
 
                             <Control VerticalExpand="True"/>
+                            
 
                             <BoxContainer Orientation="Horizontal" HorizontalAlignment="Center">
                                 <Button Name="ApplySettingsButton"

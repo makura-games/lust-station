@@ -1,5 +1,6 @@
 - type: interaction
   id: ERPtoyPlaceholderDildo
+  isErp: true
   name: lust-interaction-ERPtoyPlaceholderDildo
   icon: ToyButtIcon
   category: Dildos
@@ -49,6 +50,7 @@
 
 - type: interaction
   id: ERPtoyPlaceholderDildo2
+  isErp: true
   name: lust-interaction-ERPtoyPlaceholderDildo2
   icon: ToyPussyIcon
   category: Dildos
@@ -102,6 +104,7 @@
 
 - type: interaction
   id: ERPtoyPlaceholderFleshflight1
+  isErp: true
   name: lust-interaction-ERPtoyPlaceholderFleshflight1
   icon: ToyPussyIcon
   category: Fleshlights
@@ -148,6 +151,7 @@
 
 - type: interaction
   id: ERPSelftoyPlaceholderFleshflight1
+  isErp: true
   name: lust-interaction-ERPSelftoyPlaceholderFleshflight1
   icon: ToyPussyIcon
   category: Fleshlights
@@ -194,6 +198,7 @@
 
 - type: interaction
   id: ERPSelftoyPlaceholderDildo
+  isErp: true
   name: lust-interaction-ERPSelftoyPlaceholderDildo
   icon: ToyButtIcon
   category: Dildos
@@ -239,6 +244,7 @@
 
 - type: interaction
   id: ERPSelftoyPlaceholderDildo2
+  isErp: true
   name: lust-interaction-ERPSelftoyPlaceholderDildo2
   icon: ToyPussyIcon
   category: Dildos

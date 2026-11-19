@@ -1,5 +1,6 @@
 - type: interaction
   id: PussyTouch
+  isErp: true
   name: lust-interaction-PussyTouch
   icon: PussyTouchIcon
   category: Pussy
@@ -44,6 +45,7 @@
 
 - type: interaction
   id: PussyLick
+  isErp: true
   name: lust-interaction-PussyLick
   icon: PussyLickIcon
   category: Pussy
@@ -89,6 +91,7 @@
 
 - type: interaction
   id: PussyFingering
+  isErp: true
   name: lust-interaction-PussyFingering
   icon: PussyFingeringIcon
   category: Pussy
@@ -129,6 +132,7 @@
 
 - type: interaction
   id: PussyScissors
+  isErp: true
   name: lust-interaction-PussyScissors
   icon: PussyScissorsIcon
   category: Pussy
@@ -172,6 +176,7 @@
 
 - type: interaction
   id: PussyFuck
+  isErp: true
   name: lust-interaction-PussyFuck
   icon: LegsCockFuckIcon
   category: Pussy
@@ -222,6 +227,7 @@
 
 - type: interaction
   id: PussySelfTouch
+  isErp: true
   name: lust-interaction-PussySelfTouch
   icon: PussyTouchIcon
   category: Pussy
@@ -256,6 +262,7 @@
 
 - type: interaction
   id: PussySelfFingering
+  isErp: true
   name: lust-interaction-PussySelfFingering
   icon: PussyFingeringIcon
   category: Pussy
@@ -289,6 +296,7 @@
 
 - type: interaction
   id: PussyFriction
+  isErp: true
   name: lust-interaction-PussyFriction
   icon: ERP2Icon
   category: Pussy
@@ -331,6 +339,7 @@
 
 - type: interaction
   id: ClitorBite
+  isErp: true
   name: lust-interaction-ClitorBite
   icon: ERP2Icon
   category: Pussy
@@ -365,6 +374,7 @@
 
 - type: interaction
   id: ClitorLick
+  isErp: true
   name: lust-interaction-ClitorLick
   icon: ERP2Icon
   category: Pussy
@@ -401,6 +411,7 @@
 
 - type: interaction
   id: HoldTailPussyFuck
+  isErp: true
   name: lust-interaction-HoldTailPussyFuck
   icon: LegsCockFuckTailIcon
   category: Pussy
@@ -455,6 +466,7 @@
 
 - type: interaction
   id: TailPussyFuck
+  isErp: true
   name: lust-interaction-TailPussyFuck
   icon: PussyTailFuckIcon
   category: Pussy

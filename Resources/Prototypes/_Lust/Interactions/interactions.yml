@@ -1,5 +1,6 @@
 - type: interaction
   id: TraceLick
+  isErp: true
   name: lust-interaction-TraceLick
   icon: ERP2Icon
   category: Face

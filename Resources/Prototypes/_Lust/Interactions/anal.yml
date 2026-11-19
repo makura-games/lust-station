@@ -1,5 +1,6 @@
 - type: interaction
   id: AnalFingering
+  isErp: true
   name: lust-interaction-AnalFingering
   icon: AnalFingeringIcon
   category: Anal
@@ -38,6 +39,7 @@
 
 - type: interaction
   id: AnalLick
+  isErp: true
   name: lust-interaction-AnalLick
   icon: AnalLickIcon
   category: Anal
@@ -74,6 +76,7 @@
 
 - type: interaction
   id: AnalFingering2
+  isErp: true
   name: lust-interaction-AnalFingering2
   icon: AnalFingeringIcon
   category: Anal
@@ -110,6 +113,7 @@
 
 - type: interaction
   id: AnalFuck
+  isErp: true
   name: lust-interaction-AnalFuck
   icon: CockNearToAssIcon
   category: Anal
@@ -152,6 +156,7 @@
 
 - type: interaction
   id: HoldTailAnusFuck
+  isErp: true
   name: lust-interaction-HoldTailAnusFuck
   icon: CockNearToAssTailIcon
   category: Anal
@@ -203,6 +208,7 @@
 
 - type: interaction
   id: TailAnalFuck
+  isErp: true
   name: lust-interaction-TailAnalFuck
   icon: ButtTailFuckIcon
   category: Anal

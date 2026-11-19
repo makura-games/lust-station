@@ -91,6 +91,21 @@
                                                  MinHeight="24"/>
                                 </BoxContainer>
                             </BoxContainer>
+                            <!-- Lust-Start: авторская отметка ERP для кастомного действия -->
+                            <BoxContainer Orientation="Horizontal"
+                                        Margin="0 8 0 4"
+                                        HorizontalExpand="True">
+
+                                <CheckBox Name="IsErpCheckBox"
+                                        Pressed="True"
+                                        VerticalAlignment="Center"
+                                        Margin="0 0 6 0"/>
+
+                                <Label Text="{Loc 'lust-interactions-custom-is-erp-label'}"
+                                    FontColorOverride="#b8e6ff"
+                                    VerticalAlignment="Center"/>
+                            </BoxContainer>
+                            <!-- Lust-End -->
 
                             <!-- Preview Section -->
                             <BoxContainer Orientation="Horizontal" Margin="0 8 0 4" HorizontalExpand="True">

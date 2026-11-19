@@ -1,5 +1,6 @@
 - type: interaction
   id: WingsKiss
+  isErp: false
   name: lust-interaction-WingsKiss
   icon: WingKiss
   category: Wings
@@ -58,6 +59,7 @@
 
 - type: interaction
   id: WingsLick
+  isErp: false
   name: lust-interaction-WingsLick
   icon: WingLick
   category: Wings
@@ -112,6 +114,7 @@
 
 - type: interaction
   id: WingsStrokeCrotch
+  isErp: true
   name: lust-interaction-WingsStrokeCrotch
   icon: WingStrokeCrotch
   category: Wings
@@ -161,6 +164,7 @@
 
 - type: interaction
   id: WingsCockFap
+  isErp: true
   name: lust-interaction-WingsCockFap
   icon: WingsCockFap
   category: Cock
@@ -223,6 +227,7 @@
 
 - type: interaction
   id: WingsPussyFuck
+  isErp: true
   name: lust-interaction-WingsPussyFuck
   icon: WingScratch
   category: Pussy
@@ -294,6 +299,7 @@
 
 - type: interaction
   id: WingsAssFuck
+  isErp: true
   name: lust-interaction-WingsAssFuck
   icon: WingScratch
   category: Anal
