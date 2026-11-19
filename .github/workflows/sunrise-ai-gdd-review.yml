@@ -21,9 +21,12 @@ jobs:
           git diff ${{ github.event.pull_request.base.sha }} pr_branch > diff.txt
 
       - name: Save PR metadata
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BODY: ${{ github.event.pull_request.body }}
         run: |
-          echo "${{ github.event.pull_request.title }}" > pr_title.txt
-          echo "${{ github.event.pull_request.body }}" > pr_body.txt
+          printf '%s\n' "$PR_TITLE" > pr_title.txt
+          printf '%s\n' "$PR_BODY" > pr_body.txt
 
       - name: Setup Python
         uses: actions/setup-python@v4
