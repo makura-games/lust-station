@@ -1,0 +1,298 @@
+- type: entity
+  parent: BaseScrap
+  id: LustBaseScrap
+  abstract: true
+  name: scrap
+  description: Worthless junk. You could probably get some materials out of it though.
+  suffix: Scrap
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+  - type: Item
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    size: Normal
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapNewspaper
+  name: old newspaper
+  description: Where did this come from on the space station?
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    layers:
+    - map: ["base"]
+      state: paper1
+  - type: RandomSprite
+    available:
+    - base:
+        paper: ""
+        paper1: ""
+        paper5: ""
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 500 # 5 sheets
+      SalvageTicket: 5 # 5 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapNapkins
+  name: used napkins
+  description: Where did this come from on the space station?
+  components:
+  - type: Sprite
+    layers:
+      - state: paper2
+        map: [ "base" ]
+  - type: RandomSprite
+    available:
+    - base:
+        paper2: ""
+        paper3: ""
+        paper4: ""
+        paper6: ""
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 300 # 3 sheets
+      SalvageTicket: 5 # 5 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapPaper1
+  name: paper scrap
+  description: Where did this come from on the space station?
+  components:
+  - type: Sprite
+    layers:
+      - state: garbage
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 300 # 3 sheets
+      SalvageTicket: 5 # 5 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapPaper2
+  name: paper scrap
+  description: Where did this come from on the space station?
+  components:
+  - type: Sprite
+    layers:
+      - state: garbage1
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 300 # 3 sheets
+      SalvageTicket: 5 # 5 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapPot
+  name: old ceramic pot
+  description: Ceramic pot with barely alive plant.
+  components:
+  - type: Sprite
+    layers:
+      - state: pot1
+        map: [ "base" ]
+  - type: MultiHandedItem
+  - type: RandomSprite
+    available:
+    - base:
+        pot: ""
+        pot1: ""
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 800 # 8 sheets
+      SalvageTicket: 8 # 8 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapTire
+  name: tire
+  description: A torn tire.
+  components:
+  - type: Sprite
+    layers:
+      - state: tire1
+        map: [ "base" ]
+  - type: MultiHandedItem
+  - type: RandomSprite
+    available:
+    - base:
+        tire: ""
+        tire1: ""
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 800 # 8 sheets
+      SalvageTicket: 8 # 8 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapPotBig
+  name: old ceramic pot
+  description: Ceramic pot with barely alive plant.
+  components:
+  - type: Sprite
+    layers:
+      - state: big_pot1
+        map: [ "base" ]
+  - type: MultiHandedItem
+  - type: RandomSprite
+    available:
+    - base:
+        big_pot: ""
+        big_pot1: ""
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 1000 # 10 sheets
+      SalvageTicket: 8 # 8 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapPile
+  name: pile of trash
+  description: Disqusting pile of trash.
+  components:
+  - type: Sprite
+    layers:
+      - state: garbage2
+        map: [ "base" ]
+  - type: Item
+    size: Large
+  - type: MultiHandedItem
+  - type: RandomSprite
+    available:
+    - base:
+        garbage2: ""
+        garbage3: ""
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 500 # 5 sheets
+      Steel: 300 # 3 sheets
+      SalvageTicket: 8 # 8 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapTrashBag
+  name: trash bag
+  description: Dirty waste bag.
+  components:
+  - type: Sprite
+    layers:
+      - state: trash_bag
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 500 # 5 sheets
+      SalvageTicket: 5 # 8 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapTrashBagPile
+  name: pile of trash bags
+  description: A pile of dirty waste bags.
+  components:
+  - type: Sprite
+    layers:
+      - state: trash_bags
+  - type: Item
+    size: Large
+  - type: MultiHandedItem
+  - type: PhysicalComposition
+    materialComposition:
+      Plastic: 500 # 5 sheets
+      SalvageTicket: 5 # 8 tickets
+
+- type: entity
+  parent: LustBaseScrap
+  id: ScrapPileOfWood
+  name: pile of wood
+  description: A heap of broken boards and splinters.
+  components:
+  - type: Sprite
+    layers:
+      - state: wood
+  - type: Item
+    size: Large
+  - type: MultiHandedItem
+  - type: PhysicalComposition
+    materialComposition:
+      Wood: 500 # 5 sheets
+      SalvageTicket: 5 # 8 tickets
+
+- type: entity
+  parent: BaseScrapLarge
+  id: ScrapRack
+  name: rack
+  description: Old tin rack.
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    layers:
+      - state: rack
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 1000 # 10 sheets
+      Plastic: 500 # 5 sheets
+      SalvageTicket: 25 # 25 tickets
+
+- type: entity
+  parent: ScrapRack
+  id: ScrapRackBroken1
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    layers:
+      - state: rack1
+
+- type: entity
+  parent: ScrapRack
+  id: ScrapRackBroken2
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    layers:
+      - state: rack2
+
+- type: entity
+  parent: PosterBase
+  id: PosterTunnel
+  name: poster
+  description: There is something drawn on it.
+  suffix: Scrap
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    state: poster
+
+- type: entity
+  parent: PosterBase
+  id: PosterTunnel1
+  name: poster
+  description: There is something drawn on it.
+  suffix: Scrap
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    state: poster1
+
+- type: entity
+  parent: PosterBase
+  id: NameplateTunnel
+  name: tech tunnels
+  description: There is something written here.
+  suffix: Scrap
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    state: nameplate
+
+- type: entity
+  parent: PosterBase
+  id: NameplateTunnel1
+  name: tech tunnels
+  description: There is something written here.
+  suffix: Scrap
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Materials/garbage.rsi
+    state: nameplate1
