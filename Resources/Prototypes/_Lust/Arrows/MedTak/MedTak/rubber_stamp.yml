@@ -1,0 +1,13 @@
+# MedTak
+- type: entity
+  name: MedTak rubber stamp
+  parent: [ RubberStampBase, LustBaseMedTakContraband ]
+  id: LustRubberStampMedTak
+  categories: [ DoNotMap ]
+  components:
+  - type: Stamp
+    stampedName: "MedTak"
+    stampedColor: "#880606"
+    stampState: "paper_stamp-syndicate"
+  - type: Sprite
+    state: stamp-syndicate

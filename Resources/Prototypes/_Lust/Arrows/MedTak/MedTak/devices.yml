@@ -1,0 +1,48 @@
+# Team radio and access devices.
+- type: radioChannel
+  id: LustMedTak
+  name: chat-radio-medtak
+  keycode: 'k'
+  frequency: 1452
+  color: "#880606"
+  longRange: true
+
+- type: entity
+  id: LustEncryptionKeyMedTak
+  parent: EncryptionKey
+  name: MedTak encryption key
+  description: An encryption key used by MedTak operators.
+  components:
+  - type: EncryptionKey
+    channels:
+    - LustMedTak
+    defaultChannel: LustMedTak
+  - type: Sprite
+    layers:
+    - sprite: _Lust/Objects/Devices/encryption_keys.rsi
+      state: crypt_medtak
+    - sprite: _Lust/Objects/Devices/encryption_keys.rsi
+      state: medtak_label
+
+- type: entity
+  id: LustClothingHeadsetAltMedTak
+  parent: [ ClothingHeadsetAlt, LustBaseMedTakContraband ]
+  name: MedTak operator headset
+  description: A headset used by MedTak operators.
+  components:
+  - type: Headset
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - LustEncryptionKeyMedTak
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: _Lust/Admeme/Clothing/Ears/Headsets/medtak.rsi
+  - type: Clothing
+    sprite: _Lust/Admeme/Clothing/Ears/Headsets/medtak.rsi
+
+- type: Tag
+  id: LustBorgModuleMedTak
+
+- type: Tag
+  id: RollerBed
