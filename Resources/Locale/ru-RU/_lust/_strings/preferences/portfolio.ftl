@@ -1,5 +1,6 @@
 ### портфолио персонажа
 lust-humanoid-profile-editor-portfolio-tab = Портфолио
+lust-humanoid-profile-editor-portfolio-lock-button = портфолио
 lust-humanoid-profile-editor-portfolio-additional-information = Дополнительные сведения
 lust-humanoid-profile-editor-portfolio-marital-single-text = Не в браке
 lust-humanoid-profile-editor-portfolio-marital-married-text = В браке

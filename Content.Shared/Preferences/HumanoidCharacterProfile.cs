@@ -252,6 +252,7 @@ namespace Content.Shared.Preferences
             Eyes = 1 << 5,
             Skin = 1 << 6,
             Markings = 1 << 7,
+            Portfolio = 1 << 8, // lust edit
         }
 
         /// <summary>
@@ -265,7 +266,8 @@ namespace Content.Shared.Preferences
             | RandomizeCfg.Gender
             | RandomizeCfg.Eyes
             | RandomizeCfg.Skin
-            | RandomizeCfg.Markings;
+            | RandomizeCfg.Markings
+            | RandomizeCfg.Portfolio; // Lust edit
 
         /// <summary>
         /// Picks a random species from roundstart species.
@@ -395,8 +397,8 @@ namespace Content.Shared.Preferences
             else if (profile.Species != baseProfile.Species || profile.Sex != baseProfile.Sex)
                 profile.AdaptSunriseRandomProfile(speciesProto, prototypeManager);
             // Sunrise edit end
-            // Lust start - регенерируем портфолио только при полной рандомизации
-            if (fullRandom)
+            // Lust start - портфолио регенерируется, если включён флаг RandomizeCfg.Portfolio
+            if ((randomizeCfg & RandomizeCfg.Portfolio) != 0)
                 profile.Portfolio = PortfolioProfile.RandomForSpecies(profile.Species);
             // Lust end
             return profile;
