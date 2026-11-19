@@ -29,6 +29,7 @@
     - alertType: Rooted
     - alertType: Pacified
     - alertType: Stealthy
+    - alertType: LustPassiveRecharge # Lust edit - индикатор зарядки перед состоянием батареи.
 
 - type: entity
   id: AlertSpriteView

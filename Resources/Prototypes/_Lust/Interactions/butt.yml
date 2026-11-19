@@ -102,7 +102,7 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:SexCondition
+  - !type:LustSexCondition
     checkInitiator: true
     checkTarget: false
     requiredSex: [ Male, Futanari ]
