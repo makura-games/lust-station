@@ -14,16 +14,18 @@
     itemIconStyle: BigAction
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/blink.ogg
-    icon:
-      sprite: Objects/Magic/magicactions.rsi
-      state: blink
+  - type: Sprite
+    sprite: Objects/Magic/magicactions.rsi
+    layers:
+    - state: "blink"
+      map: [ "enum.ActionVisuals.Icon" ]
   - type: TargetAction
     range: 16 # default examine-range.
     # ^ should probably add better validation that the clicked location is on the users screen somewhere,
     repeat: false
     checkCanAccess: false
   - type: WorldTargetAction
-    event: !type:TeleportSpellEvent
+    event: !type:TeleportActionEvent
 
 - type: entity
   parent: BaseSubdermalImplant
@@ -52,9 +54,7 @@
   components:
     - type: TimedDespawn
       lifetime: 20
-    - type: Tag
-      tags:
-        - Wall
+    - type: Wall
     - type: PointLight
       enabled: true
       radius: 3
@@ -89,9 +89,11 @@
   - type: Action
     useDelay: 40
     itemIconStyle: BigAction
-    icon:
-      sprite: Structures/Holo/security.rsi
-      state: icon
+  - type: Sprite
+    sprite: Structures/Holo/security.rsi
+    layers:
+    - state: "icon"
+      map: [ "enum.ActionVisuals.Icon" ]
   - type: InstantAction
     event: !type:InstantSpawnSpellEvent
       prototype: WallForceArrows
@@ -129,9 +131,11 @@
     useDelay: 90
     sound: !type:SoundPathSpecifier
       path: /Audio/Machines/Nuke/nuke_alarm.ogg
-    icon:
-      sprite: Objects/Magic/magicactions.rsi
-      state: gib
+  - type: Sprite
+    sprite: Objects/Magic/magicactions.rsi
+    layers:
+    - state: "gib"
+      map: [ "enum.ActionVisuals.Icon" ]
   - type: EntityTargetAction
     event: !type:SmiteSpellEvent
   - type: Magic
@@ -175,9 +179,7 @@
   name: power barrier
   suffix: infinite
   components:
-    - type: Tag
-      tags:
-        - Wall
+    - type: Wall
     - type: PointLight
       enabled: true
       radius: 3

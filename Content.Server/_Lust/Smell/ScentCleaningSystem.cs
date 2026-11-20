@@ -5,9 +5,7 @@ using Content.Shared._Lust.Smell.Components;
 using Content.Shared.ActionBlocker;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
-using Content.Shared.Verbs;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
 
 namespace Content.Server._Lust.Smell;
 
@@ -28,33 +26,14 @@ public sealed partial class ScentCleaningSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<ScentCleaningComponent, GetVerbsEvent<UtilityVerb>>(OnUtilityVerb);
+        SubscribeLocalEvent<ScentCleaningComponent, ScentCleaningExecuteEvent>(OnScentCleaningExecute);
         SubscribeLocalEvent<ScentCleaningComponent, ScentCleaningDoAfterEvent>(OnScentCleaningDoAfter);
     }
 
-    /// <summary>
-    /// Right-click with soap in hand: show the "Wash scents" verb, but only
-    /// if the target is a scent bearer (has ScentComponent).
-    /// </summary>
-    private void OnUtilityVerb(Entity<ScentCleaningComponent> cleaner, ref GetVerbsEvent<UtilityVerb> args)
+    /// <summary>Executes the "wash scents" verb via TryCleanScents.</summary>
+    private void OnScentCleaningExecute(Entity<ScentCleaningComponent> cleaner, ref ScentCleaningExecuteEvent args)
     {
-        if (!args.CanInteract || !args.CanAccess)
-            return;
-
-        if (!HasComp<ScentComponent>(args.Target))
-            return;
-
-        var user = args.User;
-        var target = args.Target;
-
-        args.Verbs.Add(new UtilityVerb
-        {
-            Act = () => TryCleanScents(cleaner.AsNullable(), user, (target, null)),
-            Icon = new SpriteSpecifier.Texture(new("/Textures/Interface/VerbIcons/bubbles.svg.192dpi.png")),
-            Text = _loc.GetString("scent-cleaning-verb-text"),
-            Message = _loc.GetString("scent-cleaning-verb-message"),
-            DoContactInteraction = false,
-        });
+        TryCleanScents(cleaner.AsNullable(), args.User, (args.Target, null));
     }
 
     /// <summary>

@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using Content.Server._Sunrise.NewLife.UI;
 using Content.Server.EUI;
@@ -10,7 +11,7 @@ using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Shared._Sunrise.NewLife;
 using Content.Shared._Sunrise.SunriseCCVars;
-using Content.Shared.Ghost;
+using Content.Shared.Ghost.Components;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
@@ -27,12 +28,12 @@ namespace Content.Server._Sunrise.NewLife;
 public sealed partial class NewLifeSystem : SharedNewLifeSystem
 {
     [Dependency] private EuiManager _euiManager = default!;
-    [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private GameTicker _gameTicker = default!;
     [Dependency] private StationJobsSystem _stationJobs = default!;
     [Dependency] private StationSystem _stationSystem = default!;
     [Dependency] private IServerPreferencesManager _prefsManager = default!;
     [Dependency] private PlayTimeTrackingSystem _playTimeTrackings = default!;
+    [Dependency] private SharedRoleSystem _roleSystem = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IServerNetManager _netMgr = default!;
     [Dependency] private IGameTiming _timing = default!;
@@ -176,8 +177,8 @@ public sealed partial class NewLifeSystem : SharedNewLifeSystem
         // Lust-Start
         var preferences = _prefsManager.GetPreferences(player.UserId);
         if (!preferences.Characters.TryGetValue(selectedCharacterId, out var selectedProfile)
-            || !_prototypeManager.Resolve(roleProto, out JobPrototype? selectedJob)
-            || selectedJob.SpeciesBlacklist.Contains(selectedProfile.Species))
+            || !ProtoMan.Resolve(roleProto, out JobPrototype? selectedJob)
+            || _roleSystem.GetRoleRequirements(selectedJob)?.OfType<SpeciesRequirement>().Any(requirement => requirement.Inverted && requirement.Species.Contains(selectedProfile.Species)) == true)
         {
             eui.StateDirty();
             return;
@@ -242,7 +243,7 @@ public sealed partial class NewLifeSystem : SharedNewLifeSystem
                 if (!_playTimeTrackings.IsAllowed(session, job.Key))
                     continue;
 
-                availableStationJobs.Add((_prototypeManager.Index(job.Key), job.Value));
+                availableStationJobs.Add((ProtoMan.Index(job.Key), job.Value));
             }
 
             if (availableStationJobs.Count == 0)

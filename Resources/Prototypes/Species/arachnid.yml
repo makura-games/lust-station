@@ -12,6 +12,13 @@
   femaleFirstNames: NamesArachnidFirst
   maleLastNames: NamesArachnidLast
   femaleLastNames: NamesArachnidLast
+  defaultSoundsBySex:
+  - UnisexArachnid
+  - UnisexArachnid
+  - UnisexArachnid
+  - UnisexArachnid # Lust-Edit
+  voices:
+  - UnisexArachnid
   # Sunrise-Edit
   buttScan:
     sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi

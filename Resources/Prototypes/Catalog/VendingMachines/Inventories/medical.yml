@@ -73,8 +73,8 @@
     BoxBodyBag: 1
     # Extra Expendable Gear
     Gauze: 4
-    Brutepack: 4
-    Ointment: 4
+    Brutepack: 5 # lust-edit - lust pr #662
+    Ointment: 5 # lust-edit - lust pr #662
     Bloodpack: 4
     # Optional / Situational Gear
     BoxBottle: 3

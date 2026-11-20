@@ -177,7 +177,6 @@
   - type: Puller
     needsHands: false
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeatUnath
       amount: 5
@@ -193,11 +192,14 @@
       sprite: Effects/creampie.rsi
       state: creampie_lizard
   - type: Vocal
-    sounds:
-      Male: MaleReptilian
-      Female: FemaleReptilian
-      Futanari: FemaleReptilian # Lust edit - используем женский набор звуков
-      Unsexed: MaleReptilian
+    emoteSounds: MaleReptilian
+# lust-archived-start
+#    sounds:
+#      Male: MaleReptilian
+#      Female: FemaleReptilian
+#      Futanari: FemaleReptilian # Lust edit - используем женский набор звуков
+#      Unsexed: MaleReptilian
+# lust-archived-end
   - type: BodyEmotes
     soundsId: ReptilianBodyEmotes
   - type: Damageable
@@ -210,11 +212,8 @@
     damage:
       types:
         Slash: 5
-  - type: Temperature
-    currentTemperature: 310.15
-    specificHeat: 42
   - type: TemperatureDamage
-    heatDamageThreshold: 400
+    heatDamageThreshold: 321.15
     coldDamageThreshold: 285
     coldDamage:
       types:
@@ -248,7 +247,7 @@
   # Lust end
 
 - type: entity
-  parent: OrganBase
+  parent: OrganBaseOrganic
   id: OrganReptilian
   abstract: true
   suffix: Reptilian

@@ -1,10 +1,12 @@
+using Robust.Shared.GameStates;
+
 namespace Content.Shared._Lust.Smell.Components;
 
 /// <summary>
 /// Scent-cleaner marker: an item (soap, spray, etc.) with which a player can wash
 /// temporary scents off a target and temporarily mask the target's base scent.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class ScentCleaningComponent : Component
 {
     /// <summary>

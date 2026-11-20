@@ -1,89 +1,209 @@
 - type: interactionSound
-  id: Kiss1
-  name: lust-interaction-sound-Kiss1
+  id: lustKiss1
+  name: lust-interaction-sound-kiss-1
   sound: /Audio/_Lust/Interactions/kiss1.ogg
 
 - type: interactionSound
-  id: Kiss2
-  name: lust-interaction-sound-Kiss2
+  id: lustKiss2
+  name: lust-interaction-sound-kiss-2
   sound: /Audio/_Lust/Interactions/kiss2.ogg
 
 - type: interactionSound
-  id: Kiss3
-  name: lust-interaction-sound-Kiss3
+  id: lustKiss3
+  name: lust-interaction-sound-kiss-3
   sound: /Audio/_Lust/Interactions/kiss3.ogg
 
 - type: interactionSound
-  id: Kiss4
-  name: lust-interaction-sound-Kiss4
+  id: lustKiss4
+  name: lust-interaction-sound-kiss-4
   sound: /Audio/_Lust/Interactions/kiss4.ogg
 
 - type: interactionSound
-  id: Kiss5
-  name: lust-interaction-sound-Kiss5
+  id: lustKiss5
+  name: lust-interaction-sound-kiss-5
   sound: /Audio/_Lust/Interactions/kiss5.ogg
 
 - type: interactionSound
-  id: Kiss6
-  name: lust-interaction-sound-Kiss6
+  id: lustKiss6
+  name: lust-interaction-sound-kiss-6
   sound: /Audio/_Lust/Interactions/kiss6.ogg
 
 - type: interactionSound
-  id: Hlup1
-  name: lust-interaction-sound-Hlup1
+  id: lustHlup1
+  name: lust-interaction-sound-hlup-1
   sound: /Audio/_Lust/Interactions/hlup.ogg
 
 - type: interactionSound
-  id: Hlup2
-  name: lust-interaction-sound-Hlup2
+  id: lustHlup2
+  name: lust-interaction-sound-hlup-2
   sound: /Audio/_Lust/Interactions/hlup2.ogg
 
 - type: interactionSound
-  id: Hlup3
-  name: lust-interaction-sound-Hlup3
+  id: lustHlup3
+  name: lust-interaction-sound-hlup-3
   sound: /Audio/_Lust/Interactions/hlup3.ogg
 
 - type: interactionSound
-  id: Hlup4
-  name: lust-interaction-sound-Hlup4
+  id: lustHlup4
+  name: lust-interaction-sound-hlup-4
   sound: /Audio/_Lust/Interactions/hlup4.ogg
 
 - type: interactionSound
-  id: ALotOfKisses
-  name: lust-interaction-sound-ALotOfKisses
+  id: lustALotOfKisses
+  name: lust-interaction-sound-alot-of-kisses
   sound: /Audio/_Lust/Interactions/alot_of_kisses.ogg
 
 - type: interactionSound
-  id: Whip1
-  name: lust-interaction-sound-Whip1
+  id: lustWhip1
+  name: lust-interaction-sound-whip-1
   sound: /Audio/_Lust/Interactions/whip/whip_1.ogg
 
 - type: interactionSound
-  id: Whip2
-  name: lust-interaction-sound-Whip2
+  id: lustWhip2
+  name: lust-interaction-sound-whip-2
   sound: /Audio/_Lust/Interactions/whip/whip_2.ogg
 
 - type: interactionSound
-  id: Whip3
-  name: lust-interaction-sound-Whip3
+  id: lustWhip3
+  name: lust-interaction-sound-whip-3
   sound: /Audio/_Lust/Interactions/whip/whip_3.ogg
 
 - type: interactionSound
-  id: FinterLick
-  name: lust-interaction-sound-FinterLick
+  id: lustFinterLick
+  name: lust-interaction-sound-finter-lick
   sound: /Audio/_Lust/Interactions/fingerlick/fingerlick.ogg
 
 - type: interactionSound
-  id: FemaleSigh
-  name: lust-interaction-sound-FemaleSigh
+  id: lustFemaleSigh
+  name: lust-interaction-sound-female-sigh
   sound: /Audio/Voice/Human/female_sigh.ogg
 
 - type: interactionSound
-  id: MaleSigh
-  name: lust-interaction-sound-MaleSigh
+  id: lustMaleSigh
+  name: lust-interaction-sound-male-sigh
   sound: /Audio/Voice/Human/male_sigh.ogg
 
 - type: interactionSound
-  id: FenceRattle1
-  name: lust-interaction-sound-FenceRattle1
+  id: lustFenceRattle1
+  name: lust-interaction-sound-fence-rattle-1
   sound: /Audio/Effects/fence_rattle1.ogg
+
+- type: interactionSound
+  id: lustEuphmoan1
+  name: lust-interaction-sound-euph-moan-1
+  sound: /Audio/_Lust/Interactions/euphmoan1.ogg
+
+- type: interactionSound
+  id: lustEuphmoan2
+  name: lust-interaction-sound-euph-moan-2
+  sound: /Audio/_Lust/Interactions/euphmoan2.ogg
+
+- type: interactionSound
+  id: lustEuphmoan3
+  name: lust-interaction-sound-euph-moan-3
+  sound: /Audio/_Lust/Interactions/euphmoan3.ogg
+
+- type: interactionSound
+  id: lustFemaleMoan1
+  name: lust-interaction-sound-female-moan-1
+  sound: /Audio/_Lust/Interactions/femston1.ogg
+
+- type: interactionSound
+  id: lustFemaleMoan2
+  name: lust-interaction-sound-female-moan-2
+  sound: /Audio/_Lust/Interactions/femston2.ogg
+
+- type: interactionSound
+  id: lustFemaleMoan3
+  name: lust-interaction-sound-female-moan-3
+  sound: /Audio/_Lust/Interactions/femston3.ogg
+
+- type: interactionSound
+  id: lustFemaleMoan4
+  name: lust-interaction-sound-female-moan-4
+  sound: /Audio/_Lust/Interactions/femston4.ogg
+
+- type: interactionSound
+  id: lustFemaleMoan5
+  name: lust-interaction-sound-female-moan-5
+  sound: /Audio/_Lust/Interactions/femston5.ogg
+
+- type: interactionSound
+  id: lustFemaleMoan6
+  name: lust-interaction-sound-female-moan-6
+  sound: /Audio/_Lust/Interactions/femston6.ogg
+
+- type: interactionSound
+  id: lustFemaleMoan7
+  name: lust-interaction-sound-female-moan-7
+  sound: /Audio/_Lust/Interactions/femston7.ogg
+
+- type: interactionSound
+  id: lustMaleMoan1
+  name: lust-interaction-sound-male-moan-1
+  sound: /Audio/_Lust/Interactions/maleston1.ogg
+
+- type: interactionSound
+  id: lustMaleMoan2
+  name: lust-interaction-sound-male-moan-2
+  sound: /Audio/_Lust/Interactions/maleston2.ogg
+
+- type: interactionSound
+  id: lustScratch
+  name: lust-interaction-sound-scratch
+  sound: /Audio/_Lust/Interactions/skratch/skratch_1.ogg
+
+- type: interactionSound
+  id: lustClap3
+  name: lust-interaction-sound-clap-3
+  sound: /Audio/Effects/Emotes/clap3.ogg
+
+- type: interactionSound
+  id: lustClap4
+  name: lust-interaction-sound-clap-4
+  sound: /Audio/Effects/Emotes/clap4.ogg
+
+- type: interactionSound
+  id: lustClapSingle
+  name: lust-interaction-sound-clap-single
+  sound: /Audio/Effects/Emotes/clap-single.ogg
+
+- type: interactionSound
+  id: lustSnap1
+  name: lust-interaction-sound-snap-1
+  sound: /Audio/Effects/Emotes/snap1.ogg
+
+- type: interactionSound
+  id: lustSnap2
+  name: lust-interaction-sound-snap-2
+  sound: /Audio/Effects/Emotes/snap2.ogg
+
+- type: interactionSound
+  id: lustSnap3
+  name: lust-interaction-sound-snap-3
+  sound: /Audio/Effects/Emotes/snap3.ogg
+
+- type: interactionSound
+  id: lustRustle1
+  name: lust-interaction-sound-rustle-1
+  sound: /Audio/Effects/rustle1.ogg
+
+- type: interactionSound
+  id: lustRustle2
+  name: lust-interaction-sound-rustle-2
+  sound: /Audio/Effects/rustle2.ogg
+
+- type: interactionSound
+  id: lustRustle3
+  name: lust-interaction-sound-rustle-3
+  sound: /Audio/Effects/rustle3.ogg
+
+- type: interactionSound
+  id: lustRustle4
+  name: lust-interaction-sound-rustle-4
+  sound: /Audio/Effects/rustle4.ogg
+
+- type: interactionSound
+  id: lustRustle5
+  name: lust-interaction-sound-rustle-5
+  sound: /Audio/Effects/rustle5.ogg

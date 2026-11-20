@@ -1,7 +1,7 @@
 - type: entity
   name: rat king
   id: MobRatKing
-  parent: [ BaseMobRat, SimpleMobBase, MobCombat ]
+  parent: [ BaseMobRat, SimpleMobBase, MobCombat, BaseSlicingRefinable, MobNightVision, BaseMobDestructible, BaseThirstSlowdown ]
   description: He's da rat. He make da roolz.
   components:
   # Sunrise edit start
@@ -67,22 +67,12 @@
       types:
         Slash: 12
         Piercing: 8
-  - type: Hunger # probably should be prototyped
-    thresholds:
-      Overfed: 300 # Sunrise-Edit
-      Okay: 250 # Sunrise-Edit
-      Peckish: 100
-      Starving: 50
-      Dead: 0
-    baseDecayRate: 0.01666666666
-  - type: Thirst
-    thresholds:
-      OverHydrated: 600
-      Okay: 450
-      Thirsty: 300
-      Parched: 150
-      Dead: 0
-    baseDecayRate: 0.1
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: RegalRatHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: DamageStateVisuals
     states:
       Alive:
@@ -117,8 +107,8 @@
   - type: MobsterAccent
   - type: Speech
     speechVerb: SmallMob
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: ClothingHeadHatFancyCrown #how did that get there?
       amount: 1
   - type: MobPrice
@@ -128,13 +118,26 @@
     - NamesRegalratKingdom
     - NamesRegalratTitle
     nameFormat: name-format-regal-rat
+  - type: NameIdentifier
+    group: null  # Strips the numeric identifier from the rat king's name, since they already have randomly-generated names anyway
+# lust-edit-start
+#  - type: Grammar
+#    attributes:
+#      proper: true
+#      gender: male
+# lust-edit-end
   - type: GuideHelp
     guides:
     - MinorAntagonists
+# lust-edit-start
   - type: Grammar
     attributes:
+      proper: true
       gender: female
-  - type: Sharp
+  # lust-edit-end
+  - type: Tool
+    qualities:
+    - Slicing
   # Sunrise-start
   - type: FlashImmunity
   - type: Bloodstream
@@ -188,7 +191,7 @@
 - type: entity
   name: rat servant
   id: MobRatServant
-  parent: [ BaseMobRat, SimpleMobBase, MobCombat ]
+  parent: [ BaseMobRat, SimpleMobBase, MobCombat, BaseSlicingRefinable, BaseThirstSlowdown ]
   description: He's da mini rat. He don't make da roolz.
   categories: [ HideSpawnMenu ] #Must be configured to a King or the AI breaks.
   components:
@@ -283,22 +286,12 @@
       types:
         Slash: 5
         Piercing: 3
-  - type: Hunger # probably should be prototyped
-    thresholds:
-      Overfed: 200
-      Okay: 150
-      Peckish: 100
-      Starving: 50
-      Dead: 0
-    baseDecayRate: 0.01666666666
-  - type: Thirst
-    thresholds:
-      OverHydrated: 600
-      Okay: 450
-      Thirsty: 300
-      Parched: 150
-      Dead: 0
-    baseDecayRate: 0.1
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: RegalRatHunger
+      Thirst:
+        prototype: NormalSatiationThirst
   - type: DamageStateVisuals
     states:
       Alive:
@@ -308,15 +301,12 @@
         Base: dead
       Dead:
         Base: splat
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatRat
       amount: 1
   - type: Vocal
-    sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
+    emoteSounds: Mouse
     wilhelmProbability: 0.001
   - type: Tag
     tags:
@@ -442,22 +432,12 @@
     distance: 0.5
     speed: 5
   - type: Body
-  - type: Hunger # probably should be prototyped
-    thresholds:
-      Overfed: 300
-      Okay: 200
-      Peckish: 150
-      Starving: 100
-      Dead: 0
-    baseDecayRate: 0.01
-  - type: Thirst
-    thresholds:
-      OverHydrated: 600
-      Okay: 450
-      Thirsty: 300
-      Parched: 150
-      Dead: 0
-    baseDecayRate: 0.01
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: SunriseRatGuardHunger # Sunrise edit
+      Thirst:
+        prototype: SunriseRatGuardThirst # Sunrise edit
   - type: DamageStateVisuals
     states:
       Alive:
@@ -467,15 +447,12 @@
         Base: dead
       Dead:
         Base: dead
-  - type: Butcherable
-    spawned:
+  - type: ToolRefinable
+    refineResult:
     - id: FoodMeatRat
       amount: 3  # More meat from guards
   - type: Vocal
-    sounds:
-      Male: Mouse
-      Female: Mouse
-      Unsexed: Mouse
+    emoteSounds: Mouse
     wilhelmProbability: 0.001
   - type: Tag
     tags:
@@ -538,9 +515,10 @@
   components:
   - type: Action
     useDelay: 3 # Sunrise-Edit
-    icon:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: ratKingArmy
+  - type: Sprite
+    sprite: Interface/Actions/actions_rat_king.rsi
+    layers:
+    - state: ratKingArmy
   - type: InstantAction
     event: !type:RatKingRaiseArmyActionEvent
 
@@ -552,9 +530,10 @@
   components:
   - type: Action
     useDelay: 6
-    icon:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: ratKingDomain
+  - type: Sprite
+    sprite: Interface/Actions/actions_rat_king.rsi
+    layers:
+    - state: ratKingDomain
   - type: InstantAction
     event: !type:RatKingDomainActionEvent
 
@@ -566,13 +545,15 @@
   components:
   - type: Action
     useDelay: 1
-    icon:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: stayOff
-    iconOn:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: stay
     priority: 5
+  - type: Sprite
+    sprite: Interface/Actions/actions_rat_king.rsi
+    layers:
+    - state: stayOff
+      map: ["enum.ActionVisuals.Icon"]
+    - state: stay
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: InstantAction
     event: !type:RatKingOrderActionEvent
       type: Stay
@@ -585,13 +566,15 @@
   components:
   - type: Action
     useDelay: 1
-    icon:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: followOff
-    iconOn:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: follow
     priority: 6
+  - type: Sprite
+    sprite: Interface/Actions/actions_rat_king.rsi
+    layers:
+    - state: followOff
+      map: ["enum.ActionVisuals.Icon"]
+    - state: follow
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: InstantAction
     event: !type:RatKingOrderActionEvent
       type: Follow
@@ -604,13 +587,15 @@
   components:
   - type: Action
     useDelay: 1
-    icon:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: attackOff
-    iconOn:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: attack
     priority: 7
+  - type: Sprite
+    sprite: Interface/Actions/actions_rat_king.rsi
+    layers:
+    - state: attackOff
+      map: ["enum.ActionVisuals.Icon"]
+    - state: attack
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: InstantAction
     event: !type:RatKingOrderActionEvent
       type: CheeseEm
@@ -623,13 +608,15 @@
   components:
   - type: Action
     useDelay: 1
-    icon:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: looseOff
-    iconOn:
-      sprite: Interface/Actions/actions_rat_king.rsi
-      state: loose
     priority: 8
+  - type: Sprite
+    sprite: Interface/Actions/actions_rat_king.rsi
+    layers:
+    - state: looseOff
+      map: ["enum.ActionVisuals.Icon"]
+    - state: loose
+      map: ["enum.ActionVisuals.IconToggled"]
+      visible: false
   - type: InstantAction
     event:
       !type:RatKingOrderActionEvent

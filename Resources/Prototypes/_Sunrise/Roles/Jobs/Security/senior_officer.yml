@@ -3,11 +3,10 @@
   name: job-name-senior-officer
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
-  # Lust-Start
-  speciesBlacklist:
-  - Felinid
-  # Lust-End
   requirements:
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
     # Lust-edit-start
     - !type:AgeRequirement
       requiredAge: 26
@@ -27,7 +26,6 @@
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos
-  displayWeight: 60
   alternativeTitles:
   - job-alt-title-training-officer
   - job-alt-title-senior-officer

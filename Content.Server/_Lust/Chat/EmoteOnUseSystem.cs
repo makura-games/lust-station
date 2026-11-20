@@ -1,6 +1,8 @@
 ﻿using Content.Server.Chat.Systems;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Timing;
+using Content.Shared.Timing.Components;
+using Content.Shared.Timing.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 

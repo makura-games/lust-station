@@ -6,10 +6,10 @@
   id: LustDefault
   woundScentThreshold: 10
   poisonScentThreshold: 25
-  woundScentDuration: 300
-  poisonScentDuration: 200
-  otherBloodScentDuration: 600
-  arousalScentDuration: 300
-  orgasmScentDuration: 500
+  woundScentDuration: 900
+  poisonScentDuration: 900
+  otherBloodScentDuration: 1800
+  arousalScentDuration: 1500
+  orgasmScentDuration: 1500
   scentCleaningRange: 1.5
   maskedScentColor: '#a6d8ff'

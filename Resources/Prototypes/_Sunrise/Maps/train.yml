@@ -30,7 +30,7 @@
           - gridPaths:
             - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
             - /Maps/_Sunrise/Shuttles/Security/arrow.yml
-            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            #- /Maps/_Sunrise/Shuttles/Security/security.yml
           # Lust-End
             priorityTag: DockSecurity
         - type: StationEmergencyShuttle
@@ -96,9 +96,10 @@
             Musician: [ 1, 1 ]
             #blueshield (1)
             BlueShieldOfficer: [ 1, 1 ]
-            #law (3)
+            #law (5)
             IAA: [ 1, 1 ]
             Lawyer: [ 1, 2 ]
+            NtrOfficer: [1, 1] # lust-edit
             #silicon (2)
             StationAi: [ 1, 1 ]
             Borg: [ 2, 2 ]

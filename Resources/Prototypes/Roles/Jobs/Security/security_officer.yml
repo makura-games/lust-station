@@ -4,18 +4,18 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
-  # Lust-Start
-  speciesBlacklist:
-  - Felinid
-  # Lust-End
   requirements:
+    # Lust-Start - сохраняем чёрный список при переносе в требования роли
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
+    # Lust-End
     - !type:DepartmentTimeRequirement
       department: Security
       time: 4h
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
-  displayWeight: 10
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-law-enforcer

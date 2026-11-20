@@ -23,7 +23,7 @@
   interactionSounds:
   - FaceLickDoggyStyleSound1
   - FaceLickDoggyStyleSound2
-  - Kiss1
+  - lustKiss1
   loveUser: 2
   loveTarget: 2
   cooldown: 3
@@ -53,7 +53,7 @@
   interactionSounds:
   - FaceLickDoggyStyleSound1
   - FaceLickDoggyStyleSound2
-  - Kiss1
+  - lustKiss1
   loveUser: 2
   loveTarget: 2
   cooldown: 3
