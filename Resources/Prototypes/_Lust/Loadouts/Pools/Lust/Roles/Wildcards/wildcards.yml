@@ -67,3 +67,79 @@
   - LustSpecialLoadout
   - Contributors
 
+- type: roleLoadout
+  id: JobLustCentCommInspector
+  groups:
+  - LustCentCommOperatorHats
+  - LustCentCommOperatorNeck
+  - LustCentCommOperatorJumpsuit
+  - LustCentCommOperatorBackpack
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - LustCentCommOperatorBra
+  - LustCentCommOperatorPants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: JobLustCentCommChiefOfStaff
+  groups:
+  - LustCentCommOperatorHats
+  - LustCentCommOperatorNeck
+  - LustCentCommOperatorJumpsuit
+  - LustCentCommOperatorBackpack
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - LustCentCommOperatorBra
+  - LustCentCommOperatorPants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: JobLustCentCommIntern
+  groups:
+  - LustCentCommOperatorHats
+  #- LustCentCommOperatorNeck
+  - LustCentCommOperatorJumpsuit
+  - LustCentCommOperatorBackpack
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - LustCentCommOperatorBra
+  - LustCentCommOperatorPants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: JobLustCentCommIDOperator
+  groups:
+  - LustCentCommOperatorHats
+  - LustCentCommOperatorNeck
+  - LustCentCommOperatorJumpsuit
+  - LustCentCommOperatorBackpack
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - LustCentCommOperatorBra
+  - LustCentCommOperatorPants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors
+
+- type: roleLoadout
+  id: JobLustCentCommSpecOpsOperator
+  groups:
+  - LustCentCommSpecOpsOperatorNeck
+  - SunriseTrinkets
+  - SunriseSurvival
+  - GroupSpeciesBreathTool
+  - LustCentCommOperatorBra
+  - LustCentCommOperatorPants
+  - Socks
+  - LustSpecialLoadout
+  - Contributors

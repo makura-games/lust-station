@@ -10,6 +10,11 @@
       limit: 1
       onlyGroupWhitelisted: true
       required: false
+    # Sunrise edit start - в верхней части головы допускается только одна маркировка
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 1
+      required: false
+    # Sunrise edit end
     enum.HumanoidVisualLayers.Head:
       limit: 4
       required: false
@@ -74,6 +79,7 @@
 - type: entity
   parent: BaseSpeciesAppearance
   id: AppearanceVox
+  categories: [ HideSpawnMenu ]
   name: vox appearance
   components:
   - type: Inventory
@@ -174,6 +180,10 @@
     allowedEmotes: ['Click', 'Chitter']
   - type: TypingIndicator
     proto: vox
+  - type: CreamPied
+    sprite:
+      sprite: Effects/creampie.rsi
+      state: creampie_vox
   - type: Vocal
     sounds:
       Male: UnisexVox
@@ -247,7 +257,7 @@
     bloodReferenceSolution:
       reagents:
       - ReagentId: AmmoniaBlood
-        Quantity: 300
+        Quantity: 600
   - type: MeleeWeapon
     soundHit:
       collection: AlienClaw
@@ -260,6 +270,10 @@
   # Sunrise start
   - type: Interactions
   # Sunrise end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustVox
+  # Lust end
 
 - type: entity
   parent: OrganBase
@@ -317,6 +331,12 @@
     dependentHidingLayers:
       enum.HumanoidVisualLayers.Snout:
       - enum.HumanoidVisualLayers.SnoutCover
+    markingsDisplacement:
+      Hair:
+        sizeMaps:
+          32:
+            sprite: Mobs/Species/Vox/displacement.rsi
+            state: hair
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganVoxExternal ]

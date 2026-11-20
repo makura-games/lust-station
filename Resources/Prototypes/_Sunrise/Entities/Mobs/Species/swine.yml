@@ -83,8 +83,9 @@
       Unsexed: UnisexSwine
   - type: SwineAccent
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Swine
+  - type: Injurable
+    damageContainer: Biological
   - type: Butcherable
     butcheringType: Spike # TODO human.
     spawned:
@@ -93,6 +94,10 @@
   - type: FootprintEmitter
     leftBareFootState: [ footprint-left-bare-spider ]
     rightBareFootState: [ footprint-right-bare-spider ]
+  #Lust start
+  - type: Scent
+    personalScentProfile: LustSwine
+  #Lust end
 
 - type: entity
   save: false

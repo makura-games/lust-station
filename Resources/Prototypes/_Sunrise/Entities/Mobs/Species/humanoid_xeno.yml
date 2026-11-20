@@ -85,8 +85,9 @@
         Quantity: 300
   - type: ProtectedFromStepTriggers
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Xenomorph
+  - type: Injurable
+    damageContainer: Biological
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
     baseSprintSpeed: 4
@@ -275,6 +276,10 @@
   - type: FootprintEmitter
     leftBareFootState: [ footprint-left-bare-lizard ]
     rightBareFootState: [ footprint-right-bare-lizard ]
+  #Lust start
+  - type: Scent
+    personalScentProfile: LustHumanoidXeno
+  #Lust end
 
 - type: entity
   parent: AppearanceHumanoidXeno

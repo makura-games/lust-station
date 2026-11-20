@@ -1,6 +1,6 @@
 ﻿- type: entity
   name: Dragunov
-  parent: [ BaseWeaponRifle, BaseGunWieldable ]
+  parent: [ BaseWeaponRifle, BaseGunWieldable, BaseSovietContraband ] # Lust edit :: BaseSovietContraband
   id: WeaponSniperDragunov
   components:
   - type: Sprite
@@ -77,7 +77,7 @@
 
 - type: entity
   name: SR-127 Bauer bolt action rifle
-  parent: [ BaseWeaponRifle, BaseGunWieldable ]
+  parent: [ BaseWeaponRifle, BaseGunWieldable, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   id: WeaponRifleBauer127
   components:
   - type: Sprite
@@ -160,7 +160,7 @@
 
 - type: entity
   name: M1 Garand
-  parent: BaseItem
+  parent: [ BaseItem, BaseSecuritySalvageContraband ] # Lust edit :: BaseSecuritySalvageContraband
   id: WeaponSniperGarand
   components:
   - type: Sprite
@@ -320,7 +320,7 @@
       - WrappedWeapon
 
 - type: entity
-  parent: WeaponRifleBauer127
+  parent: [ WeaponRifleBauer127, BaseSovietContraband ] # Lust edit :: BaseSovietContraband
   name: Type 88
   id: WeaponRifleType88AMR
   description: The standard issue AMR of the USSP, the Type 88 typically loaded with armor-piercing 15mm rounds in a 7 round magazine.

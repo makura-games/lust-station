@@ -1,0 +1,47 @@
+- type: entity
+  id: SpawnPointLustCentCommInspector
+  parent: SpawnPointCentCommOperator
+  name: central command inspector
+  components:
+  - type: SpawnPoint
+    job_id: LustCentCommInspector
+
+- type: entity
+  id: SpawnPointLustCentCommChiefOfStaff
+  parent: SpawnPointCentCommOperator
+  name: central command chief
+  components:
+  - type: SpawnPoint
+    job_id: LustCentCommChiefOfStaff
+
+- type: entity
+  id: SpawnPointLustCentCommIntern
+  parent: SpawnPointCentCommOperator
+  name: central command intern
+  components:
+  - type: SpawnPoint
+    job_id: LustCentCommIntern
+
+- type: entity
+  id: SpawnPointLustCentCommIDOperator
+  parent: SpawnPointCentCommOperator
+  name: central command ID
+  components:
+  - type: SpawnPoint
+    job_id: LustCentCommIDOperator
+
+- type: entity
+  id: SpawnPointLustCentCommSpecOpsOperator
+  parent: SpawnPointCentCommOperator
+  name: central command specops
+  components:
+  - type: SpawnPoint
+    job_id: LustCentCommSpecOpsOperator
+
+- type: entity
+  id: SpawnPointLustCentCommMaid
+  parent: SpawnPointCentCommOperator
+  name: central command maid
+  components:
+  - type: SpawnPoint
+    job_id: LustCentCommMaid

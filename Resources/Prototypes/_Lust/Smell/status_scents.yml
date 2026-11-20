@@ -1,0 +1,23 @@
+# Маппинг статус-эффект -> запах состояния (пока эффект активен, носитель пахнет).
+# Сила (Strong/Medium/Faint) считается по положению внутри длительности эффекта:
+# чем дальше до конца эффекта, тем сильнее. Нормируется по реальной длительности эффекта.
+
+- type: statusScent
+  id: LustDrunkScent
+  statusEffect: StatusEffectDrunk
+  scent: LustAlcohol
+
+- type: statusScent
+  id: LustStimulantsScent
+  statusEffect: StatusEffectStimulantsStamina
+  scent: LustStimulant
+
+- type: statusScent
+  id: LustDrugsScent
+  statusEffect: StatusEffectSeeingRainbow
+  scent: LustDrug
+
+- type: statusScent
+  id: LustPainNumbnessScent
+  statusEffect: StatusEffectPainNumbness
+  scent: LustDrug

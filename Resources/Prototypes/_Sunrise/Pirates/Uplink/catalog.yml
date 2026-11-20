@@ -551,17 +551,6 @@
   - UplinkPirateRangedWeaponry
 
 - type: listing
-  id: UplinkPirateARG
-  name: uplink-weapon-arg-name
-  description: uplink-weapon-arg-desc
-  productEntity: ClothingBackpackMessengerMercenaryBundleARG
-  icon: { sprite: _Starlight/Objects/Weapons/Guns/Rifles/arg.rsi, state: icon }
-  cost:
-    Doubloon: 25
-  categories:
-  - UplinkPirateRangedWeaponry
-
-- type: listing
   id: UplinkPirateSKM28
   productEntity: WeaponRifleSKM28
   cost:
@@ -718,9 +707,9 @@
   name: uplink-grenade-launcher-m79-name
   description: uplink-grenade-launcher-m79-desc
   icon: { sprite: /Textures/_RMC14/Objects/Weapons/Guns/Launchers/m79/big.rsi, state: base }
-  productEntity: ClothingBackpackDuffelSyndicateFilledGrenadeLauncherM79
+  productEntity: BriefcaseWeaponM79Filled
   cost:
-    Doubloon: 17
+    Doubloon: 15
   categories:
   - UplinkPirateRangedWeaponry
   conditions:
@@ -760,11 +749,11 @@
   - UplinkPirateRangedWeaponry
 
 - type: listing
-  id: UplinkPirateC40RBundle
-  name: uplink-c40r-bundle-name
-  description: uplink-c40r-bundle-desc
-  icon: { sprite: /Textures/_Sunrise/Objects/Weapons/Guns/SMGs/c40r.rsi, state: icon }
-  productEntity: ClothingBackpackDuffelSyndicateFilledSMG40
+  id: UplinkPirateVectorSuperBundle
+  name: uplink-vector-super-bundle-name
+  description: uplink-vector-super-bundle-desc
+  icon: { sprite: /Textures/_Sunrise/Objects/Weapons/Guns/SMGs/vector_super.rsi, state: icon }
+  productEntity: ClothingBackpackDuffelSyndicateFilledVectorSuper
   cost:
     Doubloon: 29
   categories:
@@ -2652,14 +2641,6 @@
   - UplinkPiratePointless
 
 - type: listing
-  id: UplinkPiratePaintWarboss
-  productEntity: MechPaintDollHouseWarboss
-  cost:
-    Doubloon: 5
-  categories:
-  - UplinkPiratePointless
-
-- type: listing
   id: UplinkPirateOperativeSkirt
   name: uplink-operative-skirt-name
   description: uplink-operative-skirt-desc
@@ -2871,7 +2852,7 @@
   id: UplinkPirateDollHouseBundle
   name: uplink-mech-teleporter-ussp-name
   description: uplink-mech-teleporter-ussp-desc
-  icon: { sprite: /Textures/Objects/Specific/Mech/durand.rsi, state: dollhouse }
+  icon: { sprite: /Textures/_Sunrise/Objects/Specific/Mech/durand.rsi, state: dollhouse }
   productEntity: CratePirateMechDollHouseBundle
   cost:
     Doubloon: 300

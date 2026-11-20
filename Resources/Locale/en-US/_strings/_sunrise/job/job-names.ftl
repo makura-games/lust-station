@@ -87,3 +87,5 @@ JobNtrLeadGuard = командир ИСН
 JobNtrOfficer = офицер ИСН
 JobMailCarrier = почтальон
 job-name-TSF = Trans-Solar Federation
+job-name-centcom-maid = central command maid
+JobLustCentCommMaid = central command maid

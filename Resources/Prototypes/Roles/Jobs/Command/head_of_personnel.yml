@@ -4,6 +4,10 @@
   description: job-description-hop
   playTimeTracker: JobHeadOfPersonnel
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 24
+    # Lust-edit-end
     - !type:DepartmentTimeRequirement
       department: Engineering
       time: 2.5h
@@ -23,7 +27,6 @@
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
   supervisors: job-supervisors-captain
-  canBeAntag: false
   radioBold: true # Sunrise-Edit
   displayWeight: 90 # Sunrise-Edit
   # Sunrise-Start
@@ -97,4 +100,3 @@
     mask: ClothingMaskNeckGaiterRed
     neck: ClothingNeckCloakHop
     outerClothing: ClothingOuterWinterHoP
-

@@ -3,6 +3,7 @@
   - SunriseHumanBodyTypeDisplacements # Sunrise-Edit
   - AppearanceHuman
   id: AppearanceDwarf
+  categories: [ HideSpawnMenu ]
   name: dwarf appearance
   components:
   - type: Inventory # Sunrise-Edit - карты одежды для телосложений наследуются общим набором
@@ -68,6 +69,10 @@
     leftBareFootState: [ footprint-left-bare-dwarf ]
     rightBareFootState: [ footprint-right-bare-dwarf ]
   # Sunrise edit end
+  # Lust start
+  - type: Scent
+    personalScentProfile: LustDwarf
+  # Lust end
 
 - type: entity
   parent: OrganBase

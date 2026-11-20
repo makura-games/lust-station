@@ -1,0 +1,9 @@
+- type: deviceFrequency
+  id: LustAntiMeteorTurretControl
+  name: device-frequency-prototype-name-turret-control
+  frequency: 2622
+
+- type: deviceFrequency
+  id: LustAntiMeteorTurret
+  name: device-frequency-prototype-name-turret
+  frequency: 2623

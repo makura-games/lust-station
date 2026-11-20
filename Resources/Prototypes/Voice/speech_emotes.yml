@@ -576,12 +576,14 @@
     - ScurretDeathgasp
   # Sunrise-end
   chatMessages: ["chat-emote-msg-deathgasp"]
-  chatTriggers:
-  - deathgasp
+  # Lust-Start
+  # chatTriggers:
+  # - deathgasp
   # Sunrise-start
-  - предсмертный хрип
-  - смертельный хрип
+  # - предсмертный хрип
+  # - смертельный хрип
   # Sunrise-end
+  # Lust-End
 
 - type: emote
   id: MonkeyDeathgasp

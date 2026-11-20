@@ -1,0 +1,57 @@
+# Шаблоны групп для расширения профиля NtrOfficer.
+
+- type: loadoutGroup
+  id: LustNtrOfficerHead
+  name: loadout-group-head
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LustNtrOfficerCap
+
+- type: loadoutGroup
+  id: LustBackNTR
+  name: loadout-group-backntr
+  loadouts:
+  - BackpackNTRG
+  - LustNtrOfficerBackpack
+
+
+- type: loadoutGroup
+  id: LustNtrOfficerNeck
+  name: loadout-group-neck
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LustNtrOfficerCloak
+
+- type: loadoutGroup
+  id: LustNtrOfficerOuterClothing
+  name: loadout-group-outer-clothing
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LustNtrOfficerStandardArmor
+  - LustNtrOfficerArmor
+  - LustNtrOfficerHardsuit
+
+- type: loadoutGroup
+  id: LustNtrOfficerPrimaryWeapon
+  name: loadout-group-lust-ntr-officer-primary-weapon
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LustNtrOfficerTrenchgun
+  - LustNtrOfficerEnforcer
+  - LustNtrOfficerCycler
+
+- type: loadoutGroup
+  id: LustNtrOfficerServiceWeapon
+  name: loadout-group-lust-ntr-officer-service-weapon
+  minLimit: 1
+  maxLimit: 1
+  loadouts:
+  - LustNtrOfficerMk58
+  - LustNtrOfficerM1984
+  - LustNtrOfficerDeckard
+  - LustNtrOfficerN1984
+  - LustNtrOfficerMateba

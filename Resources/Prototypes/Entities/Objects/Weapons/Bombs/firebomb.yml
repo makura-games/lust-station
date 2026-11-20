@@ -42,6 +42,7 @@
   - type: TimerTriggerVisuals
     unprimedSprite: base
   - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
   - type: Destructible
     thresholds:
@@ -65,6 +66,12 @@
     - HandGrenadeAmmo
     - FireBomb
   # Sunrise-End
+  # Lust edit start
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 400
+  # Lust edit end
 
 # has igniter but no fuel or wires
 - type: entity
@@ -106,13 +113,11 @@
     - state: base
       map: ["enum.OpenableVisuals.Layer"]
     - state: fuel
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
-        reagents:
-        - ReagentId: WeldingFuel
-          Quantity: 30
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: WeldingFuel
+        Quantity: 60
   - type: Construction
     node: fuel
     defaultTarget: firebomb

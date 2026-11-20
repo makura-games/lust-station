@@ -1,6 +1,6 @@
 - type: entity
   id: BaseWeaponAutoPowerCell
-  parent: BaseItem
+  parent: [BaseItem, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   abstract: true
   components:
   - type: Clothing
@@ -287,7 +287,7 @@
 
 - type: entity
   name: EarthGov laser pistol
-  parent: BaseWeaponBatterySmall
+  parent: [BaseWeaponBatterySmall, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   id: WeaponEarthGovLaserPistol
   components:
   - type: Gun
@@ -312,7 +312,7 @@
 
 - type: entity
   name: EarthGov laser rifle
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound]
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   id: WeaponEarthGovLaserRifle
   components:
   - type: Sprite
@@ -360,7 +360,7 @@
 
 - type: entity
   name: EarthGov laser carbine
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound]
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   id: WeaponEarthGovLaserCarbine
   components:
   - type: Sprite
@@ -405,7 +405,7 @@
 
 - type: entity
   name: EarthGov laser machine gun
-  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound]
+  parent: [BaseWeaponBattery, BaseGunWieldable, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   id: WeaponEarthGovLaserMG
   components:
   - type: Sprite
@@ -454,7 +454,7 @@
 
 - type: entity
   name: EarthGov Experemental X-Ray
-  parent: [BaseWeaponBattery, BaseGunPulseSound]
+  parent: [BaseWeaponBattery, BaseGunPulseSound, BaseTSFContraband] # Lust edit :: BaseTSFContraband
   id: WeaponEarthGovXRay
   suffix: SUNRISE14CM
   description: Earth Government Experemental x-ray weapon, it looks like it emits radiation.
@@ -504,7 +504,7 @@
 
 - type: entity
   name: EarthGov heavy laser rifle
-  parent: [BaseWeaponBattery, BaseGunPulseSound]
+  parent: [BaseWeaponBattery, BaseGunPulseSound, BaseSecurityContraband] # Lust edit :: BaseSecurityContraband
   id: WeaponEarthGovLaserSniper
   components:
   - type: Sprite
@@ -560,7 +560,7 @@
 
 - type: entity
   name: S-13 «Black mamba»
-  parent: BaseWeaponBattery
+  parent: [ BaseWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   id: WeaponSyndieLaserGun
   description: A modernised Lecter, converted to a plasma energy module.
   components:
@@ -612,7 +612,7 @@
 
 - type: entity
   name: SAM-300
-  parent: BaseWeaponBattery
+  parent: [ BaseWeaponBattery, BaseSyndicateContraband ] # Lust edit :: BaseSyndicateContraband
   id: WeaponSyndieLaserPistol
   description: The Syndicate's laser pistol, developed from the NT Captain's pistol.
   components:
@@ -655,7 +655,7 @@
 
 - type: entity
   name: UVL-21 «Vivern»
-  parent: [BaseWeaponBattery, BaseGunPulseSound]
+  parent: [BaseWeaponBattery, BaseGunPulseSound, BaseSyndicateContraband] # Lust edit :: BaseSyndicateContraband
   id: WeaponLaserMinigun
   description: A heavy weapon of mass destruction based on the minigun.
   components:
@@ -701,7 +701,7 @@
     price: 9000
 
 - type: entity
-  parent: BaseWeaponBatterySmall
+  parent: [BaseWeaponBatterySmall, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   id: WeaponAlien
   name: alien pistol
   components:
