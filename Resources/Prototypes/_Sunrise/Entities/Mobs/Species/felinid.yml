@@ -139,11 +139,13 @@
     rightBareFootState: [ footprint-right-bare-cat ]
   - type: Vocal
     emoteSounds: MaleFelinid
-    sounds:
-      Male: MaleFelinid
-      Female: FemaleFelinid
-      Unsexed: MaleFelinid
-      Futanari: FemaleFelinid # Lust-Edit
+# lust-added-start : archived
+#    sounds:
+#      Male: MaleHuman
+#      Female: FemaleHuman
+#      Unsexed: FemaleHuman
+#      Futanari: FemaleHuman # Lust-Edit
+# lust-added-end
   # Lust-Start
   - type: TypingIndicator
     proto: felenid
