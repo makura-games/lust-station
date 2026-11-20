@@ -138,6 +138,7 @@
     leftBareFootState: [ footprint-left-bare-cat ]
     rightBareFootState: [ footprint-right-bare-cat ]
   - type: Vocal
+    emoteSounds: MaleFelinid
     sounds:
       Male: MaleFelinid
       Female: FemaleFelinid
@@ -147,12 +148,6 @@
   - type: TypingIndicator
     proto: felenid
   # Lust-End
-    emoteSounds: MaleFelinid
-    sounds:
-      Male: MaleFelinid
-      Female: FemaleFelinid
-      Unsexed: MaleFelinid
-      Futanari: FemaleFelinid # Lust-Edit
   - type: Respirator
     damage:
       types:
