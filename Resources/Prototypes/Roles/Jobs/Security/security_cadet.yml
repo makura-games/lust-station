@@ -3,11 +3,12 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
-  # Lust-Start
-  speciesBlacklist:
-  - Felinid
-  # Lust-End
   requirements:
+    # Lust-Start - сохраняем чёрный список при переносе в требования роли
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
+    # Lust-End
     - !type:OverallPlaytimeRequirement
       time: 10h
     - !type:DepartmentTimeRequirement
@@ -17,7 +18,6 @@
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
-  displayWeight: 0 # Sunrise-Edit
   # Sunrise-Start
   alternativeTitles:
   - job-alt-title-security-trainee

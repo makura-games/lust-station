@@ -25,10 +25,10 @@
   - "%user потихоньку засовывает пальчик в попку %target"
   - "%user проскальзывает пальчиком в попку %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 2
   loveTarget: 4
   spawnsEffect: true
@@ -97,10 +97,10 @@
   - "%user увлеченно трахает пальчиками анус %target"
   - "%user быстро долбит пальчиками анус %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 3
   loveTarget: 7
   spawnsEffect: true
@@ -137,10 +137,10 @@
   - "%user резко проникает в задницу %target"
   - "%user медленно входит в попку %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   targetVirginityLoss: anal
   userVirginityLoss: male
   loveUser: 8
@@ -188,10 +188,10 @@
   - "%user резко проникает в задницу %target, схватившись за хвост"
   - "%user держа за хвост - медленно входит в попку %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   targetVirginityLoss: anal
   userVirginityLoss: male
   loveUser: 8

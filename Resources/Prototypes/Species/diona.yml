@@ -13,6 +13,15 @@
   maleLastNames: NamesDionaLast # Russian-LastnameGender
   femaleLastNames: NamesDionaLast # Russian-LastnameGender
   naming: TheFirstofLast
+  sexes:
+  - Unsexed
+  defaultSoundsBySex:
+  - UnisexDiona
+  - UnisexDiona
+  - UnisexDiona
+  - UnisexDiona # Lust-Edit
+  voices:
+  - UnisexDiona
   # Sunrise-Edit
   buttScan:
     sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi

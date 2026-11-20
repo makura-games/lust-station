@@ -1,3 +1,19 @@
+# Law
+- type: entity
+  id: LustSpawnPointNtrOfficer
+  parent: SpawnPointJobBase
+  name: NTR Officer
+  suffix: Lust
+  components:
+  - type: SpawnPoint
+    job_id: NtrOfficer
+  - type: Sprite
+    sprite: _Sunrise/Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: ntrguard
+
+# Centcomm
 - type: entity
   id: SpawnPointLustCentCommInspector
   parent: SpawnPointCentCommOperator

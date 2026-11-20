@@ -40,6 +40,7 @@
   minLimit: 0
   maxLimit: 1
   loadouts:
+  - LustNtrOfficerDisablerSMG
   - LustNtrOfficerTrenchgun
   - LustNtrOfficerEnforcer
   - LustNtrOfficerCycler

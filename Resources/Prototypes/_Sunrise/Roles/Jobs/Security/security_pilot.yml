@@ -3,18 +3,16 @@
   name: job-name-security-pilot
   description: job-description-security-pilot
   playTimeTracker: JobSecurityPilot
-  # Lust-Start
-  speciesBlacklist:
-  - Felinid
-  # Lust-End
   requirements:
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
     - !type:DepartmentTimeRequirement
       department: Security
       time: 18000 # 5 hrs
   startingGear: SecurityPilotGear
   icon: JobIconSecurityPilot
   supervisors: job-supervisors-hos
-  displayWeight: 50
   alternativeTitles:
   - job-alt-title-security-aviator
   access:

@@ -38,3 +38,5 @@ ent-PlushieSiltonGun = { ent-PlushieSilton }
     .desc = { ent-PlushieSilton.desc }
 ent-PlushieDiegoVulpa = Plushie Diego
     .desc = A green-haired beastman of German descent, who loves agitational speeches, paperwork, and directives. He has devoted himself to serving the corporation and attempts to build his own "Eden" on the station — a place where progress, control, and order reign.
+ent-PlushiePavelitel = Plushie Arianna Ayr’nii‑Wulfovna
+    .desc = A strikingly soft plush toy that embodies true Vulpian carefree optimism, yet at the same time possesses fox‑like cunning and profound compassion. Dressed in the uniform of a staff head. It smells of ink mixed with the pungent scent of medicine.

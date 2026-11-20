@@ -13,8 +13,7 @@ public sealed partial class SmellPrototypeCacheSystem : EntitySystem
 {
     [Dependency] private IPrototypeManager _prototypes = default!;
 
-    [ValidatePrototypeId<SmellSystemConfigPrototype>]
-    private const string ConfigId = "LustDefault";
+    private static readonly ProtoId<SmellSystemConfigPrototype> ConfigId = "LustDefault";
 
     /// <summary>
     /// Status-effect-to-scent mapping list from YAML (statusScent).

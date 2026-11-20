@@ -1,0 +1,90 @@
+﻿# Lust
+# НАБОРЫ ДЛЯ УШИБОВ
+# base red pack
+- type: microwaveMealRecipe
+  id: RecipeRedBrutePack
+  name: red brute pack recipe
+  result: RedBrutePack10
+  time: 10
+  group: Medicinal
+  solids:
+    Brutepack: 10
+  reagents:
+    TranexamicAcid: 10
+    HemostaticPowder: 10
+    Bicaridine: 20
+  recipeType: MedicalAssembler
+
+# lace pack
+- type: microwaveMealRecipe
+  id: RecipeRedLaceBrutePack
+  name: red lace pack recipe
+  result: RedLacePack10
+  time: 10
+  group: Medicinal
+  solids:
+    Brutepack: 10
+  reagents:
+    TranexamicAcid: 10
+    HemostaticPowder: 10
+    Lacerinol: 20
+  recipeType: MedicalAssembler
+
+# punct pack
+- type: microwaveMealRecipe
+  id: RecipeRedPunctBrutePack
+  name: red punct pack recipe
+  result: RedPunctPack10
+  time: 10
+  group: Medicinal
+  solids:
+    Brutepack: 10
+  reagents:
+    TranexamicAcid: 10
+    HemostaticPowder: 10
+    Puncturase: 20
+  recipeType: MedicalAssembler
+
+# bruizine pack
+- type: microwaveMealRecipe
+  id: RecipeRedBruizBrutePack
+  name: red bruiz pack recipe
+  result: RedBruizPack10
+  time: 10
+  group: Medicinal
+  solids:
+    Brutepack: 10
+  reagents:
+    TranexamicAcid: 10
+    HemostaticPowder: 10
+    Bruizine: 20
+  recipeType: MedicalAssembler
+
+# МАЗИ
+# Синяя мазь - 20 лепоразин
+- type: microwaveMealRecipe
+  id: RecipeBlueOintmentPack
+  name: blue ointment recipe
+  result: Blueointment10
+  time: 10
+  group: Medicinal
+  solids:
+    Ointment: 10
+  reagents:
+    Dermaline: 20
+    Leporazine: 20
+  recipeType: MedicalAssembler
+
+# Красная мазь - 20 пиразин
+- type: microwaveMealRecipe
+  id: RecipeRedOintmentPack
+  name: red ointment recipe
+  result: RedOintment10
+  time: 10
+  group: Medicinal
+  solids:
+    Ointment: 10
+  reagents:
+    Dermaline: 20
+    Pyrazine: 20
+  recipeType: MedicalAssembler

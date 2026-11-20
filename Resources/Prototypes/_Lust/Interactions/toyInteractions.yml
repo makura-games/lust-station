@@ -36,10 +36,10 @@
   - "%user медленно вводит дилдо в анал %target"
   - "%user наслаждаясь, вставляет дилдо в анал %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 8
   spawnsEffect: true
   effectChance: 1
@@ -89,10 +89,10 @@
   - "%user медленно вводит дилдо в вагину %target"
   - "%user наслаждаясь, вставляет дилдо в вагину %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveTarget: 8
   cooldown: 5
   targetVirginityLoss: female
@@ -136,10 +136,10 @@
   - "%user резко вставляет член %target в киску"
   - "%user наслаждаясь, надевает киску на член %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveTarget: 8
   cooldown: 5
   spawnsEffect: true
@@ -181,10 +181,10 @@
   - "%user резко вставляет свой член в киску"
   - "%user наслаждаясь, надевает киску на член"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 8
   loveTarget: 8
   cooldown: 5
@@ -226,10 +226,10 @@
   - "%user медленно вводит дилдо в анал"
   - "%user наслаждаясь, вставляет дилдо в анал"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 8
   cooldown: 5
   targetVirginityLoss: anal
@@ -275,10 +275,10 @@
   - "%user медленно вводит дилдо в вагину"
   - "%user наслаждаясь, вставляет дилдо в вагину"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 8
   cooldown: 5
   targetVirginityLoss: female

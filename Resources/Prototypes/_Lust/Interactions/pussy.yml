@@ -31,10 +31,10 @@
   - "%user возбужденно ласкает пальцами вагину %target"
   - "%user ритмично поглаживает пальцами вагину %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 4
   loveTarget: 8
   spawnsEffect: true
@@ -79,7 +79,7 @@
   interactionSounds:
   - FaceLickDoggyStyleSound1
   - FaceLickDoggyStyleSound2
-  - Kiss1
+  - lustKiss1
   loveUser: 4
   loveTarget: 9
   spawnsEffect: true
@@ -116,10 +116,10 @@
   - "%user возбужденно трахает пальцами вагину %target"
   - "%user нежно входит пальцами в вагину %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 4
   loveTarget: 9
   spawnsEffect: true
@@ -159,10 +159,10 @@
   - "%user двигает бедрами, прижимаясь вагинами с %target"
   - "%user возбужденно трется вагинами с %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 9
   loveTarget: 9
   spawnsEffect: true
@@ -207,10 +207,10 @@
   - "%user до упора входит членов в вагину %target"
   - "%user медленно входит членом в вагину %target"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 10
   loveTarget: 10
   spawnsEffect: true
@@ -244,10 +244,10 @@
   - "%user возбужденно ласкает свою вагину пальцами"
   - "%user ритмично поглаживает пальцами свою вагину"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 4
   spawnsEffect: true
   effectChance: 1
@@ -277,10 +277,10 @@
   - "%user возбужденно трахает пальцами свою вагину"
   - "%user нежно входит пальцами в свою вагину"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 4
   spawnsEffect: true
   effectChance: 1
@@ -318,10 +318,10 @@
   - "%user игриво трется членом о киску %target"
   - "%user заведенно двигает членом вдоль киски %target, делая ее более мокрой"
   interactionSounds:
-  - Hlup1
-  - Hlup2
-  - Hlup3
-  - Hlup4
+  - lustHlup1
+  - lustHlup2
+  - lustHlup3
+  - lustHlup4
   loveUser: 8
   loveTarget: 8
   spawnsEffect: true

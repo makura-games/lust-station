@@ -9,6 +9,14 @@
   #- TajaranSlim
   dollPrototype: MobTajaranDummy
   skinColoration: Hues
+  defaultSoundsBySex:
+  - MaleTajaran
+  - FemaleTajaran
+  - MaleTajaran
+  - FemaleTajaran # Lust-Edit
+  voices:
+  - MaleTajaran
+  - FemaleTajaran
   maleFirstNames: names_tajaran_male
   femaleFirstNames: names_tajaran_female
   maleLastNames: names_tajaran_last

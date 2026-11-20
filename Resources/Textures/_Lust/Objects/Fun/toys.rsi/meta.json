@@ -98,6 +98,9 @@
     {
         "name": "diego-vulpa-inhand-right",
         "directions": 4
+    },
+        {
+            "name": "pavelitel"
         }
     ]
 }

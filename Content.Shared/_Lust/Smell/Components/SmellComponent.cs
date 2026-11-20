@@ -1,11 +1,13 @@
-﻿namespace Content.Shared._Lust.Smell.Components;
+﻿using Robust.Shared.GameStates;
+
+namespace Content.Shared._Lust.Smell.Components;
 
 /// <summary>
 /// Marks a bearer capable of smelling entities.
 /// Only entities with this component get the "smell" verb and can catch
 /// the scents of other creatures.
 /// </summary>
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent]
 public sealed partial class SmellComponent : Component
 {
 }

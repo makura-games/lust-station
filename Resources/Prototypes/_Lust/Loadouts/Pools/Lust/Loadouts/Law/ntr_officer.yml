@@ -47,6 +47,11 @@
       time: 201600 # 56 часов
 
 - type: loadout
+  id: LustNtrOfficerDisablerSMG
+  inhand:
+  - WeaponDisablerSMG
+
+- type: loadout
   id: LustNtrOfficerTrenchgun
   inhand:
   - WeaponShotgunTrenchgun4034

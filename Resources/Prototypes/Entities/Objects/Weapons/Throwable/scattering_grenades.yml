@@ -93,7 +93,7 @@
     price: 2500
 
 - type: entity
-  parent: [FragileGrenadeBase, ScatteringGrenadeBase, ImpactGrenadeBase, BaseSyndicateContraband]
+  parent: [ScatteringGrenadeBase, ImpactGrenadeBase, BaseSyndicateContraband]
   id: ClusterBananaPeel
   name: cluster banana peel
   description: Splits into 6 explosive banana peels after throwing, guaranteed fun!
@@ -181,3 +181,10 @@
     sound:
       path: "/Audio/Weapons/Guns/Gunshots/batrifle.ogg"
     positional: true
+  # Lust edit start
+  # Игрушечная граната: порох выветривается быстро.
+  - type: ScentEmitter
+    spot: AnySlot
+    scent: LustGunpowder
+    duration: 120
+  # Lust edit end

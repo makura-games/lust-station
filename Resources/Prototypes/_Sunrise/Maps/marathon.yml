@@ -21,7 +21,7 @@
           grids:
           # Lust-Start
           - gridPaths:
-            - /Maps/_Sunrise/Shuttles/Salvage/bison.yml # Кабан
+            #- /Maps/_Sunrise/Shuttles/Salvage/bison.yml # Кабан
             - /Maps/_Sunrise/Shuttles/Salvage/asteroidcracker.yml
             - /Maps/_Sunrise/Shuttles/Salvage/chisel.yml
             - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
@@ -35,7 +35,7 @@
           # Lust-Start
           - gridPaths:
             - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
-            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            #- /Maps/_Sunrise/Shuttles/Security/security.yml
             - /Maps/_Sunrise/Shuttles/Security/stargaze.yml
             - /Maps/_Sunrise/Shuttles/Security/vanguard.yml
           # Lust-End
@@ -105,6 +105,7 @@
             #law
             IAA: [ 1, 1 ]
             Lawyer: [ 2, 3 ]
+            NtrOfficer: [1, 1] # lust-edit
             # silicon
             StationAi: [ 1, 1 ]
             Borg: [ 3, 3 ]
@@ -127,7 +128,6 @@
           - MiningOutpost
           - Tesla
           - XenobiologyRepair
-          - VirusologyAmbusol
           - Containment
           - WeaponsSecurity
           - MaintsRepair

@@ -3,24 +3,10 @@
   name: job-name-ntrofficer
   description: job-description-ntrofficer
   playTimeTracker: JobNtrOfficer
-  speciesBlacklist:
-  - Diona
-  - Vox
-  - Felinid
-  - Moth
-  - Arachnid
-  - Reptilian
-  - Vulpkanin
-  - Swine
-  - Tajaran
-  - Demon
-  - SlimePerson
-  - Dwarf
-  - HumanoidXeno
-  - Predator
-  - Resomi
-  - Milira
   requirements:
+  - !type:SpeciesRequirement
+    species: [ Vox, Diona, Felinid, Moth, Arachnid, Reptilian, Vulpkanin, Swine, Felinid, Tajaran, Demon, SlimePerson, HumanoidXeno, Dwarf, Predator, Resomi, Milira ]
+    inverted: true
   - !type:AgeRequirement
     requiredAge: 29
   - !type:DepartmentTimeRequirement
@@ -38,7 +24,6 @@
   startingGear: NtrOfficerGear
   icon: "JobIconNtrGuard"
   supervisors: job-supervisors-ntrg
-  displayWeight: 40
   access:
   - Command
   - Bar
@@ -60,6 +45,7 @@
   - Cargo
   - Atmospherics
   - Medical
+  - Lawyer
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
