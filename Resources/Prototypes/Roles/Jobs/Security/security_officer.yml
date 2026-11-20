@@ -4,6 +4,10 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
@@ -11,7 +15,6 @@
   startingGear: SecurityOfficerGear
   icon: "JobIconSecurityOfficer"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   displayWeight: 10
   # Sunrise-Start
   alternativeTitles:

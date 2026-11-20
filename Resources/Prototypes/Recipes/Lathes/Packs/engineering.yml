@@ -95,3 +95,6 @@
   - SMESExtendedMachineCircuitboard # Sunrise-Edit
   - SMESSuperExtendedMachineCircuitboard # Sunrise-Edit
   - HolopadMachineCircuitboard
+  - WeaponTurretAntiMeteorMachineCircuitboard # Lust edit - плата турели доступна инженерам
+  - LustWeaponTurretAntiMeteorControlPanelElectronics # Lust edit - микросхема панели противометеоритной турели
+

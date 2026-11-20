@@ -3,7 +3,7 @@
   mapName: 'Bagel'
   mapPath: /Maps/_Sunrise/Station/bagel.yml
   minPlayers: 0
-  maxPlayers: 90
+  maxPlayers: 80
   maxRandomOffset: 0
   randomRotation: false
   stations:
@@ -16,12 +16,21 @@
           !type:NanotrasenNameGenerator
           prefixCreator: '14'
       - type: StationEmergencyShuttle
-        emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency-centipede.yml
+        emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency-box-bagel.yml
       - type: SpawnGridAndDockToStation
         grids:
-          - gridPath: /Maps/_Sunrise/Shuttles/Salvage/mining.yml
-            priorityTag: DockMining                
-          - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Salvage/mining.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
+          # Lust-End
+            priorityTag: DockMining
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            - /Maps/_Sunrise/Shuttles/Security/vanguard.yml
+          # Lust-End
             priorityTag: DockSecurity
       - type: StationJobs
         availableJobs:

@@ -104,24 +104,6 @@
       - CBURN
 
 - type: listing
-  id: ERTUplinkWeaponLecterMk3Filled
-  name: ntuplink-gun-bundle-lecter-mk3-name
-  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: lecter_mk3 }
-  productEntity: ClothingBackpackDuffelWeaponLecterMk3Filled
-  cost:
-    Bluecrystal: 15
-  categories:
-  - NTAutoGun
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 4
-  - !type:StoreWhitelistCondition
-    whitelist:
-      tags:
-      - ERTGamma
-      - CBURN
-
-- type: listing
   id: ERTUplinkWeaponRifleSKM28Filled
   productEntity: ClothingBackpackDuffelWeaponRifleSKM28Filled
   icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: skm28nano }
@@ -1841,6 +1823,42 @@
       tags:
       - ERTGamma
       - ERTEpsilon
+
+- type: listing
+  id: ERTUplinkMedipenCaseERTMedic
+  productEntity: MedipenCaseERTMedic
+  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: medipen_case }
+  cost:
+    Crystallite: 3
+  categories:
+  - NTEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 12
+
+- type: listing
+  id: ERTUplinkDoubleEmergencyOxygenTankFilled
+  productEntity: DoubleEmergencyOxygenTankFilled
+  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: double_tank }
+  cost:
+    Crystallite: 2
+  categories:
+  - NTEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 10
+
+- type: listing
+  id: ERTUplinkDoubleEmergencyNitrogenTankFilled
+  productEntity: DoubleEmergencyNitrogenTankFilled
+  icon: { sprite: _Sunrise/Interface/Misc/nt_icons.rsi, state: double_tank_red }
+  cost:
+    Crystallite: 2
+  categories:
+  - NTEquipment
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 10
 
 # Mechs
 - type: listing

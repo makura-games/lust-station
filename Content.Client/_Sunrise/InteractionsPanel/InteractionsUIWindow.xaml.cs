@@ -19,6 +19,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Shared.IdentityManagement;
 
 namespace Content.Client._Sunrise.InteractionsPanel;
 
@@ -27,13 +28,13 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 {
     #region Dependencies
 
-    [Dependency] private readonly IEntityManager _entityManager = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IGameTiming _gameTiming = default!;
-    [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly CustomInteractionService _customInteractionService = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IGameTiming _gameTiming = default!;
+    [Dependency] private IConfigurationManager _cfg = default!;
+    [Dependency] private CustomInteractionService _customInteractionService = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private ILocalizationManager _loc = default!;
 
     private readonly SpriteSystem _spriteSystem;
 
@@ -64,7 +65,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
     private HashSet<string> _customInteractionIds = new();
     private readonly HashSet<string> _openCategories = new();
     private readonly HashSet<string> _favoriteInteractions = new();
-    private NetEntity _targetEntity;
+    private NetEntity _userEntity; // Lust-Edit
 
     private static readonly Dictionary<GenitalSlot, int> GenitalDisplayOrder = new()
     {
@@ -177,8 +178,8 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
     private void UpdateLoveProgress()
     {
-        if (!_entityManager.TryGetEntity(_targetEntity, out var entity) ||
-            !_entityManager.TryGetComponent<InteractionsComponent>(entity, out var component))
+        if (!_entityManager.TryGetEntity(_userEntity, out var entity) ||
+            !_entityManager.TryGetComponent<InteractionsComponent>(entity, out var component)) // Lust-Edit
             return;
 
         var loveAmount = component.LoveAmount;
@@ -270,7 +271,7 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         NetEntity targetEntity,
         List<string> availableInteractionIds)
     {
-        _targetEntity = targetEntity;
+        _userEntity = userEntity; // Lust-Edit
         UpdateEntityInformation(userEntity, targetEntity);
         _currentInteractionIds = availableInteractionIds;
         _buttonInteractions.Clear();
@@ -283,19 +284,21 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         NetEntity targetEntity)
     {
         var selfTargeting = userEntity == targetEntity;
-        var nameUser = _entityManager.GetComponentOrNull<MetaDataComponent>(_entityManager.GetEntity(userEntity));
 
-        UserSpriteView.SetEntity(_entityManager.GetEntity(userEntity));
-        NameUser.Text = $"{nameUser?.EntityName}";
+        var user = _entityManager.GetEntity(userEntity);
+        var target = _entityManager.GetEntity(targetEntity);
+
+        UserSpriteView.SetEntity(user);
+        NameUser.Text = Identity.Name(user, _entityManager);
+
         TargetContainer.Visible = !selfTargeting;
 
         UserBoxShit.HorizontalAlignment = selfTargeting ? HAlignment.Center : HAlignment.Left;
 
         if (!selfTargeting)
         {
-            TargetSpriteView.SetEntity(_entityManager.GetEntity(targetEntity));
-            var nameTarget = _entityManager.GetComponentOrNull<MetaDataComponent>(_entityManager.GetEntity(targetEntity));
-            NameTarget.Text = $"{nameTarget?.EntityName}";
+            TargetSpriteView.SetEntity(target);
+            NameTarget.Text = Identity.Name(target, _entityManager);
             TargetSpriteView.InvalidateArrange();
             TargetSpriteView.InvalidateMeasure();
         }

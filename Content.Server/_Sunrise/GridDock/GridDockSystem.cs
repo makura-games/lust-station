@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Numerics;
 using Content.Server.Shuttles;
 using Content.Server.Shuttles.Components;
@@ -9,16 +9,18 @@ using Content.Shared.Station.Components;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Random; // Lust-add
 
 namespace Content.Server._Sunrise.GridDock;
 
-public sealed class GridDockSystem : EntitySystem
+public sealed partial class GridDockSystem : EntitySystem
 {
-    [Dependency] private readonly MapLoaderSystem _loader = default!;
-    [Dependency] private readonly ShuttleSystem _shuttles = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly DockingSystem _dockSystem = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
+    [Dependency] private MapLoaderSystem _loader = default!;
+    [Dependency] private ShuttleSystem _shuttles = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private DockingSystem _dockSystem = default!;
+    [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private IRobustRandom _random = default!; // Lust-add
 
     public override void Initialize()
     {
@@ -48,10 +50,12 @@ public sealed class GridDockSystem : EntitySystem
         var usedGridDocks = new HashSet<EntityUid>();
         foreach (var entry in component.Grids)
         {
-            if (!_loader.TryLoadGrid(xformMap.MapID,
-                    entry.GridPath,
-                    out var rootUid))
-                continue;
+			// Lust-start
+            var path = entry.PickPath(_random);
+
+			if (!_loader.TryLoadGrid(xformMap.MapID, path, out var rootUid))
+				continue;
+			// Lust-end
 
             var grid = Comp<MapGridComponent>(rootUid.Value.Owner);
             var width = grid.LocalAABB.Width;

@@ -5,9 +5,9 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared._Lust.ErpStatus
 {
-    public sealed class ErpStatusSystem : EntitySystem
+    public sealed partial class ErpStatusSystem : EntitySystem
     {
-        [Dependency] private readonly ExamineSystemShared _examineSystem = default!;
+        [Dependency] private ExamineSystemShared _examineSystem = default!;
 
         public override void Initialize()
         {

@@ -47,6 +47,7 @@
   - type: FireVisuals
     alternateState: Standing
   - type: Damageable
+  - type: Injurable
     damageContainer: Biological
   - type: Tag
     tags:
@@ -77,6 +78,10 @@
   - type: CollectiveMind
     minds:
     - Abductor
+  #Lust start
+  - type: Scent
+    personalScentProfile: LustAbductor
+  #Lust end
 
 - type: entity
   parent: AppearanceAbductor

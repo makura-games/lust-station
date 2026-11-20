@@ -1,0 +1,83 @@
+- type: entity
+  parent: [WeaponEnergyTurretStationBase, ConstructibleMachine]
+  id: WeaponTurretAntiMeteor
+  name: point defense turret
+  description: An autonomous point defense turret armed with proto-kinetic projectiles.
+  suffix: Anti-Meteor
+  components:
+  - type: Sprite
+    sprite: _Lust/Objects/Weapons/Guns/Turrets/salvage_turret.rsi
+    drawdepth: FloorObjects
+    granularLayersRendering: true
+    layers:
+    - state: support
+      renderingStrategy: NoRotation
+    - state: base
+      map: ["base"]
+    - state: base_shadow
+      map: ["shadow"]
+    - state: lethal
+      map: ["enum.BatteryWeaponFireModeVisuals.State"]
+      shader: unshaded
+    - state: cover_closed
+      map: ["enum.DeployableTurretVisuals.Turret"]
+      renderingStrategy: NoRotation
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      renderingStrategy: NoRotation
+      visible: false
+    - state: cover_light_on
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+      shader: "unshaded"
+      renderingStrategy: NoRotation
+      visible: false
+    - state: stun
+      map: [ "enum.DeployableTurretVisuals.Weapon" ]
+      shader: "unshaded"
+      visible: false
+  - type: HTN
+    rootTask:
+      task: TurretCompound
+    blackboard:
+      VisionRadius: !type:Single
+        35
+      AggroVisionRadius: !type:Single
+        35
+      RangedRange: !type:Single
+        35
+  - type: Gun
+    projectileSpeed: 15
+    minAngle: 15
+    maxAngle: 45
+    angleIncrease: 2
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+  - type: Battery
+    startingCharge: 0
+  - type: ApcPowerReceiverBattery
+    idleLoad: 2000
+    batteryRechargeRate: 50
+    batteryRechargeEfficiency: 1
+  - type: ApcPowerReceiver
+    powerLoad: 2000
+  - type: BatteryWeaponFireModes
+    fireModes:
+    - proto: LustBulletKineticLongRange
+      fireCost: 100
+  - type: BatteryAmmoProvider
+    proto: LustBulletKineticLongRange
+    fireCost: 100
+  - type: NpcFactionMember
+    factions:
+    - AntiMeteor
+  - type: Repairable
+    doAfterDelay: 10
+    fuelCost: 0.5
+    allowSelfRepair: false
+
+  - type: DeviceNetwork
+    receiveFrequencyId: LustAntiMeteorTurretControl
+    transmitFrequencyId: LustAntiMeteorTurret
+  - type: Machine
+    board: WeaponTurretAntiMeteorMachineCircuitboard

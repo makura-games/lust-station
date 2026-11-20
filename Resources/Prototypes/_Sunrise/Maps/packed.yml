@@ -3,7 +3,7 @@
   mapName: 'Packed'
   mapPath: /Maps/_Sunrise/Station/packed.yml
   minPlayers: 0
-  maxPlayers: 60
+  maxPlayers: 50
   stations:
     Packed:
       stationProto: StandardNanotrasenStation
@@ -15,9 +15,24 @@
             prefixCreator: 'TG'
         - type: SpawnGridAndDockToStation
           grids:
-          - gridPath: /Maps/_Sunrise/Shuttles/Salvage/mining.yml
-            priorityTag: DockMining          
-          - gridPath: /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Salvage/bison.yml # Кабан
+            - /Maps/_Sunrise/Shuttles/Salvage/asteroidcracker.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/chisel.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/expeditioneer.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/mining.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/nomad.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/oredozer.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/pickaxe.yml
+            - /Maps/_Sunrise/Shuttles/Salvage/siera.yml
+            # Lust-End
+            priorityTag: DockMining
+          # Lust-Start
+          - gridPaths:
+            - /Maps/_Sunrise/Shuttles/Security/mosquitt.yml
+            - /Maps/_Sunrise/Shuttles/Security/security.yml
+            # Lust-End
             priorityTag: DockSecurity
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/_Sunrise/Shuttles/Evac/emergency.yml

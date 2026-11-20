@@ -82,8 +82,9 @@
         layer:
         - MobLayer
   - type: Damageable
-    damageContainer: Biological
     damageModifierSet: Felinid
+  - type: Injurable
+    damageContainer: Biological
   - type: Destructible
     thresholds:
     - trigger:
@@ -192,6 +193,10 @@
       params:
         volume: 1.0
         variation: 0.125
+  #Lust start
+  - type: Scent
+    personalScentProfile: LustFelinid
+  #Lust end
 
 - type: entity
   save: false

@@ -21,6 +21,7 @@
     price: 20
   # Lust-Start
   - type: Clothing
+    quickEquip: false
     slots:
     - PLUG
     equipDelay: 5
@@ -48,6 +49,7 @@
       price: 20
   # Lust-Start
     - type: Clothing
+      quickEquip: false
       slots:
       - PLUG
       equipDelay: 5
@@ -70,6 +72,7 @@
   - type: Sprite
   # Lust-Start
   - type: Clothing
+    quickEquip: false
     slots:
     - PLUG
     equipDelay: 3
@@ -200,6 +203,7 @@
   - type: Sprite
   # Lust-Start
   - type: Clothing
+    quickEquip: false
     slots:
     - PLUG
     equipDelay: 6

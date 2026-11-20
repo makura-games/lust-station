@@ -87,7 +87,7 @@
 
 - type: entity
   name: M16A4
-  parent: BaseWeaponRifle
+  parent: [ BaseWeaponRifle, BaseSecurityContraband ] # Lust Edit :: BaseSecurityContraband
   id: WeaponRifleM16A4
   components:
   - type: Sprite
@@ -218,7 +218,7 @@
 
 - type: entity
   name: ASH-12
-  parent: [GunLight, BaseWeaponRifle]
+  parent: [GunLight, BaseWeaponRifle, BaseSecurityCentcommContraband ] # Lust Edit :: BaseSecurityCentcommContraband
   id: WeaponRifleAsh12
   components:
   - type: Sprite

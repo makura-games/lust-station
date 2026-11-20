@@ -3,7 +3,15 @@
   name: job-name-senior-officer
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 26
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobWarden
       time: 21600 # 6 hrs
@@ -19,7 +27,6 @@
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   displayWeight: 60
   alternativeTitles:
   - job-alt-title-training-officer

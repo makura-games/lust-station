@@ -6,16 +6,6 @@
   appearConditions:
   - !type:HasTargetCondition
     allowSelfTargeting: false
-  - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "гладкие перчатки" ]
-    requireExposed: true
-  - !type:BodyAreaTagCondition
-    checkInitiator: false
-    checkTarget: true
-    categories: [ "попа" ]
-    requireExposed: true
   interactionMessages:
   - "%user похотливо лапает попку %target"
   - "%user сочно сжимает задницу %target"
@@ -87,11 +77,6 @@
   - !type:HasTargetCondition
     allowSelfTargeting: false
   - !type:BodyAreaTagCondition
-    checkInitiator: true
-    checkTarget: false
-    categories: [ "рот" ]
-    requireExposed: true
-  - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
     categories: [ "попа" ]
@@ -129,7 +114,7 @@
   - !type:BodyAreaTagCondition
     checkInitiator: false
     checkTarget: true
-    categories: [ "анал" ]
+    categories: [ "попа" ]
     requireExposed: true
   interactionMessages:
   - "%user скользит членом между булок %target"
@@ -163,13 +148,8 @@
     - ClothingBeltSuspendersRed
     - ClothingBeltBandolier
     - Gohei
-  - !type:BodyAreaTagCondition
-    checkInitiator: false
-    checkTarget: true
-    categories: [ "попа" ]
-    requireExposed: true
   interactionMessages:
-  - "%user крепко удерживания в руках плетевидный предмет, выпарывает %target"
+  - "%user, крепко удерживая в руках плетевидный предмет, выпарывает %target"
   - "%user замахиваясь, с силой выпарывает %target, делая удар за ударом по телу"
   - "%user выпарывает %target, оставляя множество румянцев на теле"
   interactionSounds:

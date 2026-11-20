@@ -162,7 +162,7 @@
 
 - type: entity
   name: multiple rocket launcher
-  parent: BaseWeaponLauncher
+  parent: [BaseWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   id: WeaponLauncherMultipleRocket
   description: A modified ancient rocket-propelled grenade launcher.
   components:
@@ -197,7 +197,7 @@
 
 - type: entity
   name: pirate cannon
-  parent: BaseWeaponLauncher
+  parent: [BaseWeaponLauncher, BaseHighlyIllegalContraband] # Lust edit :: BaseHighlyIllegalContraband
   id: WeaponLauncherPirateCannon
   description: Kaboom!
   components:

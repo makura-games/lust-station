@@ -3,7 +3,15 @@
   name: job-name-warden
   description: job-description-warden
   playTimeTracker: JobWarden
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
+    # Lust-edit-start
+    - !type:AgeRequirement
+      requiredAge: 24
+    # Lust-edit-end
     - !type:RoleTimeRequirement
       role: JobSecurityOfficer
       time: 5h
@@ -14,7 +22,6 @@
   startingGear: WardenGear
   icon: "JobIconWarden"
   supervisors: job-supervisors-hos
-  canBeAntag: false
   displayWeight: 70  # Sunrise
   # Sunrise-Start
   alternativeTitles:

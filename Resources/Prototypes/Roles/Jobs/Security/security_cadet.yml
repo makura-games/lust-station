@@ -3,6 +3,10 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
+  # Lust-Start
+  speciesBlacklist:
+  - Felinid
+  # Lust-End
   requirements:
     - !type:OverallPlaytimeRequirement
       time: 10h
@@ -13,7 +17,6 @@
   startingGear: SecurityCadetGear
   icon: "JobIconSecurityCadet"
   supervisors: job-supervisors-security
-  canBeAntag: false
   displayWeight: 0 # Sunrise-Edit
   # Sunrise-Start
   alternativeTitles:

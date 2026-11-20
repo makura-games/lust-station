@@ -10,3 +10,5 @@
     JobNanoTrasenRepresentative: LustJobNanoTrasenRepresentative
     JobAdjutant: LustJobAdjutant
     JobComMaid: LustJobComMaid
+    # JobLustCentCommMaid: JobLustCentCommMaid
+    JobLustCentCommMaid: LustJobComMaid

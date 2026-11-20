@@ -411,7 +411,8 @@
   weights:
     AbductorVictimIanStealObjective: 1
     AbductorVictimBingusStealObjective: 1
-    AbductorVictimMcGriffStealObjective: 1
+    # AbductorVictimMcGriffStealObjective: 1 # Lust-Edit
+    AbductorVictimMcShoeStealObjective: 1 # Lust-Add
     AbductorVictimWalterStealObjective: 1
     AbductorVictimMortyStealObjective: 1
     AbductorVictimRenaultStealObjective: 1
