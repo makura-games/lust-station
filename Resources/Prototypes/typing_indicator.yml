@@ -88,9 +88,3 @@
   typingState: vulpkanin0
   idleState: vulpkanin3
   offset: 0, 0.125
-
-- type: typingIndicator
-  id: felenid
-  typingState: neko0
-  idleState: neko3
-  offset: 0.025, 0.125
