@@ -148,11 +148,11 @@
     proto: felenid
   # Lust-End
     emoteSounds: MaleFelinid
-#    sounds:
-#      Male: MaleFelinid
-#      Female: FemaleFelinid
-#      Unsexed: MaleFelinid
-#      Futanari: FemaleFelinid # Lust-Edit
+    sounds:
+      Male: MaleFelinid
+      Female: FemaleFelinid
+      Unsexed: MaleFelinid
+      Futanari: FemaleFelinid # Lust-Edit
   - type: Respirator
     damage:
       types:
