@@ -19,7 +19,7 @@
                         <TextEdit Name="DistinguishingFeatures"
                                   StyleClasses="LustReadOnlyPortfolioField"
                                   HorizontalExpand="True"
-                                  MinSize="420 75"
+                                  MinSize="420 100"
                                   Editable="False" />
                     </GridContainer>
 
@@ -66,7 +66,7 @@
                         <TextEdit Name="CloseRelatives"
                                   StyleClasses="LustReadOnlyPortfolioField"
                                   HorizontalExpand="True"
-                                  MinSize="420 75"
+                                  MinSize="420 100"
                                   Editable="False" />
 
                         <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}"
@@ -75,7 +75,7 @@
                         <TextEdit Name="EmergencyContact"
                                   StyleClasses="LustReadOnlyPortfolioField"
                                   HorizontalExpand="True"
-                                  MinSize="420 75"
+                                  MinSize="420 100"
                                   Editable="False" />
                     </GridContainer>
 
@@ -90,7 +90,7 @@
                         <TextEdit Name="ArrestHistory"
                                   StyleClasses="LustReadOnlyPortfolioField"
                                   HorizontalExpand="True"
-                                  MinSize="420 75"
+                                  MinSize="420 100"
                                   Editable="False" />
 
                         <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-conviction-history'}"
@@ -99,7 +99,7 @@
                         <TextEdit Name="ConvictionHistory"
                                   StyleClasses="LustReadOnlyPortfolioField"
                                   HorizontalExpand="True"
-                                  MinSize="420 75"
+                                  MinSize="420 100"
                                   Editable="False" />
                     </GridContainer>
                 </BoxContainer>

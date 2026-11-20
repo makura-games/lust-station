@@ -1,2 +1,2 @@
 ### Общие строки профиля
-humanoid-profile-data-null = Данные отсутствуют
+lust-humanoid-profile-data-null = Данные отсутствуют

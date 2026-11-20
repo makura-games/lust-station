@@ -1,6 +1,5 @@
 ### Character portfolio
 lust-humanoid-profile-editor-portfolio-tab = Portfolio
-lust-humanoid-profile-editor-portfolio-lock-button = portfolio
 lust-humanoid-profile-editor-portfolio-marital-single-text = Single
 lust-humanoid-profile-editor-portfolio-marital-married-text = Married
 lust-humanoid-profile-editor-portfolio-marital-divorced-text = Divorced

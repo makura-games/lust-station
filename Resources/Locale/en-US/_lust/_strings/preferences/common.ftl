@@ -1,2 +1,2 @@
 ### Shared profile strings
-humanoid-profile-data-null = Data unavailable
+lust-humanoid-profile-data-null = Data unavailable

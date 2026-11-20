@@ -67,22 +67,22 @@
                         <LineEdit Name="LustAddress" HorizontalExpand="True"/>
 
                         <Label Name="LustDistinguishingFeaturesLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-distinguishing-features'}" VerticalAlignment="Top"/>
-                        <TextEdit Name="LustDistinguishingFeatures" HorizontalExpand="True" MinSize="300 80"/>
+                        <TextEdit Name="LustDistinguishingFeatures" HorizontalExpand="True" MinSize="300 100"/>
 
                         <Label Name="LustEducationLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-education'}" VerticalAlignment="Top"/>
-                        <TextEdit Name="LustEducation" HorizontalExpand="True" MinSize="300 80"/>
+                        <TextEdit Name="LustEducation" HorizontalExpand="True" MinSize="300 100"/>
 
                         <Label Name="LustWorkExperienceLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-work-experience'}" VerticalAlignment="Top"/>
-                        <TextEdit Name="LustWorkExperience" HorizontalExpand="True" MinSize="300 80"/>
+                        <TextEdit Name="LustWorkExperience" HorizontalExpand="True" MinSize="300 100"/>
 
                         <Label Name="LustMaritalStatusLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-marital-status'}" VerticalAlignment="Center"/>
                         <OptionButton Name="LustMaritalStatus" HorizontalExpand="True"/>
 
                         <Label Name="LustCloseRelativesLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-close-relatives'}" VerticalAlignment="Top"/>
-                        <TextEdit Name="LustCloseRelatives" HorizontalExpand="True" MinSize="300 80"/>
+                        <TextEdit Name="LustCloseRelatives" HorizontalExpand="True" MinSize="300 100"/>
 
                         <Label Name="LustEmergencyContactLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}" VerticalAlignment="Top"/>
-                        <TextEdit Name="LustEmergencyContact" HorizontalExpand="True" MinSize="300 80"/>
+                        <TextEdit Name="LustEmergencyContact" HorizontalExpand="True" MinSize="300 100"/>
                     </GridContainer>
                 </BoxContainer>
             </controls:StripeBack>

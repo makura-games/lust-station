@@ -67,7 +67,7 @@
                                         <TextEdit Name="CloseRelatives"
                                                   StyleClasses="LustReadOnlyPortfolioField"
                                                   Editable="False"
-                                                  MinSize="420 55"
+                                                  MinSize="420 100"
                                                   HorizontalExpand="True" />
 
                                         <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}"
@@ -75,7 +75,7 @@
                                         <TextEdit Name="EmergencyContact"
                                                   StyleClasses="LustReadOnlyPortfolioField"
                                                   Editable="False"
-                                                  MinSize="420 55"
+                                                  MinSize="420 100"
                                                   HorizontalExpand="True" />
                                     </GridContainer>
 
@@ -84,7 +84,7 @@
                                     <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
                                         <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-physiological-traits'}"
                                                VerticalAlignment="Top" />
-                                        <TextEdit Name="PhysiologicalTraits" MinSize="420 65" HorizontalExpand="True" />
+                                        <TextEdit Name="PhysiologicalTraits" MinSize="420 100" HorizontalExpand="True" />
                                     </GridContainer>
 
                                     <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
@@ -92,7 +92,7 @@
                                     <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
                                         <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-psychological-traits'}"
                                                VerticalAlignment="Top" />
-                                        <TextEdit Name="PsychologicalTraits" MinSize="420 65" HorizontalExpand="True" />
+                                        <TextEdit Name="PsychologicalTraits" MinSize="420 100" HorizontalExpand="True" />
                                     </GridContainer>
 
                                     <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
