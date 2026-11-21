@@ -197,6 +197,7 @@ public sealed partial class StationSpawningSystem : SharedStationSpawningSystem
             // Sunrise-End
             // Lust-Station-Start
             EnsureComp<ErpStatusComponent>(entity.Value).Erp = profile.Erp;
+            EnsureComp<ErpStatusComponent>(entity.Value).DefaultErp = profile.Erp;
              if (profile.Erp == Erp.No) { EnsureComp<InteractionsComponent>(entity.Value).Erp = false; }
              EnsureComp<InteractionsComponent>(entity.Value).Virginity = profile.Virginity;
             EnsureComp<InteractionsComponent>(entity.Value).AnalVirginity = profile.AnalVirginity;
