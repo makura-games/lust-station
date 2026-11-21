@@ -1,0 +1,23 @@
+analyzer-task-gun = Огнестрел
+analyzer-task-meleeweapon = Опасное
+analyzer-task-entityStorage = Вместилище
+analyzer-task-tool = Вечный помощник
+analyzer-task-powercell = Энергия...
+analyzer-task-flash = Ярче света...
+analyzer-task-radio = Нужно что то шумное...
+analyzer-task-mobthresholds = Требуется что либо органическое...
+analyzer-task-item = Что либо...?
+analyzer-task-construction = Создавать..
+analyzer-task-destructible = Твердыня
+analyzer-task-analyzer = Знакомое.
+analyzer-task-seed = Ранний цветок.
+analyzer-task-wallMount = Настенное.
+analyzer-task-pointLight = Свет?
+analyzer-task-clothing = Одежда
+analyzer-task-apcPowerReceiver = Вне видимости..
+analyzer-task-injurable = Мат
+analyzer-task-material = Нечто многослойное
+analyzer-task-holopad = нужен голопад
+
+analyzer-task-complete = Очки зачислены.
+analyzer-wrong-target = Это не тот предмет.
