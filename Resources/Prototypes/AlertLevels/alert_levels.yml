@@ -25,6 +25,13 @@
   extendedAccessOptions:
     announcement: access-system-accesses-delay-blue
   # Sunrise edit end
+  # lust-added-start
+  erpStatusRules:
+  - !type:DisableErpStatusByDepartment
+    departments:
+    - Command
+    - Security
+  # lust-added-end
 
 - type: alertLevel
   id: Yellow
@@ -40,6 +47,14 @@
   extendedAccessOptions:
     announcement: access-system-accesses-delay-yellow
   # Sunrise edit end
+  # lust-added-start
+  erpStatusRules:
+  - !type:DisableErpStatusByDepartment
+    departments:
+    - Command
+    - Security
+    - Engineering
+  # lust-added-end
 
 - type: alertLevel
   id: Red
@@ -58,6 +73,16 @@
   extendedAccessOptions:
     announcement: access-system-accesses-delay-red
   # Sunrise edit end
+  # lust-added-start
+  erpStatusRules:
+  - !type:DisableErpStatusByDepartment
+    departments:
+    - Command
+    - Security
+    - Engineering
+    - Medical
+    - Science
+  # lust-added-end
 
 - type: alertLevel
   id: Violet
@@ -69,6 +94,14 @@
   emergencyLightColor: Violet
   forceEnableEmergencyLights: true
   shuttleTime: 600
+  # lust-added-start
+  erpStatusRules:
+  - !type:DisableErpStatusByDepartment
+    departments:
+    - Command
+    - Security
+    - Medical
+  # lust-added-end
 
 - type: alertLevel
   abstract: true
@@ -79,6 +112,10 @@
   disableSelection: true
   forceEnableEmergencyLights: true
   shuttleTime: 1200
+  # lust-added-start
+  erpStatusRules:
+  - !type:DisableErpStatusAll
+  # lust-added-end
 
 - type: alertLevel
   parent: BaseDelta
@@ -110,6 +147,10 @@
   emergencyLightColor: DarkViolet
   forceEnableEmergencyLights: true
   shuttleTime: 1200
+  # lust-added-start
+  erpStatusRules:
+  - !type:DisableErpStatusAll
+  # lust-added-end
 
 - type: alertLevel
   id: Gamma
@@ -129,3 +170,7 @@
   color: PaleVioletRed
   emergencyLightColor: PaleVioletRed
   forceEnableEmergencyLights: true
+  # lust-added-start
+  erpStatusRules:
+  - !type:DisableErpStatusAll
+  # lust-added-end

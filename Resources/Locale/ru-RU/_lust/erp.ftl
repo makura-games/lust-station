@@ -14,3 +14,4 @@ detail-examinable-erp-no-text = [color=red]Без ERP[/color]
 erp-panel-sex-male-text = Мужской пол
 erp-panel-sex-female-text = Женский
 erp-panel-sex-unsexed-text = Бесполый
+detail-examinable-erp-disabled-text = [color=red]ERP отключён кодом тревоги[/color]
