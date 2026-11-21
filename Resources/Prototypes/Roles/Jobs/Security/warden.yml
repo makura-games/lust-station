@@ -3,12 +3,11 @@
   name: job-name-warden
   description: job-description-warden
   playTimeTracker: JobWarden
-  # Lust-Start
-  speciesBlacklist:
-  - Vox
-  # Lust-End
   requirements:
     # Lust-edit-start
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
     - !type:AgeRequirement
       requiredAge: 24
     # Lust-edit-end

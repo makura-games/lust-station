@@ -70,11 +70,11 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
         if (TryComp<WingFlightComponent>(ent, out var wingFlight) && wingFlight.InertiaActive && !forceClose)
             return false;
 
-        if ((!forceClose || !ent.Comp.WingsOpened) && !CanOpenWings(ent))
+        /*if ((!forceClose || !ent.Comp.WingsOpened) && !CanOpenWings(ent))
         {
             _popup.PopupEntity(Loc.GetString("wing-toggle-open-blocked"), ent, ent, PopupType.Medium);
             return false;
-        }
+        } Lust-Edit миллиры всегда могут летать*/
 
         var openTarget = !ent.Comp.WingsOpened;
         var suffix = ent.Comp.Suffix;

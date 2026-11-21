@@ -1,4 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using System.Threading.Tasks;
 using Content.Server._Sunrise.NewLife.UI;
 using Content.Server.EUI;
@@ -32,6 +33,7 @@ public sealed partial class NewLifeSystem : SharedNewLifeSystem
     [Dependency] private StationSystem _stationSystem = default!;
     [Dependency] private IServerPreferencesManager _prefsManager = default!;
     [Dependency] private PlayTimeTrackingSystem _playTimeTrackings = default!;
+    [Dependency] private SharedRoleSystem _roleSystem = default!;
     [Dependency] private IConfigurationManager _cfg = default!;
     [Dependency] private IServerNetManager _netMgr = default!;
     [Dependency] private IGameTiming _timing = default!;
@@ -176,7 +178,7 @@ public sealed partial class NewLifeSystem : SharedNewLifeSystem
         var preferences = _prefsManager.GetPreferences(player.UserId);
         if (!preferences.Characters.TryGetValue(selectedCharacterId, out var selectedProfile)
             || !ProtoMan.Resolve(roleProto, out JobPrototype? selectedJob)
-            || selectedJob.SpeciesBlacklist.Contains(selectedProfile.Species))
+            || _roleSystem.GetRoleRequirements(selectedJob)?.OfType<SpeciesRequirement>().Any(requirement => requirement.Inverted && requirement.Species.Contains(selectedProfile.Species)) == true)
         {
             eui.StateDirty();
             return;

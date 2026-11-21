@@ -3,11 +3,10 @@
   name: job-name-senior-officer
   description: job-description-senior-officer
   playTimeTracker: JobSeniorOfficer
-  # Lust-Start
-  speciesBlacklist:
-  - Vox
-  # Lust-End
   requirements:
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
     # Lust-edit-start
     - !type:AgeRequirement
       requiredAge: 26
