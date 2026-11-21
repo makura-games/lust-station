@@ -26,7 +26,7 @@ public sealed partial class LustCriminalRecordPortfolioControl : Control
     public void SetProfile(HumanoidCharacterProfile? profile)
     {
         var portfolio = profile?.Portfolio;
-        var missing = Loc.GetString("humanoid-profile-data-null");
+        var missing = Loc.GetString("lust-humanoid-profile-data-null");
 
         DistinguishingFeatures.TextRope = new Rope.Leaf(Display(portfolio?.DistinguishingFeatures, missing));
 

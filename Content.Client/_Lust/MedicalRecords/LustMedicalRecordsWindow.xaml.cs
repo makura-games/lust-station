@@ -40,8 +40,13 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     private bool _isFormattingBiometric;
     private uint? _selectedKey;
 
-    private uint? _detailsKey;
     private LustMedicalRecordsUiState? _lastState;
+
+    /// <summary>
+    /// Есть незасохранённый ввод в текстовых полях. Пока он есть, broadcast
+    /// не перезаписывает поля
+    /// </summary>
+    private bool _hasLocalEdits;
 
     /// <summary>
     /// Создаёт окно медконсоли: контролы, подписки, плейсхолдеры.
@@ -84,7 +89,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
                 OnPrintRequested?.Invoke(key);
         };
 
-        var placeholder = new Rope.Leaf(loc.GetString("humanoid-profile-data-null"));
+        var placeholder = new Rope.Leaf(loc.GetString("lust-humanoid-profile-data-null"));
         PhysiologicalTraits.Placeholder = placeholder;
         PsychologicalTraits.Placeholder = placeholder;
         Notes.Placeholder = new Rope.Leaf(loc.GetString("lust-medical-records-notes-placeholder"));
@@ -94,7 +99,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             if (_isPopulating || RecordListing[args.ItemIndex].Metadata is not uint selectedKey)
                 return;
 
-            _detailsKey = null;
+            _hasLocalEdits = false;
             OnRecordSelected?.Invoke(selectedKey);
         };
 
@@ -103,6 +108,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             if (_isPopulating)
                 return;
 
+            _hasLocalEdits = false;
             OnRecordSelected?.Invoke(null);
         };
 
@@ -110,8 +116,8 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     }
 
     /// <summary>
-    /// Обновляет листинг, выбор и флаг доступа. Детали записи сюда не входят:
-    /// они приезжают отдельно направленным сообщением только проверенному зрителю.
+    /// Принимает общий стейт
+    /// Детали приходят всем смотрящим одним broadcast-ом
     /// </summary>
     public void UpdateState(LustMedicalRecordsUiState state)
     {
@@ -121,22 +127,57 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             state.CanEditBiometrics
                 ? "lust-medical-records-advanced-access-unlocked"
                 : "lust-medical-records-advanced-access-locked");
+
+        if (_selectedKey != state.SelectedKey)
+            _hasLocalEdits = false;
+
         _selectedKey = state.SelectedKey;
 
         RefreshRecordList(SearchInput.Text);
 
-        RecordDetails.Visible = state.SelectedKey != null && _detailsKey == state.SelectedKey;
-        SaveButton.Disabled = true;
+        var missing = Loc.GetString("lust-humanoid-profile-data-null");
+
+        _isPopulating = true;
+
+        NameValue.Text = PrintableField(state.Name, missing);
+        AgeValue.Text = PrintableField(state.Age?.ToString(), missing);
+        JobTitleValue.Text = PrintableField(state.JobTitle, missing);
+
+        if (!_hasLocalEdits)
+        {
+            FingerprintValue.Text = PrintableField(state.Fingerprint, missing);
+            DnaValue.Text = PrintableField(state.Dna, missing);
+            Notes.TextRope = new Rope.Leaf(PrintableField(state.Notes, ""));
+            CloseRelatives.TextRope = new Rope.Leaf(
+                PrintableField(state.HumanoidProfile?.Portfolio.CloseRelatives, missing));
+            EmergencyContact.TextRope = new Rope.Leaf(
+                PrintableField(state.HumanoidProfile?.Portfolio.EmergencyContact, missing));
+            PhysiologicalTraits.TextRope = new Rope.Leaf(
+                state.HumanoidProfile?.Portfolio.PhysiologicalTraits ?? string.Empty);
+            PsychologicalTraits.TextRope = new Rope.Leaf(
+                state.HumanoidProfile?.Portfolio.PsychologicalTraits ?? string.Empty);
+
+            var genderIndex = state.Gender is { } gender ? Array.IndexOf(_genders, gender) : 0;
+            var speciesIndex = state.Species is not null
+                ? _species.FindIndex(s => s.ID == state.Species)
+                : 0;
+            GenderOption.SelectId(genderIndex < 0 ? 0 : genderIndex);
+            SpeciesOption.SelectId(speciesIndex < 0 ? 0 : speciesIndex);
+        }
+
+        _isPopulating = false;
+
+        RecordDetails.Visible = state.SelectedKey != null;
+        SaveButton.Disabled = !_hasLocalEdits;
         PrintButton.Disabled = !RecordDetails.Visible;
         FingerprintValue.Editable = state.CanEditBiometrics;
         DnaValue.Editable = state.CanEditBiometrics;
-
-        if (RecordDetails.Visible && state.SelectedKey is { } selectedKey)
-            OnRecordSelected?.Invoke(selectedKey);
     }
 
     private void RefreshRecordList(string filter = "")
     {
+        _isPopulating = true;
+
         RecordListing.Clear();
         RecordListing.ClearSelected();
 
@@ -145,6 +186,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             RecordListingStatus.Text = Loc.GetString("lust-medical-records-empty-state");
             RecordListingStatus.Visible = true;
             RecordListing.Visible = false;
+            _isPopulating = false;
             return;
         }
 
@@ -158,20 +200,20 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         {
             if (!string.IsNullOrEmpty(filterLower))
             {
-                string speciesLocalized = record.Species ?? "";
+                var speciesLocalized = record.Species ?? "";
                 if (_prototype.TryIndex<SpeciesPrototype>(record.Species ?? "", out var species))
                     speciesLocalized = Loc.GetString(species.Name);
 
-                string genderLocalized = record.Gender != null
+                var genderLocalized = record.Gender != null
                     ? Loc.GetString("station-records-gender", ("gender", record.Gender))
                     : "";
 
-                bool matches = record.Name.ToLowerInvariant().Contains(filterLower) ||
-                               (record.DNA?.ToLowerInvariant().Contains(filterLower) ?? false) ||
-                               (record.Fingerprints?.ToLowerInvariant().Contains(filterLower) ?? false) ||
-                               speciesLocalized.ToLowerInvariant().Contains(filterLower) ||
-                               genderLocalized.ToLowerInvariant().Contains(filterLower) ||
-                               (record.JobTitle?.ToLowerInvariant().Contains(filterLower) ?? false);
+                var matches = record.Name.ToLowerInvariant().Contains(filterLower) ||
+                              (record.DNA?.ToLowerInvariant().Contains(filterLower) ?? false) ||
+                              (record.Fingerprints?.ToLowerInvariant().Contains(filterLower) ?? false) ||
+                              speciesLocalized.ToLowerInvariant().Contains(filterLower) ||
+                              genderLocalized.ToLowerInvariant().Contains(filterLower) ||
+                              (record.JobTitle?.ToLowerInvariant().Contains(filterLower) ?? false);
 
                 if (!matches)
                     continue;
@@ -182,54 +224,8 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             item.Selected = record.Id == selectedKey;
         }
 
-        _isPopulating = false;
         RecordListing.SortItemsByText();
-    }
-
-    /// <summary>
-    /// Заливает детали выбранной записи. Опоздавшие (не под текущий выбор) отбрасываются.
-    /// </summary>
-    public void UpdateRecordDetails(LustMedicalRecordsRecordDetailsMessage details)
-    {
-        // Если инфа от прошлого выбора прилетели позже нового выходим
-        if (details.SelectedKey != _selectedKey)
-            return;
-
-        var missing = Loc.GetString("humanoid-profile-data-null");
-        var profile = details.HumanoidProfile;
-        var portfolio = profile?.Portfolio;
-        var selectedGender = details.Gender is { } gender
-            ? Array.IndexOf(_genders, gender)
-            : 0;
-        var selectedSpecies = _species.FindIndex(species => species.ID == details.Species);
-
-        _isPopulating = true;
-        GenderOption.SelectId(selectedGender < 0 ? 0 : selectedGender);
-        SpeciesOption.SelectId(selectedSpecies < 0 ? 0 : selectedSpecies);
-
-        NameValue.Text = PrintableField(details.Name, missing);
-        AgeValue.Text = PrintableField(details.Age?.ToString(), missing);
-
-
-        JobTitleValue.Text = PrintableField(details.JobTitle, missing);
-        FingerprintValue.Text = details.CanEditBiometrics
-            ? details.Fingerprint ?? string.Empty
-            : PrintableField(details.Fingerprint, missing);
-        DnaValue.Text = details.CanEditBiometrics
-            ? details.Dna ?? string.Empty
-            : PrintableField(details.Dna, missing);
-
-        CloseRelatives.TextRope = new Rope.Leaf(PrintableField(portfolio?.CloseRelatives, missing));
-        EmergencyContact.TextRope = new Rope.Leaf(PrintableField(portfolio?.EmergencyContact, missing));
-        PhysiologicalTraits.TextRope = new Rope.Leaf(portfolio?.PhysiologicalTraits ?? string.Empty);
-        PsychologicalTraits.TextRope = new Rope.Leaf(portfolio?.PsychologicalTraits ?? string.Empty);
-        Notes.TextRope = new Rope.Leaf(details.Notes ?? string.Empty);
-
-        _detailsKey = details.SelectedKey;
-        RecordDetails.Visible = true;
         _isPopulating = false;
-        SaveButton.Disabled = true;
-        PrintButton.Disabled = false;
     }
 
     /// <summary>
@@ -251,6 +247,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         if (_isPopulating || _selectedKey == null)
             return;
 
+        _hasLocalEdits = true;
         SaveButton.Disabled = false;
     }
 
@@ -317,6 +314,8 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             Rope.Collapse(Notes.TextRope),
             FingerprintValue.Text,
             DnaValue.Text);
+
+        _hasLocalEdits = false;
     }
 
     /// <summary>

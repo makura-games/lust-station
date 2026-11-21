@@ -100,7 +100,7 @@ public sealed partial class LustGeneralRecord : BoxContainer
             => string.Compare(a.LocalizedName, b.LocalizedName, StringComparison.Ordinal));
 
         // Плейсхолдеры для всех полей ввода
-        var placeholderNull = _loc.GetString("humanoid-profile-data-null");
+        var placeholderNull = _loc.GetString("lust-humanoid-profile-data-null");
 
         NameEdit.PlaceHolder = placeholderNull;
         Age.PlaceHolder = placeholderNull;

@@ -4,13 +4,11 @@ using Robust.Client.UserInterface;
 namespace Content.Client._Lust.MedicalRecords;
 
 /// <summary>
-/// Клиентский интерфейс медицинской консоли: открывает окно и гоняет сообщения с сервером.
+/// Клиентский интерфейс медицинской консоли
 /// </summary>
-public sealed class LustMedicalRecordsBoundUserInterface : BoundUserInterface
+public sealed class LustMedicalRecordsBoundUserInterface(EntityUid owner, Enum uiKey) : BoundUserInterface(owner, uiKey)
 {
     private LustMedicalRecordsWindow? _window;
-
-    public LustMedicalRecordsBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey) { }
 
 
     /// <summary>
@@ -53,17 +51,5 @@ public sealed class LustMedicalRecordsBoundUserInterface : BoundUserInterface
             return;
 
         _window?.UpdateState(medicalState);
-    }
-
-    /// <summary>
-    ///  Принимает направленное сообщение с деталями выбранной записи.
-    /// В отличие от <see cref="UpdateState"/>, приходит только тому актору,
-    /// который прошёл проверку доступа, и содержит полный профиль.
-    /// </summary>
-    /// <param name="message"></param>
-    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
-    {
-        if (message is LustMedicalRecordsRecordDetailsMessage details)
-            _window?.UpdateRecordDetails(details);
     }
 }

@@ -124,7 +124,6 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         _popup.PopupEntity(Loc.GetString(message), ent.Owner, args.User);
 
         UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
-        SendRecordDetails(ent.Owner, ent.Comp, args.User);
         args.Handled = true;
     }
 
@@ -173,27 +172,16 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
             return;
         }
 
-        // Повторный выбор той же записи не меняет листинг, детали шлём только спросившему.
-        if (ent.Comp.ActiveKey == msg.SelectedKey)
-        {
-            SendRecordDetails(ent.Owner, ent.Comp, msg.Actor);
-            return;
-        }
-
         ent.Comp.ActiveKey = msg.SelectedKey;
         UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
-        SendRecordDetails(ent.Owner, ent.Comp, msg.Actor);
     }
 
     /// <summary>
-    /// При открытии консоли проверяет доступ и отправляет стейт + детали актору.
+    /// При открытии консоли отправляет общий стейт (листинг + детали) всем смотрящим.
     /// </summary>
     private void OnOpened(Entity<LustMedicalRecordsConsoleComponent> ent, ref BoundUIOpenedEvent args)
     {
         UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
-
-        if (_access.IsAllowed(args.Actor, ent.Owner))
-            SendRecordDetails(ent.Owner, ent.Comp, args.Actor);
     }
 
     /// <summary>
@@ -248,8 +236,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         _records.AddRecordEntry(key, updatedRecord);
         _records.AddRecordEntry(key, medicalRecord);
         _records.Synchronize(key);
-        // Свежие детали — только сохранившему. Остальным смотрящим уйдёт листинг через RecordModified.
-        SendRecordDetails(ent.Owner, ent.Comp, msg.Actor);
+        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
         _audio.PlayPvs(ent.Comp.SuccessfulSound, ent.Owner);
     }
 
@@ -371,48 +358,47 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         if (component.ActiveKey is { } selectedKey && !listingRecords.Any(r => r.Id == selectedKey))
             component.ActiveKey = null;
 
-        // В общий стейт детали не кладём: их смотрит только проверенный актор через SendRecordDetails.
+        // Детали выбранной записи — в том же broadcast-стейте.
+        string? name = null, jobTitle = null, species = null, fingerprint = null, dna = null, notes = null;
+        int? age = null;
+        Gender? gender = null;
+        HumanoidCharacterProfile? humanoidProfile = null;
+
+        if (component.ActiveKey is { } selected)
+        {
+            var recordKey = new StationRecordKey(selected, station);
+            if (_records.TryGetRecord<GeneralStationRecord>(recordKey, out var general) && general != null)
+            {
+                name = general.Name;
+                age = general.Age;
+                gender = general.Gender;
+                species = general.Species;
+                jobTitle = general.JobTitle;
+                fingerprint = general.Fingerprint;
+                dna = general.DNA;
+                humanoidProfile = general.HumanoidProfile;
+            }
+
+            if (_records.TryGetRecord<MedicalRecord>(recordKey, out var medical) && medical != null)
+                notes = medical.Notes;
+        }
+
         _ui.SetUiState(
             uid,
             LustMedicalRecordsUiKey.Key,
             new LustMedicalRecordsUiState(
                 listingRecords,
                 component.ActiveKey,
-                canEditBiometrics));
-    }
-
-    /// <summary>
-    /// Отправляет детали выбранной записи направленным сообщением одному актору.
-    /// Вызывать только после проверки доступа вызывающей стороны.
-    /// </summary>
-    private void SendRecordDetails(EntityUid uid, LustMedicalRecordsConsoleComponent component, EntityUid actor)
-    {
-        if (_station.GetOwningStation(uid) is not { } station)
-            return;
-
-        if (component.ActiveKey is not { } selectedKey)
-            return;
-
-        var recordKey = new StationRecordKey(selectedKey, station);
-        _records.TryGetRecord<GeneralStationRecord>(recordKey, out var generalRecord);
-        _records.TryGetRecord<MedicalRecord>(recordKey, out var medicalRecord);
-
-        _ui.ServerSendUiMessage(
-            uid,
-            LustMedicalRecordsUiKey.Key,
-            new LustMedicalRecordsRecordDetailsMessage(
-                selectedKey,
-                generalRecord?.Name,
-                generalRecord?.Age,
-                generalRecord?.Gender,
-                generalRecord?.Species,
-                generalRecord?.JobTitle,
-                generalRecord?.Fingerprint,
-                generalRecord?.DNA,
-                medicalRecord?.Notes,
-                component.BiometricsUnlocked,
-                generalRecord?.HumanoidProfile),
-            actor);
+                canEditBiometrics,
+                name: name,
+                age: age,
+                gender: gender,
+                species: species,
+                jobTitle: jobTitle,
+                fingerprint: fingerprint,
+                dna: dna,
+                notes: notes,
+                humanoidProfile: humanoidProfile));
     }
 
     /// <summary>

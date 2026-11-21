@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Content.Shared.Preferences;
+﻿using Content.Shared.Preferences;
 using Robust.Shared.Enums;
 using Robust.Shared.Serialization;
 
@@ -15,7 +14,7 @@ public enum LustMedicalRecordsUiKey : byte
 }
 
 /// <summary>
-/// Упрощённая запись для листинга медицинской консоли — только поля, по которым можно искать.
+/// Упрощённая запись для листинга медицинской консоли.
 /// </summary>
 [Serializable, NetSerializable]
 public sealed record LustMedicalRecordListing(
@@ -28,9 +27,7 @@ public sealed record LustMedicalRecordListing(
     string? JobTitle);
 
 /// <summary>
-/// Данные медицинской консоли, которые сервер отправляет клиенту.
-/// Содержит только листинг и выбор: детали записи едут отдельным
-/// направленным сообщением только проверенному актору.
+/// Данные медицинской консоли.
 /// </summary>
 [Serializable, NetSerializable]
 public sealed class LustMedicalRecordsUiState : BoundUserInterfaceState
@@ -39,40 +36,6 @@ public sealed class LustMedicalRecordsUiState : BoundUserInterfaceState
     public readonly uint? SelectedKey;
     public readonly bool CanEditBiometrics;
 
-
-    /// <summary>
-    /// Создаёт пустое состояние, например, когда у станции нет записей.
-    /// </summary>
-    public LustMedicalRecordsUiState()
-    {
-        RecordListing = null;
-        SelectedKey = null;
-        CanEditBiometrics = false;
-    }
-
-    /// <summary>
-    /// Создаёт состояние со списком, выбором и флагом доступа к биометрии.
-    /// </summary>
-    public LustMedicalRecordsUiState(
-        List<LustMedicalRecordListing> recordListing,
-        uint? selectedKey,
-        bool canEditBiometrics)
-    {
-        RecordListing = recordListing;
-        SelectedKey = selectedKey;
-        CanEditBiometrics = canEditBiometrics;
-    }
-}
-
-/// <summary>
-/// Детали выбранной медицинской карты. Отправляется направленным сообщением
-/// только актору, прошедшему проверку доступа, а не всем смотрящим.
-/// </summary>
-[Serializable, NetSerializable]
-public sealed class LustMedicalRecordsRecordDetailsMessage : BoundUserInterfaceMessage
-{
-    public readonly uint SelectedKey;
-
     public readonly string? Name;
     public readonly int? Age;
     public readonly Gender? Gender;
@@ -80,25 +43,33 @@ public sealed class LustMedicalRecordsRecordDetailsMessage : BoundUserInterfaceM
     public readonly string? JobTitle;
     public readonly string? Fingerprint;
     public readonly string? Dna;
-
     public readonly string? Notes;
-    public readonly bool CanEditBiometrics;
     public readonly HumanoidCharacterProfile? HumanoidProfile;
 
-    public LustMedicalRecordsRecordDetailsMessage(
-        uint selectedKey,
-        string? name,
-        int? age,
-        Gender? gender,
-        string? species,
-        string? jobTitle,
-        string? fingerprint,
-        string? dna,
-        string? notes,
-        bool canEditBiometrics,
-        HumanoidCharacterProfile? humanoidProfile)
+    public LustMedicalRecordsUiState()
     {
+        RecordListing = null;
+        SelectedKey = null;
+        CanEditBiometrics = false;
+    }
+
+    public LustMedicalRecordsUiState(
+        List<LustMedicalRecordListing> recordListing,
+        uint? selectedKey,
+        bool canEditBiometrics,
+        string? name = null,
+        int? age = null,
+        Gender? gender = null,
+        string? species = null,
+        string? jobTitle = null,
+        string? fingerprint = null,
+        string? dna = null,
+        string? notes = null,
+        HumanoidCharacterProfile? humanoidProfile = null)
+    {
+        RecordListing = recordListing;
         SelectedKey = selectedKey;
+        CanEditBiometrics = canEditBiometrics;
         Name = name;
         Age = age;
         Gender = gender;
@@ -107,7 +78,6 @@ public sealed class LustMedicalRecordsRecordDetailsMessage : BoundUserInterfaceM
         Fingerprint = fingerprint;
         Dna = dna;
         Notes = notes;
-        CanEditBiometrics = canEditBiometrics;
         HumanoidProfile = humanoidProfile;
     }
 }
