@@ -147,6 +147,9 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// </summary>
     private void OnSelectRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsSelectRecordMessage msg)
     {
+        if (!CheckAccessOrDeny(ent, msg.Actor))
+            return;
+
         if (msg.SelectedKey == null)
         {
             if (ent.Comp.ActiveKey != null)
@@ -156,9 +159,6 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
             }
             return;
         }
-
-        if (!CheckAccessOrDeny(ent, msg.Actor))
-            return;
 
         if (_station.GetOwningStation(ent.Owner) is not { } station)
             return;
@@ -234,7 +234,6 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         _records.AddRecordEntry(key, updatedRecord);
         _records.AddRecordEntry(key, medicalRecord);
         _records.Synchronize(key);
-        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
         _audio.PlayPvs(ent.Comp.SuccessfulSound, ent.Owner);
     }
 

@@ -22,9 +22,9 @@ public static class PortfolioGenerator
         if (!protoMan.TryIndex<PortfolioPoolPrototype>(poolId, out var pool))
             return string.Empty;
 
-        var strings = pool.General;
+        var strings = pool.General ?? new List<string>();
         if (pool.Species.TryGetValue(species.Id, out var racial)
-            && racial.Count > 0
+            && racial is { Count: > 0 }
             && random.Prob(RacialVariantChance))
         {
             strings = racial;

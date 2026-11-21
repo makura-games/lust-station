@@ -6,6 +6,7 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Enums;
+using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -48,6 +49,9 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     /// </summary>
     private bool _hasLocalEdits;
 
+    private readonly ISawmill _sawmill;
+    private bool _nullPortfolioWarned;
+
     /// <summary>
     /// Создаёт окно медконсоли: контролы, подписки, плейсхолдеры.
     /// </summary>
@@ -56,6 +60,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         RobustXamlLoader.Load(this);
         _prototype = IoCManager.Resolve<IPrototypeManager>();
         var loc = IoCManager.Resolve<ILocalizationManager>();
+        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("lust.medical.records");
 
         _species = _prototype.EnumeratePrototypes<SpeciesPrototype>().ToList();
         _species.Sort((a, b) => string.Compare(
@@ -129,13 +134,24 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
                 : "lust-medical-records-advanced-access-locked");
 
         if (_selectedKey != state.SelectedKey)
+        {
             _hasLocalEdits = false;
+            _nullPortfolioWarned = false;
+        }
 
         _selectedKey = state.SelectedKey;
 
         RefreshRecordList(SearchInput.Text);
 
         var missing = Loc.GetString("lust-humanoid-profile-data-null");
+
+        var portfolio = state.HumanoidProfile?.Portfolio;
+        if (state.HumanoidProfile is not null && portfolio is null && !_nullPortfolioWarned)
+        {
+            _sawmill.Error(
+                $"Медконсоль: у записи {state.SelectedKey} есть HumanoidProfile, но Portfolio == null — данные повреждены.");
+            _nullPortfolioWarned = true;
+        }
 
         _isPopulating = true;
 
@@ -149,13 +165,13 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             DnaValue.Text = PrintableField(state.Dna, missing);
             Notes.TextRope = new Rope.Leaf(PrintableField(state.Notes, ""));
             CloseRelatives.TextRope = new Rope.Leaf(
-                PrintableField(state.HumanoidProfile?.Portfolio.CloseRelatives, missing));
+                PrintableField(portfolio?.CloseRelatives, missing));
             EmergencyContact.TextRope = new Rope.Leaf(
-                PrintableField(state.HumanoidProfile?.Portfolio.EmergencyContact, missing));
+                PrintableField(portfolio?.EmergencyContact, missing));
             PhysiologicalTraits.TextRope = new Rope.Leaf(
-                state.HumanoidProfile?.Portfolio.PhysiologicalTraits ?? string.Empty);
+                portfolio?.PhysiologicalTraits ?? string.Empty);
             PsychologicalTraits.TextRope = new Rope.Leaf(
-                state.HumanoidProfile?.Portfolio.PsychologicalTraits ?? string.Empty);
+                portfolio?.PsychologicalTraits ?? string.Empty);
 
             var genderIndex = state.Gender is { } gender ? Array.IndexOf(_genders, gender) : 0;
             var speciesIndex = state.Species is not null

@@ -182,10 +182,17 @@ public sealed partial class PortfolioProfile : IEquatable<PortfolioProfile>
         PsychologicalTraits = ValidateEntry(PsychologicalTraits, MaxTextLength);
         ArrestHistory = ValidateEntry(ArrestHistory, MaxTextLength);
         ConvictionHistory = ValidateEntry(ConvictionHistory, MaxTextLength);
-
+        MaritalStatusValue = ValidateEntry(MaritalStatusValue);
         Region = ValidateEntry(Region, MaxShortTextLength);
         PlanetOrColony = ValidateEntry(PlanetOrColony, MaxShortTextLength);
         Address = ValidateEntry(Address, MaxShortTextLength);
+    }
+
+    private static MaritalStatus ValidateEntry(MaritalStatus maritalStatus)
+    {
+        if (!Enum.IsDefined(typeof(MaritalStatus), maritalStatus))
+            return MaritalStatus.Single;
+        return maritalStatus;
     }
 
     private static string ValidateEntry(string value, int maxLength)
