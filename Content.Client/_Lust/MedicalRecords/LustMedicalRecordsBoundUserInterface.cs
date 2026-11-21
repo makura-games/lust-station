@@ -10,7 +10,6 @@ public sealed class LustMedicalRecordsBoundUserInterface(EntityUid owner, Enum u
 {
     private LustMedicalRecordsWindow? _window;
 
-
     /// <summary>
     /// Функция окрытия UI формирует сообщения для получешния данных об профилях
     /// </summary>
@@ -42,7 +41,6 @@ public sealed class LustMedicalRecordsBoundUserInterface(EntityUid owner, Enum u
     /// Функция обновления снимка карточки пользователя
     /// Вызывается сервером при открытии, смене выбора и любых изменениях листинга.
     /// </summary>
-    /// <param name="state"></param>
     protected override void UpdateState(BoundUserInterfaceState state)
     {
         base.UpdateState(state);

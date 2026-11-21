@@ -22,7 +22,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     private readonly IPrototypeManager _prototype;
 
     /// <summary>
-    /// Вызывается при выборе записи в листинге. Аргумент — id записи, null не используется.
+    /// Вызывается при выборе записи в листинге. Аргумент — id записи, если null не используется.
     /// </summary>
     public Action<uint?>? OnRecordSelected;
 
@@ -174,6 +174,10 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         DnaValue.Editable = state.CanEditBiometrics;
     }
 
+    /// <summary>
+    /// Пересобирает список листинга
+    /// </summary>
+    /// <param name="filter"></param>
     private void RefreshRecordList(string filter = "")
     {
         _isPopulating = true;
@@ -239,8 +243,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     }
 
     /// <summary>
-    /// Включает Save, если пользователь что-то изменил. Игнорируется
-    /// во время программного заполнения контролов.
+    /// Включает Save, если пользователь что-то изменил.
     /// </summary>
     private void OnEditableFieldChanged()
     {

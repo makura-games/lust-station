@@ -28,8 +28,7 @@ using Robust.Shared.Utility;
 namespace Content.Server._Lust.MedicalRecords.Systems;
 
 /// <summary>
-/// Серверная логика медицинской консоли: выбор записи, редактирование
-/// физиологических/психологических черт, заметок и биометрии, печать бумаги.
+/// Серверная логика медицинской консоли.
 /// </summary>
 public sealed partial class LustMedicalRecordsSystem : EntitySystem
 {
@@ -46,7 +45,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
 
     /// <summary>
-    /// Подписывает консоль на BUI-сообщения. LocalEvent-обработчики
+    /// Подписывает консоль на BUI-сообщения
     /// </summary>
     public override void Initialize()
     {
@@ -186,7 +185,6 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
 
     /// <summary>
     /// Сохраняет редактируемые поля медкарты.
-    /// обновляется только при разблокированном режиме.
     /// </summary>
     private void OnSaveRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsSaveMessage msg)
     {
@@ -314,8 +312,8 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
 
     /// <summary>
     /// Формирует и отправляет общий стейт консоли: листинг + выбранный ключ +
-    /// флаг доступа к биометрии. Если ключ больше не валиден (запись удалена),
-    /// сбрасывается в <c>null</c> без автовыбора.
+    /// флаг доступа к биометрии. Если ключ больше не валиден,
+    /// сбрасывается в <c>null</c> не предлагая другую запись.
     /// </summary>
     private void UpdateUserInterface(EntityUid uid, LustMedicalRecordsConsoleComponent component, bool canEditBiometrics)
     {
@@ -355,7 +353,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
             return;
         }
 
-        if (component.ActiveKey is { } selectedKey && !listingRecords.Any(r => r.Id == selectedKey))
+        if (component.ActiveKey is { } selectedKey && listingRecords.All(r => r.Id != selectedKey))
             component.ActiveKey = null;
 
         // Детали выбранной записи — в том же broadcast-стейте.
@@ -367,7 +365,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         if (component.ActiveKey is { } selected)
         {
             var recordKey = new StationRecordKey(selected, station);
-            if (_records.TryGetRecord<GeneralStationRecord>(recordKey, out var general) && general != null)
+            if (_records.TryGetRecord<GeneralStationRecord>(recordKey, out var general))
             {
                 name = general.Name;
                 age = general.Age;
@@ -379,7 +377,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
                 humanoidProfile = general.HumanoidProfile;
             }
 
-            if (_records.TryGetRecord<MedicalRecord>(recordKey, out var medical) && medical != null)
+            if (_records.TryGetRecord<MedicalRecord>(recordKey, out var medical))
                 notes = medical.Notes;
         }
 

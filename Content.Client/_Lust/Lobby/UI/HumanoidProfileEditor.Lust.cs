@@ -86,7 +86,7 @@ public sealed partial class HumanoidProfileEditor
     }
 
     /// <summary>
-    /// Создаёт вкладку портфолио при первом вызове. Идемпотентно.
+    /// Создаёт вкладку портфолио при первом вызове.
     /// </summary>
     private void EnsurePortfolioTab()
     {

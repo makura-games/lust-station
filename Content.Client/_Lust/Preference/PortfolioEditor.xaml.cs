@@ -80,7 +80,7 @@ public sealed partial class PortfolioEditor : Control
             WriteMaritalStatus((MaritalStatus) args.Id);
         };
 
-        // Однострочные поля (128/32 символа), пишем по Enter и уходу фокуса.
+        // Однострочные поля (128/32 символа), пишем по OnTextEntered и OnFocusExit.
         SubscribeSingle(Region, RegionEdit);
         SubscribeSingle(PlanetOrColony, PlanetOrColonyEdit);
         SubscribeSingle(Address, AddressEdit);
@@ -111,7 +111,7 @@ public sealed partial class PortfolioEditor : Control
     }
 
     /// <summary>
-    /// однострочное поле, пишем по Enter и при уходе фокуса.
+    /// однострочное поле, пишем по OnTextEntered и OnFocusExit.
     /// </summary>
     private void SubscribeSingle(PortfolioField field, LineEdit edit)
     {
@@ -120,8 +120,7 @@ public sealed partial class PortfolioEditor : Control
     }
 
     /// <summary>
-    ///  многострочное поле, у TextEdit нет OnTextEntered и OnFocusExit,
-    /// поэтому пишем при каждом изменении текста.
+    /// Подписка на многострочные поля для их перезаписи при каждом изменение текста
     /// </summary>
     private void SubscribeMulti(PortfolioField field, TextEdit edit)
     {
@@ -287,11 +286,15 @@ public sealed partial class PortfolioEditor : Control
         WriteMulti(ConvictionHistoryEdit, value);
     }
 
-
     private void WriteMaritalStatus(MaritalStatus status)
     {
-        var next = new HumanoidCharacterProfile(_profile);
-        next.Portfolio.MaritalStatusValue = status;
+        var next = new HumanoidCharacterProfile(_profile)
+        {
+            Portfolio =
+            {
+                MaritalStatusValue = status,
+            },
+        };
         _profile = next;
         OnProfileChanged?.Invoke(_profile);
     }

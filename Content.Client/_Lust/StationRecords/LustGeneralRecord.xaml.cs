@@ -168,8 +168,8 @@ public sealed partial class LustGeneralRecord : BoxContainer
     private void UpdateEditableInfo(GeneralStationRecord record)
     {
         NameEdit.Text = record.Name;
-        // Возраст -1 и ниже означает отсутствие данных, показываем пустое поле.
-        Age.Text = record.Age <= 0 ? string.Empty : record.Age.ToString();
+
+        Age.Text = record.Age.ToString();
 
         for (var i = 0; i < _allGender.Length; i++)
         {
@@ -284,12 +284,12 @@ public sealed partial class LustGeneralRecord : BoxContainer
 
     /// <summary>
     /// Собирает обновлённую запись из полей интерфейса для отправки на сервер.
-    /// Строки проходят санитизацию, возраст разбирается один раз.
+    /// Строки проходят санитизацию.
     /// </summary>
     private GeneralStationRecord BuildUpdatedRecord(GeneralStationRecord original)
     {
         var textAge = Age.Text.SanitizeInput(MaxAgeLength);
-        var ageEntered = int.TryParse(textAge, out var ageVal); // разбор один раз, дальше переиспользуется
+        var ageEntered = int.TryParse(textAge, out var ageVal);
 
         var maritalStatus = LustMaritalStatus.SelectedId >= 0 && LustMaritalStatus.SelectedId < _allMaritalStatus.Length
             ? _allMaritalStatus[LustMaritalStatus.SelectedId]
@@ -329,7 +329,6 @@ public sealed partial class LustGeneralRecord : BoxContainer
 
     private void MakeDropDownSelectable()
     {
-        // Почему это не встроено в сами кнопки
         foreach (var child in ControlGrid.Children)
         {
             if (child is not OptionButton optionButton)

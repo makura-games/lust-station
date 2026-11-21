@@ -6,15 +6,13 @@ using Robust.Shared.Prototypes;
 namespace Content.Server._Lust.MedicalRecords.Components;
 
 /// <summary>
-/// Состояние медицинской консоли: выбранная запись, режим биометрии и
-/// настройки печати
+/// Компонент мед концоли, хранит данные о ней
 /// </summary>
 [RegisterComponent, Access(typeof(LustMedicalRecordsSystem))]
 public sealed partial class LustMedicalRecordsConsoleComponent : Component
 {
     /// <summary>
     /// Ключ выбранной записи сотрудника. <c>null</c> — ничего не выбрано
-    /// (например, после снятия выбора или если листинг пуст).
     /// Источник истины для <c>LustMedicalRecordsUiState.SelectedKey</c>.
     /// </summary>
     [DataField]
@@ -30,7 +28,7 @@ public sealed partial class LustMedicalRecordsConsoleComponent : Component
 
     /// <summary>
     /// Тег доступа, открывающий редактирование биометрии.
-    /// Настраивается на прототипе консоли, по умолчанию — <c>Captain</c>.
+    /// По умолчанию — <c>Captain</c>.
     /// </summary>
     [DataField]
     public ProtoId<AccessLevelPrototype> BiometricsAccess = "Captain";
@@ -53,7 +51,7 @@ public sealed partial class LustMedicalRecordsConsoleComponent : Component
     public EntProtoId Paper = "Paper";
 
     /// <summary>
-    /// Звук при неудачном действии (недостаточно прав, нет доступа, кулдаун).
+    /// Звук при неудачном действии.
     /// </summary>
     [DataField]
     public SoundSpecifier FailedSound = new SoundPathSpecifier("/Audio/Effects/Cargo/buzz_sigh.ogg");
