@@ -1446,6 +1446,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("profile_loadout_group", (string)null);
                 });
 
+            // Lust edit start - миграция бд 20261111100227_LustPortfolioTable
             modelBuilder.Entity("Content.Server.Database.ProfilePortfolio", b =>
                 {
                     b.Property<int>("Id")
@@ -1541,6 +1542,7 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.ToTable("profile_portfolio", (string)null);
                 });
+            // Lust edit end
 
             modelBuilder.Entity("Content.Server.Database.ProfileRoleLoadout", b =>
                 {
@@ -2377,6 +2379,7 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("ProfileRoleLoadout");
                 });
 
+            // Lust edit start - миграция бд 20261111100227_LustPortfolioTable
             modelBuilder.Entity("Content.Server.Database.ProfilePortfolio", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2388,6 +2391,7 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.Navigation("Profile");
                 });
+            // Lust edit end
 
             modelBuilder.Entity("Content.Server.Database.ProfileRoleLoadout", b =>
                 {
@@ -2578,13 +2582,13 @@ namespace Content.Server.Database.Migrations.Sqlite
 
                     b.Navigation("ErpData");
 
-                    b.Navigation("JobAlternativeTitles");
+                    b.Navigation("JobAlternativeTitles"); // Lust edit при миграции бд 20261111100227_LustPortfolioTable было перенесено
 
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
 
-                    b.Navigation("PortfolioData");
+                    b.Navigation("PortfolioData");  // Lust edit - миграция бд 20261111100227_LustPortfolioTable
 
                     b.Navigation("Traits");
                 });
