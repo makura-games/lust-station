@@ -5,7 +5,9 @@ using Content.Server.Shuttles.Components;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Events;
 using Content.Server.Station.Systems;
+using Content.Shared.CCVar;
 using Content.Shared.Station.Components;
+using Robust.Shared.Configuration;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -21,6 +23,7 @@ public sealed partial class GridDockSystem : EntitySystem
     [Dependency] private DockingSystem _dockSystem = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private IRobustRandom _random = default!; // Lust-add
+    [Dependency] private IConfigurationManager _cfg = default!;
 
     public override void Initialize()
     {
@@ -29,6 +32,9 @@ public sealed partial class GridDockSystem : EntitySystem
 
     private void OnStationPostInit(EntityUid uid, SpawnGridAndDockToStationComponent component, StationPostInitEvent args)
     {
+        if (!_cfg.GetCVar(CCVars.GridFill))
+            return;
+
         if (component.Grids.Count == 0)
             return;
 

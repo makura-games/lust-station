@@ -4,11 +4,12 @@
   name: job-name-security
   description: job-description-security
   playTimeTracker: JobSecurityOfficer
-  # Lust-Start
-  speciesBlacklist:
-  - Vox
-  # Lust-End
   requirements:
+    # Lust-Start - сохраняем чёрный список при переносе в требования роли
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
+    # Lust-End
     - !type:DepartmentTimeRequirement
       department: Security
       time: 4h

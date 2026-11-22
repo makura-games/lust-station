@@ -144,12 +144,6 @@ public sealed partial class JobPrototype : IPrototype
 
     // Sunrise added start - дополнительные настройки должностей
     /// <summary>
-    /// Виды, которым недоступна должность.
-    /// </summary>
-    [DataField]
-    public List<ProtoId<SpeciesPrototype>> SpeciesBlacklist = [];
-
-    /// <summary>
     /// Всегда использовать точку спавна должности, включая позднее присоединение.
     /// </summary>
     [DataField("alwaysUseSpawner")]
