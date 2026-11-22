@@ -30,7 +30,7 @@ namespace Content.Server._Lust.MedicalRecords.Systems;
 /// <summary>
 /// Серверная логика медицинской консоли.
 /// </summary>
-public sealed partial class LustMedicalRecordsSystem : EntitySystem
+public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
 {
     [Dependency] private StationRecordsSystem _records = default!;
     [Dependency] private StationSystem _station = default!;
@@ -87,7 +87,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// <summary>
     /// Переключает режим редактирования биометрии по ID-карте с доступом
     /// <see cref="LustMedicalRecordsConsoleComponent.BiometricsAccess"/>.
-    /// После переключения пересылает свежие детали актору.
+    /// После переключения свежий стейт уходит всем смотрящим консоль.
     /// </summary>
     [SubscribeLocalEvent]
     private void OnCardUsed(
@@ -97,32 +97,12 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         if (args.Handled
             || !args.CanReach
             || !this.IsPowered(ent.Owner, EntityManager)
-            || !TryComp<IdCardComponent>(args.Used, out _))
+            || !HasComp<IdCardComponent>(args.Used))
         {
             return;
         }
 
-        if (!_access.FindAccessTags(args.Used).Contains(ent.Comp.BiometricsAccess))
-        {
-            // Карта не подходит для биометрии — фидбек, без переключения режима
-            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
-            _popup.PopupEntity(
-                Loc.GetString("lust-medical-records-access-denied"),
-                ent.Owner,
-                args.User);
-            args.Handled = true;
-            return;
-        }
-
-        ent.Comp.BiometricsUnlocked = !ent.Comp.BiometricsUnlocked;
-        _audio.PlayPvs(ent.Comp.CardInsertSound, ent.Owner);
-        var message = ent.Comp.BiometricsUnlocked
-            ? "lust-medical-records-biometrics-unlocked"
-            : "lust-medical-records-biometrics-locked";
-
-        _popup.PopupEntity(Loc.GetString(message), ent.Owner, args.User);
-
-        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
+        TryToggleBiometrics(ent, args.Used, args.User);
         args.Handled = true;
     }
 
@@ -134,12 +114,10 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         Entity<LustMedicalRecordsConsoleComponent> ent,
         ref GotEmaggedEvent args)
     {
-        if (args.Handled || ent.Comp.BiometricsUnlocked)
+        if (args.Handled)
             return;
 
-        ent.Comp.BiometricsUnlocked = true;
-        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
-        args.Handled = true;
+        args.Handled = TryUnlockBiometrics(ent);
     }
 
     /// <summary>
@@ -147,32 +125,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// </summary>
     private void OnSelectRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsSelectRecordMessage msg)
     {
-        if (!CheckAccessOrDeny(ent, msg.Actor))
-            return;
-
-        if (msg.SelectedKey == null)
-        {
-            if (ent.Comp.ActiveKey != null)
-            {
-                ent.Comp.ActiveKey = null;
-                UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
-            }
-            return;
-        }
-
-        if (_station.GetOwningStation(ent.Owner) is not { } station)
-            return;
-
-        if (msg.SelectedKey is { } id
-            && !_records.TryGetRecord<GeneralStationRecord>(
-                new StationRecordKey(id, station),
-                out _))
-        {
-            return;
-        }
-
-        ent.Comp.ActiveKey = msg.SelectedKey;
-        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
+        TrySelectRecord(ent, msg.SelectedKey, msg.Actor);
     }
 
     /// <summary>
@@ -188,13 +141,155 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     /// </summary>
     private void OnSaveRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsSaveMessage msg)
     {
-        if (!CheckAccessOrDeny(ent, msg.Actor))
-            return;
+        TrySaveRecord(ent, msg, msg.Actor);
+    }
+
+    /// <summary>
+    /// Печатает бумажную медкарту выбранной записи. Кулдаун между печатями —
+    /// <see cref="LustMedicalRecordsConsoleComponent.PrintCooldown"/>.
+    /// </summary>
+    private void OnPrintRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsPrintMessage msg)
+    {
+        TryPrintRecord(ent, msg.RecordId, msg.Actor);
+    }
+
+    /// <summary>
+    /// Переключение режима биометрии.
+    /// </summary>
+    private bool TryToggleBiometrics(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        EntityUid used,
+        EntityUid user)
+    {
+        if (!CanToggleBiometrics(ent, used, user))
+            return false;
+
+        DoToggleBiometrics(ent, user);
+        return true;
+    }
+
+    private bool CanToggleBiometrics(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        EntityUid used,
+        EntityUid user)
+    {
+
+        if (!_access.FindAccessTags(used).Contains(ent.Comp.BiometricsAccess))
+        {
+            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
+            _popup.PopupEntity(
+                Loc.GetString("lust-medical-records-access-denied"),
+                ent.Owner,
+                user);
+            return false;
+        }
+
+        return true;
+    }
+
+    private void DoToggleBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent, EntityUid user)
+    {
+        ent.Comp.BiometricsUnlocked = !ent.Comp.BiometricsUnlocked;
+        _audio.PlayPvs(ent.Comp.CardInsertSound, ent.Owner);
+        var message = ent.Comp.BiometricsUnlocked
+            ? "lust-medical-records-biometrics-unlocked"
+            : "lust-medical-records-biometrics-locked";
+        _popup.PopupEntity(Loc.GetString(message), ent.Owner, user);
+        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
+    }
+
+    /// <summary>
+    /// Разблокировка биометрии эмагом.
+    /// </summary>
+    private bool TryUnlockBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent)
+    {
+        if (ent.Comp.BiometricsUnlocked)
+            return false;
+
+        ent.Comp.BiometricsUnlocked = true;
+        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
+        return true;
+    }
+
+    /// <summary>
+    /// Выбор или снятие выбора записи.
+    /// </summary>
+    private bool TrySelectRecord(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        uint? selectedKey,
+        EntityUid actor)
+    {
+        if (!CanSelectRecord(ent, selectedKey, actor))
+            return false;
+
+        DoSelectRecord(ent, selectedKey);
+        return true;
+    }
+
+    private bool CanSelectRecord(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        uint? selectedKey,
+        EntityUid actor)
+    {
+        if (!CanAccess(ent, actor))
+            return false;
+
+        if (selectedKey is null)
+            return ent.Comp.ActiveKey is not null;
+
+        if (_station.GetOwningStation(ent.Owner) is not { } station)
+            return false;
+
+        return _records.TryGetRecord<GeneralStationRecord>(
+            new StationRecordKey(selectedKey.Value, station),
+            out _);
+    }
+
+    private void DoSelectRecord(Entity<LustMedicalRecordsConsoleComponent> ent, uint? selectedKey)
+    {
+        ent.Comp.ActiveKey = selectedKey;
+        UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
+    }
+
+    /// <summary>
+    /// Сохранение редактируемых полей медкарты.
+    /// </summary>
+    private bool TrySaveRecord(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        LustMedicalRecordsSaveMessage msg,
+        EntityUid actor)
+    {
+        if (!CanSaveRecord(ent, msg, actor))
+            return false;
+
+        DoSaveRecord(ent, msg);
+        return true;
+    }
+
+    private bool CanSaveRecord(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        LustMedicalRecordsSaveMessage msg,
+        EntityUid actor)
+    {
+        if (!CanAccess(ent, actor))
+            return false;
 
         if (ent.Comp.ActiveKey != msg.RecordId
             || !Enum.IsDefined(typeof(Gender), msg.Gender)
             || _station.GetOwningStation(ent.Owner) is not { } station
             || !_prototype.TryIndex<SpeciesPrototype>(msg.Species, out _))
+        {
+            return false;
+        }
+
+        return _records.TryGetRecord<GeneralStationRecord>(
+            new StationRecordKey(msg.RecordId, station),
+            out _);
+    }
+
+    private void DoSaveRecord(Entity<LustMedicalRecordsConsoleComponent> ent, LustMedicalRecordsSaveMessage msg)
+    {
+        if (_station.GetOwningStation(ent.Owner) is not { } station)
             return;
 
         var key = new StationRecordKey(msg.RecordId, station);
@@ -219,8 +314,7 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         },
         in _prototype);
 
-        var canEditBiometrics = ent.Comp.BiometricsUnlocked;
-        if (canEditBiometrics)
+        if (ent.Comp.BiometricsUnlocked)
         {
             updatedRecord = GeneralStationRecord.SanitizeRecord(original: updatedRecord with
             {
@@ -233,40 +327,68 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         medicalRecord.Notes = msg.Notes.SanitizeInput(2048);
         _records.AddRecordEntry(key, updatedRecord);
         _records.AddRecordEntry(key, medicalRecord);
+        // Synchronize поднимает RecordModifiedEvent в OnRecordModified сам шлёт свежий стейт.
         _records.Synchronize(key);
         _audio.PlayPvs(ent.Comp.SuccessfulSound, ent.Owner);
     }
 
     /// <summary>
-    /// Печатает бумажную медкарту выбранной записи. Кулдаун между печатями —
-    /// <see cref="LustMedicalRecordsConsoleComponent.PrintCooldown"/>.
+    /// Печать бумажной медкарты.
     /// </summary>
-    private void OnPrintRecord(Entity<LustMedicalRecordsConsoleComponent> ent, ref LustMedicalRecordsPrintMessage msg)
+    private bool TryPrintRecord(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        uint recordId,
+        EntityUid actor)
     {
-        if (!CheckAccessOrDeny(ent, msg.Actor))
-            return;
+        if (!CanPrintRecord(ent, recordId, actor))
+            return false;
 
-        if (ent.Comp.ActiveKey != msg.RecordId)
-            return;
+        DoPrintRecord(ent, recordId, actor);
+        return true;
+    }
+
+    private bool CanPrintRecord(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        uint recordId,
+        EntityUid actor)
+    {
+        if (!CanAccess(ent, actor))
+            return false;
+
+        if (ent.Comp.ActiveKey != recordId)
+            return false;
 
         if (_timing.CurTime < ent.Comp.NextPrintTime)
         {
-            _popup.PopupEntity(Loc.GetString("forensic-scanner-printer-not-ready"), ent.Owner, msg.Actor);
+            _popup.PopupEntity(Loc.GetString("forensic-scanner-printer-not-ready"), ent.Owner, actor);
             _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
-            return;
+            return false;
         }
 
         if (_station.GetOwningStation(ent.Owner) is not { } station)
+            return false;
+
+        return _records.TryGetRecord<GeneralStationRecord>(
+            new StationRecordKey(recordId, station),
+            out _);
+    }
+
+    private void DoPrintRecord(
+        Entity<LustMedicalRecordsConsoleComponent> ent,
+        uint recordId,
+        EntityUid actor)
+    {
+        if (_station.GetOwningStation(ent.Owner) is not { } station)
             return;
 
-        var key = new StationRecordKey(msg.RecordId, station);
+        var key = new StationRecordKey(recordId, station);
         if (!_records.TryGetRecord<GeneralStationRecord>(key, out var record))
             return;
 
         _records.TryGetRecord<MedicalRecord>(key, out var medicalRecord);
 
         var printed = Spawn(ent.Comp.Paper, Transform(ent).Coordinates);
-        _hands.PickupOrDrop(msg.Actor, printed, checkActionBlocker: false);
+        _hands.PickupOrDrop(actor, printed, checkActionBlocker: false);
 
         if (!TryComp<PaperComponent>(printed, out var paper))
         {
@@ -282,9 +404,8 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
         var speciesName = _prototype.TryIndex<SpeciesPrototype>(record.Species, out var species)
             ? Loc.GetString(species.Name)
             : unrecognized;
-        var age = record.Age > 0
-            ? record.Age.ToString()
-            : unrecognized;
+        var age = record.Age.ToString();
+
         var gender = Loc.GetString("station-records-gender", ("gender", record.Gender.ToString()));
         var portfolio = record.HumanoidProfile?.Portfolio;
 
@@ -423,10 +544,10 @@ public sealed partial class LustMedicalRecordsSystem : EntitySystem
     }
 
     /// <summary>
-    /// Проверяет доступ актора к консоли. При отказе играет звук,
-    /// показывает попап только актору и возвращает false.
+    /// Чистая проверка доступа: состояние не меняет, при отказе
+    /// показывает звук и попап только актору.
     /// </summary>
-    private bool CheckAccessOrDeny(
+    private bool CanAccess(
         Entity<LustMedicalRecordsConsoleComponent> ent,
         EntityUid actor)
     {

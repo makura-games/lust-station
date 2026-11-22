@@ -1,5 +1,5 @@
 ﻿- type: portfolioPool
-  id: PortfolioLustDistinguishingFeatures
+  id: LustPortfolioDistinguishingFeatures
   general:
   - lust-portfolio-distinguishing-features-1
   - lust-portfolio-distinguishing-features-2
@@ -19,7 +19,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustRegion
+  id: LustPortfolioRegion
   general:
   - lust-portfolio-region-1
   - lust-portfolio-region-2
@@ -49,7 +49,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustPlanetOrColony
+  id: LustPortfolioPlanetOrColony
   general:
   - lust-portfolio-planet-or-colony-1
   - lust-portfolio-planet-or-colony-2
@@ -79,7 +79,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustAddress
+  id: LustPortfolioAddress
   general:
   - lust-portfolio-address-1
   - lust-portfolio-address-2
@@ -109,7 +109,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustEducation
+  id: LustPortfolioEducation
   general:
   - lust-portfolio-education-1
   - lust-portfolio-education-2
@@ -129,7 +129,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustWorkExperience
+  id: LustPortfolioWorkExperience
   general:
   - lust-portfolio-work-experience-1
   - lust-portfolio-work-experience-2
@@ -149,7 +149,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustCloseRelatives
+  id: LustPortfolioCloseRelatives
   general:
   - lust-portfolio-close-relatives-1
   - lust-portfolio-close-relatives-2
@@ -169,7 +169,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustEmergencyContact
+  id: LustPortfolioEmergencyContact
   general:
   - lust-portfolio-emergency-contact-1
   - lust-portfolio-emergency-contact-2
@@ -189,7 +189,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustPhysiologicalTraits
+  id: LustPortfolioPhysiologicalTraits
   general:
   - lust-portfolio-physiological-traits-1
   - lust-portfolio-physiological-traits-2
@@ -209,7 +209,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustPsychologicalTraits
+  id: LustPortfolioPsychologicalTraits
   general:
   - lust-portfolio-psychological-traits-1
   - lust-portfolio-psychological-traits-2
@@ -229,7 +229,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustArrestHistory
+  id: LustPortfolioArrestHistory
   general:
   - lust-portfolio-arrest-history-1
   - lust-portfolio-arrest-history-2
@@ -249,7 +249,7 @@
   species: {}
 
 - type: portfolioPool
-  id: PortfolioLustConvictionHistory
+  id: LustPortfolioConvictionHistory
   general:
   -  lust-portfolio-conviction-history-1
   - lust-portfolio-conviction-history-2

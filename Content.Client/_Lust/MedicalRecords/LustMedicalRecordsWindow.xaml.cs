@@ -149,7 +149,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         if (state.HumanoidProfile is not null && portfolio is null && !_nullPortfolioWarned)
         {
             _sawmill.Error(
-                $"Медконсоль: у записи {state.SelectedKey} есть HumanoidProfile, но Portfolio == null — данные повреждены.");
+                $"Medical records console: record {state.SelectedKey} has a HumanoidProfile but Portfolio is null — corrupted data.");
             _nullPortfolioWarned = true;
         }
 
@@ -335,6 +335,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             DnaValue.Text);
 
         _hasLocalEdits = false;
+        SaveButton.Disabled = true;
     }
 
     /// <summary>

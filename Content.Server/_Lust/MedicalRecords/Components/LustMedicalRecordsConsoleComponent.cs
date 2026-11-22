@@ -8,7 +8,7 @@ namespace Content.Server._Lust.MedicalRecords.Components;
 /// <summary>
 /// Компонент мед концоли, хранит данные о ней
 /// </summary>
-[RegisterComponent, Access(typeof(LustMedicalRecordsSystem))]
+[RegisterComponent, Access(typeof(LustMedicalRecordsConsoleSystem))]
 public sealed partial class LustMedicalRecordsConsoleComponent : Component
 {
     /// <summary>

@@ -3,27 +3,27 @@
 public static class PortfolioPoolLust
 {
     // Пул отличительных черт.
-    public const string DistinguishingFeatures = "PortfolioLustDistinguishingFeatures";
+    public const string DistinguishingFeatures = "LustPortfolioDistinguishingFeatures";
     // Пул регионов.
-    public const string Region = "PortfolioLustRegion";
+    public const string Region = "LustPortfolioRegion";
     // Пул планет и колоний.
-    public const string PlanetOrColony = "PortfolioLustPlanetOrColony";
+    public const string PlanetOrColony = "LustPortfolioPlanetOrColony";
     // Пул адресов.
-    public const string Address = "PortfolioLustAddress";
+    public const string Address = "LustPortfolioAddress";
     // Пул образования.
-    public const string Education = "PortfolioLustEducation";
+    public const string Education = "LustPortfolioEducation";
     // Пул трудового опыта.
-    public const string WorkExperience = "PortfolioLustWorkExperience";
+    public const string WorkExperience = "LustPortfolioWorkExperience";
     // Пул близких родственников.
-    public const string CloseRelatives = "PortfolioLustCloseRelatives";
+    public const string CloseRelatives = "LustPortfolioCloseRelatives";
     // Пул экстренных контактов.
-    public const string EmergencyContact = "PortfolioLustEmergencyContact";
+    public const string EmergencyContact = "LustPortfolioEmergencyContact";
     // Пул физиологических черт.
-    public const string PhysiologicalTraits = "PortfolioLustPhysiologicalTraits";
+    public const string PhysiologicalTraits = "LustPortfolioPhysiologicalTraits";
     // Пул психологических черт.
-    public const string PsychologicalTraits = "PortfolioLustPsychologicalTraits";
+    public const string PsychologicalTraits = "LustPortfolioPsychologicalTraits";
     // Пул истории арестов.
-    public const string ArrestHistory = "PortfolioLustArrestHistory";
+    public const string ArrestHistory = "LustPortfolioArrestHistory";
     // Пул истории судимостей.
-    public const string ConvictionHistory = "PortfolioLustConvictionHistory";
+    public const string ConvictionHistory = "LustPortfolioConvictionHistory";
 }
