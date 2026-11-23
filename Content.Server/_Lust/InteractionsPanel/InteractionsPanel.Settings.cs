@@ -39,7 +39,7 @@ public partial class InteractionsPanel
         bool locked)
     {
         // Изменять настройку может только сам владелец персонажа.
-        if (actor != ent.Owner)  
+        if (actor != ent.Owner)
             return false;
 
         // Настройка доступна только при «Неполном ERP».
