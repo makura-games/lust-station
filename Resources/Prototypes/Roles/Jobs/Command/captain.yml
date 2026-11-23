@@ -23,6 +23,11 @@
     - !type:DepartmentTimeRequirement
       department: Command
       time: 4h
+    # Sunrise added start - сохраняем чёрный список при переносе в требования роли
+    - !type:SpeciesRequirement
+      species: [Vox]
+      inverted: true
+    # Sunrise added end
   startingGear: CaptainGear
   icon: "JobIconCaptain"
   joinNotifyCrew: true
@@ -39,8 +44,6 @@
       - type: ArtifactFunnyTarget
       # Sunrise added end
       - type: CommandStaff
-  speciesBlacklist:
-  - Vox # Sunrise-Edit
 
 - type: startingGear
   id: CaptainGear

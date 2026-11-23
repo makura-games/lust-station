@@ -3,13 +3,10 @@
   name: job-name-blueshield-officer
   description: job-description-blueshield-officer
   playTimeTracker: JobBlueShield
-  # Lust-Start
-  speciesBlacklist:
-  - Vox
-  - Felinid
-  - Resomi
-  # Lust-End
   requirements:
+    - !type:SpeciesRequirement
+      species: [ Vox, Felinid, Resomi ]
+      inverted: true
     - !type:DepartmentTimeRequirement
       department: Security
       time: 62000 # 20 hrs

@@ -3,11 +3,12 @@
   name: job-name-cadet
   description: job-description-cadet
   playTimeTracker: JobSecurityCadet
-  # Lust-Start
-  speciesBlacklist:
-  - Vox
-  # Lust-End
   requirements:
+    # Lust-Start - сохраняем чёрный список при переносе в требования роли
+    - !type:SpeciesRequirement
+      species: [ Vox ]
+      inverted: true
+    # Lust-End
     - !type:OverallPlaytimeRequirement
       time: 10h
     - !type:DepartmentTimeRequirement

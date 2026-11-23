@@ -9,6 +9,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Timing;
 using System.Linq; // Lust-edit
 
+// ReSharper disable once CheckNamespace
 namespace Content.Server.Medical.CrewMonitoring;
 
 public sealed partial class CrewMonitoringConsoleSystem
