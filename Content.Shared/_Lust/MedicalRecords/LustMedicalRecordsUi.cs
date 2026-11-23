@@ -1,5 +1,4 @@
-﻿using Content.Shared.Preferences;
-using Robust.Shared.Enums;
+﻿using Robust.Shared.Enums;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared._Lust.MedicalRecords;
@@ -44,7 +43,7 @@ public sealed class LustMedicalRecordsUiState : BoundUserInterfaceState
     public readonly string? Fingerprint;
     public readonly string? Dna;
     public readonly string? Notes;
-    public readonly HumanoidCharacterProfile? HumanoidProfile;
+    public readonly LustMedicalPortfolioView? Portfolio;
 
     public LustMedicalRecordsUiState()
     {
@@ -65,7 +64,7 @@ public sealed class LustMedicalRecordsUiState : BoundUserInterfaceState
         string? fingerprint = null,
         string? dna = null,
         string? notes = null,
-        HumanoidCharacterProfile? humanoidProfile = null)
+        LustMedicalPortfolioView? portfolio = null)
     {
         RecordListing = recordListing;
         SelectedKey = selectedKey;
@@ -78,7 +77,7 @@ public sealed class LustMedicalRecordsUiState : BoundUserInterfaceState
         Fingerprint = fingerprint;
         Dna = dna;
         Notes = notes;
-        HumanoidProfile = humanoidProfile;
+        Portfolio = portfolio;
     }
 }
 
@@ -102,24 +101,25 @@ public sealed class LustMedicalRecordsSelectRecordMessage : BoundUserInterfaceMe
 [Serializable, NetSerializable]
 public sealed class LustMedicalRecordsSaveMessage : BoundUserInterfaceMessage
 {
+    // null = поле не менялось, сервер оставляет сохранённое значение.
     public readonly uint RecordId;
-    public readonly Gender Gender;
-    public readonly string Species;
-    public readonly string PhysiologicalTraits;
-    public readonly string PsychologicalTraits;
-    public readonly string Notes;
-    public readonly string Fingerprint;
-    public readonly string DNA;
+    public readonly Gender? Gender;
+    public readonly string? Species;
+    public readonly string? PhysiologicalTraits;
+    public readonly string? PsychologicalTraits;
+    public readonly string? Notes;
+    public readonly string? Fingerprint;
+    public readonly string? DNA;
 
     public LustMedicalRecordsSaveMessage(
         uint recordId,
-        Gender gender,
-        string species,
-        string physiologicalTraits,
-        string psychologicalTraits,
-        string notes,
-        string fingerprint,
-        string dna)
+        Gender? gender,
+        string? species,
+        string? physiologicalTraits,
+        string? psychologicalTraits,
+        string? notes,
+        string? fingerprint,
+        string? dna)
     {
         RecordId = recordId;
         Gender = gender;

@@ -14,7 +14,6 @@
                           MinWidth="230"
                           MaxWidth="270"
                           VerticalExpand="True">
-                <Label Name="RecordListingStatus" Visible="False" />
                 <Label Text="{Loc 'lust-medical-records-list-header'}" StyleClasses="LabelHeadingBolder" Margin="4 0"/>
                 <LineEdit Name="SearchInput" PlaceHolder="{Loc 'lust-medical-records-search-placeholder'}" Margin="2"/>
                 <PanelContainer StyleClasses="LowDivider" MinHeight="1"/>

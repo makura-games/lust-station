@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Humanoid.Prototypes;
+using Robust.Shared.Localization;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
@@ -22,7 +23,7 @@ public static class PortfolioGenerator
         if (!protoMan.TryIndex<PortfolioPoolPrototype>(poolId, out var pool))
             return string.Empty;
 
-        var strings = pool.General ?? new List<string>();
+        var strings = pool.General ?? new List<LocId>();
         if (pool.Species.TryGetValue(species.Id, out var racial)
             && racial is { Count: > 0 }
             && random.Prob(RacialVariantChance))

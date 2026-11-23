@@ -1,4 +1,5 @@
 using Content.Client._Lust.Preference;
+using Content.Shared._Lust.Preferences;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
 
@@ -63,7 +64,7 @@ public sealed partial class HumanoidProfileEditor
             ? (int) Profile.AnalVirginity
             : (int) Virginity.Yes);
 
-        _portfolio?.SetProfile(Profile);
+        _portfolio?.SetProfile(Profile.Portfolio);
 
     }
 
@@ -93,15 +94,21 @@ public sealed partial class HumanoidProfileEditor
         if (_portfolio is not null)
             return;
 
-        _portfolio = new PortfolioEditor();
-        _portfolio.OnProfileChanged += OnPortfolioChange;
+        _portfolio = new PortfolioEditor
+        {
+            SpeciesProvider = () => Profile?.Species ?? HumanoidCharacterProfile.DefaultSpecies,
+        };
+        _portfolio.OnPortfolioChanged += OnPortfolioChange;
         TabContainer.AddChild(_portfolio);
         TabContainer.SetTabTitle(TabContainer.ChildCount - 1, Loc.GetString("lust-humanoid-profile-editor-portfolio-tab"));
     }
 
-    private void OnPortfolioChange(HumanoidCharacterProfile profile)
+    private void OnPortfolioChange(PortfolioProfile portfolio)
     {
-        Profile = profile;
+        if (Profile is null)
+            return;
+
+        Profile = Profile.WithPortfolio(portfolio);
         SetDirty();
     }
 }

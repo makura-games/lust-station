@@ -54,7 +54,7 @@ public sealed partial class SunriseCriminalRecordsDetailsControl : Control
         DnaLabel.Text = state.DNA ?? Loc.GetString("sunrise-records-none");
         FingerprintsLabel.Text = state.Fingerprints ?? Loc.GetString("sunrise-records-none");
 
-        PortfolioControl.SetProfile(state.HumanoidProfile); // Lust-edit
+        PortfolioControl.SetView(state.Portfolio); // Lust edit
 
         StatusOption.SelectId((int) state.Status);
         StatusReasonLabel.Text = state.StatusReason;

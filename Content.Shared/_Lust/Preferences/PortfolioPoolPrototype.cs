@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Robust.Shared.Localization;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Lust.Preferences;
 
@@ -15,11 +16,11 @@ public sealed partial class PortfolioPoolPrototype : IPrototype
     /// Ключи локализации общих вариантов. Используются, если расового списка нет или он не выпал.
     /// </summary>
     [DataField(required: true)]
-    public List<string> General = new();
+    public List<LocId> General = new();
 
     /// <summary>
     /// Расовые варианты: ключ — ID вида, значение — ключи локализации.
     /// </summary>
     [DataField]
-    public Dictionary<string, List<string>> Species = new();
+    public Dictionary<string, List<LocId>> Species = new();
 }

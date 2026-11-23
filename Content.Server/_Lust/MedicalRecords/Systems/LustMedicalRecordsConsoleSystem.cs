@@ -275,9 +275,9 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
             return false;
 
         if (ent.Comp.ActiveKey != msg.RecordId
-            || !Enum.IsDefined(typeof(Gender), msg.Gender)
+            || (msg.Gender is { } gender && !Enum.IsDefined(typeof(Gender), gender))
             || _station.GetOwningStation(ent.Owner) is not { } station
-            || !_prototype.TryIndex<SpeciesPrototype>(msg.Species, out _))
+            || (msg.Species is { } species && !_prototype.TryIndex<SpeciesPrototype>(species, out _)))
         {
             return false;
         }
@@ -296,38 +296,47 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         if (!_records.TryGetRecord<GeneralStationRecord>(key, out var record))
             return;
 
-        _records.TryGetRecord<MedicalRecord>(key, out var medicalRecord);
-        medicalRecord ??= new MedicalRecord();
-
-        var portfolio = new PortfolioProfile(record.HumanoidProfile?.Portfolio ?? new PortfolioProfile())
-        {
-            PhysiologicalTraits = msg.PhysiologicalTraits.SanitizeInput(512),
-            PsychologicalTraits = msg.PsychologicalTraits.SanitizeInput(512),
-        };
+        // null в сообщении = поле не менялось — оставляем сохранённое значение.
+        var portfolio = new PortfolioProfile(record.HumanoidProfile?.Portfolio ?? new PortfolioProfile());
+        if (msg.PhysiologicalTraits is { } physiological)
+            portfolio.PhysiologicalTraits = physiological.SanitizeInput(512);
+        if (msg.PsychologicalTraits is { } psychological)
+            portfolio.PsychologicalTraits = psychological.SanitizeInput(512);
 
         var profile = (record.HumanoidProfile ?? new HumanoidCharacterProfile()).WithPortfolio(portfolio);
         var updatedRecord = GeneralStationRecord.SanitizeRecord(record with
         {
-            Gender = msg.Gender,
-            Species = msg.Species,
+            Gender = msg.Gender ?? record.Gender,
+            Species = msg.Species ?? record.Species,
             HumanoidProfile = profile,
         },
         in _prototype);
 
-        if (ent.Comp.BiometricsUnlocked)
+        if (ent.Comp.BiometricsUnlocked && (msg.Fingerprint is not null || msg.DNA is not null))
         {
-            updatedRecord = GeneralStationRecord.SanitizeRecord(original: updatedRecord with
+            updatedRecord = GeneralStationRecord.SanitizeRecord(updatedRecord with
             {
-                Fingerprint = SanitizeBiometricCode(msg.Fingerprint, 32),
-                DNA = SanitizeBiometricCode(msg.DNA, 16),
+                Fingerprint = msg.Fingerprint is { } fingerprint
+                    ? SanitizeBiometricCode(fingerprint, 32)
+                    : updatedRecord.Fingerprint,
+                DNA = msg.DNA is { } dna
+                    ? SanitizeBiometricCode(dna, 16)
+                    : updatedRecord.DNA,
             },
             in _prototype);
         }
 
-        medicalRecord.Notes = msg.Notes.SanitizeInput(2048);
         _records.AddRecordEntry(key, updatedRecord);
-        _records.AddRecordEntry(key, medicalRecord);
-        // Synchronize поднимает RecordModifiedEvent в OnRecordModified сам шлёт свежий стейт.
+
+        if (msg.Notes is { } notes)
+        {
+            _records.TryGetRecord<MedicalRecord>(key, out var medicalRecord);
+            medicalRecord ??= new MedicalRecord();
+            medicalRecord.Notes = notes.SanitizeInput(2048);
+            _records.AddRecordEntry(key, medicalRecord);
+        }
+
+        // Synchronize поднимает RecordModifiedEvent в OnRecordModified а он сам шлёт свежий стейт.
         _records.Synchronize(key);
         _audio.PlayPvs(ent.Comp.SuccessfulSound, ent.Owner);
     }
@@ -480,7 +489,7 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         string? name = null, jobTitle = null, species = null, fingerprint = null, dna = null, notes = null;
         int? age = null;
         Gender? gender = null;
-        HumanoidCharacterProfile? humanoidProfile = null;
+        LustMedicalPortfolioView? portfolio = null;
 
         if (component.ActiveKey is { } selected)
         {
@@ -494,7 +503,9 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
                 jobTitle = general.JobTitle;
                 fingerprint = general.Fingerprint;
                 dna = general.DNA;
-                humanoidProfile = general.HumanoidProfile;
+
+                // В стейт уходит только нужная консоли часть портфолио.
+                portfolio = LustMedicalPortfolioView.FromProfile(general.HumanoidProfile);
             }
 
             if (_records.TryGetRecord<MedicalRecord>(recordKey, out var medical))
@@ -516,7 +527,7 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
                 fingerprint: fingerprint,
                 dna: dna,
                 notes: notes,
-                humanoidProfile: humanoidProfile));
+                portfolio: portfolio));
     }
 
     /// <summary>

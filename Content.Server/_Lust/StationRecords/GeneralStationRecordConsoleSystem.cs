@@ -1,4 +1,5 @@
 ﻿using Content.Shared._Lust.Preferences;
+using Content.Shared.StationRecords;
 using Robust.Shared.Utility;
 
 #pragma warning disable IDE0130
@@ -9,6 +10,26 @@ namespace Content.Server.StationRecords;
 /// </summary>
 public sealed partial class GeneralStationRecordConsoleSystem
 {
+    /// <summary>
+    /// Приминяем измменение только мед данных в общем records
+    /// </summary>
+    internal GeneralStationRecord PreserveMedicalPortfolio(
+        GeneralStationRecord incoming,
+        GeneralStationRecord stored)
+    {
+        var incomingProfile = incoming.HumanoidProfile;
+        var storedPortfolio = stored.HumanoidProfile?.Portfolio;
+        if (incomingProfile is null || storedPortfolio is null)
+            return incoming;
+
+        var portfolio = new PortfolioProfile(incomingProfile.Portfolio)
+        {
+            PhysiologicalTraits = storedPortfolio.PhysiologicalTraits,
+            PsychologicalTraits = storedPortfolio.PsychologicalTraits,
+        };
+
+        return incoming with { HumanoidProfile = incomingProfile.WithPortfolio(portfolio) };
+    }
 
     private string PrintableField(string? value)
     {

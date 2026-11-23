@@ -210,8 +210,8 @@ public sealed partial class LustGeneralRecord : BoxContainer
                 Job.SelectId(i);
         }
 
-        Fingerprint.Text = record.Fingerprint ?? _loc.GetString("generic-not-available-shorthand");
-        Dna.Text = record.DNA ?? _loc.GetString("generic-not-available-shorthand");
+        Fingerprint.Text = record.Fingerprint ?? string.Empty;
+        Dna.Text = record.DNA ?? string.Empty;
 
         Personality.Placeholder = new Rope.Leaf(_loc.GetString("station-records-ui-personality-placeholder"));
 
@@ -273,11 +273,10 @@ public sealed partial class LustGeneralRecord : BoxContainer
         _entity.DeleteEntity(_previewDummy);
         _previewDummy = EntityUid.Invalid;
 
-        if (job.JobEntity != null)
-            _previewDummy = _entity.Spawn(job.JobEntity, MapCoordinates.Nullspace);
-
         if (_profile != null && _prototype.HasIndex(_profile.Species))
             _previewDummy = _controller.LoadProfileEntity(_profile, job, true);
+        else if (job.JobEntity != null) // фикс утечки сущености из консоли санрайза
+            _previewDummy = _entity.Spawn(job.JobEntity, MapCoordinates.Nullspace);
 
         SpriteView.SetEntity(_previewDummy);
     }

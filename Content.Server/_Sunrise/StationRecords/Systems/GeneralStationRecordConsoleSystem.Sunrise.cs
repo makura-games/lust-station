@@ -79,13 +79,16 @@ public sealed partial class GeneralStationRecordConsoleSystem
         }
 
         var key = new StationRecordKey(args.Id, owning.Value);
-        if (!StationRecordsSys.TryGetRecord<GeneralStationRecord>(key, out _))
+        if (!StationRecordsSys.TryGetRecord<GeneralStationRecord>(key, out var storedRecord)) // lust edit
         {
             _audio.PlayPvs(ent.Comp.FailedSound, ent);
             return;
         }
 
-        var record = GeneralStationRecord.SanitizeRecord(args.Record, in ProtoMan);
+        // Lust edit start
+        var incoming = PreserveMedicalPortfolio(args.Record, storedRecord);
+        var record = GeneralStationRecord.SanitizeRecord(incoming, in ProtoMan);
+        // lust edit end
         StationRecordsSys.AddRecordEntry(key, record);
         StationRecordsSys.Synchronize(key);
 

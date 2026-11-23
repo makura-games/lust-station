@@ -6,7 +6,6 @@ using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
 using Robust.Shared.Enums;
-using Robust.Shared.Log;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
@@ -30,27 +29,42 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     /// <summary>
     /// Вызывается при нажатии Save. Аргументы — id и все редактируемые поля записи.
     /// </summary>
-    public Action<uint, Gender, string, string, string, string, string, string>? OnSaveRequested;
+    public Action<uint, Gender?, string?, string?, string?, string?, string?, string?>? OnSaveRequested;
 
     /// <summary>
     /// Вызывается при нажатии Print. Аргумент — id записи.
     /// </summary>
     public Action<uint>? OnPrintRequested;
 
+    /// <summary>
+    /// Проверка доступа к консоли перед Save — задаётся BUI.
+    /// При отказе черновик и кнопка остаются.
+    /// </summary>
+    public Func<bool>? CanSave;
+
+    /// <summary>
+    /// Поля, изменённые пользователем с момента последнего выбора/Save.
+    /// Broadcast обновляет только не-грязные поля, а Save отправляет только грязные
+    /// </summary>
+    [Flags]
+    private enum DirtyField : byte
+    {
+        None = 0,
+        Physiological = 1 << 0,
+        Psychological = 1 << 1,
+        Notes = 1 << 2,
+        Fingerprint = 1 << 3,
+        Dna = 1 << 4,
+        Gender = 1 << 5,
+        Species = 1 << 6,
+    }
+
     private bool _isPopulating;
     private bool _isFormattingBiometric;
     private uint? _selectedKey;
 
     private LustMedicalRecordsUiState? _lastState;
-
-    /// <summary>
-    /// Есть незасохранённый ввод в текстовых полях. Пока он есть, broadcast
-    /// не перезаписывает поля
-    /// </summary>
-    private bool _hasLocalEdits;
-
-    private readonly ISawmill _sawmill;
-    private bool _nullPortfolioWarned;
+    private DirtyField _dirty;
 
     /// <summary>
     /// Создаёт окно медконсоли: контролы, подписки, плейсхолдеры.
@@ -60,7 +74,6 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         RobustXamlLoader.Load(this);
         _prototype = IoCManager.Resolve<IPrototypeManager>();
         var loc = IoCManager.Resolve<ILocalizationManager>();
-        _sawmill = IoCManager.Resolve<ILogManager>().GetSawmill("lust.medical.records");
 
         _species = _prototype.EnumeratePrototypes<SpeciesPrototype>().ToList();
         _species.Sort((a, b) => string.Compare(
@@ -79,13 +92,13 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             SpeciesOption.AddItem(loc.GetString(_species[i].Name), i);
         }
 
-        GenderOption.OnItemSelected += OnOptionSelected;
-        SpeciesOption.OnItemSelected += OnOptionSelected;
-        PhysiologicalTraits.OnTextChanged += _ => OnEditableFieldChanged();
-        PsychologicalTraits.OnTextChanged += _ => OnEditableFieldChanged();
-        Notes.OnTextChanged += _ => OnEditableFieldChanged();
-        FingerprintValue.OnTextChanged += _ => OnBiometricTextChanged(FingerprintValue, 32);
-        DnaValue.OnTextChanged += _ => OnBiometricTextChanged(DnaValue, 16);
+        GenderOption.OnItemSelected += args => OnOptionSelected(args, DirtyField.Gender);
+        SpeciesOption.OnItemSelected += args => OnOptionSelected(args, DirtyField.Species);
+        PhysiologicalTraits.OnTextChanged += _ => MarkDirty(DirtyField.Physiological);
+        PsychologicalTraits.OnTextChanged += _ => MarkDirty(DirtyField.Psychological);
+        Notes.OnTextChanged += _ => MarkDirty(DirtyField.Notes);
+        FingerprintValue.OnTextChanged += _ => OnBiometricTextChanged(FingerprintValue, 32, DirtyField.Fingerprint);
+        DnaValue.OnTextChanged += _ => OnBiometricTextChanged(DnaValue, 16, DirtyField.Dna);
 
         SaveButton.OnPressed += _ => SaveSelectedRecord();
         PrintButton.OnPressed += _ =>
@@ -99,12 +112,15 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         PsychologicalTraits.Placeholder = placeholder;
         Notes.Placeholder = new Rope.Leaf(loc.GetString("lust-medical-records-notes-placeholder"));
 
+        FingerprintValue.PlaceHolder = loc.GetString("lust-humanoid-profile-data-null");
+        DnaValue.PlaceHolder = loc.GetString("lust-humanoid-profile-data-null");
+
         RecordListing.OnItemSelected += args =>
         {
             if (_isPopulating || RecordListing[args.ItemIndex].Metadata is not uint selectedKey)
                 return;
 
-            _hasLocalEdits = false;
+            _dirty = DirtyField.None;
             OnRecordSelected?.Invoke(selectedKey);
         };
 
@@ -113,7 +129,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             if (_isPopulating)
                 return;
 
-            _hasLocalEdits = false;
+            _dirty = DirtyField.None;
             OnRecordSelected?.Invoke(null);
         };
 
@@ -134,10 +150,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
                 : "lust-medical-records-advanced-access-locked");
 
         if (_selectedKey != state.SelectedKey)
-        {
-            _hasLocalEdits = false;
-            _nullPortfolioWarned = false;
-        }
+            _dirty = DirtyField.None;
 
         _selectedKey = state.SelectedKey;
 
@@ -145,13 +158,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
         var missing = Loc.GetString("lust-humanoid-profile-data-null");
 
-        var portfolio = state.HumanoidProfile?.Portfolio;
-        if (state.HumanoidProfile is not null && portfolio is null && !_nullPortfolioWarned)
-        {
-            _sawmill.Error(
-                $"Medical records console: record {state.SelectedKey} has a HumanoidProfile but Portfolio is null — corrupted data.");
-            _nullPortfolioWarned = true;
-        }
+        var portfolio = state.Portfolio;
 
         _isPopulating = true;
 
@@ -159,32 +166,35 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         AgeValue.Text = PrintableField(state.Age?.ToString(), missing);
         JobTitleValue.Text = PrintableField(state.JobTitle, missing);
 
-        if (!_hasLocalEdits)
-        {
-            FingerprintValue.Text = PrintableField(state.Fingerprint, missing);
-            DnaValue.Text = PrintableField(state.Dna, missing);
+        // Broadcast обновляет только те поля, которые пользователь не редактировал.
+        if ((_dirty & DirtyField.Fingerprint) == 0)
+            FingerprintValue.Text = state.Fingerprint ?? string.Empty;
+        if ((_dirty & DirtyField.Dna) == 0)
+            DnaValue.Text = state.Dna ?? string.Empty;
+        if ((_dirty & DirtyField.Notes) == 0)
             Notes.TextRope = new Rope.Leaf(PrintableField(state.Notes, ""));
-            CloseRelatives.TextRope = new Rope.Leaf(
-                PrintableField(portfolio?.CloseRelatives, missing));
-            EmergencyContact.TextRope = new Rope.Leaf(
-                PrintableField(portfolio?.EmergencyContact, missing));
-            PhysiologicalTraits.TextRope = new Rope.Leaf(
-                portfolio?.PhysiologicalTraits ?? string.Empty);
-            PsychologicalTraits.TextRope = new Rope.Leaf(
-                portfolio?.PsychologicalTraits ?? string.Empty);
+        if ((_dirty & DirtyField.Physiological) == 0)
+            PhysiologicalTraits.TextRope = new Rope.Leaf(portfolio?.PhysiologicalTraits ?? string.Empty);
+        if ((_dirty & DirtyField.Psychological) == 0)
+            PsychologicalTraits.TextRope = new Rope.Leaf(portfolio?.PsychologicalTraits ?? string.Empty);
 
-            var genderIndex = state.Gender is { } gender ? Array.IndexOf(_genders, gender) : 0;
-            var speciesIndex = state.Species is not null
-                ? _species.FindIndex(s => s.ID == state.Species)
-                : 0;
+        // Read-only поля всегда берём из state.
+        CloseRelatives.TextRope = new Rope.Leaf(PrintableField(portfolio?.CloseRelatives, missing));
+        EmergencyContact.TextRope = new Rope.Leaf(PrintableField(portfolio?.EmergencyContact, missing));
+
+        var genderIndex = state.Gender is { } gender ? Array.IndexOf(_genders, gender) : 0;
+        var speciesIndex = state.Species is not null
+            ? _species.FindIndex(s => s.ID == state.Species)
+            : 0;
+        if ((_dirty & DirtyField.Gender) == 0)
             GenderOption.SelectId(genderIndex < 0 ? 0 : genderIndex);
+        if ((_dirty & DirtyField.Species) == 0)
             SpeciesOption.SelectId(speciesIndex < 0 ? 0 : speciesIndex);
-        }
 
         _isPopulating = false;
 
         RecordDetails.Visible = state.SelectedKey != null;
-        SaveButton.Disabled = !_hasLocalEdits;
+        SaveButton.Disabled = _dirty == DirtyField.None;
         PrintButton.Disabled = !RecordDetails.Visible;
         FingerprintValue.Editable = state.CanEditBiometrics;
         DnaValue.Editable = state.CanEditBiometrics;
@@ -193,7 +203,6 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     /// <summary>
     /// Пересобирает список листинга
     /// </summary>
-    /// <param name="filter"></param>
     private void RefreshRecordList(string filter = "")
     {
         _isPopulating = true;
@@ -203,15 +212,9 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
         if (_lastState == null || _lastState.RecordListing is null || _lastState.RecordListing.Count == 0)
         {
-            RecordListingStatus.Text = Loc.GetString("lust-medical-records-empty-state");
-            RecordListingStatus.Visible = true;
-            RecordListing.Visible = false;
             _isPopulating = false;
             return;
         }
-
-        RecordListingStatus.Visible = false;
-        RecordListing.Visible = true;
 
         var filterLower = filter.ToLowerInvariant();
         var selectedKey = _lastState.SelectedKey;
@@ -250,32 +253,29 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
     /// <summary>
     /// Общий обработчик выбора для <see cref="OptionButton"/>.
-    /// Синхронизирует SelectedId и взводит флаг «есть изменения».
     /// </summary>
-    private void OnOptionSelected(OptionButton.ItemSelectedEventArgs args)
+    private void OnOptionSelected(OptionButton.ItemSelectedEventArgs args, DirtyField field)
     {
         args.Button.SelectId(args.Id);
-        OnEditableFieldChanged();
+        MarkDirty(field);
     }
 
     /// <summary>
-    /// Включает Save, если пользователь что-то изменил.
+    /// Отмечает поле как изменённое и включает Save.
     /// </summary>
-    private void OnEditableFieldChanged()
+    private void MarkDirty(DirtyField field)
     {
         if (_isPopulating || _selectedKey == null)
             return;
 
-        _hasLocalEdits = true;
+        _dirty |= field;
         SaveButton.Disabled = false;
     }
 
     /// <summary>
-    /// Обработчик изменения текста.
-    /// Форматирует ввод в верхний регистр, обрезает до <paramref name="maxLength"/>
-    /// и сохраняет позицию курсора.
+    /// Форматирует биометрический код и отмечает поле как изменённое.
     /// </summary>
-    private void OnBiometricTextChanged(LineEdit input, int maxLength)
+    private void OnBiometricTextChanged(LineEdit input, int maxLength, DirtyField field)
     {
         if (_isPopulating || _isFormattingBiometric)
             return;
@@ -290,7 +290,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             _isFormattingBiometric = false;
         }
 
-        OnEditableFieldChanged();
+        MarkDirty(field);
     }
 
     /// <summary>
@@ -324,17 +324,22 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             || SpeciesOption.SelectedId < 0 || SpeciesOption.SelectedId >= _species.Count)
             return;
 
+        var hasAccess = CanSave?.Invoke() != false;
+
         OnSaveRequested?.Invoke(
             key,
-            _genders[GenderOption.SelectedId],
-            _species[SpeciesOption.SelectedId].ID,
-            Rope.Collapse(PhysiologicalTraits.TextRope),
-            Rope.Collapse(PsychologicalTraits.TextRope),
-            Rope.Collapse(Notes.TextRope),
-            FingerprintValue.Text,
-            DnaValue.Text);
+            (_dirty & DirtyField.Gender) != 0 ? _genders[GenderOption.SelectedId] : null,
+            (_dirty & DirtyField.Species) != 0 ? _species[SpeciesOption.SelectedId].ID : null,
+            (_dirty & DirtyField.Physiological) != 0 ? Rope.Collapse(PhysiologicalTraits.TextRope) : null,
+            (_dirty & DirtyField.Psychological) != 0 ? Rope.Collapse(PsychologicalTraits.TextRope) : null,
+            (_dirty & DirtyField.Notes) != 0 ? Rope.Collapse(Notes.TextRope) : null,
+            (_dirty & DirtyField.Fingerprint) != 0 ? FingerprintValue.Text : null,
+            (_dirty & DirtyField.Dna) != 0 ? DnaValue.Text : null);
 
-        _hasLocalEdits = false;
+        if (!hasAccess)
+            return;
+
+        _dirty = DirtyField.None;
         SaveButton.Disabled = true;
     }
 
