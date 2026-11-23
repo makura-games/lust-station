@@ -85,10 +85,7 @@ public sealed partial class GeneralStationRecordConsoleSystem
             return;
         }
 
-        // Lust edit start
-        var incoming = PreserveMedicalPortfolio(args.Record, storedRecord);
-        var record = GeneralStationRecord.SanitizeRecord(incoming, in ProtoMan);
-        // lust edit end
+        var record = PrepareRecordForSave(args.Record, storedRecord); // Lust edit
         StationRecordsSys.AddRecordEntry(key, record);
         StationRecordsSys.Synchronize(key);
 

@@ -37,12 +37,6 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
     public Action<uint>? OnPrintRequested;
 
     /// <summary>
-    /// Проверка доступа к консоли перед Save — задаётся BUI.
-    /// При отказе черновик и кнопка остаются.
-    /// </summary>
-    public Func<bool>? CanSave;
-
-    /// <summary>
     /// Поля, изменённые пользователем с момента последнего выбора/Save.
     /// Broadcast обновляет только не-грязные поля, а Save отправляет только грязные
     /// </summary>
@@ -65,6 +59,11 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
     private LustMedicalRecordsUiState? _lastState;
     private DirtyField _dirty;
+
+    // Save ждёт ответа сервера. Пока запрос в полёте, черновик не снимается.
+    private bool _savePending;
+    private int _editGeneration;
+    private int _pendingSaveGeneration;
 
     /// <summary>
     /// Создаёт окно медконсоли: контролы, подписки, плейсхолдеры.
@@ -121,6 +120,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
                 return;
 
             _dirty = DirtyField.None;
+            _savePending = false;
             OnRecordSelected?.Invoke(selectedKey);
         };
 
@@ -130,6 +130,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
                 return;
 
             _dirty = DirtyField.None;
+            _savePending = false;
             OnRecordSelected?.Invoke(null);
         };
 
@@ -150,7 +151,10 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
                 : "lust-medical-records-advanced-access-locked");
 
         if (_selectedKey != state.SelectedKey)
+        {
             _dirty = DirtyField.None;
+            _savePending = false;
+        }
 
         _selectedKey = state.SelectedKey;
 
@@ -194,10 +198,27 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         _isPopulating = false;
 
         RecordDetails.Visible = state.SelectedKey != null;
-        SaveButton.Disabled = _dirty == DirtyField.None;
+        SaveButton.Disabled = _savePending || _dirty == DirtyField.None;
         PrintButton.Disabled = !RecordDetails.Visible;
         FingerprintValue.Editable = state.CanEditBiometrics;
         DnaValue.Editable = state.CanEditBiometrics;
+    }
+
+    /// <summary>
+    /// Ответ сервера на Save: снимаем черновик только при успехе и если
+    /// пользователь не внёс новых правок после отправки запроса.
+    /// </summary>
+    internal void OnSaveResult(uint recordId, bool success)
+    {
+        if (_selectedKey != recordId || !_savePending)
+            return;
+
+        _savePending = false;
+        var clean = success && _editGeneration == _pendingSaveGeneration;
+        if (clean)
+            _dirty = DirtyField.None;
+
+        SaveButton.Disabled = _dirty == DirtyField.None;
     }
 
     /// <summary>
@@ -269,7 +290,9 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             return;
 
         _dirty |= field;
-        SaveButton.Disabled = false;
+        _editGeneration++;
+        if (!_savePending)
+            SaveButton.Disabled = false;
     }
 
     /// <summary>
@@ -324,7 +347,9 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             || SpeciesOption.SelectedId < 0 || SpeciesOption.SelectedId >= _species.Count)
             return;
 
-        var hasAccess = CanSave?.Invoke() != false;
+        _savePending = true;
+        _pendingSaveGeneration = _editGeneration;
+        SaveButton.Disabled = true;
 
         OnSaveRequested?.Invoke(
             key,
@@ -335,12 +360,6 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             (_dirty & DirtyField.Notes) != 0 ? Rope.Collapse(Notes.TextRope) : null,
             (_dirty & DirtyField.Fingerprint) != 0 ? FingerprintValue.Text : null,
             (_dirty & DirtyField.Dna) != 0 ? DnaValue.Text : null);
-
-        if (!hasAccess)
-            return;
-
-        _dirty = DirtyField.None;
-        SaveButton.Disabled = true;
     }
 
     /// <summary>

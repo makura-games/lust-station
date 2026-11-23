@@ -203,12 +203,22 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
     /// </summary>
     private bool TryUnlockBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent)
     {
-        if (ent.Comp.BiometricsUnlocked)
+        if (IsBiometricsUnlocked(ent))
             return false;
 
+        DoUnlockBiometrics(ent);
+        return true;
+    }
+
+    private bool IsBiometricsUnlocked(Entity<LustMedicalRecordsConsoleComponent> ent)
+    {
+        return ent.Comp.BiometricsUnlocked;
+    }
+
+    private void DoUnlockBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent)
+    {
         ent.Comp.BiometricsUnlocked = true;
         UpdateUserInterface(ent.Owner, ent.Comp, ent.Comp.BiometricsUnlocked);
-        return true;
     }
 
     /// <summary>
@@ -259,11 +269,15 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         LustMedicalRecordsSaveMessage msg,
         EntityUid actor)
     {
-        if (!CanSaveRecord(ent, msg, actor))
-            return false;
+        var success = CanSaveRecord(ent, msg, actor) && DoSaveRecord(ent, msg);
 
-        DoSaveRecord(ent, msg);
-        return true;
+        _ui.ServerSendUiMessage(
+            ent.Owner,
+            LustMedicalRecordsUiKey.Key,
+            new LustMedicalRecordsSaveResultMessage(msg.RecordId, success),
+            actor);
+
+        return success;
     }
 
     private bool CanSaveRecord(
@@ -287,44 +301,46 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
             out _);
     }
 
-    private void DoSaveRecord(Entity<LustMedicalRecordsConsoleComponent> ent, LustMedicalRecordsSaveMessage msg)
+    private bool DoSaveRecord(Entity<LustMedicalRecordsConsoleComponent> ent, LustMedicalRecordsSaveMessage msg)
     {
         if (_station.GetOwningStation(ent.Owner) is not { } station)
-            return;
+            return false;
 
         var key = new StationRecordKey(msg.RecordId, station);
         if (!_records.TryGetRecord<GeneralStationRecord>(key, out var record))
-            return;
+            return false;
 
-        // null в сообщении = поле не менялось — оставляем сохранённое значение.
-        var portfolio = new PortfolioProfile(record.HumanoidProfile?.Portfolio ?? new PortfolioProfile());
-        if (msg.PhysiologicalTraits is { } physiological)
-            portfolio.PhysiologicalTraits = physiological.SanitizeInput(512);
-        if (msg.PsychologicalTraits is { } psychological)
-            portfolio.PsychologicalTraits = psychological.SanitizeInput(512);
+        var profile = record.HumanoidProfile;
+        if (msg.PhysiologicalTraits is not null || msg.PsychologicalTraits is not null)
+        {
+            var portfolio = new PortfolioProfile(profile?.Portfolio);
+            if (msg.PhysiologicalTraits is { } physiological)
+                portfolio.PhysiologicalTraits = physiological.SanitizeInput(512);
+            if (msg.PsychologicalTraits is { } psychological)
+                portfolio.PsychologicalTraits = psychological.SanitizeInput(512);
+            portfolio.EnsureValid();
 
-        var profile = (record.HumanoidProfile ?? new HumanoidCharacterProfile()).WithPortfolio(portfolio);
-        var updatedRecord = GeneralStationRecord.SanitizeRecord(record with
+            profile = (profile ?? new HumanoidCharacterProfile()).WithPortfolio(portfolio);
+        }
+
+        var fingerprint = record.Fingerprint;
+        var dna = record.DNA;
+        if (ent.Comp.BiometricsUnlocked)
+        {
+            if (msg.Fingerprint is { } newFingerprint)
+                fingerprint = SanitizeBiometricCode(newFingerprint, 32);
+            if (msg.DNA is { } newDna)
+                dna = SanitizeBiometricCode(newDna, 16);
+        }
+
+        var updatedRecord = record with
         {
             Gender = msg.Gender ?? record.Gender,
             Species = msg.Species ?? record.Species,
             HumanoidProfile = profile,
-        },
-        in _prototype);
-
-        if (ent.Comp.BiometricsUnlocked && (msg.Fingerprint is not null || msg.DNA is not null))
-        {
-            updatedRecord = GeneralStationRecord.SanitizeRecord(updatedRecord with
-            {
-                Fingerprint = msg.Fingerprint is { } fingerprint
-                    ? SanitizeBiometricCode(fingerprint, 32)
-                    : updatedRecord.Fingerprint,
-                DNA = msg.DNA is { } dna
-                    ? SanitizeBiometricCode(dna, 16)
-                    : updatedRecord.DNA,
-            },
-            in _prototype);
-        }
+            Fingerprint = fingerprint,
+            DNA = dna,
+        };
 
         _records.AddRecordEntry(key, updatedRecord);
 
@@ -339,6 +355,7 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         // Synchronize поднимает RecordModifiedEvent в OnRecordModified а он сам шлёт свежий стейт.
         _records.Synchronize(key);
         _audio.PlayPvs(ent.Comp.SuccessfulSound, ent.Owner);
+        return true;
     }
 
     /// <summary>

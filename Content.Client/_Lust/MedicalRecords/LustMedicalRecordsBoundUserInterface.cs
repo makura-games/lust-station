@@ -1,8 +1,5 @@
-﻿using Content.Shared.Access.Systems;
-using Content.Shared._Lust.MedicalRecords;
-using Robust.Client.Player;
+﻿using Content.Shared._Lust.MedicalRecords;
 using Robust.Client.UserInterface;
-using Robust.Shared.Player;
 
 namespace Content.Client._Lust.MedicalRecords;
 
@@ -21,11 +18,6 @@ public sealed class LustMedicalRecordsBoundUserInterface(EntityUid owner, Enum u
         base.Open();
 
         _window = this.CreateWindow<LustMedicalRecordsWindow>();
-
-        var playerManager = IoCManager.Resolve<IPlayerManager>();
-        var accessReader = EntMan.System<AccessReaderSystem>();
-        _window.CanSave = () =>
-            playerManager.LocalEntity is { } local && accessReader.IsAllowed(local, Owner);
 
         _window.OnRecordSelected += selectedKey =>
             SendMessage(new LustMedicalRecordsSelectRecordMessage(selectedKey));
@@ -57,5 +49,14 @@ public sealed class LustMedicalRecordsBoundUserInterface(EntityUid owner, Enum u
             return;
 
         _window?.UpdateState(medicalState);
+    }
+
+    /// <summary>
+    /// Подтверждение Save от сервера — по нему снимаем черновик.
+    /// </summary>
+    protected override void ReceiveMessage(BoundUserInterfaceMessage message)
+    {
+        if (message is LustMedicalRecordsSaveResultMessage result)
+            _window?.OnSaveResult(result.RecordId, result.Success);
     }
 }

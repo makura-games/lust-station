@@ -133,6 +133,16 @@ public sealed class LustMedicalRecordsSaveMessage : BoundUserInterfaceMessage
 }
 
 /// <summary>
+/// Подтверждение сервера: сохранение применено или отклонено.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class LustMedicalRecordsSaveResultMessage(uint recordId, bool success) : BoundUserInterfaceMessage
+{
+    public readonly uint RecordId = recordId;
+    public readonly bool Success = success;
+}
+
+/// <summary>
 /// Просит сервер распечатать медицинскую карту выбранного сотрудника.
 /// </summary>
 [Serializable, NetSerializable]

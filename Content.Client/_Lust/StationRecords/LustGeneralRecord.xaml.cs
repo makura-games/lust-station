@@ -317,8 +317,8 @@ public sealed partial class LustGeneralRecord : BoxContainer
             Gender = _allGender[Gender.SelectedId],
             Species = _allSpecies[Species.SelectedId].ID,
             JobPrototype = _allJobs[Job.SelectedId].ID,
-            Fingerprint = Fingerprint.Text,
-            DNA = Dna.Text,
+            Fingerprint = string.IsNullOrWhiteSpace(Fingerprint.Text) ? null : Fingerprint.Text,
+            DNA = string.IsNullOrWhiteSpace(Dna.Text) ? null : Dna.Text,
             Personality = Rope.Collapse(Personality.TextRope),
             HumanoidProfile = profile,
         };

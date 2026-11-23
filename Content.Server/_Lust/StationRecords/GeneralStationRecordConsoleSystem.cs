@@ -11,24 +11,43 @@ namespace Content.Server.StationRecords;
 public sealed partial class GeneralStationRecordConsoleSystem
 {
     /// <summary>
+    /// Полная подготовка записи перед сохранением общей формы:
+    /// сохранение медполей, санитизация и возврат null для отсутствующих.
+    /// </summary>
+    internal GeneralStationRecord PrepareRecordForSave(
+        GeneralStationRecord incoming,
+        GeneralStationRecord stored)
+    {
+        var preserved = PreserveMedicalPortfolio(incoming, stored);
+        var sanitized = GeneralStationRecord.SanitizeRecord(preserved, in ProtoMan);
+
+        return sanitized with
+        {
+            Fingerprint = string.IsNullOrWhiteSpace(incoming.Fingerprint) ? null : sanitized.Fingerprint,
+            DNA = string.IsNullOrWhiteSpace(incoming.DNA) ? null : sanitized.DNA,
+        };
+    }
+
+    /// <summary>
     /// Приминяем измменение только мед данных в общем records
     /// </summary>
     internal GeneralStationRecord PreserveMedicalPortfolio(
         GeneralStationRecord incoming,
         GeneralStationRecord stored)
     {
-        var incomingProfile = incoming.HumanoidProfile;
-        var storedPortfolio = stored.HumanoidProfile?.Portfolio;
-        if (incomingProfile is null || storedPortfolio is null)
+
+        var baseProfile = incoming.HumanoidProfile ?? stored.HumanoidProfile;
+        if (baseProfile is null)
             return incoming;
 
-        var portfolio = new PortfolioProfile(incomingProfile.Portfolio)
+        var storedPortfolio = stored.HumanoidProfile?.Portfolio ?? new PortfolioProfile();
+        var portfolio = new PortfolioProfile(baseProfile.Portfolio)
         {
             PhysiologicalTraits = storedPortfolio.PhysiologicalTraits,
             PsychologicalTraits = storedPortfolio.PsychologicalTraits,
         };
 
-        return incoming with { HumanoidProfile = incomingProfile.WithPortfolio(portfolio) };
+        return incoming with { HumanoidProfile = baseProfile.WithPortfolio(portfolio) };
     }
 
     private string PrintableField(string? value)

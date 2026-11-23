@@ -15,7 +15,6 @@ public sealed partial class LustMedicalRecordsConsoleComponent : Component
     /// Ключ выбранной записи сотрудника. <c>null</c> — ничего не выбрано
     /// Источник истины для <c>LustMedicalRecordsUiState.SelectedKey</c>.
     /// </summary>
-    [DataField]
     public uint? ActiveKey;
 
     /// <summary>
@@ -23,7 +22,6 @@ public sealed partial class LustMedicalRecordsConsoleComponent : Component
     /// Переключается ID-картой с доступом <see cref="BiometricsAccess"/>
     /// или эмагом. Влияет на флаг <c>CanEditBiometrics</c> в стейте.
     /// </summary>
-    [DataField]
     public bool BiometricsUnlocked;
 
     /// <summary>
