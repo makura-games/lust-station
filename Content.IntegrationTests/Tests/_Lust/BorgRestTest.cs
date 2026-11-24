@@ -57,7 +57,7 @@ public sealed class BorgRestTest : GameTest
         {
             var clientBorg = CEntMan.GetEntity(borgNet);
             var sprite = CEntMan.GetComponent<SpriteComponent>(clientBorg);
-            Assert.That(sprite.Rotation.Degrees, Is.EqualTo(90).Within(0.01));
+            Assert.That(sprite.Rotation.Degrees, Is.EqualTo(0).Within(0.01));
         });
 
         await Server.WaitPost(() =>
@@ -72,13 +72,13 @@ public sealed class BorgRestTest : GameTest
             Assert.That(SEntMan.HasComponent<BorgRestingComponent>(borg), Is.True);
             var appearance = Server.System<SharedAppearanceSystem>();
             Assert.That(appearance.TryGetData(borg, RotationVisuals.RotationState, out RotationState rotationState), Is.True);
-            Assert.That(rotationState, Is.EqualTo(RotationState.Horizontal));
+            Assert.That(rotationState, Is.EqualTo(RotationState.Vertical));
         });
         await Client.WaitAssertion(() =>
         {
             var clientBorg = CEntMan.GetEntity(borgNet);
             var sprite = CEntMan.GetComponent<SpriteComponent>(clientBorg);
-            Assert.That(sprite.Rotation.Degrees, Is.EqualTo(90).Within(0.01));
+            Assert.That(sprite.Rotation.Degrees, Is.EqualTo(0).Within(0.01));
         });
     }
 
@@ -188,7 +188,7 @@ public sealed class BorgRestTest : GameTest
         {
             var clientBorg = CEntMan.GetEntity(borgNet);
             var sprite = CEntMan.GetComponent<SpriteComponent>(clientBorg);
-            Assert.That(sprite.Rotation.Degrees, Is.EqualTo(90).Within(0.01));
+            Assert.That(sprite.Rotation.Degrees, Is.EqualTo(0).Within(0.01));
         });
 
         await Server.WaitPost(() => startedStanding = rest.TryToggleRest((borg, null)));

@@ -1,6 +1,7 @@
 using Content.Shared._Lust.Borgs.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Toggleable;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 
@@ -35,18 +36,19 @@ public sealed partial class BorgSystem
 
         _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.Body, alive && !resting);
 
+        if (_sprite.LayerExists((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus))
+        {
+            var lightEnabled = _appearance.TryGetData<bool>(ent.Owner, ToggleableVisuals.Enabled, out var enabled, ent.Comp2)
+                               && enabled;
+            _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus, lightEnabled);
+        }
+
         if (alive && !resting)
         {
-            if (_sprite.LayerExists((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus))
-                _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus, true);
-
             return;
         }
 
         _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.Light, false);
-
-        if (_sprite.LayerExists((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus))
-            _sprite.LayerSetVisible((ent.Owner, ent.Comp3), BorgVisualLayers.LightStatus, false);
 
         handled = true;
     }

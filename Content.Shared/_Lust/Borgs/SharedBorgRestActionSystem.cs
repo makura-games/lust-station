@@ -176,7 +176,8 @@ public sealed partial class SharedBorgRestActionSystem : EntitySystem
 
     private void SetRestingVisualRotation(EntityUid uid, bool resting)
     {
-        _appearance.SetData(uid, RotationVisuals.RotationState, resting ? RotationState.Horizontal : RotationState.Vertical);
+        if (resting)
+            _appearance.SetData(uid, RotationVisuals.RotationState, RotationState.Vertical);
     }
 
     private void SetRestingVisual(EntityUid uid, bool resting)
