@@ -62,8 +62,9 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
     // Save ждёт ответа сервера. Пока запрос в полёте, черновик не снимается.
     private bool _savePending;
-    private int _editGeneration;
-    private int _pendingSaveGeneration;
+    // Поля, отправленные в текущем Save, и поля, изменённые после отправки.
+    private DirtyField _pendingSaveFields;
+    private DirtyField _editedAfterSave;
 
     /// <summary>
     /// Создаёт окно медконсоли: контролы, подписки, плейсхолдеры.
@@ -121,6 +122,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
             _dirty = DirtyField.None;
             _savePending = false;
+            _editedAfterSave = DirtyField.None;
             OnRecordSelected?.Invoke(selectedKey);
         };
 
@@ -131,6 +133,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
 
             _dirty = DirtyField.None;
             _savePending = false;
+            _editedAfterSave = DirtyField.None;
             OnRecordSelected?.Invoke(null);
         };
 
@@ -154,6 +157,7 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         {
             _dirty = DirtyField.None;
             _savePending = false;
+            _editedAfterSave = DirtyField.None;
         }
 
         _selectedKey = state.SelectedKey;
@@ -214,9 +218,8 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             return;
 
         _savePending = false;
-        var clean = success && _editGeneration == _pendingSaveGeneration;
-        if (clean)
-            _dirty = DirtyField.None;
+        if (success)
+            _dirty &= ~(_pendingSaveFields & ~_editedAfterSave);
 
         SaveButton.Disabled = _dirty == DirtyField.None;
     }
@@ -290,8 +293,9 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             return;
 
         _dirty |= field;
-        _editGeneration++;
-        if (!_savePending)
+        if (_savePending)
+            _editedAfterSave |= field;
+        else
             SaveButton.Disabled = false;
     }
 
@@ -348,7 +352,8 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
             return;
 
         _savePending = true;
-        _pendingSaveGeneration = _editGeneration;
+        _pendingSaveFields = _dirty;
+        _editedAfterSave = DirtyField.None;
         SaveButton.Disabled = true;
 
         OnSaveRequested?.Invoke(

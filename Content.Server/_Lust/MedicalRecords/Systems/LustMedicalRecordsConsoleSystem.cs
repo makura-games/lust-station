@@ -94,16 +94,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         Entity<LustMedicalRecordsConsoleComponent> ent,
         ref AfterInteractUsingEvent args)
     {
-        if (args.Handled
-            || !args.CanReach
-            || !this.IsPowered(ent.Owner, EntityManager)
-            || !HasComp<IdCardComponent>(args.Used))
-        {
+        if (args.Handled || !args.CanReach)
             return;
-        }
 
-        TryToggleBiometrics(ent, args.Used, args.User);
-        args.Handled = true;
+        args.Handled = TryToggleBiometrics(ent, args.Used, args.User);
     }
 
     /// <summary>
@@ -161,8 +155,13 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         EntityUid used,
         EntityUid user)
     {
-        if (!CanToggleBiometrics(ent, used, user))
+        if (!CanToggleBiometrics(ent, used, user, out var deniedByAccess))
+        {
+            if (deniedByAccess)
+                _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
+
             return false;
+        }
 
         DoToggleBiometrics(ent, user);
         return true;
@@ -171,20 +170,31 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
     private bool CanToggleBiometrics(
         Entity<LustMedicalRecordsConsoleComponent> ent,
         EntityUid used,
-        EntityUid user)
+        EntityUid user,
+        out bool deniedByAccess,
+        bool quiet = false)
     {
+        deniedByAccess = false;
 
-        if (!_access.FindAccessTags(used).Contains(ent.Comp.BiometricsAccess))
-        {
-            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
-            _popup.PopupEntity(
-                Loc.GetString("lust-medical-records-access-denied"),
-                ent.Owner,
-                user);
+        if (!this.IsPowered(ent.Owner, EntityManager))
             return false;
-        }
 
-        return true;
+        if (!HasComp<IdCardComponent>(used))
+            return false;
+
+        if (_access.FindAccessTags(used).Contains(ent.Comp.BiometricsAccess))
+            return true;
+
+        deniedByAccess = true;
+
+        if (quiet)
+            return false;
+
+        _popup.PopupEntity(
+            Loc.GetString("lust-medical-records-access-denied"),
+            ent.Owner,
+            user);
+        return false;
     }
 
     private void DoToggleBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent, EntityUid user)
@@ -203,16 +213,16 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
     /// </summary>
     private bool TryUnlockBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent)
     {
-        if (IsBiometricsUnlocked(ent))
+        if (!CanUnlockBiometrics(ent))
             return false;
 
         DoUnlockBiometrics(ent);
         return true;
     }
 
-    private bool IsBiometricsUnlocked(Entity<LustMedicalRecordsConsoleComponent> ent)
+    private bool CanUnlockBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent)
     {
-        return ent.Comp.BiometricsUnlocked;
+        return !ent.Comp.BiometricsUnlocked;
     }
 
     private void DoUnlockBiometrics(Entity<LustMedicalRecordsConsoleComponent> ent)
@@ -230,7 +240,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         EntityUid actor)
     {
         if (!CanSelectRecord(ent, selectedKey, actor))
+        {
+            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
             return false;
+        }
 
         DoSelectRecord(ent, selectedKey);
         return true;
@@ -239,9 +252,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
     private bool CanSelectRecord(
         Entity<LustMedicalRecordsConsoleComponent> ent,
         uint? selectedKey,
-        EntityUid actor)
+        EntityUid actor,
+        bool quiet = false)
     {
-        if (!CanAccess(ent, actor))
+        if (!CanAccess(ent, actor, quiet))
             return false;
 
         if (selectedKey is null)
@@ -269,7 +283,11 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         LustMedicalRecordsSaveMessage msg,
         EntityUid actor)
     {
-        var success = CanSaveRecord(ent, msg, actor) && DoSaveRecord(ent, msg);
+        var canSave = CanSaveRecord(ent, msg, actor);
+        if (!canSave)
+            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
+
+        var success = canSave && DoSaveRecord(ent, msg);
 
         _ui.ServerSendUiMessage(
             ent.Owner,
@@ -283,9 +301,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
     private bool CanSaveRecord(
         Entity<LustMedicalRecordsConsoleComponent> ent,
         LustMedicalRecordsSaveMessage msg,
-        EntityUid actor)
+        EntityUid actor,
+        bool quiet = false)
     {
-        if (!CanAccess(ent, actor))
+        if (!CanAccess(ent, actor, quiet))
             return false;
 
         if (ent.Comp.ActiveKey != msg.RecordId
@@ -295,6 +314,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         {
             return false;
         }
+
+        if (!ent.Comp.BiometricsUnlocked
+            && (msg.Fingerprint is not null || msg.DNA is not null))
+            return false;
 
         return _records.TryGetRecord<GeneralStationRecord>(
             new StationRecordKey(msg.RecordId, station),
@@ -367,7 +390,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         EntityUid actor)
     {
         if (!CanPrintRecord(ent, recordId, actor))
+        {
+            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
             return false;
+        }
 
         DoPrintRecord(ent, recordId, actor);
         return true;
@@ -376,9 +402,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
     private bool CanPrintRecord(
         Entity<LustMedicalRecordsConsoleComponent> ent,
         uint recordId,
-        EntityUid actor)
+        EntityUid actor,
+        bool quiet = false)
     {
-        if (!CanAccess(ent, actor))
+        if (!CanAccess(ent, actor, quiet))
             return false;
 
         if (ent.Comp.ActiveKey != recordId)
@@ -386,8 +413,10 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
 
         if (_timing.CurTime < ent.Comp.NextPrintTime)
         {
+            if (quiet)
+                return false;
+
             _popup.PopupEntity(Loc.GetString("forensic-scanner-printer-not-ready"), ent.Owner, actor);
-            _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
             return false;
         }
 
@@ -572,17 +601,19 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
     }
 
     /// <summary>
-    /// Чистая проверка доступа: состояние не меняет, при отказе
-    /// показывает звук и попап только актору.
+    /// Чистая проверка доступа: состояние не меняет, звук проигрывает вызывающий.
     /// </summary>
     private bool CanAccess(
         Entity<LustMedicalRecordsConsoleComponent> ent,
-        EntityUid actor)
+        EntityUid actor,
+        bool quiet = false)
     {
         if (_access.IsAllowed(actor, ent.Owner))
             return true;
 
-        _audio.PlayPvs(ent.Comp.FailedSound, ent.Owner);
+        if (quiet)
+            return false;
+
         _popup.PopupEntity(
             Loc.GetString("lust-medical-records-access-denied"),
             ent.Owner,
