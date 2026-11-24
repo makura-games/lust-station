@@ -1,3 +1,4 @@
+using Content.Client._Lust.StationRecords;
 using Content.Client._Sunrise.StationRecords;
 using Content.Client.Lobby;
 using Content.Client.Roles;
@@ -182,7 +183,7 @@ public sealed partial class GeneralStationRecordConsoleWindow : DefaultWindow
     {
         RecordContainer.RemoveAllChildren();
         // Sunrise edit start - расширенная редактируемая запись
-        var newRecord = new SunriseGeneralRecord(
+        var newRecord = new LustGeneralRecord( // Lust edit - Подмена концоли санрайза на концоль ласта с полями портфолио
             record,
             enableDelete,
             canRedactSensitiveData,

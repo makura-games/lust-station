@@ -108,6 +108,8 @@ public sealed partial record GeneralStationRecord : StationRecord
             Personality = original.Personality.SanitizeInput(MaxPersonalityLength),
         };
 
+        updated = SanitizeLustProfile(updated); // Lust edit
+
         return updated;
     }
 

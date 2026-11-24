@@ -1525,6 +1525,106 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.ToTable("profile_loadout_group", (string)null);
                 });
 
+            // Lust edit start - миграция бд 20261111100227_LustPortfolioTable
+            modelBuilder.Entity("Content.Server.Database.ProfilePortfolio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_portfolio_id");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)")
+                        .HasColumnName("address");
+
+                    b.Property<string>("ArrestHistory")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("arrest_history");
+
+                    b.Property<string>("CloseRelatives")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("close_relatives");
+
+                    b.Property<string>("ConvictionHistory")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("conviction_history");
+
+                    b.Property<string>("DistinguishingFeatures")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("distinguishing_features");
+
+                    b.Property<string>("Education")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("education");
+
+                    b.Property<string>("EmergencyContact")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("emergency_contact");
+
+                    b.Property<byte>("MaritalStatusValue")
+                        .HasColumnType("smallint")
+                        .HasColumnName("marital_status_value");
+
+                    b.Property<string>("PhysiologicalTraits")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("physiological_traits");
+
+                    b.Property<string>("PlanetOrColony")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)")
+                        .HasColumnName("planet_or_colony");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("integer")
+                        .HasColumnName("profile_id");
+
+                    b.Property<string>("PsychologicalTraits")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("psychological_traits");
+
+                    b.Property<string>("Region")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("character varying(128)")
+                        .HasColumnName("region");
+
+                    b.Property<string>("WorkExperience")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("character varying(512)")
+                        .HasColumnName("work_experience");
+
+                    b.HasKey("Id")
+                        .HasName("PK_profile_portfolio");
+
+                    b.HasIndex("ProfileId")
+                        .IsUnique();
+
+                    b.ToTable("profile_portfolio", (string)null);
+                });
+            // Lust edit end
+
             modelBuilder.Entity("Content.Server.Database.ProfileRoleLoadout", b =>
                 {
                     b.Property<int>("Id")
@@ -2374,6 +2474,20 @@ namespace Content.Server.Database.Migrations.Postgres
                     b.Navigation("ProfileRoleLoadout");
                 });
 
+            // Lust edit start - миграция бд 20261111100227_LustPortfolioTable
+            modelBuilder.Entity("Content.Server.Database.ProfilePortfolio", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithOne("PortfolioData")
+                        .HasForeignKey("Content.Server.Database.ProfilePortfolio", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_profile_portfolio_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+            // Lust edit end
+
             modelBuilder.Entity("Content.Server.Database.ProfileRoleLoadout", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2561,13 +2675,15 @@ namespace Content.Server.Database.Migrations.Postgres
                 {
                     b.Navigation("Antags");
 
-                    b.Navigation("JobAlternativeTitles");
-
                     b.Navigation("ErpData");
+
+                    b.Navigation("JobAlternativeTitles"); // Lust edit при миграции бд 20261111100227_LustPortfolioTable было перенесено
 
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
+
+                    b.Navigation("PortfolioData"); // Lust edit - миграция бд 20261111100227_LustPortfolioTable
 
                     b.Navigation("Traits");
                 });

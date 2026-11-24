@@ -1,5 +1,6 @@
 <Control xmlns="https://spacestation14.io"
-         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:criminalRecords="clr-namespace:Content.Client._Lust.CriminalRecords"> <!-- Lust-edit -->
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
         <!-- Person Info Header -->
         <PanelContainer StyleClasses="Menu_Background_Light" Margin="0">
@@ -40,6 +41,7 @@
                         <Label Text="{Loc 'sunrise-records-person-fingerprints'}" MinWidth="110" StyleClasses="LabelSecondaryColor"/>
                         <Label Name="FingerprintsLabel" StyleClasses="LabelBig" />
                     </BoxContainer>
+                    <criminalRecords:LustCriminalRecordPortfolioControl Name="PortfolioControl" /> <!-- Lust-edit -->
                 </BoxContainer>
 
                 <PanelContainer Name="StatusDivider" StyleClasses="LowDivider" MinHeight="1" />

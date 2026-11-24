@@ -1,0 +1,109 @@
+<Control xmlns="https://spacestation14.io"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Collapsible Name="PortfolioCollapsible" HorizontalExpand="True">
+        <CollapsibleHeading Title="{Loc 'lust-humanoid-profile-editor-portfolio-additional-information'}"
+                            MinHeight="32" />
+        <CollapsibleBody>
+            <ScrollContainer HorizontalExpand="True"
+                             HScrollEnabled="False"
+                             MinHeight="270"
+                             MaxHeight="540">
+                <BoxContainer Orientation="Vertical"
+                              HorizontalExpand="True"
+                              Margin="8 4"
+                              SeparationOverride="4">
+                    <GridContainer Columns="1" HorizontalExpand="True">
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-distinguishing-features'}"
+                               StyleClasses="LabelSecondaryColor"
+                               VerticalAlignment="Top" />
+                        <TextEdit Name="DistinguishingFeatures"
+                                  StyleClasses="LustReadOnlyPortfolioField"
+                                  HorizontalExpand="True"
+                                  MinSize="420 100"
+                                  Editable="False" />
+                    </GridContainer>
+
+                    <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
+
+                    <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-residence'}"
+                           StyleClasses="LabelHeading" />
+                    <GridContainer Columns="2" HorizontalExpand="True">
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-region'}"
+                               StyleClasses="LabelSecondaryColor" />
+                        <Label Name="Region"
+                               StyleClasses="LustReadOnlyPortfolioField"
+                               HorizontalExpand="True" />
+
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-planet-or-colony'}"
+                               StyleClasses="LabelSecondaryColor" />
+                        <Label Name="PlanetOrColony"
+                               StyleClasses="LustReadOnlyPortfolioField"
+                               HorizontalExpand="True" />
+
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-address'}"
+                               StyleClasses="LabelSecondaryColor" />
+                        <Label Name="Address"
+                               StyleClasses="LustReadOnlyPortfolioField"
+                               HorizontalExpand="True" />
+                    </GridContainer>
+
+                    <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
+
+                    <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-personal'}"
+                           StyleClasses="LabelHeading" />
+                    <GridContainer Columns="2" HorizontalExpand="True">
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-marital-status'}"
+                               StyleClasses="LabelSecondaryColor" />
+                        <Label Name="MaritalStatus"
+                               StyleClasses="LustReadOnlyPortfolioField"
+                               HorizontalExpand="True" />
+                    </GridContainer>
+
+                    <GridContainer Columns="1" HorizontalExpand="True">
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-close-relatives'}"
+                               StyleClasses="LabelSecondaryColor"
+                               VerticalAlignment="Top" />
+                        <TextEdit Name="CloseRelatives"
+                                  StyleClasses="LustReadOnlyPortfolioField"
+                                  HorizontalExpand="True"
+                                  MinSize="420 100"
+                                  Editable="False" />
+
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}"
+                               StyleClasses="LabelSecondaryColor"
+                               VerticalAlignment="Top" />
+                        <TextEdit Name="EmergencyContact"
+                                  StyleClasses="LustReadOnlyPortfolioField"
+                                  HorizontalExpand="True"
+                                  MinSize="420 100"
+                                  Editable="False" />
+                    </GridContainer>
+
+                    <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
+
+                    <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-group-legal'}"
+                           StyleClasses="LabelHeading" />
+                    <GridContainer Columns="1" HorizontalExpand="True">
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-arrest-history'}"
+                               StyleClasses="LabelSecondaryColor"
+                               VerticalAlignment="Top" />
+                        <TextEdit Name="ArrestHistory"
+                                  StyleClasses="LustReadOnlyPortfolioField"
+                                  HorizontalExpand="True"
+                                  MinSize="420 100"
+                                  Editable="False" />
+
+                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-conviction-history'}"
+                               StyleClasses="LabelSecondaryColor"
+                               VerticalAlignment="Top" />
+                        <TextEdit Name="ConvictionHistory"
+                                  StyleClasses="LustReadOnlyPortfolioField"
+                                  HorizontalExpand="True"
+                                  MinSize="420 100"
+                                  Editable="False" />
+                    </GridContainer>
+                </BoxContainer>
+            </ScrollContainer>
+        </CollapsibleBody>
+    </Collapsible>
+</Control>

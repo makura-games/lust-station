@@ -2,6 +2,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Prototypes;
 using Content.Shared.StationRecords;
 using Content.Shared._Sunrise.Laws;
+using Content.Shared._Lust.CriminalRecords;
 using Content.Shared.Security;
 
 namespace Content.Shared._Sunrise.CriminalRecords;
@@ -79,6 +80,11 @@ public sealed class SunriseCriminalRecordsConsoleState : BoundUserInterfaceState
     /// <summary>The reason for the current security status.</summary>
     public readonly string? StatusReason;
 
+    // Lust-edit-start
+    /// <summary> Данные партфолио для консоли.</summary>
+    public readonly LustCriminalPortfolioView? Portfolio;
+    // Lust-edit-end
+
     public SunriseCriminalRecordsConsoleState(
         List<SunriseCriminalRecordListing> records,
         string? selectedName,
@@ -94,7 +100,8 @@ public sealed class SunriseCriminalRecordsConsoleState : BoundUserInterfaceState
         string? fingerprints = null,
         string? dna = null,
         SecurityStatus status = SecurityStatus.None,
-        string? statusReason = null)
+        string? statusReason = null,
+        LustCriminalPortfolioView? portfolio = null) // Lust edit
     {
         Records = new List<SunriseCriminalRecordListing>(records);
         SelectedName = selectedName;
@@ -112,6 +119,7 @@ public sealed class SunriseCriminalRecordsConsoleState : BoundUserInterfaceState
         DNA = dna;
         Status = status;
         StatusReason = statusReason;
+        Portfolio = portfolio; // Lust edit
     }
 }
 

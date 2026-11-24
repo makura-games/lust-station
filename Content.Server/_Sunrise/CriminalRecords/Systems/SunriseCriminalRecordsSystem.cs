@@ -11,6 +11,7 @@ using Content.Server._Sunrise.Laws.Systems;
 using Content.Shared.Access.Systems;
 using Content.Server.CriminalRecords.Systems;
 using Content.Shared.CriminalRecords;
+using Content.Shared._Lust.CriminalRecords;
 using Content.Shared.Security;
 using Robust.Server.GameObjects;
 using Robust.Shared.Prototypes;
@@ -318,6 +319,7 @@ public sealed partial class SunriseCriminalRecordsSystem : SharedSunriseCriminal
         SecurityStatus status = SecurityStatus.None;
         string? statusReason = null;
         List<CriminalCase> cases = new();
+        LustCriminalPortfolioView? portfolio = null; // Lust edit
 
         if (component.SelectedKey != null)
         {
@@ -331,6 +333,7 @@ public sealed partial class SunriseCriminalRecordsSystem : SharedSunriseCriminal
                 species = general.Species;
                 fingerprints = general.Fingerprint;
                 dna = general.DNA;
+                portfolio = LustCriminalPortfolioView.FromProfile(general.HumanoidProfile); // Lust edit
             }
 
             if (_stationRecords.TryGetRecord<CriminalRecord>(component.SelectedKey.Value, out var criminal))
@@ -363,7 +366,8 @@ public sealed partial class SunriseCriminalRecordsSystem : SharedSunriseCriminal
             fingerprints,
             dna,
             status,
-            statusReason);
+            statusReason,
+            portfolio); // Lust edit
         _ui.SetUiState(uid, SunriseCriminalRecordsConsoleKey.Key, state);
     }
 

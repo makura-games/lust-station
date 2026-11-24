@@ -367,6 +367,19 @@
   - type: Computer
     board: MedicalRecordsComputerCircuitboard
   - type: AmbientMusicMarkerMedical
+  # Lust-edit-start - подключаем интерфейс медицинских записей и ограничиваем доступ
+  - type: LustMedicalRecordsConsole
+  - type: UserInterface
+    interfaces:
+      enum.LustMedicalRecordsUiKey.Key:
+        type: LustMedicalRecordsBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: ActivatableUI
+    key: enum.LustMedicalRecordsUiKey.Key
+  - type: AccessReader
+    access: [["Medical"]]
+  # Lust-edit-end
 
 - type: entity
   parent: BaseComputerAiAccess

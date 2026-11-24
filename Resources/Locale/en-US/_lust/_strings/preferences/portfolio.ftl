@@ -1,0 +1,24 @@
+### Character portfolio
+lust-humanoid-profile-editor-portfolio-tab = Portfolio
+lust-humanoid-profile-editor-portfolio-marital-single-text = Single
+lust-humanoid-profile-editor-portfolio-marital-married-text = Married
+lust-humanoid-profile-editor-portfolio-marital-divorced-text = Divorced
+lust-humanoid-profile-editor-portfolio-generate = Generate
+lust-humanoid-profile-editor-portfolio-group-residence = Residence
+lust-humanoid-profile-editor-portfolio-group-personal = Personal information
+lust-humanoid-profile-editor-portfolio-group-medical = Medical data
+lust-humanoid-profile-editor-portfolio-group-legal = Legal history
+lust-humanoid-profile-editor-portfolio-distinguishing-features = Distinguishing features
+lust-humanoid-profile-editor-portfolio-region = Region
+lust-humanoid-profile-editor-portfolio-planet-or-colony = Planet or colony
+lust-humanoid-profile-editor-portfolio-address = Address
+lust-humanoid-profile-editor-portfolio-education = Education
+lust-humanoid-profile-editor-portfolio-work-experience = Work experience
+lust-humanoid-profile-editor-portfolio-marital-status = Marital status
+lust-humanoid-profile-editor-portfolio-close-relatives = Close relatives
+lust-humanoid-profile-editor-portfolio-emergency-contact = Emergency contact
+lust-humanoid-profile-editor-portfolio-physiological-traits = Physiological traits
+lust-humanoid-profile-editor-portfolio-psychological-traits = Psychological traits
+lust-humanoid-profile-editor-portfolio-arrest-history = Arrest history
+lust-humanoid-profile-editor-portfolio-conviction-history = Conviction history
+lust-humanoid-profile-editor-portfolio-additional-information = Additional information

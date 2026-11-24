@@ -196,7 +196,8 @@ namespace Content.Server.Preferences.Managers
             );
 
             humanoid = ApplySunriseProfileData(humanoid, profile, sex); // Sunrise-Edit - загружаем fork-поля профиля
-            return ApplyLustProfileData(humanoid, profile); // Lust edit - загружаем ERP-настройки
+            humanoid = ApplyLustProfileData(humanoid, profile);          // Lust edit - загружаем ERP-настройки
+            return ApplyLustPortfolioData(humanoid, profile);            // Lust edit - загружаем портфолио персонажа
         }
 
         private async void HandleSelectCharacterMessage(MsgSelectCharacter message)

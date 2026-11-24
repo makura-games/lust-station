@@ -1,0 +1,24 @@
+### портфолио персонажа
+lust-humanoid-profile-editor-portfolio-tab = Портфолио
+lust-humanoid-profile-editor-portfolio-additional-information = Дополнительные сведения
+lust-humanoid-profile-editor-portfolio-marital-single-text = Не в браке
+lust-humanoid-profile-editor-portfolio-marital-married-text = В браке
+lust-humanoid-profile-editor-portfolio-marital-divorced-text = В разводе
+lust-humanoid-profile-editor-portfolio-generate = Сгенерировать
+lust-humanoid-profile-editor-portfolio-group-residence = Место проживания:
+lust-humanoid-profile-editor-portfolio-group-personal = Личная информация:
+lust-humanoid-profile-editor-portfolio-group-medical = Медицинские данные:
+lust-humanoid-profile-editor-portfolio-group-legal = Правовая история:
+lust-humanoid-profile-editor-portfolio-distinguishing-features = Отличительные черты:
+lust-humanoid-profile-editor-portfolio-region = Регион:
+lust-humanoid-profile-editor-portfolio-planet-or-colony = Планета/колония:
+lust-humanoid-profile-editor-portfolio-address = Адрес:
+lust-humanoid-profile-editor-portfolio-education = Образование:
+lust-humanoid-profile-editor-portfolio-work-experience = Трудовой опыт:
+lust-humanoid-profile-editor-portfolio-marital-status = Семейное положение:
+lust-humanoid-profile-editor-portfolio-close-relatives = Близкие родственники:
+lust-humanoid-profile-editor-portfolio-emergency-contact = Экстренный контакт:
+lust-humanoid-profile-editor-portfolio-physiological-traits = Физиологические черты:
+lust-humanoid-profile-editor-portfolio-psychological-traits = Психологические черты:
+lust-humanoid-profile-editor-portfolio-arrest-history = История арестов:
+lust-humanoid-profile-editor-portfolio-conviction-history = История судимостей:

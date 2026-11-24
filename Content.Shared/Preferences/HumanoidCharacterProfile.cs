@@ -1,6 +1,7 @@
 using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._Lust.Preferences;
 using Content.Shared._Sunrise.Preferences;
 using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared.CCVar;
@@ -230,6 +231,7 @@ namespace Content.Shared.Preferences
                 Sex = sex.Value,
                 Appearance = HumanoidCharacterAppearance.DefaultWithSpecies(species.Value, sex.Value),
                 SunriseProfile = SunriseCharacterProfile.DefaultForSpecies(species.Value, sex.Value), // Sunrise-Edit
+                Portfolio = PortfolioProfile.RandomForSpecies(species.Value), // Lust edit
             };
         }
 
@@ -250,6 +252,7 @@ namespace Content.Shared.Preferences
             Eyes = 1 << 5,
             Skin = 1 << 6,
             Markings = 1 << 7,
+            Portfolio = 1 << 8, // lust edit
         }
 
         /// <summary>
@@ -263,7 +266,8 @@ namespace Content.Shared.Preferences
             | RandomizeCfg.Gender
             | RandomizeCfg.Eyes
             | RandomizeCfg.Skin
-            | RandomizeCfg.Markings;
+            | RandomizeCfg.Markings
+            | RandomizeCfg.Portfolio; // Lust edit
 
         /// <summary>
         /// Picks a random species from roundstart species.
@@ -393,7 +397,10 @@ namespace Content.Shared.Preferences
             else if (profile.Species != baseProfile.Species || profile.Sex != baseProfile.Sex)
                 profile.AdaptSunriseRandomProfile(speciesProto, prototypeManager);
             // Sunrise edit end
-
+            // Lust start - портфолио регенерируется, если включён флаг RandomizeCfg.Portfolio
+            if ((randomizeCfg & RandomizeCfg.Portfolio) != 0)
+                profile.Portfolio = PortfolioProfile.RandomForSpecies(profile.Species);
+            // Lust end
             return profile;
         }
 
@@ -815,6 +822,7 @@ namespace Content.Shared.Preferences
             }
 
             EnsureSunriseProfileValid(speciesPrototype, sex, session, collection, sponsorPrototypes); // Sunrise-Edit
+            Portfolio.EnsureValid(); // Lust-edit
 
             PreferenceUnavailable = prefsUnavailableMode;
 

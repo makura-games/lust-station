@@ -1446,6 +1446,104 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("profile_loadout_group", (string)null);
                 });
 
+            // Lust edit start - миграция бд 20261111100227_LustPortfolioTable
+            modelBuilder.Entity("Content.Server.Database.ProfilePortfolio", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_portfolio_id");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("address");
+
+                    b.Property<string>("ArrestHistory")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("arrest_history");
+
+                    b.Property<string>("CloseRelatives")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("close_relatives");
+
+                    b.Property<string>("ConvictionHistory")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("conviction_history");
+
+                    b.Property<string>("DistinguishingFeatures")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("distinguishing_features");
+
+                    b.Property<string>("Education")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("education");
+
+                    b.Property<string>("EmergencyContact")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("emergency_contact");
+
+                    b.Property<byte>("MaritalStatusValue")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("marital_status_value");
+
+                    b.Property<string>("PhysiologicalTraits")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("physiological_traits");
+
+                    b.Property<string>("PlanetOrColony")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("planet_or_colony");
+
+                    b.Property<int>("ProfileId")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("profile_id");
+
+                    b.Property<string>("PsychologicalTraits")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("psychological_traits");
+
+                    b.Property<string>("Region")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("region");
+
+                    b.Property<string>("WorkExperience")
+                        .IsRequired()
+                        .HasMaxLength(512)
+                        .HasColumnType("TEXT")
+                        .HasColumnName("work_experience");
+
+                    b.HasKey("Id")
+                        .HasName("PK_profile_portfolio");
+
+                    b.HasIndex("ProfileId")
+                        .IsUnique();
+
+                    b.ToTable("profile_portfolio", (string)null);
+                });
+            // Lust edit end
+
             modelBuilder.Entity("Content.Server.Database.ProfileRoleLoadout", b =>
                 {
                     b.Property<int>("Id")
@@ -2281,6 +2379,20 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("ProfileRoleLoadout");
                 });
 
+            // Lust edit start - миграция бд 20261111100227_LustPortfolioTable
+            modelBuilder.Entity("Content.Server.Database.ProfilePortfolio", b =>
+                {
+                    b.HasOne("Content.Server.Database.Profile", "Profile")
+                        .WithOne("PortfolioData")
+                        .HasForeignKey("Content.Server.Database.ProfilePortfolio", "ProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired()
+                        .HasConstraintName("FK_profile_portfolio_profile_profile_id");
+
+                    b.Navigation("Profile");
+                });
+            // Lust edit end
+
             modelBuilder.Entity("Content.Server.Database.ProfileRoleLoadout", b =>
                 {
                     b.HasOne("Content.Server.Database.Profile", "Profile")
@@ -2468,13 +2580,15 @@ namespace Content.Server.Database.Migrations.Sqlite
                 {
                     b.Navigation("Antags");
 
-                    b.Navigation("JobAlternativeTitles");
-
                     b.Navigation("ErpData");
+
+                    b.Navigation("JobAlternativeTitles"); // Lust edit при миграции бд 20261111100227_LustPortfolioTable было перенесено
 
                     b.Navigation("Jobs");
 
                     b.Navigation("Loadouts");
+
+                    b.Navigation("PortfolioData");  // Lust edit - миграция бд 20261111100227_LustPortfolioTable
 
                     b.Navigation("Traits");
                 });

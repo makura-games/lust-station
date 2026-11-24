@@ -37,6 +37,7 @@
                                 <ui:RandomizeLockButton For="Skin" LabelText="{Loc 'humanoid-profile-editor-randomize-skin-button'}"/>
                                 <ui:RandomizeLockButton For="Eyes" LabelText="{Loc 'humanoid-profile-editor-randomize-eye-button'}"/>
                                 <ui:RandomizeLockButton For="Markings" LabelText="{Loc 'humanoid-profile-editor-randomize-markings-button'}"/>
+                                <ui:RandomizeLockButton For="Portfolio" LabelText="{Loc 'lust-humanoid-profile-editor-portfolio-tab'}" Margin="0 0 55 0" /> <!-- lust edit -->
                             </GridContainer>
                             <Button
                                 Name="RandomizeUnlockedButton"

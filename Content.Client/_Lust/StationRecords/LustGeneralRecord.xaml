@@ -1,0 +1,118 @@
+﻿<BoxContainer xmlns="https://spacestation14.io"
+         xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+         xmlns:graphics="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
+         Orientation="Vertical" VerticalExpand="True" HorizontalExpand="True"
+         MinSize="560 760">
+    <!-- Заголовок с именем, работой и отделом-->
+    <controls:StripeBack VerticalAlignment="Top" HorizontalExpand="True">
+        <BoxContainer Orientation="Vertical" VerticalAlignment="Top">
+            <Label Name="NameHeading" Access="Public" StyleClasses="LabelHeading" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+            <BoxContainer Orientation="Horizontal" Align="Center">
+                <Label Name="SubText" VerticalAlignment="Center" HorizontalAlignment="Center" StyleClasses="LabelSubText" Access="Public"/>
+            </BoxContainer>
+        </BoxContainer>
+    </controls:StripeBack>
+
+    <!-- Спрайт персонажа, фиксированный размер, не тянется вместе со скроллом -->
+    <SpriteView OverrideDirection="South" Scale="8 8" Name="SpriteView" Access="Public" MinSize="256 256" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5 15 5 15"/>
+
+    <!-- Прокручиваемая часть: поля станционного учёта, портфолио, характер -->
+    <ScrollContainer HScrollEnabled="False" VerticalExpand="True">
+        <BoxContainer Orientation="Vertical" HorizontalExpand="True">
+            <!-- Поля для изменения данных -->
+            <controls:StripeBack HorizontalExpand="True">
+                <BoxContainer Orientation="Horizontal" VerticalAlignment="Center" Margin="5 5 5 5">
+                    <!-- Белая полоска слева -->
+                    <PanelContainer
+                        VerticalExpand="True"
+                        MinWidth="2"
+                        MaxWidth="2"
+                        Margin="9 5 9 0">
+                        <PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BackgroundColor="#CFCFCF"/>
+                        </PanelContainer.PanelOverride>
+                    </PanelContainer>
+                    <GridContainer Name="ControlGrid" Columns="2" HorizontalAlignment="Stretch" HorizontalExpand="True">
+                        <Label Name="NameLabel" Text="{Loc 'station-records-ui-name'}"/>               <LineEdit Name="NameEdit" HorizontalExpand="True"/>
+                        <Label Name="AgeLabel" Text="{Loc 'station-records-ui-age'}"/>                 <LineEdit Name="Age" PlaceHolder="{Loc 'generic-unknown'}"/>
+                        <Label Name="GenderLabel" Text="{Loc 'station-records-ui-gender'}"/>           <OptionButton Name="Gender"/>
+                        <Label Name="SpeciesLabel" Text="{Loc 'station-records-ui-species'}"/>         <OptionButton Name="Species"/>
+                        <Label Name="JobLabel" Text="{Loc 'station-records-ui-job'}"/>                 <OptionButton Name="Job"/>
+                        <Label Name="FingerprintLabel" Text="{Loc 'station-records-ui-fingerprint'}"/> <LineEdit Name="Fingerprint" Editable="False"/>
+                        <Label Name="DnaLabel" Text="{Loc 'station-records-ui-dna'}"/>                 <LineEdit Name="Dna" Editable="False"/>
+                    </GridContainer>
+                </BoxContainer>
+            </controls:StripeBack>
+
+            <!-- Портфолио персонажа -->
+            <controls:StripeBack HorizontalExpand="True">
+                <BoxContainer Orientation="Horizontal" VerticalAlignment="Top" Margin="5 5 5 5">
+                    <PanelContainer
+                        VerticalExpand="True"
+                        MinWidth="2"
+                        MaxWidth="2"
+                        Margin="9 5 9 0">
+                        <PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BackgroundColor="#CFCFCF"/>
+                        </PanelContainer.PanelOverride>
+                    </PanelContainer>
+                    <GridContainer Name="PortfolioGrid" Columns="2" HorizontalAlignment="Stretch" HorizontalExpand="True">
+                        <Label Name="LustRegionLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-region'}" VerticalAlignment="Center"/>
+                        <LineEdit Name="LustRegion" HorizontalExpand="True"/>
+
+                        <Label Name="LustPlanetOrColonyLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-planet-or-colony'}" VerticalAlignment="Center"/>
+                        <LineEdit Name="LustPlanetOrColony" HorizontalExpand="True"/>
+
+                        <Label Name="LustAddressLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-address'}" VerticalAlignment="Center"/>
+                        <LineEdit Name="LustAddress" HorizontalExpand="True"/>
+
+                        <Label Name="LustDistinguishingFeaturesLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-distinguishing-features'}" VerticalAlignment="Top"/>
+                        <TextEdit Name="LustDistinguishingFeatures" HorizontalExpand="True" MinSize="300 100"/>
+
+                        <Label Name="LustEducationLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-education'}" VerticalAlignment="Top"/>
+                        <TextEdit Name="LustEducation" HorizontalExpand="True" MinSize="300 100"/>
+
+                        <Label Name="LustWorkExperienceLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-work-experience'}" VerticalAlignment="Top"/>
+                        <TextEdit Name="LustWorkExperience" HorizontalExpand="True" MinSize="300 100"/>
+
+                        <Label Name="LustMaritalStatusLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-marital-status'}" VerticalAlignment="Center"/>
+                        <OptionButton Name="LustMaritalStatus" HorizontalExpand="True"/>
+
+                        <Label Name="LustCloseRelativesLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-close-relatives'}" VerticalAlignment="Top"/>
+                        <TextEdit Name="LustCloseRelatives" HorizontalExpand="True" MinSize="300 100"/>
+
+                        <Label Name="LustEmergencyContactLabel" Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}" VerticalAlignment="Top"/>
+                        <TextEdit Name="LustEmergencyContact" HorizontalExpand="True" MinSize="300 100"/>
+                    </GridContainer>
+                </BoxContainer>
+            </controls:StripeBack>
+
+            <!-- Характеристика -->
+            <controls:StripeBack HorizontalExpand="True">
+                <BoxContainer Orientation="Horizontal" VerticalAlignment="Top" Margin="5 5 5 5">
+                    <!-- Опять белая полоска слева -->
+                    <PanelContainer
+                        VerticalExpand="True"
+                        MinWidth="2"
+                        MaxWidth="2"
+                        Margin="9 5 9 0">
+                        <PanelContainer.PanelOverride>
+                            <graphics:StyleBoxFlat BackgroundColor="#CFCFCF"/>
+                        </PanelContainer.PanelOverride>
+                    </PanelContainer>
+                    <GridContainer Columns="1" HorizontalAlignment="Stretch" HorizontalExpand="True">
+                        <Label Name="PersonalityLabel" Text="{Loc 'station-records-ui-personality'}" VerticalAlignment="Top"/>
+                        <TextEdit Name="Personality" HorizontalExpand="True" MinSize="300 100"/>
+                    </GridContainer>
+                </BoxContainer>
+            </controls:StripeBack>
+        </BoxContainer>
+    </ScrollContainer>
+
+    <!-- Кнопки сохранить, распечатать и удалить(не видна без емага) -->
+    <GridContainer Columns="3" HorizontalAlignment="Stretch" HorizontalExpand="True">
+        <Button Visible="False" Name="SaveButton" Text="{Loc 'station-records-ui-save'}" Disabled="True" StyleClasses="ButtonColorGreen"/>
+        <Button Visible="False" Name="PrintButton" Text="{Loc 'station-records-ui-print'}"/>
+        <Button Visible="False" Name="DeleteButton" Text="{Loc 'general-station-record-console-delete'}" StyleClasses="ButtonColorRed"/>
+    </GridContainer>
+</BoxContainer>

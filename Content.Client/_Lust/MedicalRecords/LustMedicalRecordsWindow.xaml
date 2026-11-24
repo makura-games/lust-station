@@ -1,0 +1,121 @@
+<DefaultWindow xmlns="https://spacestation14.io"
+               xmlns:controls="clr-namespace:Content.Client.UserInterface.Controls"
+               Title="{Loc 'ent-ComputerMedicalRecords'}"
+               MinSize="900 600">
+    <BoxContainer Orientation="Vertical" Margin="5" HorizontalExpand="True" VerticalExpand="True">
+        <Label Name="AdvancedAccessStatus"
+               Text="{Loc 'lust-medical-records-advanced-access-locked'}"
+               HorizontalExpand="True"
+               HorizontalAlignment="Right"
+               Margin="5 0 5 5" />
+        <BoxContainer Orientation="Horizontal" HorizontalExpand="True" VerticalExpand="True">
+            <BoxContainer Orientation="Vertical"
+                          Margin="5"
+                          MinWidth="230"
+                          MaxWidth="270"
+                          VerticalExpand="True">
+                <Label Text="{Loc 'lust-medical-records-list-header'}" StyleClasses="LabelHeadingBolder" Margin="4 0"/>
+                <LineEdit Name="SearchInput" PlaceHolder="{Loc 'lust-medical-records-search-placeholder'}" Margin="2"/>
+                <PanelContainer StyleClasses="LowDivider" MinHeight="1"/>
+                <ScrollContainer VerticalExpand="True" HorizontalExpand="True">
+                    <ItemList Name="RecordListing" />
+                </ScrollContainer>
+            </BoxContainer>
+
+            <PanelContainer HorizontalExpand="True" VerticalExpand="True">
+                <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
+                    <ScrollContainer Name="RecordScroll" HScrollEnabled="False" VerticalExpand="True">
+                        <BoxContainer Name="RecordDetails"
+                                      Orientation="Vertical"
+                                      Margin="8"
+                                      SeparationOverride="5"
+                                      HorizontalExpand="True"
+                                      Visible="False">
+                            <controls:StripeBack HorizontalExpand="True" HasBottomEdge="False" Margin="0 4">
+                                <GridContainer Columns="2" Margin="8" HorizontalExpand="True" HSeparationOverride="8" VSeparationOverride="5">
+                                    <Label Text="{Loc 'lust-medical-records-field-name'}" />
+                                    <LineEdit Name="NameValue" Editable="False" HorizontalExpand="True" />
+
+                                    <Label Text="{Loc 'lust-medical-records-field-age'}" />
+                                    <LineEdit Name="AgeValue" Editable="False" HorizontalExpand="True" />
+
+                                    <Label Text="{Loc 'lust-medical-records-field-gender'}" />
+                                    <OptionButton Name="GenderOption" HorizontalExpand="True" />
+
+                                    <Label Text="{Loc 'lust-medical-records-field-species'}" />
+                                    <OptionButton Name="SpeciesOption" HorizontalExpand="True" />
+
+                                    <Label Text="{Loc 'lust-medical-records-field-job'}" />
+                                    <LineEdit Name="JobTitleValue" Editable="False" HorizontalExpand="True" />
+
+                                    <Label Text="{Loc 'lust-medical-records-field-fingerprint'}" />
+                                    <LineEdit Name="FingerprintValue" Editable="False" HorizontalExpand="True" />
+
+                                    <Label Text="{Loc 'lust-medical-records-field-dna'}" />
+                                    <LineEdit Name="DnaValue" Editable="False" HorizontalExpand="True" />
+                                </GridContainer>
+                            </controls:StripeBack>
+
+                            <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="8 0" />
+
+                            <controls:StripeBack HorizontalExpand="True" HasTopEdge="False" Margin="0 4">
+                                <BoxContainer Orientation="Vertical" Margin="8" SeparationOverride="6" HorizontalExpand="True">
+                                    <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-close-relatives'}"
+                                               VerticalAlignment="Top" />
+                                        <TextEdit Name="CloseRelatives"
+                                                  StyleClasses="LustReadOnlyPortfolioField"
+                                                  Editable="False"
+                                                  MinSize="420 100"
+                                                  HorizontalExpand="True" />
+
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-emergency-contact'}"
+                                               VerticalAlignment="Top" />
+                                        <TextEdit Name="EmergencyContact"
+                                                  StyleClasses="LustReadOnlyPortfolioField"
+                                                  Editable="False"
+                                                  MinSize="420 100"
+                                                  HorizontalExpand="True" />
+                                    </GridContainer>
+
+                                    <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
+
+                                    <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-physiological-traits'}"
+                                               VerticalAlignment="Top" />
+                                        <TextEdit Name="PhysiologicalTraits" MinSize="420 100" HorizontalExpand="True" />
+                                    </GridContainer>
+
+                                    <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
+
+                                    <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
+                                        <Label Text="{Loc 'lust-humanoid-profile-editor-portfolio-psychological-traits'}"
+                                               VerticalAlignment="Top" />
+                                        <TextEdit Name="PsychologicalTraits" MinSize="420 100" HorizontalExpand="True" />
+                                    </GridContainer>
+
+                                    <PanelContainer StyleClasses="LowDivider" MinHeight="1" Margin="0 2" />
+
+                                    <GridContainer Columns="1" HorizontalExpand="True" VSeparationOverride="5">
+                                        <Label Text="{Loc 'lust-medical-records-section-notes'}" VerticalAlignment="Top" />
+                                        <TextEdit Name="Notes" MinSize="420 100" HorizontalExpand="True" />
+                                    </GridContainer>
+                                </BoxContainer>
+                            </controls:StripeBack>
+                        </BoxContainer>
+                    </ScrollContainer>
+
+                    <GridContainer Columns="2" HorizontalAlignment="Stretch" HorizontalExpand="True" HSeparationOverride="5">
+                        <Button Name="SaveButton"
+                                Text="{Loc 'lust-medical-records-save'}"
+                                Disabled="True"
+                                StyleClasses="ButtonColorGreen" />
+                        <Button Name="PrintButton"
+                                Text="{Loc 'lust-medical-records-print'}"
+                                Disabled="True" />
+                    </GridContainer>
+                </BoxContainer>
+            </PanelContainer>
+        </BoxContainer>
+    </BoxContainer>
+</DefaultWindow>
