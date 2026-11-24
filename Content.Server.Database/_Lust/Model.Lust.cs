@@ -17,41 +17,41 @@ public class ProfilePortfolio
 
     public Profile Profile { get; set; } = null!;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string DistinguishingFeatures { get; set; } = string.Empty;
 
-    [Required, MaxLength(128)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioShortText)]
     public string Region { get; set; } = string.Empty;
 
-    [Required, MaxLength(128)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioShortText)]
     public string PlanetOrColony { get; set; } = string.Empty;
 
-    [Required, MaxLength(128)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioShortText)]
     public string Address { get; set; } = string.Empty;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string Education { get; set; } = string.Empty;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string WorkExperience { get; set; } = string.Empty;
 
     public MaritalStatus MaritalStatusValue { get; set; }
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string CloseRelatives { get; set; } = string.Empty;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string EmergencyContact { get; set; } = string.Empty;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string PhysiologicalTraits { get; set; } = string.Empty;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string PsychologicalTraits { get; set; } = string.Empty;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string ArrestHistory { get; set; } = string.Empty;
 
-    [Required, MaxLength(512)]
+    [Required, MaxLength(LustPorftolioLimits.PortfolioText)]
     public string ConvictionHistory { get; set; } = string.Empty;
 }

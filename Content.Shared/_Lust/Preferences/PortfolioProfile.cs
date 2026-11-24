@@ -11,10 +11,6 @@ namespace Content.Shared._Lust.Preferences;
 [Serializable, NetSerializable]
 public sealed partial class PortfolioProfile : IEquatable<PortfolioProfile>
 {
-    // Лимиты длин. Должны совпадать с MaxLength на полях ProfilePortfolio в БД (Model.Lust.cs).
-    private const int MaxTextLength = 512;
-    private const int MaxShortTextLength = 128;
-
     /// <summary>
     /// Отличительные признаки (многострочное).
     /// </summary>
@@ -173,19 +169,19 @@ public sealed partial class PortfolioProfile : IEquatable<PortfolioProfile>
     /// </summary>
     public void EnsureValid()
     {
-        DistinguishingFeatures = ValidateEntry(DistinguishingFeatures, MaxTextLength);
-        Education = ValidateEntry(Education, MaxTextLength);
-        WorkExperience = ValidateEntry(WorkExperience, MaxTextLength);
-        CloseRelatives = ValidateEntry(CloseRelatives, MaxTextLength);
-        EmergencyContact = ValidateEntry(EmergencyContact, MaxTextLength);
-        PhysiologicalTraits = ValidateEntry(PhysiologicalTraits, MaxTextLength);
-        PsychologicalTraits = ValidateEntry(PsychologicalTraits, MaxTextLength);
-        ArrestHistory = ValidateEntry(ArrestHistory, MaxTextLength);
-        ConvictionHistory = ValidateEntry(ConvictionHistory, MaxTextLength);
+        DistinguishingFeatures = ValidateEntry(DistinguishingFeatures, LustPorftolioLimits.PortfolioText);
+        Education = ValidateEntry(Education, LustPorftolioLimits.PortfolioText);
+        WorkExperience = ValidateEntry(WorkExperience, LustPorftolioLimits.PortfolioText);
+        CloseRelatives = ValidateEntry(CloseRelatives, LustPorftolioLimits.PortfolioText);
+        EmergencyContact = ValidateEntry(EmergencyContact, LustPorftolioLimits.PortfolioText);
+        PhysiologicalTraits = ValidateEntry(PhysiologicalTraits, LustPorftolioLimits.PortfolioText);
+        PsychologicalTraits = ValidateEntry(PsychologicalTraits, LustPorftolioLimits.PortfolioText);
+        ArrestHistory = ValidateEntry(ArrestHistory, LustPorftolioLimits.PortfolioText);
+        ConvictionHistory = ValidateEntry(ConvictionHistory, LustPorftolioLimits.PortfolioText);
         MaritalStatusValue = ValidateEntry(MaritalStatusValue);
-        Region = ValidateEntry(Region, MaxShortTextLength);
-        PlanetOrColony = ValidateEntry(PlanetOrColony, MaxShortTextLength);
-        Address = ValidateEntry(Address, MaxShortTextLength);
+        Region = ValidateEntry(Region, LustPorftolioLimits.PortfolioShortText);
+        PlanetOrColony = ValidateEntry(PlanetOrColony, LustPorftolioLimits.PortfolioShortText);
+        Address = ValidateEntry(Address, LustPorftolioLimits.PortfolioShortText);
     }
 
     private static MaritalStatus ValidateEntry(MaritalStatus maritalStatus)

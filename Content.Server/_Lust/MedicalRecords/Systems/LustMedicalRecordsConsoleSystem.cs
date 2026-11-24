@@ -338,9 +338,9 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         {
             var portfolio = new PortfolioProfile(profile?.Portfolio);
             if (msg.PhysiologicalTraits is { } physiological)
-                portfolio.PhysiologicalTraits = physiological.SanitizeInput(512);
+                portfolio.PhysiologicalTraits = physiological.SanitizeInput(LustPorftolioLimits.PortfolioText);
             if (msg.PsychologicalTraits is { } psychological)
-                portfolio.PsychologicalTraits = psychological.SanitizeInput(512);
+                portfolio.PsychologicalTraits = psychological.SanitizeInput(LustPorftolioLimits.PortfolioText);
             portfolio.EnsureValid();
 
             profile = (profile ?? new HumanoidCharacterProfile()).WithPortfolio(portfolio);
@@ -371,7 +371,7 @@ public sealed partial class LustMedicalRecordsConsoleSystem : EntitySystem
         {
             _records.TryGetRecord<MedicalRecord>(key, out var medicalRecord);
             medicalRecord ??= new MedicalRecord();
-            medicalRecord.Notes = notes.SanitizeInput(2048);
+            medicalRecord.Notes = notes.SanitizeInput(LustMedicalLimits.Notes);
             _records.AddRecordEntry(key, medicalRecord);
         }
 
