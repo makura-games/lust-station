@@ -365,6 +365,37 @@ public sealed partial class LustMedicalRecordsWindow : DefaultWindow
         SaveButton.Disabled = true;
 
         // Санитизируем только отправляемые строки.
+        var physiological = (_dirty & DirtyField.Physiological) != 0
+            ? Rope.Collapse(PhysiologicalTraits.TextRope).SanitizeInput(LustPorftolioLimits.PortfolioText)
+            : null;
+        var psychological = (_dirty & DirtyField.Psychological) != 0
+            ? Rope.Collapse(PsychologicalTraits.TextRope).SanitizeInput(LustPorftolioLimits.PortfolioText)
+            : null;
+        var notes = (_dirty & DirtyField.Notes) != 0
+            ? Rope.Collapse(Notes.TextRope).SanitizeInput(LustMedicalLimits.Notes)
+            : null;
+
+        _isPopulating = true;
+        if (physiological is not null && Rope.Collapse(PhysiologicalTraits.TextRope) != physiological)
+        {
+            var cursor = PhysiologicalTraits.CursorPosition;
+            PhysiologicalTraits.TextRope = new Rope.Leaf(physiological);
+            PhysiologicalTraits.CursorPosition = cursor;
+        }
+        if (psychological is not null && Rope.Collapse(PsychologicalTraits.TextRope) != psychological)
+        {
+            var cursor = PsychologicalTraits.CursorPosition;
+            PsychologicalTraits.TextRope = new Rope.Leaf(psychological);
+            PsychologicalTraits.CursorPosition = cursor;
+        }
+        if (notes is not null && Rope.Collapse(Notes.TextRope) != notes)
+        {
+            var cursor = Notes.CursorPosition;
+            Notes.TextRope = new Rope.Leaf(notes);
+            Notes.CursorPosition = cursor;
+        }
+        _isPopulating = false;
+
         OnSaveRequested?.Invoke(
             key,
             (_dirty & DirtyField.Gender) != 0 ? _genders[GenderOption.SelectedId] : null,
