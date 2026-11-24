@@ -84,6 +84,8 @@
     actions:
     - ActionViewLaws
     - ActionChangeBorgVoice
+    - LustActionBorgCycleSex # Lust edit - выбор пола для панели взаимодействий
+  - type: BorgSex # Lust edit - пол борга для определения гениталий
   - type: EmagSiliconLaw
     stunTime: 5
   - type: SiliconLawProvider
@@ -95,6 +97,7 @@
     disableExplosionRecursion: true
     canBeStripped: false
   - type: ComplexInteraction
+  - type: Interactions # Lust edit - панель социальных взаимодействий для боргов
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:

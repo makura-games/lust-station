@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "special for Lust station by: Askal02",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "passive_recharge",
+      "delays": [
+        [0.12, 0.12, 0.12, 0.12, 0.12, 0.12]
+      ]
+    }
+  ]
+}

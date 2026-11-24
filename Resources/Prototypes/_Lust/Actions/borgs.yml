@@ -1,0 +1,31 @@
+- type: entity
+  parent: BaseToggleAction
+  id: LustActionBorgToggleRest
+  name: sit down
+  description: Sit down or stand up.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.5
+  - type: Sprite
+    sprite: _Lust/Interface/Actions/energy_recover.rsi
+    layers:
+    - state: energy_recover
+  - type: InstantAction
+    event: !type:BorgToggleRestActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: LustActionBorgCycleSex
+  name: select cyborg sex
+  description: Cycle the sex used by the interactions panel.
+  components:
+  - type: Action
+    itemIconStyle: NoItem
+    useDelay: 0.5
+  - type: Sprite
+    sprite: Effects/hearts.rsi
+    layers:
+    - state: hearts
+  - type: InstantAction
+    event: !type:BorgCycleSexActionEvent

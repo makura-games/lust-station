@@ -1,3 +1,4 @@
+using Content.Shared.Humanoid;
 using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Serialization;
@@ -11,12 +12,21 @@ public enum InteractionWindowUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed class InteractionWindowBoundUserInterfaceState(NetEntity userEntity, NetEntity targetEntity, List<string> availableInteractionIds) : BoundUserInterfaceState
+// Lust edit start - передаём актуальный пол в состоянии BUI
+public sealed class InteractionWindowBoundUserInterfaceState(
+    NetEntity userEntity,
+    NetEntity targetEntity,
+    List<string> availableInteractionIds,
+    Sex? userSex,
+    Sex? targetSex) : BoundUserInterfaceState
 {
     public NetEntity UserEntity { get; } = userEntity;
     public NetEntity TargetEntity { get; } = targetEntity;
     public List<string> AvailableInteractionIds { get; } = availableInteractionIds;
+    public Sex? UserSex { get; } = userSex;
+    public Sex? TargetSex { get; } = targetSex;
 }
+// Lust edit end
 
 [Serializable, NetSerializable]
 public sealed class InteractionMessage : BoundUserInterfaceMessage

@@ -15,11 +15,21 @@
       shader: unshaded
       map: ["light","enum.BorgVisualLayers.LightStatus"]
       visible: false
+    # Lust edit start - слои общего визуала сидения и поломки боргов
+    - state: robot_rest
+      map: ["enum.LustBorgVisualLayers.Resting"]
+      visible: false
+    - state: robot_wreck
+      map: ["enum.LustBorgVisualLayers.Wrecked"]
+      visible: false
+    # Lust edit end
   - type: BorgChassis
     # Default borg can take no modules until selected type.
     maxModules: 0
     hasMindState: robot_e
     noMindState: robot_e_r
+  # Lust edit - кнопка сидения для боргов с resting-спрайтами
+  - type: BorgRestAction
   - type: BorgTransponder
     sprite:
       sprite: Mobs/Silicon/chassis.rsi
