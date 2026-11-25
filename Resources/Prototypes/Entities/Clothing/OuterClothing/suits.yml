@@ -32,7 +32,7 @@
     slots: WITHOUT_POCKET
   - type: HideLayerClothing
     slots:
-      - Tail
+      # - Tail Lust-Edit
 
 - type: entity
   parent: ClothingOuterSuitBomb
@@ -73,7 +73,7 @@
     slots: WITHOUT_POCKET
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
   - type: Pierceable
     level: Wood
   # Sunrise-Start
@@ -139,7 +139,7 @@
     slots: WITHOUT_POCKET
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
   # Sunrise-Start
   - type: Tag
     tags:
@@ -214,7 +214,7 @@
             - PowerCell
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
   # Sunrise-Start
   - type: EmpImmune
   - type: Tag
@@ -336,7 +336,7 @@
       toggleable-clothing: !type:ContainerSlot {}
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
   # Sunrise-Start
   - type: Tag
     tags:

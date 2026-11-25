@@ -127,8 +127,7 @@ public sealed partial class WingToggleSystem : SharedWingFlightSystem
             if (!_inventory.TryGetSlotEntity(ent.Owner, slot, out var equippedEntity))
                 continue;
 
-            if (ent.Comp.AllowedTag == null || !_tagSystem.HasTag(equippedEntity.Value, ent.Comp.AllowedTag.Value))
-                return false;
+            /*if (ent.Comp.AllowedTag == null || !_tagSystem.HasTag(equippedEntity.Value, ent.Comp.AllowedTag.Value)) return false; */ // Lust-Edit
         }
 
         return true;

@@ -191,7 +191,7 @@
     slots: OUTERCLOTHING
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
 
 - type: entity
   abstract: true

@@ -11,7 +11,7 @@
     sprite: _Sunrise/Clothing/OuterClothing/Bio/general.rsi # Sunrise-Edit
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
   - type: Pierceable
     level: Metal
   - type: Armor
@@ -84,7 +84,7 @@
     sprite: _Sunrise/Clothing/OuterClothing/Bio/security.rsi #Sunrise-Edit
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
   - type: Armor
     modifiers:
       coefficients:
