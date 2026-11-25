@@ -1048,7 +1048,7 @@
     size: Huge
   - type: HideLayerClothing
     slots:
-    - Tail
+    # - Tail Lust-Edit
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: DamageOnInteractProtection

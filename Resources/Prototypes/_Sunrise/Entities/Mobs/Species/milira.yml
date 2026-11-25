@@ -35,6 +35,7 @@
   components:
   - type: Interactions
   - type: WingToggle
+    blockedSlots: [] # Lust-Edit можно одевать одежду при любом состоянии крыльев
   - type: MoodVisuals
     sprite:
       sprite: _Sunrise/Mobs/Effects/Milira/mood.rsi
@@ -82,7 +83,7 @@
       types:
         Heat : 1.5 #per second, scales with temperature & other constants
   - type: Stamina
-    baseCritThreshold: 100 # не убавляйте милирам стамину в угоду баланса
+    baseCritThreshold: 130
   - type: Vocal
     emoteSounds: MaleHuman
   - type: Damageable
@@ -98,6 +99,19 @@
   #Lust start
   - type: Scent
     personalScentProfile: LustMilira
+  - type: PassiveDamage
+    intervalHaltOnDamageTaken: 5s
+    allowedStates:
+    - Alive
+    damage:
+      types:
+        Heat: -0.09
+        Blunt: -0.08
+        Piercing: -0.09
+        Slash: -0.11
+        Poison: -0.1
+        Cold: -0.08
+        Mangleness: -0.02
   #Lust end
 
 - type: entity
