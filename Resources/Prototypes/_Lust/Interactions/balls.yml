@@ -1,5 +1,6 @@
 - type: interaction
   id: BallsSqueeze
+  isErp: true
   name: lust-interaction-BallsSqueeze
   icon: ERP2Icon
   category: Balls
@@ -34,6 +35,7 @@
 
 - type: interaction
   id: BallsLick
+  isErp: true
   name: lust-interaction-BallsLick
   icon: ERP2Icon
   category: Balls
@@ -71,6 +73,7 @@
 
 - type: interaction
   id: BallsBite
+  isErp: true
   name: lust-interaction-BallsBite
   icon: ERP2Icon
   category: Balls

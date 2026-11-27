@@ -1,5 +1,6 @@
 - type: interaction
   id: BoobsCuddle
+  isErp: true
   name: lust-interaction-BoobsCuddle
   icon: FaceInBoobsIcon
   category: Boobs
@@ -19,6 +20,7 @@
 
 - type: interaction
   id: BoobsPaw
+  isErp: true
   name: lust-interaction-BoobsPaw
   icon: BoobsPawIcon
   category: Boobs
@@ -43,6 +45,7 @@
 
 - type: interaction
   id: BoobsMassage
+  isErp: true
   name: lust-interaction-BoobsMassage
   icon: BoobsMassageIcon
   category: Boobs
@@ -78,6 +81,7 @@
 
 - type: interaction
   id: BoobsManyKisses
+  isErp: true
   name: lust-interaction-BoobsManyKisses
   icon: BoobsManyKissesIcon
   category: Boobs
@@ -112,6 +116,7 @@
 
 - type: interaction
   id: BoobsSlap
+  isErp: true
   name: lust-interaction-BoobsSlap
   icon: BoobsSlapIcon
   category: Boobs
@@ -145,6 +150,7 @@
 
 - type: interaction
   id: BoobsSqueeze
+  isErp: true
   name: lust-interaction-BoobsSqueeze
   icon: BoobsSqueezeIcon
   category: Boobs
@@ -179,6 +185,7 @@
 
 - type: interaction
   id: BoobsBite
+  isErp: true
   name: lust-interaction-BoobsBite
   icon: BoobsSuckIcon
   category: Boobs
@@ -207,6 +214,7 @@
 
 - type: interaction
   id: BoobsSuck
+  isErp: true
   name: lust-interaction-BoobsSuck
   icon: BoobsSuckIcon
   category: Boobs
@@ -240,6 +248,7 @@
 
 - type: interaction
   id: BoobsSuckLactation
+  isErp: true
   name: lust-interaction-BoobsSuckLactation
   icon: BoobsSuckIcon
   category: Boobs
@@ -274,6 +283,7 @@
 
 - type: interaction
   id: BoobsFuck
+  isErp: true
   name: lust-interaction-BoobsFuck
   icon: ERP2Icon
   category: Boobs
@@ -318,6 +328,7 @@
 
 - type: interaction
   id: TailBoobsPlay
+  isErp: true
   name: lust-interaction-TailBoobsPlay
   icon: BoobsTailIcon
   category: Tail
@@ -352,6 +363,7 @@
 
 - type: interaction
   id: BoobsSnuggle
+  isErp: true
   name: lust-interaction-BoobsSnuggle
   icon: ERP2Icon
   category: Boobs

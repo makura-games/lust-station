@@ -1,5 +1,6 @@
 - type: interaction
   id: FaceCheekKiss
+  isErp: false
   name: lust-interaction-FaceCheekKiss
   icon: CheeksKissBothIcon
   category: Face
@@ -29,6 +30,7 @@
 
 - type: interaction
   id: FaceCheeksKiss
+  isErp: false
   name: lust-interaction-FaceCheeksKiss
   icon: CheeksKissBothIcon
   category: Face
@@ -60,6 +62,7 @@
 
 - type: interaction
   id: FacePress
+  isErp: false
   name: lust-interaction-FacePress
   icon: CheeksPressIcon
   category: Face
@@ -79,6 +82,7 @@
 
 - type: interaction
   id: FaceInBoobs
+  isErp: true
   name: lust-interaction-FaceInBoobs
   icon: FaceInBoobsIcon
   category: Face
@@ -101,6 +105,7 @@
 
 - type: interaction
   id: FaceThighsCrush
+  isErp: true
   name: lust-interaction-FaceThighsCrush
   icon: FaceSittingIcon
   category: Face
@@ -125,6 +130,7 @@
 
 - type: interaction
   id: FaceSitting
+  isErp: true
   name: lust-interaction-FaceSitting
   icon: FaceSittingIcon
   category: Face
@@ -149,6 +155,7 @@
 
 - type: interaction
   id: FaceDickSlap
+  isErp: true
   name: lust-interaction-FaceDickSlap
   icon: FaceDickSlapIcon
   category: Face
@@ -182,6 +189,7 @@
 
 - type: interaction
   id: FaceFeet
+  isErp: true
   name: lust-interaction-FaceFeet
   icon: FeetMouthIcon #возможно подкорректировать пикчу нужно
   category: Face

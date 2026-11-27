@@ -1,5 +1,6 @@
 - type: interaction
   id: ButtPaw
+  isErp: true
   name: lust-interaction-ButtPaw
   icon: HandsOnButtIcon
   category: Butt
@@ -20,6 +21,7 @@
 
 - type: interaction
   id: ButtManyKisses
+  isErp: true
   name: lust-interaction-ButtManyKisses
   icon: KissButtIcon
   category: Butt
@@ -50,6 +52,7 @@
 
 - type: interaction
   id: ButtSlap
+  isErp: true
   name: lust-interaction-ButtSlap
   icon: SlapButtIcon
   category: Butt
@@ -70,6 +73,7 @@
 
 - type: interaction
   id: ButtMassage
+  isErp: true
   name: lust-interaction-ButtMassage
   icon: ButtMassageIcon
   category: Butt
@@ -96,6 +100,7 @@
 
 - type: interaction
   id: ButtFuck
+  isErp: true
   name: lust-interaction-ButtFuck
   icon: CockNearToAssIcon
   category: Butt
@@ -131,6 +136,7 @@
 
 - type: interaction
   id: Whip
+  isErp: true
   name: lust-interaction-Whip
   icon: ERP2Icon
   category: Butt
@@ -162,6 +168,7 @@
 
 - type: interaction
   id: ButtBite
+  isErp: true
   name: lust-interaction-ButtBite
   icon: ERP2Icon
   category: Butt
@@ -189,6 +196,7 @@
 
 - type: interaction
   id: ButtTailPaw
+  isErp: true
   name: lust-interaction-ButtTailPaw
   icon: ButtTailIcon
   category: Tail

@@ -50,6 +50,9 @@ public sealed partial class InteractionsWindowBoundUserInterface : BoundUserInte
 
         if (state is InteractionWindowBoundUserInterfaceState interactionsState && _slave != null)
         {
+            // Lust-Start: обновляем запрет до перестроения списка действий.
+            _slave.SetTargetErpLock(interactionsState.TargetErpLocked);
+            // Lust-End
             _slave.UpdateState(
                 interactionsState.UserEntity,
                 interactionsState.TargetEntity,

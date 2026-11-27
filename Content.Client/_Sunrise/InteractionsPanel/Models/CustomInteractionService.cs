@@ -137,6 +137,11 @@ public sealed partial class CustomInteractionService
 
                 switch (key)
                 {
+                    // Lust-Start Определение кастомых дейтсвий как ERP 
+                    case "IS_ERP":
+                        LoadErpSetting(currentInteraction, value);
+                        break;
+                    // Lust-End
                     case "NAME":
                         currentInteraction.Name = value;
                         break;
@@ -213,6 +218,10 @@ public sealed partial class CustomInteractionService
                 writer.WriteLine($"EFFECT_CHANCE:{interaction.EffectChance}");
                 writer.WriteLine($"EFFECT_ID:{interaction.EntityEffectId}");
                 writer.WriteLine($"COOLDOWN:{interaction.Cooldown}");
+
+                // Lust-Start: сохраняем ERP-метку в запись кастомного действия.
+                SaveErpSetting(writer, interaction);
+                // Lust-End
 
                 writer.WriteLine();
             }

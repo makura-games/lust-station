@@ -155,6 +155,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
         var expand = HideTopPanelCheckBox.Pressed;
         SetEmoteVisibility(emoteVisible);
         SetExpanded(expand);
+        // Lust-Start
+        // Отправляем настройку запрета ERP на сервер.
+        ApplyErpLockSetting();
+        // Lust-End
     }
 
     private void OnSearchTextChanged(LineEdit.LineEditEventArgs args)
@@ -174,6 +178,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
         UpdateButtonsState();
         UpdateLoveProgress();
+        // Lust-Start
+        // Читаем доступность настройки и её сетевое значение.
+        UpdateErpLockSetting();
+        // Lust-End
     }
 
     private void UpdateLoveProgress()
@@ -412,6 +420,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
 
         foreach (var customInteraction in customInteractions)
         {
+            // Lust-Start: скрываем кастомные ERP-действия при запрете цели.
+            if (_targetErpLocked && customInteraction.IsErp)
+                continue;
+            // Lust-End
             var categoryId = customInteraction.CategoryId;
 
             if (string.IsNullOrEmpty(categoryId) || !_prototypeManager.TryIndex<InteractionCategoryPrototype>(categoryId, out _))
@@ -876,7 +888,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
                 customInteraction.EffectChance,
                 customInteraction.EntityEffectId,
                 customInteraction.Cooldown
-            );
+            )
+            {                                
+                IsErp = customInteraction.IsErp // Lust- edit Передаём сохранённую авторскую отметку ERP серверу.               
+            };
 
             _owner?.SendBoundUserInterfaceMessage(new InteractionMessage(interactionId, customData));
         }
@@ -1168,7 +1183,10 @@ public sealed partial class InteractionsUIWindow : DefaultWindow
             SpawnsEffect = interaction.SpawnsEffect,
             EffectChance = interaction.EffectChance,
             EntityEffectId = interaction.EntityEffectId,
-            Cooldown = interaction.Cooldown
+            Cooldown = interaction.Cooldown,
+            // Lust-Start: переносим ERP-метку в копию для редактора.
+            IsErp = interaction.IsErp
+            // Lust-End
         };
 
         var editor = new CustomInteractionEditor(interactionCopy);

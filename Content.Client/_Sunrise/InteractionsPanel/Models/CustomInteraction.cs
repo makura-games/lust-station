@@ -1,6 +1,7 @@
 namespace Content.Client._Sunrise.InteractionsPanel.Models;
 
-public sealed class CustomInteraction
+// Lust-Edit: расширение модели кастомного действия в _Lust.
+public sealed partial class CustomInteraction
 {
     public string Id { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
@@ -13,4 +14,5 @@ public sealed class CustomInteraction
     public float EffectChance { get; set; }
     public string EntityEffectId { get; set; } = string.Empty;
     public float Cooldown { get; set; } = 3.0f;
+
 }

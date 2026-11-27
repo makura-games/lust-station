@@ -219,6 +219,10 @@ public sealed partial class CustomInteractionEditor : DefaultWindow
 
         NameInput.Text = _interaction.Name;
         DescriptionInput.Text = _interaction.Description;
+        
+        // Lust-Start
+        LoadErpSetting();
+        // Lust-End
 
         SpawnsEffectCheckBox.Pressed = _interaction.SpawnsEffect;
         EffectChanceSlider.Value = _interaction.EffectChance;
@@ -385,6 +389,10 @@ public sealed partial class CustomInteractionEditor : DefaultWindow
         _interaction.EntityEffectId = effectId ?? string.Empty;
 
         _interaction.Cooldown = CooldownSlider.Value;
+
+        // Lust-Start
+        SaveErpSetting();
+        // Lust-End
 
         _customInteractionService.SaveInteraction(_interaction);
 

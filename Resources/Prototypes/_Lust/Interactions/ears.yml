@@ -1,5 +1,6 @@
 - type: interaction
   id: EarsBite
+  isErp: false
   name: lust-interaction-EarsBite
   icon: BiteEarsIcon
   category: Ears
@@ -27,6 +28,7 @@
 
 - type: interaction
   id: EarsPat
+  isErp: false
   name: lust-interaction-EarsPat
   icon: PatEarsIcon
   category: Ears
@@ -53,6 +55,7 @@
 
 - type: interaction
   id: EarsScratch
+  isErp: false
   name: lust-interaction-EarsScratch
   icon: PatEarsIcon
   category: Ears
@@ -76,6 +79,7 @@
 
 - type: interaction
   id: EarsKiss
+  isErp: false
   name: lust-interaction-EarsKiss
   icon: EarsKissIcon
   category: Ears
@@ -109,6 +113,7 @@
 
 - type: interaction
   id: EarsLick
+  isErp: false
   name: lust-interaction-EarsLick
   icon: ERP2Icon
   category: Ears

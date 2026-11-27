@@ -1,6 +1,7 @@
 
 - type: interaction
   id: CageTap
+  isErp: true
   name: lust-interaction-CageTap
   icon: ERP1Icon
   category: Cage
@@ -27,6 +28,7 @@
 
 - type: interaction
   id: CageSqueeze
+  isErp: true
   name: lust-interaction-CageSqueeze
   icon: ERP2Icon
   category: Cage
@@ -57,6 +59,7 @@
 
 - type: interaction
   id: CageMock
+  isErp: true
   name: lust-interaction-CageMock
   icon: ERP4Icon
   category: Cage
@@ -84,6 +87,7 @@
 
 - type: interaction
   id: CageLick
+  isErp: true
   name: lust-interaction-CageLick
   icon: ERP2Icon
   category: Cage
@@ -119,6 +123,7 @@
 
 - type: interaction
   id: CageKiss
+  isErp: true
   name: lust-interaction-CageKiss
   icon: KissLipsIcon
   category: Cage
@@ -158,6 +163,7 @@
 
 - type: interaction
   id: CageBlowAttempt
+  isErp: true
   name: lust-interaction-CageBlowAttempt
   icon: CockBlowjobIcon
   category: Cage
@@ -197,6 +203,7 @@
 
 - type: interaction
   id: CageGrind
+  isErp: true
   name: lust-interaction-CageGrind
   icon: LegsCockFuckIcon
   category: Cage
@@ -240,6 +247,7 @@
 
 - type: interaction
   id: CageSelfTouch
+  isErp: true
   name: lust-interaction-CageSelfTouch
   icon: ERP3Icon
   category: Cage
@@ -267,6 +275,7 @@
 
 - type: interaction
   id: CageSelfExamine
+  isErp: true
   name: lust-interaction-CageSelfExamine
   icon: ERP1Icon
   category: Cage
@@ -291,6 +300,7 @@
 
 - type: interaction
   id: CageSelfRattle
+  isErp: true
   name: lust-interaction-CageSelfRattle
   icon: ERP3Icon
   category: Cage
@@ -318,6 +328,7 @@
 
 - type: interaction
   id: CageSelfAdjust
+  isErp: true
   name: lust-interaction-CageSelfAdjust
   icon: ERP1Icon
   category: Cage
@@ -345,6 +356,7 @@
 
 - type: interaction
   id: CageSelfStrain
+  isErp: true
   name: lust-interaction-CageSelfStrain
   icon: ERP2Icon
   category: Cage
@@ -374,6 +386,7 @@
 
 - type: interaction
   id: CageSelfReach
+  isErp: true
   name: lust-interaction-CageSelfReach
   icon: ERP3Icon
   category: Cage
@@ -405,6 +418,7 @@
 
 - type: interaction
   id: BeltSelfSlide
+  isErp: true
   name: lust-interaction-BeltSelfSlide
   icon: ERP2Icon
   category: Belt
@@ -436,6 +450,7 @@
 
 - type: interaction
   id: BeltSelfPress
+  isErp: true
   name: lust-interaction-BeltSelfPress
   icon: ERP3Icon
   category: Belt
@@ -467,6 +482,7 @@
 
 - type: interaction
   id: CagePull
+  isErp: true
   name: lust-interaction-CagePull
   icon: ERP3Icon
   category: Cage
@@ -497,6 +513,7 @@
 
 - type: interaction
   id: BeltPull
+  isErp: true
   name: lust-interaction-BeltPull
   icon: ERP3Icon
   category: Belt
@@ -527,6 +544,7 @@
 
 - type: interaction
   id: CagePlay
+  isErp: true
   name: lust-interaction-CagePlay
   icon: ERP2Icon
   category: Cage
@@ -557,6 +575,7 @@
 
 - type: interaction
   id: BeltPlay
+  isErp: true
   name: lust-interaction-BeltPlay
   icon: ERP2Icon
   category: Belt
@@ -589,6 +608,7 @@
 
 - type: interaction
   id: CageSlap
+  isErp: true
   name: lust-interaction-CageSlap
   icon: ERP4Icon
   category: Cage
@@ -619,6 +639,7 @@
 
 - type: interaction
   id: BeltSlap
+  isErp: true
   name: lust-interaction-BeltSlap
   icon: ERP4Icon
   category: Belt
