@@ -3,11 +3,10 @@
   name: job-name-blueshield-operative
   description: job-description-blueshield-operative
   playTimeTracker: JobBlueShieldOperative
-  # Lust-Start
-  speciesBlacklist:
-  - Felinid
-  # Lust-End
   requirements:
+    - !type:SpeciesRequirement
+      species: [ Felinid ]
+      inverted: true
     # Lust-Start
     - !type:AgeRequirement
       requiredAge: 25
